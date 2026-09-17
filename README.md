@@ -32,6 +32,8 @@ npm run lint
 npm run build
 ```
 
-## 部署
+## GitHub Actions
 
-`main` 分支推送后由 GitHub Actions 构建并部署到 GitHub Pages。Vite 的部署基路径已设置为 `/Macro/`。
+推送到 `main` 后，GitHub Actions 会自动执行 lint、测试和生产构建，并上传名为 `macro-dashboard-dist` 的静态构建产物。
+
+当前仓库为私有仓库，账户套餐不支持为该仓库启用 GitHub Pages；若以后公开仓库或升级套餐，可直接使用 `dist/` 作为 Pages 发布目录。Vite 的部署基路径已设置为 `/Macro/`。
