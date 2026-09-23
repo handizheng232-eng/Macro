@@ -7,9 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test": "vitest run",
+    "test:data": "python -m unittest discover -s scripts -p \"test_*.py\"",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "refresh:us-macro:wind": "bash scripts/refresh_us_macro.sh",
+    "refresh:us-macro:openbb": "python scripts/run_openbb_refresh.py",
+    "refresh:us-inflation": "python scripts/refresh_ifind_us_inflation.py",
+    "refresh:us-macro": "npm run refresh:us-macro:wind && npm run refresh:us-macro:openbb && npm run refresh:us-inflation"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

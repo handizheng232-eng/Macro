@@ -2,5 +2,10 @@ node_modules/
 dist/
 coverage/
 .vite/
+__pycache__/
+*.pyc
+data/raw/
+券商研究报告/
+*.xlsx
 *.local
 .DS_Store
