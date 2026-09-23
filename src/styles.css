@@ -559,6 +559,70 @@ td:last-child { color: var(--subtle); }
 .cross-check-list span { margin-top: 4px; color: var(--subtle); font: 8px 'IBM Plex Mono', monospace; }
 .inflation-method-card > footer { grid-column: 1 / -1; min-height: 42px; display: flex; align-items: center; gap: 8px; padding: 0 18px; color: #66717d; border-top: 1px solid var(--line); background: var(--layer); font-size: 8px; }
 
+.employment-headline-grid { max-width: 1440px; margin: 0 auto 12px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--navy); color: #fff; }
+.employment-headline-grid article { min-height: 154px; display: flex; flex-direction: column; padding: 20px 22px; border-right: 1px solid rgba(255,255,255,.16); }
+.employment-headline-grid article:last-child { border-right: 0; }
+.employment-headline-grid article > span { color: #91a8cd; font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.employment-headline-grid h2 { margin: 14px 0 4px; font-size: 13px; font-weight: 400; }
+.employment-headline-grid article > div { display: flex; align-items: baseline; gap: 6px; }
+.employment-headline-grid article > div strong { font: 30px 'IBM Plex Mono', monospace; font-weight: 500; }
+.employment-headline-grid article > div b { color: #afbbcf; font-size: 11px; font-weight: 400; }
+.employment-headline-grid footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 11px; border-top: 1px solid rgba(255,255,255,.13); }
+.employment-headline-grid footer small { color: #fff; font: 9px 'IBM Plex Mono', monospace; }
+.employment-headline-grid footer em { color: #91a8cd; font-size: 9px; font-style: normal; }
+
+.employment-chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.employment-chart-grid.single { grid-template-columns: 1fr; }
+.employment-chart-grid.single .employment-chart-card { max-width: none; }
+.employment-chart-card { min-width: 0; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.employment-chart-card > header { min-height: 118px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 18px 20px 15px; border-bottom: 1px solid var(--line); }
+.employment-chart-card > header > div:first-child > span { color: var(--blue); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.employment-chart-card h3 { margin: 8px 0 6px; font-size: 17px; font-weight: 500; }
+.employment-chart-card > header p { max-width: 610px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.employment-chart-card > footer { padding: 12px 16px 13px; border-top: 1px solid var(--line); background: var(--layer); }
+.employment-panel-bg { fill: #fafbfc; stroke: #e5e8eb; stroke-width: 1; }
+.employment-panel-label { fill: #5c6670; font: 8px 'IBM Plex Mono', monospace; }
+.employment-hover-line { stroke: #6e7781; stroke-width: 1; stroke-dasharray: 3 3; }
+.employment-axis-label { fill: #59636d; font: 9px 'IBM Plex Mono', monospace; }
+.scatter-latest { flex: 0 0 auto; padding: 9px 11px; background: var(--navy); color: #fff; text-align: right; }
+.scatter-latest strong, .scatter-latest span { display: block; }
+.scatter-latest strong { font: 12px 'IBM Plex Mono', monospace; font-weight: 500; }
+.scatter-latest span { margin-top: 5px; color: #91a8cd; font-size: 8px; }
+.beveridge-legend, .employment-bar-legend { min-height: 44px; display: flex; align-items: center; flex-wrap: wrap; gap: 9px 17px; padding: 9px 17px; border-bottom: 1px solid var(--line); background: #fafbfc; }
+.beveridge-legend span, .employment-bar-legend span { display: flex; align-items: center; gap: 6px; color: #59636d; font-size: 8px; }
+.beveridge-legend i { width: 8px; height: 8px; border-radius: 50%; }
+.beveridge-legend i.history { background: #aeb5bd; }
+.beveridge-legend i.recent { background: #1859b8; }
+.beveridge-legend i.latest { background: #c94c4c; }
+.employment-bar-legend i { width: 9px; height: 9px; border-radius: 1px; }
+.employment-bar-legend .employment-total-line { width: 17px; height: 2px; background: #17233b; border-radius: 0; }
+
+.employment-heatmap-card { margin-top: 16px; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.employment-heatmap-card > header { min-height: 104px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+.employment-heatmap-card > header > div:first-child > span { color: var(--blue); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.employment-heatmap-card h3 { margin: 8px 0 6px; font-size: 18px; font-weight: 500; }
+.employment-heatmap-card > header p { max-width: 760px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.employment-heat-legend { flex: 0 0 auto; display: flex; align-items: center; gap: 5px; }
+.employment-heat-legend span { color: var(--subtle); font-size: 8px; }
+.employment-heat-legend i { width: 26px; height: 7px; }
+.employment-heat-legend .cool { background: rgba(47,127,163,.42); }
+.employment-heat-legend .neutral { background: #f3f4f5; }
+.employment-heat-legend .hot { background: rgba(197,68,68,.42); }
+.employment-heatmap-wrap { overflow-x: auto; }
+.employment-heatmap { min-width: 1260px; table-layout: fixed; }
+.employment-heatmap thead th { height: 36px; padding: 0 7px; color: #4e5863; background: #e9edf1; border-right: 1px solid #dce1e5; border-bottom: 1px solid #d4d9de; font: 8px 'IBM Plex Mono', monospace; font-weight: 500; text-align: center; white-space: nowrap; }
+.employment-heatmap thead th:first-child { width: 150px; text-align: left; }
+.employment-heatmap thead th:last-child { width: 104px; }
+.employment-heatmap tbody th, .employment-heatmap tbody td { height: 34px; border-right: 1px solid #edf0f2; border-bottom: 1px solid #edf0f2; }
+.employment-heatmap tbody th { padding: 0 12px; color: #30363b; background: #fff; font-size: 9px; font-weight: 500; text-align: left; white-space: nowrap; }
+.employment-heatmap tbody td { padding: 0 7px; color: #20252a; font: 9px 'IBM Plex Mono', monospace; font-weight: 500; text-align: right; }
+.employment-heatmap tbody td:last-child { color: var(--subtle); background: #fff; font-size: 7px; text-align: center; }
+.employment-heatmap-card > footer { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-top: 1px solid var(--line); background: var(--layer); }
+.employment-heatmap-card > footer strong { font-size: 9px; font-weight: 500; }
+.employment-heatmap-card > footer span { flex: 1; color: var(--subtle); font-size: 8px; }
+.employment-heatmap-card > footer b { color: var(--blue); font-size: 9px; font-weight: 500; }
+.employment-method-card { margin-top: 0; }
+
 button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 @media (max-width: 1060px) {
@@ -582,6 +646,8 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .replay-timeline { grid-template-columns: 1fr; }
   .timeline-intro { min-height: 180px; }
   .inflation-chart-grid { grid-template-columns: 1fr; }
+  .employment-chart-grid { grid-template-columns: 1fr; }
+  .employment-headline-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .implied-layout { grid-template-columns: minmax(0, 1fr) 250px; }
 }
 
@@ -634,6 +700,9 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .us-macro-source > div { align-items: flex-start; flex-direction: column; gap: 5px; }
   .us-macro-source { margin-bottom: 20px; }
   .inflation-headline-grid { grid-template-columns: 1fr; }
+  .employment-headline-grid { grid-template-columns: 1fr; }
+  .employment-headline-grid article { min-height: 132px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+  .employment-headline-grid article:last-child { border-bottom: 0; }
   .inflation-headline-grid article { min-height: 132px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
   .inflation-headline-grid article:last-child { border-bottom: 0; }
   .inflation-section-nav { top: 56px; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-x: auto; }
@@ -641,7 +710,7 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .inflation-section-heading { grid-template-columns: 1fr; }
   .inflation-section-heading > span { min-height: 38px; padding: 0 17px; border-right: 0; border-bottom: 1px solid var(--line); }
   .inflation-section-heading > div { padding: 16px 17px; }
-  .inflation-chart-card > header, .contribution-card > header, .cycle-structure-card > header, .cpi-heatmap-card > header { display: block; }
+  .inflation-chart-card > header, .employment-chart-card > header, .employment-heatmap-card > header, .contribution-card > header, .cycle-structure-card > header, .cpi-heatmap-card > header { display: block; }
   .range-switch, .period-pair, .cycle-legend, .heatmap-mode { margin-top: 14px; }
   .range-switch button { flex: 1; }
   .series-switches button { min-width: 138px; }

@@ -55,7 +55,6 @@ describe('宏观框架', () => {
 
     const seasonalPages = [
       ['增长', 'us-growth', 5],
-      ['就业', 'us-employment', 8],
       ['政策', 'us-policy', 4],
     ] as const
 
@@ -76,6 +75,22 @@ describe('宏观框架', () => {
 
       await user.click(screen.getByRole('button', { name: '返回宏观框架' }))
     }
+
+    await user.click(screen.getByRole('button', { name: '打开美国就业子页面' }))
+    expect(window.location.hash).toBe('#framework/us-employment')
+    expect(screen.getByRole('heading', { name: '美国就业' })).toBeInTheDocument()
+    expect(within(screen.getByRole('region', { name: '美国就业状态摘要' })).getAllByRole('article')).toHaveLength(4)
+    expect(screen.getByRole('heading', { name: '劳动力供给' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '失业与松弛' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '劳动力需求' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '工资与工时' })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /折线图|散点图|堆叠柱图/ })).toHaveLength(10)
+    expect(screen.getByRole('table', { name: '行业新增就业热度表' })).toBeInTheDocument()
+    expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
+    expect(screen.getByText(/数据来源：iFinD 经济数据库（EDB）。/)).toBeInTheDocument()
+    expect(screen.queryByText('Wind EDB')).not.toBeInTheDocument()
+    expect(within(screen.getByRole('main')).queryByText(/OpenBB/)).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: '返回宏观框架' }))
 
     await user.click(screen.getByRole('button', { name: '打开美国通胀子页面' }))
     expect(window.location.hash).toBe('#framework/us-inflation')

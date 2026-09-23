@@ -1,6 +1,7 @@
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import usMacroData from './data/usMacroData.json'
 import { US_MACRO_PAGES, type UsMacroCategory } from './usMacroConfig'
+import { UsEmploymentDetail } from './usEmployment'
 import { UsInflationDetail } from './usInflation'
 
 type SeasonalLine = {
@@ -217,6 +218,7 @@ function MetricCard({ metric }: { metric: Metric }) {
 }
 
 export function UsMacroDetail({ category, onBack }: { category: UsMacroCategory; onBack: () => void }) {
+  if (category === 'employment') return <UsEmploymentDetail onBack={onBack} />
   if (category === 'inflation') return <UsInflationDetail onBack={onBack} />
 
   const page = US_MACRO_PAGES.find((item) => item.category === category)!
