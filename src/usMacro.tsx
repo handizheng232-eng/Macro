@@ -1,6 +1,6 @@
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import usMacroData from './data/usMacroData.json'
-import { US_MACRO_PAGES, type UsMacroCategory } from './usMacroConfig'
+import { US_MACRO_PAGES, type UsMacroCategory, type UsMacroDatasetCategory } from './usMacroConfig'
 import { UsEmploymentDetail } from './usEmployment'
 import { UsInflationDetail } from './usInflation'
 
@@ -48,7 +48,7 @@ type MacroDataset = {
   source: string
   sourceProviders?: string[]
   seasonalStartYear: number
-  categories: Record<UsMacroCategory, CategoryData>
+  categories: Record<UsMacroDatasetCategory, CategoryData>
 }
 
 const dataset = usMacroData as MacroDataset
@@ -217,13 +217,112 @@ function MetricCard({ metric }: { metric: Metric }) {
   )
 }
 
+function FrameworkModule({ category }: { category: UsMacroCategory }) {
+  const page = US_MACRO_PAGES.find((item) => item.category === category)!
+  const sourceMetrics = page.dataCategory ? dataset.categories[page.dataCategory].metrics : []
+  const metrics = sourceMetrics.filter((metric) => page.metricIds?.includes(metric.id))
+  const providers = [...new Set(metrics.map((metric) => metric.source.provider))]
+
+  return (
+    <>
+      <section className="module-thesis" aria-label={`${page.label}研究主线`}>
+        <div>
+          <span>CHAPTER {page.chapter} · RESEARCH QUESTION</span>
+          <h2>{page.thesis}</h2>
+        </div>
+        <p>{page.description}</p>
+      </section>
+
+      <section className="module-chain" aria-labelledby="module-chain-title">
+        <header>
+          <span>CAUSAL CHAIN</span>
+          <h2 id="module-chain-title">传导链条</h2>
+        </header>
+        <div>
+          {page.chain.map((step, index) => (
+            <div key={step}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <strong>{step}</strong>
+              {index < page.chain.length - 1 && <ChevronRight size={15} aria-hidden="true" />}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="indicator-dictionary" aria-labelledby="indicator-dictionary-title">
+        <header>
+          <div>
+            <span>INDICATOR DICTIONARY</span>
+            <h2 id="indicator-dictionary-title">核心指标字典</h2>
+          </div>
+          <small>框架依据：《美国宏观数据培训【0829定稿】》</small>
+        </header>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr><th>指标</th><th>研究角色</th><th>来源</th><th>频率</th><th>首要陷阱</th></tr>
+            </thead>
+            <tbody>
+              {page.indicators.map((indicator) => (
+                <tr key={indicator.name}>
+                  <th scope="row">{indicator.name}</th>
+                  <td>{indicator.role}</td>
+                  <td>{indicator.source}</td>
+                  <td>{indicator.frequency}</td>
+                  <td>{indicator.trap}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {metrics.length > 0 ? (
+        <>
+          <section className="seasonal-method module-data-method" aria-label="已接入数据说明">
+            <div>
+              <span>VERIFIED DATA COVERAGE</span>
+              <h2>已接入序列</h2>
+              <p>仅展示现有构建管线中已核验的真实序列；每张卡片保留独立观测日期、单位、转换和来源，不用框架指标冒充已接入数据。</p>
+            </div>
+            <div>
+              <strong>{metrics.length} / {page.indicators.length}</strong>
+              <span>当前图表 / 核心指标组</span>
+            </div>
+          </section>
+          <section className="seasonal-grid" aria-label={`美国${page.label}已接入数据`}>
+            {metrics.map((metric) => <MetricCard metric={metric} key={metric.id} />)}
+          </section>
+        </>
+      ) : (
+        <section className="module-data-gap" aria-label={`${page.label}数据缺口`}>
+          <div>
+            <span>DATA GAP · NO SYNTHETIC SERIES</span>
+            <h2>尚未接入可核验的{page.label}序列</h2>
+            <p>本页先固化研究链条、指标定义、来源与陷阱。取得源数据并完成身份、单位、量级和时间对齐核验后，再生成图表。</p>
+          </div>
+        </section>
+      )}
+
+      <footer className="us-macro-source">
+        <div>
+          <strong>{metrics.length > 0 ? `数据来源：${providers.join('、')}。` : '数据状态：框架已建立，序列待接入。'}</strong>
+          <span>框架来源：美国宏观数据培训【0829定稿】 · 231页</span>
+          {metrics.length > 0 && <span>快照生成：{dataset.generatedAt.slice(0, 10)}</span>}
+        </div>
+      </footer>
+    </>
+  )
+}
+
 export function UsMacroDetail({ category, onBack }: { category: UsMacroCategory; onBack: () => void }) {
   if (category === 'employment') return <UsEmploymentDetail onBack={onBack} />
   if (category === 'inflation') return <UsInflationDetail onBack={onBack} />
 
   const page = US_MACRO_PAGES.find((item) => item.category === category)!
-  const categoryData = dataset.categories[category]
-  const latestDate = categoryData.metrics.reduce(
+  const sourceMetrics = page.dataCategory ? dataset.categories[page.dataCategory].metrics : []
+  const metrics = sourceMetrics.filter((metric) => page.metricIds?.includes(metric.id))
+  const latestDate = metrics.reduce(
     (latest, metric) => metric.latestObservation > latest ? metric.latestObservation : latest,
     '',
   )
@@ -235,35 +334,19 @@ export function UsMacroDetail({ category, onBack }: { category: UsMacroCategory;
           <button className="history-back" type="button" onClick={onBack}>
             <ArrowLeft size={15} />返回宏观框架
           </button>
-          <p className="eyebrow">US ECONOMY · {page.label.toUpperCase()} · SEASONAL</p>
-          <h1>{categoryData.title}</h1>
-          <p>{categoryData.description}</p>
+          <p className="eyebrow">US ECONOMY · CHAPTER {page.chapter}</p>
+          <h1>美国{page.label}</h1>
+          <p>{page.detail}</p>
         </div>
-        <div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestDate)}</strong></div>
+        <div className="as-of">
+          <span>{latestDate ? '本页最近观测' : '数据状态'}</span>
+          <strong>{latestDate ? formatDate(latestDate) : '待接入'}</strong>
+        </div>
       </div>
 
-      <section className="seasonal-method" aria-label="季节图说明">
-        <div>
-          <span>READING GUIDE</span>
-          <h2>同月或同季度跨年比较</h2>
-          <p>每条线代表一个自然年；当前年度为蓝色粗线，空白表示尚未公布。各卡片保留独立观测日期，不假设数据同步发布。</p>
-        </div>
-        <div>
-          <strong>{dataset.seasonalStartYear}—{new Date(dataset.generatedAt).getUTCFullYear()}</strong>
-          <span>季节图覆盖年份</span>
-        </div>
-      </section>
+      <FrameworkModule category={category} />
 
-      <section className="seasonal-grid" aria-label={`${categoryData.title}季节图`}>
-        {categoryData.metrics.map((metric) => <MetricCard metric={metric} key={metric.id} />)}
-      </section>
-
-      <footer className="us-macro-source">
-        <div>
-          <strong>数据来源：OpenBB 与 Wind EDB。</strong>
-          <span>{dataset.sourceProviders?.join(' · ')}</span>
-          <span>快照生成：{dataset.generatedAt.slice(0, 10)}</span>
-        </div>
+      <footer className="module-back-footer">
         <button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button>
       </footer>
     </>

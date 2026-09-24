@@ -13,7 +13,7 @@ import {
   Search,
   Telescope,
 } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   categoryFromFrameworkHash,
   frameworkSlug,
@@ -251,20 +251,11 @@ function EmptyState({ children }: { children: string }) {
 }
 
 function MacroFramework({ onOpenUsCategory }: { onOpenUsCategory: (category: UsMacroCategory) => void }) {
-  const regions = [
-    {
-      code: 'US · ECONOMY',
-      title: '美国经济',
-      description: '跟踪增长、就业、实际通胀、消费以及货币与财政政策。',
-      dimensions: ['增长', '就业', '实际通胀', '政策'],
-    },
-    {
-      code: 'CN · ECONOMY',
-      title: '中国经济',
-      description: '跟踪内需、工业与出口、房地产、信用和政策脉冲。',
-      dimensions: ['内需', '生产', '房地产', '信用政策'],
-    },
-  ]
+  const coverageLabel = {
+    deep: '深度数据页',
+    partial: '已接入部分序列',
+    framework: '指标框架已建',
+  } as const
 
   return (
     <>
@@ -272,58 +263,67 @@ function MacroFramework({ onOpenUsCategory }: { onOpenUsCategory: (category: UsM
         <div>
           <p className="eyebrow">MACRO FRAMEWORK</p>
           <h1>宏观框架</h1>
-          <p>先判断经济状态，再观察以美国为核心的全球金融条件。</p>
+          <p>先沿数据生产—加工—定价链识别信息，再按九个模块判断美国经济与政策传导。</p>
         </div>
-        <div className="as-of"><span>框架版本</span><strong>V0.1</strong></div>
+        <div className="as-of"><span>框架版本</span><strong>V0.2 · PPT 0829</strong></div>
       </div>
 
-      <div className="framework-layout">
-        <div className="economy-grid">
-          {regions.map((region, index) => (
-            <section className="framework-card" key={region.title}>
-              <div className="framework-number">0{index + 1}</div>
-              <div className="framework-copy">
-                <span>{region.code}</span>
-                <h2>{region.title}</h2>
-                <p>{region.description}</p>
-                <div className="dimension-list">
-                  {index === 0 ? US_MACRO_PAGES.map((page) => (
-                    <button
-                      aria-label={`打开美国${page.label}子页面`}
-                      key={page.category}
-                      type="button"
-                      onClick={() => onOpenUsCategory(page.category)}
-                    >
-                      <span><strong>{page.label}</strong><small>{page.detail}</small></span>
-                      <i>季节图 <ChevronRight size={14} /></i>
-                    </button>
-                  )) : region.dimensions.map((item) => <span key={item}>{item}<i>待接入</i></span>)}
-                </div>
+      <section className="framework-methodology" aria-label="美国宏观数据三层读法">
+        {[
+          ['01', '生产端', '谁统计、调查谁、覆盖多广', '机构 · 样本 · 频率 · 滞后'],
+          ['02', '加工端', '数据经过哪些处理，初值多可靠', '季调 · SAAR · 修正 · 平减'],
+          ['03', '定价端', '市场为何在乎，以及在乎到什么程度', '预期差 · 主题权重 · 可交易性'],
+        ].map(([index, title, question, detail]) => (
+          <article key={title}>
+            <span>{index}</span>
+            <div><h2>{title}</h2><p>{question}</p><small>{detail}</small></div>
+          </article>
+        ))}
+      </section>
+
+      <section className="us-framework-map" aria-labelledby="us-framework-title">
+        <header>
+          <div>
+            <span>US ECONOMY · NINE-MODULE MAP</span>
+            <h2 id="us-framework-title">美国宏观九模块</h2>
+            <p>按培训材料第1—9章展开。就业与通胀保留深度页；现有增长、政策数据拆入对应模块；尚无可核验序列的页面只展示指标字典。</p>
+          </div>
+          <strong>9 个研究模块</strong>
+        </header>
+        <div className="macro-module-grid">
+          {US_MACRO_PAGES.map((page) => (
+            <button
+              aria-label={`打开美国${page.label}模块`}
+              key={page.category}
+              type="button"
+              onClick={() => onOpenUsCategory(page.category)}
+            >
+              <span className="module-chapter">CH.{page.chapter}</span>
+              <div>
+                <h3>{page.label}</h3>
+                <p>{page.detail}</p>
               </div>
-            </section>
+              <footer>
+                <small className={`coverage-${page.coverage}`}>{coverageLabel[page.coverage]}</small>
+                <ChevronRight size={15} aria-hidden="true" />
+              </footer>
+            </button>
           ))}
         </div>
+      </section>
 
-        <section className="financial-conditions" aria-labelledby="financial-title">
-          <div className="conditions-intro">
-            <span>03 · GLOBAL FINANCIAL CONDITIONS</span>
-            <h2 id="financial-title">全球金融条件</h2>
-            <p>以美国定价变量为主轴，其他经济体作为补充。</p>
-          </div>
-          <div className="condition-pillars">
-            {[
-              ['美债利率', '名义利率 · 实际利率 · 收益率曲线'],
-              ['通胀', '实际通胀 · 通胀预期 · 盈亏平衡通胀率'],
-              ['美元', '美元指数 · 人民币 · 主要货币政策差'],
-            ].map(([title, detail], index) => (
-              <article key={title}>
-                <span>0{index + 1}</span>
-                <h3>{title}</h3>
-                <p>{detail}</p>
-                <div className="data-placeholder">等待数据源接入</div>
-              </article>
-            ))}
-          </div>
+      <div className="framework-support-grid">
+        <section className="framework-support-card">
+          <span>CN · ECONOMY</span>
+          <h2>中国经济</h2>
+          <p>继续保留内需、生产与出口、房地产、信用和政策脉冲一级框架；本轮不使用美国培训材料替代中国口径。</p>
+          <div className="support-tags">{['内需', '生产与出口', '房地产', '信用政策'].map((item) => <span key={item}>{item}<i>待接入</i></span>)}</div>
+        </section>
+        <section className="framework-support-card dark" aria-labelledby="financial-title">
+          <span>GLOBAL · PRICING LAYER</span>
+          <h2 id="financial-title">全球金融条件</h2>
+          <p>把政策落点放在实体真正感受到的价格变量，而不是另建与美国模块重复的基本面页。</p>
+          <div className="support-tags">{['美债曲线与实际利率', '美元与主要汇率', '信用利差与股权', 'FCI与流动性'].map((item) => <span key={item}>{item}<i>待补充</i></span>)}</div>
         </section>
       </div>
     </>
@@ -575,6 +575,30 @@ function DataMethods() {
     ['数据版本', '初值、修订值或终值'],
     ['抓取时间', '系统取得该版本的时间'],
   ]
+  const passportFields = [
+    ['发布机构', '方法论文化与修订习惯'],
+    ['调查对象与样本', '覆盖面、代表性与噪音'],
+    ['频率与滞后', '信息新鲜度和链条位置'],
+    ['季调方式', '环比是否可比'],
+    ['修正规则', '初值可信度与历史版本'],
+    ['一致预期', '预期差能否直接衡量'],
+    ['市场重要性', '五因子分数与主题乘数'],
+    ['单位与转换', '水平、同比、环比、SAAR、名义或实际'],
+  ]
+  const processing = [
+    ['季节调整 SA', '剔除固定日历形态', '季调因子漂移与残余季节性'],
+    ['季环比折年 SAAR', '把月/季环比折算为年率', '同时放大短期噪音'],
+    ['多轮修正', '用更完整样本逼近终值', '初值和终值可能讲出不同故事'],
+    ['通胀调整', '名义值经平减得到实际量', '平减指数选错会翻转结论'],
+  ]
+  const importanceFactors = [
+    ['时效性 / 先发权', '同主题链条中是否最早发布'],
+    ['政策关联度', '离双重使命与反应函数有多近'],
+    ['覆盖面与代表性', '样本能否代表总量经济'],
+    ['信噪比与修正', '初值可靠度和修正风险'],
+    ['可交易性', '是否有衍生品或可推算关键数据'],
+    ['预期差与当期主题', '结构分还要乘以动态主题权重'],
+  ]
 
   return (
     <>
@@ -582,32 +606,74 @@ function DataMethods() {
         <div>
           <p className="eyebrow">DATA & METHODOLOGY</p>
           <h1>数据与方法</h1>
-          <p>统一管理指标定义、原始研报和历史数据版本。</p>
+          <p>把培训材料中的数据身份证、加工规则与定价框架落实为可审计的指标字典。</p>
         </div>
+        <div className="as-of"><span>研究依据</span><strong>PPT · 231页</strong></div>
       </div>
 
       <div className="methods-grid">
         <section className="method-card terminology">
-          <div className="method-card-head"><BookOpenText size={18} /><span>01</span></div>
+          <div className="method-card-head"><BookOpenText size={18} /><span>01 · PASSPORT</span></div>
           <h2>指标口径</h2>
-          <p>记录指标单位、频率、季调方式、同比环比及转换方法。</p>
-          <div className="method-placeholder">尚未建立指标字典</div>
+          <p>每条序列先回答发布机构、调查对象、频率滞后、季调、修正、一致预期与市场重要性，再进入图表。</p>
+          <div className="passport-grid" aria-label="数据身份证字段">
+            {passportFields.map(([name, description]) => (
+              <div key={name}><strong>{name}</strong><span>{description}</span></div>
+            ))}
+          </div>
+          <div className="indicator-index-wrap">
+            <table className="indicator-index">
+              <thead><tr><th>模块</th><th>核心指标组</th><th>覆盖状态</th></tr></thead>
+              <tbody>
+                {US_MACRO_PAGES.map((page) => (
+                  <tr aria-label={`指标字典：${page.label}`} key={page.category}>
+                    <th scope="row"><span>CH.{page.chapter}</span>{page.label}</th>
+                    <td>{page.indicators.map((item) => item.name).join(' · ')}</td>
+                    <td>{page.coverage === 'deep' ? '深度页' : page.coverage === 'partial' ? '部分序列' : '框架待取数'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section className="method-card processing-card">
+          <div className="method-card-head"><Database size={18} /><span>02 · PROCESSING</span></div>
+          <h2>数据加工四件套</h2>
+          <p>网页必须显式标出转换，不能把同比、环比、折年率、名义量和实际量混为一谈。</p>
+          <div className="method-list">
+            {processing.map(([name, purpose, trap]) => (
+              <article key={name}><strong>{name}</strong><span>{purpose}</span><small>{trap}</small></article>
+            ))}
+          </div>
+        </section>
+
+        <section className="method-card importance-card">
+          <div className="method-card-head"><Gauge size={18} /><span>03 · PRICING</span></div>
+          <h2>市场重要性五因子</h2>
+          <p>固定结构分之外，还要乘以当期宏观主题；市场交易的是相对预期的信息增量，而不是数据水平本身。</p>
+          <div className="method-list compact">
+            {importanceFactors.map(([name, description]) => (
+              <article key={name}><strong>{name}</strong><span>{description}</span></article>
+            ))}
+          </div>
         </section>
 
         <section className="method-card report-library">
-          <div className="method-card-head"><FileText size={18} /><span>02</span></div>
+          <div className="method-card-head"><FileText size={18} /><span>04 · LIBRARY</span></div>
           <h2>研报资料库</h2>
-          <p>保留机构、作者、发布日期、主题标签、摘要和原文路径。</p>
+          <p>保留机构、作者、发布日期、主题标签、摘要和原文路径；框架源文件登记为《美国宏观数据培训【0829定稿】》。</p>
           <div className="source-connectors">
+            <span>培训材料<i>已纳入框架</i></span>
             <span>知识星球<i>待接入</i></span>
             <span>Wind 研报与观点<i>待接入</i></span>
           </div>
         </section>
 
         <section className="method-card versioning">
-          <div className="method-card-head"><Database size={18} /><span>03</span></div>
+          <div className="method-card-head"><Database size={18} /><span>05 · VINTAGE</span></div>
           <h2>数据版本与来源</h2>
-          <p>历史复盘以当时可得版本为准，并保留修订链路。</p>
+          <p>历史复盘以当时可得版本为准，并保留修订链路；各卡片使用自己的最新观测期，不制造共同“截至日”。</p>
           <div className="metadata-grid">
             {metadata.map(([name, description]) => (
               <div key={name}><strong>{name}</strong><span>{description}</span></div>
@@ -626,6 +692,23 @@ function App() {
   })
   const [historyDetail, setHistoryDetail] = useState(() => window.location.hash === '#history/easing-to-tightening')
   const [frameworkDetail, setFrameworkDetail] = useState<UsMacroCategory | null>(() => categoryFromFrameworkHash(window.location.hash))
+
+  useEffect(() => {
+    const syncFromHash = () => {
+      const pageFromHash = window.location.hash.slice(1).split('/')[0]
+      const nextPage = navItems.some((item) => item.id === pageFromHash) ? pageFromHash as PageId : 'today'
+      setActivePage(nextPage)
+      setHistoryDetail(window.location.hash === '#history/easing-to-tightening')
+      setFrameworkDetail(categoryFromFrameworkHash(window.location.hash))
+    }
+
+    window.addEventListener('popstate', syncFromHash)
+    window.addEventListener('hashchange', syncFromHash)
+    return () => {
+      window.removeEventListener('popstate', syncFromHash)
+      window.removeEventListener('hashchange', syncFromHash)
+    }
+  }, [])
 
   const navigateTo = (page: PageId) => {
     window.history.pushState(null, '', `#${page}`)
