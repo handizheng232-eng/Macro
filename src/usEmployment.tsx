@@ -27,7 +27,7 @@ type ChartSeries = {
   dates: string[]
   values: number[]
   color: string
-  frequency: '月' | '周' | '季'
+  frequency: '月' | '周' | '季' | '年'
   latestValue: number
   latestObservation: string
   transformLabel?: string
@@ -310,7 +310,7 @@ function EmploymentLineChart({ chart }: { chart: LineChartDefinition }) {
     const scale = chart.separateScale ? panelScale(series, index) : null
     return series.points.map((point, pointIndex) => {
       const previous = pointIndex ? series.points[pointIndex - 1] : null
-      const maxGapDays = series.frequency === '周' ? 12 : series.frequency === '季' ? 130 : 45
+      const maxGapDays = series.frequency === '周' ? 12 : series.frequency === '季' ? 130 : series.frequency === '年' ? 400 : 45
       const gapDays = previous ? (point.timestamp - previous.timestamp) / 86_400_000 : 0
       const command = pointIndex === 0 || gapDays > maxGapDays ? 'M' : 'L'
       return `${command} ${x(point.timestamp).toFixed(2)} ${(scale ? scale.y(point.value) : yShared(point.value)).toFixed(2)}`

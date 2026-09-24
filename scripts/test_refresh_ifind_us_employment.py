@@ -7,6 +7,7 @@ from scripts.refresh_ifind_us_employment import (
     align_by_period,
     compact_date,
     detect_missing_months,
+    effective_end_date,
     fetch_response_series,
     rebase_series,
     rolling_mean,
@@ -67,6 +68,10 @@ class IfindEmploymentTransformTests(unittest.TestCase):
         )
         self.assertEqual(dates, ["20211231", "20220131", "20220228"])
         self.assertEqual(values, [100.0, 110.0, 90.0])
+
+    def test_annual_forecast_fetch_includes_current_year_end(self):
+        self.assertEqual(effective_end_date("年", "2026-09-24"), "2026-12-31")
+        self.assertEqual(effective_end_date("月", "2026-09-24"), "2026-09-24")
 
     def test_sahm_rule_is_three_month_average_minus_trailing_twelve_month_low(self):
         dates = [f"2025{month:02d}01" for month in range(1, 13)] + ["20260101", "20260201", "20260301"]
@@ -174,6 +179,19 @@ class IfindEmploymentDatasetContractTests(unittest.TestCase):
         self.assertGreater(len(charts["okun"]["points"]), 40)
         self.assertTrue(all("period" in point for point in charts["okun"]["points"]))
         self.assertTrue(charts["unemployment-gap"]["series"])
+
+    def test_core_comparison_series_use_current_precise_ifind_contracts(self):
+        charts = {chart["id"]: chart for chart in self.charts()}
+        survey_sources = {series["id"]: series["source"]["code"] for series in charts["survey-divergence"]["series"]}
+        wage_sources = {series["id"]: series["source"]["code"] for series in charts["wage-three-measures"]["series"]}
+        gap_sources = {series["id"]: series["source"]["code"] for series in charts["unemployment-gap"]["series"]}
+        adp_sources = {series["id"]: series["source"]["code"] for series in charts["adp-trend"]["series"]}
+        self.assertEqual(survey_sources["ces_employment"], "G002600500")
+        self.assertEqual(wage_sources["eci_wage_yoy"], "G005349364")
+        self.assertEqual(charts["okun"]["xSource"]["code"], "G005120901")
+        self.assertEqual(gap_sources["u_star"], "G011775525")
+        self.assertEqual(adp_sources["adp_3m"], "G015405071")
+        self.assertIn("非周期性失业率代理", charts["unemployment-gap"]["series"][1]["label"])
 
     def test_all_rendered_series_are_aligned_finite_and_identified(self):
         for chart in self.charts():

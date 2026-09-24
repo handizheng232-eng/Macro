@@ -55,7 +55,7 @@ SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, tuple[float, float]]]
     "unemployment_prime_male": ("G005315518", "美国:失业率:男性:25-54岁:季调:当月值", "25—54岁男性", "%", "月", "#1859b8", (0, 30)),
     "unemployment_prime_female": ("G005315529", "美国:失业率:女性:25-54岁:季调:当月值", "25—54岁女性", "%", "月", "#c94c4c", (0, 30)),
     "cps_employment": ("G002600502", "美国:就业人数:16岁及以上:季调:当月值", "CPS家庭就业人数", "千人", "月", "#c94c4c", (50_000, 250_000)),
-    "ces_employment": ("G003048986", "美国:就业人数:非农业部门:季调:当月值", "CES非农就业岗位", "千人", "月", "#1859b8", (50_000, 250_000)),
+    "ces_employment": ("G002600500", "美国:非农就业人数:季调", "CES非农就业岗位", "千人", "月", "#1859b8", (50_000, 250_000)),
     "initial_claims": ("G002600494", "美国:当周初次申请失业金人数:季调", "初请失业金", "人", "周", "#1859b8", (0, 10_000_000)),
     "continuing_claims": ("G002600496", "美国:截止本周领取失业保险人群:季调", "续请失业金", "人", "周", "#855c9c", (0, 30_000_000)),
     "vacancy_rate": ("G003049462", "美国:职位空缺率:非农部门:季调:当月值", "职位空缺率", "%", "月", "#c94c4c", (0, 15)),
@@ -85,9 +85,9 @@ SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, tuple[float, float]]]
     "temporary_help": ("G035586396", "美国:非农企业:就业人数:私营部门:服务生产:专业和商务服务:行政和支持服务以及废物管理和补救服务:临时帮助服务:季调:当月值", "临时工服务就业", "千人", "月", "#c94c4c", (0, 10_000)),
     "diffusion_1m": ("G003049534", "美国:就业扩散指数:私营企业:1个月跨度:季调:当月值", "1个月扩散指数", "%", "月", "#c94c4c", (0, 100)),
     "diffusion_3m": ("G003049535", "美国:就业扩散指数:私营企业:3个月跨度:季调:当月值", "3个月扩散指数", "%", "月", "#1859b8", (0, 100)),
-    "adp_private_change": ("G039125311", "美国:ADP新增私营就业人数:当月值", "ADP私人就业", "人", "月", "#c94c4c", (-10_000_000, 10_000_000)),
-    "u_star": ("G004427710", "(停)美国:潜在GDP预测:自然失业率", "CBO自然失业率 u*", "%", "季", "#c94c4c", (0, 15)),
-    "real_gdp_yoy": ("G005130585", "美国:GDP:不变价:支出法:当季同比", "实际GDP同比", "%", "季", "#1859b8", (-40, 40)),
+    "adp_private_change": ("G015405071", "美国:ADP新增私营就业人数:季调:当月值", "ADP私人就业", "人", "月", "#c94c4c", (-10_000_000, 10_000_000)),
+    "u_star": ("G011775525", "美国:10年经济预测:非周期性失业率", "CBO非周期性失业率代理 u*（预测）", "%", "年", "#c94c4c", (0, 15)),
+    "real_gdp_yoy": ("G005120901", "美国:GDP:不变价:支出法:折年数:季调:当季同比", "实际GDP同比", "%", "季", "#1859b8", (-40, 40)),
 }
 
 SECTOR_KEYS = [
@@ -104,6 +104,11 @@ def compact_date(value: Any) -> str:
     if len(normalized) >= 8:
         return normalized[:8]
     raise ValueError(f"invalid observation date: {value!r}")
+
+
+def effective_end_date(frequency: str, end: str) -> str:
+    """Include the current calendar-year point for annual forecast series."""
+    return f"{end[:4]}-12-31" if frequency == "年" else end
 
 
 def detect_missing_months(dates: Iterable[str]) -> list[str]:
@@ -280,7 +285,7 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
             raise ValueError(f"iFinD metadata mismatch: {key} {code} not found for {exact_name}")
         if metadata.get("name") != exact_name or metadata.get("unit") != expected_unit or metadata.get("frequency") != expected_frequency:
             raise ValueError(f"iFinD identity mismatch for {key}: {metadata}")
-        payload = fetch_indicator(token, code, START_DATE, end)
+        payload = fetch_indicator(token, code, START_DATE, effective_end_date(expected_frequency, end))
         dates, values = fetch_response_series(payload, code)
         lower, upper = _bounds
         if not all(lower <= value <= upper for value in values):
@@ -818,15 +823,29 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
             51,
         ),
     }
+    u_star_dates, u_star_values = parsed["u_star"]
+    latest_u3_year = parsed["u3"][0][-1][:4]
+    u_star_history = [
+        (date, value) for date, value in zip(u_star_dates, u_star_values)
+        if date[:4] <= latest_u3_year
+    ]
+    u_star_history_dates = [date for date, _value in u_star_history]
+    u_star_history_values = [value for _date, value in u_star_history]
     unemployment_gap = chart(
         "unemployment-gap", "失业缺口 u−u*",
-        "实际U3与CBO自然失业率并列；二者垂直距离是失业缺口。",
-        "%", [make_series(key, *parsed[key]) for key in ("u3", "u_star")],
-        eyebrow="FRAMEWORK · UNEMPLOYMENT GAP", default_range="ALL",
+        "实际U3与CBO非周期性失业率预测代理并列；二者垂直距离是失业缺口的近似。",
+        "%", [
+            make_series("u3", *parsed["u3"]),
+            make_series(
+                "u_star", u_star_history_dates, u_star_history_values,
+                transform_label="CBO当前10年预测中的年度非周期性失业率；仅保留至最新U3年份",
+            ),
+        ],
+        eyebrow="FRAMEWORK · UNEMPLOYMENT GAP", default_range="5Y",
         explanation=explanation(
-            "u*是与稳定通胀大致相容的自然失业率，不可观测，只能由模型估计。",
-            "U3低于u*通常被读作劳动力市场偏热，高于u*则代表闲置；重点看方向而非小数点。",
-            "iFinD中该CBO序列标记为停更/预测历史混合，且u*会被事后大幅修订，严禁当作实时真值。",
+            "u*不可观测；页面以CBO当前10年预测中的非周期性失业率作为年度代理，而非真实观测。",
+            "U3低于代理值通常被读作劳动力市场偏热，高于代理值则代表闲置；重点看方向而非小数点。",
+            "这是同一预测版本的年度路径，不是逐期实时估计；u*会随模型和预测版本修订，严禁当作真值。",
             52,
         ),
     )
