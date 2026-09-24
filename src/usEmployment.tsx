@@ -27,6 +27,7 @@ type ChartSeries = {
   dates: string[]
   values: number[]
   color: string
+  unit: string
   frequency: '月' | '周' | '季' | '年'
   latestValue: number
   latestObservation: string
@@ -220,7 +221,7 @@ function SeriesSwitches({ chart, active, onToggle }: {
         >
           <i style={{ background: series.color }} />
           <span>{series.label}</span>
-          <strong>{chartValue(series.latestValue, chart.unit)}</strong>
+          <strong>{chartValue(series.latestValue, series.unit)}</strong>
           <small>{formatDate(series.latestObservation)}</small>
         </button>
       ))}
@@ -371,7 +372,7 @@ function EmploymentLineChart({ chart }: { chart: LineChartDefinition }) {
         </svg>
       </div>
       <div className="chart-readout" aria-live="polite">
-        {hoverRows.length ? hoverRows.map(({ series, point }) => <span key={series.id}><i style={{ background: series.color }} />{series.label}<strong>{chartValue(point.value, chart.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}
+        {hoverRows.length ? hoverRows.map(({ series, point }) => <span key={series.id}><i style={{ background: series.color }} />{series.label}<strong>{chartValue(point.value, series.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}
       </div>
       <footer><SourceList series={chart.series} /></footer>
       <ExplanationPanel explanation={chart.explanation} />

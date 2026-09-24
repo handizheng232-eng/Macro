@@ -329,12 +329,14 @@ def make_series(
     color: str | None = None,
     frequency: str | None = None,
     raw_unit: str | None = None,
+    display_unit: str | None = None,
     transform_label: str | None = None,
 ) -> dict[str, Any]:
-    _code, _name, default_label, _unit, default_frequency, default_color, _bounds = SERIES_SPEC[key]
+    _code, _name, default_label, default_unit, default_frequency, default_color, _bounds = SERIES_SPEC[key]
     item = {
         "id": series_id or key,
         "label": label or default_label,
+        "unit": display_unit or default_unit,
         "dates": dates,
         "values": [round(value, 4) for value in values],
         "color": color or default_color,
@@ -704,8 +706,8 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "survey-divergence", "CES与CPS就业：两调查背离",
         "把CES岗位数与CPS就业人数均重定基为2021-12=100，只比较累计路径，不混淆绝对规模。",
         "指数", [
-            make_series("ces_employment", ces_rebased_dates, ces_rebased_values, label="CES企业调查", transform_label="2021-12=100"),
-            make_series("cps_employment", cps_rebased_dates, cps_rebased_values, label="CPS家庭调查", transform_label="2021-12=100"),
+            make_series("ces_employment", ces_rebased_dates, ces_rebased_values, label="CES企业调查", display_unit="指数", transform_label="2021-12=100"),
+            make_series("cps_employment", cps_rebased_dates, cps_rebased_values, label="CPS家庭调查", display_unit="指数", transform_label="2021-12=100"),
         ], eyebrow="CES vs CPS · REBASED", default_range="5Y",
         explanation=explanation(
             "CES数岗位，CPS数人；多重职业者、自雇覆盖与人口控制差异会造成持续背离。",
@@ -724,8 +726,8 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "claims", "初请与续请失业金人数",
         "初请反映新增裁员，续请反映再就业难度；均使用4周移动平均过滤车厂停工、假日周和单州异动。",
         "万人", [
-            make_series("initial_claims", initial_ma_dates, initial_ma_values, series_id="initial_claims_4w", label="初请4周均值", raw_unit="人", transform_label="原值÷10000后计算4周均值"),
-            make_series("continuing_claims", continuing_ma_dates, continuing_ma_values, series_id="continuing_claims_4w", label="续请4周均值", raw_unit="人", transform_label="原值÷10000后计算4周均值"),
+            make_series("initial_claims", initial_ma_dates, initial_ma_values, series_id="initial_claims_4w", label="初请4周均值", raw_unit="人", display_unit="万人", transform_label="原值÷10000后计算4周均值"),
+            make_series("continuing_claims", continuing_ma_dates, continuing_ma_values, series_id="continuing_claims_4w", label="续请4周均值", raw_unit="人", display_unit="万人", transform_label="原值÷10000后计算4周均值"),
         ], eyebrow="WEEKLY · CLAIMS", default_range="3Y",
         explanation=explanation(
             "失业保险行政记录接近普查，是周频官方硬数据；初请是解雇流量，续请兼含再就业速度。",
@@ -745,7 +747,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "vu-wage", "V/U与ECI工资压力",
         "职位空缺数/失业人数是供需紧度核心代理，PPT将其视为领先ECI工资增速约2—4个季度的上游变量。",
         "% / 倍", [
-            make_series("vacancy_count", vu_dates, vu_values, series_id="vacancy_unemployment_ratio", label="V/U", color="#1859b8", transform_label=f"{SERIES_SPEC['vacancy_count'][0]}÷{SERIES_SPEC['unemployed_count'][0]}"),
+            make_series("vacancy_count", vu_dates, vu_values, series_id="vacancy_unemployment_ratio", label="V/U", color="#1859b8", display_unit="倍", transform_label=f"{SERIES_SPEC['vacancy_count'][0]}÷{SERIES_SPEC['unemployed_count'][0]}"),
             make_series("eci_wage_yoy", *parsed["eci_wage_yoy"]),
         ], eyebrow="JOLTS · V/U → WAGES", default_range="ALL",
         explanation=explanation(
@@ -875,7 +877,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
     sahm = chart(
         "sahm", "Sahm规则",
         "失业率3个月均值相对过去12个月低点的升幅；0.5个百分点为经验触发线。",
-        "百分点", [make_series("u3", sahm_dates, sahm_values, series_id="sahm_rule", label="Sahm指标", transform_label="U3三个月均值减过去12个月三个月均值低点")],
+        "百分点", [make_series("u3", sahm_dates, sahm_values, series_id="sahm_rule", label="Sahm指标", display_unit="百分点", transform_label="U3三个月均值减过去12个月三个月均值低点")],
         eyebrow="FRAMEWORK · SAHM", default_range="ALL", reference=0.5,
         explanation=explanation(
             "Sahm规则用于实时识别衰退，不是因果模型；历史上触发常与NBER衰退重合。",
@@ -895,7 +897,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "两者都取3个月均值；ADP是真实工资单记录，但方法论不再以拟合非农为目标。",
         "千人", [
             make_series("payroll_private", private_3m_dates, private_3m_values, series_id="private_payroll_3m", label="私人非农3个月均值", transform_label="后向3个月均值"),
-            make_series("adp_private_change", adp_3m_dates, adp_3m_values, series_id="adp_3m", label="ADP 3个月均值", raw_unit="人", transform_label="原值÷1000后计算3个月均值"),
+            make_series("adp_private_change", adp_3m_dates, adp_3m_values, series_id="adp_3m", label="ADP 3个月均值", raw_unit="人", display_unit="千人", transform_label="原值÷1000后计算3个月均值"),
         ], eyebrow="CROSS-CHECK · ADP", default_range="5Y",
         explanation=explanation(
             "ADP覆盖真实工资单、只含私人部门；CES是抽样调查并含Birth-Death外推。",

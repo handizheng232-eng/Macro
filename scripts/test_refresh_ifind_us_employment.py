@@ -192,6 +192,8 @@ class IfindEmploymentDatasetContractTests(unittest.TestCase):
         self.assertEqual(gap_sources["u_star"], "G011775525")
         self.assertEqual(adp_sources["adp_3m"], "G015405071")
         self.assertIn("非周期性失业率代理", charts["unemployment-gap"]["series"][1]["label"])
+        vu_units = {series["id"]: series["unit"] for series in charts["vu-wage"]["series"]}
+        self.assertEqual(vu_units, {"vacancy_unemployment_ratio": "倍", "eci_wage_yoy": "%"})
 
     def test_all_rendered_series_are_aligned_finite_and_identified(self):
         for chart in self.charts():
