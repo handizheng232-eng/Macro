@@ -14,13 +14,20 @@ type SourceMeta = {
   latestObservation: string
 }
 
+type ChartExplanation = {
+  what: string
+  howToRead: string
+  caveat: string
+  pptSlide: string
+}
+
 type ChartSeries = {
   id: string
   label: string
   dates: string[]
   values: number[]
   color: string
-  frequency: '月' | '周'
+  frequency: '月' | '周' | '季'
   latestValue: number
   latestObservation: string
   transformLabel?: string
@@ -39,7 +46,10 @@ type LineChartDefinition = {
   separateScale?: boolean
   series: ChartSeries[]
   totalSeries?: ChartSeries
+  explanation: ChartExplanation
 }
+
+type ScatterPoint = { period: string; x: number; y: number; group?: string }
 
 type ScatterChartDefinition = {
   id: string
@@ -49,29 +59,47 @@ type ScatterChartDefinition = {
   description: string
   unit: string
   defaultRange: RangeKey
-  points: Array<{ period: string; x: number; y: number }>
+  points: ScatterPoint[]
+  xLabel: string
+  yLabel: string
   xSource: SourceMeta
   ySource: SourceMeta
+  balanceLine?: string
+  equalityLine?: boolean
+  regression?: { slope: number; intercept: number; excludeGroup?: string }
+  explanation: ChartExplanation
 }
 
 type ChartDefinition = LineChartDefinition | ScatterChartDefinition
+
+type SectorMonitor = {
+  title: string
+  description: string
+  periods: string[]
+  rows: Array<{
+    id: string
+    label: string
+    values: Array<number | null>
+    recent12mAverage: number
+    baseline2018To2019: number
+    source: SourceMeta
+  }>
+  source: { provider: string; url: string }
+}
+
+type AvailabilityItem = {
+  id: string
+  label: string
+  status: 'available' | 'not-integrated'
+  explanation: string
+}
 
 type Section = {
   title: string
   description: string
   charts: ChartDefinition[]
-  sectorHeatmap?: {
-    title: string
-    description: string
-    periods: string[]
-    rows: Array<{
-      id: string
-      label: string
-      values: Array<number | null>
-      source: SourceMeta
-    }>
-    source: { provider: string; url: string }
-  }
+  sectorMonitor?: SectorMonitor
+  availability?: AvailabilityItem[]
 }
 
 type EmploymentDataset = {
@@ -79,6 +107,24 @@ type EmploymentDataset = {
   generatedAt: string
   source: string
   sourceProviders: string[]
+  frameworkSource: { file: string; slides: string; routeSlide: number }
+  routeMap: Array<{
+    id: string
+    title: string
+    subtitle: string
+    nodes: Array<{ title: string; detail: string }>
+  }>
+  dataPassports: Array<{
+    id: string
+    title: string
+    producer: string
+    sample: string
+    frequency: string
+    revision: string
+    use: string
+    pitfall: string
+    pptSlide: string
+  }>
   headline: Array<{
     id: string
     label: string
@@ -89,10 +135,11 @@ type EmploymentDataset = {
     source: string
   }>
   sections: {
-    supply: Section
-    slack: Section
-    demand: Section
+    officialSurveys: Section
+    flows: Section
     wages: Section
+    frameworks: Section
+    crossChecks: Section
   }
   dataQuality: {
     monthlyMissingPeriods: Record<string, string[]>
@@ -194,6 +241,17 @@ function SourceList({ series }: { series: ChartSeries[] }) {
   )
 }
 
+function ExplanationPanel({ explanation }: { explanation: ChartExplanation }) {
+  return (
+    <div className="employment-explanation">
+      <div><span>数据是什么</span><p>{explanation.what}</p></div>
+      <div><span>怎么读</span><p>{explanation.howToRead}</p></div>
+      <div><span>口径警示</span><p>{explanation.caveat}</p></div>
+      <small>{explanation.pptSlide}</small>
+    </div>
+  )
+}
+
 function EmploymentLineChart({ chart }: { chart: LineChartDefinition }) {
   const width = 920
   const height = 350
@@ -252,7 +310,7 @@ function EmploymentLineChart({ chart }: { chart: LineChartDefinition }) {
     const scale = chart.separateScale ? panelScale(series, index) : null
     return series.points.map((point, pointIndex) => {
       const previous = pointIndex ? series.points[pointIndex - 1] : null
-      const maxGapDays = series.frequency === '周' ? 12 : 45
+      const maxGapDays = series.frequency === '周' ? 12 : series.frequency === '季' ? 130 : 45
       const gapDays = previous ? (point.timestamp - previous.timestamp) / 86_400_000 : 0
       const command = pointIndex === 0 || gapDays > maxGapDays ? 'M' : 'L'
       return `${command} ${x(point.timestamp).toFixed(2)} ${(scale ? scale.y(point.value) : yShared(point.value)).toFixed(2)}`
@@ -316,6 +374,7 @@ function EmploymentLineChart({ chart }: { chart: LineChartDefinition }) {
         {hoverRows.length ? hoverRows.map(({ series, point }) => <span key={series.id}><i style={{ background: series.color }} />{series.label}<strong>{chartValue(point.value, chart.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}
       </div>
       <footer><SourceList series={chart.series} /></footer>
+      <ExplanationPanel explanation={chart.explanation} />
     </article>
   )
 }
@@ -393,56 +452,89 @@ function EmploymentBarChart({ chart }: { chart: LineChartDefinition }) {
         </svg>
       </div>
       <footer><SourceList series={[...chart.series, ...(chart.totalSeries ? [chart.totalSeries] : [])]} /></footer>
+      <ExplanationPanel explanation={chart.explanation} />
     </article>
   )
 }
 
-function BeveridgeChart({ chart }: { chart: ScatterChartDefinition }) {
+function EmploymentScatterChart({ chart }: { chart: ScatterChartDefinition }) {
   const width = 920
   const height = 350
-  const left = 58
+  const left = 62
   const right = 24
   const top = 20
-  const bottom = 43
+  const bottom = 48
   const points = chart.points
-  const minX = Math.min(...points.map((point) => point.x)) - 0.4
-  const maxX = Math.max(...points.map((point) => point.x)) + 0.4
-  const minY = Math.min(...points.map((point) => point.y)) - 0.4
-  const maxY = Math.max(...points.map((point) => point.y)) + 0.4
+  const rawMinX = Math.min(...points.map((point) => point.x))
+  const rawMaxX = Math.max(...points.map((point) => point.x))
+  const rawMinY = Math.min(...points.map((point) => point.y))
+  const rawMaxY = Math.max(...points.map((point) => point.y))
+  const padX = Math.max((rawMaxX - rawMinX) * 0.08, 0.35)
+  const padY = Math.max((rawMaxY - rawMinY) * 0.08, 0.35)
+  const minX = rawMinX - padX
+  const maxX = rawMaxX + padX
+  const minY = rawMinY - padY
+  const maxY = rawMaxY + padY
   const plotWidth = width - left - right
   const plotHeight = height - top - bottom
-  const x = (value: number) => left + (value - minX) / (maxX - minX) * plotWidth
-  const y = (value: number) => top + (maxY - value) / (maxY - minY) * plotHeight
+  const x = (value: number) => left + (value - minX) / Math.max(maxX - minX, 0.01) * plotWidth
+  const y = (value: number) => top + (maxY - value) / Math.max(maxY - minY, 0.01) * plotHeight
   const xTicks = Array.from({ length: 6 }, (_, index) => minX + index / 5 * (maxX - minX))
   const yTicks = Array.from({ length: 5 }, (_, index) => maxY - index / 4 * (maxY - minY))
   const latestPeriod = points.at(-1)?.period ?? ''
-  const recentCutoff = String(Number(latestPeriod.slice(0, 4)) - 2)
+  const groupColors: Record<string, string> = {
+    history: '#aeb5bd', extreme: '#8a9096', mismatch: '#a56a12',
+    'soft-landing': '#c94c4c', current: '#1859b8',
+  }
+  const groupLabels: Record<string, string> = {
+    history: '历史样本', extreme: '2020—21极端值', mismatch: '2020—21疫情错配',
+    'soft-landing': '2022—24软着陆', current: '2025年至今',
+  }
+  const groups = Array.from(new Set(points.map((point) => point.group ?? 'history')))
+  const formatPeriod = (period: string) => period.includes('Q') ? period : formatDate(`${period}01`).slice(0, 7)
+  const diagonalMin = Math.max(minX, minY)
+  const diagonalMax = Math.min(maxX, maxY)
+  const regression = chart.regression
+  const regressionStart = regression ? { x: minX, y: regression.intercept + regression.slope * minX } : null
+  const regressionEnd = regression ? { x: maxX, y: regression.intercept + regression.slope * maxX } : null
 
   return (
     <article className="employment-chart-card">
-      <header><div><span>{chart.eyebrow}</span><h3>{chart.title}</h3><p>{chart.description}</p></div><div className="scatter-latest"><strong>{formatDate(`${latestPeriod}01`).slice(0, 7)}</strong><span>最新共同月份</span></div></header>
-      <div className="beveridge-legend"><span><i className="history" />历史样本</span><span><i className="recent" />近三年</span><span><i className="latest" />最新</span></div>
+      <header>
+        <div><span>{chart.eyebrow}</span><h3>{chart.title}</h3><p>{chart.description}</p></div>
+        <div className="scatter-latest"><strong>{formatPeriod(latestPeriod)}</strong><span>最新共同观测</span></div>
+      </header>
+      <div className="beveridge-legend">
+        {groups.map((group) => <span key={group}><i style={{ background: groupColors[group] ?? '#718295' }} />{groupLabels[group] ?? group}</span>)}
+        {chart.balanceLine && <span><i className="balance" />{chart.balanceLine}</span>}
+        {chart.equalityLine && <span><i className="balance" />45度线</span>}
+        {regression && <span><i className="regression" />剔除极端值拟合</span>}
+      </div>
       <div className="multi-chart-wrap">
         <svg className="multi-series-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${chart.title}散点图`}>
           {yTicks.map((tick) => <g key={tick}><line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} className="chart-grid-line" /><text x={left - 9} y={y(tick) + 4} textAnchor="end" className="chart-axis-text">{formatValue(tick, 1)}</text></g>)}
-          {xTicks.map((tick) => <text key={tick} x={x(tick)} y={height - 15} textAnchor="middle" className="chart-axis-text">{formatValue(tick, 1)}</text>)}
-          <text x={width / 2} y={height - 2} textAnchor="middle" className="employment-axis-label">U3失业率（%）</text>
-          <text x={13} y={height / 2} textAnchor="middle" className="employment-axis-label" transform={`rotate(-90 13 ${height / 2})`}>职位空缺率（%）</text>
-          <path d={points.map((point, index) => `${index ? 'L' : 'M'} ${x(point.x).toFixed(2)} ${y(point.y).toFixed(2)}`).join(' ')} fill="none" stroke="#b7bec6" strokeWidth="1" opacity=".65" />
+          {xTicks.map((tick) => <text key={tick} x={x(tick)} y={height - 16} textAnchor="middle" className="chart-axis-text">{formatValue(tick, 1)}</text>)}
+          {minX <= 0 && maxX >= 0 && <line x1={x(0)} x2={x(0)} y1={top} y2={height - bottom} className="chart-reference-line" />}
+          {minY <= 0 && maxY >= 0 && <line x1={left} x2={width - right} y1={y(0)} y2={y(0)} className="chart-reference-line" />}
+          <text x={width / 2} y={height - 2} textAnchor="middle" className="employment-axis-label">{chart.xLabel}</text>
+          <text x={14} y={height / 2} textAnchor="middle" className="employment-axis-label" transform={`rotate(-90 14 ${height / 2})`}>{chart.yLabel}</text>
+          {(chart.balanceLine || chart.equalityLine) && diagonalMin < diagonalMax && <line x1={x(diagonalMin)} x2={x(diagonalMax)} y1={y(diagonalMin)} y2={y(diagonalMax)} className="scatter-balance-line" />}
+          {regressionStart && regressionEnd && <line x1={x(regressionStart.x)} x2={x(regressionEnd.x)} y1={y(regressionStart.y)} y2={y(regressionEnd.y)} className="scatter-regression-line" />}
           {points.map((point) => {
             const latest = point.period === latestPeriod
-            const recent = point.period.slice(0, 4) >= recentCutoff
-            return <circle key={point.period} cx={x(point.x)} cy={y(point.y)} r={latest ? 5.3 : recent ? 3.3 : 2.2} fill={latest ? '#c94c4c' : recent ? '#1859b8' : '#aeb5bd'} opacity={latest ? 1 : recent ? .78 : .42}><title>{`${formatDate(`${point.period}01`).slice(0, 7)}：U3 ${point.x}%，空缺率 ${point.y}%`}</title></circle>
+            const color = groupColors[point.group ?? 'history'] ?? '#718295'
+            return <circle key={point.period} cx={x(point.x)} cy={y(point.y)} r={latest ? 5.3 : 3} fill={latest ? '#111418' : color} opacity={latest ? 1 : .7}><title>{`${formatPeriod(point.period)}：${chart.xLabel} ${formatValue(point.x, 2)}；${chart.yLabel} ${formatValue(point.y, 2)}`}</title></circle>
           })}
         </svg>
       </div>
-      <footer><div className="chart-source-list"><a href={chart.xSource.url} target="_blank" rel="noreferrer"><strong>横轴U3</strong><span>iFinD EDB · {chart.xSource.code}</span></a><a href={chart.ySource.url} target="_blank" rel="noreferrer"><strong>纵轴空缺率</strong><span>iFinD EDB · {chart.ySource.code}</span></a></div></footer>
+      <footer><div className="chart-source-list"><a href={chart.xSource.url} target="_blank" rel="noreferrer"><strong>横轴</strong><span>iFinD EDB · {chart.xSource.code}</span></a><a href={chart.ySource.url} target="_blank" rel="noreferrer"><strong>纵轴</strong><span>iFinD EDB · {chart.ySource.code}</span></a></div></footer>
+      <ExplanationPanel explanation={chart.explanation} />
     </article>
   )
 }
 
 function ChartCard({ chart }: { chart: ChartDefinition }) {
-  if (chart.kind === 'scatter') return <BeveridgeChart chart={chart} />
+  if (chart.kind === 'scatter') return <EmploymentScatterChart chart={chart} />
   if (chart.kind === 'bar') return <EmploymentBarChart chart={chart} />
   return <EmploymentLineChart chart={chart} />
 }
@@ -453,20 +545,54 @@ function heatColor(value: number | null, maxAbs: number): string {
   return value >= 0 ? `rgba(197,68,68,${alpha})` : `rgba(47,127,163,${alpha})`
 }
 
-function SectorHeatmap({ section }: { section: Section }) {
-  const table = section.sectorHeatmap!
+function SectorMonitorTable({ section }: { section: Section }) {
+  const table = section.sectorMonitor!
   const maxAbs = Math.max(...table.rows.flatMap((row) => row.values.filter((value): value is number => value !== null).map(Math.abs)))
   return (
     <article className="employment-heatmap-card">
-      <header><div><span>DEMAND · INDUSTRY BREADTH</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>收缩</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>扩张</span></div></header>
+      <header><div><span>CES · INDUSTRY BREADTH</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>收缩</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>扩张</span></div></header>
       <div className="employment-heatmap-wrap">
-        <table className="employment-heatmap" aria-label={table.title}>
-          <thead><tr><th>行业</th>{table.periods.map((period) => <th key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th>iFinD指标码</th></tr></thead>
-          <tbody>{table.rows.map((row) => <tr key={row.id}><th>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, 0)}</td>)}<td>{row.source.code}</td></tr>)}</tbody>
+        <table className="employment-heatmap sector-monitor-table" aria-label="行业就业广度与结构表">
+          <thead><tr><th>行业</th>{table.periods.map((period) => <th key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th>近12月均值</th><th>2018—19基准</th><th>iFinD指标码</th></tr></thead>
+          <tbody>{table.rows.map((row) => <tr key={row.id}><th>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, 0)}</td>)}<td className="sector-benchmark">{formatValue(row.recent12mAverage, 1)}</td><td className="sector-benchmark">{formatValue(row.baseline2018To2019, 1)}</td><td>{row.source.code}</td></tr>)}</tbody>
         </table>
       </div>
-      <footer><strong>单位：千人</strong><span>同一色阶按全表最大绝对值缩放，不对缺失月份插值。</span><b>{table.source.provider}</b></footer>
+      <footer><strong>单位：千人/月</strong><span>同一色阶按全表最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。</span><b>{table.source.provider}</b></footer>
     </article>
+  )
+}
+
+function EmploymentRouteMap() {
+  return (
+    <section className="employment-route-map" aria-label="就业数据体系路线图">
+      <header><div><span>CHAPTER 1 · ROUTE MAP</span><h2>就业市场路线图</h2><p>把PPT第27页的观察路径翻译为五组可更新的数据模块；每个节点均对应页面中的实测序列、口径说明或明确的未接入项。</p></div><aside><strong>{dataset.frameworkSource.slides}</strong><span>{dataset.frameworkSource.file}</span></aside></header>
+      <div className="employment-route-core"><span>核心判断</span><strong>就业数量 → 供需松紧 → 工资压力 → 周期框架</strong></div>
+      <div className="employment-route-grid">
+        {dataset.routeMap.map((branch) => <article key={branch.id}><header><span>{branch.subtitle}</span><h3>{branch.title}路径</h3></header><ol>{branch.nodes.map((node) => <li key={node.title}><strong>{node.title}</strong><span>{node.detail}</span></li>)}</ol></article>)}
+      </div>
+    </section>
+  )
+}
+
+function DataPassportTable() {
+  return (
+    <section className="employment-passports" aria-label="就业数据说明">
+      <header><span>DATA PASSPORTS</span><h2>五类数据先分口径，再读方向</h2><p>调查对象、发布时间和修订机制不同，不能把同月数值机械并表。以下说明直接吸收PPT第一章的数据描述。</p></header>
+      <div className="employment-passport-wrap">
+        <table aria-label="就业数据身份证">
+          <thead><tr><th>数据</th><th>调查/生产者</th><th>样本与频率</th><th>修订</th><th>主要用途</th><th>常见误读</th></tr></thead>
+          <tbody>{dataset.dataPassports.map((item) => <tr key={item.id}><th><strong>{item.title}</strong><span>{item.pptSlide}</span></th><td>{item.producer}</td><td><strong>{item.sample}</strong><span>{item.frequency}</span></td><td>{item.revision}</td><td>{item.use}</td><td>{item.pitfall}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+function AvailabilityPanel({ items }: { items: AvailabilityItem[] }) {
+  return (
+    <div className="employment-availability" aria-label="第三方调查接入状态">
+      {items.map((item) => <article key={item.id}><span>{item.status === 'available' ? 'IFIND' : 'NOT INTEGRATED'}</span><h3>{item.label}</h3><p>{item.explanation}</p></article>)}
+    </div>
   )
 }
 
@@ -489,55 +615,65 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
           <button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button>
           <p className="eyebrow">US ECONOMY · IFIND EMPLOYMENT MONITOR</p>
           <h1>美国就业</h1>
-          <p>从劳动力供给、失业松弛、企业需求到工资工时建立闭环；所有时序数据均由 iFinD 经济数据库重取。</p>
+          <p>沿PPT第一章路线图重构：先分清CES与CPS的存量口径，再用申领失业金和JOLTS观察流量，用三类工资指标判断压力，最后落到Okun、失业缺口、贝弗里奇曲线与Sahm规则。</p>
         </div>
         <div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div>
       </div>
 
       <section className="employment-headline-grid" aria-label="美国就业状态摘要">
-        {dataset.headline.map((item, index) => <article key={item.id}><span>0{index + 1} · {item.label}</span><h2>{item.title}</h2><div><strong>{formatValue(item.value, item.unit === '千人' ? 0 : 1)}</strong><b>{item.unit}</b></div><footer><small>{formatDate(item.observation)}</small><em>{item.source}</em></footer></article>)}
+        {dataset.headline.map((item, index) => <article key={item.id}><span>0{index + 1} · {item.label}</span><h2>{item.title}</h2><div><strong>{formatValue(item.value, item.unit === '千人' || item.unit === '万人' ? 0 : 1)}</strong><b>{item.unit}</b></div><footer><small>{formatDate(item.observation)}</small><em>{item.source}</em></footer></article>)}
       </section>
 
-      <nav className="inflation-section-nav" aria-label="就业栏目分区">
-        <button type="button" onClick={() => scrollToSection('employment-supply')}><span>01</span>劳动力供给</button>
-        <button type="button" onClick={() => scrollToSection('employment-slack')}><span>02</span>失业与松弛</button>
-        <button type="button" onClick={() => scrollToSection('employment-demand')}><span>03</span>劳动力需求</button>
-        <button type="button" onClick={() => scrollToSection('employment-wages')}><span>04</span>工资与工时</button>
+      <EmploymentRouteMap />
+      <DataPassportTable />
+
+      <nav className="inflation-section-nav employment-section-nav" aria-label="就业栏目分区">
+        <button type="button" onClick={() => scrollToSection('employment-official')}><span>01</span>官方双调查</button>
+        <button type="button" onClick={() => scrollToSection('employment-flows')}><span>02</span>流量与周频</button>
+        <button type="button" onClick={() => scrollToSection('employment-wages')}><span>03</span>工资口径</button>
+        <button type="button" onClick={() => scrollToSection('employment-frameworks')}><span>04</span>实证框架</button>
+        <button type="button" onClick={() => scrollToSection('employment-cross-checks')}><span>05</span>第三方验证</button>
       </nav>
 
-      <section className="inflation-section" id="employment-supply" aria-label="劳动力供给">
-        <SectionHeading code="01 · LABOR SUPPLY" section={dataset.sections.supply} />
-        <div className="employment-chart-grid single">{dataset.sections.supply.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+      <section className="inflation-section" id="employment-official" aria-label="官方双调查：CES 与 CPS">
+        <SectionHeading code="01 · OFFICIAL SURVEYS" section={dataset.sections.officialSurveys} />
+        <div className="employment-chart-grid">{dataset.sections.officialSurveys.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+        {dataset.sections.officialSurveys.sectorMonitor && <SectorMonitorTable section={dataset.sections.officialSurveys} />}
       </section>
 
-      <section className="inflation-section" id="employment-slack" aria-label="失业与松弛">
-        <SectionHeading code="02 · LABOR SLACK" section={dataset.sections.slack} />
-        <div className="employment-chart-grid">{dataset.sections.slack.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+      <section className="inflation-section" id="employment-flows" aria-label="流量与周频验证">
+        <SectionHeading code="02 · FLOWS & WEEKLY CHECK" section={dataset.sections.flows} />
+        <div className="employment-chart-grid">{dataset.sections.flows.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
       </section>
 
-      <section className="inflation-section" id="employment-demand" aria-label="劳动力需求">
-        <SectionHeading code="03 · LABOR DEMAND" section={dataset.sections.demand} />
-        <div className="employment-chart-grid">{dataset.sections.demand.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
-        <SectorHeatmap section={dataset.sections.demand} />
+      <section className="inflation-section" id="employment-wages" aria-label="工资的三种口径">
+        <SectionHeading code="03 · WAGE MEASURES" section={dataset.sections.wages} />
+        <div className="employment-chart-grid single">{dataset.sections.wages.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
       </section>
 
-      <section className="inflation-section" id="employment-wages" aria-label="工资与工时">
-        <SectionHeading code="04 · WAGES & HOURS" section={dataset.sections.wages} />
-        <div className="employment-chart-grid">{dataset.sections.wages.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+      <section className="inflation-section" id="employment-frameworks" aria-label="四组实证框架">
+        <SectionHeading code="04 · EMPIRICAL FRAMEWORKS" section={dataset.sections.frameworks} />
+        <div className="employment-chart-grid">{dataset.sections.frameworks.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+      </section>
+
+      <section className="inflation-section" id="employment-cross-checks" aria-label="第三方就业数据验证">
+        <SectionHeading code="05 · THIRD-PARTY CROSS-CHECKS" section={dataset.sections.crossChecks} />
+        <div className="employment-chart-grid">{dataset.sections.crossChecks.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+        {dataset.sections.crossChecks.availability && <AvailabilityPanel items={dataset.sections.crossChecks.availability} />}
       </section>
 
       <section className="inflation-method-card employment-method-card" aria-label="就业数据口径">
-        <div><span>05 · DATA CONTRACT</span><h2>iFinD 数据口径</h2><p>月度就业、周度申领失业金与滞后发布的JOLTS保留各自观测日期，不把不同发布日伪装成同一截至日。</p></div>
+        <div><span>06 · DATA CONTRACT</span><h2>iFinD 数据口径与可更新性</h2><p>月度就业、周度申领失业金、季度ECI及滞后发布的JOLTS保留各自观测日期，不把不同发布日伪装成同一截至日。</p></div>
         <div className="cross-check-list">
-          <article><CheckCircle2 size={15} /><div><strong>单源身份核验</strong><span>构建脚本逐条核对iFinD指标码、名称、频率、单位与量级</span></div></article>
-          <article><CheckCircle2 size={15} /><div><strong>月度缺口披露</strong><span>{disclosedGaps}条序列存在至少一个日历月缺口，折线按实际间隔断开</span></div></article>
-          <article><CheckCircle2 size={15} /><div><strong>研报仅作框架参考</strong><span>页面数值不沿用研报截图；{dataset.researchBasis[1]}</span></div></article>
+          <article><CheckCircle2 size={15} /><div><strong>源身份与量级核验</strong><span>构建脚本逐条核对iFinD指标码、名称、频率、单位、历史区间与合理量级</span></div></article>
+          <article><CheckCircle2 size={15} /><div><strong>缺口与异频处理</strong><span>{disclosedGaps}条月频序列存在至少一个日历月缺口；折线按实际间隔断开，周/月/季不按数组位置拼接</span></div></article>
+          <article><CheckCircle2 size={15} /><div><strong>PPT只定义框架</strong><span>页面不沿用截图数值；{dataset.researchBasis[1]}</span></div></article>
         </div>
-        <footer><Info size={14} /><span>{dataset.dataQuality.note} 快照生成 {dataset.generatedAt.slice(0, 10)}。</span></footer>
+        <footer><Info size={14} /><span>{dataset.dataQuality.note} 快照生成 {dataset.generatedAt.slice(0, 10)}；定期更新运行 <code>python scripts/refresh_ifind_us_employment.py</code>。</span></footer>
       </section>
 
       <footer className="us-macro-source">
-        <div><strong>数据来源：iFinD 经济数据库（EDB）。</strong><span>{dataset.sourceProviders.join(' · ')}</span></div>
+        <div><strong>数据来源：iFinD 经济数据库（EDB）。</strong><span>{dataset.sourceProviders.join(' · ')} · 框架参考 {dataset.frameworkSource.file} 第{dataset.frameworkSource.slides}页</span></div>
         <button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button>
       </footer>
     </>
