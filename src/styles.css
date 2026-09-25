@@ -436,6 +436,98 @@ td:last-child { color: var(--subtle); }
 .method-list small { grid-column: 2; color: var(--amber); font-size: 9px; }
 .method-list.compact article { min-height: 45px; }
 
+.inflation-framework { max-width: 1440px; margin: 0 auto 16px; scroll-margin-top: 116px; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.inflation-framework > header { padding: 21px 24px 18px; border-bottom: 1px solid var(--line); }
+.inflation-framework > header span, .inflation-weights-card > header span, .special-components-card > header span, .leading-toolkit-card > header span, .inflation-dictionary-card > header span { color: var(--blue); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.inflation-framework > header h2 { margin: 9px 0 6px; font-size: 22px; font-weight: 400; }
+.inflation-framework > header p { max-width: 900px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.inflation-route-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.inflation-route-grid > article { min-height: 160px; padding: 17px 18px; border-right: 1px solid var(--line); }
+.inflation-route-grid > article:last-child { border-right: 0; }
+.inflation-route-grid > article > span { color: var(--subtle); font: 9px 'IBM Plex Mono', monospace; }
+.inflation-route-grid h3 { margin: 18px 0 7px; font-size: 14px; font-weight: 500; }
+.inflation-route-grid p { min-height: 52px; margin: 0; color: #4f565e; font-size: 10px; line-height: 1.65; }
+.inflation-route-grid small { display: block; margin-top: 12px; color: var(--blue); font-size: 8px; line-height: 1.55; }
+.inflation-attribution > header { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 18px; background: var(--navy); color: #fff; }
+.inflation-attribution > header strong { font-size: 11px; font-weight: 500; }
+.inflation-attribution > header span { color: #91a8cd; font-size: 8px; }
+.inflation-attribution > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+.inflation-attribution > div > div { min-height: 132px; padding: 15px 17px; border-right: 1px solid var(--line); }
+.inflation-attribution > div > div:last-child { border-right: 0; }
+.inflation-attribution > div span { color: var(--blue); font: 8px 'IBM Plex Mono', monospace; }
+.inflation-attribution h3 { margin: 10px 0 7px; font-size: 13px; font-weight: 500; }
+.inflation-attribution > div strong { display: block; color: #4f565e; font-size: 9px; font-weight: 500; }
+.inflation-attribution p { margin: 9px 0 0; color: var(--muted); font-size: 9px; line-height: 1.55; }
+.inflation-passport-wrap, .leading-toolkit-wrap, .inflation-dictionary-card > div { overflow-x: auto; }
+.inflation-passport-table { min-width: 980px; table-layout: fixed; }
+.inflation-passport-table th:first-child { width: 76px; }
+.inflation-passport-table td { height: 82px; padding: 11px 13px; color: #4f565e; font-family: inherit; line-height: 1.55; vertical-align: top; }
+.inflation-passport-table td strong, .inflation-passport-table td small { display: block; }
+.inflation-passport-table td strong { color: var(--ink); font-size: 10px; font-weight: 500; }
+.inflation-passport-table td small { margin-top: 6px; color: var(--subtle); font-size: 8px; }
+
+.simple-chart-legend { min-height: 42px; display: flex; align-items: center; gap: 18px; padding: 8px 18px; border-bottom: 1px solid var(--line); background: #fafbfc; }
+.simple-chart-legend span, .weight-legend span { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 8px; }
+.simple-chart-legend i, .weight-legend i { width: 12px; height: 8px; }
+
+.inflation-weights-card { min-width: 0; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.inflation-weights-card > header, .special-components-card > header, .leading-toolkit-card > header, .inflation-dictionary-card > header { padding: 18px 20px 15px; border-bottom: 1px solid var(--line); }
+.inflation-weights-card h3, .special-components-card h3, .leading-toolkit-card h3, .inflation-dictionary-card h3 { margin: 8px 0 6px; font-size: 17px; font-weight: 500; }
+.inflation-weights-card > header p, .special-components-card > header p, .leading-toolkit-card > header p, .inflation-dictionary-card > header p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.weight-legend { min-height: 34px; display: flex; align-items: center; gap: 18px; padding: 0 18px; border-bottom: 1px solid var(--line); background: #fafbfc; }
+.weight-legend i.cpi, .weight-rows i.cpi { background: #c94c4c; }
+.weight-legend i.pce, .weight-rows i.pce { background: #1c3557; }
+.weight-rows { padding: 10px 18px 13px; }
+.weight-rows > article { display: grid; grid-template-columns: 138px minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 12px; min-height: 44px; border-bottom: 1px solid #edf0f2; }
+.weight-rows > article:last-child { border-bottom: 0; }
+.weight-rows strong { font-size: 10px; font-weight: 500; }
+.weight-rows article > div { position: relative; height: 16px; background: #f0f2f4; }
+.weight-rows article > div i { display: block; height: 100%; max-width: 100%; }
+.weight-rows article > div span { position: absolute; top: 2px; right: 5px; color: #20252a; font: 8px 'IBM Plex Mono', monospace; }
+.inflation-weights-card > footer { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 14px; padding: 11px 18px; border-top: 1px solid var(--line); background: var(--layer); }
+.inflation-weights-card > footer strong, .inflation-weights-card > footer span { font-size: 8px; line-height: 1.55; }
+.inflation-weights-card > footer span { color: var(--subtle); }
+
+.oil-shock-card { margin-top: 16px; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.oil-shock-card > header { padding: 19px 21px 16px; border-bottom: 1px solid var(--line); }
+.oil-shock-card > header span { color: var(--blue); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.oil-shock-card h3 { margin: 9px 0 6px; font-size: 18px; font-weight: 500; }
+.oil-shock-card > header p { margin: 0; color: #9a641d; font-size: 9px; }
+.oil-shock-card > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.oil-shock-card section { min-height: 174px; padding: 17px; border-right: 1px solid var(--line); }
+.oil-shock-card section:last-child { border-right: 0; }
+.oil-shock-card section > span { color: var(--subtle); font: 9px 'IBM Plex Mono', monospace; }
+.oil-shock-card h4 { margin: 14px 0 8px; font-size: 12px; font-weight: 500; }
+.oil-shock-card section strong { display: block; min-height: 40px; color: #333a41; font-size: 10px; font-weight: 500; line-height: 1.5; }
+.oil-shock-card section p { margin: 10px 0 0; color: var(--muted); font-size: 9px; line-height: 1.6; }
+.oil-shock-card > footer { padding: 12px 18px; color: #7a5c2b; background: #fff9ef; border-top: 1px solid #ead9bd; font-size: 9px; line-height: 1.55; }
+
+.special-components-card, .leading-toolkit-card, .inflation-dictionary-card { max-width: 1440px; margin: 16px auto 0; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.special-components-card > div { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.special-components-card > div > article { min-height: 150px; padding: 17px; border-right: 1px solid var(--line); }
+.special-components-card > div > article:last-child { border-right: 0; }
+.special-components-card strong { font-size: 11px; font-weight: 500; }
+.special-components-card p { margin: 10px 0 8px; color: #4f565e; font-size: 9px; line-height: 1.65; }
+.special-components-card small { color: var(--blue); font-size: 8px; line-height: 1.5; }
+.leading-toolkit-card table { min-width: 1080px; table-layout: fixed; }
+.leading-toolkit-card th:first-child { width: 220px; }
+.leading-toolkit-card th:nth-child(4) { width: 92px; }
+.leading-toolkit-card tbody th { padding: 0 13px; border-top: 1px solid #eceef0; font-size: 10px; font-weight: 500; text-align: left; }
+.leading-toolkit-card td { height: 52px; color: #4f565e; font-family: inherit; line-height: 1.45; }
+.toolkit-status { display: inline-flex; min-height: 20px; align-items: center; padding: 0 7px; border-radius: 2px; font: 8px 'IBM Plex Mono', monospace; }
+.toolkit-status.direct { color: #24705f; background: #e7f4ef; }
+.toolkit-status.derived { color: #1b5fa8; background: #e5f0fc; }
+.toolkit-status.partial { color: #9a641d; background: #fdf2e2; }
+.toolkit-status.unavailable { color: #8a4b4b; background: #f9e7e7; }
+.inflation-dictionary-card { margin-bottom: 16px; }
+.inflation-dictionary-card table { min-width: 1240px; table-layout: fixed; }
+.inflation-dictionary-card th:first-child { width: 155px; }
+.inflation-dictionary-card th:nth-child(2) { width: 74px; }
+.inflation-dictionary-card th:nth-child(3) { width: 128px; }
+.inflation-dictionary-card tbody th { padding: 0 13px; border-top: 1px solid #eceef0; font-size: 10px; font-weight: 500; text-align: left; }
+.inflation-dictionary-card td { height: 58px; padding: 9px 13px; color: #4f565e; font-family: inherit; line-height: 1.5; vertical-align: top; }
+.latest-curve-card { margin-top: 16px; }
+
 .inflation-headline-grid { max-width: 1440px; margin: 0 auto 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--navy); color: #fff; }
 .inflation-headline-grid article { min-height: 154px; display: flex; flex-direction: column; padding: 20px 22px; border-right: 1px solid rgba(255,255,255,.16); }
 .inflation-headline-grid article:last-child { border-right: 0; }
@@ -448,7 +540,7 @@ td:last-child { color: var(--subtle); }
 .inflation-headline-grid footer small { color: #fff; font: 9px 'IBM Plex Mono', monospace; }
 .inflation-headline-grid footer em { color: #91a8cd; font-size: 9px; font-style: normal; }
 
-.inflation-section-nav { position: sticky; top: 56px; z-index: 8; max-width: 1440px; min-height: 46px; margin: 0 auto 22px; display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 4px 10px rgba(20,28,39,.04); }
+.inflation-section-nav { position: sticky; top: 56px; z-index: 8; max-width: 1440px; min-height: 46px; margin: 0 auto 22px; display: grid; grid-template-columns: repeat(6, 1fr); background: #fff; border-bottom: 1px solid var(--line); box-shadow: 0 4px 10px rgba(20,28,39,.04); }
 .inflation-section-nav button { min-height: 46px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-right: 1px solid var(--line); background: transparent; color: #4c535a; font-size: 11px; }
 .inflation-section-nav button:last-child { border-right: 0; }
 .inflation-section-nav button:hover { background: var(--blue-soft); color: var(--blue); }
@@ -501,6 +593,7 @@ td:last-child { color: var(--subtle); }
 .chart-source-list a:hover strong { color: var(--blue); }
 .chart-source-list strong { font-weight: 500; }
 .chart-source-list span { color: var(--subtle); font: 7px 'IBM Plex Mono', monospace; }
+.chart-method-note { margin: 9px 0 0; color: #7a5c2b; font-size: 8px; line-height: 1.55; }
 .chart-verification { display: flex; align-items: center; gap: 5px; margin: 9px 0 0; color: #24705f; font-size: 8px; }
 .contribution-latest { flex: 0 0 auto; min-width: 94px; padding: 9px 11px; background: var(--navy); color: #fff; text-align: right; }
 .contribution-latest strong, .contribution-latest span { display: block; }
@@ -860,6 +953,20 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .replay-timeline { grid-template-columns: 1fr; }
   .timeline-intro { min-height: 180px; }
   .inflation-chart-grid { grid-template-columns: 1fr; }
+  .inflation-route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .inflation-route-grid > article { border-bottom: 1px solid var(--line); }
+  .inflation-route-grid > article:nth-child(2n) { border-right: 0; }
+  .inflation-route-grid > article:last-child { grid-column: auto; }
+  .inflation-attribution > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .inflation-attribution > div > div:nth-child(2n) { border-right: 0; }
+  .oil-shock-card > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .oil-shock-card section { border-bottom: 1px solid var(--line); }
+  .oil-shock-card section:nth-child(2n) { border-right: 0; }
+  .oil-shock-card section:last-child { grid-column: 1 / -1; }
+  .special-components-card > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .special-components-card > div > article { border-bottom: 1px solid var(--line); }
+  .special-components-card > div > article:nth-child(2n) { border-right: 0; }
+  .special-components-card > div > article:last-child { grid-column: 1 / -1; }
   .employment-chart-grid { grid-template-columns: 1fr; }
   .employment-headline-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .employment-route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -939,9 +1046,21 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .employment-headline-grid article:last-child { border-bottom: 0; }
   .inflation-headline-grid article { min-height: 132px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
   .inflation-headline-grid article:last-child { border-bottom: 0; }
-  .inflation-section-nav { top: 56px; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow-x: auto; }
+  .inflation-section-nav { top: 56px; grid-template-columns: repeat(6, minmax(92px, 1fr)); overflow-x: auto; }
   .employment-section-nav { grid-template-columns: repeat(5, minmax(92px, 1fr)); }
   .inflation-section-nav button { min-width: 92px; gap: 5px; font-size: 10px; }
+  .inflation-route-grid { grid-template-columns: 1fr; }
+  .inflation-route-grid > article, .inflation-route-grid > article:nth-child(2n), .inflation-route-grid > article:last-child { grid-column: auto; min-height: 0; border-right: 0; }
+  .inflation-attribution > header { align-items: flex-start; flex-direction: column; gap: 4px; padding: 12px 16px; }
+  .inflation-attribution > div { grid-template-columns: 1fr; }
+  .inflation-attribution > div > div, .inflation-attribution > div > div:nth-child(2n) { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .oil-shock-card > div { grid-template-columns: 1fr; }
+  .oil-shock-card section, .oil-shock-card section:nth-child(2n), .oil-shock-card section:last-child { grid-column: auto; min-height: 0; border-right: 0; }
+  .special-components-card > div { grid-template-columns: 1fr; }
+  .special-components-card > div > article, .special-components-card > div > article:nth-child(2n), .special-components-card > div > article:last-child { grid-column: auto; min-height: 0; border-right: 0; }
+  .weight-rows > article { grid-template-columns: 108px minmax(0, 1fr); padding: 8px 0; }
+  .weight-rows > article > div:last-child { grid-column: 2; }
+  .inflation-weights-card > footer { grid-template-columns: 1fr; }
   .employment-route-map > header { display: block; padding: 18px; }
   .employment-route-map > header > aside { margin-top: 14px; min-height: 74px; }
   .employment-route-core { align-items: flex-start; flex-direction: column; gap: 5px; }

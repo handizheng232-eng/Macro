@@ -10,6 +10,7 @@ type SourceMeta = {
   code: string
   name: string
   rawUnit: string
+  transformation?: string
   url: string
   latestObservation: string
 }
@@ -25,6 +26,9 @@ type ChartSeries = {
   latestObservation: string
   defaultActive?: boolean
   dash?: string
+  displayDateShiftMonths?: number
+  observationCoverageEnd?: string
+  displayPeriod?: string
   source: SourceMeta
 }
 
@@ -38,6 +42,9 @@ type ChartDefinition = {
   defaultRange: RangeKey
   series: ChartSeries[]
   totalSeries?: ChartSeries
+  formula?: string
+  caveat?: string
+  availability?: string
 }
 
 type DetailRow = {
@@ -85,6 +92,38 @@ type InflationDataset = {
   generatedAt: string
   source: string
   sourceProviders: string[]
+  framework: {
+    title: string
+    description: string
+    route: Array<{ id: string; label: string; question: string; signals: string[] }>
+    attribution: Array<{ id: string; label: string; equation: string; signals: string; reading: string }>
+    oilShockFramework: {
+      title: string
+      evidenceType: string
+      pptPages: string
+      steps: Array<{ id: string; label: string; question: string; boundary: string }>
+    }
+    passports: Array<{
+      id: string
+      name: string
+      publisher: string
+      frequency: string
+      coverage: string
+      revision: string
+      role: string
+      caveat: string
+    }>
+    indicatorDictionary: Array<{
+      id: string
+      name: string
+      definition: string
+      frequency: string
+      unit: string
+      transformation: string
+      interpretation: string
+      caveat: string
+    }>
+  }
   headline: Array<{
     id: string
     label: string
@@ -97,6 +136,30 @@ type InflationDataset = {
   actual: {
     cpiTrend: ChartDefinition
     pceTrend: ChartDefinition
+    goodsServices: ChartDefinition
+    shelterLag: ChartDefinition & { availability: string }
+    underlying: ChartDefinition & { caveat: string }
+    cpiPceGap: ChartDefinition
+    januaryEffect: {
+      title: string
+      description: string
+      months: number[]
+      unit: string
+      series: Array<{ id: string; label: string; values: number[]; color: string }>
+      source: { provider: string; code: string }
+      caveat: string
+    }
+    cpiPceWeights: {
+      title: string
+      description: string
+      categories: string[]
+      cpi: number[]
+      pce: number[]
+      unit: string
+      asOf: string
+      caveat: string
+    }
+    specialComponents: Array<{ name: string; mechanism: string; use: string }>
     coreSplit: ChartDefinition
     cpiContributions: ChartDefinition
     supercoreMom: ChartDefinition
@@ -122,11 +185,19 @@ type InflationDataset = {
     }
   }
   survey: {
+    divergence: ChartDefinition
     expectations: ChartDefinition
   }
   implied: {
+    fiveYearFiveYear: ChartDefinition
     breakeven: ChartDefinition
     latestCurve: Array<{ tenor: string; value: number; observation: string }>
+  }
+  leading: {
+    energyNowcast: ChartDefinition & { formula: string }
+    usedCarLead: ChartDefinition & { formula: string }
+    goodsPipeline: ChartDefinition & { formula: string }
+    toolkit: Array<{ name: string; target: string; lead: string; status: string; note: string }>
   }
   dataQuality: {
     cpiMissingPeriods: string[]
@@ -367,6 +438,9 @@ function MultiSeriesChart({ chart }: { chart: ChartDefinition }) {
             </a>
           ))}
         </div>
+        {(chart.formula || chart.caveat || chart.availability) && (
+          <p className="chart-method-note">{[chart.formula, chart.caveat, chart.availability].filter(Boolean).join('；')}</p>
+        )}
       </footer>
     </article>
   )
@@ -593,6 +667,175 @@ function CycleStructureTable() {
   )
 }
 
+function InflationFrameworkOverview() {
+  const framework = dataset.framework
+  return (
+    <section className="inflation-framework" id="inflation-framework" aria-label="通胀研究路线图">
+      <header>
+        <span>RESEARCH ROUTE · PPT CHAPTER 2</span>
+        <h2>{framework.title}</h2>
+        <p>{framework.description}</p>
+      </header>
+      <div className="inflation-route-grid">
+        {framework.route.map((step, index) => (
+          <article key={step.id}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{step.label}</h3>
+            <p>{step.question}</p>
+            <small>{step.signals.join(' · ')}</small>
+          </article>
+        ))}
+      </div>
+      <div className="inflation-attribution" aria-label="通胀归因框架">
+        <header><strong>需求缺口—供给冲击—预期—政策</strong><span>PPT第63—65页：数据先回答机制变量，再讨论政策含义</span></header>
+        <div>
+          {framework.attribution.map((item) => (
+            <div key={item.id}><span>{item.equation}</span><h3>{item.label}</h3><strong>{item.signals}</strong><p>{item.reading}</p></div>
+          ))}
+        </div>
+      </div>
+      <div className="inflation-passport-wrap">
+        <table aria-label="CPI与PCE数据身份证" className="inflation-passport-table">
+          <thead><tr><th>指标</th><th>发布与频率</th><th>覆盖口径</th><th>修正规则</th><th>研究角色</th><th>主要限制</th></tr></thead>
+          <tbody>
+            {framework.passports.map((item) => (
+              <tr key={item.id}>
+                <th>{item.name}</th>
+                <td><strong>{item.publisher}</strong><small>{item.frequency}</small></td>
+                <td>{item.coverage}</td>
+                <td>{item.revision}</td>
+                <td>{item.role}</td>
+                <td>{item.caveat}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
+function JanuaryEffectChart() {
+  const chart = dataset.actual.januaryEffect
+  const width = 920
+  const height = 340
+  const left = 54
+  const right = 20
+  const top = 20
+  const bottom = 45
+  const values = chart.series.flatMap((item) => item.values)
+  const minValue = Math.min(0, ...values)
+  const maxValue = Math.max(...values) * 1.15
+  const plotWidth = width - left - right
+  const plotHeight = height - top - bottom
+  const groupWidth = plotWidth / chart.months.length
+  const barWidth = groupWidth * 0.31
+  const y = (value: number) => top + ((maxValue - value) / Math.max(maxValue - minValue, 0.01)) * plotHeight
+  const ticks = Array.from({ length: 5 }, (_, index) => maxValue - index / 4 * (maxValue - minValue))
+  return (
+    <article className="inflation-chart-card january-effect-card">
+      <header><div><span>MEASUREMENT · RESIDUAL SEASONALITY</span><h3>{chart.title}</h3><p>{chart.description}</p></div></header>
+      <div className="simple-chart-legend">{chart.series.map((item) => <span key={item.id}><i style={{ background: item.color }} />{item.label}</span>)}</div>
+      <div className="multi-chart-wrap">
+        <svg className="multi-series-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${chart.title}柱状图`}>
+          {ticks.map((tick, index) => {
+            const tickY = top + index / 4 * plotHeight
+            return <g key={tick}><line x1={left} x2={width - right} y1={tickY} y2={tickY} className="chart-grid-line" /><text x={left - 8} y={tickY + 4} textAnchor="end" className="chart-axis-text">{formatValue(tick, 2)}</text></g>
+          })}
+          {chart.months.map((month, monthIndex) => {
+            const center = left + groupWidth * (monthIndex + 0.5)
+            return <g key={month}>
+              {chart.series.map((item, seriesIndex) => {
+                const value = item.values[monthIndex]
+                const x = center + (seriesIndex - 0.5) * barWidth
+                return <rect key={item.id} x={x - barWidth / 2} y={Math.min(y(0), y(value))} width={barWidth} height={Math.max(1, Math.abs(y(0) - y(value)))} fill={item.color} />
+              })}
+              <text x={center} y={height - 13} textAnchor="middle" className="chart-axis-text">{month}</text>
+            </g>
+          })}
+        </svg>
+      </div>
+      <footer><div className="chart-source-list"><span>{chart.unit} · {chart.source.provider} · {chart.source.code}</span><strong>{chart.caveat}</strong></div></footer>
+    </article>
+  )
+}
+
+function WeightComparisonCard() {
+  const weights = dataset.actual.cpiPceWeights
+  return (
+    <article className="inflation-weights-card">
+      <header><span>MEASUREMENT · WEIGHTS</span><h3>{weights.title}</h3><p>{weights.description}</p></header>
+      <div className="weight-legend"><span><i className="cpi" />CPI</span><span><i className="pce" />PCE</span></div>
+      <div className="weight-rows">
+        {weights.categories.map((category, index) => (
+          <article key={category}>
+            <strong>{category}</strong>
+            <div><i className="cpi" style={{ width: `${weights.cpi[index] * 2}%` }} /><span>{weights.cpi[index]}%</span></div>
+            <div><i className="pce" style={{ width: `${weights.pce[index] * 2}%` }} /><span>{weights.pce[index]}%</span></div>
+          </article>
+        ))}
+      </div>
+      <footer><strong>{weights.asOf}</strong><span>{weights.caveat}</span></footer>
+    </article>
+  )
+}
+
+function SpecialComponentsCard() {
+  return (
+    <article className="special-components-card">
+      <header><span>ANATOMY · ALGORITHM FIRST</span><h3>特殊分项：先读算法，再读经济</h3><p>这些分项经常制造单月核心CPI意外；先检查采价和算法，再决定是否上升为宏观趋势。</p></header>
+      <div>
+        {dataset.actual.specialComponents.map((item) => (
+          <article key={item.name}><strong>{item.name}</strong><p>{item.mechanism}</p><small>{item.use}</small></article>
+        ))}
+      </div>
+    </article>
+  )
+}
+
+function LeadingToolkit() {
+  return (
+    <article className="leading-toolkit-card">
+      <header><span>LEADING · AVAILABILITY</span><h3>发布前工具箱与接入状态</h3><p>“可提前观察”不等于“确定预测”。页面区分直接序列、派生序列、部分映射与暂不可得项。</p></header>
+      <div className="leading-toolkit-wrap">
+        <table aria-label="通胀发布前工具箱">
+          <thead><tr><th>工具</th><th>提前估算</th><th>经验领先</th><th>状态</th><th>说明</th></tr></thead>
+          <tbody>{dataset.leading.toolkit.map((item) => <tr key={item.name}><th>{item.name}</th><td>{item.target}</td><td>{item.lead}</td><td><span className={`toolkit-status ${item.status}`}>{item.status}</span></td><td>{item.note}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </article>
+  )
+}
+
+function OilShockFramework() {
+  const framework = dataset.framework.oilShockFramework
+  return (
+    <article className="oil-shock-card">
+      <header><span>SCENARIO · OIL & STAGFLATION</span><h3>{framework.title}</h3><p>{framework.evidenceType} · PPT第{framework.pptPages}页</p></header>
+      <div>
+        {framework.steps.map((step, index) => (
+          <section key={step.id}><span>{String(index + 1).padStart(2, '0')}</span><h4>{step.label}</h4><strong>{step.question}</strong><p>{step.boundary}</p></section>
+        ))}
+      </div>
+      <footer>判断顺序：冲击类型 → 一阶直接效应 → 二阶扩散 → 增长与就业 → 制度缓冲。任何单一步骤都不能单独推出“滞胀”。</footer>
+    </article>
+  )
+}
+
+function IndicatorDictionary() {
+  return (
+    <article className="inflation-dictionary-card">
+      <header><span>DATA · DEFINITIONS</span><h3>通胀指标说明</h3><p>每个指标同时写明频率、单位、转换、研究用途和误读边界，避免同名不同口径。</p></header>
+      <div>
+        <table aria-label="通胀指标说明">
+          <thead><tr><th>指标</th><th>频率</th><th>单位</th><th>转换</th><th>研究用途</th><th>注意事项</th></tr></thead>
+          <tbody>{dataset.framework.indicatorDictionary.map((item) => <tr key={item.id}><th>{item.name}</th><td>{item.frequency}</td><td>{item.unit}</td><td>{item.transformation}</td><td>{item.interpretation}</td><td>{item.caveat}</td></tr>)}</tbody>
+        </table>
+      </div>
+    </article>
+  )
+}
+
 function SectionHeading({ code, title, description }: { code: string; title: string; description: string }) {
   return (
     <header className="inflation-section-heading">
@@ -643,9 +886,9 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
           <button className="history-back" type="button" onClick={onBack}>
             <ArrowLeft size={15} />返回宏观框架
           </button>
-          <p className="eyebrow">US ECONOMY · IFIND INFLATION MONITOR</p>
+          <p className="eyebrow">US ECONOMY · IFIND INFLATION RESEARCH FRAMEWORK</p>
           <h1>美国通胀</h1>
-          <p>以 iFinD 经济数据库为数据源，分开观察实际通胀分项、调查预期与市场隐含定价。</p>
+          <p>按“总量—结构—底层中枢—预期锚—发布前先行”组织，iFinD负责定期刷新，所有派生序列公开公式与限制。</p>
         </div>
         <div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div>
       </div>
@@ -661,18 +904,34 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
         ))}
       </section>
 
+      <InflationFrameworkOverview />
+
       <nav className="inflation-section-nav" aria-label="通胀栏目分区">
-        <button type="button" onClick={() => scrollToSection('actual-inflation')}><span>01</span>实际通胀</button>
-        <button type="button" onClick={() => scrollToSection('survey-inflation')}><span>02</span>调查通胀</button>
-        <button type="button" onClick={() => scrollToSection('implied-inflation')}><span>03</span>市场隐含</button>
-        <button type="button" onClick={() => scrollToSection('inflation-method')}><span>04</span>数据口径</button>
+        <button type="button" onClick={() => scrollToSection('inflation-framework')}><span>01</span>研究路线</button>
+        <button type="button" onClick={() => scrollToSection('actual-inflation')}><span>02</span>实际与结构</button>
+        <button type="button" onClick={() => scrollToSection('expectation-inflation')}><span>03</span>预期与锚</button>
+        <button type="button" onClick={() => scrollToSection('leading-inflation')}><span>04</span>发布前先行</button>
+        <button type="button" onClick={() => scrollToSection('scenario-inflation')}><span>05</span>情景与复盘</button>
+        <button type="button" onClick={() => scrollToSection('inflation-method')}><span>06</span>数据说明</button>
       </nav>
 
       <section className="inflation-section" id="actual-inflation" aria-label="实际通胀">
-        <SectionHeading code="01 · ACTUAL INFLATION" title="实际通胀" description="从总量、环比贡献、核心三分项与工资锚逐层拆解，并用23项温度表追踪内部扩散，而不是把总CPI当作单一对象。" />
+        <SectionHeading code="02 · ACTUAL & ANATOMY" title="实际通胀与结构拆分" description="先看CPI与PCE总量，再沿6211结构拆到核心商品、住房与超级核心服务；最后用底层分布指标和特殊分项算法核对信号是否广泛。" />
         <div className="inflation-chart-grid">
           <MultiSeriesChart chart={dataset.actual.cpiTrend} />
           <MultiSeriesChart chart={dataset.actual.pceTrend} />
+        </div>
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.actual.goodsServices} />
+          <MultiSeriesChart chart={dataset.actual.shelterLag} />
+        </div>
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.actual.cpiPceGap} />
+          <WeightComparisonCard />
+        </div>
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.actual.underlying} />
+          <JanuaryEffectChart />
         </div>
         <div className="inflation-chart-grid">
           <ContributionChart chart={dataset.actual.cpiContributions} />
@@ -683,27 +942,43 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
           <MultiSeriesChart chart={dataset.actual.wageAnchor} />
         </div>
         <CycleStructureTable />
+        <SpecialComponentsCard />
         <CpiHeatmapTable />
       </section>
 
-      <section className="inflation-section" id="survey-inflation" aria-label="调查通胀">
-        <SectionHeading code="02 · SURVEY INFLATION" title="调查与模型预期" description="密歇根大学居民调查对短期价格冲击更敏感；克利夫兰联储模型综合收益率、通胀与调查信息。" />
-        <div className="inflation-chart-grid single">
+      <section className="inflation-section" id="expectation-inflation" aria-label="通胀预期与锚">
+        <SectionHeading code="03 · EXPECTATIONS & ANCHOR" title="调查预期与市场锚" description="短期调查容易受汽油价、问法与党派情绪影响；长端市场补偿则混入风险和流动性溢价。判断锚定要看长端对短期冲击的敏感度，而不是要求读数恰好等于2%。" />
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.survey.divergence} />
           <MultiSeriesChart chart={dataset.survey.expectations} />
         </div>
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.implied.fiveYearFiveYear} />
+          <MultiSeriesChart chart={dataset.implied.breakeven} />
+        </div>
+        <LatestCurve />
       </section>
 
-      <section className="inflation-section" id="implied-inflation" aria-label="市场隐含通胀">
-        <SectionHeading code="03 · MARKET IMPLIED" title="市场隐含通胀" description="盈亏平衡通胀率是名义债与TIPS的价差，不是无偏的纯通胀预测；风险与流动性溢价同样会移动曲线。" />
-        <div className="implied-layout">
-          <MultiSeriesChart chart={dataset.implied.breakeven} />
-          <LatestCurve />
+      <section className="inflation-section" id="leading-inflation" aria-label="发布前通胀先行工具">
+        <SectionHeading code="04 · LEADING TOOLBOX" title="CPI发布前先算个大概" description="能源和二手车可由更早公布的价格直接或经验映射；供应链压力只提供方向信号。所有领先关系都保留转换公式、原观测日期和可用性限制。" />
+        <div className="inflation-chart-grid">
+          <MultiSeriesChart chart={dataset.leading.energyNowcast} />
+          <MultiSeriesChart chart={dataset.leading.usedCarLead} />
         </div>
+        <div className="inflation-chart-grid single">
+          <MultiSeriesChart chart={dataset.leading.goodsPipeline} />
+        </div>
+        <LeadingToolkit />
+      </section>
+
+      <section className="inflation-section" id="scenario-inflation" aria-label="通胀情景与历史复盘">
+        <SectionHeading code="05 · SCENARIO & REPLAY" title="情景与复盘" description="PPT第85—93页不是把油价上涨机械等同于滞胀，而是依次核对直接价格影响、向核心通胀的二阶扩散、增长与就业损失，以及预期、能源结构、工会和央行信誉等制度缓冲。" />
+        <OilShockFramework />
       </section>
 
       <section className="inflation-method-card" id="inflation-method" aria-label="通胀数据口径">
         <div>
-          <span>04 · DATA CONTRACT</span>
+          <span>06 · DATA CONTRACT</span>
           <h2>iFinD 数据口径</h2>
           <p>每条序列保留自己的观测日期。CPI、PCE、居民/模型调查与盈亏平衡通胀率不共享同一截至日。</p>
         </div>
@@ -735,6 +1010,8 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
           <span>数据提供方：{dataset.sourceProviders.join(' · ')}；快照生成 {dataset.generatedAt.slice(0, 10)}。</span>
         </footer>
       </section>
+
+      <IndicatorDictionary />
 
       <footer className="us-macro-source">
         <div>
