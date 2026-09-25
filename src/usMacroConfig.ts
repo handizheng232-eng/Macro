@@ -88,7 +88,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
     ],
     dataCategory: 'growth',
     metricIds: ['real-gdp-growth'],
-    coverage: 'partial',
+    coverage: 'deep',
   },
   {
     category: 'consumption',

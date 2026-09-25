@@ -773,6 +773,60 @@ td:last-child { color: var(--subtle); }
 .employment-heatmap-card > footer b { color: var(--blue); font-size: 9px; font-weight: 500; }
 .employment-method-card { margin-top: 0; }
 
+.gdp-share-card, .gdp-revision-card, .gdp-flow-card { margin-top: 16px; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
+.gdp-share-card > header, .gdp-revision-card > header { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 18px 22px; border-bottom: 1px solid var(--line); }
+.gdp-share-card > header span, .gdp-revision-card > header span, .gdp-flow-card > header > span { color: var(--blue); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .8px; }
+.gdp-share-card h3, .gdp-revision-card h3, .gdp-flow-card h3 { margin: 8px 0 6px; font-size: 18px; font-weight: 500; }
+.gdp-share-card > header p, .gdp-flow-card > header p { max-width: 800px; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.gdp-share-card > header > strong, .gdp-revision-card > header > strong { color: var(--subtle); font: 10px 'IBM Plex Mono', monospace; font-weight: 500; }
+.gdp-share-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.gdp-share-grid article { min-width: 0; padding: 18px; border-right: 1px solid var(--line); }
+.gdp-share-grid article:last-child { border-right: 0; }
+.gdp-share-grid article > span { display: block; font-size: 11px; font-weight: 500; }
+.gdp-share-grid article > div { height: 8px; margin: 18px 0 11px; background: #edf0f2; }
+.gdp-share-grid article > div i { height: 100%; display: block; min-width: 2px; }
+.gdp-share-grid article > div.negative { border-left: 2px solid #a56a12; }
+.gdp-share-grid article > strong { font: 23px 'IBM Plex Mono', monospace; font-weight: 500; }
+.gdp-share-grid article > small { display: block; margin-top: 7px; color: var(--subtle); font: 8px 'IBM Plex Mono', monospace; }
+.gdp-share-card > footer { display: flex; align-items: center; gap: 18px; padding: 12px 18px; border-top: 1px solid var(--line); background: var(--layer); }
+.gdp-share-card > footer strong { flex: 0 0 auto; font: 10px 'IBM Plex Mono', monospace; }
+.gdp-share-card > footer span { color: var(--subtle); font-size: 8px; line-height: 1.55; }
+.gdp-chart-card .chart-source-list a { grid-template-rows: auto auto auto; }
+.gdp-chart-card .chart-source-list small { color: #59636d; font-size: 9px; line-height: 1.45; }
+.gdp-chart-card .chart-source-list span { color: #59636d; font-size: 9px; }
+.gdp-chart-card .series-switches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); overflow: visible; }
+.gdp-chart-card .series-switches button { min-width: 0; }
+.gdp-chart-card .series-switches span { overflow: visible; font-size: 10px; line-height: 1.35; text-overflow: clip; white-space: normal; }
+.gdp-chart-card .chart-axis-text { fill: #4f5963; font-size: 10px; }
+.gdp-chart-card .employment-explanation p { color: #46515b; font-size: 9px; }
+.gdp-axis-unit { fill: #46515b; font-size: 10px; font-weight: 500; }
+.gdp-chart-scroll-hint { display: none; }
+.gdp-vintage-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr); gap: 16px; margin-top: 16px; }
+.gdp-vintage-grid > article { margin-top: 0; }
+.gdp-revision-chart { min-height: 258px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 18px 22px 8px; }
+.gdp-revision-chart > section { min-width: 0; }
+.gdp-revision-chart h4 { margin: 0; color: var(--subtle); font: 10px 'IBM Plex Mono', monospace; font-weight: 500; text-align: center; }
+.gdp-revision-bars { position: relative; height: 205px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 12px 18px 0; border-bottom: 1px solid var(--line); }
+.gdp-revision-bars > div { position: relative; z-index: 1; height: 160px; margin-top: 8px; }
+.gdp-zero-line { position: absolute; z-index: 0; left: 0; right: 0; height: 1px; border-top: 1px dashed #89919a; color: #666f78; font: 8px 'IBM Plex Mono', monospace; font-weight: 400; }
+.gdp-zero-line::after { content: ''; position: absolute; left: 0; right: 0; top: -1px; }
+.gdp-revision-bars i { position: absolute; left: 24%; width: 52%; background: #c94c4c; }
+.gdp-revision-bars > div:nth-child(2) i { background: #ba7a2e; }
+.gdp-revision-bars > div:nth-child(3) i { background: #1859b8; }
+.gdp-revision-bars strong { position: absolute; left: 0; right: 0; top: 166px; font: 10px 'IBM Plex Mono', monospace; font-weight: 500; text-align: center; }
+.gdp-revision-bars span { position: absolute; left: 0; right: 0; top: 184px; color: var(--subtle); font: 8px 'IBM Plex Mono', monospace; text-align: center; }
+.gdp-revision-card > footer { padding: 12px 18px; border-top: 1px solid var(--line); background: var(--layer); }
+.gdp-revision-card > footer p { margin: 0 0 5px; color: var(--muted); font-size: 8px; line-height: 1.55; }
+.gdp-revision-card > footer p:last-child { margin-bottom: 0; color: #7a5c2b; }
+.gdp-flow-card > header { min-height: 120px; padding: 20px 22px; border-bottom: 1px solid var(--line); }
+.gdp-flow-card ol { margin: 0; padding: 0; list-style: none; }
+.gdp-flow-card li { min-height: 55px; display: grid; grid-template-columns: 84px minmax(120px, .8fr) 20px minmax(160px, 1.2fr); align-items: center; gap: 8px; padding: 8px 16px; border-bottom: 1px solid #edf0f2; }
+.gdp-flow-card li:last-child { border-bottom: 0; }
+.gdp-flow-card li span { color: var(--blue); font: 8px 'IBM Plex Mono', monospace; }
+.gdp-flow-card li strong { font-size: 10px; font-weight: 500; }
+.gdp-flow-card li svg { color: var(--subtle); }
+.gdp-flow-card li em { color: var(--muted); font-size: 9px; font-style: normal; line-height: 1.45; }
+
 button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 @media (max-width: 1060px) {
@@ -813,6 +867,10 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .employment-route-grid > article:nth-child(2n) { border-right: 0; }
   .employment-route-grid > article:last-child { grid-column: 1 / -1; }
   .employment-availability { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gdp-share-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gdp-share-grid article:nth-child(2) { border-right: 0; }
+  .gdp-share-grid article:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+  .gdp-vintage-grid { grid-template-columns: 1fr; }
   .implied-layout { grid-template-columns: minmax(0, 1fr) 250px; }
 }
 
@@ -895,6 +953,16 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .employment-explanation > div, .employment-explanation > div:nth-child(3) { min-height: 0; border-right: 0; border-bottom: 1px solid #e7eaed; }
   .employment-explanation > small { grid-column: 1; }
   .employment-availability { grid-template-columns: 1fr; }
+  .gdp-share-card > header, .gdp-revision-card > header { display: block; }
+  .gdp-share-card > header > strong, .gdp-revision-card > header > strong { display: inline-block; margin-top: 12px; }
+  .gdp-share-grid { grid-template-columns: 1fr; }
+  .gdp-share-grid article, .gdp-share-grid article:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
+  .gdp-share-grid article:last-child { border-bottom: 0; }
+  .gdp-share-card > footer { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .gdp-revision-chart { grid-template-columns: 1fr; gap: 24px; }
+  .gdp-flow-card li { grid-template-columns: 72px minmax(0, 1fr); }
+  .gdp-flow-card li svg { display: none; }
+  .gdp-flow-card li em { grid-column: 2; }
   .inflation-section-heading { grid-template-columns: 1fr; }
   .inflation-section-heading > span { min-height: 38px; padding: 0 17px; border-right: 0; border-bottom: 1px solid var(--line); }
   .inflation-section-heading > div { padding: 16px 17px; }
@@ -903,6 +971,12 @@ button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
   .range-switch button { flex: 1; }
   .series-switches button { min-width: 138px; }
   .chart-axis-text { font-size: 18px; }
+  .gdp-chart-card .multi-chart-wrap { overflow-x: auto; padding-bottom: 6px; }
+  .gdp-chart-card .multi-series-svg { min-width: 720px; }
+  .gdp-chart-card .chart-axis-text { font-size: 20px; }
+  .gdp-chart-card .gdp-axis-unit { font-size: 18px; }
+  .gdp-chart-card path[data-series-id] { stroke-width: 3.2; }
+  .gdp-chart-scroll-hint { display: block; padding: 6px 14px 8px; color: var(--blue); background: #f7f9fb; font: 9px 'IBM Plex Mono', monospace; text-align: right; }
   .chart-readout { min-height: 48px; }
   .contribution-card > footer { align-items: flex-start; flex-direction: column; }
   .cycle-structure-card > footer { align-items: flex-start; flex-direction: column; }

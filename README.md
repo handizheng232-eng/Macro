@@ -26,7 +26,7 @@ npm run dev
 
 ## 刷新美国宏观数据
 
-页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。美国增长与政策继续使用 Wind/OpenBB；就业与通胀通过本机已登录的 iFinD 客户端会话取数：
+页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。消费、PMI、财政和政策继续使用 Wind/OpenBB；就业、通胀以及 GDP 与经济核算深度页通过本机已登录的 iFinD 客户端会话取数：
 
 ```bash
 npm run refresh:us-macro
@@ -38,9 +38,9 @@ npm run refresh:us-macro
 - Federal Reserve：专业预测者通胀预期、有效联邦基金利率；
 - 与 Wind 重叠的 GDP、失业率、CPI、EFFR 自动做同期差值核验。
 
-Wind/OpenBB 当前已接入的序列按研究模块重新编排：
+Wind/OpenBB 当前已接入的序列按研究模块重新编排（GDP中的OpenBB/OECD序列仅保留为通用数据集的交叉核验，不再作为GDP深度页主数据）：
 
-- GDP与核算：实际 GDP；
+- GDP与核算：深度页改用 iFinD EDB；
 - 消费：零售销售、个人消费支出；
 - PMI与库存：ISM 制造业、制造业生产；
 - 财政与国债：财政赤字、联邦消费支出；
@@ -48,13 +48,16 @@ Wind/OpenBB 当前已接入的序列按研究模块重新编排：
 
 住房和企业投资已建立传导链与指标字典，但尚未接入可核验序列；页面明确显示数据缺口。就业页按培训PPT第一章重构为五层：CES/CPS官方双调查、JOLTS与申领失业金流量、AHE/ECI/Atlanta三类工资、Okun/失业缺口/贝弗里奇曲线/Sahm四组经验框架、ADP等第三方交叉验证；每张图均附“数据是什么—怎么读—口径警示”，行业表同时给出近12个月与2018—2019基准。通胀页继续覆盖CPI/PCE分项、调查预期和市场隐含定价。
 
-就业与通胀栏目均以 iFinD 经济数据库（EDB）为数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）；原始响应分别保存在 `data/raw/ifind-us-employment/` 与 `data/raw/ifind-us-inflation/`。各序列独立保留观测日期，刷新脚本会核对指标码、名称、频率、单位和量级。
+GDP深度页按PPT第三章重构为四组可更新工作区：潜在增速与支出结构、GDP→最终销售→PDFP核心内需、GDP/GDI双核算与名义—实际价格桥、WEI与NBER月度活动拼图；另保留2022H1 advance/third/latest修订案例和季度内信息流。GDPNow、NY Fed Nowcast以及iFinD未检出的NBER两项明确标为未接入，不使用模拟值或近似序列冒充。
+
+就业、通胀与GDP栏目均以 iFinD 经济数据库（EDB）为主要数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）；原始响应分别保存在 `data/raw/ifind-us-employment/`、`data/raw/ifind-us-inflation/` 与 `data/raw/ifind-us-gdp/`。各序列独立保留观测日期，刷新脚本会核对指标码、名称、频率、单位和量级；GDP脚本另外执行贡献加总、平减指数恒等式和GDP/GDI均值三组会计闭合检查。
 
 单独刷新：
 
 ```bash
 npm run refresh:us-employment
 npm run refresh:us-inflation
+npm run refresh:us-gdp
 ```
 
 ## 质量检查

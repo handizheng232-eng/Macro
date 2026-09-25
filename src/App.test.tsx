@@ -63,7 +63,6 @@ describe('宏观框架', () => {
     expect(screen.getByText('OpenBB 已接入')).toBeInTheDocument()
 
     const seasonalPages = [
-      ['GDP与核算', 'us-growth', 1],
       ['消费', 'us-consumption', 2],
       ['PMI与库存', 'us-pmi', 2],
       ['财政与国债', 'us-fiscal-treasury', 2],
@@ -78,11 +77,6 @@ describe('宏观框架', () => {
       const charts = screen.getByRole('region', { name: `美国${label}已接入数据` })
       expect(within(charts).getAllByRole('img', { name: /季节图/ })).toHaveLength(chartCount)
       expect(within(charts).getAllByText(/Wind EDB/).length).toBeGreaterThan(0)
-
-      if (label === 'GDP与核算') {
-        expect(within(charts).getByText(/与 Wind EDB 同期核验/)).toBeInTheDocument()
-        expect(screen.getByText(/数据来源：OpenBB · OECD/)).toBeInTheDocument()
-      }
       if (['消费', 'PMI与库存', '财政与国债'].includes(label)) {
         expect(screen.getByText('数据来源：Wind EDB。')).toBeInTheDocument()
         expect(within(screen.getByRole('main')).queryByText(/数据来源：OpenBB/)).not.toBeInTheDocument()
@@ -90,6 +84,26 @@ describe('宏观框架', () => {
 
       await user.click(screen.getByRole('button', { name: '返回宏观框架' }))
     }
+
+    await user.click(screen.getByRole('button', { name: '打开美国GDP与核算模块' }))
+    expect(window.location.hash).toBe('#framework/us-growth')
+    expect(screen.getByRole('heading', { name: '美国GDP与经济核算' })).toBeInTheDocument()
+    expect(within(screen.getByRole('region', { name: '美国GDP状态摘要' })).getAllByRole('article')).toHaveLength(5)
+    expect(within(screen.getByRole('region', { name: 'GDP与经济核算路线图' })).getAllByRole('article')).toHaveLength(5)
+    expect(screen.getByRole('table', { name: 'GDP数据身份证' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '潜在增速与支出结构' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '核心GDP与增长贡献' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '收入法与名义—实际桥' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Nowcast与衰退判定' })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /折线图|堆叠柱图/ })).toHaveLength(8)
+    expect(screen.getByRole('heading', { name: '实际GDP与CBO潜在GDP' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '从头条GDP剥到私人内需' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '同一经济的支出法与收入法' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'NBER月度活动拼图' })).toBeInTheDocument()
+    expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
+    expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）。/)).toBeInTheDocument()
+    expect(within(screen.getByRole('main')).queryByText(/OpenBB · OECD/)).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: '返回宏观框架' }))
 
     await user.click(screen.getByRole('button', { name: '打开美国就业模块' }))
     expect(window.location.hash).toBe('#framework/us-employment')

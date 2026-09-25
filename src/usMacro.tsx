@@ -2,6 +2,7 @@ import { ArrowLeft, ChevronRight } from 'lucide-react'
 import usMacroData from './data/usMacroData.json'
 import { US_MACRO_PAGES, type UsMacroCategory, type UsMacroDatasetCategory } from './usMacroConfig'
 import { UsEmploymentDetail } from './usEmployment'
+import { UsGdpDetail } from './usGdp'
 import { UsInflationDetail } from './usInflation'
 
 type SeasonalLine = {
@@ -318,6 +319,7 @@ function FrameworkModule({ category }: { category: UsMacroCategory }) {
 export function UsMacroDetail({ category, onBack }: { category: UsMacroCategory; onBack: () => void }) {
   if (category === 'employment') return <UsEmploymentDetail onBack={onBack} />
   if (category === 'inflation') return <UsInflationDetail onBack={onBack} />
+  if (category === 'growth') return <UsGdpDetail onBack={onBack} />
 
   const page = US_MACRO_PAGES.find((item) => item.category === category)!
   const sourceMetrics = page.dataCategory ? dataset.categories[page.dataCategory].metrics : []
