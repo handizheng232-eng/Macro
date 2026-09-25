@@ -26,7 +26,7 @@ npm run dev
 
 ## 刷新美国宏观数据
 
-页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。消费、PMI、财政和政策继续使用 Wind/OpenBB；就业、通胀以及 GDP 与经济核算深度页通过本机已登录的 iFinD 客户端会话取数：
+页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。PMI、财政和政策继续使用 Wind/OpenBB；就业、通胀、GDP 与经济核算、消费深度页通过本机已登录的 iFinD 客户端会话取数：
 
 ```bash
 npm run refresh:us-macro
@@ -41,7 +41,7 @@ npm run refresh:us-macro
 Wind/OpenBB 当前已接入的序列按研究模块重新编排（GDP中的OpenBB/OECD序列仅保留为通用数据集的交叉核验，不再作为GDP深度页主数据）：
 
 - GDP与核算：深度页改用 iFinD EDB；
-- 消费：零售销售、个人消费支出；
+- 消费：iFinD深度页，覆盖PCE占GDP、零售控制组、CPI实际化零售、个人收支、信贷、消费结构与两类信心调查；
 - PMI与库存：ISM 制造业、制造业生产；
 - 财政与国债：财政赤字、联邦消费支出；
 - 美联储与金融条件：有效联邦基金利率、美联储总资产。
@@ -50,7 +50,9 @@ Wind/OpenBB 当前已接入的序列按研究模块重新编排（GDP中的OpenB
 
 GDP深度页按PPT第三章重构为四组可更新工作区：潜在增速与支出结构、GDP→最终销售→PDFP核心内需、GDP/GDI双核算与名义—实际价格桥、WEI与NBER月度活动拼图；另保留2022H1 advance/third/latest修订案例和季度内信息流。GDPNow、NY Fed Nowcast以及iFinD未检出的NBER两项明确标为未接入，不使用模拟值或近似序列冒充。
 
-就业、通胀与GDP栏目均以 iFinD 经济数据库（EDB）为主要数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）；原始响应分别保存在 `data/raw/ifind-us-employment/`、`data/raw/ifind-us-inflation/` 与 `data/raw/ifind-us-gdp/`。各序列独立保留观测日期，刷新脚本会核对指标码、名称、频率、单位和量级；GDP脚本另外执行贡献加总、平减指数恒等式和GDP/GDI均值三组会计闭合检查。
+消费深度页按PPT第四章重构为“四个驱动轮—官方双轨—三大背离”：11张可更新图覆盖消费占GDP、收入与消费、零售控制组、名义与实际零售、储蓄率、循环信贷与拖欠、服务/耐用品结构以及软硬数据背离。刷卡、TSA、OpenTable、Redbook和密歇根分党派数据因不属于当前iFinD自动更新合同而明确标为未接入；超额储蓄“耗尽日”保留为反事实假设敏感的历史案例，不冒充实时序列。
+
+就业、通胀、GDP与消费栏目均以 iFinD 经济数据库（EDB）为主要数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）；原始响应分别保存在 `data/raw/ifind-us-employment/`、`data/raw/ifind-us-inflation/`、`data/raw/ifind-us-gdp/` 与 `data/raw/ifind-us-consumption/`。各序列独立保留观测日期，刷新脚本会核对指标码、名称、机构、频率、单位和量级；GDP脚本另外执行贡献加总、平减指数恒等式和GDP/GDI均值三组会计闭合检查，消费脚本检查控制组、PCE结构份额与消费/GDP量级。
 
 单独刷新：
 
@@ -58,6 +60,7 @@ GDP深度页按PPT第三章重构为四组可更新工作区：潜在增速与�
 npm run refresh:us-employment
 npm run refresh:us-inflation
 npm run refresh:us-gdp
+npm run refresh:us-consumption
 ```
 
 ## 质量检查

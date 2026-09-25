@@ -62,8 +62,25 @@ describe('宏观框架', () => {
     await user.click(screen.getByRole('button', { name: '宏观框架' }))
     expect(screen.getByText('OpenBB 已接入')).toBeInTheDocument()
 
+    await user.click(screen.getByRole('button', { name: '打开美国消费模块' }))
+    expect(window.location.hash).toBe('#framework/us-consumption')
+    expect(screen.getByRole('heading', { name: '美国消费' })).toBeInTheDocument()
+    expect(within(screen.getByRole('region', { name: '美国消费状态摘要' })).getAllByRole('article')).toHaveLength(6)
+    expect(within(screen.getByRole('region', { name: '美国消费研究路线图' })).getAllByRole('article')).toHaveLength(5)
+    expect(screen.getByRole('table', { name: '消费数据身份证' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '官方快轨：零售销售' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '官方慢轨：个人收支与信用' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '消费结构：体量看服务，波动看耐用品' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '预期与软硬背离' })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(11)
+    expect(screen.getByRole('heading', { name: '总零售与控制组环比' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '名义零售与CPI实际化零售' })).toBeInTheDocument()
+    expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
+    expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）。/)).toBeInTheDocument()
+    expect(within(screen.getByRole('main')).queryByText('数据来源：Wind EDB。')).not.toBeInTheDocument()
+    await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
+
     const seasonalPages = [
-      ['消费', 'us-consumption', 2],
       ['PMI与库存', 'us-pmi', 2],
       ['财政与国债', 'us-fiscal-treasury', 2],
       ['美联储与金融条件', 'us-fed-financial-conditions', 2],
@@ -77,7 +94,7 @@ describe('宏观框架', () => {
       const charts = screen.getByRole('region', { name: `美国${label}已接入数据` })
       expect(within(charts).getAllByRole('img', { name: /季节图/ })).toHaveLength(chartCount)
       expect(within(charts).getAllByText(/Wind EDB/).length).toBeGreaterThan(0)
-      if (['消费', 'PMI与库存', '财政与国债'].includes(label)) {
+      if (['PMI与库存', '财政与国债'].includes(label)) {
         expect(screen.getByText('数据来源：Wind EDB。')).toBeInTheDocument()
         expect(within(screen.getByRole('main')).queryByText(/数据来源：OpenBB/)).not.toBeInTheDocument()
       }

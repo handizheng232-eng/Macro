@@ -108,7 +108,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
     ],
     dataCategory: 'growth',
     metricIds: ['retail-sales-mom', 'nominal-pce-yoy'],
-    coverage: 'partial',
+    coverage: 'deep',
   },
   {
     category: 'housing',
