@@ -86,7 +86,8 @@ function AvailabilityPanel() { return <div className="employment-availability">{
 function SectionHeading({ code, section }: { code: string; section: Section }) { return <header className="inflation-section-heading"><span>{code}</span><div><h2>{section.title}</h2><p>{section.description}</p></div></header> }
 
 export function UsConsumptionDetail({ onBack }: { onBack: () => void }) {
-  const latestObservation = dataset.headline.reduce((latest, item) => item.observation > latest ? item.observation : latest, '')
+  const chartObservations = Object.values(dataset.sections).flatMap((section) => section.charts.flatMap((chart) => chart.series.map((series) => series.latestObservation)))
+  const latestObservation = [...dataset.headline.map((item) => item.observation), ...chartObservations].reduce((latest, observation) => observation > latest ? observation : latest, '')
   const missingCount = Object.values(dataset.dataQuality.missingPeriods).filter((items) => items.length).length
   return <>
     <div className="page-heading us-macro-heading"><div><button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button><p className="eyebrow">US ECONOMY · IFIND CONSUMPTION</p><h1>美国消费</h1><p>沿“四个驱动轮—官方双轨—三大背离”判断消费韧性：体量看服务，波动看耐用品，最快硬数据看零售控制组。</p></div><div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div></div>
