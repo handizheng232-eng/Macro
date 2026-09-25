@@ -184,6 +184,23 @@ describe('宏观框架', () => {
     expect(screen.queryByText(/Wind · 东方证券/)).not.toBeInTheDocument()
   }, 20000)
 
+  it('四个深度数据页使用统一的研究文档层级和章节导航', () => {
+    const pages = [
+      ['#framework/us-growth', '美国GDP与经济核算深度数据页', 'GDP栏目分区'],
+      ['#framework/us-employment', '美国就业深度数据页', '就业栏目分区'],
+      ['#framework/us-inflation', '美国通胀深度数据页', '通胀栏目分区'],
+      ['#framework/us-consumption', '美国消费深度数据页', '消费栏目分区'],
+    ] as const
+
+    for (const [hash, documentName, navigationName] of pages) {
+      window.location.hash = hash
+      const { unmount } = render(<App />)
+      const page = screen.getByRole('document', { name: documentName })
+      expect(within(page).getByRole('navigation', { name: navigationName })).toBeInTheDocument()
+      unmount()
+    }
+  })
+
   it('未接入真实序列的住房模块只展示指标链条和缺口，不生成图表', async () => {
     const user = userEvent.setup()
     window.location.hash = '#framework'

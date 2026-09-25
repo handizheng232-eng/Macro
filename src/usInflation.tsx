@@ -880,7 +880,7 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
   )
 
   return (
-    <>
+    <div className="deep-research-page deep-research-page--inflation" role="document" aria-label="美国通胀深度数据页">
       <div className="page-heading us-macro-heading">
         <div>
           <button className="history-back" type="button" onClick={onBack}>
@@ -1020,6 +1020,6 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
         </div>
         <button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button>
       </footer>
-    </>
+    </div>
   )
 }

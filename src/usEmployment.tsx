@@ -610,7 +610,7 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
   const disclosedGaps = Object.values(dataset.dataQuality.monthlyMissingPeriods).filter((items) => items.length).length
 
   return (
-    <>
+    <div className="deep-research-page deep-research-page--employment" role="document" aria-label="美国就业深度数据页">
       <div className="page-heading us-macro-heading">
         <div>
           <button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button>
@@ -677,6 +677,6 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
         <div><strong>数据来源：iFinD 经济数据库（EDB）。</strong><span>{dataset.sourceProviders.join(' · ')} · 框架参考 {dataset.frameworkSource.file} 第{dataset.frameworkSource.slides}页</span></div>
         <button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button>
       </footer>
-    </>
+    </div>
   )
 }

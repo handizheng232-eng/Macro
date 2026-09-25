@@ -185,7 +185,7 @@ function scrollToSection(id: string) { document.getElementById(id)?.scrollIntoVi
 export function UsGdpDetail({ onBack }: { onBack: () => void }) {
   const latestObservation = dataset.headline.reduce((latest, item) => item.observation > latest ? item.observation : latest, '')
   const missingCount = Object.values(dataset.dataQuality.missingPeriods).filter((items) => items.length).length
-  return <>
+  return <div className="deep-research-page deep-research-page--gdp" role="document" aria-label="美国GDP与经济核算深度数据页">
     <div className="page-heading us-macro-heading"><div><button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button><p className="eyebrow">US ECONOMY · IFIND GDP & NATIONAL ACCOUNTS</p><h1>美国GDP与经济核算</h1><p>先用潜在增速建立标尺，再从支出结构、核心私人内需、GDP/GDI双核算、名义—实际价格桥和高频活动拼图逐层判断。</p></div><div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div></div>
     <section className="employment-headline-grid gdp-headline-grid" aria-label="美国GDP状态摘要">{dataset.headline.map((item, index) => <article key={item.id}><span>0{index + 1} · {item.label}</span><h2>{item.title}</h2><div><strong>{formatValue(item.value)}</strong><b>{item.unit}</b></div><footer><small>{formatDate(item.observation)}</small><em>{item.source}</em></footer></article>)}</section>
     <RouteMap /><PassportTable />
@@ -197,5 +197,5 @@ export function UsGdpDetail({ onBack }: { onBack: () => void }) {
     <section className="inflation-section" id="gdp-vintage" aria-label="GDP修订与季度内信息流"><header className="inflation-section-heading"><span>05 · VINTAGE & RELEASE FLOW</span><div><h2>修订与季度内信息流</h2><p>把同一观察期的多个vintage与生成GDP的月度输入分开保存，才能真实复盘当时市场看到的信息。</p></div></header><div className="gdp-vintage-grid"><RevisionCard /><InformationFlow /></div></section>
     <section className="inflation-method-card employment-method-card" aria-label="GDP数据口径"><div><span>06 · DATA CONTRACT</span><h2>iFinD数据口径与可更新性</h2><p>每条序列保留独立观测日期、频率、原始单位、指标码和确定性变换；周、月、季频不按数组位置拼接。</p></div><div className="cross-check-list"><article><CheckCircle2 size={15} /><div><strong>身份与量级核验</strong><span>26条iFinD序列逐条核对displayid、精确名称、单位、频率和合理区间</span></div></article><article><CheckCircle2 size={15} /><div><strong>三组会计闭合</strong><span>贡献加总、名义/实际/平减指数恒等式、GDP/GDI均值均通过程序化核验</span></div></article><article><CheckCircle2 size={15} /><div><strong>缺口与不可得项透明</strong><span>{missingCount}条月/季频序列有日历缺口；GDPNow、NY Fed Nowcast及NBER两项未用替代值冒充</span></div></article></div><footer><Info size={14} /><span>{dataset.dataQuality.note} 快照生成 {dataset.generatedAt.slice(0, 10)}；定期更新运行 <code>python scripts/refresh_ifind_us_gdp.py</code>。</span></footer></section>
     <footer className="us-macro-source"><div><strong>数据来源：iFinD经济数据库（EDB）。</strong><span>{dataset.researchBasis[0]} · {dataset.frameworkSource.file}</span></div><button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button></footer>
-  </>
+  </div>
 }

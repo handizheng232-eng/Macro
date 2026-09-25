@@ -89,7 +89,7 @@ export function UsConsumptionDetail({ onBack }: { onBack: () => void }) {
   const chartObservations = Object.values(dataset.sections).flatMap((section) => section.charts.flatMap((chart) => chart.series.map((series) => series.latestObservation)))
   const latestObservation = [...dataset.headline.map((item) => item.observation), ...chartObservations].reduce((latest, observation) => observation > latest ? observation : latest, '')
   const missingCount = Object.values(dataset.dataQuality.missingPeriods).filter((items) => items.length).length
-  return <>
+  return <div className="deep-research-page deep-research-page--consumption" role="document" aria-label="美国消费深度数据页">
     <div className="page-heading us-macro-heading"><div><button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button><p className="eyebrow">US ECONOMY · IFIND CONSUMPTION</p><h1>美国消费</h1><p>沿“四个驱动轮—官方双轨—三大背离”判断消费韧性：体量看服务，波动看耐用品，最快硬数据看零售控制组。</p></div><div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div></div>
     <section className="employment-headline-grid consumption-headline-grid" aria-label="美国消费状态摘要">{dataset.headline.map((item, index) => <article key={item.id}><span>0{index + 1} · {item.label}</span><h2>{item.title}</h2><div><strong>{formatValue(item.value)}</strong><b>{item.unit}</b></div><footer><small>{formatDate(item.observation)}</small><em>{item.source}</em></footer></article>)}</section>
     <RouteMap /><Drivers /><PassportTable />
@@ -98,5 +98,5 @@ export function UsConsumptionDetail({ onBack }: { onBack: () => void }) {
     <section className="consumption-case" aria-label="超额储蓄历史案例"><header><span>06 · HISTORICAL CASE</span><h2>{dataset.caseStudy.title}</h2><p>{dataset.caseStudy.summary}</p></header><div><strong>{dataset.caseStudy.formula}</strong><p>{dataset.caseStudy.caveat}</p><small>{dataset.caseStudy.pptSlide}</small></div></section>
     <section className="inflation-method-card employment-method-card"><div><span>07 · DATA CONTRACT</span><h2>iFinD数据口径与定期更新</h2><p>23条源序列逐条绑定指标码、精确名称、单位、频率、原始机构、合理区间与独立观测日期；派生序列可重复构建。</p></div><div className="cross-check-list"><article><CheckCircle2 size={15} /><div><strong>身份与量级核验</strong><span>每次刷新均先搜索并验证元数据，再下载完整时序</span></div></article><article><CheckCircle2 size={15} /><div><strong>确定性变换</strong><span>控制组、CPI实际化、结构份额、同比与z分数均由脚本重建</span></div></article><article><CheckCircle2 size={15} /><div><strong>缺口与频率透明</strong><span>{missingCount}条月/季频序列存在日历缺口；年、季、月数据各保留自己的最新日期</span></div></article></div><footer><Info size={14} /><span>{dataset.dataQuality.note} 快照生成 {dataset.generatedAt.slice(0, 10)}；定期更新运行 <code>npm run refresh:us-consumption</code>。</span></footer></section>
     <footer className="us-macro-source"><div><strong>数据来源：iFinD经济数据库（EDB）。</strong><span>{dataset.researchBasis[0]} · {dataset.frameworkSource.file}</span></div><button type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button></footer>
-  </>
+  </div>
 }
