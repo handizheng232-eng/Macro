@@ -80,26 +80,25 @@ describe('宏观框架', () => {
     expect(within(screen.getByRole('main')).queryByText('数据来源：Wind EDB。')).not.toBeInTheDocument()
     await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
 
-    const seasonalPages = [
-      ['PMI与库存', 'us-pmi', 2],
-      ['财政与国债', 'us-fiscal-treasury', 2],
-      ['美联储与金融条件', 'us-fed-financial-conditions', 2],
+    const rebuiltPages = [
+      ['住房', 'us-housing', 7],
+      ['企业投资', 'us-investment', 4],
+      ['PMI与库存', 'us-pmi', 7],
+      ['财政与国债', 'us-fiscal-treasury', 6],
+      ['美联储与金融条件', 'us-fed-financial-conditions', 6],
     ] as const
 
-    for (const [label, slug, chartCount] of seasonalPages) {
+    for (const [label, slug, chartCount] of rebuiltPages) {
       await user.click(screen.getByRole('button', { name: `打开美国${label}模块` }))
       expect(window.location.hash).toBe(`#framework/${slug}`)
       expect(screen.getByRole('heading', { name: `美国${label}` })).toBeInTheDocument()
-
-      const charts = screen.getByRole('region', { name: `美国${label}已接入数据` })
-      expect(within(charts).getAllByRole('img', { name: /季节图/ })).toHaveLength(chartCount)
-      expect(within(charts).getAllByText(/Wind EDB/).length).toBeGreaterThan(0)
-      if (['PMI与库存', '财政与国债'].includes(label)) {
-        expect(screen.getByText('数据来源：Wind EDB。')).toBeInTheDocument()
-        expect(within(screen.getByRole('main')).queryByText(/数据来源：OpenBB/)).not.toBeInTheDocument()
-      }
-
-      await user.click(screen.getByRole('button', { name: '返回宏观框架' }))
+      expect(within(screen.getByRole('region', { name: `美国${label}研究路线图` })).getAllByRole('article').length).toBeGreaterThanOrEqual(4)
+      expect(screen.getByRole('table', { name: `${label}数据身份证` })).toBeInTheDocument()
+      expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(chartCount)
+      expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
+      expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）。/)).toBeInTheDocument()
+      expect(within(screen.getByRole('main')).queryByText('数据来源：Wind EDB。')).not.toBeInTheDocument()
+      await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
     }
 
     await user.click(screen.getByRole('button', { name: '打开美国GDP与核算模块' }))
@@ -184,12 +183,17 @@ describe('宏观框架', () => {
     expect(screen.queryByText(/Wind · 东方证券/)).not.toBeInTheDocument()
   }, 20000)
 
-  it('四个深度数据页使用统一的研究文档层级和章节导航', () => {
+  it('九个深度数据页使用统一的研究文档层级和章节导航', () => {
     const pages = [
       ['#framework/us-growth', '美国GDP与经济核算深度数据页', 'GDP栏目分区'],
       ['#framework/us-employment', '美国就业深度数据页', '就业栏目分区'],
       ['#framework/us-inflation', '美国通胀深度数据页', '通胀栏目分区'],
       ['#framework/us-consumption', '美国消费深度数据页', '消费栏目分区'],
+      ['#framework/us-housing', '美国住房深度数据页', '住房栏目分区'],
+      ['#framework/us-investment', '美国企业投资深度数据页', '企业投资栏目分区'],
+      ['#framework/us-pmi', '美国PMI与库存深度数据页', 'PMI与库存栏目分区'],
+      ['#framework/us-fiscal-treasury', '美国财政与国债深度数据页', '财政与国债栏目分区'],
+      ['#framework/us-fed-financial-conditions', '美国美联储与金融条件深度数据页', '美联储与金融条件栏目分区'],
     ] as const
 
     for (const [hash, documentName, navigationName] of pages) {
@@ -201,7 +205,7 @@ describe('宏观框架', () => {
     }
   })
 
-  it('未接入真实序列的住房模块只展示指标链条和缺口，不生成图表', async () => {
+  it('住房模块按PPT路线图展示真实iFinD序列与明确数据边界', async () => {
     const user = userEvent.setup()
     window.location.hash = '#framework'
     render(<App />)
@@ -209,10 +213,11 @@ describe('宏观框架', () => {
     await user.click(screen.getByRole('button', { name: '打开美国住房模块' }))
     expect(window.location.hash).toBe('#framework/us-housing')
     expect(screen.getByRole('heading', { name: '美国住房' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '传导链条' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { name: '核心指标字典' })).toBeInTheDocument()
-    expect(screen.getByText('尚未接入可核验的住房序列')).toBeInTheDocument()
-    expect(screen.queryByRole('img', { name: /季节图/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '传导链前端：融资、信心与建造' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '交易、库存与价格' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '明确不可得项、事件数据与静态案例' })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(7)
+    expect(screen.queryByText('尚未接入可核验的住房序列')).not.toBeInTheDocument()
   })
 
   it('通胀图表支持时间范围切换和序列显隐', async () => {

@@ -126,7 +126,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
       { name: 'FHFA / Case-Shiller / Zillow', role: '房价趋势与覆盖差异', source: 'FHFA / S&P / Zillow', frequency: '月频', trap: '房价是滞后指标，指数口径不可直接拼接' },
       { name: '新租约租金与OER', role: '领先并解释CPI住房通胀', source: 'BLS / Zillow', frequency: '月频', trap: 'CPI租金样本轮换导致约一年滞后' },
     ],
-    coverage: 'framework',
+    coverage: 'deep',
   },
   {
     category: 'investment',
@@ -144,7 +144,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
       { name: 'Hyperscaler Capex', role: 'AI投资的企业前瞻信号', source: '公司财报', frequency: '季频', trap: '含土地与海外，不能与美国GDP口径直接相加' },
       { name: 'NFIB资本开支计划', role: '中小企业投资广度', source: 'NFIB', frequency: '月频', trap: '意向是软数据，需与订单和建造交叉验证' },
     ],
-    coverage: 'framework',
+    coverage: 'deep',
   },
   {
     category: 'pmi',
@@ -164,7 +164,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
     ],
     dataCategory: 'growth',
     metricIds: ['ism-manufacturing', 'manufacturing-production'],
-    coverage: 'partial',
+    coverage: 'deep',
   },
   {
     category: 'fiscal',
@@ -184,7 +184,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
     ],
     dataCategory: 'policy',
     metricIds: ['federal-deficit', 'federal-spending-growth'],
-    coverage: 'partial',
+    coverage: 'deep',
   },
   {
     category: 'fed',
@@ -204,7 +204,7 @@ export const US_MACRO_PAGES: UsMacroPage[] = [
     ],
     dataCategory: 'policy',
     metricIds: ['effective-fed-funds', 'fed-total-assets'],
-    coverage: 'partial',
+    coverage: 'deep',
   },
 ]
 

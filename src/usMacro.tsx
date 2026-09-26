@@ -5,6 +5,7 @@ import { UsEmploymentDetail } from './usEmployment'
 import { UsGdpDetail } from './usGdp'
 import { UsInflationDetail } from './usInflation'
 import { UsConsumptionDetail } from './usConsumption'
+import { UsLateModuleDetail } from './usLateModules'
 
 type SeasonalLine = {
   year: number
@@ -322,6 +323,9 @@ export function UsMacroDetail({ category, onBack }: { category: UsMacroCategory;
   if (category === 'inflation') return <UsInflationDetail onBack={onBack} />
   if (category === 'growth') return <UsGdpDetail onBack={onBack} />
   if (category === 'consumption') return <UsConsumptionDetail onBack={onBack} />
+  if (category === 'housing' || category === 'investment' || category === 'pmi' || category === 'fiscal' || category === 'fed') {
+    return <UsLateModuleDetail category={category} onBack={onBack} />
+  }
 
   const page = US_MACRO_PAGES.find((item) => item.category === category)!
   const sourceMetrics = page.dataCategory ? dataset.categories[page.dataCategory].metrics : []

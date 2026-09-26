@@ -17,7 +17,8 @@
     "refresh:us-employment": "python scripts/refresh_ifind_us_employment.py",
     "refresh:us-gdp": "python scripts/refresh_ifind_us_gdp.py",
     "refresh:us-consumption": "python scripts/refresh_ifind_us_consumption.py",
-    "refresh:us-macro": "npm run refresh:us-macro:wind && npm run refresh:us-macro:openbb && npm run refresh:us-inflation && npm run refresh:us-employment && npm run refresh:us-gdp && npm run refresh:us-consumption"
+    "refresh:us-late-modules": "python scripts/refresh_ifind_us_late_modules.py",
+    "refresh:us-macro": "npm run refresh:us-macro:wind && npm run refresh:us-macro:openbb && npm run refresh:us-inflation && npm run refresh:us-employment && npm run refresh:us-gdp && npm run refresh:us-consumption && npm run refresh:us-late-modules"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

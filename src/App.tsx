@@ -265,7 +265,7 @@ function MacroFramework({ onOpenUsCategory }: { onOpenUsCategory: (category: UsM
           <h1>宏观框架</h1>
           <p>先沿数据生产—加工—定价链识别信息，再按九个模块判断美国经济与政策传导。</p>
         </div>
-        <div className="as-of"><span>框架版本</span><strong>V0.2 · PPT 0829</strong></div>
+        <div className="as-of"><span>框架版本</span><strong>V0.3 · PPT 0829</strong></div>
       </div>
 
       <section className="framework-methodology" aria-label="美国宏观数据三层读法">
@@ -286,7 +286,7 @@ function MacroFramework({ onOpenUsCategory }: { onOpenUsCategory: (category: UsM
           <div>
             <span>US ECONOMY · NINE-MODULE MAP</span>
             <h2 id="us-framework-title">美国宏观九模块</h2>
-            <p>按培训材料第1—9章展开。就业与通胀保留深度页；现有增长、政策数据拆入对应模块；尚无可核验序列的页面只展示指标字典。</p>
+            <p>按培训材料第1—9章展开。九个模块均已形成深度数据页；真实序列保留独立观测日期、来源与变换，不可得项和静态案例另行标注。</p>
           </div>
           <strong>9 个研究模块</strong>
         </header>
