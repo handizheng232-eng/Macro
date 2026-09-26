@@ -81,11 +81,11 @@ describe('宏观框架', () => {
     await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
 
     const rebuiltPages = [
-      ['住房', 'us-housing', 7],
-      ['企业投资', 'us-investment', 4],
+      ['住房', 'us-housing', 9],
+      ['企业投资', 'us-investment', 5],
       ['PMI与库存', 'us-pmi', 7],
       ['财政与国债', 'us-fiscal-treasury', 6],
-      ['美联储与金融条件', 'us-fed-financial-conditions', 6],
+      ['美联储与金融条件', 'us-fed-financial-conditions', 7],
     ] as const
 
     for (const [label, slug, chartCount] of rebuiltPages) {
@@ -216,7 +216,7 @@ describe('宏观框架', () => {
     expect(screen.getByRole('heading', { name: '传导链前端：融资、信心与建造' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '交易、库存与价格' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '明确不可得项、事件数据与静态案例' })).toBeInTheDocument()
-    expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(7)
+    expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(9)
     expect(screen.queryByText('尚未接入可核验的住房序列')).not.toBeInTheDocument()
   })
 

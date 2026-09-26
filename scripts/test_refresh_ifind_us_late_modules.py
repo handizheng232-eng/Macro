@@ -34,10 +34,10 @@ class LateModuleDatasetTest(unittest.TestCase):
     def test_contract_and_module_counts(self):
         self.assertEqual(self.data["schemaVersion"], 1)
         self.assertEqual(self.data["sourceProviders"], ["iFinD EDB"])
-        self.assertEqual(self.data["dataQuality"]["verifiedSeries"], 52)
+        self.assertEqual(self.data["dataQuality"]["verifiedSeries"], 58)
         self.assertEqual(set(self.data["modules"]), {"housing", "investment", "pmi", "fiscal", "fed"})
         counts = {key: sum(len(section["charts"]) for section in value["sections"]) for key, value in self.data["modules"].items()}
-        self.assertEqual(counts, {"housing": 7, "investment": 4, "pmi": 7, "fiscal": 6, "fed": 6})
+        self.assertEqual(counts, {"housing": 9, "investment": 5, "pmi": 7, "fiscal": 6, "fed": 7})
 
     def test_all_series_are_verified_and_finite(self):
         for module in self.data["modules"].values():

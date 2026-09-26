@@ -48,6 +48,9 @@ SERIES_SPEC: dict[str, Spec] = {
     "fhfa_yoy": ("G003590411", "美国:FHFA房价指数:季调:当月同比", "FHFA房价同比", "%", "月", "美国联邦住房金融局", "#0f62fe", (-30, 40), "1992-01-01"),
     "cs_yoy": ("G002601681", "美国:标准普尔/CS房价指数:20个大中城市:当月同比", "Case-Shiller 20城同比", "%", "月", "标准普尔", "#6929c4", (-30, 40), "2001-01-01"),
     "mortgage_delinquency": ("G022571288", "美国:拖欠率:住房抵押贷款:所有商业银行:季调", "住房抵押贷款拖欠率", "%", "季", "圣路易斯联储", "#da1e28", (0, 20), "1990-01-01"),
+    "residential_share": ("G005956537", "美国:住宅类房屋投资占GDP比重:季调:当季值", "住宅投资/GDP", "%", "季", "美国经济分析局", "#0f62fe", (0, 15), "1990-01-01"),
+    "rent_yoy": ("G004754953", "美国:CPI:服务(不含能源):住所:房租:主要居所租金:当月同比", "主要居所租金同比", "%", "月", "美国劳工局", "#0f62fe", (-5, 20), "1990-01-01"),
+    "oer_yoy": ("G004754958", "美国:CPI:服务(不含能源):住所:房租:业主等价租金:业主主要居所等价租金:当月同比", "业主等价租金同比", "%", "月", "美国劳工局", "#9f1853", (-5, 20), "1990-01-01"),
     # Chapter 6 · Business investment
     "core_orders": ("G003592403", "美国:耐用品:新订单:季调:资本货物:非国防资本货物(不含飞机)", "核心资本品订单", "百万美元", "月", "美国人口普查局", "#0f62fe", (20_000, 200_000), "2002-01-01"),
     "core_shipments": ("G003592309", "美国:耐用品:出货量:季调:资本货物:非国防资本货物(不含飞机)", "核心资本品出货", "百万美元", "月", "美国人口普查局", "#007d79", (20_000, 200_000), "2002-01-01"),
@@ -55,6 +58,9 @@ SERIES_SPEC: dict[str, Spec] = {
     "inv_structures_growth": ("G005120886", "美国:GDP:不变价:支出法:国内私人投资:固定投资:非住宅类:建筑:环比折年率:季调:当季值", "建筑投资", "%", "季", "美国经济分析局", "#9f1853", (-80, 100), "1990-01-01"),
     "inv_equipment_growth": ("G005120887", "美国:GDP:不变价:支出法:国内私人投资:固定投资:非住宅类:设备和器械:环比折年率:季调:当季值", "设备投资", "%", "季", "美国经济分析局", "#0f62fe", (-80, 100), "1990-01-01"),
     "inv_ipp_growth": ("G005120888", "美国:GDP:不变价:支出法:国内私人投资:固定投资:非住宅类:知识产权产品:环比折年率:季调:当季值", "知识产权投资", "%", "季", "美国经济分析局", "#007d79", (-50, 80), "1990-01-01"),
+    "inv_structures_contribution": ("G005120958", "美国:GDP:不变价:支出法:环比贡献率:国内私人投资:固定投资:非住宅类:建筑:折年数:季调:当季值", "建筑投资贡献", "%", "季", "美国经济分析局", "#9f1853", (-15, 15), "1990-01-01"),
+    "inv_equipment_contribution": ("G005120959", "美国:GDP:不变价:支出法:环比贡献率:国内私人投资:固定投资:非住宅类:设备和器械:折年数:季调:当季值", "设备投资贡献", "%", "季", "美国经济分析局", "#0f62fe", (-15, 15), "1990-01-01"),
+    "inv_ipp_contribution": ("G005120960", "美国:GDP:不变价:支出法:环比贡献率:国内私人投资:固定投资:非住宅类:知识产权产品:折年数:季调:当季值", "知识产权投资贡献", "%", "季", "美国经济分析局", "#007d79", (-15, 15), "1990-01-01"),
     "mfg_construction": ("G025151759", "美国:私人建造支出:制造业:折年数:季调:当月值", "制造业建造支出", "百万美元", "月", "美国人口普查局", "#9f1853", (1_000, 500_000), "2000-01-01"),
     "dc_construction": ("G025151708", "美国:私人建造支出:非住宅:办公:数据中心:折年数:季调:当月值", "数据中心建造支出", "百万美元", "月", "美国人口普查局", "#0f62fe", (100, 300_000), "2014-01-01"),
     # Chapter 7 · PMI
@@ -104,9 +110,9 @@ def rolling_sum(dates: list[str], values: list[float], periods: int) -> tuple[li
     return [d for d, _ in rows], [v for _, v in rows]
 
 
-def difference(left: tuple[list[str], list[float]], right: tuple[list[str], list[float]]) -> tuple[list[str], list[float]]:
-    lmap = {compact_date(d)[:6]: v for d, v in zip(*left)}
-    rmap = {compact_date(d)[:6]: v for d, v in zip(*right)}
+def difference(left: tuple[list[str], list[float]], right: tuple[list[str], list[float]], digits: int = 6) -> tuple[list[str], list[float]]:
+    lmap = {compact_date(d)[:digits]: v for d, v in zip(*left)}
+    rmap = {compact_date(d)[:digits]: v for d, v in zip(*right)}
     periods = sorted(set(lmap) & set(rmap))
     return periods, [lmap[p] - rmap[p] for p in periods]
 
@@ -282,12 +288,15 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
         chart("housing-sales", "新屋与成屋销售", "签约口径的新屋销售领先过户口径的成屋销售。", "各自原始单位", [series("new_sales", parsed), series("existing_sales", parsed)], eyebrow="5.3 · SALES", what="新屋销售季调折年千套与成屋销售季调折年万套。", read="新屋更靠近链条前端；成屋更能显示低息存量房贷的锁定效应。", caveat="单位和确认时点不同，不能比较两线绝对高低。", slide="PPT第140页", default="10Y"),
         chart("housing-supply", "库存月数", "库存除以当前销售速度，是量价关系最直接的供需温度计。", "月", [series("new_supply", parsed), series("existing_supply", parsed)], eyebrow="5.3 · MONTHS SUPPLY", what="按当前销速计算的新屋和成屋可售月数。", read="高于自身历史且销量弱，价格下行压力增加；6个月是经验参照而非硬阈值。", caveat="库存月数同时受库存和销售分母影响，销量骤降可机械推高比值。", slide="PPT第140、147页", default="10Y", reference=6),
         chart("housing-prices", "两把房价尺", "FHFA覆盖合规贷款，Case-Shiller 20城使用重复销售法。", "%同比", [series("fhfa_yoy", parsed), series("cs_yoy", parsed)], eyebrow="5.3 · PRICE CONFIRMATION", what="FHFA全国季调房价同比与S&P/Case-Shiller 20城同比。", read="方向一致时确认全国房价趋势；分歧时检查贷款覆盖、城市结构与现金成交。", caveat="均显著滞后，不能用于实时拐点；覆盖面和方法不同。", slide="PPT第141—142页", default="ALL", reference=0),
+        chart("housing-residential-share", "住宅投资占GDP", "体量仅约4%，但历史上常在衰退前率先转弱。", "%GDP", [series("residential_share", parsed)], eyebrow="5.1 · CYCLE MOTHER", what="BEA住宅类房屋投资占GDP的季度比重。", read="用于刻画住房部门体量与周期定位；拐点需与开工和许可联合确认。", caveat="比重变化也受GDP分母影响；领先4—6季度是历史经验而非固定预测。", slide="PPT第132页 · 图5-1", default="ALL"),
+        chart("housing-rent-oer", "主要居所租金与业主等价租金", "房价和新租约变化经样本轮换缓慢进入CPI住房项。", "%同比", [series("rent_yoy", parsed), series("oer_yoy", parsed)], eyebrow="5.3 · RENT LAG", what="BLS主要居所租金与业主主要居所等价租金同比。", read="两者拐点通常显著落后市场租金和房价；用于确认未来住房通胀路径。", caveat="本图不对房价序列做向未来平移；PPT的12—18个月是经验区间，OER不是房主实际支付的租金。", slide="PPT第143页 · 图5-6", default="ALL", reference=0),
         chart("housing-credit-risk", "住房抵押贷款拖欠率", "用信用质量检查量崩是否演化为2008式被迫出售。", "%", [series("mortgage_delinquency", parsed)], eyebrow="5.5 · CREDIT RISK", what="商业银行住房抵押贷款季调拖欠率。", read="销量下滑但拖欠率低，更多是锁定效应；拖欠和库存共振上升才接近信用周期。", caveat="仅覆盖商业银行贷款，不等于全部按揭市场；季频且滞后。", slide="PPT第145—147页", default="ALL"),
     ]
     modules["housing"]["sections"] = [
         {"id": "transmission", "title": "传导链前端：融资、信心与建造", "description": "先用房贷利率和NAHB识别方向，再由许可、开工与户型结构确认。", "charts": housing_charts[:3]},
         {"id": "market", "title": "交易、库存与价格", "description": "签约和过户时点分开，库存月数连接量与价，两把房价尺用于滞后确认。", "charts": housing_charts[3:6]},
-        {"id": "risk", "title": "锁定效应与信用尾部", "description": "区分加息导致的成交冻结与杠杆恶化导致的被迫出售。", "charts": housing_charts[6:]},
+        {"id": "inflation", "title": "住宅投资与住房通胀", "description": "住宅投资刻画周期地位，主要居所租金和OER确认房市向CPI的长滞后传导。", "charts": housing_charts[6:8]},
+        {"id": "risk", "title": "锁定效应与信用尾部", "description": "区分加息导致的成交冻结与杠杆恶化导致的被迫出售。", "charts": housing_charts[8:]},
     ]
 
     # Investment
@@ -299,12 +308,13 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
         chart("investment-orders-shipments", "核心资本品订单与出货", "订单是意愿，出货更接近交付；用同比降低单月耐用品噪音。", "%同比", [series("core_orders", parsed, series_id="core_orders_yoy", label="订单同比", data=orders_yoy, unit="%", transform="由季调名义水平计算12个月同比"), series("core_shipments", parsed, series_id="core_shipments_yoy", label="出货同比", data=shipments_yoy, unit="%", transform="由季调名义水平计算12个月同比")], eyebrow="6.2 · MONTHLY PROXY", what="非国防资本品除飞机的季调订单与出货同比。", read="订单先行1—2个月，出货确认设备投资核算方向。", caveat="均为名义值且会修订；进口结构和价格变化会污染与实际GDP的映射。", slide="PPT第153页", reference=0),
         chart("investment-capacity", "工业产能利用率", "传统投资四因子中的需求与产能约束代理。", "%", [series("capacity_util", parsed)], eyebrow="6.1 · DEMAND DRIVER", what="美联储全部工业部门季调产能利用率。", read="利用率高且订单加速，传统设备投资动机更强。", caveat="利用率不是投资意向；AI投资可能在低利用率下仍受战略竞争驱动。", slide="PPT第152页", default="ALL"),
         chart("investment-three-components", "三类实际投资增速", "建筑、设备和知识产权产品具有不同的周期与调整成本。", "%环比折年", [series("inv_structures_growth", parsed), series("inv_equipment_growth", parsed), series("inv_ipp_growth", parsed)], eyebrow="6.1/6.2 · THREE COMPONENTS", what="BEA实际非住宅固定投资三分项季环比折年率。", read="设备最顺周期，知识产权更平滑，建筑受政策和超长项目周期驱动。", caveat="SAAR放大单季噪音；三条均会随国民账户修订。", slide="PPT第150、155—156页", default="ALL", reference=0),
+        chart("investment-gdp-contribution", "非住宅投资对GDP增长的贡献", "用BEA官方贡献序列拆分建筑、设备和知识产权，不把链式实际水平硬相加。", "百分点", [series("inv_structures_contribution", parsed, unit="百分点", transform="iFinD元数据为%，经济含义为对实际GDP环比折年增速的百分点贡献"), series("inv_equipment_contribution", parsed, unit="百分点", transform="iFinD元数据为%，经济含义为对实际GDP环比折年增速的百分点贡献"), series("inv_ipp_contribution", parsed, unit="百分点", transform="iFinD元数据为%，经济含义为对实际GDP环比折年增速的百分点贡献")], eyebrow="6.2 · GDP CONTRIBUTION", what="BEA建筑、设备和知识产权三项对实际GDP季环比折年增速的官方贡献。", read="用于回答投资当季贡献多少增长，而非只看投资自身增速。", caveat="单位是百分点，不是百分比；三项只覆盖非住宅固定投资，不等于全部私人投资贡献。", slide="PPT第155页 · 图6-4", default="ALL", reference=0),
         chart("investment-ai-construction", "制造业与数据中心建造支出", "把芯片法案建厂潮与AI基础设施投资的官方月度落点分开。", "%同比", [series("mfg_construction", parsed, series_id="mfg_construction_yoy", label="制造业建造同比", data=mfg_yoy, unit="%", transform="由季调折年水平计算12个月同比"), series("dc_construction", parsed, series_id="dc_construction_yoy", label="数据中心建造同比", data=dc_yoy, unit="%", transform="由季调折年水平计算12个月同比")], eyebrow="6.2/6.4 · AI & POLICY", what="Census制造业和办公类数据中心私人建造支出同比。", read="前者偏政策与供应链重构，后者偏AI算力基础设施；方向可交叉验证财报指引。", caveat="建造支出不等于设备投产；数据中心仅是AI投资的一部分，且修订较大。", slide="PPT第154、159页", default="10Y", reference=0),
     ]
     modules["investment"]["sections"] = [
         {"id": "drivers", "title": "驱动与月频代理", "description": "先看需求/产能，再用核心资本品订单和出货追踪设备投资。", "charts": investment_charts[:2]},
-        {"id": "composition", "title": "三分项：设备、知识产权、厂房", "description": "季度核算用于确认实际投资；不同分项的周期性质不可混同。", "charts": investment_charts[2:3]},
-        {"id": "ai", "title": "AI与政策投资如何在官方数据中显形", "description": "制造业建厂和数据中心建造是官方硬数据，但不等于完整AI capex。", "charts": investment_charts[3:]},
+        {"id": "composition", "title": "三分项：设备、知识产权、厂房", "description": "季度核算同时回答自身增速与对GDP增长的百分点贡献；不同分项的周期性质不可混同。", "charts": investment_charts[2:4]},
+        {"id": "ai", "title": "AI与政策投资如何在官方数据中显形", "description": "制造业建厂和数据中心建造是官方硬数据，但不等于完整AI capex。", "charts": investment_charts[4:]},
     ]
 
     # PMI
@@ -345,18 +355,21 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
     ]
 
     # Fed
+    sofr_iorb = difference(parsed["sofr"], parsed["iorb"], digits=8)
+    sofr_iorb_bp = (sofr_iorb[0], [value * 100 for value in sofr_iorb[1]])
     fed_charts = [
         chart("fed-corridor", "利率走廊与隔夜市场", "管理利率、无抵押与有抵押隔夜利率共同显示政策实施。", "%", [series("effr", parsed), series("iorb", parsed), series("sofr", parsed), series("onrrp_rate", parsed)], eyebrow="9.2 · RATE CORRIDOR", what="EFFR、IORB、SOFR和ON RRP利率。", read="观察市场利率在走廊中的位置；SOFR相对IORB抬升可提示回购资金面收紧。", caveat="EFFR为月频聚合，其他为日频；不同抵押品和参与者意味着不能机械套用单一上下限。", slide="PPT第219—223页", default="5Y"),
         chart("fed-liquidity", "准备金、ON RRP与TGA", "负债端三件套决定流动性在银行、货基与财政部之间的分配。", "十亿美元", [series("reserves", parsed), series("onrrp_amount", parsed), series("tga", parsed, unit="十亿美元", scale=.001, transform="百万美元÷1000")], eyebrow="9.2 · LIABILITY MIX", what="准备金余额、隔夜逆回购用量和财政部一般账户余额。", read="TGA上升通常抽走准备金；ON RRP可在QT早期充当缓冲池。", caveat="三条频率不同且准备金为月频；加总关系受现金和其他负债影响，不是严格三项恒等式。", slide="PPT第218、223页", default="10Y"),
+        chart("fed-sofr-iorb-spread", "SOFR−IORB利差", "价格维度的准备金充足度观察哨；持续升穿零轴比单日尖峰更重要。", "bp", [series("sofr", parsed, series_id="sofr_iorb_bp", label="SOFR−IORB", data=sofr_iorb_bp, unit="bp", transform="同日SOFR减IORB，再乘100换算为基点")], eyebrow="9.2 · RESERVE ADEQUACY", what="纽约联储SOFR与美联储IORB的同日利差。", read="持续为正并伴随SRF使用、回购波动上升，才更像准备金边际趋紧。", caveat="单日季末、税期和国债结算可制造尖峰；不能单凭此线确定QT终点。", slide="PPT第223页 · 图9-4右", default="5Y", reference=0),
         chart("fed-securities", "联储持有美债与MBS", "资产端直接展示QE/QT吸收或释放的久期。", "万亿美元", [series("fed_treasuries", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000"), series("fed_mbs", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000")], eyebrow="9.2 · BALANCE SHEET", what="H.4.1联储持有美国国债和机构MBS。", read="持续下降代表QT释放久期；MBS自然到期速度受房贷提前偿还影响。", caveat="iFinD元数据频率标日但原始H.4.1为周度快照；不是每日交易流。", slide="PPT第218、224页", default="ALL"),
         chart("fed-policy-path", "2年与10年美债", "2年浓缩未来政策路径，10年叠加增长、通胀和期限溢价。", "%", [series("ust2", parsed), series("ust10", parsed)], eyebrow="9.3 · MARKET PRICING", what="美联储H.15日度2年和10年收益率。", read="转向前2年往往先动；曲线变化比单点更能显示市场与政策的分歧。", caveat="2年收益率不是会议概率；远端仍含期限溢价和风险补偿。", slide="PPT第225—227页", default="10Y"),
         chart("fed-nfci", "芝加哥联储全国金融状况指数", "把货币、债务和股权市场变量压缩为综合松紧指标。", "标准化指数", [series("nfci", parsed)], eyebrow="9.4 · FINANCIAL CONDITIONS", what="芝加哥联储105项变量合成的NFCI周度指数。", read="高于0通常表示较历史均值更紧，下降表示金融条件放松。", caveat="综合指数会修订；不同FCI的水平不可横比，相关不等于政策因果。", slide="PPT第228—229页", default="ALL", reference=0),
         chart("fed-dollar", "广义名义美元指数", "美元是美国金融条件向全球传导的重要价格。", "1973年3月=100", [series("broad_dollar", parsed)], eyebrow="9.4 · DOLLAR CHANNEL", what="美联储贸易加权广义名义美元指数。", read="美元走强通常收紧全球美元金融条件，并压低进口价格。", caveat="指数权重会更新；美元同时受海外冲击，不能只由美联储政策解释。", slide="PPT第228—231页", default="10Y"),
     ]
     modules["fed"]["sections"] = [
-        {"id": "implementation", "title": "政策实施：利率走廊与流动性分配", "description": "先确认隔夜利率是否在走廊内，再看准备金、ON RRP和TGA的结构变化。", "charts": fed_charts[:2]},
-        {"id": "balance", "title": "资产负债表：QE/QT与久期", "description": "美债和MBS持仓是政策吸收久期的直接量。", "charts": fed_charts[2:3]},
-        {"id": "pricing", "title": "市场定价与金融条件", "description": "利率路径、综合金融条件和美元共同决定政策的实体落点。", "charts": fed_charts[3:]},
+        {"id": "implementation", "title": "政策实施：利率走廊与流动性分配", "description": "先确认隔夜利率是否在走廊内，再看准备金、ON RRP、TGA与SOFR−IORB价格信号。", "charts": fed_charts[:3]},
+        {"id": "balance", "title": "资产负债表：QE/QT与久期", "description": "美债和MBS持仓是政策吸收久期的直接量。", "charts": fed_charts[3:4]},
+        {"id": "pricing", "title": "市场定价与金融条件", "description": "利率路径、综合金融条件和美元共同决定政策的实体落点。", "charts": fed_charts[4:]},
     ]
 
     # Shared headline and quality metadata
