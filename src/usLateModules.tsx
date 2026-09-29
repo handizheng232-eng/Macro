@@ -2,9 +2,10 @@ import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import lateModulesData from './data/usLateModulesData.json'
 import type { UsMacroCategory } from './usMacroConfig'
+import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
 type LateCategory = Extract<UsMacroCategory, 'housing' | 'investment' | 'pmi' | 'fiscal' | 'fed'>
-type RangeKey = '3Y' | '5Y' | '10Y' | 'ALL'
+type RangeKey = MacroTimeRange
 type SourceMeta = { provider: string; institution: string; code: string; name: string; rawUnit: string; url: string; latestObservation: string }
 type ChartSeries = { id: string; label: string; dates: string[]; values: number[]; color: string; unit: string; frequency: '日' | '周' | '月' | '季' | '年'; latestValue: number; latestObservation: string; source: SourceMeta; transformLabel?: string }
 type ChartExplanation = { what: string; howToRead: string; caveat: string; pptSlide: string }
@@ -26,10 +27,7 @@ type Dataset = {
 }
 
 const dataset = lateModulesData as Dataset
-const RANGE_OPTIONS: Array<{ key: RangeKey; label: string; years: number | null }> = [
-  { key: '3Y', label: '3年', years: 3 }, { key: '5Y', label: '5年', years: 5 },
-  { key: '10Y', label: '10年', years: 10 }, { key: 'ALL', label: '全部', years: null },
-]
+const RANGE_OPTIONS = MACRO_TIME_RANGE_OPTIONS
 const ACCENT_CLASS: Record<string, string> = { teal: 'late-teal', blue: 'late-blue', purple: 'late-purple', red: 'late-red', cyan: 'late-cyan' }
 
 function formatValue(value: number) {
@@ -43,7 +41,7 @@ function formatDate(date: string) {
 function dateToTimestamp(date: string) { return Date.UTC(Number(date.slice(0, 4)), Number(date.slice(4, 6) || '1') - 1, Number(date.slice(6, 8) || '1')) }
 function timestampLabel(timestamp: number) { const date = new Date(timestamp); return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}` }
 function chartValue(value: number, unit: string) { return `${formatValue(value)}${unit === '%' || unit.includes('%') ? '%' : unit ? ` ${unit}` : ''}` }
-function cutoffFor(range: RangeKey, latest: number) { const years = RANGE_OPTIONS.find((item) => item.key === range)?.years; return years == null ? Number.NEGATIVE_INFINITY : latest - years * 365.25 * 86_400_000 }
+function cutoffFor(range: RangeKey, latest: number) { return macroTimeRangeCutoff(range, latest) }
 function scrollToSection(id: string) { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }
 
 function ResearchChart({ chart }: { chart: ChartDefinition }) {

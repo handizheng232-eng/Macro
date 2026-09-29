@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import employmentData from './data/usEmploymentData.json'
+import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
-type RangeKey = '1Y' | '3Y' | '5Y' | 'ALL'
+type RangeKey = MacroTimeRange
 
 type SourceMeta = {
   provider: string
@@ -150,12 +151,7 @@ type EmploymentDataset = {
 }
 
 const dataset = employmentData as EmploymentDataset
-const RANGE_OPTIONS: Array<{ key: RangeKey; label: string; years: number | null }> = [
-  { key: '1Y', label: '1年', years: 1 },
-  { key: '3Y', label: '3年', years: 3 },
-  { key: '5Y', label: '5年', years: 5 },
-  { key: 'ALL', label: '全部', years: null },
-]
+const RANGE_OPTIONS = MACRO_TIME_RANGE_OPTIONS
 
 function formatValue(value: number, digits = 1): string {
   return new Intl.NumberFormat('zh-CN', {
@@ -186,10 +182,7 @@ function chartValue(value: number, unit: string): string {
 }
 
 function cutoffFor(range: RangeKey, latestTimestamp: number): number {
-  const years = RANGE_OPTIONS.find((option) => option.key === range)?.years ?? null
-  return years === null
-    ? Number.NEGATIVE_INFINITY
-    : latestTimestamp - years * 365.25 * 24 * 60 * 60 * 1000
+  return macroTimeRangeCutoff(range, latestTimestamp)
 }
 
 function RangeSwitch({ title, value, onChange }: { title: string; value: RangeKey; onChange: (value: RangeKey) => void }) {

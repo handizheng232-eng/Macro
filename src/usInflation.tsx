@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import inflationData from './data/usInflationData.json'
+import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
-type RangeKey = '1Y' | '3Y' | '5Y' | 'ALL'
+type RangeKey = MacroTimeRange
 
 type SourceMeta = {
   provider: string
@@ -206,12 +207,7 @@ type InflationDataset = {
 }
 
 const dataset = inflationData as InflationDataset
-const RANGE_OPTIONS: Array<{ key: RangeKey; label: string; years: number | null }> = [
-  { key: '1Y', label: '1年', years: 1 },
-  { key: '3Y', label: '3年', years: 3 },
-  { key: '5Y', label: '5年', years: 5 },
-  { key: 'ALL', label: '全部', years: null },
-]
+const RANGE_OPTIONS = MACRO_TIME_RANGE_OPTIONS
 
 function formatValue(value: number, digits = 2): string {
   return new Intl.NumberFormat('zh-CN', {
@@ -261,10 +257,7 @@ function MultiSeriesChart({ chart }: { chart: ChartDefinition }) {
   const [hoverTimestamp, setHoverTimestamp] = useState<number | null>(null)
 
   const latestTimestamp = Math.max(...chart.series.flatMap((series) => series.dates.map(dateToTimestamp)))
-  const rangeYears = RANGE_OPTIONS.find((option) => option.key === range)?.years ?? null
-  const cutoff = rangeYears === null
-    ? Number.NEGATIVE_INFINITY
-    : latestTimestamp - rangeYears * 365.25 * 24 * 60 * 60 * 1000
+  const cutoff = macroTimeRangeCutoff(range, latestTimestamp)
 
   const visible = useMemo(() => chart.series.map((series) => {
     const points = series.dates.map((date, index) => ({

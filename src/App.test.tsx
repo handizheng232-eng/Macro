@@ -205,6 +205,32 @@ describe('宏观框架', () => {
     }
   })
 
+  it('九个宏观模块的所有时间序列图统一提供七档时间范围', () => {
+    const pages = [
+      '#framework/us-growth',
+      '#framework/us-employment',
+      '#framework/us-inflation',
+      '#framework/us-consumption',
+      '#framework/us-housing',
+      '#framework/us-investment',
+      '#framework/us-pmi',
+      '#framework/us-fiscal-treasury',
+      '#framework/us-fed-financial-conditions',
+    ] as const
+    const expectedRanges = ['1年', '3年', '5年', '10年', '20年', '30年', '全部']
+
+    for (const hash of pages) {
+      window.location.hash = hash
+      const { unmount } = render(<App />)
+      const rangeGroups = screen.getAllByRole('group', { name: /时间范围$/ })
+      expect(rangeGroups.length).toBeGreaterThan(0)
+      for (const group of rangeGroups) {
+        expect(within(group).getAllByRole('button').map((button) => button.textContent)).toEqual(expectedRanges)
+      }
+      unmount()
+    }
+  }, 30000)
+
   it('住房模块按PPT路线图展示真实iFinD序列与明确数据边界', async () => {
     const user = userEvent.setup()
     window.location.hash = '#framework'

@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import gdpData from './data/usGdpData.json'
+import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
-type RangeKey = '3Y' | '5Y' | '10Y' | 'ALL'
+type RangeKey = MacroTimeRange
 type SourceMeta = { provider: string; institution: string; code: string; name: string; rawUnit: string; url: string; latestObservation: string }
 type ChartExplanation = { what: string; howToRead: string; caveat: string; pptSlide: string }
 type ChartSeries = {
@@ -35,10 +36,7 @@ type GdpDataset = {
 }
 
 const dataset = gdpData as GdpDataset
-const RANGE_OPTIONS: Array<{ key: RangeKey; label: string; years: number | null }> = [
-  { key: '3Y', label: '3年', years: 3 }, { key: '5Y', label: '5年', years: 5 },
-  { key: '10Y', label: '10年', years: 10 }, { key: 'ALL', label: '全部', years: null },
-]
+const RANGE_OPTIONS = MACRO_TIME_RANGE_OPTIONS
 
 function formatValue(value: number, digits?: number): string {
   const decimals = digits ?? (Math.abs(value) >= 100 ? 0 : 1)
@@ -59,8 +57,7 @@ function chartValue(value: number, unit: string): string {
   return `${formatValue(value)}${unit === '%' || unit.includes('%') ? '%' : unit ? ` ${unit}` : ''}`
 }
 function cutoffFor(range: RangeKey, latest: number): number {
-  const years = RANGE_OPTIONS.find((item) => item.key === range)?.years
-  return years == null ? Number.NEGATIVE_INFINITY : latest - years * 365.25 * 86_400_000
+  return macroTimeRangeCutoff(range, latest)
 }
 
 function RangeSwitch({ title, value, onChange }: { title: string; value: RangeKey; onChange: (value: RangeKey) => void }) {
