@@ -18,10 +18,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.ifind_history import assert_full_history, metadata_start_date
+except ModuleNotFoundError:
+    from ifind_history import assert_full_history, metadata_start_date
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usGdpData.json"
 DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-gdp"
-START_DATE = "1990-01-01"
 SEARCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/search/associate"
 FETCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/fetch_data/search"
 REFERER = "https://ft.51ifind.com/standardgwapi/bff/macro_bff/edb_web/index?pluginVersion=excel_win64"
@@ -31,16 +35,16 @@ _CODE_PREFIX = re.compile(r"^[A-Za-z]+0*")
 
 # code, exact name, label, raw unit, frequency, institution, color, plausible range
 SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, str, tuple[float, float]]] = {
-    "real_gdp_level": ("G002599633", "美国:GDP:不变价:支出法:折年数:季调:当季值", "实际GDP", "十亿美元", "季", "美国经济分析局", "#1859b8", (5_000, 40_000)),
+    "real_gdp_level": ("G002599633", "美国:GDP:不变价:支出法:折年数:季调:当季值", "实际GDP", "十亿美元", "季", "美国经济分析局", "#1859b8", (2_000, 40_000)),
     "real_gdp_saar": ("G005120877", "美国:GDP:不变价:支出法:环比折年率:季调:当季值", "实际GDP", "%", "季", "美国经济分析局", "#17233b", (-50, 50)),
-    "nominal_gdp_level": ("G002599635", "美国:GDP:支出法:折年数:季调:当季值", "名义GDP", "十亿美元", "季", "美国经济分析局", "#c94c4c", (5_000, 50_000)),
+    "nominal_gdp_level": ("G002599635", "美国:GDP:支出法:折年数:季调:当季值", "名义GDP", "十亿美元", "季", "美国经济分析局", "#c94c4c", (200, 50_000)),
     "potential_gdp": ("G011775386", "美国:10年经济预测:实际潜在GDP:当季值", "CBO实际潜在GDP", "十亿美元", "季", "美国国会预算办公室", "#c94c4c", (10_000, 50_000)),
     "potential_growth": ("G011775387", "美国:10年经济预测:实际潜在GDP:折年数:增长率:当季值", "CBO实际潜在GDP增速", "%", "季", "美国国会预算办公室", "#a56a12", (-5, 10)),
     "labor_force_yoy": ("G005213865", "美国:劳动力人数:16岁及以上:季调:当月同比", "劳动力增速", "%", "月", "美国劳工局", "#1859b8", (-10, 10)),
     "productivity_yoy": ("G005349842", "美国:投入产出指数:人工生产率非农商业:当季同比", "劳动生产率增速", "%", "季", "美国劳工局", "#c94c4c", (-20, 20)),
-    "nominal_consumption": ("G002599638", "美国:GDP:支出法:个人消费:折年数:季调:当季值", "消费 C", "十亿美元", "季", "美国经济分析局", "#1859b8", (1_000, 40_000)),
+    "nominal_consumption": ("G002599638", "美国:GDP:支出法:个人消费:折年数:季调:当季值", "消费 C", "十亿美元", "季", "美国经济分析局", "#1859b8", (100, 40_000)),
     "nominal_investment": ("G002599643", "美国:GDP:支出法:国内私人投资:折年数:季调:当季值", "私人投资 I", "十亿美元", "季", "美国经济分析局", "#c94c4c", (-5_000, 15_000)),
-    "nominal_government": ("G002599657", "美国:GDP:支出法:政府消费支出和投资:折年数:季调:当季值", "政府购买 G", "十亿美元", "季", "美国经济分析局", "#8a9096", (1_000, 15_000)),
+    "nominal_government": ("G002599657", "美国:GDP:支出法:政府消费支出和投资:折年数:季调:当季值", "政府购买 G", "十亿美元", "季", "美国经济分析局", "#8a9096", (30, 15_000)),
     "nominal_net_exports": ("G002599650", "美国:GDP:支出法:净出口:折年数:季调:当季值", "净出口 NX", "十亿美元", "季", "美国经济分析局", "#a56a12", (-5_000, 5_000)),
     "final_sales_saar": ("G005132578", "美国:GDP:不变价:最终销售:环比折年率:季调:当季值", "最终销售", "%", "季", "美国经济分析局", "#2f7fa3", (-50, 50)),
     "domestic_final_sales_saar": ("G010701366", "美国:不变价:国内采购总额:最终销售:环比折年率:季调:当季值", "国内购买者最终销售", "%", "季", "美国经济分析局", "#855c9c", (-50, 50)),
@@ -49,14 +53,14 @@ SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, str, tuple[float, flo
     "contrib_investment": ("G005120955", "美国:GDP:不变价:支出法:环比贡献率:国内私人投资:折年数:季调:当季值", "私人投资", "%", "季", "美国经济分析局", "#c94c4c", (-30, 30)),
     "contrib_government": ("G005120969", "美国:GDP:不变价:支出法:环比贡献率:政府消费支出和投资:折年数:季调:当季值", "政府购买", "%", "季", "美国经济分析局", "#8a9096", (-30, 30)),
     "contrib_net_exports": ("G005120962", "美国:GDP:不变价:支出法:环比贡献率:净出口:折年数:季调:当季值", "净出口", "%", "季", "美国经济分析局", "#a56a12", (-30, 30)),
-    "gdi_level": ("G010701498", "美国:不变价:GDI:折年数:季调:当季值", "实际GDI", "百万美元", "季", "美国经济分析局", "#c94c4c", (5_000_000, 40_000_000)),
-    "gdp_gdi_mean": ("G010701499", "美国:不变价:GDP和GDI均值:折年数:季调:当季值", "GDP/GDI简单均值", "百万美元", "季", "美国经济分析局", "#8a9096", (5_000_000, 40_000_000)),
-    "deflator_level": ("G005123971", "美国:GDP:2017价:支出法:平减指数:季调:当季值", "GDP平减指数", "2017年=100", "季", "美国经济分析局", "#ba7a2e", (20, 250)),
+    "gdi_level": ("G010701498", "美国:不变价:GDI:折年数:季调:当季值", "实际GDI", "百万美元", "季", "美国经济分析局", "#c94c4c", (2_000_000, 40_000_000)),
+    "gdp_gdi_mean": ("G010701499", "美国:不变价:GDP和GDI均值:折年数:季调:当季值", "GDP/GDI简单均值", "百万美元", "季", "美国经济分析局", "#8a9096", (2_000_000, 40_000_000)),
+    "deflator_level": ("G005123971", "美国:GDP:2017价:支出法:平减指数:季调:当季值", "GDP平减指数", "2017年=100", "季", "美国经济分析局", "#ba7a2e", (10, 250)),
     "wei": ("G005350606", "美国:经济活动指数", "WEI周度经济指数", "", "周", "达拉斯联储", "#1859b8", (-20, 20)),
-    "ces_employment": ("G002600500", "美国:非农就业人数:季调", "非农就业 CES", "千人", "月", "美国劳工局", "#1859b8", (50_000, 250_000)),
+    "ces_employment": ("G002600500", "美国:非农就业人数:季调", "非农就业 CES", "千人", "月", "美国劳工局", "#1859b8", (25_000, 250_000)),
     "cps_employment": ("G002600502", "美国:就业人数:16岁及以上:季调:当月值", "家庭就业 CPS", "千人", "月", "美国劳工局", "#2f7fa3", (50_000, 250_000)),
     "real_pce_monthly": ("G010698399", "美国:2017价:个人消费支出:折年数:季调:当月值", "实际个人消费 PCE", "百万美元", "月", "美国经济分析局", "#ba7a2e", (5_000_000, 40_000_000)),
-    "industrial_production": ("G006598549", "美国:工业生产指数:季调:当月值", "工业生产", "2017年=100", "月", "美联储", "#6f7883", (40, 150)),
+    "industrial_production": ("G006598549", "美国:工业生产指数:季调:当月值", "工业生产", "2017年=100", "月", "美联储", "#6f7883", (3, 150)),
 }
 
 
@@ -201,8 +205,10 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
         returned_unit = metadata.get("unit") or ""
         if metadata.get("name") != exact_name or returned_unit != unit or metadata.get("frequency") != frequency:
             raise ValueError(f"identity mismatch for {key}: {metadata}")
-        payload = fetch_indicator(token, code, START_DATE, end)
+        start = metadata_start_date(metadata, code)
+        payload = fetch_indicator(token, code, start, end)
         dates, values = fetch_response_series(payload, code)
+        assert_full_history(dates, metadata, code)
         if not all(bounds[0] <= value <= bounds[1] for value in values):
             raise ValueError(f"range check failed for {key}: {min(values)}..{max(values)}")
         result[key] = {"metadata": metadata, "payload": payload}

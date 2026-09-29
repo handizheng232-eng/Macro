@@ -64,7 +64,12 @@ npm run refresh:us-inflation
 npm run refresh:us-gdp
 npm run refresh:us-consumption
 npm run refresh:us-late-modules
+npm run refresh:us-ifind
 ```
+
+`refresh:us-ifind` 串行刷新九模块使用的全部 iFinD 数据。各脚本不再使用统一的 `1990-01-01` 或 `2000-01-01` 起点，而是先读取每条指标的 iFinD EDB 元数据 `sdate`，再从该指标在数据库中的首个观测期抓取至当前日期。若返回数据的首日晚于元数据首日，刷新会失败并保留上一版静态文件；不同指标继续保留各自真实起点，不向前补值。
+
+本机计划任务在工作日早晨执行 iFinD 全量刷新、数据测试、前端测试和生产构建；仅当全部验证通过且数据确有变化时才提交并推送，再由 GitHub Pages 自动部署。任务依赖本机 iFinD 已登录会话，浏览器包和公开仓库均不保存数据商凭证。
 
 ## 质量检查
 

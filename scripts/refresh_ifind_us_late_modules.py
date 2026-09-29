@@ -18,6 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.ifind_history import assert_full_history, metadata_start_date
 from scripts.refresh_ifind_us_consumption import (
     compact_date,
     detect_missing_periods,
@@ -31,7 +32,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usLateModulesData.json"
 DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-late-modules"
 
-# code, exact name, label, unit, frequency, institution, color, bounds, start
+# code, exact name, label, unit, frequency, institution, color, bounds, legacy start (metadata sdate is authoritative)
 Spec = tuple[str, str, str, str, str, str, str, tuple[float, float], str]
 SERIES_SPEC: dict[str, Spec] = {
     # Chapter 5 · Housing
@@ -70,7 +71,7 @@ SERIES_SPEC: dict[str, Spec] = {
     "ism_prices": ("G002601517", "美国:ISM:制造业PMI:物价", "ISM价格支付", "", "月", "美国供应管理协会", "#da1e28", (10, 100), "1990-01-01"),
     "ism_employment": ("G002601513", "美国:ISM:制造业PMI:就业", "ISM就业", "", "月", "美国供应管理协会", "#007d79", (10, 90), "1990-01-01"),
     "ism_delivery": ("G002601514", "美国:ISM:制造业PMI:供应商交付", "ISM供应商交付", "", "月", "美国供应管理协会", "#6929c4", (10, 100), "1990-01-01"),
-    "industrial_production": ("G006598549", "美国:工业生产指数:季调:当月值", "工业生产", "2017年=100", "月", "美联储", "#0f62fe", (40, 150), "1990-01-01"),
+    "industrial_production": ("G006598549", "美国:工业生产指数:季调:当月值", "工业生产", "2017年=100", "月", "美联储", "#0f62fe", (3, 150), "1990-01-01"),
     "wholesale_ratio": ("G002902608", "美国:批发商库存销售比:季调", "批发库存销售比", "", "月", "美国人口普查局", "#9f1853", (0.5, 3), "1992-01-01"),
     "retail_ratio": ("G002902607", "美国:零售商库存销售比:季调", "零售库存销售比", "", "月", "美国人口普查局", "#007d79", (0.5, 3), "1992-01-01"),
     "ny_fed": ("G003049555", "美国:纽约联储制造业指数:综合:季调", "纽约联储制造业", "", "月", "纽约联储", "#6929c4", (-100, 100), "2001-01-01"),
@@ -121,7 +122,7 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
     end = datetime.now(timezone.utc).date().isoformat()
     result: dict[str, dict[str, Any]] = {}
     for key, spec in SERIES_SPEC.items():
-        code, exact_name, _label, unit, frequency, institution, _color, bounds, start = spec
+        code, exact_name, _label, unit, frequency, institution, _color, bounds, _legacy_start = spec
         metadata = next((item for item in search_indicator(token, exact_name) if item.get("displayid") == code), None)
         if metadata is None:
             raise ValueError(f"metadata mismatch: {key} {code} not found")
@@ -129,8 +130,10 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
         expected = (exact_name, unit, frequency, institution)
         if actual != expected:
             raise ValueError(f"identity mismatch for {key}: expected={expected!r}, actual={actual!r}")
+        start = metadata_start_date(metadata, code)
         payload = fetch_indicator(token, code, start, end)
         dates, values = fetch_response_series(payload, code)
+        assert_full_history(dates, metadata, code)
         if not all(bounds[0] <= value <= bounds[1] for value in values):
             raise ValueError(f"range check failed for {key}: {min(values)}..{max(values)}")
         result[key] = {"metadata": metadata, "payload": payload}

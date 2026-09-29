@@ -18,10 +18,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.ifind_history import assert_full_history, metadata_start_date
+except ModuleNotFoundError:
+    from ifind_history import assert_full_history, metadata_start_date
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usConsumptionData.json"
 DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-consumption"
-START_DATE = "1990-01-01"
 SEARCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/search/associate"
 FETCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/fetch_data/search"
 REFERER = "https://ft.51ifind.com/standardgwapi/bff/macro_bff/edb_web/index?pluginVersion=excel_win64"
@@ -31,27 +35,27 @@ _CODE_PREFIX = re.compile(r"^[A-Za-z]+0*")
 
 # code, exact name, label, unit, frequency, institution, color, plausible range
 SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, str, tuple[float, float]]] = {
-    "nominal_gdp": ("G002599635", "美国:GDP:支出法:折年数:季调:当季值", "名义GDP", "十亿美元", "季", "美国经济分析局", "#7a838c", (5_000, 50_000)),
-    "nominal_pce_q": ("G002599638", "美国:GDP:支出法:个人消费:折年数:季调:当季值", "个人消费支出", "十亿美元", "季", "美国经济分析局", "#1859b8", (2_000, 40_000)),
+    "nominal_gdp": ("G002599635", "美国:GDP:支出法:折年数:季调:当季值", "名义GDP", "十亿美元", "季", "美国经济分析局", "#7a838c", (200, 50_000)),
+    "nominal_pce_q": ("G002599638", "美国:GDP:支出法:个人消费:折年数:季调:当季值", "个人消费支出", "十亿美元", "季", "美国经济分析局", "#1859b8", (100, 40_000)),
     "retail_total": ("G002903442", "美国:零售和食品服务销售额:总计:季调", "总零售", "百万美元", "月", "美国人口普查局", "#7a838c", (100_000, 1_500_000)),
     "retail_auto": ("G002903446", "美国:零售和食品服务销售额:机动车辆和零部件店:季调", "汽车及零部件", "百万美元", "月", "美国人口普查局", "#9a6c55", (20_000, 300_000)),
     "retail_gas": ("G002903460", "美国:零售和食品服务销售额:加油站:季调", "加油站", "百万美元", "月", "美国人口普查局", "#ba7a2e", (5_000, 150_000)),
     "retail_building": ("G002903453", "美国:零售和食品服务销售额:建筑材料、园林设备和物料店:季调", "建材及园林", "百万美元", "月", "美国人口普查局", "#2f7fa3", (5_000, 100_000)),
     "retail_foodservice": ("G002903476", "美国:零售和食品服务销售额:食品服务和饮吧:季调", "餐饮", "百万美元", "月", "美国人口普查局", "#855c9c", (10_000, 200_000)),
-    "cpi_index": ("G002600424", "美国:CPI:季调:当月值", "CPI季调指数", "1982-84年=100", "月", "美国劳工局", "#ba7a2e", (50, 500)),
+    "cpi_index": ("G002600424", "美国:CPI:季调:当月值", "CPI季调指数", "1982-84年=100", "月", "美国劳工局", "#ba7a2e", (20, 500)),
     "real_dpi_yoy": ("G005376552", "美国:个人可支配收入:2017价:季调:当月同比", "实际可支配收入同比", "%", "月", "美国经济分析局", "#1859b8", (-30, 40)),
     "real_pce": ("G010698399", "美国:2017价:个人消费支出:折年数:季调:当月值", "实际个人消费支出", "百万美元", "月", "美国经济分析局", "#c94c4c", (3_000_000, 40_000_000)),
     "saving_rate": ("G002602083", "美国:个人储蓄:占可支配收入比重:折年数:季调:当月值", "个人储蓄率", "%", "月", "美国经济分析局", "#2f8a7a", (0, 40)),
-    "nominal_pce": ("G002602081", "美国:个人支出:消费支出:折年数:季调:当月值", "名义PCE", "十亿美元", "月", "美国经济分析局", "#6f7883", (2_000, 40_000)),
-    "nominal_services": ("G005376410", "美国:个人支出:消费支出:服务:折年数:季调:当月值", "服务", "十亿美元", "月", "美国经济分析局", "#1859b8", (1_000, 30_000)),
-    "nominal_durables": ("G005376408", "美国:个人支出:消费支出:商品:耐用品:折年数:季调:当月值", "耐用品", "十亿美元", "月", "美国经济分析局", "#c94c4c", (100, 10_000)),
-    "nominal_nondurables": ("G005376409", "美国:个人支出:消费支出:商品:非耐用品:折年数:季调:当月值", "非耐用品", "十亿美元", "月", "美国经济分析局", "#ba7a2e", (500, 15_000)),
+    "nominal_pce": ("G002602081", "美国:个人支出:消费支出:折年数:季调:当月值", "名义PCE", "十亿美元", "月", "美国经济分析局", "#6f7883", (300, 40_000)),
+    "nominal_services": ("G005376410", "美国:个人支出:消费支出:服务:折年数:季调:当月值", "服务", "十亿美元", "月", "美国经济分析局", "#1859b8", (100, 30_000)),
+    "nominal_durables": ("G005376408", "美国:个人支出:消费支出:商品:耐用品:折年数:季调:当月值", "耐用品", "十亿美元", "月", "美国经济分析局", "#c94c4c", (40, 10_000)),
+    "nominal_nondurables": ("G005376409", "美国:个人支出:消费支出:商品:非耐用品:折年数:季调:当月值", "非耐用品", "十亿美元", "月", "美国经济分析局", "#ba7a2e", (100, 15_000)),
     "real_services": ("G010698403", "美国:2017价:个人消费支出:服务:折年数:季调:当月值", "实际服务消费", "百万美元", "月", "美国经济分析局", "#1859b8", (1_000_000, 30_000_000)),
     "real_durables": ("G010698401", "美国:2017价:个人消费支出:商品:耐用品:折年数:季调:当月值", "实际耐用品消费", "百万美元", "月", "美国经济分析局", "#c94c4c", (100_000, 10_000_000)),
     "real_nondurables": ("G010698402", "美国:2017价:个人消费支出:商品:非耐用品:折年数:季调:当月值", "实际非耐用品消费", "百万美元", "月", "美国经济分析局", "#ba7a2e", (500_000, 15_000_000)),
     "michigan": ("G002601564", "美国:密歇根大学消费者信心指数", "密歇根消费者信心", "1966年1季=100", "月", "密歇根大学", "#c94c4c", (20, 150)),
     "conference": ("G002601565", "美国:世界大型企业联合会:消费者信心指数", "咨商会消费者信心", "1985年=100", "月", "世界大型企业联合会", "#1859b8", (20, 180)),
-    "revolving_credit_yoy": ("G002601177", "美国:消费循环信贷:季调:当月同比", "循环消费信贷同比", "%", "月", "美联储", "#855c9c", (-30, 50)),
+    "revolving_credit_yoy": ("G002601177", "美国:消费循环信贷:季调:当月同比", "循环消费信贷同比", "%", "月", "美联储", "#855c9c", (-30, 1_100)),
     "card_delinquency": ("G022571240", "美国:拖欠率:信用卡贷款:所有商业银行:季调", "信用卡拖欠率", "%", "季", "圣路易斯联储", "#c94c4c", (0, 15)),
     "wealth_ratio": ("G017486386", "美国:家庭和非营利组织:净资产占个人可支配收入的百分比", "家庭净资产/可支配收入", "%", "年", "美联储", "#2f7fa3", (200, 1_500)),
 }
@@ -188,8 +192,10 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
             raise ValueError(f"metadata mismatch: {key} {code} not found")
         if metadata.get("name") != exact_name or (metadata.get("unit") or "") != unit or metadata.get("frequency") != frequency or metadata.get("datasource") != _institution:
             raise ValueError(f"identity mismatch for {key}: {metadata}")
-        payload = fetch_indicator(token, code, START_DATE, end)
+        start = metadata_start_date(metadata, code)
+        payload = fetch_indicator(token, code, start, end)
         dates, values = fetch_response_series(payload, code)
+        assert_full_history(dates, metadata, code)
         if not all(bounds[0] <= value <= bounds[1] for value in values):
             raise ValueError(f"range check failed for {key}: {min(values)}..{max(values)}")
         result[key] = {"metadata": metadata, "payload": payload}

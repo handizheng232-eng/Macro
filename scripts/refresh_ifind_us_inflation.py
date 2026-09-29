@@ -21,10 +21,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.ifind_history import assert_full_history, metadata_start_date
+except ModuleNotFoundError:
+    from ifind_history import assert_full_history, metadata_start_date
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usInflationData.json"
 DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-inflation"
-START_DATE = "2000-01-01"
 
 SEARCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/search/associate"
 FETCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/fetch_data/search"
@@ -401,6 +405,27 @@ def read_token() -> tuple[str, Path]:
     raise RuntimeError("未找到 iFinD 登录会话：请打开 iFinD 客户端登录一次后再运行。")
 
 
+def search_indicator(token: str, display_id: str) -> dict[str, Any]:
+    request = urllib.request.Request(
+        SEARCH_URL + "?" + urllib.parse.urlencode({"keyword": display_id}),
+        headers={
+            "Accept": "application/json, text/plain, */*",
+            "User-Agent": USER_AGENT,
+            "Referer": REFERER,
+            "Origin": "https://ft.51ifind.com",
+            "Cookie": f"jgbsessid={token}",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    if payload.get("code") != 1:
+        raise ValueError(f"iFinD search rejected {display_id}: {payload.get('msg')}")
+    metadata = next((item for item in payload.get("data") or [] if item.get("displayid") == display_id), None)
+    if metadata is None:
+        raise ValueError(f"iFinD metadata mismatch: {display_id} not found")
+    return metadata
+
+
 def fetch_indicator(token: str, display_id: str, start: str, end: str) -> dict[str, Any]:
     form = urllib.parse.urlencode({
         "zb_str": _CODE_PREFIX.sub("", display_id) or display_id,
@@ -421,10 +446,16 @@ def fetch_indicator(token: str, display_id: str, start: str, end: str) -> dict[s
 
 def fetch_all(token: str) -> dict[str, dict[str, Any]]:
     end = datetime.now(timezone.utc).date().isoformat()
-    return {
-        key: fetch_indicator(token, display_id, START_DATE, end)
-        for key, (display_id, _label, _color) in SERIES_SPEC.items()
-    }
+    result: dict[str, dict[str, Any]] = {}
+    for key, (display_id, _label, _color) in SERIES_SPEC.items():
+        metadata = search_indicator(token, display_id)
+        start = metadata_start_date(metadata, display_id)
+        payload = fetch_indicator(token, display_id, start, end)
+        dates, _values = fetch_response_series(payload, display_id)
+        assert_full_history(dates, metadata, display_id)
+        result[key] = payload
+        print(f"verified {key}: {display_id} {dates[0]}..{dates[-1]} ({len(dates)})")
+    return result
 
 
 def series(

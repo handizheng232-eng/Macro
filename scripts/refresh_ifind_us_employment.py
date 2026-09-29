@@ -18,10 +18,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+try:
+    from scripts.ifind_history import assert_full_history, metadata_start_date
+except ModuleNotFoundError:
+    from ifind_history import assert_full_history, metadata_start_date
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usEmploymentData.json"
 DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-employment"
-START_DATE = "1990-01-01"
 
 SEARCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/search/associate"
 FETCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/fetch_data/search"
@@ -55,7 +59,7 @@ SERIES_SPEC: dict[str, tuple[str, str, str, str, str, str, tuple[float, float]]]
     "unemployment_prime_male": ("G005315518", "美国:失业率:男性:25-54岁:季调:当月值", "25—54岁男性", "%", "月", "#1859b8", (0, 30)),
     "unemployment_prime_female": ("G005315529", "美国:失业率:女性:25-54岁:季调:当月值", "25—54岁女性", "%", "月", "#c94c4c", (0, 30)),
     "cps_employment": ("G002600502", "美国:就业人数:16岁及以上:季调:当月值", "CPS家庭就业人数", "千人", "月", "#c94c4c", (50_000, 250_000)),
-    "ces_employment": ("G002600500", "美国:非农就业人数:季调", "CES非农就业岗位", "千人", "月", "#1859b8", (50_000, 250_000)),
+    "ces_employment": ("G002600500", "美国:非农就业人数:季调", "CES非农就业岗位", "千人", "月", "#1859b8", (25_000, 250_000)),
     "initial_claims": ("G002600494", "美国:当周初次申请失业金人数:季调", "初请失业金", "人", "周", "#1859b8", (0, 10_000_000)),
     "continuing_claims": ("G002600496", "美国:截止本周领取失业保险人群:季调", "续请失业金", "人", "周", "#855c9c", (0, 30_000_000)),
     "vacancy_rate": ("G003049462", "美国:职位空缺率:非农部门:季调:当月值", "职位空缺率", "%", "月", "#c94c4c", (0, 15)),
@@ -285,8 +289,10 @@ def fetch_all(token: str) -> dict[str, dict[str, Any]]:
             raise ValueError(f"iFinD metadata mismatch: {key} {code} not found for {exact_name}")
         if metadata.get("name") != exact_name or metadata.get("unit") != expected_unit or metadata.get("frequency") != expected_frequency:
             raise ValueError(f"iFinD identity mismatch for {key}: {metadata}")
-        payload = fetch_indicator(token, code, START_DATE, effective_end_date(expected_frequency, end))
+        start = metadata_start_date(metadata, code)
+        payload = fetch_indicator(token, code, start, effective_end_date(expected_frequency, end))
         dates, values = fetch_response_series(payload, code)
+        assert_full_history(dates, metadata, code)
         lower, upper = _bounds
         if not all(lower <= value <= upper for value in values):
             minimum, maximum = min(values), max(values)
