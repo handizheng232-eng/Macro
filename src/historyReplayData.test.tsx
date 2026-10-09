@@ -504,21 +504,34 @@ it('实际公众号观点保留段号及条件数组，原文字正文不标成P
     expect(coverage).toHaveTextContent(`已取得正文 ${data.wechatCoverage.totalArticles} 篇 · 提取观点 ${data.wechatCoverage.totalOpinions} 条`)
     for (const account of data.wechatCoverage.actualAccounts) expect(coverage).toHaveTextContent(`${account.accountActual} · ${account.articleCount} 篇`)
   }
-  expect(region).toHaveTextContent('证据段：p045')
-  expect(region).not.toHaveTextContent('证据页：p045')
-  expect(region).toHaveTextContent('年内或再加息1—2次')
-  expect(region.querySelector('pre')).toHaveTextContent('25')
-  expect(region.textContent).toContain('[\n  1,\n  2\n]')
-  expect(region).toHaveTextContent('当前可读页面版本')
-  expect(within(region).queryAllByRole('link')).toHaveLength(0)
+  const items = data.wechatResearchEvidence || []
+  expect(items.length).toBeGreaterThan(0)
+  const cards = within(region).getAllByRole('article')
+  items.forEach((item, index) => {
+    expect(item.pages?.every(page => typeof page === 'string' && /^p\d+$/.test(page))).toBe(true)
+    expect(cards[index]).toHaveTextContent(`证据段：${item.pages?.join('、')}`)
+    expect(cards[index]).not.toHaveTextContent('证据页：p')
+    expect(cards[index]).toHaveTextContent(item.claim)
+    expect(cards[index]).toHaveTextContent(item.evidenceExcerpt || '')
+    expect(cards[index]).toHaveTextContent('条件：')
+    expect(cards[index]).toHaveTextContent('期限：')
+  })
+  const publicURLs = new Set(data.sources.map(source => source.url).filter(url => /^https?:\/\//.test(url)))
+  expect(within(region).queryAllByRole('link').every(link => publicURLs.has(link.getAttribute('href') || ''))).toBe(true)
 })
 
 it('实际星球观点的归档日期标题采用文件名口径', () => {
   render(<HistoryReplay onBack={() => {}} />)
   fireEvent.click(screen.getByText(/星球观点明细.*点击展开/))
   const region = screen.getByRole('region', { name: '星球观点独立追溯' })
-  expect(region).toHaveTextContent('观点归档日期（文件名优先）：2026-09-19')
-  expect(region.textContent).not.toContain('观点日期 / 平台日：2026-09-19')
+  const items = (replayData as HistoryReplayData).researchEvidence || []
+  expect(items.length).toBeGreaterThan(0)
+  const cards = within(region).getAllByRole('article')
+  items.forEach((item, index) => {
+    expect(item.dateBasis).toContain('filename_date_user_preferred')
+    expect(cards[index]).toHaveTextContent(`观点归档日期（文件名优先）：${item.expressedAt}`)
+    expect(cards[index]).not.toHaveTextContent(`观点日期 / 平台日：${item.expressedAt}`)
+  })
 })
 
 it('当前完整资料视图与严格历史截面明确分开标示', () => {
@@ -544,7 +557,11 @@ it.each(['2026-09-16', '2026-09-30'])('讲话日早于截止%s仍不得把首次
   expect(screen.queryByRole('heading', { name: '记者会FINAL逐字稿' })).not.toBeInTheDocument()
   expect(screen.queryByText('FINAL版本才有的问答现实')).not.toBeInTheDocument()
   expect(screen.queryByRole('link', { name: '记者会FINAL逐字稿 ↗' })).not.toBeInTheDocument()
-  expect(screen.getAllByText('缺少当时可得来源，暂不作结论').length).toBeGreaterThan(0)
+  // The stricter dependency boundary unmounts the dependent event title too;
+  // a withheld source no longer leaves a misleading placeholder event behind.
+  expect(screen.queryByRole('heading', { name: '测试会议' })).not.toBeInTheDocument()
+  if (cutoff === '2026-09-16') expect(screen.getByText('当前截止日期内暂无已核验事件。')).toBeInTheDocument()
+  else expect(screen.getAllByText('缺少当时可得来源，暂不作结论').length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: '恢复资料截止日' }))
   expect(screen.getByRole('heading', { name: '记者会FINAL逐字稿' })).toBeInTheDocument()
   expect(screen.getByText('日期依据：讲话发生日；FINAL版9月24日生成，首次发布时间未核实')).toBeInTheDocument()

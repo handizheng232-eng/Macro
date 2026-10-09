@@ -246,7 +246,9 @@ def reviewed_projection(study, private):
         o = original; pair = copy.deepcopy(o['realizationPair']); horizon=copy.deepcopy(o['horizon'])
         if horizon.get('deadlineMonth','') > study['asOf'][:7]:
             pair['status']='ongoing'
-            pair['note']='9月目标尚未到期；原文没有精确会议日，条件与首次历史可得仍未核。'
+            pair['note']=('9月目标尚未到期；原文没有精确会议日，条件与首次历史可得仍未核。'
+                if study['asOf']=='2026-08-31' else
+                '目标月份'+horizon['deadlineMonth']+'尚未到期；保留原文条件、期限与首次历史可得缺口。')
         budget = 100 // source_uses[o['sourceId']]
         quote = o['quote'][:budget]
         ends=[m.end() for m in re.finditer(r'[。！？；]',quote)]
@@ -287,6 +289,11 @@ def reviewed_projection(study, private):
         has_transcript=any(o['channel']=='知识星球' and o['id'] in row['opinionIds'] for o in private['opinions'])
         row['identityStatus']='attributed_theme_trace_including_unverified_transcripts' if has_transcript else 'same_attributed_formal_institution'
         row['limitation']='含转录自述，不能视为已独立证明的同机构实时修订或额外投票。' if has_transcript else '同机构修订链，不是多个独立机构或市场共识；首次历史可得未知。'
+        if study.get('preserveExplicitChainIdentity') is True:
+            require(bool(chain.get('identityStatus')) and bool(chain.get('limitation')),
+                    'Explicit chain identity and limitation required')
+            row['identityStatus']=chain['identityStatus']
+            row['limitation']=chain['limitation']
         row.update(historicalAsOfEligible=False,availableFrom=None,retrospectiveOnly=True)
         chains.append(row)
     sources=[]
@@ -306,40 +313,66 @@ def reviewed_projection(study, private):
         'sourceAliases':aliases,'marketStatistics':copy.deepcopy(study['marketStatistics']),
         'historicalAsOfEligible':False,'firstAvailableDate':None,'retrospectiveOnly':True}
 
-def load_reviewed(manifest_path, stage, root):
+def load_reviewed(manifest_path, stage, root, start=None, end=None):
     """Explicit admission capability; names, flags and directory globs grant none."""
     stage, root = Path(stage),Path(root)
-    manifest_path=resolve(manifest_path,stage,root)
+    from replay_parent_sources import resolve as confined
+    explicit = start is not None or end is not None
+    locate = confined if explicit else resolve
+    manifest_path=locate(manifest_path,stage,root)
     manifest=read_json(manifest_path)
     require(manifest.get('schemaVersion')=='parent-reviewed-research-manifest-1','Unrecognized reviewed research manifest')
-    require((manifest.get('stageStart'),manifest.get('stageEnd'))==('2026-01-01','2026-08-31'),'Reviewed research stage mismatch')
+    window = (start, end) if explicit else ('2026-01-01','2026-08-31')
+    require((manifest.get('stageStart'),manifest.get('stageEnd'))==window,'Reviewed research stage mismatch')
     loaded={}
     for field in ('verification','accepted'):
-        descriptor=manifest[field];path=resolve(descriptor['path'],stage,root)
+        descriptor=manifest[field];path=locate(descriptor['path'],stage,root)
         require(digest(path.read_bytes())==descriptor['sha256'],'Reviewed research '+field+' SHA is stale')
         loaded[field]=read_json(path)
     receipt=loaded['verification']
     require(manifest['inputPins']==receipt['inputPins'],'Reviewed research input pin registry differs from receipt')
     for name,sha in manifest['inputPins'].items():
-        path=resolve(name,stage,root)
+        path=locate(name,stage,root)
         require(path.is_file() and digest(path.read_bytes())==sha,'Reviewed research input SHA is stale: '+name)
     accepted_opinions={o['opinionId'] for o in receipt['opinions'] if o['accepted']}
     accepted_facts={f['factId'] for f in receipt['semanticReview']['facts'] if f['accepted']}
     require(set(manifest['acceptedOpinionIds'])==accepted_opinions,'Unreviewed opinion admission')
     require(set(manifest['acceptedFactIds'])==accepted_facts,'Unreviewed official fact admission')
-    study=read_json(stage/'研究'/RESEARCH);private=read_json(stage/'研究'/OPINIONS)
+    research_path=locate(manifest.get('researchPath', '研究/'+RESEARCH),stage,root)
+    opinions_path=locate(manifest.get('opinionsPath', '研究/'+OPINIONS),stage,root)
+    if explicit:
+        pinned_paths={locate(name,stage,root) for name in manifest['inputPins']}
+        require(research_path in pinned_paths and opinions_path in pinned_paths,'Original research inputs must be pinned')
+    study=read_json(research_path);private=read_json(opinions_path)
+    if explicit:
+        from replay_monthly_coverage import months_between
+        from datetime import date
+        require(study['asOf']==end,'Reviewed research cutoff mismatch')
+        require([m['month'] for m in study['months']]==months_between(start,end),'Reviewed research month window incomplete')
+        require([s['id'] for s in study['marketAnalysis']['sections']]==THEME_IDS,'Reviewed research five-theme anatomy mismatch')
+        for source in study['sources']:
+            require(source.get('sha256') in manifest['inputPins'].values(),
+                    'Reviewed source original SHA must match an actual input pin')
+        for fact in study['officialFacts']:
+            if fact['id'] in accepted_facts:
+                require(date.fromisoformat(fact['date']).isoformat()==fact['date'] and fact['date']<=end,
+                        'Reviewed future/invalid official fact release')
     expected=reviewed_projection(study,private)
     expected['opinions']=[o for o in expected['opinions'] if o['id'] in accepted_opinions]
     expected['officialFacts']=[f for f in expected['officialFacts'] if f['id'] in accepted_facts]
     require(loaded['accepted']==expected,'Reviewed public projection differs from pinned originals and whitelist')
     result=copy.deepcopy(expected)
+    if explicit:
+        result['_privateOpinions']={o['id']:o for o in private['opinions'] if o['id'] in accepted_opinions}
+        result['_inputPins']=manifest['inputPins']
     result['manifestSHA256']=digest(manifest_path.read_bytes())
     result['pending']=copy.deepcopy(manifest.get('pending',[]))
     return result
 
-def integrate_reviewed(data, manifest_path, stage, root):
+def integrate_reviewed(data, manifest_path, stage, root, explicit_window=False):
     """Adapt source IDs only after SHA matches an already admitted body."""
-    reviewed=load_reviewed(manifest_path,stage,root)
+    reviewed=load_reviewed(manifest_path,stage,root,
+        start=data['startDate'] if explicit_window else None, end=data['asOf'] if explicit_window else None)
     require(data['asOf']==reviewed['asOf'],'Reviewed research cutoff mismatch')
     remap={}
     opinion_by_source={o['reportId']:o for o in reviewed['opinions']}
@@ -385,6 +418,44 @@ def integrate_reviewed(data, manifest_path, stage, root):
         require(opinion['reportId'] in report_ids and set(opinion['realitySourceIds'])<=source_ids,'Reviewed opinion dangling references')
         report=next(r for r in data['reports'] if r['id']==opinion['reportId'])
         opinion['sourceQuality']=copy.deepcopy(report['sourceQuality'])
+        if explicit_window:
+            from replay_parent_sources import resolve as confined
+            require(opinion['evidenceSha256']==report['sha256'],'Reviewed alias/original SHA conflict')
+            raw=reviewed['_privateOpinions'][opinion['id']]
+            require(opinion['expressedAt']==report['date'],'Reviewed opinion original date mismatch')
+            require(data['startDate']<=opinion['expressedAt']<=data['asOf'],'Reviewed opinion outside window')
+            if raw.get('physicalPage'):
+                import pymupdf
+                with pymupdf.open(confined(report['path'],stage,root)) as pdf:
+                    page=raw['physicalPage']
+                    require(type(page) is int and 1<=page<=len(pdf),'Reviewed excerpt physical page missing')
+                    container=pdf[page-1].get_text('text')
+            else:
+                bookpath=confined(raw['parentBibliography'],stage,root)
+                pin_paths={confined(p,stage,root) for p in reviewed['_inputPins']}
+                require(bookpath in pin_paths,'Reviewed excerpt bibliography must be pinned')
+                book=read_json(bookpath)
+                record=next(r for r in book.get('articles',book.get('items',[]))
+                            if (r.get('bodySHA256') or r.get('sha256'))==report['sha256'])
+                pp=confined(record['paragraphsPath'],stage,root)
+                require(pp in pin_paths,'Reviewed excerpt paragraphs must be pinned')
+                paragraphs=read_json(pp)
+                paragraph=next(p for p in paragraphs if (p.get('id') or p.get('paragraphId'))==raw['paragraphId'])
+                container=paragraph['text']
+            loc=raw['locator']; quote=raw['quote']
+            require(type(loc['start']) is int and 0<=loc['start']<len(container) and
+                    container[loc['start']:loc['start']+len(quote)]==quote,'Reviewed exact original excerpt mismatch')
+            for field, actual in (('containerTextSHA256',text_digest(container)),('excerptSHA256',text_digest(quote))):
+                require(field not in loc or loc[field]==actual,'Reviewed excerpt locator SHA mismatch')
+            horizon=opinion['forecastHorizon']
+            deadline=horizon.get('effectiveDeadline') or horizon.get('deadlineMonth')
+            require(not deadline or deadline<=data['asOf'] or opinion['status'] in ('ongoing','unobserved'),
+                    'Reviewed future forecast prematurely scored')
+    if explicit_window:
+        quote_totals=Counter()
+        for opinion in reviewed['opinions']:
+            quote_totals[opinion['evidenceSha256']]+=len(opinion.get('evidenceExcerpt') or '')
+        require(all(n<=100 for n in quote_totals.values()),'Public excerpts exceed 100 characters per original')
     for chain in reviewed['revisionChains']:
         require(set(chain['opinionIds'])<=opinion_ids,'Reviewed chain pending opinion')
     for month in reviewed['monthlyReplay']:

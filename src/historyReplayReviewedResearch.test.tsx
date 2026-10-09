@@ -11,14 +11,17 @@ const outline = (root: HTMLElement) => Array.from(root.children).map(node => [no
 
 afterEach(cleanup)
 
-it('真实八月研究与四条修订链仅挂在既有来源库内，第一篇同壳空状态', () => {
+it('两篇实际逐月研究及修订链仅挂在同壳来源库内，第一篇覆盖九月及十月至截止日', () => {
   const a = render(<HistoryReplay data={first} onBack={() => {}} />)
   const firstOutline = outline(a.container.querySelector('.history-replay')!)
   const firstLibrary = screen.getByLabelText('来源库 / 研报库明细')
-  const empty = screen.getByLabelText('逐月预期现实与修订链')
-  expect(firstLibrary).toContainElement(empty)
-  expect(empty).not.toHaveAttribute('open')
-  expect(empty.querySelectorAll('[data-replay-month]')).toHaveLength(0)
+  const firstMonthly = screen.getByLabelText('逐月预期现实与修订链')
+  expect(firstLibrary).toContainElement(firstMonthly)
+  expect(firstLibrary).not.toHaveAttribute('open')
+  expect(firstMonthly).not.toHaveAttribute('open')
+  expect(Array.from(firstMonthly.querySelectorAll('[data-replay-month]')).map(node => node.getAttribute('data-replay-month'))).toEqual(['2026-09', '2026-10'])
+  expect(firstMonthly.querySelectorAll('[data-revision-chain]')).toHaveLength((first as HistoryReplayData).revisionChains?.length || 0)
+  expect(firstMonthly.querySelectorAll('[data-revision-chain]')).toHaveLength(10)
   cleanup()
   const b = render(<HistoryReplay data={second} onBack={() => {}} />)
   expect(outline(b.container.querySelector('.history-replay')!)).toEqual(firstOutline)

@@ -3,13 +3,100 @@ import hashlib
 import importlib.util
 import json
 import unittest
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
 MODULE = Path(__file__).with_name('replay_parent_sources.py')
 
+def wind_fixture(stage, published='2026-09-15'):
+    """Tiny real two-page PDF, only inside a temporary test directory."""
+    import pymupdf
+    from pypdf import PdfReader
+    path = stage / 'fixture.pdf'
+    with pymupdf.open() as pdf:
+        for text in ('Fixture institutional research '+published, 'US monetary policy fixture body'):
+            pdf.new_page().insert_text((72, 72), text)
+        pdf.save(path)
+    payload = path.read_bytes()
+    sha = hashlib.sha256(payload).hexdigest()
+    reader = PdfReader(path, strict=True)
+    with pymupdf.open(path) as pdf:
+        pages = [{'physicalPage': i+1,
+            'pypdfTextSHA256': hashlib.sha256(p.extract_text().encode()).hexdigest(),
+            'pymupdfTextSHA256': hashlib.sha256(pdf[i].get_text('text').encode()).hexdigest()}
+            for i, p in enumerate(reader.pages)]
+    record = {'id': 'fixture-wind', 'path': 'fixture.pdf', 'sha256': sha, 'bytes': len(payload),
+        'pageCount': 2, 'title': 'Fixture research', 'institution': 'Fixture institution',
+        'independentWorkId': 'fixture-work', 'countsTowardMonthlyMinimum': True, 'pdfEncrypted': False,
+        'publicationDate': published, 'verifiedPublicationMonth': published[:7], 'pageChecks': pages}
+    parent = {'path': 'fixture.pdf', 'sha256': sha, 'bytes': len(payload), 'physicalPages': 2,
+        'accepted': True, 'allPageTextAndContentHashesMatch': True}
+    def save(name, value):
+        p = stage / name
+        p.write_text(json.dumps(value), encoding='utf-8')
+        return hashlib.sha256(p.read_bytes()).hexdigest()
+    descriptor = {'channel': 'Wind', 'canonicalSourcePath': 'book.json',
+        'sourceSHA256': save('book.json', {'items': [record]}),
+        'parentLedgers': [{'path': 'ledger.json', 'sha256': save('ledger.json', {'files': [parent]})}]}
+    return descriptor, record
+
+class ExplicitSourceWindowTests(unittest.TestCase):
+    def test_star_date_must_match_original_filename_token_not_platform_date(self):
+        from replay_parent_sources import load_parent_sources
+        with tempfile.TemporaryDirectory() as tmp:
+            stage=Path(tmp);descriptor,record=wind_fixture(stage)
+            name='Fixture_260915_原文.pdf'
+            topic={'topicURL':'https://wx.zsxq.com/fixture', 'renderedBodyText':'#调研纪要 '+name}
+            (stage/'topic.json').write_text(json.dumps(topic),encoding='utf-8')
+            record.update(originalFilename=name,filenameDate='2026-10-08',publicationDate=None,
+                topicDOMEvidence='topic.json',topicURL=topic['topicURL'],versionType='original_audio_transcript_pdf')
+            book=stage/'book.json';book.write_text(json.dumps({'items':[record]}),encoding='utf-8')
+            descriptor.update(channel='知识星球',sourceSHA256=hashlib.sha256(book.read_bytes()).hexdigest())
+            ledger=stage/'ledger.json';data=json.loads(ledger.read_text(encoding='utf-8'))
+            data['files'][0].update(twoParserPerPageShaMatch=True,sourceTagIndependentTextCheck=['调研纪要'])
+            ledger.write_text(json.dumps(data),encoding='utf-8')
+            descriptor['parentLedgers'][0]['sha256']=hashlib.sha256(ledger.read_bytes()).hexdigest()
+            with self.assertRaisesRegex(ValueError,'filename'):
+                load_parent_sources(stage,stage,[descriptor],start='2026-09-01',end='2026-10-09')
+
+    def test_stage_window_rejects_parent_pinned_out_of_interval_original(self):
+        from replay_parent_sources import load_parent_sources
+        with tempfile.TemporaryDirectory() as tmp:
+            stage = Path(tmp)
+            descriptor, _ = wind_fixture(stage, '2026-08-31')
+            with self.assertRaisesRegex(ValueError, 'window'):
+                load_parent_sources(stage, stage, [descriptor], start='2026-09-01', end='2026-10-09')
+
+    def test_all_actual_pages_must_match_pinned_evidence(self):
+        from replay_parent_sources import load_parent_sources
+        with tempfile.TemporaryDirectory() as tmp:
+            stage = Path(tmp)
+            descriptor, record = wind_fixture(stage)
+            good, _ = load_parent_sources(stage, stage, [descriptor], start='2026-09-01', end='2026-10-09')
+            self.assertEqual(len(good), 1)
+            record['pageChecks'][1]['pypdfTextSHA256'] = '0'*64
+            book = stage / 'book.json'
+            book.write_text(json.dumps({'items': [record]}), encoding='utf-8')
+            descriptor['sourceSHA256'] = hashlib.sha256(book.read_bytes()).hexdigest()
+            with self.assertRaisesRegex(ValueError, 'page'):
+                load_parent_sources(stage, stage, [descriptor], start='2026-09-01', end='2026-10-09')
+
+
 class ParentSourcesTests(unittest.TestCase):
+    def test_wind_month_precision_accepts_real_september_without_inventing_day(self):
+        record = {'countsTowardMonthlyMinimum': True, 'pdfEncrypted': False,
+            'institution': 'Test institution', 'independentWorkId': 'fixture-work', 'title': 'Fixture',
+            'publicationDate': None, 'publicationDatePrecision': 'month', 'verifiedPublicationMonth': '2026-09'}
+        parent = {'accepted': True, 'allPageTextAndContentHashesMatch': True}
+        fields = self.module()._original_wind(record, parent)
+        self.assertEqual(fields['date'], '2026-09')
+        self.assertIsNone(fields['publicationDate'])
+        for token in ('2026-13', '2026-9', '2026-090', '2026-00'):
+            with self.subTest(token=token), self.assertRaises(ValueError):
+                self.module()._original_wind({**record, 'verifiedPublicationMonth': token}, parent)
+
     def module(self):
         self.assertTrue(MODULE.exists(), 'Parent path/SHA allowlist adapter is not implemented')
         spec = importlib.util.spec_from_file_location('parent_sources', MODULE)

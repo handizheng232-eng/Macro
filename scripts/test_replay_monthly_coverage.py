@@ -7,6 +7,31 @@ import unittest
 from pathlib import Path
 
 class MonthlyCoverageTests(unittest.TestCase):
+    def test_same_bytes_with_different_claimed_work_ids_cannot_inflate_quota(self):
+        receipt=self.receipt()
+        records=[{**receipt,'independentWorkId':'fixture-a'},
+                 {**receipt,'id':'fixture-b','independentWorkId':'fixture-b'}]
+        cell=self.coverage(records)['rows'][0]['channels']['知识星球']
+        self.assertEqual(cell['archiveEntries'],2)
+        self.assertEqual(cell['bodyCount'],1)
+
+    def test_unadmitted_missing_sha_and_missing_file_remains_unassigned(self):
+        receipt=self.receipt()
+        receipt.pop('sha256');receipt.pop('sourceQuality')
+        Path(receipt['path']).unlink()
+        data=self.coverage([receipt])
+        self.assertEqual(data['unassignedArchiveEntries'],1)
+        self.assertEqual(data['coveredCells'],0)
+
+    def test_admitted_sha_failure_is_not_hidden_by_unassigned_date(self):
+        receipt=self.receipt(day=None)
+        receipt['sha256']='0'*64
+        with self.assertRaisesRegex(ValueError,'SHA mismatch'):
+            self.coverage([receipt])
+        receipt.pop('sha256')
+        with self.assertRaisesRegex(ValueError,'Missing SHA'):
+            self.coverage([receipt])
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

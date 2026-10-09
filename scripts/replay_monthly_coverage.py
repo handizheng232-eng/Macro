@@ -171,15 +171,15 @@ def build_monthly_coverage(start, end, reports, root, stage, audit=None):
         channel = channel_of(report)
         if not channel:
             continue
-        published = archive_date(report, channel)
-        if not published:
+        raw_path = report.get('path') or report.get('bodyPath') or report.get('localPath')
+        declared = report.get('sha256') or report.get('bodySha256')
+        if not declared:
+            if report.get('sourceQuality', {}).get('parentLedgerVerified') is True:
+                raise ValueError(f'Missing SHA in monthly archive: {report.get("id", raw_path)}')
             unassigned += 1
             continue
-        if not (start[:7] <= published <= end[:7] if len(published) == 7 else start <= published <= end):
-            continue
-        raw_path = report.get('path') or report.get('bodyPath') or report.get('localPath')
         if not raw_path:
-            continue
+            raise ValueError(f'Missing monthly archive path: {report.get("id")}')
         artifact = Path(raw_path)
         if not artifact.is_absolute():
             artifact = root / raw_path
@@ -189,20 +189,18 @@ def build_monthly_coverage(start, end, reports, root, stage, audit=None):
             raise ValueError(f'Missing monthly archive: {report.get("id", raw_path)}')
         payload = artifact.read_bytes()
         sha = hashlib.sha256(payload).hexdigest()
-        declared = report.get('sha256') or report.get('bodySha256')
-        if not declared:
-            # Old bibliographic entries are not admitted originals. They must
-            # remain unassigned, not crash sibling builds or gain a body vote.
-            if not source_quality_verified(report, channel):
-                unassigned += 1
-                continue
-            raise ValueError(f'Missing SHA in monthly archive: {report.get("id", raw_path)}')
         if sha != declared:
             raise ValueError(f'SHA mismatch in monthly archive: {report.get("id", raw_path)}')
         if channel in ('知识星球', 'Wind') and b'%PDF-' not in payload[:1024]:
             raise ValueError(f'Not a PDF monthly archive: {report.get("id", raw_path)}')
         if not payload.strip():
             raise ValueError(f'Empty monthly archive: {report.get("id", raw_path)}')
+        published = archive_date(report, channel)
+        if not published:
+            unassigned += 1
+            continue
+        if not (start[:7] <= published <= end[:7] if len(published) == 7 else start <= published <= end):
+            continue
         cell = cells[(published[:7], channel)]
         cell['entries'].append(report.get('id') or raw_path)
         if not source_quality_verified(report, channel):
@@ -212,7 +210,8 @@ def build_monthly_coverage(start, end, reports, root, stage, audit=None):
                    'title': report.get('title', ''), 'reportId': report.get('id'),
                    'independentWorkId': work_id, 'sourceQuality': report['sourceQuality']}
         cell['distribution'].append(archive)
-        cell['bodies'].setdefault(work_id, archive)
+        if not any(a['sha256'] == sha for a in cell['bodies'].values()):
+            cell['bodies'].setdefault(work_id, archive)
     audits = {}
     for row in (audit or {}).get('rows', []):
         channel = '微信公众号' if row.get('channel') == '微信' else row.get('channel')

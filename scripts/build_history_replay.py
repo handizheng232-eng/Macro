@@ -5,9 +5,13 @@ No credential access and no online calls. Preserve public/source artifacts separ
 import json
 import re
 import hashlib
+import copy
 from datetime import datetime
 from pathlib import Path
-from replay_monthly_coverage import build_monthly_coverage, load_monthly_audits
+from datetime import date
+from replay_monthly_coverage import build_monthly_coverage, load_monthly_audits, channel_of
+from replay_parent_sources import load_parent_sources, resolve, pinned_json
+from replay_research_integration import integrate_reviewed
 from replay_public_export import public_snapshot
 from replay_reviewed_analysis import reviewed_analysis
 
@@ -31,7 +35,7 @@ def star_filename_date(filename):
         return None
 
 
-def build():
+def _build_legacy():
     public = load(STAGE / '资料/公开来源/public-evidence.json')
     manifest = load(STAGE / '核验/长江宏观/manifest.json')
     local = load(STAGE / '核验/长江宏观/页面结论.json')
@@ -315,11 +319,182 @@ def build():
     return data
 
 
+def _admit_baseline(data, binding, stage, root):
+    """Explicitly retained official/local material; channel legacy never inherits."""
+    if not binding:
+        return
+    baseline = pinned_json(binding['path'], binding['sha256'], stage, root)
+    source_ids, report_ids = set(binding['sourceIds']), set(binding['reportIds'])
+    sources = {s['id']: s for s in baseline['sources']}
+    reports = {r['id']: r for r in baseline['reports'] if r.get('id')}
+    if not source_ids <= sources.keys() or not report_ids <= reports.keys():
+        raise ValueError('Pinned baseline identity missing')
+    artifacts = binding['sourceArtifacts']
+    for sid in sorted(source_ids):
+        source = copy.deepcopy(sources[sid])
+        if (source.get('kind') not in ('官方一手', '官方搜索摘录', '授权研报', '区间前背景') or
+                re.match(r'^(zsxq|wind|wechat)[-:]', sid)):
+            raise ValueError('Legacy channel cannot inherit baseline admission')
+        original = artifacts[sid]
+        raw = resolve(original['path'], stage, root).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != original['sha256']:
+            raise ValueError('Baseline original SHA mismatch')
+        source.update(sha256=original['sha256'], historicalAsOfEligible=False,
+                      firstAvailableDate=None, retrospectiveOnly=True)
+        data['sources'].append(source)
+    for rid in sorted(report_ids):
+        report = copy.deepcopy(reports[rid])
+        if channel_of(report) is not None:
+            raise ValueError('Legacy channel report cannot inherit baseline admission')
+        path = resolve(report['path'], stage, root)
+        matches = [a for a in artifacts.values() if resolve(a['path'], stage, root) == path]
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if not matches or any(a['sha256'] != digest for a in matches):
+            raise ValueError('Baseline local report original not pinned')
+        report.update(sha256=digest, historicalAsOfEligible=False, firstAvailableDate=None)
+        data['reports'].append(report)
+    for original in baseline['events']:
+        if not data['startDate'] <= original['date'] <= data['asOf']:
+            continue
+        if not original['realitySourceIds'] or not set(original['realitySourceIds']) <= source_ids:
+            continue
+        event = copy.deepcopy(original)
+        if not set(event['expectationSourceIds']) <= source_ids:
+            event['expectationSourceIds'] = []
+            event['expectation'] = '旧渠道预期未准入，保留缺口；不倒填事前预期。'
+        # Legacy explanation/market-response prose may depend on excluded bodies.
+        event.update(interpretation='', marketResponse='由父方已复核研究另行对应；旧渠道解释不沿用。',
+                     historicalAsOfEligible=False)
+        data['events'].append(event)
+
+
+def _admitted_market_presentation(market):
+    """Adapt pinned native series to the shared UI without changing observations."""
+    result = copy.deepcopy(market)
+    sources = {source['id']: source for source in result.get('sources', [])}
+    for series in result['series']:
+        identifiers = list(dict.fromkeys(o['sourceId'] for o in series['observations'] if o.get('sourceId')))
+        if any(identifier not in sources for identifier in identifiers):
+            raise ValueError('Admitted market source identity missing')
+        source = sources[identifiers[0]] if identifiers else {}
+        series.setdefault('sourceUrl', source.get('url', ''))
+        series.setdefault('status', '真实已归档序列；各序列末日不同，当前取得不等于历史首次可得。')
+        series.setdefault('limitations', ['保留观察日、原发布证据与取得时钟；缺值不插值，端点变化不识别因果贡献。'])
+        if series['unit'] == 'index_January_2006_100':
+            series['sourceUnit'] = series['unit']
+            series['unit'] = 'index_Jan2006_100'
+            series['limitations'] = list(series['limitations']) + ['广义贸易加权美元不是DXY；基期按H.10周表，XML元数据冲突另存。']
+    missing = next((item for item in result.get('missingSeries', []) if item['id'] == 'CME_FedWatch'), None)
+    if missing:
+        result['cmeHistoricalImpliedPath'] = {'status': '缺失', 'observations': [], 'limitations': [missing['reason']]}
+    return result
+
+
+def build(stage=STAGE, root=ROOT, as_of=None, parent_source_manifest=None,
+          reviewed_research_manifest=None, start_date='2026-09-01'):
+    """No-argument compatibility; explicit admission never reads legacy channels.
+
+    A sources-only result is a pending shell, not reviewed research or a complete
+    replay. Explicit descriptors replace, never extend, second-chapter defaults.
+    """
+    if as_of is None and parent_source_manifest is None and reviewed_research_manifest is None:
+        return _build_legacy()
+    stage, root = Path(stage), Path(root)
+    end = as_of or '2026-10-09'
+    if (date.fromisoformat(start_date).isoformat() != start_date or
+            date.fromisoformat(end).isoformat() != end or start_date > end):
+        raise ValueError('Invalid replay window')
+    if parent_source_manifest is None:
+        raise ValueError('Explicit window requires parent-source manifest; no legacy admission')
+    manifest = load(resolve(parent_source_manifest, stage, root))
+    if (manifest.get('schemaVersion') != 'parent-source-manifest-1' or
+            (manifest.get('stageStart'), manifest.get('stageEnd')) != (start_date, end)):
+        raise ValueError('Parent-source manifest window/schema mismatch')
+    if not isinstance(manifest.get('sources'), list):
+        raise ValueError('Explicit source descriptors required')
+    reports, audits = load_parent_sources(stage, root, manifest['sources'], start=start_date, end=end)
+    data = {'title': '重启加息：政策反转', 'startDate': start_date, 'asOf': end,
+            'summary': ['父方已准入来源与研究分别验收；未准入旧书目及观点不自动沿用。'],
+            'sources': [], 'events': [], 'reports': reports, 'hypotheses': [],
+            'researchEvidence': [], 'windResearchEvidence': [], 'wechatResearchEvidence': [],
+            'reportIdAliases': {}, 'acquisition': []}
+    for report in reports:
+        data['sources'].append({'id': report['id'], 'title': report['title'],
+            'publisher': report['provider'], 'date': report['date'], 'url': '',
+            'kind': report['channel'] + '父方准入原文', 'status': '原件/身份已核·历史首次可得未知',
+            'note': report['note'], 'historicalAsOfEligible': False})
+    _admit_baseline(data, manifest.get('baseline'), stage, root)
+    if manifest.get('marketPaths'):
+        binding = manifest['marketPaths']
+        market = pinned_json(binding['path'], binding['sha256'], stage, root)
+        for source in market.get('sources', []):
+            raw_path = source.get('archivePath') or source.get('localPath')
+            if not raw_path or not source.get('sha256'):
+                raise ValueError('Pinned market original path/SHA missing')
+            raw = resolve(raw_path, stage, root).read_bytes()
+            if hashlib.sha256(raw).hexdigest() != source['sha256']:
+                raise ValueError('Pinned market original SHA mismatch')
+        # Preserve original observation/release/capture clocks and missing data.
+        # A prior snapshot does not become a full October window by relabelling.
+        for series in market['series']:
+            series['observations'] = [o for o in series['observations'] if start_date <= o['date'] <= end]
+        data['marketPaths'] = _admitted_market_presentation(market)
+    data['monthlyCoverage'] = build_monthly_coverage(start_date, end, reports, root, stage,
+        {'rows': audits, 'trustedShortageProofs': manifest.get('shortageProofs', [])})
+    for channel in ('知识星球', 'Wind', '微信公众号'):
+        cells = [r['channels'][channel] for r in data['monthlyCoverage']['rows']]
+        data['acquisition'].append({'provider': channel,
+            'status': '父方已核原文·独立逐月验收',
+            'detail': f'准入独立原文{sum(c["bodyCount"] for c in cells)}份；'
+                      f'月度原文配额{sum(c["accepted"] for c in cells)}/{len(cells)}；'
+                      '未准入旧候选不计正文，数量达标不冒称检索穷尽。'})
+    if reviewed_research_manifest is not None:
+        data = integrate_reviewed(data, reviewed_research_manifest, stage, root, explicit_window=True)
+    return data
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--as-of')
+    parser.add_argument('--start-date', default='2026-09-01')
+    parser.add_argument('--stage', type=Path, default=STAGE)
+    parser.add_argument('--parent-source-manifest')
+    parser.add_argument('--reviewed-research-manifest')
+    parser.add_argument('--require-monthly-complete', action='store_true')
+    parser.add_argument('--check-only', action='store_true', help='Validate/print counts; write nothing')
+    parser.add_argument('--output', type=Path, help='Explicit public output; never inferred in admission mode')
+    parser.add_argument('--private-output', type=Path, help='Optional explicit private research output')
+    args = parser.parse_args()
+    explicit = any((args.as_of, args.parent_source_manifest, args.reviewed_research_manifest))
+    if explicit and not args.check_only and args.output is None:
+        parser.error('Explicit admission requires --output or --check-only')
+    if not args.stage.resolve().is_relative_to(STAGE.resolve()):
+        parser.error('--stage must stay inside the first replay stage')
+    data = build(stage=args.stage, as_of=args.as_of, start_date=args.start_date,
+        parent_source_manifest=args.parent_source_manifest, reviewed_research_manifest=args.reviewed_research_manifest)
+    if args.require_monthly_complete and not data['monthlyCoverage']['complete']:
+        raise ValueError('Monthly channel coverage incomplete; no output written')
+    if not args.check_only:
+        targets = [(args.output or ROOT/'src/data/historyReplay.json', public_snapshot(data, ROOT))]
+        private_target = args.private_output or (None if explicit else STAGE/'研究/replay-data.json')
+        if private_target is not None:
+            targets.append((private_target, data))
+        for target, payload in targets:
+            if target.resolve() in ((ROOT/'src/data/historyReplayHawkishTransition.json').resolve(),
+                                    (ROOT/'release/replay-publication.json').resolve()):
+                raise ValueError('Protected non-target replay/publication output')
+        for target, payload in targets:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    print(json.dumps({'asOf': data['asOf'], 'events': len(data['events']), 'reports': len(data['reports']),
+        'sources': len(data['sources']), 'months': len(data.get('monthlyReplay', [])),
+        'monthlyRequiredCells': data['monthlyCoverage']['requiredCells'],
+        'monthlyAcceptedCells': data['monthlyCoverage']['acceptedCells'],
+        'monthlyCoverageComplete': data['monthlyCoverage']['complete'],
+        'status': 'parent-reviewed-local-pending-user-review' if data.get('reviewedResearch') else 'unreviewed-local-pending',
+        'checkOnly': args.check_only}, ensure_ascii=False))
+
+
 if __name__ == '__main__':
-    data = build()
-    target = ROOT / 'src/data/historyReplay.json'
-    target.write_text(json.dumps(public_snapshot(data, ROOT), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    study = STAGE / '研究'
-    study.mkdir(parents=True, exist_ok=True)
-    (study / 'replay-data.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'events': len(data['events']), 'sources': len(data['sources']), 'interval_reports': sum(r['scope'].startswith('区间内') for r in data['reports']), 'background_reports': sum(r['scope'].startswith('区间前') for r in data['reports']), 'asOf': data['asOf'], 'target': str(target)}, ensure_ascii=False))
+    main()

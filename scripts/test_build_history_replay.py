@@ -1,6 +1,8 @@
 """Regression checks for integration of actual audit outputs, not invented fixtures."""
 import importlib.util
 import unittest
+import json
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,6 +12,97 @@ spec.loader.exec_module(module)
 
 
 class ReplayIntegrationTests(unittest.TestCase):
+    def test_explicit_parent_pin_preserves_real_market_baseline_without_legacy_views(self):
+        import hashlib
+        market_path=module.STAGE/'研究/market-paths.json'
+        with tempfile.TemporaryDirectory(dir=module.STAGE/'核验/模板整改20261009/Code') as tmp:
+            source_path=Path(tmp)/'sources.json'
+            source_path.write_text(json.dumps({'schemaVersion':'parent-source-manifest-1',
+                'stageStart':'2026-09-01','stageEnd':'2026-10-09','sources':[],
+                'marketPaths':{'path':str(market_path),'sha256':hashlib.sha256(market_path.read_bytes()).hexdigest()}}),encoding='utf-8')
+            data=module.build(as_of='2026-10-09',parent_source_manifest=source_path)
+            self.assertEqual(len(data.get('marketPaths',{}).get('series',[])),3)
+            self.assertEqual(data['marketPaths']['series'],module.load(market_path)['series'])
+            self.assertEqual(data['researchEvidence'],[])
+            self.assertEqual(data['monthlyCoverage']['acceptedCells'],0)
+
+    def test_cli_explicit_check_is_reproducible_and_quota_failure_writes_nothing(self):
+        import subprocess
+        import sys
+        from test_replay_parent_sources import wind_fixture
+        from test_replay_research_integration import review_fixture
+        help_result = subprocess.run([sys.executable, str(ROOT/'scripts/build_history_replay.py'), '--help'],
+            capture_output=True, text=True)
+        for flag in ('--as-of', '--parent-source-manifest', '--reviewed-research-manifest', '--check-only'):
+            self.assertIn(flag, help_result.stdout)
+        with tempfile.TemporaryDirectory(dir=module.STAGE/'核验/模板整改20261009/Code') as tmp:
+            stage = Path(tmp)
+            descriptor, record = wind_fixture(stage)
+            review_path, _ = review_fixture(stage, record)
+            source_path=stage/'sources.json'
+            source_path.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
+                'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': [descriptor]}), encoding='utf-8')
+            command=[sys.executable, str(ROOT/'scripts/build_history_replay.py'), '--stage', str(stage),
+                '--as-of', '2026-10-09', '--parent-source-manifest', str(source_path),
+                '--reviewed-research-manifest', str(review_path), '--check-only']
+            a=subprocess.run(command,capture_output=True,text=True)
+            b=subprocess.run(command,capture_output=True,text=True)
+            self.assertEqual(a.returncode,0,a.stderr)
+            self.assertEqual(a.stdout,b.stdout)
+            result=json.loads(a.stdout)
+            self.assertEqual(result['monthlyRequiredCells'],6)
+            self.assertEqual(result['monthlyAcceptedCells'],0)
+            self.assertEqual(result['months'],2)
+            output=stage/'never-write.json'
+            blocked=subprocess.run(command+['--require-monthly-complete','--output',str(output)],capture_output=True,text=True)
+            self.assertNotEqual(blocked.returncode,0)
+            self.assertFalse(output.exists())
+
+    def test_explicit_pinned_official_local_baseline_drops_legacy_channel_references(self):
+        import hashlib
+        baseline = module.build()
+        local = baseline['reports'][0]
+        local['id'] = 'local-baseline-fixture'
+        public = module.load(module.STAGE / '资料/公开来源/public-evidence.json')
+        official = next(s for s in public['sources'] if s['source_id'] == 2)
+        official_path = module.STAGE / '资料/公开来源' / official['archive']
+        local_path = ROOT / local['path']
+        binding = lambda p: {'path': str(p), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()}
+        with tempfile.TemporaryDirectory(dir=module.STAGE / '核验/模板整改20261009/Code') as tmp:
+            basepath = Path(tmp)/'baseline.json'
+            basepath.write_text(json.dumps(baseline), encoding='utf-8')
+            receipt = {**binding(basepath), 'sourceIds': ['public-2','changjiang-1'],
+                'reportIds': [local['id']],
+                'sourceArtifacts': {'public-2': binding(official_path), 'changjiang-1': binding(local_path)}}
+            manifest = Path(tmp)/'sources.json'
+            manifest.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
+                'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': [], 'baseline': receipt}), encoding='utf-8')
+            data = module.build(as_of='2026-10-09', parent_source_manifest=manifest)
+            self.assertEqual({s['id'] for s in data['sources']}, {'public-2','changjiang-1'})
+            self.assertEqual([r['id'] for r in data['reports']], [local['id']])
+            event = next(e for e in data['events'] if e['id'] == 'fomc-statement')
+            self.assertEqual(event['expectationSourceIds'], [])
+            self.assertNotIn('高盛', event['expectation'])
+            self.assertEqual(event['realitySourceIds'], ['public-2'])
+            self.assertEqual(data['researchEvidence'], [])
+            self.assertEqual(data['monthlyCoverage']['acceptedCells'], 0)
+
+    def test_explicit_window_does_not_import_legacy_or_second_chapter_sources(self):
+        with tempfile.TemporaryDirectory(dir=module.STAGE / '核验/模板整改20261009/Code') as tmp:
+            stage = Path(tmp)
+            manifest = stage / 'parent-sources.json'
+            manifest.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
+                'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': []}), encoding='utf-8')
+            data = module.build(stage=stage, root=ROOT, as_of='2026-10-09', parent_source_manifest=manifest)
+            self.assertEqual(data['asOf'], '2026-10-09')
+            self.assertEqual(data['reports'], [])
+            for field in ('researchEvidence', 'windResearchEvidence', 'wechatResearchEvidence'):
+                self.assertEqual(data[field], [])
+            self.assertNotIn('marketAnalysis', data)
+            self.assertEqual([r['month'] for r in data['monthlyCoverage']['rows']], ['2026-09', '2026-10'])
+            self.assertEqual(data['monthlyCoverage']['requiredCells'], 6)
+            self.assertEqual(data['monthlyCoverage']['acceptedCells'], 0)
+
     def test_public_report_catalog_does_not_expose_absolute_archive_paths(self):
         data = module.build()
         for report in data['reports']:

@@ -1,6 +1,26 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { HistoryReplay, type HistoryReplayData } from './historyReplay'
 
+it('首次可得日期晚于截面时卸载来源、依赖事件标题与原件书目', () => {
+  const data = {
+    title: '新窗口测试', startDate: '2026-09-01', asOf: '2026-10-09', summary: [],
+    hypotheses: [], acquisition: [],
+    sources: [{ id: 'late-proof', title: '后发确认来源测试', publisher: '测试', date: '2026-09-16',
+      firstAvailableDate: '2026-10-08', historicalAsOfEligible: true,
+      url: 'https://example.com/late', kind: '测试', status: '测试', note: '' }],
+    reports: [{ id: 'unknown-first', title: '首次可得未知书目测试', provider: '测试', path: '', date: '2026-09-15',
+      firstAvailableDate: null, historicalAsOfEligible: true }],
+    events: [{ id: 'early-event', date: '2026-09-16', title: '依赖十月来源的九月事件测试',
+      observationPeriod: '测试', expectation: '', expectationSourceIds: [], reality: '测试',
+      realitySourceIds: ['late-proof'], interpretation: '', marketResponse: '', confidence: '测试' }],
+  } as HistoryReplayData
+  render(<HistoryReplay data={data} onBack={() => {}} />)
+  fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-30' } })
+  expect(screen.queryByText('后发确认来源测试')).not.toBeInTheDocument()
+  expect(screen.queryByRole('heading', { name: '依赖十月来源的九月事件测试' })).not.toBeInTheDocument()
+  expect(screen.queryByText('首次可得未知书目测试')).not.toBeInTheDocument()
+})
+
 it('历史截面不显示只有更晚追溯来源才能确认的事件标题', () => {
   const data = {
     title: '追溯来源测试', startDate: '2026-01-01', asOf: '2026-08-31', summary: [],

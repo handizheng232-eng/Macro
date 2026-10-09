@@ -1,6 +1,7 @@
 """Private offline intake; only explicit, hash-pinned parent receipts grant admission.
 
-Extend DEFAULT_SOURCES via --parent-source-manifest, never by scanning future books.
+Defaults belong to the second chapter only. Explicit descriptors replace them;
+callers must never scan future books or append those defaults to another window.
 Descriptors: channel, canonicalSourcePath, sourceSHA256, parentLedgers[{path,sha256,section?}].
 Paths may be project/stage relative. All resolved evidence must stay inside this stage.
 Output is a public bibliographic whitelist, NOT a copy of the private source books.
@@ -8,6 +9,7 @@ Output is a public bibliographic whitelist, NOT a copy of the private source boo
 import hashlib
 import json
 import re
+from datetime import date
 from pathlib import Path
 
 DEFAULT_SOURCES = [{
@@ -89,6 +91,8 @@ def _original_star(record, parent, payload, stage, root):
         raise ValueError('Actual source tag/file/original-version mismatch')
     return {'date': record['filenameDate'], 'filenameDate': record['filenameDate'],
             'publicationDate': record.get('publicationDate'), 'dateBasis': 'filename_date_user_preferred',
+            'postDate': record.get('postDate'), 'postDateRaw': record.get('postDateRaw'),
+            'dateConflict': bool(record.get('postDate') and record['postDate'] != record['filenameDate']),
             'title': record['originalFilename'].removesuffix('.pdf'),
             'provider': '知识星球·前沿信息收录 #调研纪要',
             'note': '原文转写PDF与实际标签已核；机构独立身份、录音完整度及历史首次可得未核。',
@@ -106,9 +110,15 @@ def _original_wind(record, parent):
         raise ValueError('Parent Wind body/origin/scope proof missing')
     printed = record.get('publicationDate')
     if printed is None:
-        if record.get('publicationDatePrecision') != 'month' or not re.fullmatch(r'2026-0[1-8]', record.get('verifiedPublicationMonth', '')):
+        month = record.get('verifiedPublicationMonth', '')
+        if record.get('publicationDatePrecision') != 'month' or not re.fullmatch(r'\d{4}-\d{2}', month):
             raise ValueError('Wind printed month proof missing')
+        date.fromisoformat(month + '-01')
         printed = record['verifiedPublicationMonth']
+    elif not re.fullmatch(r'\d{4}-\d{2}-\d{2}', printed) or date.fromisoformat(printed).isoformat() != printed:
+        raise ValueError('Wind printed day proof invalid')
+    if printed[:7] != record.get('verifiedPublicationMonth'):
+        raise ValueError('Wind printed day/month conflict')
     return {'date': printed, 'publicationDate': record.get('publicationDate'),
             'publicationDatePrecision': record.get('publicationDatePrecision') or ('day' if record.get('publicationDate') else 'month'),
             'verifiedPublicationMonth': record['verifiedPublicationMonth'],
@@ -196,8 +206,34 @@ def _original_wechat(record, parent, body_bytes, stage, root):
                               'account': account, 'underlyingFullReportObtained': False}}
 
 
-def load_parent_sources(stage, root, descriptors=None):
+def _verify_all_pdf_pages(record, parent, payload, stage, root):
+    """Explicit-window intake rechecks complete dual-parser physical-page hashes."""
+    import pymupdf
+    from pypdf import PdfReader
+    from io import BytesIO
+    audit_path = (record.get('fullPageEvidence') or record.get('fullPageTextEvidence') or
+                  record.get('pageAuditPath') or record.get('auditPath'))
+    audit = json.loads(resolve(audit_path, stage, root).read_text(encoding='utf-8')) if audit_path else record
+    pages = audit.get('pages') or audit.get('pageChecks') or parent.get('pageChecks')
+    reader = PdfReader(BytesIO(payload), strict=True)
+    with pymupdf.open(stream=payload, filetype='pdf') as pdf:
+        if not isinstance(pages, list) or len(pages) != len(pdf) or len(reader.pages) != len(pdf):
+            raise ValueError('Complete physical page evidence missing')
+        for i, evidence in enumerate(pages):
+            if (evidence.get('physicalPage', evidence.get('page', i+1)) != i+1 or
+                    sha((reader.pages[i].extract_text() or '').encode('utf-8')) != evidence.get('pypdfTextSHA256') or
+                    sha(pdf[i].get_text('text').encode('utf-8')) != evidence.get('pymupdfTextSHA256')):
+                raise ValueError('Original physical page SHA mismatch')
+
+
+def load_parent_sources(stage, root, descriptors=None, start=None, end=None):
     stage, root = Path(stage), Path(root)
+    if (start is None) != (end is None):
+        raise ValueError('Both replay window boundaries required')
+    if start is not None:
+        date.fromisoformat(start); date.fromisoformat(end)
+        if start > end or descriptors is None:
+            raise ValueError('Explicit replay window requires explicit descriptors')
     reports, audits = [], []
     for descriptor in DEFAULT_SOURCES if descriptors is None else descriptors:
         source_path = descriptor['canonicalSourcePath']
@@ -235,6 +271,25 @@ def load_parent_sources(stage, root, descriptors=None):
             fields = (_original_star(record, parent, payload, stage, root) if channel == '知识星球' else
                       _original_wind(record, parent) if channel == 'Wind' else
                       _original_wechat(record, parent, payload, stage, root))
+            if start is not None:
+                value = fields['date']
+                if channel == '知识星球':
+                    token = re.search(r'(?<!\d)(20\d{6}|\d{6})(?:_原文|_纪要)?\.pdf$',
+                                      record['originalFilename'], re.IGNORECASE)
+                    try:
+                        from datetime import datetime
+                        literal = token.group(1) if token else ''
+                        filename_day = datetime.strptime(literal if len(literal) == 8 else '20'+literal, '%Y%m%d').date().isoformat()
+                    except ValueError:
+                        filename_day = None
+                    if filename_day is None or value != filename_day:
+                        raise ValueError('Original filename date token mismatch; do not repair')
+                if (not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}(?:-\d{2})?', value) or
+                        date.fromisoformat(value + '-01' if len(value) == 7 else value).isoformat()[:len(value)] != value or
+                        not (start[:7] <= value <= end[:7] if len(value) == 7 else start <= value <= end)):
+                    raise ValueError('Parent original date outside replay window')
+                if channel != '微信公众号':
+                    _verify_all_pdf_pages(record, parent, payload, stage, root)
             rid = record.get('id') or record.get('documentId') or 'wind-min10-' + digest[:16]
             quality = fields.pop('sourceQuality')
             reports.append({

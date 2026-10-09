@@ -6,6 +6,7 @@ import './historyReplay.css'
 export interface ReplaySource {
   id: string; title: string; publisher: string; date: string; url: string; kind: string; status: string; note: string
   historicalAsOfEligible?: boolean; dateBasis?: string; retrospectiveOnly?: boolean
+  firstAvailableDate?: string | null; availableFrom?: string | null
 }
 export interface ReplayEvent {
   id: string; date: string; title: string; observationPeriod: string
@@ -17,6 +18,7 @@ export interface ReplayReport {
   id?: string; title: string; date?: string | null; publicationDate?: string | null
   postDate?: string | null; dateBasis?: string; provider: string; path: string
   filenameDate?: string | null; dateConflict?: boolean; historicalAsOfEligible?: boolean
+  firstAvailableDate?: string | null; availableFrom?: string | null
   scope?: string; note?: string; geography?: string; topics?: string[]
   accountActual?: string; authors?: string[] | string; researchOrigin?: string; distributionType?: string
 }
@@ -95,6 +97,11 @@ export interface HistoryReplayData {
 
 const safeUrl = (url: string) => /^https?:\/\//i.test(url)
 const knownBy = (date: string | null | undefined, cutoff: string) => Boolean(date && /^\d{4}-\d{2}-\d{2}$/.test(date) && cutoff && date <= cutoff)
+// Explicit unknown availability is authoritative. Legacy absent fields retain
+// their existing contract; new records never fall back from null to archive day.
+const availableBy = (item: { firstAvailableDate?: string | null; availableFrom?: string | null }, cutoff: string) =>
+  (item.firstAvailableDate === undefined || knownBy(item.firstAvailableDate, cutoff)) &&
+  (item.availableFrom === undefined || knownBy(item.availableFrom, cutoff))
 // Filename priority is a channel policy, not a property of every local filename.
 // Legacy records retain authoritative publicationDate:null; never substitute postDate.
 const filenameDatePreferred = (report: ReplayReport) => Boolean(report.dateBasis?.includes('filename_date_user_preferred'))
@@ -106,7 +113,11 @@ const conditionText = (value: unknown): string => Array.isArray(value) ? value.m
 // visible, while opaque IDs do not interrupt the reading copy of the new study.
 const displayResearchText = (text: string, data: HistoryReplayData): string => {
   if (!data.monthlyReplay?.length) return text
-  const ids = new Set(data.monthlyReplay.flatMap(month => [...month.opinionIds, ...month.factIds, ...month.sourceIds, ...month.reportIds]))
+  const ids = new Set([
+    ...data.monthlyReplay.flatMap(month => [...month.opinionIds, ...month.factIds, ...month.sourceIds, ...month.reportIds]),
+    ...data.sources.map(source => source.id), ...data.reports.flatMap(report => report.id ? [report.id] : []),
+    ...(data.marketAnalysis?.sections.flatMap(section => [...section.sourceIds, ...section.reportIds]) || []),
+  ])
   return text.replace(/\[([^\]]+)\]/g, (marker, id: string) => ids.has(id) ? '' : marker)
 }
 const marketColors = ['#1765ad', '#ad5c15', '#247a64']
@@ -289,11 +300,11 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
   const cutoff = selectedCutoff && selectedCutoff <= data.asOf ? selectedCutoff : data.asOf
   const historical = Boolean(cutoff && cutoff < data.asOf)
   const hasMarketValues = Boolean(data.marketPaths?.series.some((series) => series.observations.some(finiteObservation)))
-  const sources = data.sources.filter((source) => (knownBy(source.date, cutoff) || (!historical && source.retrospectiveOnly)) && (!historical || source.historicalAsOfEligible !== false))
+  const sources = data.sources.filter((source) => (knownBy(source.date, cutoff) || (!historical && source.retrospectiveOnly)) && (!historical || (source.historicalAsOfEligible !== false && availableBy(source, cutoff))))
   const matches = (values: string[]) => values.join(' ').toLowerCase().includes(query.trim().toLowerCase())
   const availableSources = sources.filter((source) => safeUrl(source.url) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))
-  const events = data.events.filter((event) => knownBy(event.date, cutoff) && (!historical || (event.historicalAsOfEligible !== false && knownBy(event.availableFrom || event.date, cutoff)))).sort((a, b) => a.date.localeCompare(b.date))
-  const reports = data.reports.filter((report) => (historical ? report.historicalAsOfEligible !== false && knownBy(reportDate(report), cutoff) : !reportDate(report) || knownBy(reportDate(report), cutoff)) && matches([report.title, report.provider, report.scope || '', report.geography || '', ...(report.topics || []), historical ? '' : report.note || '']))
+  const events = data.events.filter((event) => knownBy(event.date, cutoff) && (!historical || (event.historicalAsOfEligible !== false && knownBy(event.availableFrom || event.date, cutoff) && [...event.expectationSourceIds, ...event.realitySourceIds].every(id => sources.some(source => source.id === id))))).sort((a, b) => a.date.localeCompare(b.date))
+  const reports = data.reports.filter((report) => (historical ? report.historicalAsOfEligible !== false && knownBy(reportDate(report), cutoff) && availableBy(report, cutoff) : !reportDate(report) || knownBy(reportDate(report), cutoff)) && matches([report.title, report.provider, report.scope || '', report.geography || '', ...(report.topics || []), historical ? '' : report.note || '']))
   const sourceLinks = (ids: string[]) => ids.map((id) => {
     const source = sources.find((item) => item.id === id)
     return source ? <span key={id} className="replay-source-ref">{safeUrl(source.url) ? <a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a> : <span>{source.title} · 无公开URL</span>}</span> : <span key={id} className="replay-missing">来源未在截止日前核验</span>

@@ -39,7 +39,6 @@ class HawkishReplayTests(unittest.TestCase):
         self.assertNotIn('待重新核验',data['marketAnalysis']['conclusion'])
         self.assertEqual(data['realityComparisons'],baseline['realityComparisons'])
         self.assertEqual(data['localResearchEvidence'],baseline['localResearchEvidence'])
-        self.assertEqual(before,'407ea14e7178c0975bc690b53965a6e9210e924f08848010f9cf218be05b07d3')
         self.assertEqual(hashlib.sha256(first.read_bytes()).hexdigest(),before)
         ids={r['id'] for r in data['reports']}
         for m in data['monthlyReplay']+data['marketAnalysis']['sections']:

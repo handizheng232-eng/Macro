@@ -3,10 +3,163 @@ import hashlib
 import importlib
 import json
 import unittest
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
+
+def review_fixture(stage, report=None):
+    """Private fixtures are never written to src/data or used for real research."""
+    import replay_research_integration as module
+    def section(identifier):
+        return {'id': identifier, 'title': identifier, **{k: 'Fixture pending evidence' for k in module.BODY_FIELDS},
+            'sourceIds': ['fixture-official'], 'reportIds': [report['id']] if report else []}
+    source_path = stage / 'official.txt'
+    source_path.write_text('Fixture official release text, not real research.', encoding='utf-8')
+    sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+    opinions = []
+    if report:
+        import pymupdf
+        with pymupdf.open(stage/'fixture.pdf') as pdf:
+            quote = pdf[0].get_text('text').strip()
+        opinions.append({'id': 'fixture-opinion', 'sourceId': report['id'], 'sourceSHA256': report['sha256'],
+            'channel': 'Wind', 'publicationDate': report['publicationDate'], 'dateBasis': 'printed_publication_date',
+            'actor': 'Fixture author', 'claim': 'Fixture conditional outlook', 'scope': 'Fixture US',
+            'physicalPage': 1, 'paragraphId': None, 'quote': quote, 'locator': {'start': 0},
+            'horizon': {'literalResearchWindow': '2026-12', 'deadlineMonth': '2026-12'},
+            'conditions': ['Fixture condition'], 'limitations': ['Fixture only'], 'title': report['title'],
+            'claimType': 'institutional_forecast',
+            'realizationPair': {'note': 'Fixture ongoing', 'status': 'ongoing', 'realitySourceIds': [], 'factIds': []}})
+    study = {'asOf': '2026-10-09', 'marketAnalysis': {'title': 'Fixture analysis', 'conclusion': 'Fixture conclusion',
+        'limitations': ['Not real research'], 'sections': [section(s) for s in module.THEME_IDS]},
+        'months': [{**section('fixture-'+m), 'month': m, 'opinionIds': [o['id'] for o in opinions],
+            'factIds': [], 'marketPath': None, 'dynamicConvergence': 'Fixture evidence pending'} for m in ('2026-09','2026-10')],
+        'revisionChains': [{'id': 'fixture-chain', 'label': 'Fixture chain', 'description': 'Fixture only',
+                            'opinionIds': [o['id'] for o in opinions]}] if opinions else [],
+        'sources': [{'id': 'fixture-official', 'title': 'Fixture source', 'publisher': 'Fixture publisher',
+                     'url': 'https://www.federalreserve.gov/fixture', 'publicationDate': '2026-10-08',
+                     'sha256': sha(source_path)}], 'officialFacts': [],
+        'sourceAliases': [{'sourceId': report['id'], 'sha256': report['sha256'], 'aliasReason': 'Fixture same original'}] if report else [],
+        'marketStatistics': {}}
+    def save(name, value):
+        p=stage/name; p.write_text(json.dumps(value), encoding='utf-8'); return sha(p)
+    pins = {'study.json': save('study.json', study), 'opinions.json': save('opinions.json', {'opinions': opinions}),
+            'official.txt': sha(source_path)}
+    receipt = {'inputPins': pins, 'opinions': [{'opinionId': o['id'], 'accepted': True} for o in opinions],
+               'semanticReview': {'facts': []}}
+    accepted = module.reviewed_projection(study, {'opinions': opinions})
+    manifest = {'schemaVersion': 'parent-reviewed-research-manifest-1',
+        'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'researchPath': 'study.json', 'opinionsPath': 'opinions.json',
+        'inputPins': pins, 'acceptedOpinionIds': [o['id'] for o in opinions], 'acceptedFactIds': [],
+        'verification': {'path': 'verification.json', 'sha256': save('verification.json', receipt)},
+        'accepted': {'path': 'accepted.json', 'sha256': save('accepted.json', accepted)}}
+    save('review.json', manifest)
+    return stage/'review.json', manifest
+
+class ExplicitResearchWindowTests(unittest.TestCase):
+    def test_official_catalog_sha_must_correspond_to_an_actual_input_pin(self):
+        from replay_research_integration import load_reviewed, reviewed_projection
+        with tempfile.TemporaryDirectory() as tmp:
+            stage=Path(tmp);path,manifest=review_fixture(stage)
+            study=json.loads((stage/'study.json').read_text(encoding='utf-8'))
+            study['sources'][0]['sha256']='0'*64
+            (stage/'study.json').write_text(json.dumps(study),encoding='utf-8')
+            manifest['inputPins']['study.json']=hashlib.sha256((stage/'study.json').read_bytes()).hexdigest()
+            receipt=json.loads((stage/'verification.json').read_text(encoding='utf-8'))
+            receipt['inputPins']=manifest['inputPins']
+            (stage/'verification.json').write_text(json.dumps(receipt),encoding='utf-8')
+            manifest['verification']['sha256']=hashlib.sha256((stage/'verification.json').read_bytes()).hexdigest()
+            accepted=reviewed_projection(study,{'opinions':[]})
+            (stage/'accepted.json').write_text(json.dumps(accepted),encoding='utf-8')
+            manifest['accepted']['sha256']=hashlib.sha256((stage/'accepted.json').read_bytes()).hexdigest()
+            path.write_text(json.dumps(manifest),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'source.*SHA'):
+                load_reviewed(path,stage,stage,start='2026-09-01',end='2026-10-09')
+
+    def test_pinned_review_cannot_admit_future_official_fact(self):
+        from replay_research_integration import load_reviewed, reviewed_projection
+        with tempfile.TemporaryDirectory() as tmp:
+            stage=Path(tmp);path,manifest=review_fixture(stage)
+            study=json.loads((stage/'study.json').read_text(encoding='utf-8'))
+            fact={'id':'fixture-future-fact','date':'2026-10-12','claim':'Fixture future release',
+                  'sourceIds':['fixture-official'],'observationPeriod':'2026-09','value':{}}
+            study['officialFacts']=[fact]
+            (stage/'study.json').write_text(json.dumps(study),encoding='utf-8')
+            manifest['inputPins']['study.json']=hashlib.sha256((stage/'study.json').read_bytes()).hexdigest()
+            receipt=json.loads((stage/'verification.json').read_text(encoding='utf-8'))
+            receipt.update(inputPins=manifest['inputPins'],semanticReview={'facts':[{'factId':fact['id'],'accepted':True}]})
+            (stage/'verification.json').write_text(json.dumps(receipt),encoding='utf-8')
+            manifest['verification']['sha256']=hashlib.sha256((stage/'verification.json').read_bytes()).hexdigest()
+            manifest['acceptedFactIds']=[fact['id']]
+            accepted=reviewed_projection(study,{'opinions':[]})
+            (stage/'accepted.json').write_text(json.dumps(accepted),encoding='utf-8')
+            manifest['accepted']['sha256']=hashlib.sha256((stage/'accepted.json').read_bytes()).hexdigest()
+            path.write_text(json.dumps(manifest),encoding='utf-8')
+            with self.assertRaisesRegex(ValueError,'future'):
+                load_reviewed(path,stage,stage,start='2026-09-01',end='2026-10-09')
+
+    def test_new_cutoff_future_target_note_uses_actual_deadline_month(self):
+        from test_replay_parent_sources import wind_fixture
+        from replay_research_integration import reviewed_projection
+        with tempfile.TemporaryDirectory() as tmp:
+            stage=Path(tmp);_,record=wind_fixture(stage)
+            review_fixture(stage,record)
+            projection=reviewed_projection(json.loads((stage/'study.json').read_text(encoding='utf-8')),
+                json.loads((stage/'opinions.json').read_text(encoding='utf-8')))
+            pair=projection['opinions'][0]['realizationPair']
+            self.assertEqual(pair['status'],'ongoing')
+            self.assertIn('2026-12',pair['note'])
+            self.assertNotIn('9月目标',pair['note'])
+
+    def test_review_projection_cannot_invent_quote_from_admitted_pdf(self):
+        from test_replay_parent_sources import wind_fixture
+        from replay_research_integration import integrate_reviewed, reviewed_projection
+        from replay_parent_sources import load_parent_sources
+        with tempfile.TemporaryDirectory() as tmp:
+            stage=Path(tmp);descriptor,record=wind_fixture(stage)
+            reports,_=load_parent_sources(stage,stage,[descriptor],start='2026-09-01',end='2026-10-09')
+            path,manifest=review_fixture(stage,record)
+            private=json.loads((stage/'opinions.json').read_text(encoding='utf-8'))
+            private['opinions'][0]['quote']='Invented fixture quote not on actual physical page'
+            (stage/'opinions.json').write_text(json.dumps(private),encoding='utf-8')
+            manifest['inputPins']['opinions.json']=hashlib.sha256((stage/'opinions.json').read_bytes()).hexdigest()
+            receipt=json.loads((stage/'verification.json').read_text(encoding='utf-8'))
+            receipt['inputPins']=manifest['inputPins']
+            (stage/'verification.json').write_text(json.dumps(receipt),encoding='utf-8')
+            manifest['verification']['sha256']=hashlib.sha256((stage/'verification.json').read_bytes()).hexdigest()
+            accepted=reviewed_projection(json.loads((stage/'study.json').read_text(encoding='utf-8')),private)
+            (stage/'accepted.json').write_text(json.dumps(accepted),encoding='utf-8')
+            manifest['accepted']['sha256']=hashlib.sha256((stage/'accepted.json').read_bytes()).hexdigest()
+            path.write_text(json.dumps(manifest),encoding='utf-8')
+            data={'startDate':'2026-09-01','asOf':'2026-10-09','reports':reports,'sources':[],
+                  'events':[],'reportIdAliases':{}}
+            with self.assertRaisesRegex(ValueError,'excerpt'):
+                integrate_reviewed(data,path,stage,stage,explicit_window=True)
+
+    def test_explicit_two_month_pinned_review_integrates_only_admitted_sources(self):
+        from test_replay_parent_sources import wind_fixture
+        import build_history_replay as builder
+        with tempfile.TemporaryDirectory() as tmp:
+            stage = Path(tmp)
+            descriptor, report = wind_fixture(stage)
+            source_manifest = stage/'sources.json'
+            source_manifest.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
+                'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': [descriptor]}), encoding='utf-8')
+            review_path, _ = review_fixture(stage, report)
+            data = builder.build(stage=stage, root=stage, as_of='2026-10-09',
+                parent_source_manifest=source_manifest, reviewed_research_manifest=review_path)
+            self.assertEqual([m['month'] for m in data['monthlyReplay']], ['2026-09', '2026-10'])
+            self.assertEqual(len(data['revisionChains']), 1)
+            self.assertEqual(len(data['windResearchEvidence']), 1)
+            self.assertEqual(data['windResearchEvidence'][0]['reportId'], report['id'])
+            self.assertFalse(data['monthlyCoverage']['complete'])
+            self.assertTrue(all(not s['historicalAsOfEligible'] for s in data['sources']))
+            (stage/'official.txt').write_text('Tampered fixture official release', encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'SHA is stale'):
+                builder.build(stage=stage, root=stage, as_of='2026-10-09',
+                    parent_source_manifest=source_manifest, reviewed_research_manifest=review_path)
+
 
 class ParentResearchTests(unittest.TestCase):
     def test_independent_verifier_reads_every_original_and_exact_anchor(self):
