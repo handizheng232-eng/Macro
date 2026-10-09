@@ -837,6 +837,10 @@ td:last-child { color: var(--subtle); }
 .beveridge-legend i.latest { background: #c94c4c; }
 .employment-bar-legend i { width: 9px; height: 9px; border-radius: 1px; }
 .employment-bar-legend .employment-total-line { width: 17px; height: 2px; background: #17233b; border-radius: 0; }
+.employment-chart-freshness { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 18px; padding: 8px 17px; border-bottom: 1px solid var(--line); background: #f4f4f4; color: var(--muted); font-size: 9px; }
+.employment-chart-freshness strong { color: var(--ink); font: 9px 'IBM Plex Mono', monospace; font-weight: 500; }
+.chart-readout .chart-readout-period { padding-right: 10px; border-right: 1px solid var(--line); }
+.chart-readout .employment-total-line { width: 17px; height: 2px; border-radius: 0; background: #17233b; }
 
 .employment-heatmap-card { margin-top: 16px; overflow: hidden; background: #fff; border-top: 2px solid var(--ink); }
 .employment-heatmap-card > header { min-height: 104px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 22px; border-bottom: 1px solid var(--line); }

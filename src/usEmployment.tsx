@@ -168,6 +168,16 @@ function formatDate(date: string): string {
     : `${date.slice(0, 4)}-${date.slice(4, 6)}`
 }
 
+function formatSnapshotTime(value: string): string {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(new Date(value))
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find((item) => item.type === type)?.value ?? ''
+  return `${part('year')}-${part('month')}-${part('day')} ${part('hour')}:${part('minute')}（北京时间）`
+}
+
 function dateToTimestamp(date: string): number {
   return Date.UTC(Number(date.slice(0, 4)), Number(date.slice(4, 6)) - 1, Number(date.slice(6, 8) || '1'))
 }
@@ -383,6 +393,7 @@ function EmploymentBarChart({ chart }: { chart: LineChartDefinition }) {
   const top = 20
   const bottom = 42
   const [range, setRange] = useState<RangeKey>(chart.defaultRange)
+  const [hoverTimestamp, setHoverTimestamp] = useState<number | null>(null)
   const latestTimestamp = Math.max(...chart.series.flatMap((series) => series.dates.map(dateToTimestamp)))
   const cutoff = cutoffFor(range, latestTimestamp)
   const maps = chart.series.map((series) => new Map(series.dates.map((date, index) => [date, series.values[index]])))
@@ -414,6 +425,13 @@ function EmploymentBarChart({ chart }: { chart: LineChartDefinition }) {
   const ticks = Array.from({ length: 5 }, (_, index) => maxValue - index / 4 * (maxValue - minValue))
   const xTicks = Array.from({ length: 6 }, (_, index) => minTimestamp + index / 5 * (maxTimestamp - minTimestamp))
   const totalPath = rows.map((row, index) => `${index ? 'L' : 'M'} ${x(row.timestamp).toFixed(2)} ${y(row.total ?? 0).toFixed(2)}`).join(' ')
+  const selectedRow = hoverTimestamp === null ? rows.at(-1) : rows.reduce((nearest, row) => (
+    Math.abs(row.timestamp - hoverTimestamp) < Math.abs(nearest.timestamp - hoverTimestamp) ? row : nearest
+  ))
+  const latestObservation = [
+    ...chart.series.map((series) => series.latestObservation),
+    ...(chart.totalSeries ? [chart.totalSeries.latestObservation] : []),
+  ].sort().at(-1) ?? ''
 
   return (
     <article className="employment-chart-card employment-bar-card">
@@ -421,12 +439,28 @@ function EmploymentBarChart({ chart }: { chart: LineChartDefinition }) {
         <div><span>{chart.eyebrow}</span><h3>{chart.title}</h3><p>{chart.description}</p></div>
         <RangeSwitch title={chart.title} value={range} onChange={setRange} />
       </header>
+      <div className="employment-chart-freshness" aria-label={`${chart.title}更新时间`}>
+        <span>数据截至：<strong>{formatDate(latestObservation)}</strong></span>
+        <span>快照更新：<strong>{formatSnapshotTime(dataset.generatedAt)}</strong></span>
+      </div>
       <div className="employment-bar-legend">
         {chart.series.map((series) => <span key={series.id}><i style={{ background: series.color }} />{series.label}</span>)}
         {chart.totalSeries && <span><i className="employment-total-line" />{chart.totalSeries.label}</span>}
       </div>
       <div className="multi-chart-wrap">
-        <svg className="multi-series-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${chart.title}堆叠柱图`}>
+        <svg
+          className="multi-series-svg"
+          viewBox={`0 0 ${width} ${height}`}
+          role="img"
+          aria-label={`${chart.title}堆叠柱图`}
+          onPointerLeave={() => setHoverTimestamp(null)}
+          onPointerMove={(event) => {
+            const bounds = event.currentTarget.getBoundingClientRect()
+            const svgX = (event.clientX - bounds.left) / bounds.width * width
+            const ratio = Math.min(1, Math.max(0, (svgX - left) / plotWidth))
+            setHoverTimestamp(minTimestamp + ratio * (maxTimestamp - minTimestamp))
+          }}
+        >
           {ticks.map((tick, index) => {
             const tickY = top + index / 4 * plotHeight
             return <g key={tick}><line x1={left} x2={width - right} y1={tickY} y2={tickY} className="chart-grid-line" /><text x={left - 9} y={tickY + 4} textAnchor="end" className="chart-axis-text">{formatValue(tick, 0)}</text></g>
@@ -441,11 +475,19 @@ function EmploymentBarChart({ chart }: { chart: LineChartDefinition }) {
               const end = start + value
               if (value >= 0) positive = end
               else negative = end
-              return <rect key={`${row.date}-${chart.series[index].id}`} x={x(row.timestamp) - barWidth / 2} y={Math.min(y(start), y(end))} width={barWidth} height={Math.max(1, Math.abs(y(start) - y(end)))} fill={chart.series[index].color} />
+              return <rect key={`${row.date}-${chart.series[index].id}`} x={x(row.timestamp) - barWidth / 2} y={Math.min(y(start), y(end))} width={barWidth} height={Math.max(1, Math.abs(y(start) - y(end)))} fill={chart.series[index].color}><title>{`${formatDate(row.date)} · ${chart.series[index].label} ${chartValue(value, chart.series[index].unit)}`}</title></rect>
             })
           })}
           {chart.totalSeries && <path d={totalPath} fill="none" stroke={chart.totalSeries.color} strokeWidth="2.1" strokeLinecap="round" strokeLinejoin="round" />}
+          {hoverTimestamp !== null && selectedRow && <line className="employment-hover-line" x1={x(selectedRow.timestamp)} x2={x(selectedRow.timestamp)} y1={top} y2={height - bottom} />}
         </svg>
+      </div>
+      <div className="chart-readout" role="status" aria-label="新增非农图表读数" aria-live="polite">
+        {selectedRow && <>
+          <span className="chart-readout-period"><strong>{formatDate(selectedRow.date)}</strong><small>观测期</small></span>
+          {chart.series.map((series, index) => <span key={series.id}><i style={{ background: series.color }} />{series.label}<strong>{chartValue(selectedRow.values[index], series.unit)}</strong></span>)}
+          {chart.totalSeries && typeof selectedRow.total === 'number' && <span><i className="employment-total-line" />{chart.totalSeries.label}<strong>{chartValue(selectedRow.total, chart.totalSeries.unit)}</strong></span>}
+        </>}
       </div>
       <footer><SourceList series={[...chart.series, ...(chart.totalSeries ? [chart.totalSeries] : [])]} /></footer>
       <ExplanationPanel explanation={chart.explanation} />
