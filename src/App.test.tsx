@@ -139,7 +139,7 @@ describe('宏观框架', () => {
     expect(screen.getByRole('heading', { name: 'V/U与ECI工资压力' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'Sahm规则' })).toBeInTheDocument()
     expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
-    expect(screen.getByText(/数据来源：iFinD 经济数据库（EDB）。/)).toBeInTheDocument()
+    expect(screen.getByText(/数据来源：iFinD EDB \+ BLS Public Data API。/)).toBeInTheDocument()
     expect(screen.queryByText('Wind EDB')).not.toBeInTheDocument()
     expect(within(screen.getByRole('main')).queryByText(/OpenBB/)).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: '返回宏观框架' }))

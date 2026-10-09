@@ -78,6 +78,14 @@ type ChartDefinition = LineChartDefinition | ScatterChartDefinition
 type SectorMonitor = {
   title: string
   description: string
+  eyebrow?: string
+  ariaLabel?: string
+  unit?: string
+  recentLabel?: string
+  baselineLabel?: string
+  codeLabel?: string
+  decimals?: number
+  note?: string
   periods: string[]
   rows: Array<{
     id: string
@@ -102,6 +110,7 @@ type Section = {
   description: string
   charts: ChartDefinition[]
   sectorMonitor?: SectorMonitor
+  wageSectorMonitor?: SectorMonitor
   availability?: AvailabilityItem[]
 }
 
@@ -583,19 +592,19 @@ function heatColor(value: number | null, maxAbs: number): string {
   return value >= 0 ? `rgba(197,68,68,${alpha})` : `rgba(47,127,163,${alpha})`
 }
 
-function SectorMonitorTable({ section }: { section: Section }) {
-  const table = section.sectorMonitor!
+function SectorMonitorTable({ table }: { table: SectorMonitor }) {
   const maxAbs = Math.max(...table.rows.flatMap((row) => row.values.filter((value): value is number => value !== null).map(Math.abs)))
+  const decimals = table.decimals ?? 0
   return (
     <article className="employment-heatmap-card">
-      <header><div><span>CES · INDUSTRY BREADTH</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>收缩</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>扩张</span></div></header>
+      <header><div><span>{table.eyebrow ?? 'CES · INDUSTRY BREADTH'}</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>下降</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>上升</span></div></header>
       <div className="employment-heatmap-wrap">
-        <table className="employment-heatmap sector-monitor-table" aria-label="行业就业广度与结构表">
-          <thead><tr><th>行业</th>{table.periods.map((period) => <th key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th>近12月均值</th><th>2018—19基准</th><th>iFinD指标码</th></tr></thead>
-          <tbody>{table.rows.map((row) => <tr key={row.id}><th>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, 0)}</td>)}<td className="sector-benchmark">{formatValue(row.recent12mAverage, 1)}</td><td className="sector-benchmark">{formatValue(row.baseline2018To2019, 1)}</td><td>{row.source.code}</td></tr>)}</tbody>
+        <table className="employment-heatmap sector-monitor-table" aria-label={table.ariaLabel ?? '行业就业广度与结构表'}>
+          <thead><tr><th scope="col">行业</th>{table.periods.map((period) => <th scope="col" key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th scope="col">{table.recentLabel ?? '近12月均值'}</th><th scope="col">{table.baselineLabel ?? '2018—19基准'}</th><th scope="col">{table.codeLabel ?? 'iFinD指标码'}</th></tr></thead>
+          <tbody>{table.rows.map((row) => <tr key={row.id}><th scope="row">{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, decimals)}</td>)}<td className="sector-benchmark">{formatValue(row.recent12mAverage, Math.max(decimals, 1))}</td><td className="sector-benchmark">{formatValue(row.baseline2018To2019, Math.max(decimals, 1))}</td><td>{row.source.code}</td></tr>)}</tbody>
         </table>
       </div>
-      <footer><strong>单位：千人/月</strong><span>同一色阶按全表最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。</span><b>{table.source.provider}</b></footer>
+      <footer><strong>单位：{table.unit ?? '千人/月'}</strong><span>{table.note ?? '同一色阶按全表最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。'}</span><b>{table.source.provider}</b></footer>
     </article>
   )
 }
@@ -676,7 +685,7 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
       <section className="inflation-section" id="employment-official" aria-label="官方双调查：CES 与 CPS">
         <SectionHeading code="01 · OFFICIAL SURVEYS" section={dataset.sections.officialSurveys} />
         <div className="employment-chart-grid">{dataset.sections.officialSurveys.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
-        {dataset.sections.officialSurveys.sectorMonitor && <SectorMonitorTable section={dataset.sections.officialSurveys} />}
+        {dataset.sections.officialSurveys.sectorMonitor && <SectorMonitorTable table={dataset.sections.officialSurveys.sectorMonitor} />}
       </section>
 
       <section className="inflation-section" id="employment-flows" aria-label="流量与周频验证">
@@ -687,6 +696,7 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
       <section className="inflation-section" id="employment-wages" aria-label="工资的三种口径">
         <SectionHeading code="03 · WAGE MEASURES" section={dataset.sections.wages} />
         <div className="employment-chart-grid single">{dataset.sections.wages.charts.map((item) => <ChartCard chart={item} key={item.id} />)}</div>
+        {dataset.sections.wages.wageSectorMonitor && <SectorMonitorTable table={dataset.sections.wages.wageSectorMonitor} />}
       </section>
 
       <section className="inflation-section" id="employment-frameworks" aria-label="四组实证框架">
@@ -701,9 +711,9 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
       </section>
 
       <section className="inflation-method-card employment-method-card" aria-label="就业数据口径">
-        <div><span>06 · DATA CONTRACT</span><h2>iFinD 数据口径与可更新性</h2><p>月度就业、周度申领失业金、季度ECI及滞后发布的JOLTS保留各自观测日期，不把不同发布日伪装成同一截至日。</p></div>
+        <div><span>06 · DATA CONTRACT</span><h2>iFinD + BLS 数据口径与可更新性</h2><p>月度就业、周度申领失业金、季度ECI、滞后发布的JOLTS与BLS行业时薪保留各自观测日期，不把不同发布日伪装成同一截至日。</p></div>
         <div className="cross-check-list">
-          <article><CheckCircle2 size={15} /><div><strong>源身份与量级核验</strong><span>构建脚本逐条核对iFinD指标码、名称、频率、单位、历史区间与合理量级</span></div></article>
+          <article><CheckCircle2 size={15} /><div><strong>源身份与量级核验</strong><span>构建脚本逐条核对iFinD指标码，并验证BLS CES行业时薪序列ID、美元/小时量级与月份完整性</span></div></article>
           <article><CheckCircle2 size={15} /><div><strong>缺口与异频处理</strong><span>{disclosedGaps}条月频序列存在至少一个日历月缺口；折线按实际间隔断开，周/月/季不按数组位置拼接</span></div></article>
           <article><CheckCircle2 size={15} /><div><strong>PPT只定义框架</strong><span>页面不沿用截图数值；{dataset.researchBasis[1]}</span></div></article>
         </div>
@@ -711,7 +721,7 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
       </section>
 
       <footer className="us-macro-source">
-        <div><strong>数据来源：iFinD 经济数据库（EDB）。</strong><span>{dataset.sourceProviders.join(' · ')} · 框架参考 {dataset.frameworkSource.file} 第{dataset.frameworkSource.slides}页</span></div>
+        <div><strong>数据来源：iFinD EDB + BLS Public Data API。</strong><span>{dataset.sourceProviders.join(' · ')} · 框架参考 {dataset.frameworkSource.file} 第{dataset.frameworkSource.slides}页</span></div>
         <button aria-label="返回宏观框架（页尾）" type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button>
       </footer>
     </div>

@@ -8,6 +8,7 @@ snapshot at ``src/data/usEmploymentData.json``.
 from __future__ import annotations
 
 import argparse
+import calendar
 import json
 import re
 import statistics
@@ -29,6 +30,7 @@ DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw" / "ifind-us-employment"
 
 SEARCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/search/associate"
 FETCH_URL = "https://ft.51ifind.com/standardgwapi/api/macro_service/fetch_data/search"
+BLS_API_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
 REFERER = "https://ft.51ifind.com/standardgwapi/bff/macro_bff/edb_web/index?pluginVersion=excel_win64"
 USER_AGENT = "Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 Chrome/84.0.4147.105 Safari/537.36"
 LOG_TOKEN = re.compile(r'jgbsession["\'\:= ]+([0-9a-fA-F]{32})')
@@ -100,6 +102,18 @@ SECTOR_KEYS = [
     "sector_education_health",
 ]
 
+BLS_SECTOR_WAGE_SPEC: dict[str, tuple[str, str]] = {
+    "wage_mining": ("CES1000000003", "采矿与伐木"),
+    "wage_construction": ("CES2000000003", "建筑业"),
+    "wage_manufacturing": ("CES3000000003", "制造业"),
+    "wage_retail": ("CES4200000003", "零售业"),
+    "wage_transport": ("CES4300000003", "运输仓储"),
+    "wage_information": ("CES5000000003", "信息业"),
+    "wage_financial": ("CES5500000003", "金融活动"),
+    "wage_professional": ("CES6000000003", "专业商业服务"),
+    "wage_education_health": ("CES6500000003", "教育与医疗服务"),
+}
+
 
 def compact_date(value: Any) -> str:
     normalized = str(value).replace("-", "").replace("/", "").replace(".", "")
@@ -129,6 +143,66 @@ def detect_missing_months(dates: Iterable[str]) -> list[str]:
             year += 1
             month = 1
     return [period for period in expected if period not in periods]
+
+
+def parse_bls_series(payload: dict[str, Any], expected_codes: set[str]) -> dict[str, tuple[list[str], list[float]]]:
+    if payload.get("status") != "REQUEST_SUCCEEDED":
+        raise ValueError(f"BLS request failed: {payload.get('message') or payload.get('status')}")
+    parsed: dict[str, tuple[list[str], list[float]]] = {}
+    for item in payload.get("Results", {}).get("series", []):
+        code = str(item.get("seriesID") or "")
+        if code not in expected_codes:
+            continue
+        rows: list[tuple[str, float]] = []
+        for observation in item.get("data", []):
+            period = str(observation.get("period") or "")
+            if not re.fullmatch(r"M(?:0[1-9]|1[0-2])", period):
+                continue
+            year = int(observation["year"])
+            month = int(period[1:])
+            value = float(observation["value"])
+            if not 5 <= value <= 150:
+                raise ValueError(f"BLS hourly earnings range check failed for {code}: {value}")
+            rows.append((f"{year:04d}{month:02d}{calendar.monthrange(year, month)[1]:02d}", value))
+        rows.sort()
+        if not rows:
+            raise ValueError(f"BLS returned no monthly observations for {code}")
+        parsed[code] = ([row[0] for row in rows], [row[1] for row in rows])
+    missing = expected_codes - parsed.keys()
+    if missing:
+        raise ValueError(f"BLS response missing series: {sorted(missing)}")
+    return parsed
+
+
+def month_over_month(dates: list[str], values: list[float]) -> tuple[list[str], list[float]]:
+    result_dates: list[str] = []
+    result_values: list[float] = []
+    for index in range(1, len(values)):
+        previous = values[index - 1]
+        if previous == 0:
+            continue
+        result_dates.append(dates[index])
+        result_values.append((values[index] / previous - 1) * 100)
+    return result_dates, result_values
+
+
+def fetch_bls_sector_wages(end_year: int | None = None) -> dict[str, Any]:
+    end_year = end_year or datetime.now(timezone.utc).year
+    body = json.dumps({
+        "seriesid": [spec[0] for spec in BLS_SECTOR_WAGE_SPEC.values()],
+        "startyear": str(end_year - 9),
+        "endyear": str(end_year),
+    }).encode("utf-8")
+    request = urllib.request.Request(
+        BLS_API_URL,
+        data=body,
+        headers={"Content-Type": "application/json", "User-Agent": "macro-research-dashboard/0.1"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    parse_bls_series(payload, {spec[0] for spec in BLS_SECTOR_WAGE_SPEC.values()})
+    return payload
 
 
 def rolling_mean(dates: list[str], values: list[float], window: int) -> tuple[list[str], list[float]]:
@@ -549,11 +623,18 @@ def _build_dataset_v1(raw: dict[str, dict[str, Any]], generated_at: str, raw_sna
     }
 
 
-def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapshot: str) -> dict[str, Any]:
+def build_dataset(
+    raw: dict[str, dict[str, Any]],
+    generated_at: str,
+    raw_snapshot: str,
+    bls_payload: dict[str, Any],
+    bls_snapshot: str,
+) -> dict[str, Any]:
     parsed = {
         key: fetch_response_series(item["payload"], SERIES_SPEC[key][0])
         for key, item in raw.items()
     }
+    bls_parsed = parse_bls_series(bls_payload, {spec[0] for spec in BLS_SECTOR_WAGE_SPEC.values()})
 
     payroll_dates, payroll_values = parsed["payroll_total"]
     payroll_3m_dates, payroll_3m_values = rolling_mean(payroll_dates, payroll_values, 3)
@@ -950,6 +1031,52 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
             "source": source_meta(key, dates[-1]),
         })
 
+    wage_mom: dict[str, tuple[list[str], list[float]]] = {}
+    for key, (code, _label) in BLS_SECTOR_WAGE_SPEC.items():
+        wage_mom[key] = month_over_month(*bls_parsed[code])
+    wage_period_sets = [set(date[:6] for date in dates) for dates, _values in wage_mom.values()]
+    wage_periods = sorted(set.intersection(*wage_period_sets), reverse=True)[:12]
+    wage_sector_rows = []
+    for key, (code, label) in BLS_SECTOR_WAGE_SPEC.items():
+        dates, values = wage_mom[key]
+        value_map = {date[:6]: value for date, value in zip(dates, values)}
+        recent = [value_map[period] for period in wage_periods]
+        baseline = [value for date, value in zip(dates, values) if "201801" <= date[:6] <= "201912"]
+        if not baseline:
+            raise ValueError(f"BLS wage baseline unavailable for {code}")
+        source_dates, _source_values = bls_parsed[code]
+        wage_sector_rows.append({
+            "id": key,
+            "label": label,
+            "values": [round(value_map[period], 3) for period in wage_periods],
+            "recent12mAverage": round(statistics.fmean(recent), 3),
+            "baseline2018To2019": round(statistics.fmean(baseline), 3),
+            "source": {
+                "provider": "BLS Public Data API",
+                "institution": "U.S. Bureau of Labor Statistics",
+                "code": code,
+                "name": f"Average hourly earnings of all employees, seasonally adjusted: {label}",
+                "rawUnit": "美元/小时",
+                "url": f"https://data.bls.gov/timeseries/{code}",
+                "latestObservation": source_dates[-1],
+            },
+        })
+    wage_sector_monitor = {
+        "title": "分行业平均时薪环比变化",
+        "description": "BLS CES季调全体雇员平均时薪水平计算月度环比；与行业新增就业并读，用于区分就业广度与工资压力。",
+        "eyebrow": "CES · INDUSTRY HOURLY EARNINGS",
+        "ariaLabel": "分行业时薪环比变化表",
+        "unit": "%",
+        "recentLabel": "近12月平均环比",
+        "baselineLabel": "2018—19月均环比",
+        "codeLabel": "BLS序列",
+        "decimals": 2,
+        "note": "环比由BLS CES季调全体雇员平均时薪水平计算；通常随就业报告在每月首个周五08:30 ET发布。红色表示上升、蓝色表示下降，行业构成变化仍可能影响平均值。",
+        "periods": wage_periods,
+        "rows": wage_sector_rows,
+        "source": {"provider": "BLS Public Data API", "url": "https://www.bls.gov/ces/"},
+    }
+
     route_map = [
         {"id": "official-surveys", "title": "官方双调查", "subtitle": "每月第一个周五", "nodes": [
             {"title": "CES 企业调查：非农增量·工时·时薪", "detail": "数岗位，有修正"},
@@ -999,7 +1126,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "schemaVersion": 2,
         "generatedAt": generated_at,
         "source": "iFinD EDB",
-        "sourceProviders": ["iFinD EDB"],
+        "sourceProviders": ["iFinD EDB", "BLS Public Data API"],
         "frameworkSource": {"file": "研究框架/美国宏观数据培训【0829定稿】.pptx", "slides": "26—59", "routeSlide": 27},
         "routeMap": route_map,
         "dataPassports": data_passports,
@@ -1017,7 +1144,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
                 "sectorMonitor": {"title": "行业就业广度与结构表", "description": "最近12个月逐月热度，并与2018—2019月均增量比较。", "periods": sector_periods, "rows": sector_rows, "source": {"provider": "iFinD EDB", "url": "https://ft.51ifind.com"}},
             },
             "flows": {"title": "流量与周频", "description": "用JOLTS刻画岗位与人员流量，用初请/续请补足月度数据之间的高频真空。", "charts": [claims, vu_wage, jolts]},
-            "wages": {"title": "工资三口径", "description": "快读AHE、确认ECI、理解个体工资用Atlanta；三条线互补而非替代。", "charts": [wage_three]},
+            "wages": {"title": "工资三口径", "description": "快读AHE、确认ECI、理解个体工资用Atlanta；再用分行业时薪环比识别工资压力来自哪些行业。", "charts": [wage_three], "wageSectorMonitor": wage_sector_monitor},
             "frameworks": {"title": "四大经验框架", "description": "把数据变成判断，但把经验关系当作可失效的假设，而不是经济定律。", "charts": [okun, unemployment_gap, beveridge, sahm]},
             "crossChecks": {
                 "title": "第三方交叉验证", "description": "第三方数据提供先行或独立样本，但覆盖和方法论决定其只能作为第二意见。",
@@ -1030,9 +1157,9 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
                 ],
             },
         },
-        "dataQuality": {"monthlyMissingPeriods": monthly_missing, "note": "全部已绘制时序来自iFinD EDB；月、周、季频与JOLTS保留各自观测日期。派生指标均在构建脚本中确定性计算。"},
-        "researchBasis": ["页面信息架构依据《美国宏观数据培训【0829定稿】》第一章就业市场路线图与图表说明重建。", "页面数值全部由iFinD EDB重新提取；PPT只提供指标定义、阅读顺序和口径警示。"],
-        "rawSnapshots": {"ifind": raw_snapshot},
+        "dataQuality": {"monthlyMissingPeriods": monthly_missing, "note": "主体时序来自iFinD EDB；分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"},
+        "researchBasis": ["页面信息架构依据《美国宏观数据培训【0829定稿】》第一章就业市场路线图与图表说明重建。", "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"],
+        "rawSnapshots": {"ifind": raw_snapshot, "blsSectorWages": bls_snapshot},
     }
 
 
@@ -1041,6 +1168,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
     parser.add_argument("--input", type=Path, help="Use a saved raw iFinD bundle instead of fetching.")
+    parser.add_argument("--bls-input", type=Path, help="Use a saved BLS sector-wage response instead of fetching.")
     args = parser.parse_args()
 
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
@@ -1058,13 +1186,26 @@ def main() -> None:
         raw_snapshot = str(raw_path.relative_to(REPO_ROOT)).replace("\\", "/")
         print(f"raw saved to {raw_path}")
 
-    dataset = build_dataset(raw, generated_at, raw_snapshot)
+    if args.bls_input:
+        bls_payload = json.loads(args.bls_input.read_text(encoding="utf-8"))
+        bls_snapshot = str(args.bls_input)
+    else:
+        bls_payload = fetch_bls_sector_wages()
+        args.raw_dir.mkdir(parents=True, exist_ok=True)
+        stamp = generated_at.replace(":", "").replace("-", "")
+        bls_path = args.raw_dir / f"{stamp}_bls_sector_wages.json"
+        bls_path.write_text(json.dumps(bls_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        bls_snapshot = str(bls_path.relative_to(REPO_ROOT)).replace("\\", "/")
+        print(f"BLS sector wages raw saved to {bls_path}")
+
+    dataset = build_dataset(raw, generated_at, raw_snapshot, bls_payload, bls_snapshot)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(dataset, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"wrote {args.output}")
     print(f"headline: {len(dataset['headline'])}")
     print(f"charts: {sum(len(section.get('charts', [])) for section in dataset['sections'].values())}")
     print(f"sector rows: {len(dataset['sections']['officialSurveys']['sectorMonitor']['rows'])}")
+    print(f"wage sector rows: {len(dataset['sections']['wages']['wageSectorMonitor']['rows'])}")
 
 
 if __name__ == "__main__":

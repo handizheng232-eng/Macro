@@ -1,9 +1,10 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T01:00:54+00:00",
+  "generatedAt": "2026-10-09T02:07:10+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
-    "iFinD EDB"
+    "iFinD EDB",
+    "BLS Public Data API"
   ],
   "frameworkSource": {
     "file": "研究框架/美国宏观数据培训【0829定稿】.pptx",
@@ -60223,7 +60224,7 @@
     },
     "wages": {
       "title": "工资三口径",
-      "description": "快读AHE、确认ECI、理解个体工资用Atlanta；三条线互补而非替代。",
+      "description": "快读AHE、确认ECI、理解个体工资用Atlanta；再用分行业时薪环比识别工资压力来自哪些行业。",
       "charts": [
         {
           "id": "wage-three-measures",
@@ -61694,7 +61695,300 @@
             "pptSlide": "PPT p.50"
           }
         }
-      ]
+      ],
+      "wageSectorMonitor": {
+        "title": "分行业平均时薪环比变化",
+        "description": "BLS CES季调全体雇员平均时薪水平计算月度环比；与行业新增就业并读，用于区分就业广度与工资压力。",
+        "eyebrow": "CES · INDUSTRY HOURLY EARNINGS",
+        "ariaLabel": "分行业时薪环比变化表",
+        "unit": "%",
+        "recentLabel": "近12月平均环比",
+        "baselineLabel": "2018—19月均环比",
+        "codeLabel": "BLS序列",
+        "decimals": 2,
+        "note": "环比由BLS CES季调全体雇员平均时薪水平计算；通常随就业报告在每月首个周五08:30 ET发布。红色表示上升、蓝色表示下降，行业构成变化仍可能影响平均值。",
+        "periods": [
+          "202609",
+          "202608",
+          "202607",
+          "202606",
+          "202605",
+          "202604",
+          "202603",
+          "202602",
+          "202601",
+          "202512",
+          "202511",
+          "202510"
+        ],
+        "rows": [
+          {
+            "id": "wage_mining",
+            "label": "采矿与伐木",
+            "values": [
+              0.548,
+              -0.238,
+              0.167,
+              0.647,
+              0.871,
+              0.535,
+              0.982,
+              -0.025,
+              0.123,
+              -0.049,
+              0.148,
+              0.794
+            ],
+            "recent12mAverage": 0.375,
+            "baseline2018To2019": 0.287,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES1000000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 采矿与伐木",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES1000000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_construction",
+            "label": "建筑业",
+            "values": [
+              0.12,
+              0.386,
+              0.29,
+              0.364,
+              0.488,
+              0.22,
+              0.541,
+              0.419,
+              0.223,
+              0.422,
+              0.324,
+              0.325
+            ],
+            "recent12mAverage": 0.343,
+            "baseline2018To2019": 0.263,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES2000000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 建筑业",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES2000000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_manufacturing",
+            "label": "制造业",
+            "values": [
+              0.054,
+              0.163,
+              0.245,
+              0.109,
+              0.191,
+              0.301,
+              0.385,
+              0.525,
+              0.333,
+              0.25,
+              0.335,
+              0.476
+            ],
+            "recent12mAverage": 0.281,
+            "baseline2018To2019": 0.211,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES3000000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 制造业",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES3000000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_retail",
+            "label": "零售业",
+            "values": [
+              0.0,
+              0.342,
+              -0.038,
+              0.382,
+              0.0,
+              0.038,
+              0.345,
+              0.077,
+              0.231,
+              0.425,
+              0.739,
+              0.351
+            ],
+            "recent12mAverage": 0.241,
+            "baseline2018To2019": 0.386,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4200000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 零售业",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES4200000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_transport",
+            "label": "运输仓储",
+            "values": [
+              0.245,
+              0.307,
+              0.184,
+              0.308,
+              0.185,
+              0.093,
+              0.062,
+              0.248,
+              0.405,
+              0.093,
+              0.501,
+              0.44
+            ],
+            "recent12mAverage": 0.256,
+            "baseline2018To2019": 0.123,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4300000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 运输仓储",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES4300000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_information",
+            "label": "信息业",
+            "values": [
+              0.9,
+              -0.269,
+              0.65,
+              0.49,
+              0.309,
+              0.531,
+              0.46,
+              0.816,
+              0.093,
+              0.823,
+              0.357,
+              0.396
+            ],
+            "recent12mAverage": 0.463,
+            "baseline2018To2019": 0.395,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES5000000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 信息业",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES5000000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_financial",
+            "label": "金融活动",
+            "values": [
+              -0.12,
+              0.769,
+              -0.182,
+              0.589,
+              0.428,
+              0.266,
+              0.349,
+              0.226,
+              0.496,
+              -0.062,
+              0.457,
+              0.522
+            ],
+            "recent12mAverage": 0.311,
+            "baseline2018To2019": 0.297,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES5500000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 金融活动",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES5500000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_professional",
+            "label": "专业商业服务",
+            "values": [
+              0.48,
+              0.285,
+              0.11,
+              0.154,
+              0.33,
+              0.287,
+              0.133,
+              0.422,
+              0.156,
+              0.089,
+              0.045,
+              0.358
+            ],
+            "recent12mAverage": 0.237,
+            "baseline2018To2019": 0.29,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES6000000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 专业商业服务",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES6000000003",
+              "latestObservation": "20260930"
+            }
+          },
+          {
+            "id": "wage_education_health",
+            "label": "教育与医疗服务",
+            "values": [
+              0.137,
+              0.248,
+              0.138,
+              0.055,
+              0.0,
+              0.138,
+              -0.083,
+              0.221,
+              0.501,
+              -0.471,
+              0.473,
+              0.728
+            ],
+            "recent12mAverage": 0.174,
+            "baseline2018To2019": 0.192,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES6500000003",
+              "name": "Average hourly earnings of all employees, seasonally adjusted: 教育与医疗服务",
+              "rawUnit": "美元/小时",
+              "url": "https://data.bls.gov/timeseries/CES6500000003",
+              "latestObservation": "20260930"
+            }
+          }
+        ],
+        "source": {
+          "provider": "BLS Public Data API",
+          "url": "https://www.bls.gov/ces/"
+        }
+      }
     },
     "frameworks": {
       "title": "四大经验框架",
@@ -72405,13 +72699,14 @@
       "diffusion_3m": [],
       "adp_private_change": []
     },
-    "note": "全部已绘制时序来自iFinD EDB；月、周、季频与JOLTS保留各自观测日期。派生指标均在构建脚本中确定性计算。"
+    "note": "主体时序来自iFinD EDB；分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"
   },
   "researchBasis": [
     "页面信息架构依据《美国宏观数据培训【0829定稿】》第一章就业市场路线图与图表说明重建。",
-    "页面数值全部由iFinD EDB重新提取；PPT只提供指标定义、阅读顺序和口径警示。"
+    "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-employment/20261009T010054+0000_ifind_employment.json"
+    "ifind": "E:\\HermesProject\\Macro-daily-refresh\\data\\raw\\ifind-us-employment\\20261009T010054+0000_ifind_employment.json",
+    "blsSectorWages": "E:\\HermesProject\\Macro-fix-employment-interaction\\data\\raw\\ifind-us-employment\\20261009T020154+0000_bls_sector_wages.json"
   }
 }

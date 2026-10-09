@@ -9,6 +9,8 @@ from scripts.refresh_ifind_us_employment import (
     detect_missing_months,
     effective_end_date,
     fetch_response_series,
+    month_over_month,
+    parse_bls_series,
     rebase_series,
     rolling_mean,
     sahm_rule,
@@ -47,6 +49,24 @@ class IfindEmploymentTransformTests(unittest.TestCase):
         )
         self.assertEqual(dates, ["20260301", "20260401"])
         self.assertEqual(values, [2.0, 4.0])
+
+    def test_bls_series_parser_sorts_months_and_mom_uses_levels(self):
+        payload = {"status": "REQUEST_SUCCEEDED", "Results": {"series": [{
+            "seriesID": "CES2000000003",
+            "data": [
+                {"year": "2026", "period": "M03", "value": "42.42"},
+                {"year": "2026", "period": "M01", "value": "42.00"},
+                {"year": "2026", "period": "M02", "value": "42.21"},
+                {"year": "2025", "period": "M13", "value": "41.50"},
+            ],
+        }]}}
+        parsed = parse_bls_series(payload, {"CES2000000003"})
+        dates, levels = parsed["CES2000000003"]
+        self.assertEqual(dates, ["20260131", "20260228", "20260331"])
+        mom_dates, mom_values = month_over_month(dates, levels)
+        self.assertEqual(mom_dates, ["20260228", "20260331"])
+        self.assertAlmostEqual(mom_values[0], 0.5)
+        self.assertAlmostEqual(mom_values[1], 0.497512, places=6)
 
     def test_detect_missing_months_reports_gap(self):
         self.assertEqual(detect_missing_months(["20260131", "20260331"]), ["202602"])
@@ -96,7 +116,7 @@ class IfindEmploymentDatasetContractTests(unittest.TestCase):
     def test_dataset_is_ifind_first_and_uses_ppt_contract(self):
         self.assertEqual(self.dataset["schemaVersion"], 2)
         self.assertEqual(self.dataset["source"], "iFinD EDB")
-        self.assertEqual(self.dataset["sourceProviders"], ["iFinD EDB"])
+        self.assertEqual(self.dataset["sourceProviders"], ["iFinD EDB", "BLS Public Data API"])
         self.assertEqual(self.dataset["frameworkSource"]["file"], "研究框架/美国宏观数据培训【0829定稿】.pptx")
         self.assertEqual(self.dataset["frameworkSource"]["slides"], "26—59")
         serialized = json.dumps(self.dataset, ensure_ascii=False)
@@ -171,6 +191,16 @@ class IfindEmploymentDatasetContractTests(unittest.TestCase):
             self.assertTrue(math.isfinite(row["recent12mAverage"]))
             self.assertTrue(math.isfinite(row["baseline2018To2019"]))
             self.assertRegex(row["source"]["code"], r"^[A-Z]\d+$")
+
+    def test_wage_section_has_nine_industry_hourly_earnings_mom_rows(self):
+        monitor = self.dataset["sections"]["wages"]["wageSectorMonitor"]
+        self.assertEqual(monitor["title"], "分行业平均时薪环比变化")
+        self.assertEqual(monitor["unit"], "%")
+        self.assertEqual(len(monitor["periods"]), 12)
+        self.assertEqual(len(monitor["rows"]), 9)
+        self.assertTrue(all(row["source"]["provider"] == "BLS Public Data API" for row in monitor["rows"]))
+        self.assertTrue(all(row["source"]["code"].startswith("CES") for row in monitor["rows"]))
+        self.assertTrue(all(len(row["values"]) == 12 for row in monitor["rows"]))
 
     def test_framework_charts_expose_required_derived_contracts(self):
         charts = {chart["id"]: chart for chart in self.dataset["sections"]["frameworks"]["charts"]}
