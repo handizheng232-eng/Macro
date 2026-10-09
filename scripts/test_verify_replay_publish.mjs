@@ -1,6 +1,7 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
+import { tmpdir } from 'node:os'
 import { checkCoverage, checkPublicPaths } from './verify_replay_publish.mjs'
 const channels = ['知识星球', 'Wind', '微信公众号']
 const minimum = { 知识星球: 20, Wind: 10, 微信公众号: 5 }
@@ -109,7 +110,7 @@ describe('public replay release gate', () => {
     assert.equal(typeof gate.checkArchiveFiles, 'function', 'physical archive readback is missing')
     const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import('node:fs')
     const { join } = await import('node:path')
-    const root = mkdtempSync(join(process.env.TMPDIR || 'C:/HermesData/cache/scratch', 'replay-gate-test-'))
+    const root = mkdtempSync(join(process.env.TMPDIR || process.env.RUNNER_TEMP || tmpdir(), 'replay-gate-test-'))
     try {
       mkdirSync(join(root, 'stage'))
       const bytes = Buffer.from('%PDF-1.7 TEST ONLY archive file identity fixture')
@@ -129,7 +130,7 @@ describe('public replay release gate', () => {
     assert.equal(typeof gate.checkShortageFiles, 'function', 'independent shortage readback is missing')
     const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import('node:fs')
     const { join } = await import('node:path')
-    const root = mkdtempSync(join(process.env.TMPDIR || 'C:/HermesData/cache/scratch', 'replay-shortage-test-'))
+    const root = mkdtempSync(join(process.env.TMPDIR || process.env.RUNNER_TEMP || tmpdir(), 'replay-shortage-test-'))
     try {
       mkdirSync(join(root, 'stage'))
       const search = Buffer.from('TEST ONLY full-month eligible search enumeration, actual total zero')
