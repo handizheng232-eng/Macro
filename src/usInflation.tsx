@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import inflationData from './data/usInflationData.json'
+import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
 type RangeKey = MacroTimeRange
@@ -428,6 +429,7 @@ function MultiSeriesChart({ chart }: { chart: ChartDefinition }) {
             <a href={series.source.url} key={series.id} target="_blank" rel="noreferrer">
               <strong>{series.label}</strong>
               <span>{series.source.provider} · {series.source.code}</span>
+              <small>发布时点：{macroReleaseTiming(series.source, series.frequency)}</small>
             </a>
           ))}
         </div>

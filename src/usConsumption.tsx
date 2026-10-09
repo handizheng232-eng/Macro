@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import consumptionData from './data/usConsumptionData.json'
+import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
 type RangeKey = MacroTimeRange
@@ -71,7 +72,7 @@ function ConsumptionChart({ chart }: { chart: ChartDefinition }) {
       {hoverTimestamp !== null && <line className="employment-hover-line" x1={x(hoverTimestamp)} x2={x(hoverTimestamp)} y1={top} y2={height - bottom} />}
     </svg></div><small className="gdp-chart-scroll-hint">图表可横向滑动查看完整区间</small>
     <div className="chart-readout" aria-live="polite">{hoverRows.length ? hoverRows.map(({ series, point }) => <span key={series.id}><i style={{ background: series.color }} />{series.label}<strong>{chartValue(point.value, series.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}</div>
-    <footer><div className="chart-source-list">{chart.series.map((series) => <a href={series.source.url} key={series.id} target="_blank" rel="noreferrer"><strong>{series.label}</strong><span>{series.source.institution} · {series.source.code}</span><small>{series.transformLabel || series.source.rawUnit}</small></a>)}</div></footer>
+    <footer><div className="chart-source-list">{chart.series.map((series) => <a href={series.source.url} key={series.id} target="_blank" rel="noreferrer"><strong>{series.label}</strong><span>{series.source.institution} · {series.source.code}</span><small>{series.transformLabel || series.source.rawUnit}</small><small>发布时点：{macroReleaseTiming(series.source, series.frequency)}</small></a>)}</div></footer>
     <div className="employment-explanation"><div><span>数据是什么</span><p>{chart.explanation.what}</p></div><div><span>怎么读</span><p>{chart.explanation.howToRead}</p></div><div><span>口径警示</span><p>{chart.explanation.caveat}</p></div><small>{chart.explanation.pptSlide}</small></div>
   </article>
 }

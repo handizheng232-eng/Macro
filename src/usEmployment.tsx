@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import employmentData from './data/usEmploymentData.json'
+import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
 type RangeKey = MacroTimeRange
@@ -229,6 +230,7 @@ function SourceList({ series }: { series: ChartSeries[] }) {
         <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer">
           <strong>{item.label}</strong>
           <span>{item.source.provider} · {item.source.code}</span>
+          <small>发布时点：{macroReleaseTiming(item.source, item.frequency)}</small>
         </a>
       ))}
     </div>

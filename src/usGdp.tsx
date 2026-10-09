@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import gdpData from './data/usGdpData.json'
+import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
 type RangeKey = MacroTimeRange
@@ -69,7 +70,7 @@ function SeriesSwitches({ chart, active, onToggle }: { chart: ChartDefinition; a
 }
 
 function SourceList({ series }: { series: ChartSeries[] }) {
-  return <div className="chart-source-list">{series.map((item) => <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer"><strong>{item.label}</strong><span>{item.source.provider} · {item.source.code}</span><small>{item.transformLabel || item.source.rawUnit || 'iFinD未提供单位'}</small></a>)}</div>
+  return <div className="chart-source-list">{series.map((item) => <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer"><strong>{item.label}</strong><span>{item.source.provider} · {item.source.code}</span><small>{item.transformLabel || item.source.rawUnit || 'iFinD未提供单位'}</small><small>发布时点：{macroReleaseTiming(item.source, item.frequency)}</small></a>)}</div>
 }
 
 function ExplanationPanel({ explanation }: { explanation: ChartExplanation }) {

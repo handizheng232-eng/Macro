@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import lateModulesData from './data/usLateModulesData.json'
+import { macroReleaseTiming } from './macroReleaseTiming'
 import type { UsMacroCategory } from './usMacroConfig'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 
@@ -79,7 +80,7 @@ function ResearchChart({ chart }: { chart: ChartDefinition }) {
       {hoverTimestamp !== null && <line className="employment-hover-line" x1={x(hoverTimestamp)} x2={x(hoverTimestamp)} y1={top} y2={height - bottom} />}
     </svg></div><small className="gdp-chart-scroll-hint">图表可横向滑动查看完整区间</small>
     <div className="chart-readout" aria-live="polite">{hoverRows.length ? hoverRows.map(({ item, point }) => <span key={item.id}><i style={{ background: item.color }} />{item.label}<strong>{chartValue(point.value, item.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}</div>
-    <footer><div className="chart-source-list">{chart.series.map((item) => <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer"><strong>{item.label}</strong><span>{item.source.institution} · {item.source.code}</span><small>{item.transformLabel || item.source.rawUnit}</small></a>)}</div></footer>
+    <footer><div className="chart-source-list">{chart.series.map((item) => <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer"><strong>{item.label}</strong><span>{item.source.institution} · {item.source.code}</span><small>{item.transformLabel || item.source.rawUnit}</small><small>发布时点：{macroReleaseTiming(item.source, item.frequency)}</small></a>)}</div></footer>
     <div className="employment-explanation"><div><span>数据是什么</span><p>{chart.explanation.what}</p></div><div><span>怎么读</span><p>{chart.explanation.howToRead}</p></div><div><span>口径警示</span><p>{chart.explanation.caveat}</p></div><small>{chart.explanation.pptSlide}</small></div>
   </article>
 }

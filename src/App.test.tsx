@@ -205,6 +205,27 @@ describe('宏观框架', () => {
     }
   })
 
+  it('九个宏观模块在图表来源区标注指标典型发布时点', () => {
+    const pages = [
+      '#framework/us-growth',
+      '#framework/us-employment',
+      '#framework/us-inflation',
+      '#framework/us-consumption',
+      '#framework/us-housing',
+      '#framework/us-investment',
+      '#framework/us-pmi',
+      '#framework/us-fiscal-treasury',
+      '#framework/us-fed-financial-conditions',
+    ] as const
+
+    for (const hash of pages) {
+      window.location.hash = hash
+      const { unmount } = render(<App />)
+      expect(screen.getAllByText(/^发布时点：/).length).toBeGreaterThan(0)
+      unmount()
+    }
+  })
+
   it('九个宏观模块的所有时间序列图统一提供七档时间范围', () => {
     const pages = [
       '#framework/us-growth',
