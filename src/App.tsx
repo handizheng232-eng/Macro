@@ -21,8 +21,17 @@ import {
   type UsMacroCategory,
 } from './usMacroConfig'
 import { UsMacroDetail } from './usMacro'
+import { HistoryReplay } from './historyReplay'
+import hawkishReplayData from './data/historyReplayHawkishTransition.json'
 
 type PageId = 'today' | 'framework' | 'themes' | 'history' | 'methods'
+type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition'
+
+function historyReplayStageFromHash(hash: string): HistoryReplayStage | null {
+  if (hash === '#history/easing-to-tightening/policy-reversal') return 'policy-reversal'
+  if (hash === '#history/easing-to-tightening/hawkish-transition') return 'hawkish-transition'
+  return null
+}
 
 const navItems = [
   { id: 'today' as const, label: '今日总览', icon: Gauge },
@@ -401,7 +410,7 @@ function ThemeTracker() {
   )
 }
 
-function RecentHistoryReview({ onBack }: { onBack: () => void }) {
+function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void }) {
   const regime = macroRegimes[9]
 
   return (
@@ -451,7 +460,7 @@ function RecentHistoryReview({ onBack }: { onBack: () => void }) {
         </header>
 
         <div className="subperiod-list">
-          {recentSubperiods.map((subperiod) => (
+          {[...recentSubperiods].reverse().map((subperiod) => (
             <article key={subperiod.number}>
               <div className="subperiod-index">
                 <small>{subperiod.period}</small>
@@ -473,6 +482,11 @@ function RecentHistoryReview({ onBack }: { onBack: () => void }) {
                   <div><span>复盘问题</span><p>{subperiod.question}</p></div>
                   <a href={subperiod.source} target="_blank" rel="noreferrer">{subperiod.sourceLabel} ↗</a>
                 </div>
+                {(subperiod.number === '10.4' || subperiod.number === '10.5') && (
+                  <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
+                    进入{subperiod.title}研究工作台 <ChevronRight size={16} />
+                  </button>
+                )}
               </div>
             </article>
           ))}
@@ -483,7 +497,7 @@ function RecentHistoryReview({ onBack }: { onBack: () => void }) {
 }
 
 function HistoryReview({ onOpenRecent }: { onOpenRecent: () => void }) {
-  const [selectedRegime, setSelectedRegime] = useState(0)
+  const [selectedRegime, setSelectedRegime] = useState(9)
   const activeRegime = macroRegimes[selectedRegime]
 
   return (
@@ -691,6 +705,7 @@ function App() {
     return navItems.some((item) => item.id === pageFromHash) ? pageFromHash as PageId : 'today'
   })
   const [historyDetail, setHistoryDetail] = useState(() => window.location.hash === '#history/easing-to-tightening')
+  const [historyReplay, setHistoryReplay] = useState(() => historyReplayStageFromHash(window.location.hash))
   const [frameworkDetail, setFrameworkDetail] = useState<UsMacroCategory | null>(() => categoryFromFrameworkHash(window.location.hash))
 
   useEffect(() => {
@@ -699,6 +714,7 @@ function App() {
       const nextPage = navItems.some((item) => item.id === pageFromHash) ? pageFromHash as PageId : 'today'
       setActivePage(nextPage)
       setHistoryDetail(window.location.hash === '#history/easing-to-tightening')
+      setHistoryReplay(historyReplayStageFromHash(window.location.hash))
       setFrameworkDetail(categoryFromFrameworkHash(window.location.hash))
     }
 
@@ -715,6 +731,7 @@ function App() {
     setActivePage(page)
     setHistoryDetail(false)
     setFrameworkDetail(null)
+    setHistoryReplay(null)
   }
 
   const openUsMacro = (category: UsMacroCategory) => {
@@ -732,6 +749,14 @@ function App() {
     window.history.pushState(null, '', '#history/easing-to-tightening')
     setActivePage('history')
     setHistoryDetail(true)
+    setHistoryReplay(null)
+  }
+
+  const openHistoryReplay = (stage: HistoryReplayStage) => {
+    window.history.pushState(null, '', `#history/easing-to-tightening/${stage}`)
+    setActivePage('history')
+    setHistoryDetail(false)
+    setHistoryReplay(stage)
   }
 
   const closeRecentHistory = () => {
@@ -758,7 +783,7 @@ function App() {
           <div className="source-state" aria-label="数据源状态">
             <span className="connected"><i />OpenBB 已接入</span>
             <span className="connected"><i />Wind 已接入</span>
-            <span><i />知识星球待接入</span>
+            <span className="connected" title="授权PDF已本地归档；不代表实时数据接口或全量历史覆盖"><i />知识星球 PDF已归档</span>
           </div>
         </div>
       </header>
@@ -898,7 +923,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} onBack={openRecentHistory} data={historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (

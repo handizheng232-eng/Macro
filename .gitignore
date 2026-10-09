@@ -6,6 +6,7 @@ __pycache__/
 *.pyc
 data/raw/
 券商研究报告/
+美国宏观复盘/
 *.xlsx
 *.local
 .DS_Store

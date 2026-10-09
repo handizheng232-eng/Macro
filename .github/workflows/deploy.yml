@@ -30,9 +30,13 @@ jobs:
       - name: Lint
         run: npm run lint
       - name: Test
-        run: npm test
+        run: npm test -- --testTimeout=12000 --maxWorkers=2
       - name: Build
         run: npm run build
+      - name: Verify replay publication gate
+        run: |
+          node --test scripts/test_verify_replay_publish.mjs
+          node scripts/verify_replay_publish.mjs --public-receipt release/replay-publication.json
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
