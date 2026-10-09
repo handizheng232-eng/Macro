@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-29T03:59:08+00:00",
+  "generatedAt": "2026-10-09T01:00:54+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -165,36 +165,36 @@
       "id": "payroll-momentum",
       "label": "CES趋势",
       "title": "新增非农3个月均值",
-      "value": 71.3333,
+      "value": 50.6667,
       "unit": "千人",
-      "observation": "20260831",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
       "id": "unemployment",
       "label": "CPS结果",
       "title": "U3失业率",
-      "value": 4.1,
+      "value": 4.2,
       "unit": "%",
-      "observation": "20260831",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
       "id": "vu",
       "label": "供需紧度",
       "title": "V/U",
-      "value": 1.0513,
+      "value": 1.0068,
       "unit": "倍",
-      "observation": "20260701",
+      "observation": "20260801",
       "source": "iFinD EDB"
     },
     {
       "id": "claims",
       "label": "周频哨兵",
       "title": "初请4周均值",
-      "value": 20.225,
+      "value": 19.8,
       "unit": "万人",
-      "observation": "20260918",
+      "observation": "20261002",
       "source": "iFinD EDB"
     },
     {
@@ -1276,7 +1276,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 177.0,
@@ -2328,13 +2329,14 @@
                 148.0,
                 63.0,
                 31.0,
-                21.0,
-                162.0
+                -10.0,
+                133.0,
+                29.0
               ],
               "color": "#17233b",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 162.0,
+              "latestObservation": "20260930",
+              "latestValue": 29.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -2342,7 +2344,7 @@
                 "name": "美国:新增非农就业人数:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -3406,7 +3408,8 @@
               "20260531",
               "20260630",
               "20260731",
-              "20260831"
+              "20260831",
+              "20260930"
             ],
             "values": [
               57.0,
@@ -4456,13 +4459,14 @@
               68.6667,
               141.6667,
               80.6667,
-              38.3333,
-              71.3333
+              28.0,
+              51.3333,
+              50.6667
             ],
             "color": "#111418",
             "frequency": "月",
-            "latestObservation": "20260831",
-            "latestValue": 71.3333,
+            "latestObservation": "20260930",
+            "latestValue": 50.6667,
             "source": {
               "provider": "iFinD EDB",
               "institution": "美国劳工局",
@@ -4470,7 +4474,7 @@
               "name": "美国:新增非农就业人数:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             },
             "transformLabel": "由iFinD月度新增非农计算后向3个月移动平均"
           }
@@ -5528,7 +5532,8 @@
                 "20260501",
                 "20260601",
                 "20260701",
-                "20260801"
+                "20260801",
+                "20260901"
               ],
               "values": [
                 72.9167,
@@ -6569,13 +6574,14 @@
                 -3.0,
                 -1.3333,
                 1.4167,
-                5.75,
-                12.0833
+                6.25,
+                12.0,
+                12.5833
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260801",
-              "latestValue": 12.0833,
+              "latestObservation": "20260901",
+              "latestValue": 12.5833,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -6583,7 +6589,7 @@
                 "name": "美国:新增非农就业人数:私营:生产:采矿和伐木业:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260801"
+                "latestObservation": "20260901"
               },
               "transformLabel": "采矿与伐木+建筑+制造业新增就业之和，再计算12个月移动平均"
             },
@@ -7631,7 +7637,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 140.0,
@@ -8672,13 +8679,14 @@
                 26.0833,
                 30.25,
                 34.5,
-                30.9167,
-                50.25
+                28.3333,
+                45.25,
+                41.3333
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 50.25,
+              "latestObservation": "20260930",
+              "latestValue": 41.3333,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -8686,7 +8694,7 @@
                 "name": "美国:新增非农就业人数:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "新增非农后向12个月移动平均"
             }
@@ -9151,7 +9159,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 1160.2,
@@ -9592,13 +9601,14 @@
                 2490.4,
                 2490.6,
                 2507.5,
-                2512.7,
-                2519.5
+                2497.5,
+                2497.7,
+                2486.8
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 2519.5,
+              "latestObservation": "20260930",
+              "latestValue": 2486.8,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -9606,7 +9616,7 @@
                 "name": "美国:非农企业:就业人数:私营部门:服务生产:专业和商务服务:行政和支持服务以及废物管理和补救服务:临时帮助服务:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -9876,7 +9886,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 39.8,
@@ -10124,12 +10135,13 @@
                 40.4,
                 40.4,
                 40.4,
-                40.5
+                40.6,
+                40.6
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 40.5,
+              "latestObservation": "20260930",
+              "latestValue": 40.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -10137,7 +10149,7 @@
                 "name": "美国:平均每周工时:非农就业员工:私营企业:生产:制造业:季调:当月值",
                 "rawUnit": "小时",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -10390,7 +10402,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 34.2,
@@ -10638,11 +10651,12 @@
                 34.3,
                 34.3,
                 34.3,
+                34.4,
                 34.4
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
+              "latestObservation": "20260930",
               "latestValue": 34.4,
               "source": {
                 "provider": "iFinD EDB",
@@ -10651,7 +10665,7 @@
                 "name": "美国:平均每周工时:非农就业员工:私营企业:季调:当月值",
                 "rawUnit": "小时",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -11103,7 +11117,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 40.6,
@@ -11532,13 +11547,14 @@
                 54.6,
                 54.2,
                 53.6,
-                52.8,
-                55.6
+                54.4,
+                57.6,
+                49.0
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 55.6,
+              "latestObservation": "20260930",
+              "latestValue": 49.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -11546,7 +11562,7 @@
                 "name": "美国:就业扩散指数:私营企业:1个月跨度:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -11981,7 +11997,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 38.6,
@@ -12410,13 +12427,14 @@
                 52.8,
                 56.8,
                 57.0,
-                52.6,
-                55.4
+                54.2,
+                55.4,
+                57.0
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 55.4,
+              "latestObservation": "20260930",
+              "latestValue": 57.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -12424,7 +12442,7 @@
                 "name": "美国:就业扩散指数:私营企业:3个月跨度:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -13392,7 +13410,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 0.5,
@@ -14337,11 +14356,12 @@
                 1.8,
                 1.8,
                 1.7,
+                1.8,
                 1.8
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
+              "latestObservation": "20260930",
               "latestValue": 1.8,
               "source": {
                 "provider": "iFinD EDB",
@@ -14350,7 +14370,7 @@
                 "name": "美国:失业率:U1:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -15300,7 +15320,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.4,
@@ -16245,12 +16266,13 @@
                 4.3,
                 4.2,
                 4.1,
-                4.1
+                4.1,
+                4.2
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.1,
+              "latestObservation": "20260930",
+              "latestValue": 4.2,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -16258,7 +16280,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -16656,7 +16678,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 7.0,
@@ -17049,11 +17072,12 @@
                 4.6,
                 4.5,
                 4.4,
+                4.4,
                 4.4
               ],
               "color": "#8a9096",
               "frequency": "月",
-              "latestObservation": "20260831",
+              "latestObservation": "20260930",
               "latestValue": 4.4,
               "source": {
                 "provider": "iFinD EDB",
@@ -17062,7 +17086,7 @@
                 "name": "美国:失业率:U4:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -17460,7 +17484,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 8.0,
@@ -17853,12 +17878,13 @@
                 5.3,
                 5.2,
                 5.1,
-                5.1
+                5.1,
+                5.0
               ],
               "color": "#6f7883",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 5.1,
+              "latestObservation": "20260930",
+              "latestValue": 5.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -17866,7 +17892,7 @@
                 "name": "美国:失业率:U5:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -18264,7 +18290,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 11.7,
@@ -18657,12 +18684,13 @@
                 8.1,
                 7.9,
                 7.9,
-                7.7
+                7.7,
+                7.6
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 7.7,
+              "latestObservation": "20260930",
+              "latestValue": 7.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -18670,7 +18698,7 @@
                 "name": "美国:失业率:U6:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -19637,7 +19665,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.4,
@@ -20582,12 +20611,13 @@
                 4.3,
                 4.2,
                 4.1,
-                4.1
+                4.1,
+                4.2
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.1,
+              "latestObservation": "20260930",
+              "latestValue": 4.2,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -20595,7 +20625,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -21545,7 +21575,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 6.4,
@@ -22490,12 +22521,13 @@
                 27.5,
                 27.3,
                 25.5,
-                27.0
+                27.0,
+                27.1
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 27.0,
+              "latestObservation": "20260930",
+              "latestValue": 27.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -22503,7 +22535,7 @@
                 "name": "美国:失业人数占比:27周及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -23471,7 +23503,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 58.6,
@@ -24416,12 +24449,13 @@
                 61.8,
                 61.5,
                 61.4,
-                61.6
+                61.6,
+                61.8
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 61.6,
+              "latestObservation": "20260930",
+              "latestValue": 61.8,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -24429,7 +24463,7 @@
                 "name": "美国:劳动力参与率:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -24501,7 +24535,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 81.2,
@@ -24568,12 +24603,13 @@
                 83.9,
                 83.3,
                 83.4,
-                83.4
+                83.4,
+                83.7
               ],
               "color": "#2f8a7a",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 83.4,
+              "latestObservation": "20260930",
+              "latestValue": 83.7,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -24581,7 +24617,7 @@
                 "name": "美国:劳动力参与率:25至54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -25261,7 +25297,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 11.2,
@@ -25918,12 +25955,13 @@
                 6.6,
                 6.6,
                 6.3,
-                6.0
+                6.0,
+                7.0
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 6.0,
+              "latestObservation": "20260930",
+              "latestValue": 7.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -25931,7 +25969,7 @@
                 "name": "美国:失业率:黑人或非洲裔:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -26579,7 +26617,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 7.3,
@@ -27222,12 +27261,13 @@
                 5.0,
                 5.2,
                 4.6,
-                4.8
+                4.8,
+                4.7
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.8,
+              "latestObservation": "20260930",
+              "latestValue": 4.7,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -27235,7 +27275,7 @@
                 "name": "美国:失业率:西班牙或拉丁美洲裔:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -28185,7 +28225,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.4,
@@ -29130,12 +29171,13 @@
                 4.3,
                 4.2,
                 4.1,
-                4.1
+                4.1,
+                4.2
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.1,
+              "latestObservation": "20260930",
+              "latestValue": 4.2,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -29143,7 +29185,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -30021,7 +30063,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 4.5,
@@ -30894,12 +30937,13 @@
                 3.8,
                 3.6,
                 3.6,
-                3.7
+                3.7,
+                3.6
               ],
               "color": "#8a9096",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.7,
+              "latestObservation": "20260930",
+              "latestValue": 3.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -30907,7 +30951,7 @@
                 "name": "美国:失业率:白人:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -31874,7 +31918,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 8.5,
@@ -32819,12 +32864,13 @@
                 14.7,
                 14.6,
                 12.1,
-                14.1
+                14.1,
+                14.5
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 14.1,
+              "latestObservation": "20260930",
+              "latestValue": 14.5,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -32832,7 +32878,7 @@
                 "name": "美国:失业率:16至19岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -33782,7 +33828,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 5.8,
@@ -34727,12 +34774,13 @@
                 7.2,
                 7.1,
                 7.1,
-                7.1
+                7.1,
+                8.0
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 7.1,
+              "latestObservation": "20260930",
+              "latestValue": 8.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -34740,7 +34788,7 @@
                 "name": "美国:失业率:20-24岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -35690,7 +35738,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 2.5,
@@ -36635,11 +36684,12 @@
                 3.8,
                 3.7,
                 3.6,
+                3.6,
                 3.6
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
+              "latestObservation": "20260930",
               "latestValue": 3.6,
               "source": {
                 "provider": "iFinD EDB",
@@ -36648,7 +36698,7 @@
                 "name": "美国:失业率:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -37598,7 +37648,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 2.3,
@@ -38543,12 +38594,13 @@
                 3.7,
                 3.9,
                 3.9,
-                3.9
+                3.9,
+                3.7
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.9,
+              "latestObservation": "20260930",
+              "latestValue": 3.7,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -38556,7 +38608,7 @@
                 "name": "美国:失业率:男性:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -39506,7 +39558,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 2.8,
@@ -40451,12 +40504,13 @@
                 3.9,
                 3.5,
                 3.3,
-                3.3
+                3.3,
+                3.4
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.3,
+              "latestObservation": "20260930",
+              "latestValue": 3.4,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -40464,7 +40518,7 @@
                 "name": "美国:失业率:女性:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -41540,7 +41594,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 19.9732,
@@ -42593,13 +42648,14 @@
                 105.9954,
                 106.0374,
                 106.0581,
-                106.0721,
-                106.1802
+                106.0514,
+                106.1402,
+                106.1596
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 106.1802,
+              "latestObservation": "20260930",
+              "latestValue": 106.1596,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -42607,7 +42663,7 @@
                 "name": "美国:非农就业人数:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "2021-12=100"
             },
@@ -43558,7 +43614,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 37.189,
@@ -44503,12 +44560,13 @@
                 104.2575,
                 103.9328,
                 103.877,
-                104.2415
+                104.2415,
+                104.5016
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 104.2415,
+              "latestObservation": "20260930",
+              "latestValue": 104.5016,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -44516,7 +44574,7 @@
                 "name": "美国:就业人数:16岁及以上:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "2021-12=100"
             }
@@ -44533,6 +44591,7 @@
         "title": "行业就业广度与结构表",
         "description": "最近12个月逐月热度，并与2018—2019月均增量比较。",
         "periods": [
+          "202609",
           "202608",
           "202607",
           "202606",
@@ -44543,14 +44602,14 @@
           "202601",
           "202512",
           "202511",
-          "202510",
-          "202509"
+          "202510"
         ],
         "rows": [
           {
             "id": "sector_mining",
             "label": "采矿与伐木",
             "values": [
+              -2.0,
               3.0,
               -3.0,
               -2.0,
@@ -44561,8 +44620,7 @@
               -2.0,
               -1.0,
               -1.0,
-              1.0,
-              -2.0
+              1.0
             ],
             "recent12mAverage": 0.17,
             "baseline2018To2019": -0.04,
@@ -44573,14 +44631,15 @@
               "name": "美国:新增非农就业人数:私营:生产:采矿和伐木业:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_construction",
             "label": "建筑业",
             "values": [
-              22.0,
+              11.0,
+              16.0,
               18.0,
               3.0,
               2.0,
@@ -44590,10 +44649,9 @@
               45.0,
               -7.0,
               36.0,
-              -12.0,
-              16.0
+              -12.0
             ],
-            "recent12mAverage": 10.0,
+            "recent12mAverage": 9.08,
             "baseline2018To2019": 18.17,
             "source": {
               "provider": "iFinD EDB",
@@ -44602,15 +44660,16 @@
               "name": "美国:新增非农就业人数:私营:生产:建筑业:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_manufacturing",
             "label": "制造业",
             "values": [
-              16.0,
-              14.0,
+              9.0,
+              15.0,
+              20.0,
               13.0,
               -2.0,
               -1.0,
@@ -44619,10 +44678,9 @@
               2.0,
               -13.0,
               -10.0,
-              -9.0,
-              -3.0
+              -9.0
             ],
-            "recent12mAverage": 1.92,
+            "recent12mAverage": 3.33,
             "baseline2018To2019": 10.79,
             "source": {
               "provider": "iFinD EDB",
@@ -44631,15 +44689,16 @@
               "name": "美国:新增非农就业人数:私营:生产:制造业:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_retail",
             "label": "零售业",
             "values": [
-              1.4,
-              13.2,
+              5.8,
+              -5.1,
+              5.6,
               9.6,
               5.0,
               23.5,
@@ -44648,10 +44707,9 @@
               12.7,
               -23.6,
               -0.9,
-              -15.4,
-              13.1
+              -15.4
             ],
-            "recent12mAverage": 3.99,
+            "recent12mAverage": 2.21,
             "baseline2018To2019": -7.94,
             "source": {
               "provider": "iFinD EDB",
@@ -44660,15 +44718,16 @@
               "name": "美国:新增非农就业人数:私营:服务:贸易、运输和公用事业:零售:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_transport",
             "label": "运输仓储",
             "values": [
-              5.0,
-              13.8,
+              7.6,
+              3.3,
+              10.3,
               -10.3,
               0.8,
               39.4,
@@ -44677,10 +44736,9 @@
               22.6,
               -4.8,
               -58.9,
-              0.6,
-              -39.3
+              0.6
             ],
-            "recent12mAverage": -4.29,
+            "recent12mAverage": -0.82,
             "baseline2018To2019": 19.93,
             "source": {
               "provider": "iFinD EDB",
@@ -44689,15 +44747,16 @@
               "name": "美国:新增非农就业人数:私营:服务:贸易、运输和公用事业:运输和仓储:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_information",
             "label": "信息业",
             "values": [
-              -23.0,
-              5.0,
+              -10.0,
+              -18.0,
+              4.0,
               -19.0,
               -5.0,
               -6.0,
@@ -44706,10 +44765,9 @@
               -27.0,
               -6.0,
               -5.0,
-              -6.0,
-              -1.0
+              -6.0
             ],
-            "recent12mAverage": -9.58,
+            "recent12mAverage": -10.0,
             "baseline2018To2019": 3.04,
             "source": {
               "provider": "iFinD EDB",
@@ -44718,15 +44776,16 @@
               "name": "美国:新增非农就业人数:私营:服务:信息咨询:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_financial",
             "label": "金融活动",
             "values": [
-              -11.0,
-              -11.0,
+              -7.0,
+              -9.0,
+              -10.0,
               2.0,
               -20.0,
               -6.0,
@@ -44735,10 +44794,9 @@
               -39.0,
               1.0,
               1.0,
-              -5.0,
-              4.0
+              -5.0
             ],
-            "recent12mAverage": -8.25,
+            "recent12mAverage": -8.92,
             "baseline2018To2019": 13.58,
             "source": {
               "provider": "iFinD EDB",
@@ -44747,15 +44805,16 @@
               "name": "美国:新增非农就业人数:私营:服务:金融活动:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_professional",
             "label": "专业商业服务",
             "values": [
-              10.0,
-              15.0,
+              -9.0,
+              -5.0,
+              -6.0,
               36.0,
               6.0,
               20.0,
@@ -44764,10 +44823,9 @@
               36.0,
               -19.0,
               56.0,
-              -24.0,
-              -16.0
+              -24.0
             ],
-            "recent12mAverage": 12.67,
+            "recent12mAverage": 10.25,
             "baseline2018To2019": 29.29,
             "source": {
               "provider": "iFinD EDB",
@@ -44776,15 +44834,16 @@
               "name": "美国:新增非农就业人数:私营:服务:专业和商业:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "sector_education_health",
             "label": "教育保健",
             "values": [
-              29.0,
-              12.0,
+              20.0,
+              38.0,
+              14.0,
               50.0,
               24.0,
               67.0,
@@ -44793,10 +44852,9 @@
               119.0,
               38.0,
               56.0,
-              44.0,
-              54.0
+              44.0
             ],
-            "recent12mAverage": 44.92,
+            "recent12mAverage": 43.0,
             "baseline2018To2019": 43.54,
             "source": {
               "provider": "iFinD EDB",
@@ -44805,7 +44863,7 @@
               "name": "美国:新增非农就业人数:私营:服务:教育和保健:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260831"
+              "latestObservation": "20260930"
             }
           }
         ],
@@ -47945,7 +48003,9 @@
                 "20260828",
                 "20260904",
                 "20260911",
-                "20260918"
+                "20260918",
+                "20260925",
+                "20261002"
               ],
               "values": [
                 20.9,
@@ -51060,12 +51120,14 @@
                 20.75,
                 20.625,
                 20.4,
-                20.225
+                20.25,
+                20.05,
+                19.8
               ],
               "color": "#1859b8",
               "frequency": "周",
-              "latestObservation": "20260918",
-              "latestValue": 20.225,
+              "latestObservation": "20261002",
+              "latestValue": 19.8,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "圣路易斯联储",
@@ -51073,7 +51135,7 @@
                 "name": "美国:当周初次申请失业金人数:季调",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260918"
+                "latestObservation": "20261002"
               },
               "transformLabel": "原值÷10000后计算4周均值"
             },
@@ -54193,7 +54255,9 @@
                 "20260821",
                 "20260828",
                 "20260904",
-                "20260911"
+                "20260911",
+                "20260918",
+                "20260925"
               ],
               "values": [
                 111.875,
@@ -57307,12 +57371,14 @@
                 178.075,
                 177.675,
                 175.7,
-                174.4
+                174.225,
+                172.325,
+                171.1
               ],
               "color": "#855c9c",
               "frequency": "周",
-              "latestObservation": "20260911",
-              "latestValue": 174.4,
+              "latestObservation": "20260925",
+              "latestValue": 171.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "圣路易斯联储",
@@ -57320,7 +57386,7 @@
                 "name": "美国:截止本周领取失业保险人群:季调",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260911"
+                "latestObservation": "20260925"
               },
               "transformLabel": "原值÷10000后计算4周均值"
             }
@@ -57653,7 +57719,8 @@
                 "20260401",
                 "20260501",
                 "20260601",
-                "20260701"
+                "20260701",
+                "20260801"
               ],
               "values": [
                 0.9031,
@@ -57962,12 +58029,13 @@
                 1.0288,
                 1.0315,
                 1.0124,
-                1.0513
+                1.0606,
+                1.0068
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260701",
-              "latestValue": 1.0513,
+              "latestObservation": "20260801",
+              "latestValue": 1.0068,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -57975,7 +58043,7 @@
                 "name": "美国:职位空缺数:非农部门:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260701"
+                "latestObservation": "20260801"
               },
               "transformLabel": "G003049448÷G002600531"
             },
@@ -58535,7 +58603,8 @@
                 "20260430",
                 "20260531",
                 "20260630",
-                "20260731"
+                "20260731",
+                "20260831"
               ],
               "values": [
                 3.7,
@@ -58845,12 +58914,13 @@
                 4.6,
                 4.5,
                 4.3,
-                4.4
+                4.4,
+                4.3
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260731",
-              "latestValue": 4.4,
+              "latestObservation": "20260831",
+              "latestValue": 4.3,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -58858,7 +58928,7 @@
                 "name": "美国:职位空缺率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260731"
+                "latestObservation": "20260831"
               }
             },
             {
@@ -59173,7 +59243,8 @@
                 "20260430",
                 "20260531",
                 "20260630",
-                "20260731"
+                "20260731",
+                "20260831"
               ],
               "values": [
                 4.1,
@@ -59483,12 +59554,13 @@
                 3.3,
                 3.3,
                 3.4,
-                3.2
+                3.2,
+                3.3
               ],
               "color": "#2f8a7a",
               "frequency": "月",
-              "latestObservation": "20260731",
-              "latestValue": 3.2,
+              "latestObservation": "20260831",
+              "latestValue": 3.3,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -59496,7 +59568,7 @@
                 "name": "美国:雇佣率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260731"
+                "latestObservation": "20260831"
               }
             },
             {
@@ -59811,7 +59883,8 @@
                 "20260430",
                 "20260531",
                 "20260630",
-                "20260731"
+                "20260731",
+                "20260831"
               ],
               "values": [
                 2.2,
@@ -60121,11 +60194,12 @@
                 1.9,
                 2.0,
                 2.0,
+                1.9,
                 1.9
               ],
               "color": "#ba7a2e",
               "frequency": "月",
-              "latestObservation": "20260731",
+              "latestObservation": "20260831",
               "latestValue": 1.9,
               "source": {
                 "provider": "iFinD EDB",
@@ -60134,7 +60208,7 @@
                 "name": "美国:自愿性离职率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260731"
+                "latestObservation": "20260831"
               }
             }
           ],
@@ -60398,7 +60472,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.4,
@@ -60634,12 +60709,13 @@
                 3.3,
                 3.4,
                 3.2,
-                3.1
+                3.1,
+                3.0
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.1,
+              "latestObservation": "20260930",
+              "latestValue": 3.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -60647,7 +60723,7 @@
                 "name": "美国:平均时薪:非农就业员工:私营企业:季调:当月同比",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -61235,7 +61311,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 4.3,
@@ -61573,7 +61650,7 @@
                 4.8,
                 4.7,
                 4.4,
-                4.7,
+                4.3,
                 4.2,
                 4.6,
                 4.6,
@@ -61592,12 +61669,13 @@
                 3.8,
                 3.8,
                 3.8,
-                3.8
+                3.8,
+                3.7
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.8,
+              "latestObservation": "20260930",
+              "latestValue": 3.7,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "亚特兰大联储",
@@ -61605,7 +61683,7 @@
                 "name": "美国:亚特兰大联储薪资增长指数:3个月移动平均:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -63379,19 +63457,19 @@
             },
             {
               "period": "2021Q1",
-              "x": 1.8,
+              "x": 1.9,
               "y": -0.5667,
               "group": "extreme"
             },
             {
               "period": "2021Q2",
-              "x": 12.4,
+              "x": 12.6,
               "y": -0.3,
               "group": "extreme"
             },
             {
               "period": "2021Q3",
-              "x": 5.2,
+              "x": 5.3,
               "y": -0.8,
               "group": "extreme"
             },
@@ -63409,19 +63487,19 @@
             },
             {
               "period": "2022Q2",
-              "x": 2.5,
+              "x": 2.3,
               "y": -0.2,
               "group": "history"
             },
             {
               "period": "2022Q3",
-              "x": 2.3,
+              "x": 2.2,
               "y": -0.0333,
               "group": "history"
             },
             {
               "period": "2022Q4",
-              "x": 1.3,
+              "x": 1.2,
               "y": 0.0333,
               "group": "history"
             },
@@ -63433,7 +63511,7 @@
             },
             {
               "period": "2023Q2",
-              "x": 2.8,
+              "x": 2.7,
               "y": 0.0667,
               "group": "history"
             },
@@ -63457,37 +63535,37 @@
             },
             {
               "period": "2024Q2",
-              "x": 3.1,
+              "x": 3.3,
               "y": 0.1667,
               "group": "history"
             },
             {
               "period": "2024Q3",
-              "x": 2.8,
+              "x": 2.9,
               "y": 0.1667,
               "group": "history"
             },
             {
               "period": "2024Q4",
-              "x": 2.4,
+              "x": 2.6,
               "y": -0.0333,
               "group": "history"
             },
             {
               "period": "2025Q1",
-              "x": 2.0,
+              "x": 2.3,
               "y": 0.0,
               "group": "history"
             },
             {
               "period": "2025Q2",
-              "x": 2.1,
+              "x": 2.4,
               "y": 0.0667,
               "group": "history"
             },
             {
               "period": "2025Q3",
-              "x": 2.3,
+              "x": 2.6,
               "y": 0.1333,
               "group": "history"
             },
@@ -63499,13 +63577,13 @@
             },
             {
               "period": "2026Q1",
-              "x": 2.7,
+              "x": 2.6,
               "y": -0.1167,
               "group": "history"
             },
             {
               "period": "2026Q2",
-              "x": 2.1,
+              "x": 2.2,
               "y": -0.0667,
               "group": "history"
             }
@@ -63514,7 +63592,7 @@
           "yLabel": "失业率季度变化（百分点）",
           "regression": {
             "slope": -0.1028,
-            "intercept": 0.3256,
+            "intercept": 0.3258,
             "excludeGroup": "extreme"
           },
           "xSource": {
@@ -63533,7 +63611,7 @@
             "name": "美国:失业率:U3:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           },
           "explanation": {
             "what": "Okun定律把产出增长与失业率变化联系起来，是经验汇率而非会计恒等式。",
@@ -64498,7 +64576,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.4,
@@ -65443,12 +65522,13 @@
                 4.3,
                 4.2,
                 4.1,
-                4.1
+                4.1,
+                4.2
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.1,
+              "latestObservation": "20260930",
+              "latestValue": 4.2,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -65456,7 +65536,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -67360,6 +67440,12 @@
               "x": 4.1,
               "y": 4.4,
               "group": "current"
+            },
+            {
+              "period": "202608",
+              "x": 4.1,
+              "y": 4.3,
+              "group": "current"
             }
           ],
           "xLabel": "失业率（%）",
@@ -67372,7 +67458,7 @@
             "name": "美国:失业率:U3:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           },
           "ySource": {
             "provider": "iFinD EDB",
@@ -67381,7 +67467,7 @@
             "name": "美国:职位空缺率:非农部门:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260731"
+            "latestObservation": "20260831"
           },
           "explanation": {
             "what": "贝弗里奇曲线描述职位空缺率与失业率的负相关；曲线外移通常代表匹配效率下降。",
@@ -68344,7 +68430,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 0.0,
@@ -69287,11 +69374,12 @@
                 0.1,
                 0.0667,
                 0.0,
+                0.0,
                 0.0
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
+              "latestObservation": "20260930",
               "latestValue": 0.0,
               "source": {
                 "provider": "iFinD EDB",
@@ -69300,7 +69388,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "U3三个月均值减过去12个月三个月均值低点"
             }
@@ -70381,7 +70469,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 52.3333,
@@ -71431,13 +71520,14 @@
                 68.0,
                 137.6667,
                 79.0,
-                52.6667,
-                74.6667
+                38.3333,
+                47.6667,
+                54.3333
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 74.6667,
+              "latestObservation": "20260930",
+              "latestValue": 54.3333,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -71445,7 +71535,7 @@
                 "name": "美国:新增非农就业人数:私营:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "后向3个月均值"
             },
@@ -71650,7 +71740,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 -1.6667,
@@ -71848,13 +71939,14 @@
                 77.3333,
                 96.0,
                 107.3333,
-                87.6667,
-                59.6667
+                87.0,
+                58.3333,
+                56.6667
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 59.6667,
+              "latestObservation": "20260930",
+              "latestValue": 56.6667,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "ADP研究所",
@@ -71862,7 +71954,7 @@
                 "name": "美国:ADP新增私营就业人数:季调:当月值",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "原值÷1000后计算3个月均值"
             }
@@ -72137,14 +72229,20 @@
             },
             {
               "period": "202607",
-              "x": 46.0,
-              "y": 71.0,
+              "x": 44.0,
+              "y": 28.0,
               "group": "history"
             },
             {
               "period": "202608",
-              "x": 38.0,
-              "y": 127.0,
+              "x": 36.0,
+              "y": 89.0,
+              "group": "history"
+            },
+            {
+              "period": "202609",
+              "x": 90.0,
+              "y": 46.0,
               "group": "history"
             }
           ],
@@ -72158,7 +72256,7 @@
             "name": "美国:ADP新增私营就业人数:季调:当月值",
             "rawUnit": "人",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           },
           "ySource": {
             "provider": "iFinD EDB",
@@ -72167,7 +72265,7 @@
             "name": "美国:新增非农就业人数:私营:当月值:季调",
             "rawUnit": "千人",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           },
           "explanation": {
             "what": "每个点是一月；45度线代表ADP与私人非农完全相同。",
@@ -72314,6 +72412,6 @@
     "页面数值全部由iFinD EDB重新提取；PPT只提供指标定义、阅读顺序和口径警示。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-employment/20260929T035908+0000_ifind_employment.json"
+    "ifind": "data/raw/ifind-us-employment/20261009T010054+0000_ifind_employment.json"
   }
 }
