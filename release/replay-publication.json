@@ -1,13 +1,13 @@
 {
   "schema": "replay.publication.receipt.v1",
-  "verifiedAt": "2026-10-09T22:01:13.736Z",
+  "verifiedAt": "2026-10-10T14:34:24.134Z",
   "verificationMode": "local-private-archive-readback",
   "privateChecksPassed": true,
   "verifiedArchiveEntries": 281,
   "acceptedCells": 24,
   "artifactSHA256": {
-    "src/data/historyReplay.json": "e16d34384536bbfe3307afbb7bc0a39b630782151fa1bad4f5cd6c5c8cc39613",
-    "src/data/historyReplayHawkishTransition.json": "c90b1eeabdd2e374db0c78c650f454bdf617aefcee9689d6f5e2f8e6c3fa919f"
+    "src/data/historyReplay.json": "47bd43981870a22106b9f22b5277390c2a6b05bb25368ecb85bb53f1a52f6714",
+    "src/data/historyReplayHawkishTransition.json": "c2cb357f5c1543ade3a7b9f1139c8491b40c32e4b4b7d51d6fe12f3a47e37e3f"
   },
   "scope": "Private archive bytes/SHA checked locally; public CI checks these exact snapshots and never claims to reread private originals."
 }

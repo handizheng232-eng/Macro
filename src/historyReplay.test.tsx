@@ -1,3 +1,4 @@
+import { formatReplayText } from './replayDateFormat'
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
@@ -51,10 +52,10 @@ it('正式研报按印刷刊发日展示，星球按文件名归档日展示，�
   render(<HistoryReplay data={data} onBack={() => {}} />)
   await user.click(screen.getByText(/来源库 \/ 研报库 · 公开来源/))
   const formal = screen.getByText('正式报告日期测试').closest('article')!
-  expect(formal).toHaveTextContent('正文发布日期：2026-01-05')
+  expect(formal).toHaveTextContent(formatReplayText('正文发布日期：2026-01-05'))
   expect(formal).toHaveTextContent('以正文发布日期为准')
   expect(formal).not.toHaveTextContent('以文件名归档日期优先')
-  expect(screen.getByText('星球归档日期测试').closest('article')).toHaveTextContent('研究归档日期（文件名优先）：2026-08-02')
+  expect(screen.getByText('星球归档日期测试').closest('article')).toHaveTextContent(formatReplayText('研究归档日期（文件名优先）：2026-08-02'))
 })
 
 it('全站渠道标识区分知识星球已归档PDF与尚未建立实时接口', () => {
@@ -80,7 +81,7 @@ it('真实history.back和forward在父子页面间往返', async () => {
     window.history.forward()
     await navigated
   })
-  await waitFor(() => expect(screen.getByRole('heading', { name: '预期 → 现实：事件时间轴' })).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument())
   expect(screen.getByRole('figure', { name: '复盘方法框架' })).toBeInTheDocument()
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '来源库 / 研报库明细']) {
     expect(screen.getByLabelText(label)).not.toHaveAttribute('open')
@@ -98,7 +99,7 @@ it('仅10.4与10.5提供入口，旧独立hash可加载并返回父阶段', asyn
   ])
   await user.click(screen.getByRole('button', { name: '进入重启加息：政策反转研究工作台' }))
   expect(window.location.hash).toBe('#history/easing-to-tightening/policy-reversal')
-  expect(screen.getByRole('heading', { name: '预期 → 现实：事件时间轴' })).toBeInTheDocument()
+  expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
   await user.click(screen.getByRole('button', { name: '返回父阶段复盘' }))
   expect(window.location.hash).toBe('#history/easing-to-tightening')
 })
@@ -106,13 +107,13 @@ it('仅10.4与10.5提供入口，旧独立hash可加载并返回父阶段', asyn
 it('直接加载子页，前后退和hashchange恢复正确层级', () => {
   window.history.replaceState(null, '', '#history/easing-to-tightening/policy-reversal')
   render(<App />)
-  expect(screen.getByRole('heading', { name: '预期 → 现实：事件时间轴' })).toBeInTheDocument()
+  expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
   window.history.replaceState(null, '', '#history/easing-to-tightening')
   act(() => window.dispatchEvent(new PopStateEvent('popstate')))
   expect(screen.getByRole('heading', { name: '细分时段复盘' })).toBeInTheDocument()
   window.history.replaceState(null, '', '#history/easing-to-tightening/policy-reversal')
   act(() => window.dispatchEvent(new HashChangeEvent('hashchange')))
-  expect(screen.getByRole('heading', { name: '预期 → 现实：事件时间轴' })).toBeInTheDocument()
+  expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
 })
 
 it.each(['front-loaded-easing', 'tariff-pause', 'qt-end'])('不提供未构建子页 %s', (slug) => {

@@ -1,3 +1,4 @@
+import { formatReplayDate, formatReplayText } from './replayDateFormat'
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { HistoryReplay, type HistoryReplayData } from './historyReplay'
@@ -30,7 +31,7 @@ it('已结束阶段以独立工作台标识显示完整起止日期，不显示�
   }
   render(<HistoryReplay data={closedStage} onBack={() => {}} />)
   const workbench = screen.getByRole('article', { name: '鹰派换届研究工作台' })
-  expect(workbench.querySelector('.replay-heading')).toHaveTextContent('2026-01-01—2026-08-31')
+  expect(workbench.querySelector('.replay-heading')).toHaveTextContent(formatReplayText('2026-01-01—2026-08-31'))
   expect(workbench.querySelector('.replay-heading')).toHaveTextContent(closedStage.eyebrow)
   expect(workbench.querySelector('.replay-heading')).not.toHaveTextContent('开放时期')
   expect(workbench.querySelector('.replay-heading')).not.toHaveTextContent('终点未形成')
@@ -77,17 +78,17 @@ it('截止筛选事件、来源、研报并隐藏事后判断，恢复日期返�
   const user = userEvent.setup()
   render(<HistoryReplay data={fixture} onBack={() => {}} />)
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-16' } })
-  expect(screen.getByRole('heading', { name: '测试会议' })).toBeInTheDocument()
-  expect(screen.queryByRole('heading', { name: '测试修订' })).not.toBeInTheDocument()
+  expect(screen.getByRole('rowheader', { name: /测试会议/ })).toBeInTheDocument()
+  expect(screen.queryByRole('rowheader', { name: /测试修订/ })).not.toBeInTheDocument()
   expect(screen.queryByText('未来来源')).not.toBeInTheDocument()
   expect(screen.queryByText('事后总结')).not.toBeInTheDocument()
   expect(screen.queryByText('当前判断')).not.toBeInTheDocument()
   expect(screen.queryByText('事后解释内容')).not.toBeInTheDocument()
   expect(screen.queryByText('事后市场反应')).not.toBeInTheDocument()
   expect(screen.queryByText('事后来源备注')).not.toBeInTheDocument()
-  expect(screen.getAllByText('事前预期内容')).toHaveLength(2)
+  expect(screen.getAllByText('事前预期内容')).toHaveLength(1)
   await user.click(screen.getByRole('button', { name: '恢复资料截止日' }))
-  expect(screen.getByRole('heading', { name: '测试修订' })).toBeInTheDocument()
+  expect(screen.getByRole('rowheader', { name: /测试修订/ })).toBeInTheDocument()
   expect(screen.getByText('事后总结')).toBeInTheDocument()
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-10' } })
   expect(screen.queryByText('本地授权报告')).not.toBeInTheDocument()
@@ -124,7 +125,7 @@ it('完整视图登记121份正文日期未知的授权PDF，平台日不是正�
   const library = screen.getByRole('region', { name: '来源与研报库' })
   expect(within(library).getByRole('heading', { name: '授权研报 · 121' })).toBeInTheDocument()
   expect(within(library).getAllByText('正文发布日期：未知')).toHaveLength(121)
-  expect(within(library).getAllByText(/平台发帖日：2026-09-12/)).toHaveLength(121)
+  expect(within(library).getAllByText(/平台发帖日：2026年9月12日/)).toHaveLength(121)
   expect(within(library).getAllByText(/platform_post_date_only/)).toHaveLength(121)
   expect(within(library).getAllByText(/对象：美国 · 主题：联储政策/)).toHaveLength(121)
   expect(within(library).getAllByRole('link').every((link) => !link.getAttribute('href')?.endsWith('.pdf'))).toBe(true)
@@ -202,7 +203,7 @@ it('Wind正文审计观点独立展示，事后报告不得冒充会前共识，
   expect(region).toHaveTextContent('事后报告不倒填会前预期')
   expect(region).toHaveTextContent('具名机构观点不等同于市场共识')
   expect(within(region).getByText('后续行动测试预测')).toBeInTheDocument()
-  expect(within(region).getByText('观点日期：2026-09-19 · 日期依据：正文封面日期已核验')).toBeInTheDocument()
+  expect(within(region).getByText(formatReplayText('观点日期：2026-09-19 · 日期依据：正文封面日期已核验'))).toBeInTheDocument()
   expect(within(region).queryAllByRole('link')).toHaveLength(0)
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-30' } })
   expect(screen.queryByRole('region', { name: 'Wind观点独立追溯' })).not.toBeInTheDocument()
@@ -290,7 +291,7 @@ it('历史行情只含严格可得且已发布的观测，不泄漏国债未确�
   expect(region.textContent).toContain('119.5')
 })
 
-it('顶部方法框架紧随标题、先于日期工具与时间轴，历史截面仍保留', () => {
+it('顶部方法框架紧随标题、先于日期工具与市场配对，历史截面仍保留', () => {
   const { container } = render(<HistoryReplay data={fixture} onBack={() => {}} />)
   const framework = screen.getByRole('figure', { name: '复盘方法框架' })
   expect(container.querySelector('.replay-heading')?.nextElementSibling).toBe(framework)
@@ -299,7 +300,7 @@ it('顶部方法框架紧随标题、先于日期工具与时间轴，历史截�
   ])
   expect(framework).toHaveTextContent('↶ 反馈：修正预期')
   expect(framework).toHaveTextContent('日频变化不等于因果')
-  expect(framework.compareDocumentPosition(screen.getByRole('region', { name: '事件时间轴' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  expect(framework.compareDocumentPosition(screen.getByRole('region', { name: '市场路径对照' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-16' } })
   expect(screen.getByRole('figure', { name: '复盘方法框架' })).toBeInTheDocument()
 })
@@ -319,7 +320,7 @@ it('前置综合分析呈现观点到验证链、解析引用，不重复摘要�
   const analysis = screen.getByRole('region', { name: '综合市场分析' })
   expect(analysis.closest('details')).toBeNull()
   expect(screen.getByRole('figure', { name: '复盘方法框架' }).compareDocumentPosition(analysis) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
-  expect(analysis.compareDocumentPosition(screen.getByRole('region', { name: '事件时间轴' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+  expect(analysis.compareDocumentPosition(screen.getByRole('region', { name: '市场路径对照' })) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   expect(within(analysis).getAllByRole('term').map((term) => term.textContent)).toEqual(['观点 / 事前预期', '现实', '机制', '分歧 / 预期差', '市场含义', '验证条件'])
   for (const text of ['测试综合结论', '测试主题判断', '测试机构观点', '测试落地事实', '测试传导机制', '测试预期差', '测试市场含义', '测试验证条件', '测试综合研究局限']) expect(analysis).toHaveTextContent(text)
   expect(within(analysis).getByRole('link', { name: '测试事前来源 ↗' })).toHaveAttribute('href', 'https://example.org/prior')
@@ -457,8 +458,8 @@ it('文件名优先显示研究归档日、平台日备查与冲突警告，不�
   fireEvent.click(screen.getByText(/来源库 \/ 研报库.*点击展开/))
   const library = screen.getByRole('region', { name: '来源与研报库' })
   const report = within(library).getByRole('heading', { name: '文件名归档报告' }).closest('article')!
-  expect(report).toHaveTextContent('研究归档日期（文件名优先）：2026-09-19')
-  expect(report).toHaveTextContent('平台发帖日：2026-09-20（备查，不等同于正文发布日期）')
+  expect(report).toHaveTextContent(formatReplayText('研究归档日期（文件名优先）：2026-09-19'))
+  expect(report).toHaveTextContent(formatReplayText('平台发帖日：2026-09-20（备查，不等同于正文发布日期）'))
   expect(report).toHaveTextContent('日期冲突：文件名日期与平台日期不一致，以文件名归档日期优先；不证明历史可得。')
   expect(report.textContent).not.toContain('正文发布日期：2026-09-19')
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-25' } })
@@ -466,7 +467,7 @@ it('文件名优先显示研究归档日、平台日备查与冲突警告，不�
   expect(within(library).queryByText('发布日期已知但可得性未确认')).not.toBeInTheDocument()
   expect(within(library).getByRole('heading', { name: '授权研报 · 0' })).toBeInTheDocument()
   fireEvent.click(screen.getByRole('button', { name: '恢复资料截止日' }))
-  expect(within(library).getByText('研究归档日期（文件名优先）：2026-09-19')).toBeInTheDocument()
+  expect(within(library).getByText(formatReplayText('研究归档日期（文件名优先）：2026-09-19'))).toBeInTheDocument()
 })
 
 it('正式PDF提及候选文件名日期不触发文件名优先政策', () => {
@@ -476,8 +477,8 @@ it('正式PDF提及候选文件名日期不触发文件名优先政策', () => {
   render(<HistoryReplay data={{ ...fixture, reports }} onBack={() => {}} />)
   fireEvent.click(screen.getByText(/来源库 \/ 研报库.*点击展开/))
   const library = screen.getByRole('region', { name: '来源与研报库' })
-  expect(within(library).getByText('正文发布日期：2026-09-12')).toBeInTheDocument()
-  expect(within(library).queryByText('正文发布日期：2026-09-28')).not.toBeInTheDocument()
+  expect(within(library).getByText(formatReplayText('正文发布日期：2026-09-12'))).toBeInTheDocument()
+  expect(within(library).queryByText(formatReplayText('正文发布日期：2026-09-28'))).not.toBeInTheDocument()
 })
 
 it('星球文件名归档观点日期不写作平台日或已核正文日', () => {
@@ -486,7 +487,7 @@ it('星球文件名归档观点日期不写作平台日或已核正文日', () =
   render(<HistoryReplay data={{ ...fixture, researchEvidence: [item] }} onBack={() => {}} />)
   fireEvent.click(screen.getByText('星球观点明细 · 1（点击展开）'))
   const region = screen.getByRole('region', { name: '星球观点独立追溯' })
-  expect(region).toHaveTextContent('观点归档日期（文件名优先）：2026-09-19')
+  expect(region).toHaveTextContent(formatReplayText('观点归档日期（文件名优先）：2026-09-19'))
   expect(region).toHaveTextContent('文件名归档日期不等同于已核正文发布日期或历史可得时间')
   expect(region.textContent).not.toContain('观点日期 / 平台日：2026-09-19')
 })
@@ -529,8 +530,8 @@ it('实际星球观点的归档日期标题采用文件名口径', () => {
   const cards = within(region).getAllByRole('article')
   items.forEach((item, index) => {
     expect(item.dateBasis).toContain('filename_date_user_preferred')
-    expect(cards[index]).toHaveTextContent(`观点归档日期（文件名优先）：${item.expressedAt}`)
-    expect(cards[index]).not.toHaveTextContent(`观点日期 / 平台日：${item.expressedAt}`)
+    expect(cards[index]).toHaveTextContent(`观点归档日期（文件名优先）：${formatReplayDate(item.expressedAt)}`)
+    expect(cards[index]).not.toHaveTextContent(`观点日期 / 平台日：${formatReplayDate(item.expressedAt)}`)
   })
 })
 
@@ -552,20 +553,47 @@ it.each(['2026-09-16', '2026-09-30'])('讲话日早于截止%s仍不得把首次
   render(<HistoryReplay data={data} onBack={() => {}} />)
   fireEvent.click(screen.getByText(/来源库 \/ 研报库.*点击展开/))
   expect(screen.getByRole('heading', { name: '记者会FINAL逐字稿' })).toBeInTheDocument()
-  expect(screen.getAllByText('FINAL版本才有的问答现实')).toHaveLength(2)
+  expect(screen.getAllByText('FINAL版本才有的问答现实')).toHaveLength(1)
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: cutoff } })
   expect(screen.queryByRole('heading', { name: '记者会FINAL逐字稿' })).not.toBeInTheDocument()
   expect(screen.queryByText('FINAL版本才有的问答现实')).not.toBeInTheDocument()
   expect(screen.queryByRole('link', { name: '记者会FINAL逐字稿 ↗' })).not.toBeInTheDocument()
   // The stricter dependency boundary unmounts the dependent event title too;
   // a withheld source no longer leaves a misleading placeholder event behind.
-  expect(screen.queryByRole('heading', { name: '测试会议' })).not.toBeInTheDocument()
-  if (cutoff === '2026-09-16') expect(screen.getByText('当前截止日期内暂无已核验事件。')).toBeInTheDocument()
+  expect(screen.queryByRole('rowheader', { name: /测试会议/ })).not.toBeInTheDocument()
+  if (cutoff === '2026-09-16') expect(screen.getByText('暂无可对照事件。')).toBeInTheDocument()
   else expect(screen.getAllByText('缺少当时可得来源，暂不作结论').length).toBeGreaterThan(0)
   fireEvent.click(screen.getByRole('button', { name: '恢复资料截止日' }))
   expect(screen.getByRole('heading', { name: '记者会FINAL逐字稿' })).toBeInTheDocument()
   expect(screen.getByText('日期依据：讲话发生日；FINAL版9月24日生成，首次发布时间未核实')).toBeInTheDocument()
-  expect(screen.getAllByText('FINAL版本才有的问答现实')).toHaveLength(2)
+  expect(screen.getAllByText('FINAL版本才有的问答现实')).toHaveLength(1)
+})
+
+it('删独立时间轴后市场配对仍保留观察期、来源和有边界的研究解释', () => {
+  render(<HistoryReplay data={fixture} onBack={() => {}} />)
+  const pairs = screen.getByRole('region', { name: '市场路径对照' })
+  expect(pairs).toHaveTextContent('观察期：2026年8月')
+  expect(pairs).toHaveTextContent('研究解释（非事实）：事后解释内容')
+  expect(within(pairs).getByRole('link', { name: '测试发布来源 ↗' })).toHaveAttribute('href', 'https://example.org/release')
+  fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-16' } })
+  expect(pairs).toHaveTextContent('观察期：2026年8月')
+  expect(pairs).not.toHaveTextContent('事后解释内容')
+})
+
+it('研究明细用可读事件名和材料说明代替内部ID，原文日期与raw记录不改', () => {
+  const item = { id: 'opaque-test-opinion', reportId: 'opaque-test-report', eventId: 'meeting',
+    expressedAt: '2026-09-12', dateBasis: 'TEST ONLY', actor: '测试署名作者', scope: '测试', claim: '测试条件预测',
+    pages: [1], evidenceExcerpt: '原句：会议于9/16公布。' }
+  const data = { ...fixture, researchEvidence: [item] }
+  const raw = JSON.stringify(data)
+  render(<HistoryReplay data={data} onBack={() => {}} />)
+  fireEvent.click(screen.getByText('星球观点明细 · 1（点击展开）'))
+  const region = screen.getByRole('region', { name: '星球观点独立追溯' })
+  expect(region).toHaveTextContent('关联事件：测试会议')
+  expect(region).toHaveTextContent('材料：研究材料待核')
+  expect(region.textContent).not.toMatch(/opaque-test-report|opaque-test-opinion|关联事件：meeting/)
+  expect(region).toHaveTextContent('原句：会议于9/16公布。')
+  expect(JSON.stringify(data)).toBe(raw)
 })
 
 it('没有可用事前来源时不得把后来观点呈现为当时预期', () => {

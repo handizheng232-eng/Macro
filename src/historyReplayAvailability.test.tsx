@@ -17,7 +17,7 @@ it('首次可得日期晚于截面时卸载来源、依赖事件标题与原件�
   render(<HistoryReplay data={data} onBack={() => {}} />)
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-09-30' } })
   expect(screen.queryByText('后发确认来源测试')).not.toBeInTheDocument()
-  expect(screen.queryByRole('heading', { name: '依赖十月来源的九月事件测试' })).not.toBeInTheDocument()
+  expect(screen.queryByRole('rowheader', { name: /依赖十月来源的九月事件测试/ })).not.toBeInTheDocument()
   expect(screen.queryByText('首次可得未知书目测试')).not.toBeInTheDocument()
 })
 
@@ -30,9 +30,9 @@ it('历史截面不显示只有更晚追溯来源才能确认的事件标题', (
       reality: '', realitySourceIds: [], interpretation: '', marketResponse: '', confidence: '测试' }],
   } as HistoryReplayData
   render(<HistoryReplay data={data} onBack={() => {}} />)
-  expect(screen.getByRole('heading', { name: '只有五月来源的提名测试' })).toBeInTheDocument()
+  expect(screen.getByRole('rowheader', { name: /只有五月来源的提名测试/ })).toBeInTheDocument()
   fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-04-01' } })
-  expect(screen.queryByRole('heading', { name: '只有五月来源的提名测试' })).not.toBeInTheDocument()
+  expect(screen.queryByRole('rowheader', { name: /只有五月来源的提名测试/ })).not.toBeInTheDocument()
 })
 
 it('晚取得的追溯行情来源保留真实日期，仅当前完整视图可见', () => {

@@ -1,3 +1,4 @@
+import { formatReplayDate, formatReplayText } from './replayDateFormat'
 import { act, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
@@ -38,9 +39,9 @@ it.each(switchCases)('$event：从$from.label切页时截止、检索和展开�
       expect(screen.getByLabelText(label)).not.toHaveAttribute('open')
     }
     if (to.data.localResearchEvidence?.length) expect(screen.getByLabelText('本地研报观点明细')).not.toHaveAttribute('open')
-    expect(screen.getByRole('status')).toHaveTextContent(`${to.data.asOf} · ${to.data.events.filter((entry) => entry.date <= to.data.asOf).length} 条事件`)
-    expect(within(screen.getByRole('region', { name: '事件时间轴' })).queryAllByRole('heading', { level: 3 }).map((heading) => heading.textContent)).toEqual(
-      to.data.events.filter((entry) => entry.date <= to.data.asOf).sort((a, b) => a.date.localeCompare(b.date)).map((entry) => entry.title),
+    expect(screen.getByRole('status')).toHaveTextContent(`${formatReplayDate(to.data.asOf)} · ${to.data.events.filter((entry) => entry.date <= to.data.asOf).length} 条事件`)
+    expect(within(screen.getByRole('region', { name: '市场路径对照' })).queryAllByRole('rowheader').map((heading) => heading.textContent)).toEqual(
+      to.data.events.filter((entry) => entry.date <= to.data.asOf).sort((a, b) => a.date.localeCompare(b.date)).map((entry) => `${formatReplayDate(entry.date)}${entry.title}`),
     )
     const libraryHeading = screen.getByLabelText('来源库 / 研报库明细').querySelector('summary')!
     expect(libraryHeading).toHaveTextContent(`授权研报 ${to.data.reports.filter((report) => {
@@ -117,7 +118,7 @@ it('从父阶段进入鹰派换届独立子页，完整日期与返回父阶段�
   expect(window.location.hash).toBe(hawkishHash)
   const workbench = screen.getByRole('article', { name: '鹰派换届研究工作台' })
   expect(workbench.querySelector('h1')).toHaveTextContent('鹰派换届与反转酝酿')
-  expect(workbench.querySelector('.replay-heading')).toHaveTextContent('2026-01-01—2026-08-31')
+  expect(workbench.querySelector('.replay-heading')).toHaveTextContent(formatReplayText('2026-01-01—2026-08-31'))
   expect(workbench.querySelector('.replay-heading')).not.toHaveTextContent('终点未形成')
   expect(screen.getByLabelText('按日期截止查看')).toHaveValue('2026-08-31')
   await user.click(screen.getByRole('button', { name: '返回父阶段复盘' }))
@@ -131,7 +132,7 @@ it('直接加载鹰派换届hash，不回退到时期总览或九月工作台', 
   render(<App />)
   expect(screen.getByRole('article', { name: '鹰派换届研究工作台' })).toBeInTheDocument()
   expect(screen.queryByRole('article', { name: '政策反转研究工作台' })).not.toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: '预期 → 现实：事件时间轴' })).toBeInTheDocument()
+  expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
   act(() => window.dispatchEvent(new HashChangeEvent('hashchange')))
   expect(screen.getByRole('article', { name: '鹰派换届研究工作台' })).toBeInTheDocument()
 })
