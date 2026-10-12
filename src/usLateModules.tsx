@@ -22,7 +22,7 @@ type ModuleData = {
   researchBasis: string[]
 }
 type Dataset = {
-  schemaVersion: number; generatedAt: string; source: string; frameworkSource: { file: string; slides: string }
+  schemaVersion: number; generatedAt: string; source: string; sourceProviders: string[]; frameworkSource: { file: string; slides: string }
   modules: Record<LateCategory, ModuleData>
   dataQuality: { verifiedSeries: number; missingPeriods: Record<string, string[]>; note: string }
 }
@@ -90,17 +90,18 @@ function Passports({ module }: { module: ModuleData }) { return <section classNa
 
 export function UsLateModuleDetail({ category, onBack }: { category: LateCategory; onBack: () => void }) {
   const module = dataset.modules[category]
+  const usesFred = category === 'fed'
   const observations = module.sections.flatMap((section) => section.charts.flatMap((item) => item.series.map((item) => item.latestObservation)))
   const latestObservation = observations.reduce((latest, item) => item > latest ? item : latest, '')
   const missingCount = Object.values(dataset.dataQuality.missingPeriods).filter((items) => items.length).length
   return <div className={`deep-research-page deep-research-page--${ACCENT_CLASS[module.accent]}`} role="document" aria-label={`美国${module.label}深度数据页`}>
-    <div className="page-heading us-macro-heading"><div><button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button><p className="eyebrow">US ECONOMY · IFIND CHAPTER {module.chapter}</p><h1>美国{module.label}</h1><p>{module.subtitle}</p></div><div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div></div>
+    <div className="page-heading us-macro-heading"><div><button className="history-back" type="button" onClick={onBack}><ArrowLeft size={15} />返回宏观框架</button><p className="eyebrow">US ECONOMY · {usesFred ? 'IFIND + FRED' : 'IFIND'} CHAPTER {module.chapter}</p><h1>美国{module.label}</h1><p>{module.subtitle}</p></div><div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div></div>
     <section className="employment-headline-grid late-headline-grid" aria-label={`美国${module.label}状态摘要`}>{module.headline.map((item, index) => <article key={`${item.id}-${index}`}><span>0{index + 1} · {item.label}</span><h2>{item.title}</h2><div><strong>{formatValue(item.value)}</strong><b>{item.unit}</b></div><footer><small>{formatDate(item.observation)}</small><em>{item.source}</em></footer></article>)}</section>
     <RouteMap module={module} /><Passports module={module} />
     <nav className="inflation-section-nav employment-section-nav late-section-nav" aria-label={`${module.label}栏目分区`}>{module.sections.map((section, index) => <button key={section.id} type="button" onClick={() => scrollToSection(`${category}-${section.id}`)}><span>{String(index + 1).padStart(2, '0')}</span>{section.title.split('：')[0]}</button>)}</nav>
     {module.sections.map((section, index) => <section className="inflation-section" id={`${category}-${section.id}`} key={section.id}><header className="inflation-section-heading"><span>{String(index + 1).padStart(2, '0')} · DATA WORKSPACE</span><div><h2>{section.title}</h2><p>{section.description}</p></div></header><div className="employment-chart-grid">{section.charts.map((item) => <ResearchChart chart={item} key={item.id} />)}</div></section>)}
     <section className="late-availability" aria-label={`${module.label}数据边界`}><header><span>AVAILABILITY & RESEARCH BOUNDARY</span><h2>明确不可得项、事件数据与静态案例</h2><p>不以相近序列替代PPT指定口径，也不把历史快照伪装成可更新数据。</p></header><div>{module.availability.map((item) => <article key={item.label}><span>{item.status.replaceAll('-', ' ').toUpperCase()}</span><h3>{item.label}</h3><p>{item.explanation}</p></article>)}</div></section>
-    <section className="inflation-method-card employment-method-card late-method-card"><div><span>DATA CONTRACT</span><h2>iFinD数据口径与定期更新</h2><p>{dataset.dataQuality.note}</p></div><div className="cross-check-list"><article><CheckCircle2 size={15} /><div><strong>{dataset.dataQuality.verifiedSeries}条源序列</strong><span>五个模块共用一份可回放原始快照，逐条核验元数据和量级</span></div></article><article><CheckCircle2 size={15} /><div><strong>异步时间透明</strong><span>日、周、月、季、年频各保留独立最新观测，不制造共同as-of</span></div></article><article><CheckCircle2 size={15} /><div><strong>缺口检查</strong><span>{missingCount}条月/季频序列存在日历缺口，图表按时间间隔断线</span></div></article></div><footer><Info size={14} /><span>快照生成 {dataset.generatedAt.slice(0, 10)}；定期更新运行 <code>npm run refresh:us-late-modules</code>。</span></footer></section>
-    <footer className="us-macro-source"><div><strong>数据来源：iFinD经济数据库（EDB）。</strong><span>{module.researchBasis[0]} · {dataset.frameworkSource.file}</span></div><button type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button></footer>
+    <section className="inflation-method-card employment-method-card late-method-card"><div><span>DATA CONTRACT</span><h2>{usesFred ? 'iFinD与美联储FRED数据口径及定期更新' : 'iFinD数据口径与定期更新'}</h2><p>{dataset.dataQuality.note}</p></div><div className="cross-check-list"><article><CheckCircle2 size={15} /><div><strong>{dataset.dataQuality.verifiedSeries}条源序列</strong><span>五个模块共用可回放原始快照，逐条核验元数据、官方首日和量级</span></div></article><article><CheckCircle2 size={15} /><div><strong>异步时间透明</strong><span>日、周、月、季、年频各保留独立最新观测，不制造共同as-of</span></div></article><article><CheckCircle2 size={15} /><div><strong>缺口检查</strong><span>{missingCount}条月/季频序列存在日历缺口，图表按时间间隔断线</span></div></article></div><footer><Info size={14} /><span>快照生成 {dataset.generatedAt.slice(0, 10)}；定期更新运行 <code>npm run refresh:us-late-modules</code>。</span></footer></section>
+    <footer className="us-macro-source"><div><strong>{usesFred ? '数据来源：iFinD经济数据库（EDB）与美联储官方FRED序列。' : '数据来源：iFinD经济数据库（EDB）。'}</strong><span>{module.researchBasis[0]} · {dataset.frameworkSource.file}</span></div><button type="button" onClick={onBack}>返回宏观框架 <ChevronRight size={15} /></button></footer>
   </div>
 }

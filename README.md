@@ -26,7 +26,7 @@ npm run dev
 
 ## 刷新美国宏观数据
 
-页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。就业、通胀、GDP与经济核算、消费，以及第5—9章的住房、企业投资、PMI与库存、财政与国债、美联储与金融条件，主体时序通过本机已登录的 iFinD 客户端会话取数；就业工资板块的分行业平均时薪使用免密的 BLS Public Data API 官方序列。OpenBB/Wind通用快照继续保留作交叉核验与其他页面使用：
+页面使用构建时数据快照，避免在 GitHub Pages 前端暴露数据凭据。就业、通胀、GDP与经济核算、消费，以及第5—9章的住房、企业投资、PMI与库存、财政与国债、美联储与金融条件，主体时序通过本机已登录的 iFinD 客户端会话取数；就业工资板块的分行业平均时薪使用免密的 BLS Public Data API 官方序列，美联储模块的长期政策利率与分口径美元指数使用免密的美联储 FRED 官方序列。OpenBB/Wind通用快照继续保留作交叉核验与其他页面使用：
 
 ```bash
 npm run refresh:us-macro
@@ -38,13 +38,13 @@ npm run refresh:us-macro
 - Federal Reserve：专业预测者通胀预期、有效联邦基金利率；
 - 与 Wind 重叠的 GDP、失业率、CPI、EFFR 自动做同期差值核验。
 
-第5—9章共接入58条可核验iFinD源序列、34张图：
+第5—9章共接入57条可核验iFinD源序列和7条美联储FRED官方序列，共35张图：
 
 - 住房：房贷利率与NAHB、许可/开工、单户/多户、新屋/成屋销量、库存月数、FHFA/Case-Shiller、住宅投资/GDP、主要居所租金/OER及拖欠率；
 - 企业投资：核心资本品订单/出货、产能利用率、建筑/设备/知识产权投资自身增速与GDP贡献、制造业与数据中心建造；
 - PMI与库存：ISM总指数与分项、工业生产、订单—库存差、批发/零售库存销售比、地区联储调查与韩国出口；
 - 财政与国债：MTS收入/支出/赤字的滚动12个月、净利息/GDP、公众持有债务/GDP、2Y/10Y与10年期拍卖竞拍倍数；
-- 美联储与金融条件：EFFR/IORB/SOFR/ON RRP走廊、SOFR−IORB利差、准备金/ON RRP/TGA、美债/MBS持仓、2Y/10Y、NFCI与广义美元。
+- 美联储与金融条件：EFFR完整历史、1982年以来单点目标及2008年后的目标区间、IOER→IORB制度续接、SOFR/ON RRP、SOFR−准备金报酬率、准备金/ON RRP/TGA、美债/MBS持仓、2Y/10Y、NFCI，以及分开披露的旧版与现行广义美元指数。
 
 五页均附PPT路线图、数据身份证、“数据是什么—怎么读—口径警示”以及不可得项边界。MBA、Zillow/Redfin、云厂商Capex指引、S&P Flash PMI、QRA、FOMC文本与FF期货/OIS等不属于当前自动更新合同的内容均明确标记，不使用相近序列冒充。
 
@@ -54,7 +54,7 @@ GDP深度页按PPT第三章重构为四组可更新工作区：潜在增速与�
 
 消费深度页按PPT第四章重构为“四个驱动轮—官方双轨—三大背离”：11张可更新图覆盖消费占GDP、收入与消费、零售控制组、名义与实际零售、储蓄率、循环信贷与拖欠、服务/耐用品结构以及软硬数据背离。刷卡、TSA、OpenTable、Redbook和密歇根分党派数据因不属于当前iFinD自动更新合同而明确标为未接入；超额储蓄“耗尽日”保留为反事实假设敏感的历史案例，不冒充实时序列。
 
-九个栏目均以 iFinD 经济数据库（EDB）为主要数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）。前四章原始响应分别保存在 `data/raw/ifind-us-employment/`、`data/raw/ifind-us-inflation/`、`data/raw/ifind-us-gdp/` 与 `data/raw/ifind-us-consumption/`；第5—9章统一保存在 `data/raw/ifind-us-late-modules/`，页面数据写入 `src/data/usLateModulesData.json`。刷新脚本逐条核对指标码、名称、机构、频率、单位和量级，并检查月/季频缺口；GDP执行三组会计闭合，消费检查控制组与结构份额，第5—9章另检查财政滚动12个月赤字与支出减收入闭合。
+九个栏目均以 iFinD 经济数据库（EDB）为主要数据源，读取本机 iFinD 客户端的已登录会话直取 HTTP 接口（见 skill `ifind-edb`）；美联储模块再从 FRED CSV 补充 `FEDFUNDS`、`DFEDTAR`、`DFEDTARL/U`、`IOER`、`DTWEXB` 与 `DTWEXBGS`。前四章原始响应分别保存在 `data/raw/ifind-us-employment/`、`data/raw/ifind-us-inflation/`、`data/raw/ifind-us-gdp/` 与 `data/raw/ifind-us-consumption/`；第5—9章统一保存在 `data/raw/ifind-us-late-modules/`，页面数据写入 `src/data/usLateModulesData.json`。刷新脚本逐条核对指标码、名称、机构、频率、单位、官方首日和量级，并检查月/季频缺口；制度创设前不补值，方法或会计口径变化不静默拼接。GDP执行三组会计闭合，消费检查控制组与结构份额，第5—9章另检查财政滚动12个月赤字与支出减收入闭合。
 
 单独刷新：
 

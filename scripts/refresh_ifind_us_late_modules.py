@@ -8,11 +8,14 @@ persisted.
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
@@ -97,8 +100,20 @@ SERIES_SPEC: dict[str, Spec] = {
     "fed_treasuries": ("G025034601", "美国:所有联储银行:资产:持有证券:国债:总计", "联储持有美债", "百万美元", "日", "美联储", "#0f62fe", (0, 10_000_000), "2002-01-01"),
     "fed_mbs": ("G025034584", "美国:所有联储银行:资产:持有证券:抵押担保证券:总计", "联储持有MBS", "百万美元", "日", "美联储", "#9f1853", (0, 5_000_000), "2002-01-01"),
     "nfci": ("G012264492", "美国:芝加哥联储:全国金融状况指数:当周值", "芝加哥联储NFCI", "", "周", "芝加哥联储", "#6929c4", (-5, 10), "1990-01-01"),
-    "broad_dollar": ("G002600886", "美国:名义美元指数:广义", "广义美元指数", "1973年3月=100", "日", "美联储", "#007d79", (50, 200), "1995-01-01"),
 }
+
+FredSpec = tuple[str, str, str, str, tuple[float, float], str, str]
+FRED_SERIES_SPEC: dict[str, FredSpec] = {
+    # label, unit, frequency, institution, bounds, expected first observation, official name
+    "FEDFUNDS": ("EFFR历史", "%", "月", "Federal Reserve Board", (0, 25), "19540701", "Effective Federal Funds Rate"),
+    "DFEDTAR": ("联邦基金单点目标", "%", "日", "Federal Reserve Board", (0, 25), "19820927", "Federal Funds Target Rate"),
+    "DFEDTARL": ("目标区间下限", "%", "日", "Federal Reserve Board", (0, 25), "20081216", "Federal Funds Target Range - Lower Limit"),
+    "DFEDTARU": ("目标区间上限", "%", "日", "Federal Reserve Board", (0, 25), "20081216", "Federal Funds Target Range - Upper Limit"),
+    "IOER": ("超额准备金利率", "%", "日", "Federal Reserve Board", (0, 25), "20081009", "Interest Rate on Excess Reserves"),
+    "DTWEXB": ("旧版广义美元指数", "1973年3月=100", "日", "Federal Reserve Board", (50, 200), "19950104", "Trade Weighted U.S. Dollar Index: Broad, Goods"),
+    "DTWEXBGS": ("现行广义美元指数", "2006年1月=100", "日", "Federal Reserve Board", (50, 200), "20060102", "Nominal Broad U.S. Dollar Index"),
+}
+FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={code}"
 
 
 def pct_change(dates: list[str], values: list[float], periods: int) -> tuple[list[str], list[float]]:
@@ -116,6 +131,59 @@ def difference(left: tuple[list[str], list[float]], right: tuple[list[str], list
     rmap = {compact_date(d)[:digits]: v for d, v in zip(*right)}
     periods = sorted(set(lmap) & set(rmap))
     return periods, [lmap[p] - rmap[p] for p in periods]
+
+
+def parse_fred_csv(payload: str, code: str) -> tuple[list[str], list[float]]:
+    reader = csv.DictReader(io.StringIO(payload))
+    if reader.fieldnames != ["observation_date", code]:
+        raise ValueError(f"unexpected FRED columns for {code}: {reader.fieldnames!r}")
+    rows = [
+        (compact_date(row["observation_date"]), float(row[code]))
+        for row in reader
+        if row.get(code) not in {None, "", "."}
+    ]
+    if not rows:
+        raise ValueError(f"empty FRED series: {code}")
+    return [date for date, _ in rows], [value for _, value in rows]
+
+
+def fetch_fred_all() -> dict[str, str]:
+    result: dict[str, str] = {}
+    for code, (_label, _unit, _frequency, _institution, bounds, expected_start, _name) in FRED_SERIES_SPEC.items():
+        request = Request(FRED_CSV_URL.format(code=code), headers={"User-Agent": "MacroResearchDashboard/1.0"})
+        with urlopen(request, timeout=60) as response:
+            payload = response.read().decode("utf-8-sig")
+        dates, values = parse_fred_csv(payload, code)
+        if dates[0] != expected_start:
+            raise ValueError(f"FRED history mismatch for {code}: expected {expected_start}, got {dates[0]}")
+        if not all(bounds[0] <= value <= bounds[1] for value in values):
+            raise ValueError(f"FRED range check failed for {code}: {min(values)}..{max(values)}")
+        result[code] = payload
+        print(f"verified FRED {code}: {dates[0]}..{dates[-1]} ({len(dates)})")
+    return result
+
+
+def combine_series(*items: tuple[list[str], list[float]]) -> tuple[list[str], list[float]]:
+    combined: dict[str, float] = {}
+    for dates, values in items:
+        combined.update(zip(dates, values))
+    rows = sorted(combined.items())
+    return [date for date, _ in rows], [value for _, value in rows]
+
+
+def clip_start(data: tuple[list[str], list[float]], start: str) -> tuple[list[str], list[float]]:
+    rows = [(date, value) for date, value in zip(*data) if compact_date(date) >= compact_date(start)]
+    return [date for date, _ in rows], [value for _, value in rows]
+
+
+def month_end_series(data: tuple[list[str], list[float]]) -> tuple[list[str], list[float]]:
+    dates, values = data
+    selected: dict[str, tuple[str, float]] = {}
+    for date, value in zip(dates, values):
+        selected[compact_date(date)[:6]] = (compact_date(date), value)
+    rows = [(compact_date(dates[0]), values[0]), *selected.values()]
+    deduped = sorted(dict(rows).items())
+    return [date for date, _ in deduped], [value for _, value in deduped]
 
 
 def fetch_all(token: str) -> dict[str, dict[str, Any]]:
@@ -146,19 +214,53 @@ def source_meta(key: str, latest: str) -> dict[str, Any]:
     return {"provider": "iFinD EDB", "institution": institution, "code": code, "name": name, "rawUnit": unit or "无量纲指数", "url": "https://ft.51ifind.com", "latestObservation": latest}
 
 
-def series(key: str, parsed: dict[str, tuple[list[str], list[float]]], *, series_id: str | None = None, label: str | None = None, data: tuple[list[str], list[float]] | None = None, unit: str | None = None, color: str | None = None, transform: str | None = None, scale: float = 1.0) -> dict[str, Any]:
+def series(key: str, parsed: dict[str, tuple[list[str], list[float]]], *, series_id: str | None = None, label: str | None = None, data: tuple[list[str], list[float]] | None = None, unit: str | None = None, frequency: str | None = None, color: str | None = None, transform: str | None = None, scale: float = 1.0) -> dict[str, Any]:
     dates, values = data or parsed[key]
     values = [value * scale for value in values]
-    _code, _name, default_label, raw_unit, frequency, _institution, default_color, _bounds, _start = SERIES_SPEC[key]
+    _code, _name, default_label, raw_unit, default_frequency, _institution, default_color, _bounds, _start = SERIES_SPEC[key]
     result = {
         "id": series_id or key, "label": label or default_label, "dates": dates,
         "values": [round(value, 5) for value in values], "color": color or default_color,
-        "unit": raw_unit if unit is None else unit, "frequency": frequency,
+        "unit": raw_unit if unit is None else unit, "frequency": frequency or default_frequency,
         "latestValue": round(values[-1], 5), "latestObservation": dates[-1], "source": source_meta(key, dates[-1]),
     }
     if transform:
         result["transformLabel"] = transform
     return result
+
+
+def fred_series(code: str, parsed: dict[str, tuple[list[str], list[float]]], *, series_id: str, color: str, label: str | None = None, data: tuple[list[str], list[float]] | None = None, frequency: str | None = None, transform: str | None = None) -> dict[str, Any]:
+    dates, values = data or parsed[code]
+    default_label, unit, default_frequency, institution, _bounds, _start, name = FRED_SERIES_SPEC[code]
+    result = {
+        "id": series_id, "label": label or default_label, "dates": dates,
+        "values": [round(value, 5) for value in values], "color": color,
+        "unit": unit, "frequency": frequency or default_frequency, "latestValue": round(values[-1], 5),
+        "latestObservation": dates[-1],
+        "source": {
+            "provider": "Federal Reserve Economic Data (FRED)", "institution": institution,
+            "code": code, "name": name, "rawUnit": unit,
+            "url": f"https://fred.stlouisfed.org/series/{code}", "latestObservation": dates[-1],
+        },
+    }
+    if transform:
+        result["transformLabel"] = transform
+    return result
+
+
+def combined_reserve_rate(parsed: dict[str, tuple[list[str], list[float]]], fred_parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str, Any]:
+    dates, values = combine_series(month_end_series(fred_parsed["IOER"]), month_end_series(parsed["iorb"]))
+    return {
+        "id": "reserve_rate", "label": "IOER→IORB（准备金报酬率）", "dates": dates,
+        "values": [round(value, 5) for value in values], "color": "#007d79", "unit": "%", "frequency": "月",
+        "latestValue": round(values[-1], 5), "latestObservation": dates[-1],
+        "transformLabel": "2008-10-09至2021-07-28为IOER；2021-07-29起为IORB；制度切换处不向前填充",
+        "source": {
+            "provider": "Federal Reserve / FRED + iFinD EDB", "institution": "Federal Reserve Board",
+            "code": "IOER→IORB", "name": "Interest on reserve balances regime series", "rawUnit": "%",
+            "url": "https://www.federalreserve.gov/monetarypolicy/iorb-faqs.htm", "latestObservation": dates[-1],
+        },
+    }
 
 
 def chart(chart_id: str, title: str, description: str, unit: str, items: list[dict[str, Any]], *, eyebrow: str, what: str, read: str, caveat: str, slide: str, default: str = "10Y", reference: float | None = None) -> dict[str, Any]:
@@ -266,11 +368,14 @@ def module_static() -> dict[str, dict[str, Any]]:
                 {"id": "conditions", "title": "金融条件", "subtitle": "政策落点", "nodes": [{"title": "组件", "detail": "曲线/信用/美元/股权"}, {"title": "反身性", "detail": "政策与市场形成循环"}]},
             ],
             "passports": [
-                {"id": "corridor", "title": "EFFR / IORB / SOFR / ON RRP", "producer": "NY Fed / Federal Reserve", "frequency": "日/月", "coverage": "无抵押、准备金、有抵押与非银下限", "revision": "管理利率按会议调整", "use": "走廊实施与资金面", "pitfall": "EFFR月频与其他日频异步；不同市场不可机械相减", "pptSlide": "第219—223页"},
+                {"id": "corridor", "title": "EFFR / 目标利率 / IOER-IORB / SOFR / ON RRP", "producer": "Federal Reserve Board / NY Fed / FRED", "frequency": "日", "coverage": "实际联邦基金利率、政策目标、准备金报酬、有抵押回购与非银下限", "revision": "1982单点目标、2008目标区间与准备金付息、2013 ON RRP、2018 SOFR、2021 IORB均有制度断点", "use": "政策目标、实施框架与资金面", "pitfall": "不同市场和制度不能机械拼接；较新工具在创设前必须留空", "pptSlide": "第219—223页"},
                 {"id": "balance", "title": "H.4.1资产负债表", "producer": "Federal Reserve", "frequency": "周（iFinD日期字段标日）", "coverage": "持有证券、准备金、TGA、工具用量", "revision": "会计分类与发布日固定", "use": "QE/QT和流动性分配", "pitfall": "准备金、TGA、ON RRP此消彼长；总资产不是流动性单一答案", "pptSlide": "第218、223—224页"},
                 {"id": "conditions", "title": "利率与NFCI", "producer": "Federal Reserve / Chicago Fed", "frequency": "日/周", "coverage": "政策路径、曲线与105项金融变量", "revision": "NFCI会随输入修订", "use": "市场传导与自稳定器", "pitfall": "FCI看方向，不把相关性当政策因果", "pptSlide": "第225—231页"},
             ],
             "availability": [
+                {"label": "历史覆盖审计：政策利率", "status": "verified-full-history", "explanation": "EFFR已由美联储官方DFF补至1954-07-01；政策目标自1982-09-27起，2008-12-16由单点切换为上下限区间。30年视图现可完整显示政策目标与实际利率。"},
+                {"label": "历史覆盖审计：新制度工具", "status": "institution-limited", "explanation": "准备金付息只能从2008-10-09开始，ON RRP利率从2013-09-23开始，正式SOFR从2018-04-02开始，IORB从2021-07-29开始；创设前留空，不向前伪造。"},
+                {"label": "历史覆盖审计：资产负债表与美元", "status": "method-break", "explanation": "标准H.4.1美债、MBS与TGA机器序列自2002-12-18起，未机械拼接更早会计分类；美元指数拆为1995—2019旧版商品权重与2006年至今现行商品+服务权重，修复原供应商在2006年直接换基造成的断点。"},
                 {"label": "FOMC声明/SEP/纪要/讲话", "status": "event-text", "explanation": "文本与点阵图是事件型数据，需独立版本化管线；不能用利率时序替代。"},
                 {"label": "FF期货/OIS会议概率", "status": "not-integrated", "explanation": "需要市场合约与会议日历映射；当前不把2年期收益率冒充离散概率。"},
                 {"label": "信用利差与股权条件", "status": "partial", "explanation": "本次iFinD主源未检出精确可核验的美国IG/HY OAS全序列；NFCI是综合确认而非替代各分项。"},
@@ -279,8 +384,9 @@ def module_static() -> dict[str, dict[str, Any]]:
     }
 
 
-def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str, Any]:
-    parsed = {key: fetch_response_series(item["payload"], SERIES_SPEC[key][0]) for key, item in raw.items()}
+def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str, fred_raw: dict[str, str]) -> dict[str, Any]:
+    parsed = {key: fetch_response_series(raw[key]["payload"], SERIES_SPEC[key][0]) for key in SERIES_SPEC}
+    fred_parsed = {code: parse_fred_csv(fred_raw[code], code) for code in FRED_SERIES_SPEC}
     modules = module_static()
 
     # Housing
@@ -358,21 +464,37 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
     ]
 
     # Fed
-    sofr_iorb = difference(parsed["sofr"], parsed["iorb"], digits=8)
-    sofr_iorb_bp = (sofr_iorb[0], [value * 100 for value in sofr_iorb[1]])
+    reserve_rate = combine_series(month_end_series(fred_parsed["IOER"]), month_end_series(parsed["iorb"]))
+    sofr_reserve = difference(parsed["sofr"], reserve_rate, digits=6)
+    sofr_reserve_bp = (sofr_reserve[0], [value * 100 for value in sofr_reserve[1]])
+    onrrp_facility_amount = clip_start(parsed["onrrp_amount"], "20130923")
     fed_charts = [
-        chart("fed-corridor", "利率走廊与隔夜市场", "管理利率、无抵押与有抵押隔夜利率共同显示政策实施。", "%", [series("effr", parsed), series("iorb", parsed), series("sofr", parsed), series("onrrp_rate", parsed)], eyebrow="9.2 · RATE CORRIDOR", what="EFFR、IORB、SOFR和ON RRP利率。", read="观察市场利率在走廊中的位置；SOFR相对IORB抬升可提示回购资金面收紧。", caveat="EFFR为月频聚合，其他为日频；不同抵押品和参与者意味着不能机械套用单一上下限。", slide="PPT第219—223页", default="5Y"),
-        chart("fed-liquidity", "准备金、ON RRP与TGA", "负债端三件套决定流动性在银行、货基与财政部之间的分配。", "十亿美元", [series("reserves", parsed), series("onrrp_amount", parsed), series("tga", parsed, unit="十亿美元", scale=.001, transform="百万美元÷1000")], eyebrow="9.2 · LIABILITY MIX", what="准备金余额、隔夜逆回购用量和财政部一般账户余额。", read="TGA上升通常抽走准备金；ON RRP可在QT早期充当缓冲池。", caveat="三条频率不同且准备金为月频；加总关系受现金和其他负债影响，不是严格三项恒等式。", slide="PPT第218、223页", default="10Y"),
-        chart("fed-sofr-iorb-spread", "SOFR−IORB利差", "价格维度的准备金充足度观察哨；持续升穿零轴比单日尖峰更重要。", "bp", [series("sofr", parsed, series_id="sofr_iorb_bp", label="SOFR−IORB", data=sofr_iorb_bp, unit="bp", transform="同日SOFR减IORB，再乘100换算为基点")], eyebrow="9.2 · RESERVE ADEQUACY", what="纽约联储SOFR与美联储IORB的同日利差。", read="持续为正并伴随SRF使用、回购波动上升，才更像准备金边际趋紧。", caveat="单日季末、税期和国债结算可制造尖峰；不能单凭此线确定QT终点。", slide="PPT第223页 · 图9-4右", default="5Y", reference=0),
-        chart("fed-securities", "联储持有美债与MBS", "资产端直接展示QE/QT吸收或释放的久期。", "万亿美元", [series("fed_treasuries", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000"), series("fed_mbs", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000")], eyebrow="9.2 · BALANCE SHEET", what="H.4.1联储持有美国国债和机构MBS。", read="持续下降代表QT释放久期；MBS自然到期速度受房贷提前偿还影响。", caveat="iFinD元数据频率标日但原始H.4.1为周度快照；不是每日交易流。", slide="PPT第218、224页", default="ALL"),
-        chart("fed-policy-path", "2年与10年美债", "2年浓缩未来政策路径，10年叠加增长、通胀和期限溢价。", "%", [series("ust2", parsed), series("ust10", parsed)], eyebrow="9.3 · MARKET PRICING", what="美联储H.15日度2年和10年收益率。", read="转向前2年往往先动；曲线变化比单点更能显示市场与政策的分歧。", caveat="2年收益率不是会议概率；远端仍含期限溢价和风险补偿。", slide="PPT第225—227页", default="10Y"),
-        chart("fed-nfci", "芝加哥联储全国金融状况指数", "把货币、债务和股权市场变量压缩为综合松紧指标。", "标准化指数", [series("nfci", parsed)], eyebrow="9.4 · FINANCIAL CONDITIONS", what="芝加哥联储105项变量合成的NFCI周度指数。", read="高于0通常表示较历史均值更紧，下降表示金融条件放松。", caveat="综合指数会修订；不同FCI的水平不可横比，相关不等于政策因果。", slide="PPT第228—229页", default="ALL", reference=0),
-        chart("fed-dollar", "广义名义美元指数", "美元是美国金融条件向全球传导的重要价格。", "1973年3月=100", [series("broad_dollar", parsed)], eyebrow="9.4 · DOLLAR CHANNEL", what="美联储贸易加权广义名义美元指数。", read="美元走强通常收紧全球美元金融条件，并压低进口价格。", caveat="指数权重会更新；美元同时受海外冲击，不能只由美联储政策解释。", slide="PPT第228—231页", default="10Y"),
+        chart("fed-policy-target", "联邦基金政策目标与实际利率", "用完整EFFR历史对照1982年以来的政策目标；2008年由单点目标切换为目标区间。", "%", [
+            fred_series("FEDFUNDS", fred_parsed, series_id="effr_history", label="EFFR月均（1954年至今）", color="#0f62fe"),
+            fred_series("DFEDTAR", fred_parsed, series_id="fed_target", label="单点目标（1982—2008）", color="#6929c4", data=month_end_series(fred_parsed["DFEDTAR"]), frequency="月", transform="官方日频目标利率保留制度首日并取各月最后有效值"),
+            fred_series("DFEDTARL", fred_parsed, series_id="fed_target_lower", label="目标区间下限", color="#007d79", data=month_end_series(fred_parsed["DFEDTARL"]), frequency="月", transform="官方日频区间下限保留制度首日并取各月最后有效值"),
+            fred_series("DFEDTARU", fred_parsed, series_id="fed_target_upper", label="目标区间上限", color="#da1e28", data=month_end_series(fred_parsed["DFEDTARU"]), frequency="月", transform="官方日频区间上限保留制度首日并取各月最后有效值"),
+        ], eyebrow="9.2 · POLICY TARGET HISTORY", what="美联储官方EFFR月均、联邦基金单点目标及2008年后的目标区间上下限。", read="30年视图可完整比较实际利率与政策目标；2008年后的上下限共同定义目标区间。", caveat="1982年前不补造政策目标；长历史图按月显示，制度首日单独保留，避免日频重复值扩大静态包。", slide="PPT第219—223页", default="30Y"),
+        chart("fed-corridor", "制度工具与隔夜市场利率", "准备金报酬、EFFR、SOFR与ON RRP分别对应银行准备金、无抵押资金、有抵押回购与非银下限。", "%", [
+            series("effr", parsed, series_id="effr_corridor", label="EFFR月均"),
+            combined_reserve_rate(parsed, fred_parsed),
+            series("sofr", parsed),
+            series("onrrp_rate", parsed),
+        ], eyebrow="9.2 · OPERATING FRAMEWORK", what="EFFR、IOER→IORB、SOFR和ON RRP利率。", read="观察实际隔夜利率相对管理利率的位置；SOFR相对准备金报酬率持续抬升可提示回购资金面收紧。", caveat="准备金付息始于2008年、ON RRP始于2013年、SOFR始于2018年；创设前留空，不把不同制度向前伪造。", slide="PPT第219—223页", default="10Y"),
+        chart("fed-liquidity", "准备金、ON RRP与TGA", "负债端三件套决定流动性在银行、货基与财政部之间的分配。", "十亿美元", [series("reserves", parsed), series("onrrp_amount", parsed, data=onrrp_facility_amount, transform="仅保留2013-09-23当前ON RRP设施启动后的用量；更早零散逆回购操作不并入"), series("tga", parsed, unit="十亿美元", scale=.001, transform="百万美元÷1000")], eyebrow="9.2 · LIABILITY MIX", what="准备金余额、当前ON RRP设施用量和财政部一般账户余额。", read="TGA上升通常抽走准备金；ON RRP可在QT早期充当缓冲池。", caveat="三条频率不同且准备金为月频；H.4.1标准机器序列约从2002年开始，加总关系还受现金及其他负债影响。", slide="PPT第218、223页", default="10Y"),
+        chart("fed-sofr-iorb-spread", "SOFR−准备金报酬率", "价格维度的准备金充足度观察哨；持续升穿零轴比单月尖峰更重要。", "bp", [series("sofr", parsed, series_id="sofr_reserve_bp", label="SOFR−IOER/IORB", data=sofr_reserve_bp, unit="bp", frequency="月", transform="各月最后SOFR减对应月IOER（2021-07前）或IORB（2021-07起），再乘100换算为基点")], eyebrow="9.2 · RESERVE ADEQUACY", what="纽约联储SOFR与美联储准备金报酬率的月末利差。", read="持续为正并伴随SRF使用、回购波动上升，才更像准备金边际趋紧。", caveat="2021年存在IOER→IORB制度切换；月末、季末、税期和国债结算仍可制造尖峰。", slide="PPT第223页 · 图9-4右", default="5Y", reference=0),
+        chart("fed-securities", "联储持有美债与MBS", "资产端直接展示QE/QT吸收或释放的久期。", "万亿美元", [series("fed_treasuries", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000"), series("fed_mbs", parsed, unit="万亿美元", scale=.000001, transform="百万美元÷1,000,000")], eyebrow="9.2 · BALANCE SHEET", what="H.4.1联储持有美国国债和机构MBS。", read="持续下降代表QT释放久期；MBS自然到期速度受房贷提前偿还影响。", caveat="标准化H.4.1机器序列自2002-12-18开始；更早会计分类不机械拼接。MBS在2009年前为零不是缺失。", slide="PPT第218、224页", default="ALL"),
+        chart("fed-policy-path", "2年与10年美债", "2年浓缩未来政策路径，10年叠加增长、通胀和期限溢价。", "%", [series("ust2", parsed), series("ust10", parsed)], eyebrow="9.3 · MARKET PRICING", what="美联储H.15日度2年和10年收益率。", read="转向前2年往往先动；曲线变化比单点更能显示市场与政策的分歧。", caveat="2年自1976-06-01、10年自1962-01-02，均已覆盖完整官方历史；2年收益率不是会议概率。", slide="PPT第225—227页", default="30Y"),
+        chart("fed-nfci", "芝加哥联储全国金融状况指数", "把货币、债务和股权市场变量压缩为综合松紧指标。", "标准化指数", [series("nfci", parsed)], eyebrow="9.4 · FINANCIAL CONDITIONS", what="芝加哥联储105项变量合成的NFCI周度指数。", read="高于0通常表示较历史均值更紧，下降表示金融条件放松。", caveat="已覆盖1971-01-08以来完整历史；综合指数会随输入和权重修订，应整段刷新而非只追加尾部。", slide="PPT第228—229页", default="ALL", reference=0),
+        chart("fed-dollar", "广义名义美元指数：旧版与现行口径", "拆开商品贸易旧版与商品+服务现行版，避免把2006年换基和方法切换误读为美元跳水。", "不同基期指数", [
+            fred_series("DTWEXB", fred_parsed, series_id="broad_dollar_legacy", label="旧版广义美元（商品）", color="#6929c4", data=month_end_series(fred_parsed["DTWEXB"]), frequency="月", transform="官方日频序列保留首日并取各月最后有效值"),
+            fred_series("DTWEXBGS", fred_parsed, series_id="broad_dollar_current", label="现行广义美元（商品+服务）", color="#007d79", data=month_end_series(fred_parsed["DTWEXBGS"]), frequency="月", transform="官方日频序列保留首日并取各月最后有效值"),
+        ], eyebrow="9.4 · DOLLAR CHANNEL", what="美联储旧版广义美元商品贸易指数与现行商品+服务广义美元指数。", read="两条线只比较各自方向和拐点；2006—2019重叠期可用于观察方法差异。", caveat="两者权重方法和基期不同，绝对水平不可横比，也不得拼成一条1995年至今的无缝序列。", slide="PPT第228—231页", default="20Y"),
     ]
     modules["fed"]["sections"] = [
-        {"id": "implementation", "title": "政策实施：利率走廊与流动性分配", "description": "先确认隔夜利率是否在走廊内，再看准备金、ON RRP、TGA与SOFR−IORB价格信号。", "charts": fed_charts[:3]},
-        {"id": "balance", "title": "资产负债表：QE/QT与久期", "description": "美债和MBS持仓是政策吸收久期的直接量。", "charts": fed_charts[3:4]},
-        {"id": "pricing", "title": "市场定价与金融条件", "description": "利率路径、综合金融条件和美元共同决定政策的实体落点。", "charts": fed_charts[4:]},
+        {"id": "implementation", "title": "政策实施：目标利率、制度工具与流动性分配", "description": "先分清政策目标和各工具的制度起点，再看准备金、ON RRP、TGA与SOFR利差信号。", "charts": fed_charts[:4]},
+        {"id": "balance", "title": "资产负债表：QE/QT与久期", "description": "美债和MBS持仓是政策吸收久期的直接量。", "charts": fed_charts[4:5]},
+        {"id": "pricing", "title": "市场定价与金融条件", "description": "利率路径、综合金融条件和美元共同决定政策的实体落点。", "charts": fed_charts[5:]},
     ]
 
     # Shared headline and quality metadata
@@ -384,21 +506,23 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
             for item in latest_series[:6]
         ]
         module["researchBasis"] = [f"页面按PPT第{module['chapter']}章第{module['slides']}页路线图、数据说明与图例重建。", "PPT定义研究顺序与解释；可更新时序由iFinD EDB重取，不可得项和静态案例明确隔离。"]
+        if module_id == "fed":
+            module["researchBasis"][1] = "主体序列由iFinD EDB重取；政策利率完整历史与美元指数分口径序列由美联储官方FRED补充。"
 
     missing = {key: detect_missing_periods(dates, SERIES_SPEC[key][4]) for key, (dates, _values) in parsed.items() if SERIES_SPEC[key][4] in {"月", "季"}}
     return {
         "schemaVersion": 1,
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "source": "iFinD EDB",
-        "sourceProviders": ["iFinD EDB"],
+        "source": "iFinD EDB + Federal Reserve Economic Data (FRED)",
+        "sourceProviders": ["iFinD EDB", "Federal Reserve Economic Data (FRED)"],
         "frameworkSource": {"file": "研究框架/美国宏观数据培训【0829定稿】.pptx", "slides": "130—231"},
         "modules": modules,
         "dataQuality": {
-            "verifiedSeries": len(SERIES_SPEC),
+            "verifiedSeries": len(SERIES_SPEC) + len(FRED_SERIES_SPEC),
             "missingPeriods": missing,
-            "note": "每次刷新逐条核验指标码、精确名称、单位、频率、原始机构与量级；派生同比、点差、滚动12个月和单位换算均由脚本重建。",
+            "note": "每次刷新逐条核验iFinD与美联储FRED的指标身份、首日、单位、频率和量级；制度创设前不补值，方法或会计口径变化不静默拼接。",
         },
-        "rawSnapshots": {"ifind": raw_snapshot},
+        "rawSnapshots": {"ifind": raw_snapshot, "fred": raw_snapshot},
     }
 
 
@@ -406,23 +530,28 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
-    parser.add_argument("--input", type=Path, help="Replay a saved raw iFinD response bundle")
+    parser.add_argument("--input", type=Path, help="Replay a saved raw iFinD + FRED response bundle")
     args = parser.parse_args()
     if args.input:
-        raw = json.loads(args.input.read_text(encoding="utf-8"))
+        bundle = json.loads(args.input.read_text(encoding="utf-8"))
+        if "ifind" in bundle and "fred" in bundle:
+            raw, fred_raw = bundle["ifind"], bundle["fred"]
+        else:
+            raw, fred_raw = bundle, fetch_fred_all()
         snapshot = args.input.relative_to(REPO_ROOT).as_posix() if args.input.is_relative_to(REPO_ROOT) else str(args.input)
     else:
         raw = fetch_all(read_token())
+        fred_raw = fetch_fred_all()
         stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S+0000")
         args.raw_dir.mkdir(parents=True, exist_ok=True)
-        raw_path = args.raw_dir / f"{stamp}_ifind_late_modules.json"
-        raw_path.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
+        raw_path = args.raw_dir / f"{stamp}_us_late_modules_sources.json"
+        raw_path.write_text(json.dumps({"ifind": raw, "fred": fred_raw}, ensure_ascii=False), encoding="utf-8")
         snapshot = raw_path.relative_to(REPO_ROOT).as_posix()
-    dataset = build_dataset(raw, snapshot)
+    dataset = build_dataset(raw, snapshot, fred_raw)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(dataset, ensure_ascii=False, indent=2), encoding="utf-8")
     chart_count = sum(len(section["charts"]) for module in dataset["modules"].values() for section in module["sections"])
-    print(f"wrote {args.output} ({chart_count} charts, {len(SERIES_SPEC)} verified source series)")
+    print(f"wrote {args.output} ({chart_count} charts, {len(SERIES_SPEC) + len(FRED_SERIES_SPEC)} verified source series)")
 
 
 if __name__ == "__main__":

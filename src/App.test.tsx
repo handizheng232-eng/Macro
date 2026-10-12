@@ -85,7 +85,7 @@ describe('宏观框架', () => {
       ['企业投资', 'us-investment', 5],
       ['PMI与库存', 'us-pmi', 7],
       ['财政与国债', 'us-fiscal-treasury', 6],
-      ['美联储与金融条件', 'us-fed-financial-conditions', 7],
+      ['美联储与金融条件', 'us-fed-financial-conditions', 8],
     ] as const
 
     for (const [label, slug, chartCount] of rebuiltPages) {
@@ -95,11 +95,23 @@ describe('宏观框架', () => {
       expect(within(screen.getByRole('region', { name: `美国${label}研究路线图` })).getAllByRole('article').length).toBeGreaterThanOrEqual(4)
       expect(screen.getByRole('table', { name: `${label}数据身份证` })).toBeInTheDocument()
       expect(screen.getAllByRole('img', { name: /折线图/ })).toHaveLength(chartCount)
-      expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
-      expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）。/)).toBeInTheDocument()
+      if (label === '美联储与金融条件') {
+        expect(screen.getAllByText('Federal Reserve Economic Data (FRED)').length).toBeGreaterThan(0)
+        expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）与美联储官方FRED序列。/)).toBeInTheDocument()
+      } else {
+        expect(screen.getAllByText('iFinD EDB').length).toBeGreaterThan(0)
+        expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）。/)).toBeInTheDocument()
+      }
       expect(within(screen.getByRole('main')).queryByText('数据来源：Wind EDB。')).not.toBeInTheDocument()
       await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
     }
+
+    await user.click(screen.getByRole('button', { name: '打开美国美联储与金融条件模块' }))
+    expect(screen.getByRole('heading', { name: '联邦基金政策目标与实际利率' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '制度工具与隔夜市场利率' })).toBeInTheDocument()
+    expect(screen.getAllByText('Federal Reserve Economic Data (FRED)').length).toBeGreaterThan(0)
+    expect(screen.getByText(/数据来源：iFinD经济数据库（EDB）与美联储官方FRED序列。/)).toBeInTheDocument()
+    await user.click(screen.getAllByRole('button', { name: '返回宏观框架' })[0])
 
     await user.click(screen.getByRole('button', { name: '打开美国GDP与核算模块' }))
     expect(window.location.hash).toBe('#framework/us-growth')
