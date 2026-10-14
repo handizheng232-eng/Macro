@@ -91,11 +91,18 @@ type SectorMonitor = {
     id: string
     label: string
     values: Array<number | null>
-    recent12mAverage: number
-    baseline2018To2019: number
+    recent12mAverage: number | null
+    baseline2018To2019: number | null
+    parentId?: string | null
+    depth?: number
+    rowType?: 'total' | 'subtotal' | 'detail'
     source: SourceMeta
   }>
-  source: { provider: string; url: string }
+  source: { provider: string; url: string; fetchedAt?: string }
+  reconciliation?: {
+    note: string
+    checks: Array<{ id: string; label: string; values: number[]; tolerance: number }>
+  }
 }
 
 type AvailabilityItem = {
@@ -592,19 +599,28 @@ function heatColor(value: number | null, maxAbs: number): string {
   return value >= 0 ? `rgba(197,68,68,${alpha})` : `rgba(47,127,163,${alpha})`
 }
 
-function SectorMonitorTable({ table }: { table: SectorMonitor }) {
-  const maxAbs = Math.max(...table.rows.flatMap((row) => row.values.filter((value): value is number => value !== null).map(Math.abs)))
+export function SectorMonitorTable({ table }: { table: SectorMonitor }) {
+  const detailRows = table.rows.filter((row) => !row.rowType || row.rowType === 'detail')
+  const maxAbs = Math.max(0, ...detailRows.flatMap((row) => row.values.filter((value): value is number => value !== null).map(Math.abs)))
   const decimals = table.decimals ?? 0
+  const checks = table.reconciliation?.checks ?? []
+  const reconciled = checks.length > 0 && checks.every((check) => check.values.length === table.periods.length && check.values.every((value) => Number.isFinite(value) && Math.abs(value) <= check.tolerance + 1e-9))
   return (
     <article className="employment-heatmap-card">
       <header><div><span>{table.eyebrow ?? 'CES · INDUSTRY BREADTH'}</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>下降</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>上升</span></div></header>
       <div className="employment-heatmap-wrap">
         <table className="employment-heatmap sector-monitor-table" aria-label={table.ariaLabel ?? '行业就业广度与结构表'}>
           <thead><tr><th scope="col">行业</th>{table.periods.map((period) => <th scope="col" key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th scope="col">{table.recentLabel ?? '近12月均值'}</th><th scope="col">{table.baselineLabel ?? '2018—19基准'}</th><th scope="col">{table.codeLabel ?? 'iFinD指标码'}</th></tr></thead>
-          <tbody>{table.rows.map((row) => <tr key={row.id}><th scope="row">{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, decimals)}</td>)}<td className="sector-benchmark">{formatValue(row.recent12mAverage, Math.max(decimals, 1))}</td><td className="sector-benchmark">{formatValue(row.baseline2018To2019, Math.max(decimals, 1))}</td><td>{row.source.code}</td></tr>)}</tbody>
+          <tbody>{table.rows.map((row) => <tr key={row.id} className={`sector-row--${row.rowType ?? 'detail'}`} data-parent-id={row.parentId ?? undefined}><th scope="row" data-depth={row.depth ?? 0} style={{ paddingLeft: `${12 + (row.depth ?? 0) * 16}px` }}>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={row.rowType === 'total' || row.rowType === 'subtotal' ? undefined : { backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, decimals)}</td>)}<td className="sector-benchmark">{row.recent12mAverage === null ? '—' : formatValue(row.recent12mAverage, Math.max(decimals, 1))}</td><td className="sector-benchmark">{row.baseline2018To2019 === null ? '—' : formatValue(row.baseline2018To2019, Math.max(decimals, 1))}</td><td><a href={row.source.url} target="_blank" rel="noreferrer" title={row.source.name}>{row.source.code}</a></td></tr>)}</tbody>
         </table>
       </div>
-      <footer><strong>单位：{table.unit ?? '千人/月'}</strong><span>{table.note ?? '同一色阶按全表最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。'}</span><b>{table.source.provider}</b></footer>
+      <footer><strong>单位：{table.unit ?? '千人/月'}</strong><span>{table.note ?? '同一色阶按明细行最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。'}</span><b>{table.source.provider}</b>{table.source.fetchedAt && <span>行业数据取数时间：{formatSnapshotTime(table.source.fetchedAt)}（北京时间）；最新月份：{formatDate(`${table.periods[0]}01`).slice(0, 7)}</span>}</footer>
+      {table.reconciliation && <section className="employment-sector-reconciliation" aria-label="行业就业加总核验">
+        <h4>逐月加总与新增非农核验</h4>
+        <p>{table.reconciliation.note}</p>
+        <strong role="status">{reconciled ? '各项差额均在容差内' : '存在超容差差额'}</strong>
+        <div className="employment-heatmap-wrap"><table className="employment-heatmap" aria-label="行业就业逐月闭合核验表"><thead><tr><th scope="col">核验项（千人）</th>{table.periods.map((period) => <th scope="col" key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th scope="col">容差</th></tr></thead><tbody>{checks.map((check) => <tr key={check.id}><th scope="row">{check.label}</th>{check.values.map((value, index) => <td key={table.periods[index]} className={Math.abs(value) > check.tolerance + 1e-9 ? 'sector-check-failed' : undefined}>{formatValue(value, Math.max(decimals, 1))}</td>)}<td>±{formatValue(check.tolerance, Math.max(decimals, 1))}</td></tr>)}</tbody></table></div>
+      </section>}
     </article>
   )
 }
@@ -713,7 +729,7 @@ export function UsEmploymentDetail({ onBack }: { onBack: () => void }) {
       <section className="inflation-method-card employment-method-card" aria-label="就业数据口径">
         <div><span>06 · DATA CONTRACT</span><h2>iFinD + BLS 数据口径与可更新性</h2><p>月度就业、周度申领失业金、季度ECI、滞后发布的JOLTS与BLS行业时薪保留各自观测日期，不把不同发布日伪装成同一截至日。</p></div>
         <div className="cross-check-list">
-          <article><CheckCircle2 size={15} /><div><strong>源身份与量级核验</strong><span>构建脚本逐条核对iFinD指标码，并验证BLS CES行业时薪序列ID、美元/小时量级与月份完整性</span></div></article>
+          <article><CheckCircle2 size={15} /><div><strong>源身份与量级核验</strong><span>构建脚本核对iFinD指标码、BLS CES就业与时薪序列身份及单位；行业月增量逐月核对私营、政府与非农总计</span></div></article>
           <article><CheckCircle2 size={15} /><div><strong>缺口与异频处理</strong><span>{disclosedGaps}条月频序列存在至少一个日历月缺口；折线按实际间隔断开，周/月/季不按数组位置拼接</span></div></article>
           <article><CheckCircle2 size={15} /><div><strong>PPT只定义框架</strong><span>页面不沿用截图数值；{dataset.researchBasis[1]}</span></div></article>
         </div>

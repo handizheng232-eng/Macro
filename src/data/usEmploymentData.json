@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T02:07:10+00:00",
+  "generatedAt": "2026-10-14T02:03:59+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB",
@@ -44590,7 +44590,7 @@
       ],
       "sectorMonitor": {
         "title": "行业就业广度与结构表",
-        "description": "最近12个月逐月热度，并与2018—2019月均增量比较。",
+        "description": "完整私营行业与联邦、州、地方政府；最近12个月月增量与2018—2019完整24个月基准。",
         "periods": [
           "202609",
           "202608",
@@ -44607,8 +44607,113 @@
         ],
         "rows": [
           {
+            "id": "payroll_total",
+            "label": "非农总计",
+            "parentId": null,
+            "depth": 0,
+            "rowType": "total",
+            "values": [
+              29.0,
+              133.0,
+              -10.0,
+              31.0,
+              63.0,
+              148.0,
+              214.0,
+              -156.0,
+              160.0,
+              -17.0,
+              41.0,
+              -140.0
+            ],
+            "recent12mAverage": 41.33,
+            "baseline2018To2019": 177.96,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES0000000001",
+              "name": "All employees, thousands, seasonally adjusted: 非农总计",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES0000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "payroll_private",
+            "label": "私营部门总计",
+            "parentId": "payroll_total",
+            "depth": 1,
+            "rowType": "subtotal",
+            "values": [
+              46.0,
+              89.0,
+              28.0,
+              26.0,
+              61.0,
+              150.0,
+              202.0,
+              -148.0,
+              180.0,
+              -7.0,
+              72.0,
+              13.0
+            ],
+            "recent12mAverage": 59.33,
+            "baseline2018To2019": 163.71,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES0500000001",
+              "name": "All employees, thousands, seasonally adjusted: 私营部门总计",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES0500000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "payroll_goods",
+            "label": "商品生产",
+            "parentId": "payroll_private",
+            "depth": 2,
+            "rowType": "subtotal",
+            "values": [
+              18.0,
+              34.0,
+              35.0,
+              14.0,
+              3.0,
+              6.0,
+              33.0,
+              -21.0,
+              45.0,
+              -21.0,
+              25.0,
+              -20.0
+            ],
+            "recent12mAverage": 12.58,
+            "baseline2018To2019": 28.92,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES0600000001",
+              "name": "All employees, thousands, seasonally adjusted: 商品生产",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES0600000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
             "id": "sector_mining",
             "label": "采矿与伐木",
+            "parentId": "payroll_goods",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               -2.0,
               3.0,
@@ -44626,18 +44731,23 @@
             "recent12mAverage": 0.17,
             "baseline2018To2019": -0.04,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G004786718",
-              "name": "美国:新增非农就业人数:私营:生产:采矿和伐木业:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES1000000001",
+              "name": "All employees, thousands, seasonally adjusted: 采矿与伐木",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES1000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_construction",
             "label": "建筑业",
+            "parentId": "payroll_goods",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               11.0,
               16.0,
@@ -44655,18 +44765,23 @@
             "recent12mAverage": 9.08,
             "baseline2018To2019": 18.17,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G002600513",
-              "name": "美国:新增非农就业人数:私营:生产:建筑业:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES2000000001",
+              "name": "All employees, thousands, seasonally adjusted: 建筑业",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES2000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_manufacturing",
             "label": "制造业",
+            "parentId": "payroll_goods",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               9.0,
               15.0,
@@ -44684,18 +44799,91 @@
             "recent12mAverage": 3.33,
             "baseline2018To2019": 10.79,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G002600514",
-              "name": "美国:新增非农就业人数:私营:生产:制造业:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES3000000001",
+              "name": "All employees, thousands, seasonally adjusted: 制造业",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES3000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "payroll_services",
+            "label": "私人服务",
+            "parentId": "payroll_private",
+            "depth": 2,
+            "rowType": "subtotal",
+            "values": [
+              28.0,
+              55.0,
+              -7.0,
+              12.0,
+              58.0,
+              144.0,
+              169.0,
+              -127.0,
+              135.0,
+              14.0,
+              47.0,
+              33.0
+            ],
+            "recent12mAverage": 46.75,
+            "baseline2018To2019": 134.79,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES0800000001",
+              "name": "All employees, thousands, seasonally adjusted: 私人服务",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES0800000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_wholesale",
+            "label": "批发业",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
+            "values": [
+              5.0,
+              8.0,
+              6.3,
+              4.6,
+              2.5,
+              0.6,
+              -1.7,
+              8.4,
+              2.1,
+              -5.7,
+              -6.4,
+              2.8
+            ],
+            "recent12mAverage": 2.21,
+            "baseline2018To2019": 3.02,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4142000001",
+              "name": "All employees, thousands, seasonally adjusted: 批发业",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES4142000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_retail",
             "label": "零售业",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               5.8,
               -5.1,
@@ -44713,18 +44901,23 @@
             "recent12mAverage": 2.21,
             "baseline2018To2019": -7.94,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G002600516",
-              "name": "美国:新增非农就业人数:私营:服务:贸易、运输和公用事业:零售:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4200000001",
+              "name": "All employees, thousands, seasonally adjusted: 零售业",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES4200000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_transport",
             "label": "运输仓储",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               7.6,
               3.3,
@@ -44742,18 +44935,57 @@
             "recent12mAverage": -0.82,
             "baseline2018To2019": 19.93,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G004786785",
-              "name": "美国:新增非农就业人数:私营:服务:贸易、运输和公用事业:运输和仓储:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4300000001",
+              "name": "All employees, thousands, seasonally adjusted: 运输仓储",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES4300000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_utilities",
+            "label": "公用事业",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
+            "values": [
+              0.5,
+              2.1,
+              1.1,
+              0.2,
+              0.8,
+              1.0,
+              -0.5,
+              1.6,
+              0.2,
+              0.7,
+              1.9,
+              0.5
+            ],
+            "recent12mAverage": 0.84,
+            "baseline2018To2019": -0.27,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES4422000001",
+              "name": "All employees, thousands, seasonally adjusted: 公用事业",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES4422000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_information",
             "label": "信息业",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               -10.0,
               -18.0,
@@ -44771,18 +45003,23 @@
             "recent12mAverage": -10.0,
             "baseline2018To2019": 3.04,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G004786797",
-              "name": "美国:新增非农就业人数:私营:服务:信息咨询:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES5000000001",
+              "name": "All employees, thousands, seasonally adjusted: 信息业",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES5000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_financial",
             "label": "金融活动",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               -7.0,
               -9.0,
@@ -44800,18 +45037,23 @@
             "recent12mAverage": -8.92,
             "baseline2018To2019": 13.58,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G004786804",
-              "name": "美国:新增非农就业人数:私营:服务:金融活动:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES5500000001",
+              "name": "All employees, thousands, seasonally adjusted: 金融活动",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES5500000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_professional",
             "label": "专业商业服务",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               -9.0,
               -5.0,
@@ -44829,18 +45071,23 @@
             "recent12mAverage": 10.25,
             "baseline2018To2019": 29.29,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G002600517",
-              "name": "美国:新增非农就业人数:私营:服务:专业和商业:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES6000000001",
+              "name": "All employees, thousands, seasonally adjusted: 专业商业服务",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES6000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           },
           {
             "id": "sector_education_health",
-            "label": "教育保健",
+            "label": "私人教育与医疗服务",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
             "values": [
               20.0,
               38.0,
@@ -44858,19 +45105,618 @@
             "recent12mAverage": 43.0,
             "baseline2018To2019": 43.54,
             "source": {
-              "provider": "iFinD EDB",
-              "institution": "美国劳工局",
-              "code": "G002600518",
-              "name": "美国:新增非农就业人数:私营:服务:教育和保健:当月值:季调",
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES6500000001",
+              "name": "All employees, thousands, seasonally adjusted: 私人教育与医疗服务",
               "rawUnit": "千人",
-              "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "url": "https://data.bls.gov/timeseries/CES6500000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_leisure",
+            "label": "休闲与酒店业",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
+            "values": [
+              10.0,
+              37.0,
+              -38.0,
+              -54.0,
+              42.0,
+              -7.0,
+              44.0,
+              -31.0,
+              5.0,
+              25.0,
+              -12.0,
+              41.0
+            ],
+            "recent12mAverage": 5.17,
+            "baseline2018To2019": 25.92,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES7000000001",
+              "name": "All employees, thousands, seasonally adjusted: 休闲与酒店业",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES7000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_other",
+            "label": "其他服务",
+            "parentId": "payroll_services",
+            "depth": 3,
+            "rowType": "detail",
+            "values": [
+              6.0,
+              3.0,
+              6.0,
+              -7.0,
+              2.0,
+              11.0,
+              -14.0,
+              6.0,
+              3.0,
+              8.0,
+              16.0,
+              -6.0
+            ],
+            "recent12mAverage": 2.83,
+            "baseline2018To2019": 4.67,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES8000000001",
+              "name": "All employees, thousands, seasonally adjusted: 其他服务",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES8000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "payroll_government",
+            "label": "政府总计",
+            "parentId": "payroll_total",
+            "depth": 1,
+            "rowType": "subtotal",
+            "values": [
+              -17.0,
+              44.0,
+              -38.0,
+              5.0,
+              2.0,
+              -2.0,
+              12.0,
+              -8.0,
+              -20.0,
+              -10.0,
+              -31.0,
+              -153.0
+            ],
+            "recent12mAverage": -18.0,
+            "baseline2018To2019": 14.25,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES9000000001",
+              "name": "All employees, thousands, seasonally adjusted: 政府总计",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES9000000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_federal",
+            "label": "联邦政府",
+            "parentId": "payroll_government",
+            "depth": 2,
+            "rowType": "detail",
+            "values": [
+              -1.0,
+              -3.0,
+              1.0,
+              0.0,
+              4.0,
+              -1.0,
+              -7.0,
+              4.0,
+              -37.0,
+              -11.0,
+              -15.0,
+              -166.0
+            ],
+            "recent12mAverage": -19.33,
+            "baseline2018To2019": 1.79,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES9091000001",
+              "name": "All employees, thousands, seasonally adjusted: 联邦政府",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES9091000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_state",
+            "label": "州政府",
+            "parentId": "payroll_government",
+            "depth": 2,
+            "rowType": "detail",
+            "values": [
+              -3.0,
+              -7.0,
+              20.0,
+              -5.0,
+              -2.0,
+              0.0,
+              -4.0,
+              -6.0,
+              3.0,
+              -5.0,
+              -12.0,
+              -4.0
+            ],
+            "recent12mAverage": -2.08,
+            "baseline2018To2019": 3.83,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES9092000001",
+              "name": "All employees, thousands, seasonally adjusted: 州政府",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES9092000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+            }
+          },
+          {
+            "id": "sector_local",
+            "label": "地方政府",
+            "parentId": "payroll_government",
+            "depth": 2,
+            "rowType": "detail",
+            "values": [
+              -13.0,
+              54.0,
+              -59.0,
+              10.0,
+              0.0,
+              -1.0,
+              23.0,
+              -6.0,
+              14.0,
+              6.0,
+              -4.0,
+              17.0
+            ],
+            "recent12mAverage": 3.42,
+            "baseline2018To2019": 8.62,
+            "source": {
+              "provider": "BLS Public Data API",
+              "institution": "U.S. Bureau of Labor Statistics",
+              "code": "CES9093000001",
+              "name": "All employees, thousands, seasonally adjusted: 地方政府",
+              "rawUnit": "千人",
+              "url": "https://data.bls.gov/timeseries/CES9093000001",
+              "latestObservation": "202609",
+              "transform": "当月季调全体雇员水平减前一连续月份水平",
+              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
             }
           }
         ],
+        "unit": "千人",
+        "decimals": 1,
+        "codeLabel": "BLS CES序列",
+        "recentLabel": "近12月平均月增",
+        "baselineLabel": "2018—19月均增量",
+        "note": "BLS同批次CES全体雇员季调水平按连续月份差分。父级总计/小计与叶子行业分层展示，不重复加总；私人教育医疗不含政府教育，州/地方政府不再叠加教育细项。只允许官方发布水平舍入残差，逐月差额另列；非农总计与上方iFinD月度柱严格匹配，不与3个月均线比较。缺月拒绝更新，不缩短均值分母。",
+        "reconciliation": {
+          "checks": [
+            {
+              "id": "private-leaves",
+              "label": "私营叶子行业－私营总计",
+              "values": [
+                0.9,
+                -0.7,
+                0.3,
+                0.1,
+                0.1,
+                -0.5,
+                0.5,
+                0.2,
+                -0.4,
+                -0.4,
+                0.7,
+                -0.5
+              ],
+              "tolerance": 10.4
+            },
+            {
+              "id": "government-leaves",
+              "label": "联邦＋州＋地方－政府总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 4
+            },
+            {
+              "id": "nonfarm-total",
+              "label": "私营＋政府－非农总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 3
+            },
+            {
+              "id": "goods-subtotal",
+              "label": "商品生产叶子－商品生产小计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 4
+            },
+            {
+              "id": "services-subtotal",
+              "label": "私人服务叶子－私人服务小计",
+              "values": [
+                0.9,
+                -0.7,
+                0.3,
+                0.1,
+                0.1,
+                -0.5,
+                0.5,
+                0.2,
+                -0.4,
+                -0.4,
+                0.7,
+                -0.5
+              ],
+              "tolerance": 7.4
+            },
+            {
+              "id": "private-subtotals",
+              "label": "商品生产＋私人服务－私营总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 3
+            },
+            {
+              "id": "table-vs-payroll",
+              "label": "表中非农－iFinD月度柱（跨源修订差额）",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 0
+            }
+          ],
+          "baselinePeriods": [
+            "201801",
+            "201802",
+            "201803",
+            "201804",
+            "201805",
+            "201806",
+            "201807",
+            "201808",
+            "201809",
+            "201810",
+            "201811",
+            "201812",
+            "201901",
+            "201902",
+            "201903",
+            "201904",
+            "201905",
+            "201906",
+            "201907",
+            "201908",
+            "201909",
+            "201910",
+            "201911",
+            "201912"
+          ],
+          "baselineChecks": [
+            {
+              "id": "private-leaves",
+              "label": "私营叶子行业－私营总计",
+              "values": [
+                0.3,
+                -0.2,
+                -0.2,
+                0.9,
+                -0.7,
+                0.6,
+                -0.5,
+                0.4,
+                0.1,
+                0.0,
+                -0.3,
+                -0.5,
+                0.8,
+                -0.2,
+                -0.4,
+                0.3,
+                0.0,
+                0.1,
+                -0.3,
+                0.0,
+                0.0,
+                -0.2,
+                0.0,
+                0.0
+              ],
+              "tolerance": 10.4
+            },
+            {
+              "id": "government-leaves",
+              "label": "联邦＋州＋地方－政府总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 4
+            },
+            {
+              "id": "nonfarm-total",
+              "label": "私营＋政府－非农总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 3
+            },
+            {
+              "id": "goods-subtotal",
+              "label": "商品生产叶子－商品生产小计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 4
+            },
+            {
+              "id": "services-subtotal",
+              "label": "私人服务叶子－私人服务小计",
+              "values": [
+                0.3,
+                -0.2,
+                -0.2,
+                0.9,
+                -0.7,
+                0.6,
+                -0.5,
+                0.4,
+                0.1,
+                0.0,
+                -0.3,
+                -0.5,
+                0.8,
+                -0.2,
+                -0.4,
+                0.3,
+                0.0,
+                0.1,
+                -0.3,
+                0.0,
+                0.0,
+                -0.2,
+                0.0,
+                0.0
+              ],
+              "tolerance": 7.4
+            },
+            {
+              "id": "private-subtotals",
+              "label": "商品生产＋私人服务－私营总计",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 3
+            },
+            {
+              "id": "table-vs-payroll",
+              "label": "表中非农－iFinD月度柱（跨源修订差额）",
+              "values": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              "tolerance": 0
+            }
+          ],
+          "note": "差额单位：千人。容差为发布水平舍入导致的最坏界：月差涉及两期，容差=各子项水平最小刻度之和+父项刻度；总量/超级行业为1千人，批发/零售/运输仓储/公用事业为0.1千人。私营叶子10.4、政府4、私营+政府3、商品4、服务7.4、私营小计3千人；跨源图表必须严格为0。超标拒绝更新，不倒填其他行业；2018—19逐月同样验收。"
+        },
         "source": {
-          "provider": "iFinD EDB",
-          "url": "https://ft.51ifind.com"
+          "provider": "BLS Public Data API",
+          "url": "https://www.bls.gov/ces/",
+          "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json",
+          "fetchedAt": "2026-10-14T01:57:40.928203+00:00",
+          "classificationUrl": "https://www.bls.gov/webapps/legacy/cesbtab1.htm",
+          "aggregationUrl": "https://www.bls.gov/web/empsit/cesfaq.htm"
         }
       }
     },
@@ -72699,14 +73545,15 @@
       "diffusion_3m": [],
       "adp_private_change": []
     },
-    "note": "主体时序来自iFinD EDB；分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"
+    "note": "主体时序来自iFinD EDB；完整行业就业结构及分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"
   },
   "researchBasis": [
     "页面信息架构依据《美国宏观数据培训【0829定稿】》第一章就业市场路线图与图表说明重建。",
     "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"
   ],
   "rawSnapshots": {
-    "ifind": "E:\\HermesProject\\Macro-daily-refresh\\data\\raw\\ifind-us-employment\\20261009T010054+0000_ifind_employment.json",
-    "blsSectorWages": "E:\\HermesProject\\Macro-fix-employment-interaction\\data\\raw\\ifind-us-employment\\20261009T020154+0000_bls_sector_wages.json"
+    "ifind": "data/raw/ifind-us-employment/20261009T010054+0000_ifind_employment.json",
+    "blsSectorWages": "data/raw/ifind-us-employment/20261009T020154+0000_bls_sector_wages.json",
+    "blsSectorEmployment": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
   }
 }

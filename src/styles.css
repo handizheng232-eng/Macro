@@ -857,6 +857,16 @@ td:last-child { color: var(--subtle); }
 .employment-heatmap { min-width: 1260px; table-layout: fixed; }
 .sector-monitor-table { min-width: 1500px; }
 .sector-monitor-table tbody td.sector-benchmark { background: #f4f6f8; color: #26313b; }
+.sector-monitor-table .sector-row--total > th, .sector-monitor-table .sector-row--total > td { background: #e0eaf3; font-weight: 700; border-top: 2px solid #70899e; }
+.sector-monitor-table .sector-row--subtotal > th, .sector-monitor-table .sector-row--subtotal > td { background: #eef3f7; font-weight: 700; border-top: 1px solid #afbecb; }
+.sector-monitor-table:has([data-depth="2"]) thead th:first-child { width: 260px; }
+.employment-sector-reconciliation { padding: 16px; border-top: 1px solid #cbd5df; }
+.employment-sector-reconciliation h4 { margin: 0 0 8px; font-size: 15px; }
+.employment-sector-reconciliation p { margin: 0 0 8px; line-height: 1.7; color: #52606b; }
+.employment-sector-reconciliation > strong { display: block; margin-bottom: 12px; font-size: 12px; }
+.employment-sector-reconciliation .employment-heatmap thead th:first-child { width: 300px; }
+.employment-sector-reconciliation .employment-heatmap tbody th { white-space: normal; }
+.employment-sector-reconciliation .sector-check-failed { color: #a2191f; background: #fff1f1; font-weight: 700; }
 .employment-heatmap thead th { height: 36px; padding: 0 7px; color: #4e5863; background: #e9edf1; border-right: 1px solid #dce1e5; border-bottom: 1px solid #d4d9de; font: 8px 'IBM Plex Mono', monospace; font-weight: 500; text-align: center; white-space: nowrap; }
 .employment-heatmap thead th:first-child { width: 150px; text-align: left; }
 .employment-heatmap thead th:last-child { width: 104px; }

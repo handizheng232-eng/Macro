@@ -21,8 +21,10 @@ from typing import Any, Iterable
 
 try:
     from scripts.ifind_history import assert_full_history, metadata_start_date
+    from scripts.employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError
 except ModuleNotFoundError:
     from ifind_history import assert_full_history, metadata_start_date
+    from employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usEmploymentData.json"
@@ -629,6 +631,8 @@ def build_dataset(
     raw_snapshot: str,
     bls_payload: dict[str, Any],
     bls_snapshot: str,
+    sector_payload: dict[str, Any],
+    sector_snapshot: str,
 ) -> dict[str, Any]:
     parsed = {
         key: fetch_response_series(item["payload"], SERIES_SPEC[key][0])
@@ -1016,20 +1020,7 @@ def build_dataset(
         ),
     }
 
-    sector_periods = list(dict.fromkeys(date[:6] for date in reversed(payroll_dates)))[:12]
-    sector_rows = []
-    for key in SECTOR_KEYS:
-        dates, values = parsed[key]
-        value_map = {date[:6]: value for date, value in zip(dates, values)}
-        recent = [value_map[period] for period in sector_periods if period in value_map]
-        baseline = [value for date, value in zip(dates, values) if "201801" <= date[:6] <= "201912"]
-        sector_rows.append({
-            "id": key, "label": SERIES_SPEC[key][2],
-            "values": [round(value_map[period], 2) if period in value_map else None for period in sector_periods],
-            "recent12mAverage": round(statistics.fmean(recent), 2),
-            "baseline2018To2019": round(statistics.fmean(baseline), 2),
-            "source": source_meta(key, dates[-1]),
-        })
+    sector_monitor = build_sector_monitor(sector_payload, payroll_dates, payroll_values, sector_snapshot)
 
     wage_mom: dict[str, tuple[list[str], list[float]]] = {}
     for key, (code, _label) in BLS_SECTOR_WAGE_SPEC.items():
@@ -1141,7 +1132,7 @@ def build_dataset(
             "officialSurveys": {
                 "title": "官方双调查", "description": "CES回答岗位的量、强度和价格；CPS回答人的就业状态、参与和结构。",
                 "charts": official_charts,
-                "sectorMonitor": {"title": "行业就业广度与结构表", "description": "最近12个月逐月热度，并与2018—2019月均增量比较。", "periods": sector_periods, "rows": sector_rows, "source": {"provider": "iFinD EDB", "url": "https://ft.51ifind.com"}},
+                "sectorMonitor": sector_monitor,
             },
             "flows": {"title": "流量与周频", "description": "用JOLTS刻画岗位与人员流量，用初请/续请补足月度数据之间的高频真空。", "charts": [claims, vu_wage, jolts]},
             "wages": {"title": "工资三口径", "description": "快读AHE、确认ECI、理解个体工资用Atlanta；再用分行业时薪环比识别工资压力来自哪些行业。", "charts": [wage_three], "wageSectorMonitor": wage_sector_monitor},
@@ -1157,10 +1148,47 @@ def build_dataset(
                 ],
             },
         },
-        "dataQuality": {"monthlyMissingPeriods": monthly_missing, "note": "主体时序来自iFinD EDB；分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"},
+        "dataQuality": {"monthlyMissingPeriods": monthly_missing, "note": "主体时序来自iFinD EDB；完整行业就业结构及分行业平均时薪来自BLS Public Data API。月、周、季频与JOLTS保留各自观测日期，派生指标均在构建脚本中确定性计算。"},
         "researchBasis": ["页面信息架构依据《美国宏观数据培训【0829定稿】》第一章就业市场路线图与图表说明重建。", "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"],
-        "rawSnapshots": {"ifind": raw_snapshot, "blsSectorWages": bls_snapshot},
+        "rawSnapshots": {"ifind": raw_snapshot, "blsSectorWages": bls_snapshot, "blsSectorEmployment": sector_snapshot},
     }
+
+
+def load_archived_input(path: Path, raw_dir: Path) -> tuple[dict[str, Any], str]:
+    """Keep replay originals in ignored repo storage, never point at scratch/worktrees."""
+    import hashlib
+    raw_root = (REPO_ROOT / "data" / "raw").resolve()
+    raw_dir = raw_dir.resolve()
+    raw_dir.relative_to(raw_root)
+    source = path.resolve()
+    content = source.read_bytes()
+    payload = json.loads(content.decode("utf-8"))
+    if source.is_relative_to(raw_root):
+        target = source
+    else:
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        target = raw_dir / f"{hashlib.sha256(content).hexdigest()[:16]}_{source.name}"
+        if not target.exists():
+            target.write_bytes(content)
+        elif target.read_bytes() != content:
+            raise ValueError(f"Raw archive collision: {target.name}")
+    return payload, target.relative_to(REPO_ROOT.resolve()).as_posix()
+
+
+def publish_dataset(dataset: dict[str, Any], output: Path) -> None:
+    """Do not truncate the last valid snapshot, even on serialization/I/O failure."""
+    import tempfile
+    content = json.dumps(dataset, ensure_ascii=False, indent=2, allow_nan=False)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=output.parent, prefix=f".{output.name}.", suffix=".tmp", delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(content)
+        temporary.replace(output)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
 
 
 def main() -> None:
@@ -1169,12 +1197,14 @@ def main() -> None:
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
     parser.add_argument("--input", type=Path, help="Use a saved raw iFinD bundle instead of fetching.")
     parser.add_argument("--bls-input", type=Path, help="Use a saved BLS sector-wage response instead of fetching.")
+    parser.add_argument("--sector-input", type=Path, help="Replay a saved BLS employment-level batch; otherwise fetch it live.")
     args = parser.parse_args()
+    args.raw_dir = args.raw_dir.resolve()
+    args.raw_dir.relative_to((REPO_ROOT / "data" / "raw").resolve())
 
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     if args.input:
-        raw = json.loads(args.input.read_text(encoding="utf-8"))
-        raw_snapshot = str(args.input)
+        raw, raw_snapshot = load_archived_input(args.input, args.raw_dir)
     else:
         token, log_file = read_token()
         print(f"read iFinD session from {log_file.name}")
@@ -1187,8 +1217,7 @@ def main() -> None:
         print(f"raw saved to {raw_path}")
 
     if args.bls_input:
-        bls_payload = json.loads(args.bls_input.read_text(encoding="utf-8"))
-        bls_snapshot = str(args.bls_input)
+        bls_payload, bls_snapshot = load_archived_input(args.bls_input, args.raw_dir)
     else:
         bls_payload = fetch_bls_sector_wages()
         args.raw_dir.mkdir(parents=True, exist_ok=True)
@@ -1198,9 +1227,22 @@ def main() -> None:
         bls_snapshot = str(bls_path.relative_to(REPO_ROOT)).replace("\\", "/")
         print(f"BLS sector wages raw saved to {bls_path}")
 
-    dataset = build_dataset(raw, generated_at, raw_snapshot, bls_payload, bls_snapshot)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(dataset, ensure_ascii=False, indent=2), encoding="utf-8")
+    args.raw_dir.mkdir(parents=True, exist_ok=True)
+    stamp = generated_at.replace(":", "").replace("-", "")
+    if args.sector_input:
+        sector_payload, sector_snapshot = load_archived_input(args.sector_input, args.raw_dir)
+    else:
+        sector_payload = fetch_sector_levels()
+        sector_path = args.raw_dir / f"{stamp}_bls_sector_employment.json"
+        sector_path.write_text(json.dumps(sector_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        sector_snapshot = sector_path.relative_to(REPO_ROOT).as_posix()
+    try:
+        dataset = build_dataset(raw, generated_at, raw_snapshot, bls_payload, bls_snapshot, sector_payload, sector_snapshot)
+    except ReconciliationError as error:
+        failure_path = args.raw_dir / f"{stamp}_sector_reconciliation_failed.json"
+        failure_path.write_text(json.dumps({"error": str(error), "rawSnapshots": {"ifind": raw_snapshot, "blsSectorEmployment": sector_snapshot}, "reconciliation": error.reconciliation}, ensure_ascii=False, indent=2), encoding="utf-8")
+        raise
+    publish_dataset(dataset, args.output)
     print(f"wrote {args.output}")
     print(f"headline: {len(dataset['headline'])}")
     print(f"charts: {sum(len(section.get('charts', [])) for section in dataset['sections'].values())}")

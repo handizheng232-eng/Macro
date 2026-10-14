@@ -11,8 +11,7 @@ it.each(['usEmploymentData.json', 'usLateModulesData.json'])('public build strip
   const source = beforeBytes.toString('utf8')
   const before = JSON.parse(source)
   const transformed = redactArchiveMetadata(source, `/work/src/data/${filename}`)
-  expect(transformed).not.toBeNull()
-  const after = JSON.parse(transformed!)
+  const after = JSON.parse(transformed ?? source)
   const expected = structuredClone(before)
   let changed = 0
   for (const [key, value] of Object.entries(expected.rawSnapshots)) {
@@ -21,7 +20,8 @@ it.each(['usEmploymentData.json', 'usLateModulesData.json'])('public build strip
       changed += 1
     }
   }
-  expect(changed).toBe(2)
+  if (changed > 0) expect(transformed).not.toBeNull()
+  else expect(transformed).toBeNull()
   expect(sha256(JSON.stringify(after))).toBe(sha256(JSON.stringify(expected)))
   expect(sha256(readFileSync(path))).toBe(sha256(beforeBytes))
 })
@@ -36,4 +36,11 @@ it('never silently changes the approved third or either prior replay JSON', () =
 it('preserves public URLs, relative references and observation dates', () => {
   const source = JSON.stringify({ rawSnapshots: { official: 'https://www.federalreserve.gov/releases/h41/', relative: 'data/raw/snapshot.json' }, date: '2025-12-31', value: 81.67 })
   expect(redactArchiveMetadata(source, '/work/src/data/usLateModulesData.json')).toBeNull()
+})
+
+it('redacts absolute archive paths even when the live dataset has migrated to relative paths', () => {
+  const source = JSON.stringify({ rawSnapshots: { a: 'E:/private/a.json', b: 'C:\\private\\b.json', relative: 'data/raw/snapshot.json' }, values: [1, 2] })
+  const transformed = redactArchiveMetadata(source, '/work/src/data/usEmploymentData.json')
+  expect(transformed).not.toBeNull()
+  expect(JSON.parse(transformed!)).toEqual({ rawSnapshots: { a: null, b: null, relative: 'data/raw/snapshot.json' }, values: [1, 2] })
 })

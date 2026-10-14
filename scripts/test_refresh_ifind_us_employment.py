@@ -184,13 +184,26 @@ class IfindEmploymentDatasetContractTests(unittest.TestCase):
     def test_sector_monitor_has_recent_heatmap_and_pre_pandemic_benchmark(self):
         table = self.dataset["sections"]["officialSurveys"]["sectorMonitor"]
         self.assertEqual(len(table["periods"]), 12)
-        self.assertEqual(len(table["rows"]), 9)
+        self.assertEqual(len(table["rows"]), 21)
+        self.assertEqual(table["decimals"], 1)
+        self.assertEqual(table["codeLabel"], "BLS CES序列")
+        self.assertTrue(table["reconciliation"]["checks"])
+        rows = {row["id"]: row for row in table["rows"]}
+        self.assertEqual(rows["payroll_total"]["rowType"], "total")
+        self.assertIsNone(rows["payroll_total"]["parentId"])
+        self.assertEqual(rows["sector_federal"]["parentId"], "payroll_government")
+        chart = next(c for c in self.charts() if c["id"] == "payroll-momentum")
+        monthly = dict(zip((d[:6] for d in chart["series"][0]["dates"]), chart["series"][0]["values"]))
+        self.assertEqual(rows["payroll_total"]["values"], [monthly[p] for p in table["periods"]])
+        for check in table["reconciliation"]["checks"]:
+            self.assertEqual(len(check["values"]), 12)
+            self.assertLessEqual(max(map(abs, check["values"])), check["tolerance"])
         self.assertEqual(table["periods"], sorted(table["periods"], reverse=True))
         for row in table["rows"]:
             self.assertEqual(len(row["values"]), 12)
             self.assertTrue(math.isfinite(row["recent12mAverage"]))
             self.assertTrue(math.isfinite(row["baseline2018To2019"]))
-            self.assertRegex(row["source"]["code"], r"^[A-Z]\d+$")
+            self.assertRegex(row["source"]["code"], r"^CES\d{10}$")
 
     def test_wage_section_has_nine_industry_hourly_earnings_mom_rows(self):
         monitor = self.dataset["sections"]["wages"]["wageSectorMonitor"]
