@@ -2,3 +2,4 @@
 # Their publication receipts bind the original UTF-8 bytes, including line ends.
 src/data/historyReplay.json -text
 src/data/historyReplayHawkishTransition.json -text
+src/data/historyReplayRenewedEasingQtEnd.json -text

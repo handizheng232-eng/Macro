@@ -37,6 +37,10 @@ jobs:
         run: |
           node --test scripts/test_verify_replay_publish.mjs
           node scripts/verify_replay_publish.mjs --public-receipt release/replay-publication.json
+      - name: Verify approved renewed-easing replay publication
+        run: |
+          python -B -m unittest discover -s scripts -p 'test_verify_renewed_easing_publish.py' -v
+          python -B scripts/verify_renewed_easing_publish.py --receipt release/replay-renewed-easing-publication.json --dist dist
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import { publicArchiveMetadata } from './buildPlugins/publicArchiveMetadata.ts'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), publicArchiveMetadata()],
   base: '/Macro/',
   test: {
     globals: true,

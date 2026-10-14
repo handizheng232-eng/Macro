@@ -23,13 +23,15 @@ import {
 import { UsMacroDetail } from './usMacro'
 import { HistoryReplay } from './historyReplay'
 import hawkishReplayData from './data/historyReplayHawkishTransition.json'
+import renewedEasingReplayData from './data/historyReplayRenewedEasingQtEnd.json'
 
 type PageId = 'today' | 'framework' | 'themes' | 'history' | 'methods'
-type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition'
+type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end'
 
 function historyReplayStageFromHash(hash: string): HistoryReplayStage | null {
   if (hash === '#history/easing-to-tightening/policy-reversal') return 'policy-reversal'
   if (hash === '#history/easing-to-tightening/hawkish-transition') return 'hawkish-transition'
+  if (hash === '#history/easing-to-tightening/renewed-easing-qt-end') return 'renewed-easing-qt-end'
   return null
 }
 
@@ -482,8 +484,8 @@ function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onO
                   <div><span>复盘问题</span><p>{subperiod.question}</p></div>
                   <a href={subperiod.source} target="_blank" rel="noreferrer">{subperiod.sourceLabel} ↗</a>
                 </div>
-                {(subperiod.number === '10.4' || subperiod.number === '10.5') && (
-                  <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
+                {(subperiod.number === '10.3' || subperiod.number === '10.4' || subperiod.number === '10.5') && (
+                  <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.3' ? 'renewed-easing-qt-end' : subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
                     进入{subperiod.title}研究工作台 <ChevronRight size={16} />
                   </button>
                 )}
@@ -923,7 +925,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} onBack={openRecentHistory} data={historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} onBack={openRecentHistory} data={historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (

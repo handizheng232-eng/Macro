@@ -50,19 +50,21 @@ it.each(switchCases)('$event：从$from.label切页时截止、检索和展开�
     }).length}`)
 })
 
-it('真实back/forward在总览、父阶段、新子页间往返，主导航离开卸载工作台', async () => {
+async function traverse(direction: 'back' | 'forward') {
+  await act(async () => {
+    const navigated = new Promise<void>((resolve) => window.addEventListener('popstate', () => resolve(), { once: true }))
+    window.history[direction]()
+    await navigated
+  })
+}
+
+it('真实back/forward在总览、父阶段、新子页间往返', async () => {
   const user = userEvent.setup()
   window.history.replaceState(null, '', '#history')
   render(<App />)
   await user.click(screen.getByRole('button', { name: '进入当前阶段细分复盘' }))
   await user.click(screen.getByRole('button', { name: '进入鹰派换届与反转酝酿研究工作台' }))
-  const traverse = async (direction: 'back' | 'forward') => {
-    await act(async () => {
-      const navigated = new Promise<void>((resolve) => window.addEventListener('popstate', () => resolve(), { once: true }))
-      window.history[direction]()
-      await navigated
-    })
-  }
+
   await traverse('back')
   expect(window.location.hash).toBe(parentHash)
   expect(screen.getByRole('heading', { name: '细分时段复盘' })).toBeInTheDocument()
@@ -75,6 +77,12 @@ it('真实back/forward在总览、父阶段、新子页间往返，主导航离�
   expect(window.location.hash).toBe(hawkishHash)
   expect(screen.getByRole('article', { name: '鹰派换届研究工作台' })).toBeInTheDocument()
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细']) expect(screen.getByLabelText(label)).not.toHaveAttribute('open')
+})
+
+it('主导航离开卸载工作台，真实back恢复鹰派子页与资料截止日', async () => {
+  const user = userEvent.setup()
+  window.history.replaceState(null, '', hawkishHash)
+  render(<App />)
   await user.click(screen.getByRole('button', { name: '今日总览' }))
   expect(screen.queryByRole('article', { name: '鹰派换届研究工作台' })).not.toBeInTheDocument()
   expect(screen.queryByLabelText('按日期截止查看')).not.toBeInTheDocument()
