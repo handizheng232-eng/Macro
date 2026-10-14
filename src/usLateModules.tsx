@@ -52,13 +52,13 @@ function ResearchChart({ chart }: { chart: ChartDefinition }) {
   const [hoverTimestamp, setHoverTimestamp] = useState<number | null>(null)
   const latestTimestamp = Math.max(...chart.series.flatMap((item) => item.dates.map(dateToTimestamp)))
   const cutoff = cutoffFor(range, latestTimestamp)
-  const visible = useMemo(() => chart.series.map((item) => ({ ...item, points: item.dates.map((date, index) => ({ date, timestamp: dateToTimestamp(date), value: item.values[index] })).filter((point) => point.timestamp >= cutoff) })).filter((item) => active[item.id]), [active, chart.series, cutoff])
+  const visible = useMemo(() => chart.series.map((item) => ({ ...item, points: item.dates.map((date, index) => ({ date, timestamp: dateToTimestamp(date), value: item.values[index] })).filter((point) => point.timestamp >= cutoff) })).filter((item) => active[item.id] && item.points.length > 0), [active, chart.series, cutoff])
   const timestamps = visible.flatMap((item) => item.points.map((point) => point.timestamp))
-  const minTimestamp = Math.min(...timestamps); const maxTimestamp = Math.max(...timestamps)
+  const minTimestamp = timestamps.length ? Math.min(...timestamps) : latestTimestamp; const maxTimestamp = timestamps.length ? Math.max(...timestamps) : latestTimestamp
   const plotWidth = width - left - right; const plotHeight = height - top - bottom
   const x = (timestamp: number) => left + (timestamp - minTimestamp) / Math.max(maxTimestamp - minTimestamp, 1) * plotWidth
   const allValues = visible.flatMap((item) => item.points.map((point) => point.value)); if (typeof chart.reference === 'number') allValues.push(chart.reference)
-  const rawMin = Math.min(...allValues); const rawMax = Math.max(...allValues); const padding = Math.max((rawMax - rawMin) * .12, Math.abs(rawMax || 1) * .02, .15)
+  const rawMin = allValues.length ? Math.min(...allValues) : 0; const rawMax = allValues.length ? Math.max(...allValues) : 1; const padding = Math.max((rawMax - rawMin) * .12, Math.abs(rawMax || 1) * .02, .15)
   const minValue = rawMin - padding; const maxValue = rawMax + padding
   const y = (value: number) => top + (maxValue - value) / Math.max(maxValue - minValue, .001) * plotHeight
   const xTicks = Array.from({ length: 6 }, (_, index) => minTimestamp + index / 5 * (maxTimestamp - minTimestamp))
@@ -71,14 +71,14 @@ function ResearchChart({ chart }: { chart: ChartDefinition }) {
   return <article className="employment-chart-card gdp-chart-card consumption-chart-card late-module-chart-card">
     <header><div><span>{chart.eyebrow}</span><h3>{chart.title}</h3><p>{chart.description}</p></div><div className="range-switch" role="group" aria-label={`${chart.title}时间范围`}>{RANGE_OPTIONS.map((option) => <button className={range === option.key ? 'active' : ''} key={option.key} type="button" onClick={() => setRange(option.key)}>{option.label}</button>)}</div></header>
     <div className="series-switches" role="group" aria-label={`${chart.title}序列开关`}>{chart.series.map((item) => <button aria-pressed={active[item.id]} className={active[item.id] ? 'active' : ''} key={item.id} type="button" onClick={() => toggle(item.id)}><i style={{ background: item.color }} /><span>{item.label}</span><strong>{chartValue(item.latestValue, item.unit)}</strong><small>{formatDate(item.latestObservation)}</small></button>)}</div>
-    <div className="multi-chart-wrap"><svg className="multi-series-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${chart.title}折线图`} onPointerLeave={() => setHoverTimestamp(null)} onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); const svgX = (event.clientX - bounds.left) / bounds.width * width; setHoverTimestamp(minTimestamp + Math.min(1, Math.max(0, (svgX - left) / plotWidth)) * (maxTimestamp - minTimestamp)) }}>
+    <div className="multi-chart-wrap">{visible.length === 0 ? <p role="status">当前区间内所选序列无数据</p> : <svg className="multi-series-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${chart.title}折线图`} onPointerLeave={() => setHoverTimestamp(null)} onPointerMove={(event) => { const bounds = event.currentTarget.getBoundingClientRect(); if (!bounds.width) return; const svgX = (event.clientX - bounds.left) / bounds.width * width; setHoverTimestamp(minTimestamp + Math.min(1, Math.max(0, (svgX - left) / plotWidth)) * (maxTimestamp - minTimestamp)) }}>
       {yTicks.map((tick) => <g key={tick}><line x1={left} x2={width - right} y1={y(tick)} y2={y(tick)} className="chart-grid-line" /><text x={left - 9} y={y(tick) + 4} textAnchor="end" className="chart-axis-text">{formatValue(tick)}</text></g>)}
       <text x={left} y={12} className="employment-axis-label gdp-axis-unit">{chart.unit}</text>
       {xTicks.map((tick) => <text key={tick} x={x(tick)} y={height - 11} textAnchor="middle" className="chart-axis-text">{timestampLabel(tick)}</text>)}
       {typeof chart.reference === 'number' && chart.reference >= minValue && chart.reference <= maxValue && <line x1={left} x2={width - right} y1={y(chart.reference)} y2={y(chart.reference)} className="chart-reference-line" />}
       {visible.map((item) => <path key={item.id} d={path(item)} fill="none" stroke={item.color} strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" />)}
       {hoverTimestamp !== null && <line className="employment-hover-line" x1={x(hoverTimestamp)} x2={x(hoverTimestamp)} y1={top} y2={height - bottom} />}
-    </svg></div><small className="gdp-chart-scroll-hint">图表可横向滑动查看完整区间</small>
+    </svg>}</div><small className="gdp-chart-scroll-hint">图表可横向滑动查看完整区间</small>
     <div className="chart-readout" aria-live="polite">{hoverRows.length ? hoverRows.map(({ item, point }) => <span key={item.id}><i style={{ background: item.color }} />{item.label}<strong>{chartValue(point.value, item.unit)}</strong><small>{formatDate(point.date)}</small></span>) : <span className="chart-readout-hint">移动鼠标读取各序列同一时点附近的数值</span>}</div>
     <footer><div className="chart-source-list">{chart.series.map((item) => <a href={item.source.url} key={item.id} target="_blank" rel="noreferrer"><strong>{item.label}</strong><span>{item.source.institution} · {item.source.code}</span><small>{item.transformLabel || item.source.rawUnit}</small><small>发布时点：{macroReleaseTiming(item.source, item.frequency)}</small></a>)}</div></footer>
     <div className="employment-explanation"><div><span>数据是什么</span><p>{chart.explanation.what}</p></div><div><span>怎么读</span><p>{chart.explanation.howToRead}</p></div><div><span>口径警示</span><p>{chart.explanation.caveat}</p></div><small>{chart.explanation.pptSlide}</small></div>
