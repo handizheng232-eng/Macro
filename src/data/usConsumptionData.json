@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T01:01:53+00:00",
+  "generatedAt": "2026-10-15T00:19:34+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -22467,6 +22467,6 @@
     "PPT定义研究顺序与解释；所有可更新时序均由iFinD EDB重新提取，静态案例和不可得项明确隔离。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-consumption/20261009T010153+0000_ifind_consumption.json"
+    "ifind": "data/raw/daily-refresh/20261015T081630+0800/consumption/20261015T001934+0000_ifind_consumption.json"
   }
 }

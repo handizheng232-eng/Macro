@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T02:03:59+00:00",
+  "generatedAt": "2026-10-15T00:17:51+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB",
@@ -44637,7 +44637,7 @@
               "url": "https://data.bls.gov/timeseries/CES0000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44671,7 +44671,7 @@
               "url": "https://data.bls.gov/timeseries/CES0500000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44705,7 +44705,7 @@
               "url": "https://data.bls.gov/timeseries/CES0600000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44739,7 +44739,7 @@
               "url": "https://data.bls.gov/timeseries/CES1000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44773,7 +44773,7 @@
               "url": "https://data.bls.gov/timeseries/CES2000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44807,7 +44807,7 @@
               "url": "https://data.bls.gov/timeseries/CES3000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44841,7 +44841,7 @@
               "url": "https://data.bls.gov/timeseries/CES0800000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44875,7 +44875,7 @@
               "url": "https://data.bls.gov/timeseries/CES4142000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44909,7 +44909,7 @@
               "url": "https://data.bls.gov/timeseries/CES4200000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44943,7 +44943,7 @@
               "url": "https://data.bls.gov/timeseries/CES4300000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -44977,7 +44977,7 @@
               "url": "https://data.bls.gov/timeseries/CES4422000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45011,7 +45011,7 @@
               "url": "https://data.bls.gov/timeseries/CES5000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45045,7 +45045,7 @@
               "url": "https://data.bls.gov/timeseries/CES5500000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45079,7 +45079,7 @@
               "url": "https://data.bls.gov/timeseries/CES6000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45113,7 +45113,7 @@
               "url": "https://data.bls.gov/timeseries/CES6500000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45147,7 +45147,7 @@
               "url": "https://data.bls.gov/timeseries/CES7000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45181,7 +45181,7 @@
               "url": "https://data.bls.gov/timeseries/CES8000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45215,7 +45215,7 @@
               "url": "https://data.bls.gov/timeseries/CES9000000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45249,7 +45249,7 @@
               "url": "https://data.bls.gov/timeseries/CES9091000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45283,7 +45283,7 @@
               "url": "https://data.bls.gov/timeseries/CES9092000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           },
           {
@@ -45317,7 +45317,7 @@
               "url": "https://data.bls.gov/timeseries/CES9093000001",
               "latestObservation": "202609",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
             }
           }
         ],
@@ -45713,8 +45713,8 @@
         "source": {
           "provider": "BLS Public Data API",
           "url": "https://www.bls.gov/ces/",
-          "rawSnapshot": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json",
-          "fetchedAt": "2026-10-14T01:57:40.928203+00:00",
+          "rawSnapshot": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json",
+          "fetchedAt": "2026-10-15T00:18:27.127636+00:00",
           "classificationUrl": "https://www.bls.gov/webapps/legacy/cesbtab1.htm",
           "aggregationUrl": "https://www.bls.gov/web/empsit/cesfaq.htm"
         }
@@ -73552,8 +73552,8 @@
     "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-employment/20261009T010054+0000_ifind_employment.json",
-    "blsSectorWages": "data/raw/ifind-us-employment/20261009T020154+0000_bls_sector_wages.json",
-    "blsSectorEmployment": "data/raw/ifind-us-employment/20261014T015740+0000_bls_sector_employment.json"
+    "ifind": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_ifind_employment.json",
+    "blsSectorWages": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_wages.json",
+    "blsSectorEmployment": "data/raw/daily-refresh/20261015T081630+0800/employment/20261015T001751+0000_bls_sector_employment.json"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T23:29:12+00:00",
+  "generatedAt": "2026-10-15T00:22:13+00:00",
   "source": "iFinD EDB + Federal Reserve Economic Data (FRED)",
   "sourceProviders": [
     "iFinD EDB",
@@ -15412,7 +15412,8 @@
                     "20260531",
                     "20260630",
                     "20260731",
-                    "20260831"
+                    "20260831",
+                    "20260930"
                   ],
                   "values": [
                     523.0,
@@ -15746,13 +15747,14 @@
                     419.0,
                     413.0,
                     406.0,
-                    398.0
+                    393.0,
+                    399.0
                   ],
                   "color": "#da1e28",
                   "unit": "万套",
                   "frequency": "月",
-                  "latestValue": 398.0,
-                  "latestObservation": "20260831",
+                  "latestValue": 399.0,
+                  "latestObservation": "20260930",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "全美地产经纪商协会",
@@ -15760,7 +15762,7 @@
                     "name": "美国:成屋销售:季调:折年数",
                     "rawUnit": "万套",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20260831"
+                    "latestObservation": "20260930"
                   }
                 }
               ],
@@ -17665,7 +17667,8 @@
                     "20260531",
                     "20260630",
                     "20260731",
-                    "20260831"
+                    "20260831",
+                    "20260930"
                   ],
                   "values": [
                     5.1,
@@ -17999,13 +18002,14 @@
                     4.5,
                     4.6,
                     4.6,
-                    4.9
+                    4.8,
+                    4.8
                   ],
                   "color": "#da1e28",
                   "unit": "月",
                   "frequency": "月",
-                  "latestValue": 4.9,
-                  "latestObservation": "20260831",
+                  "latestValue": 4.8,
+                  "latestObservation": "20260930",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "全美地产经纪商协会",
@@ -18013,7 +18017,7 @@
                     "name": "美国:成屋月度供给",
                     "rawUnit": "月",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20260831"
+                    "latestObservation": "20260930"
                   }
                 }
               ],
@@ -20296,7 +20300,8 @@
                     "20260531",
                     "20260630",
                     "20260731",
-                    "20260831"
+                    "20260831",
+                    "20260930"
                   ],
                   "values": [
                     2.4,
@@ -20473,13 +20478,14 @@
                     2.9,
                     2.8,
                     2.9,
-                    2.7
+                    2.7,
+                    2.8
                   ],
                   "color": "#0f62fe",
                   "unit": "%",
                   "frequency": "月",
-                  "latestValue": 2.7,
-                  "latestObservation": "20260831",
+                  "latestValue": 2.8,
+                  "latestObservation": "20260930",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美国劳工局",
@@ -20487,7 +20493,7 @@
                     "name": "美国:CPI:服务(不含能源):住所:房租:主要居所租金:当月同比",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20260831"
+                    "latestObservation": "20260930"
                   }
                 },
                 {
@@ -20668,7 +20674,8 @@
                     "20260531",
                     "20260630",
                     "20260731",
-                    "20260831"
+                    "20260831",
+                    "20260930"
                   ],
                   "values": [
                     1.8,
@@ -20845,13 +20852,14 @@
                     3.3,
                     3.2,
                     3.2,
-                    3.1
+                    3.1,
+                    3.3
                   ],
                   "color": "#9f1853",
                   "unit": "%",
                   "frequency": "月",
-                  "latestValue": 3.1,
-                  "latestObservation": "20260831",
+                  "latestValue": 3.3,
+                  "latestObservation": "20260930",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美国劳工局",
@@ -20859,7 +20867,7 @@
                     "name": "美国:CPI:服务(不含能源):住所:房租:业主等价租金:业主主要居所等价租金:当月同比",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20260831"
+                    "latestObservation": "20260930"
                   }
                 }
               ],
@@ -46335,20 +46343,20 @@
                     3.49805,
                     7.93053,
                     13.28956,
-                    33.89117,
-                    29.35813,
-                    50.45967,
-                    47.7548,
-                    52.90079,
-                    70.40502,
-                    63.34531,
-                    68.69818,
-                    83.51482
+                    33.89086,
+                    29.34988,
+                    50.45942,
+                    47.73318,
+                    52.89854,
+                    70.40256,
+                    63.36933,
+                    68.85484,
+                    83.67605
                   ],
                   "color": "#007d79",
                   "unit": "%",
                   "frequency": "月",
-                  "latestValue": 83.51482,
+                  "latestValue": 83.67605,
                   "latestObservation": "20260930",
                   "source": {
                     "provider": "iFinD EDB",
@@ -62920,7 +62928,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     7.26,
@@ -75509,13 +75519,15 @@
                     4.79,
                     4.77,
                     4.75,
-                    4.8
+                    4.8,
+                    4.79,
+                    4.82
                   ],
                   "color": "#0f62fe",
                   "unit": "%",
                   "frequency": "日",
-                  "latestValue": 4.8,
-                  "latestObservation": "20261009",
+                  "latestValue": 4.82,
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美联储",
@@ -75523,7 +75535,7 @@
                     "name": "美国:国债收益率:2年",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   }
                 },
                 {
@@ -91708,7 +91720,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     4.06,
@@ -107889,13 +107903,15 @@
                     5.27,
                     5.28,
                     5.22,
-                    5.24
+                    5.24,
+                    5.21,
+                    5.19
                   ],
                   "color": "#9f1853",
                   "unit": "%",
                   "frequency": "日",
-                  "latestValue": 5.24,
-                  "latestObservation": "20261009",
+                  "latestValue": 5.19,
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美联储",
@@ -107903,7 +107919,7 @@
                     "name": "美国:国债收益率:10年",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   }
                 }
               ],
@@ -108452,9 +108468,9 @@
           "id": "ust2",
           "label": "LATEST",
           "title": "2年期美债",
-          "value": 4.8,
+          "value": 4.82,
           "unit": "%",
-          "observation": "20261009",
+          "observation": "20261014",
           "source": "iFinD EDB"
         }
       ],
@@ -111267,7 +111283,7 @@
                     "20260731",
                     "20260831",
                     "20260930",
-                    "20261012"
+                    "20261014"
                   ],
                   "values": [
                     0.0,
@@ -111491,7 +111507,7 @@
                   "unit": "%",
                   "frequency": "月",
                   "latestValue": 3.75,
-                  "latestObservation": "20261012",
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "Federal Reserve Economic Data (FRED)",
                     "institution": "Federal Reserve Board",
@@ -111499,7 +111515,7 @@
                     "name": "Federal Funds Target Range - Lower Limit",
                     "rawUnit": "%",
                     "url": "https://fred.stlouisfed.org/series/DFEDTARL",
-                    "latestObservation": "20261012"
+                    "latestObservation": "20261014"
                   },
                   "transformLabel": "官方日频区间下限保留制度首日并取各月最后有效值"
                 },
@@ -111722,7 +111738,7 @@
                     "20260731",
                     "20260831",
                     "20260930",
-                    "20261012"
+                    "20261014"
                   ],
                   "values": [
                     0.25,
@@ -111946,7 +111962,7 @@
                   "unit": "%",
                   "frequency": "月",
                   "latestValue": 4.0,
-                  "latestObservation": "20261012",
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "Federal Reserve Economic Data (FRED)",
                     "institution": "Federal Reserve Board",
@@ -111954,7 +111970,7 @@
                     "name": "Federal Funds Target Range - Upper Limit",
                     "rawUnit": "%",
                     "url": "https://fred.stlouisfed.org/series/DFEDTARU",
-                    "latestObservation": "20261012"
+                    "latestObservation": "20261014"
                   },
                   "transformLabel": "官方日频区间上限保留制度首日并取各月最后有效值"
                 }
@@ -112850,7 +112866,7 @@
                     "20260731",
                     "20260831",
                     "20260930",
-                    "20261011"
+                    "20261015"
                   ],
                   "values": [
                     0.75,
@@ -113078,7 +113094,7 @@
                   "unit": "%",
                   "frequency": "月",
                   "latestValue": 3.9,
-                  "latestObservation": "20261011",
+                  "latestObservation": "20261015",
                   "transformLabel": "2008-10-09至2021-07-28为IOER；2021-07-29起为IORB；制度切换处不向前填充",
                   "source": {
                     "provider": "Federal Reserve / FRED + iFinD EDB",
@@ -113087,7 +113103,7 @@
                     "name": "Interest on reserve balances regime series",
                     "rawUnit": "%",
                     "url": "https://www.federalreserve.gov/monetarypolicy/iorb-faqs.htm",
-                    "latestObservation": "20261011"
+                    "latestObservation": "20261015"
                   }
                 },
                 {
@@ -115222,7 +115238,9 @@
                     "20261005",
                     "20261006",
                     "20261007",
-                    "20261008"
+                    "20261008",
+                    "20261009",
+                    "20261013"
                   ],
                   "values": [
                     1.8,
@@ -117353,13 +117371,15 @@
                     3.89,
                     3.9,
                     3.88,
-                    3.87
+                    3.87,
+                    3.87,
+                    3.89
                   ],
                   "color": "#9f1853",
                   "unit": "%",
                   "frequency": "日",
-                  "latestValue": 3.87,
-                  "latestObservation": "20261008",
+                  "latestValue": 3.89,
+                  "latestObservation": "20261013",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "纽约联储",
@@ -117367,7 +117387,7 @@
                     "name": "美国:SOFR:利率",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261008"
+                    "latestObservation": "20261013"
                   }
                 },
                 {
@@ -120511,7 +120531,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     0.01,
@@ -123651,13 +123673,15 @@
                     3.75,
                     3.75,
                     3.75,
+                    3.75,
+                    3.75,
                     3.75
                   ],
                   "color": "#6929c4",
                   "unit": "%",
                   "frequency": "日",
                   "latestValue": 3.75,
-                  "latestObservation": "20261009",
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "圣路易斯联储",
@@ -123665,7 +123689,7 @@
                     "name": "美国:隔夜逆回购协议:国库券:利率",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   }
                 }
               ],
@@ -128583,7 +128607,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     11.809,
@@ -131834,13 +131860,15 @@
                     0.414,
                     2.338,
                     0.335,
-                    0.3
+                    0.3,
+                    0.275,
+                    0.201
                   ],
                   "color": "#6929c4",
                   "unit": "十亿美元",
                   "frequency": "日",
-                  "latestValue": 0.3,
-                  "latestObservation": "20261009",
+                  "latestValue": 0.201,
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "圣路易斯联储",
@@ -131848,7 +131876,7 @@
                     "name": "美国:隔夜逆回购协议:国库券:总额",
                     "rawUnit": "十亿美元",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   },
                   "transformLabel": "仅保留2013-09-23当前ON RRP设施启动后的用量；更早零散逆回购操作不并入"
                 },
@@ -134589,12 +134617,12 @@
                     1.0,
                     3.0,
                     0.0,
-                    -3.0
+                    -1.0
                   ],
                   "color": "#9f1853",
                   "unit": "bp",
                   "frequency": "月",
-                  "latestValue": -3.0,
+                  "latestValue": -1.0,
                   "latestObservation": "202610",
                   "source": {
                     "provider": "iFinD EDB",
@@ -152264,7 +152292,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     7.26,
@@ -164853,13 +164883,15 @@
                     4.79,
                     4.77,
                     4.75,
-                    4.8
+                    4.8,
+                    4.79,
+                    4.82
                   ],
                   "color": "#0f62fe",
                   "unit": "%",
                   "frequency": "日",
-                  "latestValue": 4.8,
-                  "latestObservation": "20261009",
+                  "latestValue": 4.82,
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美联储",
@@ -164867,7 +164899,7 @@
                     "name": "美国:国债收益率:2年",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   }
                 },
                 {
@@ -181052,7 +181084,9 @@
                     "20261006",
                     "20261007",
                     "20261008",
-                    "20261009"
+                    "20261009",
+                    "20261013",
+                    "20261014"
                   ],
                   "values": [
                     4.06,
@@ -197233,13 +197267,15 @@
                     5.27,
                     5.28,
                     5.22,
-                    5.24
+                    5.24,
+                    5.21,
+                    5.19
                   ],
                   "color": "#9f1853",
                   "unit": "%",
                   "frequency": "日",
-                  "latestValue": 5.24,
-                  "latestObservation": "20261009",
+                  "latestValue": 5.19,
+                  "latestObservation": "20261014",
                   "source": {
                     "provider": "iFinD EDB",
                     "institution": "美联储",
@@ -197247,7 +197283,7 @@
                     "name": "美国:国债收益率:10年",
                     "rawUnit": "%",
                     "url": "https://ft.51ifind.com",
-                    "latestObservation": "20261009"
+                    "latestObservation": "20261014"
                   }
                 }
               ],
@@ -204004,7 +204040,7 @@
                     "20260731",
                     "20260831",
                     "20260930",
-                    "20261002"
+                    "20261009"
                   ],
                   "values": [
                     101.4155,
@@ -204257,13 +204293,13 @@
                     119.7034,
                     118.5679,
                     120.9693,
-                    121.3848
+                    121.6023
                   ],
                   "color": "#007d79",
                   "unit": "2006年1月=100",
                   "frequency": "月",
-                  "latestValue": 121.3848,
-                  "latestObservation": "20261002",
+                  "latestValue": 121.6023,
+                  "latestObservation": "20261009",
                   "source": {
                     "provider": "Federal Reserve Economic Data (FRED)",
                     "institution": "Federal Reserve Board",
@@ -204271,7 +204307,7 @@
                     "name": "Nominal Broad U.S. Dollar Index",
                     "rawUnit": "2006年1月=100",
                     "url": "https://fred.stlouisfed.org/series/DTWEXBGS",
-                    "latestObservation": "20261002"
+                    "latestObservation": "20261009"
                   },
                   "transformLabel": "官方日频序列保留首日并取各月最后有效值"
                 }
@@ -204311,7 +204347,7 @@
           "title": "目标区间下限",
           "value": 3.75,
           "unit": "%",
-          "observation": "20261012",
+          "observation": "20261014",
           "source": "Federal Reserve Economic Data (FRED)"
         },
         {
@@ -204320,7 +204356,7 @@
           "title": "目标区间上限",
           "value": 4.0,
           "unit": "%",
-          "observation": "20261012",
+          "observation": "20261014",
           "source": "Federal Reserve Economic Data (FRED)"
         },
         {
@@ -204338,7 +204374,7 @@
           "title": "IOER→IORB（准备金报酬率）",
           "value": 3.9,
           "unit": "%",
-          "observation": "20261011",
+          "observation": "20261015",
           "source": "Federal Reserve / FRED + iFinD EDB"
         }
       ],
@@ -204409,7 +204445,7 @@
     "note": "每次刷新逐条核验iFinD与美联储FRED的指标身份、首日、单位、频率和量级；制度创设前不补值，方法或会计口径变化不静默拼接。"
   },
   "rawSnapshots": {
-    "ifind": "C:\\HermesData\\cache\\scratch\\fed_history_sources.json",
-    "fred": "C:\\HermesData\\cache\\scratch\\fed_history_sources.json"
+    "ifind": "data/raw/daily-refresh/20261015T081630+0800/late_modules/20261015T002213+0000_us_late_modules_sources.json",
+    "fred": "data/raw/daily-refresh/20261015T081630+0800/late_modules/20261015T002213+0000_us_late_modules_sources.json"
   }
 }

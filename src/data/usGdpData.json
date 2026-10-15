@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T01:00:52+00:00",
+  "generatedAt": "2026-10-15T00:17:51+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -23517,6 +23517,6 @@
     "PPT用于定义研究顺序和解释；除明确标注的2022 vintage案例外，页面时序数值均由iFinD EDB重新提取。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-gdp/20261009T010052+0000_ifind_gdp.json"
+    "ifind": "data/raw/daily-refresh/20261015T081630+0800/gdp/20261015T001751+0000_ifind_gdp.json"
   }
 }

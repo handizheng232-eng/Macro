@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "generatedAt": "2026-10-09T01:01:13+00:00",
+  "generatedAt": "2026-10-15T00:18:28+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -1717,7 +1717,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.0,
@@ -3070,13 +3071,14 @@
             4.2,
             3.5,
             3.4,
-            3.4
+            3.4,
+            3.7
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.4,
+          "latestObservation": "20260930",
+          "latestValue": 3.7,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -3085,7 +3087,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -3914,7 +3916,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             3.2,
@@ -4739,13 +4742,14 @@
             2.9,
             2.6,
             2.5,
-            2.4
+            2.4,
+            2.6
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.4,
+          "latestObservation": "20260930",
+          "latestValue": 2.6,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -4754,7 +4758,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -4935,7 +4939,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             4.4,
@@ -5112,13 +5117,14 @@
             3.1,
             3.0,
             3.0,
-            2.7
+            2.7,
+            2.5
           ],
           "color": "#ba7a2e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.7,
+          "latestObservation": "20260930",
+          "latestValue": 2.5,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -5127,7 +5133,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -5956,7 +5962,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.9,
@@ -6781,13 +6788,14 @@
             23.5,
             15.7,
             14.7,
-            16.3
+            16.3,
+            20.4
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 16.3,
+          "latestObservation": "20260930",
+          "latestValue": 20.4,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -6796,7 +6804,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -13491,7 +13499,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.2,
@@ -13668,12 +13677,13 @@
             1.1,
             0.8,
             0.8,
+            0.7,
             0.7
           ],
           "color": "#3c8b6d",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
+          "latestObservation": "20260930",
           "latestValue": 0.7,
           "source": {
             "provider": "iFinD EDB",
@@ -13683,7 +13693,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -13864,7 +13874,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.3,
@@ -14041,13 +14052,14 @@
             3.4,
             3.2,
             3.0,
-            3.0
+            3.0,
+            3.1
           ],
           "color": "#1c3557",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.0,
+          "latestObservation": "20260930",
+          "latestValue": 3.1,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -14056,7 +14068,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -15109,7 +15121,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.0,
@@ -16147,13 +16160,14 @@
             2.9,
             2.8,
             2.9,
-            2.7
+            2.7,
+            2.8
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.7,
+          "latestObservation": "20260930",
+          "latestValue": 2.8,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -16162,7 +16176,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -16343,7 +16357,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.8,
@@ -16520,13 +16535,14 @@
             3.3,
             3.2,
             3.2,
-            3.1
+            3.1,
+            3.3
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.1,
+          "latestObservation": "20260930",
+          "latestValue": 3.3,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -16535,7 +16551,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -17376,7 +17392,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             3.2,
@@ -18201,13 +18218,14 @@
             2.9,
             2.6,
             2.5,
-            2.4
+            2.4,
+            2.6
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.4,
+          "latestObservation": "20260930",
+          "latestValue": 2.6,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -18216,7 +18234,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -19567,7 +19585,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             3.2,
@@ -20392,13 +20411,14 @@
             2.9,
             2.6,
             2.5,
-            2.4
+            2.4,
+            2.6
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.4,
+          "latestObservation": "20260930",
+          "latestValue": 2.6,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -20407,7 +20427,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -23962,7 +23982,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.2,
@@ -24139,12 +24160,13 @@
             1.1,
             0.8,
             0.8,
+            0.7,
             0.7
           ],
           "color": "#3c8b6d",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
+          "latestObservation": "20260930",
           "latestValue": 0.7,
           "source": {
             "provider": "iFinD EDB",
@@ -24154,7 +24176,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -24335,7 +24357,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.9,
@@ -24512,13 +24535,14 @@
             3.6,
             3.3,
             3.3,
-            3.1
+            3.1,
+            3.3
           ],
           "color": "#6f7883",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.1,
+          "latestObservation": "20260930",
+          "latestValue": 3.3,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -24527,7 +24551,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -25045,7 +25069,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             4.8,
@@ -25559,13 +25584,14 @@
             3.7,
             3.1,
             3.0,
-            3.1
+            3.1,
+            3.2
           ],
           "color": "#6b4a9e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.1,
+          "latestObservation": "20260930",
+          "latestValue": 3.2,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -25574,7 +25600,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -28788,7 +28814,8 @@
           "20260531",
           "20260630",
           "20260731",
-          "20260831"
+          "20260831",
+          "20260930"
         ],
         "values": [
           0.0,
@@ -30151,13 +30178,14 @@
           0.6,
           -0.3,
           0.0,
-          0.3
+          0.3,
+          0.6
         ],
         "color": "#1c2530",
         "frequency": "月",
         "defaultActive": true,
-        "latestObservation": "20260831",
-        "latestValue": 0.3,
+        "latestObservation": "20260930",
+        "latestValue": 0.6,
         "source": {
           "provider": "iFinD EDB",
           "institution": "iFinD 经济数据库",
@@ -30166,7 +30194,7 @@
           "rawUnit": "%",
           "transformation": "iFinD直接值",
           "url": "https://ft.51ifind.com",
-          "latestObservation": "20260831"
+          "latestObservation": "20260930"
         }
       }
     },
@@ -30679,7 +30707,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.1,
@@ -31178,12 +31207,13 @@
             0.5,
             -0.2,
             0.2,
+            0.3,
             0.3
           ],
           "color": "#6b4a9e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
+          "latestObservation": "20260930",
           "latestValue": 0.3,
           "source": {
             "provider": "iFinD EDB",
@@ -31193,7 +31223,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -34245,7 +34275,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             4.8,
@@ -34759,13 +34790,14 @@
             3.7,
             3.1,
             3.0,
-            3.1
+            3.1,
+            3.2
           ],
           "color": "#6b4a9e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.1,
+          "latestObservation": "20260930",
+          "latestValue": 3.2,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -34774,7 +34806,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -34791,7 +34823,7 @@
           "peak": 12.3,
           "peakDate": "20220228",
           "latest": 0.7,
-          "latestDate": "20260831",
+          "latestDate": "20260930",
           "baseline": -0.33,
           "annualVolatility": 2.47,
           "halfLifeYears": 0.92,
@@ -34806,13 +34838,13 @@
           "classification": "半结构",
           "peak": 8.2,
           "peakDate": "20230228",
-          "latest": 3.1,
-          "latestDate": "20260831",
+          "latest": 3.3,
+          "latestDate": "20260930",
           "baseline": 2.66,
           "annualVolatility": 1.52,
           "halfLifeYears": 1.49,
           "wageCorrelation": 0.92,
-          "retrace": 92.0,
+          "retrace": 88.4,
           "code": "G004765751"
         },
         {
@@ -34822,13 +34854,13 @@
           "classification": "结构",
           "peak": 8.2,
           "peakDate": "20220930",
-          "latest": 3.1,
-          "latestDate": "20260831",
+          "latest": 3.2,
+          "latestDate": "20260930",
           "baseline": 1.96,
           "annualVolatility": 1.26,
           "halfLifeYears": 1.37,
           "wageCorrelation": 0.71,
-          "retrace": 81.7,
+          "retrace": 80.1,
           "code": "G005419378"
         }
       ],
@@ -34841,6 +34873,7 @@
       "title": "CPI分项温度表",
       "description": "参考CPI报告结构，展示23个总量与细分项目最近12个可用月份的同比/季调环比及最新权重。",
       "periods": [
+        "202609",
         "202608",
         "202607",
         "202606",
@@ -34851,8 +34884,7 @@
         "202601",
         "202512",
         "202511",
-        "202509",
-        "202508"
+        "202509"
       ],
       "rows": [
         {
@@ -34862,6 +34894,7 @@
           "depth": 0,
           "weight": 100.0,
           "yoy": [
+            3.7,
             3.4,
             3.4,
             3.5,
@@ -34872,10 +34905,10 @@
             2.4,
             2.7,
             2.7,
-            3.0,
-            2.9
+            3.0
           ],
           "mom": [
+            0.6,
             0.3,
             0.0,
             -0.3,
@@ -34886,7 +34919,6 @@
             0.4,
             0.0,
             null,
-            0.3,
             0.3
           ],
           "source": {
@@ -34901,6 +34933,7 @@
           "depth": 0,
           "weight": 13.54,
           "yoy": [
+            2.5,
             2.7,
             3.0,
             3.0,
@@ -34911,10 +34944,10 @@
             2.9,
             3.1,
             2.6,
-            3.1,
-            3.2
+            3.1
           ],
           "mom": [
+            0.1,
             0.1,
             0.1,
             0.2,
@@ -34925,8 +34958,7 @@
             0.4,
             0.6,
             null,
-            0.3,
-            0.4
+            0.3
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -34940,6 +34972,7 @@
           "depth": 1,
           "weight": 8.23,
           "yoy": [
+            1.8,
             2.2,
             2.7,
             2.7,
@@ -34950,10 +34983,10 @@
             2.1,
             2.4,
             1.9,
-            2.7,
             2.7
           ],
           "mom": [
+            -0.1,
             0.0,
             -0.1,
             0.2,
@@ -34964,8 +34997,7 @@
             0.2,
             0.7,
             null,
-            0.3,
-            0.6
+            0.3
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -34979,6 +35011,7 @@
           "depth": 1,
           "weight": 5.31,
           "yoy": [
+            3.5,
             3.4,
             3.4,
             3.4,
@@ -34989,10 +35022,10 @@
             4.0,
             4.1,
             3.7,
-            3.7,
-            3.9
+            3.7
           ],
           "mom": [
+            0.2,
             0.3,
             0.3,
             0.2,
@@ -35003,8 +35036,7 @@
             0.1,
             0.7,
             null,
-            0.1,
-            0.3
+            0.1
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35018,6 +35050,7 @@
           "depth": 0,
           "weight": 7.35,
           "yoy": [
+            20.4,
             16.3,
             14.7,
             15.7,
@@ -35028,10 +35061,10 @@
             -0.1,
             2.3,
             4.2,
-            2.8,
-            0.2
+            2.8
           ],
           "mom": [
+            3.7,
             1.3,
             -1.2,
             -4.9,
@@ -35042,8 +35075,7 @@
             -0.5,
             -2.0,
             null,
-            0.1,
-            -0.1
+            0.1
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35057,6 +35089,7 @@
           "depth": 1,
           "weight": 4.04,
           "yoy": [
+            35.3,
             28.0,
             24.7,
             27.1,
@@ -35067,10 +35100,10 @@
             -7.3,
             -3.0,
             1.2,
-            -0.4,
-            -6.2
+            -0.4
           ],
           "mom": [
+            9.3,
             4.2,
             -2.9,
             -9.5,
@@ -35081,8 +35114,7 @@
             -3.3,
             -0.4,
             null,
-            3.8,
-            1.7
+            3.8
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35096,6 +35128,7 @@
           "depth": 1,
           "weight": 3.3,
           "yoy": [
+            4.6,
             4.0,
             4.3,
             3.9,
@@ -35106,10 +35139,10 @@
             7.2,
             7.7,
             7.4,
-            6.4,
-            7.7
+            6.4
           ],
           "mom": [
+            0.1,
             -0.4,
             0.3,
             -0.7,
@@ -35120,8 +35153,7 @@
             0.2,
             1.0,
             null,
-            -0.4,
-            -0.2
+            -0.4
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35135,6 +35167,7 @@
           "depth": 2,
           "weight": 2.55,
           "yoy": [
+            4.4,
             3.8,
             4.2,
             4.0,
@@ -35145,10 +35178,10 @@
             6.3,
             6.7,
             6.9,
-            5.1,
-            6.2
+            5.1
           ],
           "mom": [
+            0.2,
             -0.2,
             0.1,
             -1.0,
@@ -35159,8 +35192,7 @@
             -0.1,
             0.2,
             null,
-            -0.3,
-            0.2
+            -0.3
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35174,6 +35206,7 @@
           "depth": 2,
           "weight": 0.75,
           "yoy": [
+            5.0,
             4.4,
             4.3,
             3.0,
@@ -35184,10 +35217,10 @@
             9.8,
             10.8,
             9.1,
-            11.7,
-            13.8
+            11.7
           ],
           "mom": [
+            -0.3,
             -1.1,
             0.7,
             0.5,
@@ -35198,8 +35231,7 @@
             1.0,
             3.7,
             null,
-            -0.9,
-            -1.2
+            -0.9
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35214,6 +35246,7 @@
           "weight": 18.84,
           "yoy": [
             0.7,
+            0.7,
             0.8,
             0.8,
             1.1,
@@ -35223,10 +35256,10 @@
             1.1,
             1.4,
             1.4,
-            1.5,
             1.5
           ],
           "mom": [
+            0.4,
             0.3,
             0.1,
             0.1,
@@ -35237,7 +35270,6 @@
             0.3,
             -0.4,
             null,
-            0.4,
             0.4
           ],
           "source": {
@@ -35252,6 +35284,7 @@
           "depth": 1,
           "weight": 2.41,
           "yoy": [
+            3.4,
             3.6,
             3.9,
             3.9,
@@ -35262,10 +35295,10 @@
             1.7,
             0.6,
             0.2,
-            -0.1,
-            0.2
+            -0.1
           ],
           "mom": [
+            0.3,
             0.0,
             0.1,
             -0.6,
@@ -35276,8 +35309,7 @@
             0.3,
             0.3,
             null,
-            0.5,
-            0.3
+            0.5
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35291,6 +35323,7 @@
           "depth": 1,
           "weight": 0.79,
           "yoy": [
+            -2.6,
             -4.1,
             -4.5,
             -6.8,
@@ -35301,10 +35334,10 @@
             -3.5,
             -3.8,
             -3.1,
-            -4.0,
-            -3.8
+            -4.0
           ],
           "mom": [
+            0.9,
             0.1,
             1.3,
             -0.8,
@@ -35315,8 +35348,7 @@
             0.3,
             -1.7,
             null,
-            -0.6,
-            -0.4
+            -0.6
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35330,6 +35362,7 @@
           "depth": 1,
           "weight": 1.3,
           "yoy": [
+            3.7,
             4.2,
             4.2,
             3.9,
@@ -35340,10 +35373,10 @@
             4.6,
             3.6,
             3.1,
-            3.7,
-            3.1
+            3.7
           ],
           "mom": [
+            0.1,
             0.5,
             0.4,
             -0.2,
@@ -35354,8 +35387,7 @@
             1.1,
             0.4,
             null,
-            0.5,
-            0.4
+            0.5
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35369,6 +35401,7 @@
           "depth": 0,
           "weight": 60.27,
           "yoy": [
+            3.1,
             3.0,
             3.0,
             3.2,
@@ -35379,10 +35412,10 @@
             2.9,
             3.0,
             3.0,
-            3.5,
-            3.6
+            3.5
           ],
           "mom": [
+            0.3,
             0.3,
             0.1,
             0.0,
@@ -35393,8 +35426,7 @@
             0.5,
             0.2,
             null,
-            0.2,
-            0.3
+            0.2
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35408,6 +35440,7 @@
           "depth": 1,
           "weight": 35.26,
           "yoy": [
+            3.3,
             3.1,
             3.3,
             3.3,
@@ -35418,10 +35451,10 @@
             3.4,
             3.6,
             3.5,
-            3.9,
-            4.0
+            3.9
           ],
           "mom": [
+            0.3,
             0.2,
             0.1,
             0.2,
@@ -35432,8 +35465,7 @@
             0.4,
             0.3,
             null,
-            0.1,
-            0.3
+            0.1
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35447,6 +35479,7 @@
           "depth": 2,
           "weight": 7.74,
           "yoy": [
+            2.8,
             2.7,
             2.9,
             2.8,
@@ -35457,10 +35490,10 @@
             2.8,
             2.9,
             3.0,
-            3.4,
-            3.5
+            3.4
           ],
           "mom": [
+            0.2,
             0.2,
             0.3,
             0.1,
@@ -35471,8 +35504,7 @@
             0.2,
             0.3,
             null,
-            0.2,
-            0.3
+            0.2
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35486,6 +35518,7 @@
           "depth": 2,
           "weight": 26.1,
           "yoy": [
+            3.3,
             3.1,
             3.2,
             3.2,
@@ -35496,10 +35529,10 @@
             3.3,
             3.3,
             3.4,
-            3.8,
-            4.0
+            3.8
           ],
           "mom": [
+            0.3,
             0.2,
             0.3,
             0.2,
@@ -35510,8 +35543,7 @@
             0.2,
             0.3,
             null,
-            0.1,
-            0.4
+            0.1
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35525,6 +35557,7 @@
           "depth": 1,
           "weight": 6.86,
           "yoy": [
+            1.5,
             1.6,
             1.7,
             2.0,
@@ -35535,10 +35568,10 @@
             3.2,
             3.2,
             2.9,
-            3.3,
-            3.4
+            3.3
           ],
           "mom": [
+            0.1,
             -0.2,
             0.4,
             -0.1,
@@ -35549,8 +35582,7 @@
             0.3,
             0.4,
             null,
-            0.2,
-            -0.1
+            0.2
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35564,6 +35596,7 @@
           "depth": 1,
           "weight": 6.31,
           "yoy": [
+            2.7,
             2.4,
             2.9,
             3.4,
@@ -35574,10 +35607,10 @@
             1.3,
             1.5,
             1.7,
-            2.5,
-            3.5
+            2.5
           ],
           "mom": [
+            0.6,
             0.5,
             0.3,
             -0.3,
@@ -35588,8 +35621,7 @@
             1.4,
             0.5,
             null,
-            0.3,
-            1.0
+            0.3
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35603,6 +35635,7 @@
           "depth": 2,
           "weight": 1.05,
           "yoy": [
+            22.4,
             23.4,
             25.5,
             26.5,
@@ -35613,10 +35646,10 @@
             2.2,
             -3.4,
             -5.4,
-            3.2,
-            3.3
+            3.2
           ],
           "mom": [
+            1.2,
             2.7,
             2.2,
             0.2,
@@ -35627,8 +35660,7 @@
             6.5,
             3.8,
             null,
-            2.0,
-            4.5
+            2.0
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35643,6 +35675,7 @@
           "weight": 4.93,
           "yoy": [
             3.1,
+            3.1,
             1.3,
             1.0,
             1.9,
@@ -35652,10 +35685,10 @@
             1.2,
             1.1,
             2.2,
-            1.1,
-            1.0
+            1.1
           ],
           "mom": [
+            0.0,
             1.8,
             0.5,
             -0.8,
@@ -35666,7 +35699,6 @@
             0.4,
             -0.8,
             null,
-            0.1,
             0.1
           ],
           "source": {
@@ -35681,6 +35713,7 @@
           "depth": 1,
           "weight": 0.94,
           "yoy": [
+            5.1,
             4.4,
             4.5,
             5.7,
@@ -35691,10 +35724,10 @@
             8.3,
             4.6,
             4.9,
-            4.4,
-            4.9
+            4.4
           ],
           "mom": [
+            0.3,
             -0.3,
             -0.3,
             -0.1,
@@ -35705,8 +35738,7 @@
             2.3,
             -0.8,
             null,
-            -0.3,
-            -0.1
+            -0.3
           ],
           "source": {
             "provider": "iFinD EDB",
@@ -35720,6 +35752,7 @@
           "depth": 0,
           "weight": 28.52,
           "yoy": [
+            3.2,
             3.1,
             3.0,
             3.1,
@@ -35730,10 +35763,10 @@
             3.4,
             3.4,
             3.5,
-            3.7,
-            4.0
+            3.7
           ],
           "mom": [
+            0.3,
             0.3,
             0.2,
             -0.2,
@@ -35744,7 +35777,6 @@
             0.3,
             0.2,
             null,
-            0.2,
             0.2
           ],
           "source": {
@@ -35767,10 +35799,10 @@
           "label": "所有项目",
           "depth": 0,
           "nature": "总量",
-          "observation": "20260831",
-          "yoy": 3.4,
-          "yoyChange": 0.0,
-          "mom": 0.3,
+          "observation": "20260930",
+          "yoy": 3.7,
+          "yoyChange": 0.3,
+          "mom": 0.6,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -35778,7 +35810,7 @@
             "name": "所有项目",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35786,9 +35818,9 @@
           "label": "食品",
           "depth": 1,
           "nature": "波动项",
-          "observation": "20260831",
-          "yoy": 2.7,
-          "yoyChange": -0.3,
+          "observation": "20260930",
+          "yoy": 2.5,
+          "yoyChange": -0.2,
           "mom": 0.1,
           "source": {
             "provider": "iFinD EDB",
@@ -35797,7 +35829,7 @@
             "name": "食品",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35805,10 +35837,10 @@
           "label": "能源",
           "depth": 1,
           "nature": "波动项",
-          "observation": "20260831",
-          "yoy": 16.3,
-          "yoyChange": 1.6,
-          "mom": 1.3,
+          "observation": "20260930",
+          "yoy": 20.4,
+          "yoyChange": 4.1,
+          "mom": 3.7,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -35816,7 +35848,7 @@
             "name": "能源",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35824,10 +35856,10 @@
           "label": "核心",
           "depth": 0,
           "nature": "总量",
-          "observation": "20260831",
-          "yoy": 2.4,
-          "yoyChange": -0.1,
-          "mom": 0.3,
+          "observation": "20260930",
+          "yoy": 2.6,
+          "yoyChange": 0.2,
+          "mom": 0.4,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -35835,7 +35867,7 @@
             "name": "核心",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35843,10 +35875,10 @@
           "label": "商品(不含食品能源)",
           "depth": 1,
           "nature": "周期分项",
-          "observation": "20260831",
+          "observation": "20260930",
           "yoy": 0.7,
-          "yoyChange": -0.1,
-          "mom": 0.3,
+          "yoyChange": 0.0,
+          "mom": 0.4,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -35854,7 +35886,7 @@
             "name": "商品(不含食品能源)",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35862,9 +35894,9 @@
           "label": "服务(不含能源)",
           "depth": 1,
           "nature": "结构分项",
-          "observation": "20260831",
-          "yoy": 3.0,
-          "yoyChange": 0.0,
+          "observation": "20260930",
+          "yoy": 3.1,
+          "yoyChange": 0.1,
           "mom": 0.3,
           "source": {
             "provider": "iFinD EDB",
@@ -35873,7 +35905,7 @@
             "name": "服务(不含能源)",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -35881,10 +35913,10 @@
           "label": "住房",
           "depth": 1,
           "nature": "结构分项",
-          "observation": "20260831",
-          "yoy": 3.1,
-          "yoyChange": -0.2,
-          "mom": 0.2,
+          "observation": "20260930",
+          "yoy": 3.3,
+          "yoyChange": 0.2,
+          "mom": 0.3,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -35892,7 +35924,7 @@
             "name": "住房",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -40486,13 +40518,13 @@
             3.0388659524128,
             2.3860010975264,
             2.3988314711863,
-            2.6438239623354
+            2.6598766275721
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
           "latestObservation": "20260930",
-          "latestValue": 2.6438239623354,
+          "latestValue": 2.6598766275721,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -41584,13 +41616,13 @@
             2.5285370025905,
             2.4256475977547,
             2.4868127231858,
-            2.583585498349
+            2.5964461935638
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
           "latestObservation": "20260930",
-          "latestValue": 2.583585498349,
+          "latestValue": 2.5964461935638,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -42682,13 +42714,13 @@
             2.4654242558262,
             2.4358204697877,
             2.4985705017538,
-            2.5726435776396
+            2.5820960839004
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
           "latestObservation": "20260930",
-          "latestValue": 2.5726435776396,
+          "latestValue": 2.5820960839004,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -45684,7 +45716,7 @@
       "id": "energy-nowcast",
       "eyebrow": "LEADING · ENERGY",
       "title": "汽油零售价与CPI能源",
-      "description": "EIA周频全美汽油零售价先按月取算术平均，再计算同比，与CPI能源同比对齐。它的领先主要来自发布时间更早，而不是固定跨月领先；最新月内均值仅覆盖至2026-10-02。",
+      "description": "EIA周频全美汽油零售价先按月取算术平均，再计算同比，与CPI能源同比对齐。它的领先主要来自发布时间更早，而不是固定跨月领先；最新月内均值仅覆盖至2026-10-09。",
       "unit": "%",
       "reference": 0,
       "defaultRange": "10Y",
@@ -46476,13 +46508,13 @@
             25.9763,
             28.1682,
             36.4555,
-            41.277
+            40.8842
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20261002",
-          "latestValue": 41.277,
+          "latestObservation": "20261009",
+          "latestValue": 40.8842,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -46491,9 +46523,9 @@
             "rawUnit": "美元/加仑",
             "transformation": "周频价格按月取算术平均，再计算12个月同比",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20261002"
+            "latestObservation": "20261009"
           },
-          "observationCoverageEnd": "20261002",
+          "observationCoverageEnd": "20261009",
           "displayPeriod": "202610"
         },
         {
@@ -47322,7 +47354,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.9,
@@ -48147,13 +48180,14 @@
             23.5,
             15.7,
             14.7,
-            16.3
+            16.3,
+            20.4
           ],
           "color": "#1c3557",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 16.3,
+          "latestObservation": "20260930",
+          "latestValue": 20.4,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -48162,7 +48196,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -49755,7 +49789,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             -13.0,
@@ -50618,13 +50653,14 @@
             -2.0,
             -1.8,
             -1.9,
-            -2.3
+            -2.3,
+            -1.5
           ],
           "color": "#1c3557",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": -2.3,
+          "latestObservation": "20260930",
+          "latestValue": -1.5,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -50633,7 +50669,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -51539,190 +51575,192 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
-            0.3308,
-            0.2659,
-            0.2984,
-            0.2659,
-            0.136,
-            0.071,
-            -0.0264,
-            -0.1563,
-            -0.1563,
-            -0.1563,
-            -0.2213,
-            -0.2862,
-            -0.2537,
-            -0.2862,
-            -0.3836,
-            -0.4161,
-            -0.4486,
-            -0.4486,
-            -0.4486,
-            -0.3836,
-            -0.4161,
-            -0.4161,
-            -0.4486,
-            -0.4161,
-            -0.4811,
-            -0.5135,
-            -0.4811,
-            -0.4811,
-            -0.4486,
-            -0.4486,
-            -0.4811,
-            -0.5135,
-            -0.4811,
-            -0.4486,
-            -0.546,
-            -0.6434,
-            -0.6434,
-            -0.546,
-            -0.4486,
-            -0.4486,
-            -0.4811,
-            -0.5135,
-            -0.546,
-            -0.546,
-            -0.546,
-            -0.611,
-            -0.5785,
-            -0.5135,
-            -0.4161,
-            -0.3512,
-            -0.5135,
-            -0.546,
-            -0.546,
-            -0.5785,
-            -0.5785,
-            -0.546,
-            -0.5785,
-            -0.546,
-            -0.611,
-            -0.5785,
-            -0.4486,
-            -0.546,
-            -0.5785,
-            -0.5785,
-            -0.6434,
-            -0.5785,
-            -0.5785,
-            -0.6759,
-            -0.7084,
-            -0.7084,
-            -0.6759,
-            -0.611,
-            -0.611,
-            -0.546,
-            -0.4811,
-            -0.5135,
-            -0.4811,
-            -0.4486,
-            -0.3836,
-            -0.4486,
-            -0.4811,
-            -0.4161,
+            0.3331,
+            0.2679,
+            0.3005,
+            0.2679,
+            0.1376,
+            0.0724,
+            -0.0254,
+            -0.1557,
+            -0.1557,
+            -0.1557,
+            -0.2209,
+            -0.2861,
+            -0.2535,
+            -0.2861,
+            -0.3839,
+            -0.4164,
+            -0.449,
+            -0.449,
+            -0.449,
+            -0.3839,
+            -0.4164,
+            -0.4164,
+            -0.449,
+            -0.4164,
+            -0.4816,
+            -0.5142,
+            -0.4816,
+            -0.4816,
+            -0.449,
+            -0.449,
+            -0.4816,
+            -0.5142,
+            -0.4816,
+            -0.449,
+            -0.5468,
+            -0.6446,
+            -0.6446,
+            -0.5468,
+            -0.449,
+            -0.449,
+            -0.4816,
+            -0.5142,
+            -0.5468,
+            -0.5468,
+            -0.5468,
+            -0.612,
+            -0.5794,
+            -0.5142,
+            -0.4164,
+            -0.3513,
+            -0.5142,
+            -0.5468,
+            -0.5468,
+            -0.5794,
+            -0.5794,
+            -0.5468,
+            -0.5794,
+            -0.5468,
+            -0.612,
+            -0.5794,
+            -0.449,
+            -0.5468,
+            -0.5794,
+            -0.5794,
+            -0.6446,
+            -0.5794,
+            -0.5794,
+            -0.6772,
+            -0.7097,
+            -0.7097,
+            -0.6772,
+            -0.612,
+            -0.612,
+            -0.5468,
+            -0.4816,
+            -0.5142,
+            -0.4816,
+            -0.449,
+            -0.3839,
+            -0.449,
+            -0.4816,
+            -0.4164,
             -0.3187,
-            -0.3512,
-            -0.2862,
-            -0.3512,
-            -0.3836,
-            -0.4486,
-            -0.4486,
+            -0.3513,
+            -0.2861,
+            -0.3513,
+            -0.3839,
+            -0.449,
+            -0.449,
             -0.3187,
-            -0.2537,
-            -0.1238,
-            -0.1563,
-            -0.2862,
-            -0.3512,
-            -0.3512,
-            -0.4811,
-            -0.3836,
-            -0.4486,
-            -0.6759,
-            -0.7084,
-            -0.7409,
-            -0.546,
-            -0.2537,
-            -0.0589,
-            0.0061,
-            0.071,
-            0.1685,
-            0.1685,
-            0.0385,
-            0.1685,
-            1.0453,
-            1.7273,
-            2.4417,
-            2.3768,
-            2.117,
-            1.9871,
-            2.3443,
-            2.669,
-            3.0912,
-            3.416,
-            3.6108,
-            3.416,
-            2.7665,
-            2.3768,
-            1.9546,
-            1.8896,
-            1.9221,
-            1.7597,
-            1.2726,
-            0.818,
-            0.2984,
-            0.071,
-            -0.0589,
-            0.1035,
-            0.2659,
-            0.2659,
-            0.0385,
-            -0.1238,
+            -0.2535,
+            -0.1231,
+            -0.1557,
+            -0.2861,
+            -0.3513,
+            -0.3513,
+            -0.4816,
+            -0.3839,
+            -0.449,
+            -0.6772,
+            -0.7097,
+            -0.7423,
+            -0.5468,
+            -0.2535,
+            -0.058,
+            0.0072,
+            0.0724,
+            0.1702,
+            0.1702,
+            0.0398,
+            0.1702,
+            1.0501,
+            1.7344,
+            2.4514,
+            2.3862,
+            2.1255,
+            1.9951,
+            2.3536,
+            2.6795,
+            3.1032,
+            3.4291,
+            3.6246,
+            3.4291,
+            2.7773,
+            2.3862,
+            1.9626,
+            1.8974,
+            1.93,
+            1.767,
+            1.2782,
+            0.8219,
+            0.3005,
+            0.0724,
+            -0.058,
+            0.105,
+            0.2679,
+            0.2679,
+            0.0398,
+            -0.1231,
             -0.3187,
-            -0.3836,
-            -0.3512,
-            -0.3836,
+            -0.3839,
+            -0.3513,
+            -0.3839,
             -0.3187,
-            -0.4811,
-            -0.4811,
-            -0.611,
-            -0.8058,
-            -0.9357,
-            -0.9682,
-            -1.0007,
-            -1.0007,
-            -0.7084,
-            -0.7084,
-            -0.5785,
-            -0.546,
-            -0.4161,
-            -0.4161,
-            -0.4161,
-            -0.3512,
-            -0.2862,
-            -0.1563,
-            0.0061,
-            0.1035,
-            0.1035,
-            0.071,
-            0.071,
-            -0.0264,
-            -0.0589,
-            0.0061,
-            -0.0264,
-            -0.0264,
-            -0.1238,
-            -0.1238,
-            -0.1563
+            -0.4816,
+            -0.4816,
+            -0.612,
+            -0.8075,
+            -0.9379,
+            -0.9705,
+            -1.003,
+            -1.003,
+            -0.7097,
+            -0.7097,
+            -0.5794,
+            -0.5468,
+            -0.4164,
+            -0.4164,
+            -0.4164,
+            -0.3513,
+            -0.2861,
+            -0.1557,
+            0.0072,
+            0.105,
+            0.105,
+            0.0724,
+            0.0724,
+            -0.0254,
+            -0.058,
+            0.0072,
+            -0.0254,
+            -0.0254,
+            -0.1231,
+            -0.1231,
+            -0.1557,
+            -0.1557
           ],
           "color": "#1c3557",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": -0.1563,
+          "latestObservation": "20260930",
+          "latestValue": -0.1557,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -51731,7 +51769,7 @@
             "rawUnit": "%",
             "transformation": "按2015年以来样本计算z-score",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -51789,6 +51827,6 @@
     "note": "iFinD EDB 各序列独立更新日期；CPI/PCE/调查/盈亏平衡通胀率不共享同一截至日。"
   },
   "rawSnapshots": {
-    "ifind": "data/raw/ifind-us-inflation/20261009T010113+0000_ifind_inflation.json"
+    "ifind": "data/raw/daily-refresh/20261015T081630+0800/inflation/20261015T001828+0000_ifind_inflation.json"
   }
 }
