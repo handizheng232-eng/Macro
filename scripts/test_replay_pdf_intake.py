@@ -16,8 +16,7 @@ EVIDENCE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-
 
 class IntakeTests(unittest.TestCase):
     def setUp(self):
-        EVIDENCE.mkdir(parents=True, exist_ok=True)
-        self.temp = tempfile.TemporaryDirectory(dir=EVIDENCE)
+        self.temp = tempfile.TemporaryDirectory(prefix='replay-pdf-intake-')
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         script = Path(__file__).with_name('replay_pdf_intake.py')

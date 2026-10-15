@@ -1,0 +1,4 @@
+# PDF extraction versions used by the existing pinned per-page receipts.
+# Do not upgrade without re-running every original-page/SHA acceptance test.
+PyMuPDF==1.28.2
+pypdf==6.18.1

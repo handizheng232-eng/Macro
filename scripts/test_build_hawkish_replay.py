@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from research_archive import REPO_ROOT, research_root
 
 SCRIPT = Path(__file__).with_name('build_hawkish_replay.py')
 
@@ -22,12 +23,12 @@ class HawkishReplayTests(unittest.TestCase):
         builder=get_builder()
         self.assertIn('reviewed_research_manifest',inspect.signature(builder.build).parameters,
                       'Explicit reviewed research admission is not implemented')
-        root=SCRIPT.parents[1]
+        root=research_root()
         stage=root/'美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
         manifest=stage/'研究/parent-reviewed-research-20261009-manifest.json'
         new_sources=json.loads((stage/'研究/parent-sources-20261009-zsxq-completion03.json').read_text(encoding='utf-8'))
         descriptors=list(builder.DEFAULT_SOURCES)+new_sources['sources']
-        first=root/'src/data/historyReplay.json'
+        first=REPO_ROOT/'src/data/historyReplay.json'
         before=hashlib.sha256(first.read_bytes()).hexdigest()
         baseline=builder.build(stage,root,allow_partial=True,parent_sources=descriptors)
         data=builder.build(stage,root,allow_partial=True,parent_sources=descriptors,reviewed_research_manifest=manifest)
@@ -625,7 +626,7 @@ class HawkishReplayTests(unittest.TestCase):
         self.assertEqual(data['marketAnalysis']['sections'][0]['reportIds'], [])
 
     def test_current_clean_parent_library_drives_real_partial_matrix(self):
-        root = SCRIPT.parents[1]
+        root = research_root()
         stage = root / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
         data = self.builder.build(stage, root, allow_partial=True)
         from collections import Counter

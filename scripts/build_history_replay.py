@@ -15,7 +15,9 @@ from replay_research_integration import integrate_reviewed
 from replay_public_export import public_snapshot
 from replay_reviewed_analysis import reviewed_analysis
 
-ROOT = Path(__file__).resolve().parents[1]
+from research_archive import REPO_ROOT, research_root, require_writable_output
+
+ROOT = research_root()
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-09_至今'
 
 
@@ -319,11 +321,14 @@ def _build_legacy():
     return data
 
 
-def _admit_baseline(data, binding, stage, root):
+def _admit_baseline(data, binding, stage, root, configuration_root=None):
     """Explicitly retained official/local material; channel legacy never inherits."""
     if not binding:
         return
-    baseline = pinned_json(binding['path'], binding['sha256'], stage, root)
+    # This generated presentation baseline is configuration, not an original.
+    # Its SHA remains mandatory; sourceArtifacts and report files stay in stage.
+    config_stage = Path(configuration_root) if configuration_root is not None else stage
+    baseline = pinned_json(binding['path'], binding['sha256'], config_stage, root)
     source_ids, report_ids = set(binding['sourceIds']), set(binding['reportIds'])
     sources = {s['id']: s for s in baseline['sources']}
     reports = {r['id']: r for r in baseline['reports'] if r.get('id')}
@@ -391,7 +396,7 @@ def _admitted_market_presentation(market):
 
 
 def build(stage=STAGE, root=ROOT, as_of=None, parent_source_manifest=None,
-          reviewed_research_manifest=None, start_date='2026-09-01'):
+          reviewed_research_manifest=None, start_date='2026-09-01', configuration_root=None):
     """No-argument compatibility; explicit admission never reads legacy channels.
 
     A sources-only result is a pending shell, not reviewed research or a complete
@@ -406,7 +411,10 @@ def build(stage=STAGE, root=ROOT, as_of=None, parent_source_manifest=None,
         raise ValueError('Invalid replay window')
     if parent_source_manifest is None:
         raise ValueError('Explicit window requires parent-source manifest; no legacy admission')
-    manifest = load(resolve(parent_source_manifest, stage, root))
+    # Only generated admission configuration can live outside the originals.
+    # Every descriptor/original below remains confined to the evidence stage.
+    config_stage = Path(configuration_root) if configuration_root is not None else stage
+    manifest = load(resolve(parent_source_manifest, config_stage, root))
     if (manifest.get('schemaVersion') != 'parent-source-manifest-1' or
             (manifest.get('stageStart'), manifest.get('stageEnd')) != (start_date, end)):
         raise ValueError('Parent-source manifest window/schema mismatch')
@@ -423,7 +431,7 @@ def build(stage=STAGE, root=ROOT, as_of=None, parent_source_manifest=None,
             'publisher': report['provider'], 'date': report['date'], 'url': '',
             'kind': report['channel'] + '父方准入原文', 'status': '原件/身份已核·历史首次可得未知',
             'note': report['note'], 'historicalAsOfEligible': False})
-    _admit_baseline(data, manifest.get('baseline'), stage, root)
+    _admit_baseline(data, manifest.get('baseline'), stage, root, configuration_root)
     if manifest.get('marketPaths'):
         binding = manifest['marketPaths']
         market = pinned_json(binding['path'], binding['sha256'], stage, root)
@@ -476,13 +484,14 @@ def main():
     if args.require_monthly_complete and not data['monthlyCoverage']['complete']:
         raise ValueError('Monthly channel coverage incomplete; no output written')
     if not args.check_only:
-        targets = [(args.output or ROOT/'src/data/historyReplay.json', public_snapshot(data, ROOT))]
+        targets = [(args.output or REPO_ROOT/'src/data/historyReplay.json', public_snapshot(data, ROOT))]
         private_target = args.private_output or (None if explicit else STAGE/'研究/replay-data.json')
         if private_target is not None:
             targets.append((private_target, data))
         for target, payload in targets:
-            if target.resolve() in ((ROOT/'src/data/historyReplayHawkishTransition.json').resolve(),
-                                    (ROOT/'release/replay-publication.json').resolve()):
+            require_writable_output(target)
+            if target.resolve() in ((REPO_ROOT/'src/data/historyReplayHawkishTransition.json').resolve(),
+                                    (REPO_ROOT/'release/replay-publication.json').resolve()):
                 raise ValueError('Protected non-target replay/publication output')
         for target, payload in targets:
             target.parent.mkdir(parents=True, exist_ok=True)

@@ -6,7 +6,8 @@ import unittest
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+from research_archive import REPO_ROOT, research_root
+ROOT = research_root()
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
 
 def review_fixture(stage, report=None):
@@ -246,7 +247,7 @@ class ParentResearchTests(unittest.TestCase):
     def test_cli_review_admission_parameter_is_explicit(self):
         import subprocess
         import sys
-        result=subprocess.run([sys.executable,str(ROOT/'scripts/build_hawkish_replay.py'),'--help'],capture_output=True,text=True)
+        result=subprocess.run([sys.executable,str(REPO_ROOT/'scripts/build_hawkish_replay.py'),'--help'],capture_output=True,text=True)
         self.assertEqual(result.returncode,0)
         self.assertIn('--reviewed-research-manifest',result.stdout)
 

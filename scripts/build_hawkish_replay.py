@@ -14,7 +14,9 @@ from replay_parent_sources import load_parent_sources, DEFAULT_SOURCES, resolve
 from replay_reviewed_analysis import reviewed_analysis
 from replay_research_integration import integrate_reviewed
 
-ROOT = Path(__file__).resolve().parents[1]
+from research_archive import REPO_ROOT, research_root, require_writable_output
+
+ROOT = research_root()
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
 CUTOFF = '2026-08-31'
 
@@ -448,8 +450,11 @@ def main():
                  reviewed_research_manifest=args.reviewed_research_manifest)
     if args.require_monthly_complete and not data['monthlyCoverage']['complete']:
         raise ValueError('Monthly channel coverage incomplete; no complete replay delivery permitted')
-    for target, payload in [(STAGE / '研究/replay-data.json', data),
-                            (ROOT / 'src/data/historyReplayHawkishTransition.json', publication_snapshot(data, ROOT))]:
+    targets = [(STAGE / '研究/replay-data.json', data),
+               (REPO_ROOT / 'src/data/historyReplayHawkishTransition.json', publication_snapshot(data, ROOT))]
+    for target, _ in targets:
+        require_writable_output(target)
+    for target, payload in targets:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({'status': 'partial-development' if args.allow_partial else 'validated-inputs',

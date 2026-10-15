@@ -6,7 +6,8 @@ import unittest
 import tempfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+from research_archive import research_root
+ROOT = research_root()
 STAGE = ROOT / '美国宏观复盘/降息起步后的双向政策时代/2026-01_2026-08'
 MODULE = Path(__file__).with_name('replay_parent_sources.py')
 

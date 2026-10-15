@@ -3,10 +3,12 @@ import importlib.util
 import unittest
 import json
 import tempfile
+import os
 from pathlib import Path
+from research_archive import REPO_ROOT, research_root
 
-ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('replay_build', ROOT / 'scripts/build_history_replay.py')
+ROOT = research_root()
+spec = importlib.util.spec_from_file_location('replay_build', REPO_ROOT / 'scripts/build_history_replay.py')
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
@@ -15,12 +17,12 @@ class ReplayIntegrationTests(unittest.TestCase):
     def test_explicit_parent_pin_preserves_real_market_baseline_without_legacy_views(self):
         import hashlib
         market_path=module.STAGE/'研究/market-paths.json'
-        with tempfile.TemporaryDirectory(dir=module.STAGE/'核验/模板整改20261009/Code') as tmp:
+        with tempfile.TemporaryDirectory() as tmp:
             source_path=Path(tmp)/'sources.json'
             source_path.write_text(json.dumps({'schemaVersion':'parent-source-manifest-1',
                 'stageStart':'2026-09-01','stageEnd':'2026-10-09','sources':[],
                 'marketPaths':{'path':str(market_path),'sha256':hashlib.sha256(market_path.read_bytes()).hexdigest()}}),encoding='utf-8')
-            data=module.build(as_of='2026-10-09',parent_source_manifest=source_path)
+            data=module.build(as_of='2026-10-09',parent_source_manifest=source_path, configuration_root=Path(tmp))
             self.assertEqual(len(data.get('marketPaths',{}).get('series',[])),3)
             self.assertEqual(data['marketPaths']['series'],module.load(market_path)['series'])
             self.assertEqual(data['researchEvidence'],[])
@@ -31,22 +33,24 @@ class ReplayIntegrationTests(unittest.TestCase):
         import sys
         from test_replay_parent_sources import wind_fixture
         from test_replay_research_integration import review_fixture
-        help_result = subprocess.run([sys.executable, str(ROOT/'scripts/build_history_replay.py'), '--help'],
+        help_result = subprocess.run([sys.executable, str(REPO_ROOT/'scripts/build_history_replay.py'), '--help'],
             capture_output=True, text=True)
         for flag in ('--as-of', '--parent-source-manifest', '--reviewed-research-manifest', '--check-only'):
             self.assertIn(flag, help_result.stdout)
-        with tempfile.TemporaryDirectory(dir=module.STAGE/'核验/模板整改20261009/Code') as tmp:
-            stage = Path(tmp)
+        with tempfile.TemporaryDirectory() as tmp:
+            stage = Path(tmp) / module.STAGE.relative_to(ROOT)
+            stage.mkdir(parents=True)
+            env = dict(os.environ, REPLAY_RESEARCH_ROOT=tmp)
             descriptor, record = wind_fixture(stage)
             review_path, _ = review_fixture(stage, record)
             source_path=stage/'sources.json'
             source_path.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
                 'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': [descriptor]}), encoding='utf-8')
-            command=[sys.executable, str(ROOT/'scripts/build_history_replay.py'), '--stage', str(stage),
+            command=[sys.executable, str(REPO_ROOT/'scripts/build_history_replay.py'), '--stage', str(stage),
                 '--as-of', '2026-10-09', '--parent-source-manifest', str(source_path),
                 '--reviewed-research-manifest', str(review_path), '--check-only']
-            a=subprocess.run(command,capture_output=True,text=True)
-            b=subprocess.run(command,capture_output=True,text=True)
+            a=subprocess.run(command,capture_output=True,text=True,env=env)
+            b=subprocess.run(command,capture_output=True,text=True,env=env)
             self.assertEqual(a.returncode,0,a.stderr)
             self.assertEqual(a.stdout,b.stdout)
             result=json.loads(a.stdout)
@@ -54,7 +58,7 @@ class ReplayIntegrationTests(unittest.TestCase):
             self.assertEqual(result['monthlyAcceptedCells'],0)
             self.assertEqual(result['months'],2)
             output=stage/'never-write.json'
-            blocked=subprocess.run(command+['--require-monthly-complete','--output',str(output)],capture_output=True,text=True)
+            blocked=subprocess.run(command+['--require-monthly-complete','--output',str(output)],capture_output=True,text=True,env=env)
             self.assertNotEqual(blocked.returncode,0)
             self.assertFalse(output.exists())
 
@@ -68,7 +72,7 @@ class ReplayIntegrationTests(unittest.TestCase):
         official_path = module.STAGE / '资料/公开来源' / official['archive']
         local_path = ROOT / local['path']
         binding = lambda p: {'path': str(p), 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()}
-        with tempfile.TemporaryDirectory(dir=module.STAGE / '核验/模板整改20261009/Code') as tmp:
+        with tempfile.TemporaryDirectory() as tmp:
             basepath = Path(tmp)/'baseline.json'
             basepath.write_text(json.dumps(baseline), encoding='utf-8')
             receipt = {**binding(basepath), 'sourceIds': ['public-2','changjiang-1'],
@@ -77,7 +81,7 @@ class ReplayIntegrationTests(unittest.TestCase):
             manifest = Path(tmp)/'sources.json'
             manifest.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
                 'stageStart': '2026-09-01', 'stageEnd': '2026-10-09', 'sources': [], 'baseline': receipt}), encoding='utf-8')
-            data = module.build(as_of='2026-10-09', parent_source_manifest=manifest)
+            data = module.build(as_of='2026-10-09', parent_source_manifest=manifest, configuration_root=Path(tmp))
             self.assertEqual({s['id'] for s in data['sources']}, {'public-2','changjiang-1'})
             self.assertEqual([r['id'] for r in data['reports']], [local['id']])
             event = next(e for e in data['events'] if e['id'] == 'fomc-statement')
@@ -88,7 +92,7 @@ class ReplayIntegrationTests(unittest.TestCase):
             self.assertEqual(data['monthlyCoverage']['acceptedCells'], 0)
 
     def test_explicit_window_does_not_import_legacy_or_second_chapter_sources(self):
-        with tempfile.TemporaryDirectory(dir=module.STAGE / '核验/模板整改20261009/Code') as tmp:
+        with tempfile.TemporaryDirectory() as tmp:
             stage = Path(tmp)
             manifest = stage / 'parent-sources.json'
             manifest.write_text(json.dumps({'schemaVersion': 'parent-source-manifest-1',
