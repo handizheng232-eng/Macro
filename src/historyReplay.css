@@ -29,6 +29,10 @@
 .replay-summary { margin: 18px 0; padding: 16px 20px; background: #eaf2ff; border-top: 2px solid var(--blue); }
 .history-replay .replay-market-analysis { border-top-color: var(--blue); }
 .history-replay .replay-analysis-conclusion { padding: 14px 18px; margin: 0; background: #eaf2ff; font-size: 14px; }
+.history-replay .replay-analysis-conclusion > p { margin: 0 0 14px; overflow-wrap: anywhere; }
+.history-replay .replay-analysis-conclusion > p:last-child { margin-bottom: 0; }
+.history-replay .replay-analysis-conclusion > h3 { margin: 22px 0 8px; padding-left: 10px; border-left: 3px solid var(--blue); color: var(--navy); font-size: 15px; font-weight: 600; line-height: 1.6; overflow-wrap: anywhere; }
+.history-replay .replay-analysis-conclusion > h3:first-child { margin-top: 0; }
 .history-replay .replay-analysis-topic { padding: 18px; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
 .history-replay .replay-analysis-topic h3 { font-size: 16px; }
 .history-replay .replay-topic-directory { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px; background: #f5f8fc; border-top: 1px solid var(--line); }

@@ -93,7 +93,7 @@ def validate_public(data,raw,receipt):
 def verify_publication(data, raw, receipt):
     require(receipt.get('schemaVersion') == 'renewed-easing-qt-end-publication-1', 'not the dedicated third publication receipt')
     require(receipt.get('stageSlug') == SLUG and receipt.get('routeHash') == '#history/easing-to-tightening/' + SLUG, 'wrong publication stage')
-    require(receipt.get('publicationAuthorized') is True and receipt.get('authorization') == 'OK，上线', 'no user publication authorization')
+    require(receipt.get('publicationAuthorized') is True and receipt.get('authorization') in ('OK，上线', '总结的结构再标注清晰，然后上线。'), 'no user publication authorization')
     require(receipt.get('privateChecksPassed') is True and receipt.get('verificationMode') == 'local-private-archive-readback-then-approved-public-dataset', 'private source readback not bound')
     require(receipt.get('datasetSHA256') == H(raw), 'publication exact approved bytes mismatch')
     require(receipt.get('pageQAComplete') is True and receipt.get('pageQADatasetSHA256') == H(raw), 'page QA bound to different bytes')

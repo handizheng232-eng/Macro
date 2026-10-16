@@ -1,13 +1,23 @@
 {
   "schema": "replay.publication.receipt.v1",
-  "verifiedAt": "2026-10-10T14:34:24.134Z",
+  "verifiedAt": "2026-10-16T11:17:38.678402+08:00",
   "verificationMode": "local-private-archive-readback",
   "privateChecksPassed": true,
   "verifiedArchiveEntries": 281,
   "acceptedCells": 24,
   "artifactSHA256": {
-    "src/data/historyReplay.json": "47bd43981870a22106b9f22b5277390c2a6b05bb25368ecb85bb53f1a52f6714",
-    "src/data/historyReplayHawkishTransition.json": "c2cb357f5c1543ade3a7b9f1139c8491b40c32e4b4b7d51d6fe12f3a47e37e3f"
+    "src/data/historyReplay.json": "75b18a5b1293f40ec2866713aacb5780124c8cc6f73d00895bc34b789114a9e1",
+    "src/data/historyReplayHawkishTransition.json": "d683b28d02ad287e20f2ff2ca269207bd0f0e379f7133ed6c89a986d13c2a01a"
   },
-  "scope": "Private archive bytes/SHA checked locally; public CI checks these exact snapshots and never claims to reread private originals."
+  "scope": "Private archive bytes/SHA checked locally; public CI checks these exact snapshots and never claims to reread private originals.",
+  "firstStageArchiveEntriesVerified": 76,
+  "firstStageAcceptedCells": 6,
+  "editorialRevision": {
+    "authorization": "总结的结构再标注清晰，然后上线。",
+    "scope": "Reviewed opening conclusions and24 descriptive headings only; underlying research nodes/observations/archives and historical eligibility unchanged",
+    "independentSemanticReviewSHA256": "f2d45ac965d72342b8a84b470edd60f3ac8610ced45f084dfe998b1188af67db",
+    "parentAcceptedDraftsSHA256": "3dc6bcb9310d608c37c1292b949173984b36b971775a27d4202c3d75268f6cec",
+    "exactNonOpeningProjectionVerified": true,
+    "allThreeDesktopMobileOpeningQAComplete": true
+  }
 }

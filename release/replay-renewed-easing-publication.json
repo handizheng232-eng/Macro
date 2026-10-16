@@ -2,14 +2,14 @@
   "schemaVersion": "renewed-easing-qt-end-publication-1",
   "stageSlug": "renewed-easing-qt-end",
   "routeHash": "#history/easing-to-tightening/renewed-easing-qt-end",
-  "datasetSHA256": "0227b0dbc06086cc1a54adde6ff3cf0c446b9cbe6a81b8bb361e133b98e0a2b9",
-  "verifiedAt": "2026-10-14T08:11:39.898770+08:00",
+  "datasetSHA256": "2e0d6395afd344f50717a679dd73510993562f24ed91d446cbb824a380fc5c44",
+  "verifiedAt": "2026-10-16T11:17:38.678402+08:00",
   "verificationMode": "local-private-archive-readback-then-approved-public-dataset",
   "privateChecksPassed": true,
   "pageQAComplete": true,
-  "pageQADatasetSHA256": "0227b0dbc06086cc1a54adde6ff3cf0c446b9cbe6a81b8bb361e133b98e0a2b9",
+  "pageQADatasetSHA256": "2e0d6395afd344f50717a679dd73510993562f24ed91d446cbb824a380fc5c44",
   "publicationAuthorized": true,
-  "authorization": "OK，上线",
+  "authorization": "总结的结构再标注清晰，然后上线。",
   "counts": {
     "nodes": 232,
     "views": 81,
@@ -70,7 +70,7 @@
     "schemaVersion": "renewed-easing-qt-end-local-candidate-1",
     "stageSlug": "renewed-easing-qt-end",
     "routeHash": "#history/easing-to-tightening/renewed-easing-qt-end",
-    "datasetSHA256": "0227b0dbc06086cc1a54adde6ff3cf0c446b9cbe6a81b8bb361e133b98e0a2b9",
+    "datasetSHA256": "2e0d6395afd344f50717a679dd73510993562f24ed91d446cbb824a380fc5c44",
     "nodes": 232,
     "views": 81,
     "topics": 5,
@@ -103,7 +103,17 @@
     },
     "receiptScope": "local-candidate-not-publication",
     "rawOriginalsCheckedOnlyLocally": true,
-    "publicVerificationScope": "dataset/bibliography/monthly quota/privacy only; no claim of original readback in public CI"
+    "publicVerificationScope": "dataset/bibliography/monthly quota/privacy only; no claim of original readback in public CI",
+    "editorialProjectionVerified": true,
+    "parentAcceptedOpeningReviewSHA256": "3dc6bcb9310d608c37c1292b949173984b36b971775a27d4202c3d75268f6cec"
   },
-  "scope": "143 reports/204 sources and accepted source/research pins were read locally; public CI checks exact approved dataset/structure/bibliography/monthly quotas/privacy, never private originals; old two-stage release receipt unchanged"
+  "scope": "Current private source inputs and originals reread locally; exact non-opening research unchanged; newly reviewed opening and headings checked in actual desktop/mobile build. Public CI verifies exact bound payload, quotas and privacy; it never claims private-original readback.",
+  "editorialRevision": {
+    "authorization": "总结的结构再标注清晰，然后上线。",
+    "scope": "Reviewed opening conclusions and24 descriptive headings only; underlying research nodes/observations/archives and historical eligibility unchanged",
+    "independentSemanticReviewSHA256": "f2d45ac965d72342b8a84b470edd60f3ac8610ced45f084dfe998b1188af67db",
+    "parentAcceptedDraftsSHA256": "3dc6bcb9310d608c37c1292b949173984b36b971775a27d4202c3d75268f6cec",
+    "exactNonOpeningProjectionVerified": true,
+    "allThreeDesktopMobileOpeningQAComplete": true
+  }
 }

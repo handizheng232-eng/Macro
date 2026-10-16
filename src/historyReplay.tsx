@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import replayData from './data/historyReplay.json'
 import { US_MACRO_PAGES } from './usMacroConfig'
 import { formatReplayDate, formatReplayText } from './replayDateFormat'
@@ -72,6 +72,7 @@ export interface ReplayFrameworkEvidence {
 }
 export interface ReplayMarketAnalysis {
   title: string; conclusion: string
+  conclusionHeadings?: string[]
   sections: {
     id: string; title: string; judgement: string; expectation: string; reality: string
     mechanism: string; divergence: string; implication: string; validation: string
@@ -457,7 +458,7 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
     <p className="replay-notice">防后见偏差：按信息发布日期而非观测期筛选。历史截面隐藏当前总结、事后解释和判断；来源日期不明的材料不进入截面。未提供逐版本存档，不等同于完整的实时数据回放。</p>
     {!historical && (data.marketAnalysis ? <section className="replay-panel replay-market-analysis" aria-label="综合市场分析">
       <header><h2>{data.marketAnalysis.title}</h2><span>当前完整资料综合研究 · 非历史时点预期</span></header>
-      <p className="replay-analysis-conclusion">{displayResearchText(data.marketAnalysis.conclusion, data)}</p>
+      <div className="replay-analysis-conclusion" aria-label="阶段开篇总述">{data.marketAnalysis.conclusion.split(/\r?\n\s*\r?\n/).filter(paragraph => paragraph.trim()).map((paragraph, index) => <Fragment key={index}>{data.marketAnalysis?.conclusionHeadings?.[index] && <h3>{data.marketAnalysis.conclusionHeadings[index]}</h3>}<p>{displayResearchText(paragraph, data)}</p></Fragment>)}</div>
       <nav className="replay-topic-directory" aria-label="综合分析主题目录">{data.marketAnalysis.sections.map((section, index) => <a key={section.id} href={`#replay-topic-${index}`} onClick={event => {
         // This dashboard uses hash routes. Local reading anchors must not navigate
         // away from the workbench or reset the selected stage.
