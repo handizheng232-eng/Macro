@@ -24,11 +24,13 @@ import { UsMacroDetail } from './usMacro'
 import { HistoryReplay } from './historyReplay'
 import hawkishReplayData from './data/historyReplayHawkishTransition.json'
 import renewedEasingReplayData from './data/historyReplayRenewedEasingQtEnd.json'
+import tariffPauseReplayData from './data/historyReplayTariffPause.json'
 
 type PageId = 'today' | 'framework' | 'themes' | 'history' | 'methods'
-type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end'
+type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end' | 'tariff-pause'
 
 function historyReplayStageFromHash(hash: string): HistoryReplayStage | null {
+  if (hash === '#history/easing-to-tightening/tariff-pause') return 'tariff-pause'
   if (hash === '#history/easing-to-tightening/policy-reversal') return 'policy-reversal'
   if (hash === '#history/easing-to-tightening/hawkish-transition') return 'hawkish-transition'
   if (hash === '#history/easing-to-tightening/renewed-easing-qt-end') return 'renewed-easing-qt-end'
@@ -202,7 +204,7 @@ const recentSubperiods = [
     number: '10.2',
     period: '2025.01—2025.08',
     title: '关税迷雾下的暂停',
-    status: '待复盘',
+    status: '阶段性上线 · 待补充',
     thesis: '通胀黏性、政策不确定性与就业韧性促使美联储连续维持利率，交易重心转向滞胀风险与期限溢价。',
     fed: '1月起维持4.25%—4.50%；到7月仍未降息，但已有两名委员主张降息，显示就业风险权重上升。',
     treasury: '工作假说：短端受政策暂停约束，长端更多交易财政供给、期限溢价与名义增长预期。',
@@ -484,8 +486,8 @@ function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onO
                   <div><span>复盘问题</span><p>{subperiod.question}</p></div>
                   <a href={subperiod.source} target="_blank" rel="noreferrer">{subperiod.sourceLabel} ↗</a>
                 </div>
-                {(subperiod.number === '10.3' || subperiod.number === '10.4' || subperiod.number === '10.5') && (
-                  <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.3' ? 'renewed-easing-qt-end' : subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
+                {(subperiod.number === '10.2' || subperiod.number === '10.3' || subperiod.number === '10.4' || subperiod.number === '10.5') && (
+                  <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.2' ? 'tariff-pause' : subperiod.number === '10.3' ? 'renewed-easing-qt-end' : subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
                     进入{subperiod.title}研究工作台 <ChevronRight size={16} />
                   </button>
                 )}
@@ -925,7 +927,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} onBack={openRecentHistory} data={historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (

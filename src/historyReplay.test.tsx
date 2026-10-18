@@ -91,11 +91,11 @@ it('真实history.back和forward在父子页面间往返', async () => {
   expect(screen.getByRole('searchbox', { name: '检索资料' })).toBeVisible()
 })
 
-it('仅10.3、10.4与10.5提供入口，旧独立hash可加载并返回父阶段', async () => {
+it('已发布的10.2至10.5提供入口，旧独立hash可加载并返回父阶段', async () => {
   const user = userEvent.setup()
   render(<App />)
   expect(screen.getAllByRole('button', { name: /进入.*研究工作台/ }).map((button) => button.textContent?.trim())).toEqual([
-    '进入重启加息：政策反转研究工作台', '进入鹰派换届与反转酝酿研究工作台', '进入再降息与QT收官研究工作台',
+    '进入重启加息：政策反转研究工作台', '进入鹰派换届与反转酝酿研究工作台', '进入再降息与QT收官研究工作台', '进入关税迷雾下的暂停研究工作台',
   ])
   await user.click(screen.getByRole('button', { name: '进入重启加息：政策反转研究工作台' }))
   expect(window.location.hash).toBe('#history/easing-to-tightening/policy-reversal')
@@ -116,7 +116,7 @@ it('直接加载子页，前后退和hashchange恢复正确层级', () => {
   expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
 })
 
-it.each(['front-loaded-easing', 'tariff-pause', 'qt-end'])('不提供未构建子页 %s', (slug) => {
+it.each(['front-loaded-easing', 'qt-end'])('不提供未构建子页 %s', (slug) => {
   window.history.replaceState(null, '', `#history/easing-to-tightening/${slug}`)
   render(<App />)
   expect(screen.queryByRole('heading', { name: '预期 → 现实：事件时间轴' })).not.toBeInTheDocument()

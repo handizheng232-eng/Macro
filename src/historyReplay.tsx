@@ -75,6 +75,7 @@ export interface ReplayMarketAnalysis {
   conclusionHeadings?: string[]
   sections: {
     id: string; title: string; judgement: string; expectation: string; reality: string
+    approvedChart?: { title: string; src: string; note: string }
     mechanism: string; divergence: string; implication: string; validation: string
     sourceIds: string[]; reportIds: string[]; deepDive?: ReplayDeepDive; frameworkEvidence?: ReplayFrameworkEvidence[]; periodSummary?: ReplayPeriodSummary; aspectSummaries?: Partial<Record<keyof ReplayDeepDive, ReplayAspectSummary>>
   }[]
@@ -103,6 +104,7 @@ export interface ReplayMonthlyCoverage {
 export interface HistoryReplayData {
   title: string; startDate: string; asOf: string; summary: string[]
   endDate?: string; workbenchLabel?: string; eyebrow?: string
+  partialRelease?: { status: string; fullStageReady: boolean; notice: string }
   sources: ReplaySource[]; events: ReplayEvent[]
   hypotheses: { title: string; test: string; invalidator: string; status: string }[]
   acquisition: { provider: string; status: string; detail: string }[]
@@ -260,7 +262,7 @@ function MonthlyCoverage({ coverage }: { coverage: ReplayMonthlyCoverage }) {
       <tbody>{coverage.rows.map(row => <tr key={formatReplayDate(row.month)}><th scope="row">{formatReplayDate(row.month)}</th>{['知识星球', 'Wind', '微信公众号'].map(channel => {
         const cell = row.channels[channel]
         return <td key={channel}><strong>{cell.bodyCount} 份正文档案</strong><p>{cell.status}</p>{cell.reason && <p className="replay-missing">{cell.reason}</p>}
-          {cell.bodyCount > 0 && <details><summary>归档定位 · {cell.archiveEntries} 条渠道记录</summary><ul>{cell.archives.map(archive => <li key={archive.sha256}>{formatReplayDate(archive.date)} · {archive.title}<code>{archive.path}</code></li>)}</ul></details>}
+          {cell.archiveEntries > 0 && <details><summary>归档定位 · {cell.archiveEntries} 条渠道记录</summary><ul>{cell.archives.map(archive => <li key={archive.sha256}>{formatReplayDate(archive.date)} · {archive.title}<code>{archive.path}</code></li>)}</ul></details>}
         </td>
       })}</tr>)}</tbody></table></div>
     <p className="replay-missing">{coverage.basis}</p>
@@ -434,7 +436,7 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
   const hasMarketValues = Boolean(data.marketPaths?.series.some((series) => series.observations.some(finiteObservation)))
   const sources = data.sources.filter((source) => (knownBy(source.date, cutoff) || (!historical && source.retrospectiveOnly)) && (!historical || (source.historicalAsOfEligible !== false && availableBy(source, cutoff))))
   const matches = (values: string[]) => values.join(' ').toLowerCase().includes(query.trim().toLowerCase())
-  const availableSources = sources.filter((source) => safeUrl(source.url) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))
+  const availableSources = sources.filter((source) => (safeUrl(source.url) || data.partialRelease) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))
   const events = data.events.filter((event) => knownBy(event.date, cutoff) && (!historical || (event.historicalAsOfEligible !== false && knownBy(event.availableFrom || event.date, cutoff) && [...event.expectationSourceIds, ...event.realitySourceIds].every(id => sources.some(source => source.id === id))))).sort((a, b) => a.date.localeCompare(b.date))
   const reports = data.reports.filter((report) => (historical ? report.historicalAsOfEligible !== false && knownBy(reportDate(report), cutoff) && availableBy(report, cutoff) : !reportDate(report) || knownBy(reportDate(report), cutoff)) && matches([report.title, report.provider, report.scope || '', report.geography || '', ...(report.topics || []), historical ? '' : report.note || '']))
   const sourceLinks = (ids: string[]) => ids.map((id) => {
@@ -446,7 +448,7 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
   return <article className="history-replay" aria-label={data.workbenchLabel || '政策反转研究工作台'}>
     <header className="replay-heading">
       <div><button type="button" className="history-back" aria-label="返回父阶段复盘" onClick={onBack}>← 返回父阶段复盘</button><p className="eyebrow">{data.eyebrow || 'POLICY REVERSAL · RESEARCH WORKBENCH'}</p><h1>{data.title}</h1><p>{data.endDate ? `阶段区间：${formatReplayDate(`${data.startDate}—${data.endDate}`)}；阶段划分与判断均可修订。` : `开放时期：${formatReplayDate(data.startDate)} 起，终点未形成；阶段划分与判断均可修订。`}</p></div>
-      <div className="replay-date"><span>资料核验截止</span><strong>{formatReplayDate(data.asOf) || '准备中 · 尚无核验日期'}</strong></div>
+      <div className="replay-date"><span>{data.partialRelease ? '研究窗口截止' : '资料核验截止'}</span><strong>{formatReplayDate(data.asOf) || '准备中 · 尚无核验日期'}</strong></div>
     </header>
     <figure className="replay-method-map" aria-label="复盘方法框架">
       <figcaption><h2>复盘方法框架</h2><span>预期与现实对照，持续验证</span></figcaption>
@@ -454,10 +456,11 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
       <div className="replay-method-feedback">↶ 反馈：修正预期</div>
       <p>方法示意，不是确定的因果链；日频变化不等于因果，需结合信息发布时间与其他冲击验证。</p>
     </figure>
-    <div className="replay-toolbar"><label htmlFor="replay-cutoff">按日期截止查看<input id="replay-cutoff" type="date" max={data.asOf || undefined} value={selectedCutoff} onChange={(event) => setSelectedCutoff(event.target.value)} /></label><button type="button" onClick={() => setSelectedCutoff(data.asOf)}>恢复资料截止日</button><span role="status">{historical ? '严格历史截面' : '当前完整资料视图'}：{formatReplayDate(cutoff) || '准备中'} · {events.length} 条事件</span></div>
+    <div className="replay-toolbar"><label htmlFor="replay-cutoff">按日期截止查看<input id="replay-cutoff" type="date" max={data.asOf || undefined} value={selectedCutoff} onChange={(event) => setSelectedCutoff(event.target.value)} /></label><button type="button" onClick={() => setSelectedCutoff(data.asOf)}>恢复资料截止日</button><span role="status">{historical ? '严格历史截面' : data.partialRelease ? '当前阶段性资料视图' : '当前完整资料视图'}：{formatReplayDate(cutoff) || '准备中'} · {events.length} 条事件</span></div>
+    {data.partialRelease && <p className="replay-notice" aria-label="阶段性发布说明">{data.partialRelease.notice}</p>}
     <p className="replay-notice">防后见偏差：按信息发布日期而非观测期筛选。历史截面隐藏当前总结、事后解释和判断；来源日期不明的材料不进入截面。未提供逐版本存档，不等同于完整的实时数据回放。</p>
     {!historical && (data.marketAnalysis ? <section className="replay-panel replay-market-analysis" aria-label="综合市场分析">
-      <header><h2>{data.marketAnalysis.title}</h2><span>当前完整资料综合研究 · 非历史时点预期</span></header>
+      <header><h2>{data.marketAnalysis.title}</h2><span>{data.partialRelease ? '已审核内容阶段性整理' : '当前完整资料综合研究'} · 非历史时点预期</span></header>
       <div className="replay-analysis-conclusion" aria-label="阶段开篇总述">{data.marketAnalysis.conclusion.split(/\r?\n\s*\r?\n/).filter(paragraph => paragraph.trim()).map((paragraph, index) => <Fragment key={index}>{data.marketAnalysis?.conclusionHeadings?.[index] && <h3>{data.marketAnalysis.conclusionHeadings[index]}</h3>}<p>{displayResearchText(paragraph, data)}</p></Fragment>)}</div>
       <nav className="replay-topic-directory" aria-label="综合分析主题目录">{data.marketAnalysis.sections.map((section, index) => <a key={section.id} href={`#replay-topic-${index}`} onClick={event => {
         // This dashboard uses hash routes. Local reading anchors must not navigate
@@ -473,6 +476,7 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
         <p className="replay-analysis-judgement">{displayResearchText(section.judgement, data)}</p>
         <AnalysisDetails section={section} data={data} sources={sources} cutoff={cutoff} />
         <FrameworkEvidence section={section} cutoff={cutoff} />
+        {section.approvedChart && <figure className="replay-framework-card"><p className="replay-swipe-hint">小屏可横向滑动查看完整图表</p><div className="replay-table-wrap"><img src={section.approvedChart.src} alt={section.approvedChart.title} style={{ width: '100%', minWidth: 900, height: 'auto', display: 'block' }} /></div><figcaption>{section.approvedChart.note}</figcaption></figure>}
         <div className="replay-analysis-references"><h4>研究依据</h4>{sourceLinks(section.sourceIds)}
           {section.reportIds.map((id) => {
             const report = data.reports.find((item) => item.id === id && (!reportDate(item) || knownBy(reportDate(item), cutoff)))
@@ -484,12 +488,12 @@ export function HistoryReplay({ onBack, data = replayData }: { onBack: () => voi
     </section> : <section className="replay-summary" aria-label="研究摘要"><h2>研究摘要</h2>{data.summary.length ? <ul>{data.summary.map((text) => <li key={text}>{displayResearchText(text, data)}</li>)}</ul> : <p>资料准备中：尚未填入经核验的事件与研究结论。</p>}</section>)}
 
     <section className="replay-panel" aria-label="判断与反证"><header><h2>判断与反证</h2><span>工作假说，不是既定结论</span></header>{historical ? <p className="replay-empty">历史截面不展示当前判断与反证状态。</p> : data.hypotheses.length ? data.hypotheses.map((hypothesis) => <article className="replay-hypothesis" key={hypothesis.title}><small>{hypothesis.status}</small><h3>{hypothesis.title}</h3><dl><dt>验证条件</dt><dd>{hypothesis.test}</dd><dt>反证 / 失效条件</dt><dd>{hypothesis.invalidator}</dd></dl></article>) : <p className="replay-empty">判断准备中，等待证据支持。</p>}<div className="replay-framework"><h3>宏观框架联查</h3><p>这些链接进入实际宏观模块，当前模块数据不代表历史时点版本。</p>{US_MACRO_PAGES.map((page) => <a key={page.slug} href={`#framework/${page.slug}`}>{page.label} ↗</a>)}</div></section>
-    {!historical && <ResearchEvidence items={data.researchEvidence || []} reports={data.reports} sources={sources} events={events} />}
-    {!historical && <ResearchEvidence items={data.windResearchEvidence || []} reports={data.reports} channel="Wind" sources={sources} events={events} />}
-    {!historical && <ResearchEvidence items={data.wechatResearchEvidence || []} reports={data.reports} channel="微信" coverage={data.wechatCoverage} sources={sources} events={events} />}
+    {!historical && !data.partialRelease && <ResearchEvidence items={data.researchEvidence || []} reports={data.reports} sources={sources} events={events} />}
+    {!historical && !data.partialRelease && <ResearchEvidence items={data.windResearchEvidence || []} reports={data.reports} channel="Wind" sources={sources} events={events} />}
+    {!historical && !data.partialRelease && <ResearchEvidence items={data.wechatResearchEvidence || []} reports={data.reports} channel="微信" coverage={data.wechatCoverage} sources={sources} events={events} />}
 
     {hasMarketValues && <MarketPaths paths={data.marketPaths!} cutoff={cutoff} historical={historical} />}
-    <section className="replay-panel" aria-label="市场路径对照"><header><h2>市场预期与现实路径对照</h2><span>定性证据与量化数据分开</span></header><p className="replay-notice">{hasMarketValues ? '真实序列已接入，逐点观测日、首次发布日期与缺口见上方；会前利率期货隐含路径仍缺失，不把政策目标或事后路径冒充会前市场共识。路径仅供对照，不计算单一事件归因。' : '完整事件窗口量化数据缺失：尚无经核验的会前利率期货隐含路径、全区间美元与美债序列。局部官方快照见事件现实字段；不绘制模拟曲线，不计算全月收益或单一事件归因。'}</p><div className="replay-table-wrap"><table><thead><tr><th>发布日期 / 事件</th><th>当时预期（不等同于市场共识）</th><th>落地现实</th><th>市场反应 / 验证状态</th></tr></thead><tbody>{events.map((event) => <tr key={event.id}><th scope="row">{formatReplayDate(event.date)}<br />{event.title}</th><td>{formatReplayText(evidenceText(event.expectation, event.expectationSourceIds, event.date))}{sourceLinks(event.expectationSourceIds)}</td><td><p>观察期：{formatReplayText(formatReplayDate(event.observationPeriod) || '未注明')} · 不等同于发布日期</p>{formatReplayText(evidenceText(event.reality, event.realitySourceIds))}{sourceLinks(event.realitySourceIds)}</td><td>{historical ? '历史截面隐藏事后市场解释' : event.marketResponse || '缺少量化行情，待验证'}{!historical && event.interpretation && <p>研究解释（非事实）：{displayResearchText(event.interpretation, data)}</p>}</td></tr>)}</tbody></table>{!events.length && <p className="replay-empty">暂无可对照事件。</p>}</div></section>
+    {!data.partialRelease && <section className="replay-panel" aria-label="市场路径对照"><header><h2>市场预期与现实路径对照</h2><span>定性证据与量化数据分开</span></header><p className="replay-notice">{hasMarketValues ? '真实序列已接入，逐点观测日、首次发布日期与缺口见上方；会前利率期货隐含路径仍缺失，不把政策目标或事后路径冒充会前市场共识。路径仅供对照，不计算单一事件归因。' : '完整事件窗口量化数据缺失：尚无经核验的会前利率期货隐含路径、全区间美元与美债序列。局部官方快照见事件现实字段；不绘制模拟曲线，不计算全月收益或单一事件归因。'}</p><div className="replay-table-wrap"><table><thead><tr><th>发布日期 / 事件</th><th>当时预期（不等同于市场共识）</th><th>落地现实</th><th>市场反应 / 验证状态</th></tr></thead><tbody>{events.map((event) => <tr key={event.id}><th scope="row">{formatReplayDate(event.date)}<br />{event.title}</th><td>{formatReplayText(evidenceText(event.expectation, event.expectationSourceIds, event.date))}{sourceLinks(event.expectationSourceIds)}</td><td><p>观察期：{formatReplayText(formatReplayDate(event.observationPeriod) || '未注明')} · 不等同于发布日期</p>{formatReplayText(evidenceText(event.reality, event.realitySourceIds))}{sourceLinks(event.realitySourceIds)}</td><td>{historical ? '历史截面隐藏事后市场解释' : event.marketResponse || '缺少量化行情，待验证'}{!historical && event.interpretation && <p>研究解释（非事实）：{displayResearchText(event.interpretation, data)}</p>}</td></tr>)}</tbody></table>{!events.length && <p className="replay-empty">暂无可对照事件。</p>}</div></section>}
     <details className="replay-disclosure" aria-label="来源库 / 研报库明细">
     <summary>来源库 / 研报库 · 公开来源 {availableSources.length} / 授权研报 {reports.length}（点击展开）</summary>
     {!historical && <MonthlyReplayResearch data={data} />}

@@ -3,3 +3,4 @@
 src/data/historyReplay.json -text
 src/data/historyReplayHawkishTransition.json -text
 src/data/historyReplayRenewedEasingQtEnd.json -text
+src/data/historyReplayTariffPause.json -text

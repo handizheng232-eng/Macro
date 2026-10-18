@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "tariff-pause-partial-publication-1",
+  "scope": "explicitly-authorized-partial-publication",
+  "authorization": "继续推进，并简单一些，我的Token不多了，尽快上线，待后续补充。",
+  "publicationAuthorized": true,
+  "fullStageReady": false,
+  "pageQAComplete": true,
+  "datasetSHA256": "ccf808dba9014507ad2243454095f4427e3ce7e88683f74cdc2ac7fc3e7b00c1",
+  "chartSHA256": "eba2f909a5cbb7ff38f27c7b38ccd65db0769572c530adf3c096f3eee914039a",
+  "privateReadbackSHA256": "89dfc5b16b9da84f91cba3382092c2df68c29d69c0d4025e7266d45fc4780d30",
+  "pageQASHA256": "1565b0f1c47387da6c65891218671423898f6e885ecb17a9110b439cbf653307",
+  "parentProjectionSHA256": "3fa9ba6fb8cb0141a7c383b7bea05968052705111a1aeb035f1d99d70b63d9af",
+  "nodes": 151,
+  "topicsAdmitted": 4,
+  "summaries": 44,
+  "quotaDeficitCells": 11,
+  "remaining": "Dollar topic, missing source-month quotas, other auxiliary charts, paired forecast outcomes and source-library integration remain incomplete."
+}
