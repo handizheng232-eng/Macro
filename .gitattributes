@@ -4,3 +4,5 @@ src/data/historyReplay.json -text
 src/data/historyReplayHawkishTransition.json -text
 src/data/historyReplayRenewedEasingQtEnd.json -text
 src/data/historyReplayTariffPause.json -text
+release/snapshots/renewed-easing-publication-1.json -text
+src/historyReplay.tsx -text

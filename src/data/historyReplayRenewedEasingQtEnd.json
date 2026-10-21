@@ -3181,8 +3181,350 @@
       "bodyDateNature": null,
       "title": "四季度策略会宏观专场20251013",
       "note": "仅父方明确准入的原文/行/段；未知日期为空，不以取得日填充；付费链接只到会员原帖，不提供附件下载。"
+    },
+    {
+      "id": "SEP02-01",
+      "title": "20250912-国新证券-国新证券8月美国CPI数据解读：8月美国CPI环比同比均小幅提高.pdf",
+      "publisher": "郝大明",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-09-12",
+      "publicationDate": "2025-09-12",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "SEP03-01",
+      "title": "20250912-东海证券-东海证券海外观察美国2025年8月CPI数据：通胀预期内上行，后续关注9月FOMC点阵图降息指引.pdf",
+      "publisher": "刘思佳",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-09-12",
+      "publicationDate": "2025-09-12",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "SEP02-02",
+      "title": "20250918-国金证券-国金证券8月美国非农数据点评：鲍威尔暂时通过了独立性的压力测试.pdf",
+      "publisher": "宋雪涛",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-09-18",
+      "publicationDate": "2025-09-18",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "OCT01-05",
+      "title": "20251003-民生证券-民生证券海外市场点评：美国政府关门，财政博弈的序曲.pdf",
+      "publisher": "陶川、林彦",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-10-03",
+      "publicationDate": "2025-10-03",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "OCT01-08",
+      "title": "20251006-招银国际-招银国际美国经济：PMI显示经济放缓.pdf",
+      "publisher": "刘泽晖、叶丙南",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-10-06",
+      "publicationDate": "2025-10-06",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "OCT01-04",
+      "title": "20251014-国金证券-国金证券AI视角下的美国就业市场（2025-10-14）.pdf",
+      "publisher": "宋雪涛",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-10-14",
+      "publicationDate": "2025-10-14",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "OCT01-06",
+      "title": "20251026-东海证券-东海证券海外观察：美国2025年9月CPI数据，通胀超预期放缓，小步伐降息仍是基准情形.pdf",
+      "publisher": "刘思佳",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-10-26",
+      "publicationDate": "2025-10-26",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "OCT01-03",
+      "title": "20251027-招银国际-招银国际美国经济：通胀略低于预期，支持联储降息.pdf",
+      "publisher": "刘泽晖、叶丙南",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-10-27",
+      "publicationDate": "2025-10-27",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "FINAL01-01",
+      "title": "20251113-民生证券-民生证券海外市场点评：美国政府停摆的“后遗症”.pdf",
+      "publisher": "陶川、林彦",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-11-13",
+      "publicationDate": "2025-11-13",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "NOV01-05",
+      "title": "20251118-中邮证券-中邮证券海外宏观周报：美国政府恢复运转，市场再平衡.pdf",
+      "publisher": "李起",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-11-18",
+      "publicationDate": "2025-11-18",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "NOV01-03",
+      "title": "20251120-银河证券-银河证券9月美国非农数据点评：淡化非农就业数据扰动.pdf",
+      "publisher": "张迪",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-11-20",
+      "publicationDate": "2025-11-20",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "NOV01-04",
+      "title": "20251120-方正证券-方正证券9月美国非农数据点评：强非农下，降息或更纠结.pdf",
+      "publisher": "燕翔、石琳",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-11-20",
+      "publicationDate": "2025-11-20",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "NOV01-01",
+      "title": "20251121-招银国际-招银国际美国经济：非农就业喜忧参半，降息时点可能略有推迟.pdf",
+      "publisher": "刘泽晖、叶丙南",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-11-21",
+      "publicationDate": "2025-11-21",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "DEC03-01",
+      "title": "20251208-世纪证券-世纪证券宏观周报（12月第1周）：美联储12月降息预期继续强化.pdf",
+      "publisher": "陈江月",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-12-08",
+      "publicationDate": "2025-12-08",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "DEC02-03",
+      "title": "20251211-长江证券-长江证券2025年12月美联储议息会议点评：重启准备金管理型扩表.pdf",
+      "publisher": "于博",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-12-11",
+      "publicationDate": "2025-12-11",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "DEC02-05",
+      "title": "20251211-浦银国际-浦银国际宏观观点：美联储12月如期降息，但表述较为鹰派.pdf",
+      "publisher": "金晓雯",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-12-11",
+      "publicationDate": "2025-12-11",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
+    },
+    {
+      "id": "FINAL01-05",
+      "title": "20251217-招银国际-招银国际美国经济：就业小幅走弱.pdf",
+      "publisher": "刘泽晖、叶丙南",
+      "url": "",
+      "kind": "Wind已准原始研报（限定观点）",
+      "date": "2025-12-17",
+      "publicationDate": "2025-12-17",
+      "status": "已接入；限定追溯使用",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论"
     }
-  ],
+  ,
+{
+  "id": "WP01-01",
+  "title": "【广发宏观陈嘉荔】美联储12月会继续降息吗？停止缩表的考量是什么？",
+  "publisher": "郭磊宏观茶座",
+  "date": "2025-10-30",
+  "publicationDate": "2025-10-30",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI1NzAwODc3Nw%3D%3D&mid=2651313513&idx=1&sn=bbf74ad760a7e1f7e3e956f72f505b9c&chksm=f03306453bbf1576539cec3c5c68c4389a4866e5f52fee6795bae08ac22a5215e05a42a0a32e",
+  "kind": "原发公众号（父准限定追溯观点）",
+  "status": "正文已接入；非历史信息集",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-02",
+  "title": "招商宏观 | 关于12月美联储货币政策的悖论",
+  "publisher": "招商宏观静思录",
+  "date": "2025-11-17",
+  "publicationDate": "2025-11-17",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA5MjQ3NzE0MA%3D%3D&mid=2652080380&idx=1&sn=b98b26ba6090a69f1c81d11a7e9ee605&chksm=8ad1f67116b32328b238621aceb8364dec2752937bf32636113ee37dfbd79626f1e4cba08a0f",
+  "kind": "原发公众号（父准限定追溯观点）",
+  "status": "正文已接入；非历史信息集",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-05",
+  "title": "海外宏观｜美联储描绘明年乐观的经济前景（2025年12月）",
+  "publisher": "中信证券研究",
+  "date": "2025-12-11",
+  "publicationDate": "2025-12-11",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzUzNTE3NDMwNw%3D%3D&mid=2247670353&idx=5&sn=4dc49b846e982d00fb0fc80e837b087a&chksm=fa85979dcdf21e8bbe000f1615c824d69a9ba5f0c58c05db4cf04c85f1d004674a9952dd4b9c",
+  "kind": "原发公众号（父准限定追溯观点）",
+  "status": "正文已接入；非历史信息集",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+,
+{
+  "id": "LR03-WX-01",
+  "title": "【广发宏观团队】年初以来大类资产在定价什么",
+  "publisher": "郭磊宏观茶座",
+  "date": "2025-09-14",
+  "publicationDate": "2025-09-14",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI1NzAwODc3Nw%3D%3D&mid=2651313061&idx=1&sn=7dd64e2a052f2bcba8f7aea3a31fdb61&chksm=f1ee8643c6990f5558b0e34f32ccd4a9d7679a568b12b4c1c462fbd061a34e7ce7dda470fc36",
+  "kind": "原发公众号（已分析参考）",
+  "status": "已分析参考；限定研究使用",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-02",
+  "title": "【广发宏观团队】如何看宏大叙事对资产定价的影响",
+  "publisher": "郭磊宏观茶座",
+  "date": "2025-10-19",
+  "publicationDate": "2025-10-19",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI1NzAwODc3Nw%3D%3D&mid=2651313435&idx=1&sn=b92cffcda19a4ee432cf7e4629aab9c5&chksm=f1ee80fdc69909eb873634126229f6c8ab1e2f0a006206c3e698690544f3b032cfe82c7e268a",
+  "kind": "原发公众号（已分析参考）",
+  "status": "已分析参考；限定研究使用",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-03",
+  "title": "【广发宏观团队】全球资产主流叙事：一致预期松动但尚未逆转",
+  "publisher": "郭磊宏观茶座",
+  "date": "2025-11-02",
+  "publicationDate": "2025-11-02",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI1NzAwODc3Nw%3D%3D&mid=2651313561&idx=1&sn=4242fc718f2ad0bd2ad5182052d4191e&chksm=f1ee807fc699096948d81afb50eded811291f023147623630cd4a3291d0124aa942bccb8e477",
+  "kind": "原发公众号（已分析参考）",
+  "status": "已分析参考；限定研究使用",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-04",
+  "title": "【广发宏观团队】新增长线索弥补金融条件",
+  "publisher": "郭磊宏观茶座",
+  "date": "2025-12-21",
+  "publicationDate": "2025-12-21",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI1NzAwODc3Nw%3D%3D&mid=2651314050&idx=1&sn=86cc504f400044a549c0e354f3bbcfb8&chksm=f1ee8264c6990b72bf760aeadeabac58df8daf3f245811f022d92572f3373f367b27ae7aad04",
+  "kind": "原发公众号（已分析参考）",
+  "status": "已分析参考；限定研究使用",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+],
   "events": [
     {
       "id": "cut-20250917",
@@ -7676,8 +8018,446 @@
       "postDateLiteral": " 2025-10-14 10:05 ",
       "dateConflict": true,
       "note": "父方接受的是原文及来源身份；不是全部经济事实或本稿分析语义接受。历史首次可得未知。"
+    },
+    {
+      "id": "SEP02-01",
+      "sourceId": "SEP02-01",
+      "channel": "Wind",
+      "title": "20250912-国新证券-国新证券8月美国CPI数据解读：8月美国CPI环比同比均小幅提高.pdf",
+      "date": "2025-09-12",
+      "publicationDate": "2025-09-12",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 郝大明",
+      "path": "私有归档编号:SEP02-01",
+      "authors": [
+        "郝大明"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；分析师"
+    },
+    {
+      "id": "SEP03-01",
+      "sourceId": "SEP03-01",
+      "channel": "Wind",
+      "title": "20250912-东海证券-东海证券海外观察美国2025年8月CPI数据：通胀预期内上行，后续关注9月FOMC点阵图降息指引.pdf",
+      "date": "2025-09-12",
+      "publicationDate": "2025-09-12",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘思佳",
+      "path": "私有归档编号:SEP03-01",
+      "authors": [
+        "刘思佳"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；证券分析师"
+    },
+    {
+      "id": "SEP02-02",
+      "sourceId": "SEP02-02",
+      "channel": "Wind",
+      "title": "20250918-国金证券-国金证券8月美国非农数据点评：鲍威尔暂时通过了独立性的压力测试.pdf",
+      "date": "2025-09-18",
+      "publicationDate": "2025-09-18",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 宋雪涛",
+      "path": "私有归档编号:SEP02-02",
+      "authors": [
+        "宋雪涛"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；分析师"
+    },
+    {
+      "id": "OCT01-05",
+      "sourceId": "OCT01-05",
+      "channel": "Wind",
+      "title": "20251003-民生证券-民生证券海外市场点评：美国政府关门，财政博弈的序曲.pdf",
+      "date": "2025-10-03",
+      "publicationDate": "2025-10-03",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 陶川、林彦",
+      "path": "私有归档编号:OCT01-05",
+      "authors": [
+        "陶川",
+        "林彦"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "OCT01-08",
+      "sourceId": "OCT01-08",
+      "channel": "Wind",
+      "title": "20251006-招银国际-招银国际美国经济：PMI显示经济放缓.pdf",
+      "date": "2025-10-06",
+      "publicationDate": "2025-10-06",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘泽晖、叶丙南",
+      "path": "私有归档编号:OCT01-08",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "OCT01-04",
+      "sourceId": "OCT01-04",
+      "channel": "Wind",
+      "title": "20251014-国金证券-国金证券AI视角下的美国就业市场（2025-10-14）.pdf",
+      "date": "2025-10-14",
+      "publicationDate": "2025-10-14",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 宋雪涛",
+      "path": "私有归档编号:OCT01-04",
+      "authors": [
+        "宋雪涛"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "OCT01-06",
+      "sourceId": "OCT01-06",
+      "channel": "Wind",
+      "title": "20251026-东海证券-东海证券海外观察：美国2025年9月CPI数据，通胀超预期放缓，小步伐降息仍是基准情形.pdf",
+      "date": "2025-10-26",
+      "publicationDate": "2025-10-26",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘思佳",
+      "path": "私有归档编号:OCT01-06",
+      "authors": [
+        "刘思佳"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "OCT01-03",
+      "sourceId": "OCT01-03",
+      "channel": "Wind",
+      "title": "20251027-招银国际-招银国际美国经济：通胀略低于预期，支持联储降息.pdf",
+      "date": "2025-10-27",
+      "publicationDate": "2025-10-27",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘泽晖、叶丙南",
+      "path": "私有归档编号:OCT01-03",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "FINAL01-01",
+      "sourceId": "FINAL01-01",
+      "channel": "Wind",
+      "title": "20251113-民生证券-民生证券海外市场点评：美国政府停摆的“后遗症”.pdf",
+      "date": "2025-11-13",
+      "publicationDate": "2025-11-13",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 陶川、林彦",
+      "path": "私有归档编号:FINAL01-01",
+      "authors": [
+        "陶川",
+        "林彦"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "NOV01-05",
+      "sourceId": "NOV01-05",
+      "channel": "Wind",
+      "title": "20251118-中邮证券-中邮证券海外宏观周报：美国政府恢复运转，市场再平衡.pdf",
+      "date": "2025-11-18",
+      "publicationDate": "2025-11-18",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 李起",
+      "path": "私有归档编号:NOV01-05",
+      "authors": [
+        "李起"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "NOV01-03",
+      "sourceId": "NOV01-03",
+      "channel": "Wind",
+      "title": "20251120-银河证券-银河证券9月美国非农数据点评：淡化非农就业数据扰动.pdf",
+      "date": "2025-11-20",
+      "publicationDate": "2025-11-20",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 张迪",
+      "path": "私有归档编号:NOV01-03",
+      "authors": [
+        "张迪"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "NOV01-04",
+      "sourceId": "NOV01-04",
+      "channel": "Wind",
+      "title": "20251120-方正证券-方正证券9月美国非农数据点评：强非农下，降息或更纠结.pdf",
+      "date": "2025-11-20",
+      "publicationDate": "2025-11-20",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 燕翔、石琳",
+      "path": "私有归档编号:NOV01-04",
+      "authors": [
+        "燕翔",
+        "石琳"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "NOV01-01",
+      "sourceId": "NOV01-01",
+      "channel": "Wind",
+      "title": "20251121-招银国际-招银国际美国经济：非农就业喜忧参半，降息时点可能略有推迟.pdf",
+      "date": "2025-11-21",
+      "publicationDate": "2025-11-21",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘泽晖、叶丙南",
+      "path": "私有归档编号:NOV01-01",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "DEC03-01",
+      "sourceId": "DEC03-01",
+      "channel": "Wind",
+      "title": "20251208-世纪证券-世纪证券宏观周报（12月第1周）：美联储12月降息预期继续强化.pdf",
+      "date": "2025-12-08",
+      "publicationDate": "2025-12-08",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 陈江月",
+      "path": "私有归档编号:DEC03-01",
+      "authors": [
+        "陈江月"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "DEC02-03",
+      "sourceId": "DEC02-03",
+      "channel": "Wind",
+      "title": "20251211-长江证券-长江证券2025年12月美联储议息会议点评：重启准备金管理型扩表.pdf",
+      "date": "2025-12-11",
+      "publicationDate": "2025-12-11",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 于博",
+      "path": "私有归档编号:DEC02-03",
+      "authors": [
+        "于博"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "DEC02-05",
+      "sourceId": "DEC02-05",
+      "channel": "Wind",
+      "title": "20251211-浦银国际-浦银国际宏观观点：美联储12月如期降息，但表述较为鹰派.pdf",
+      "date": "2025-12-11",
+      "publicationDate": "2025-12-11",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 金晓雯",
+      "path": "私有归档编号:DEC02-05",
+      "authors": [
+        "金晓雯"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
+    },
+    {
+      "id": "FINAL01-05",
+      "sourceId": "FINAL01-05",
+      "channel": "Wind",
+      "title": "20251217-招银国际-招银国际美国经济：就业小幅走弱.pdf",
+      "date": "2025-12-17",
+      "publicationDate": "2025-12-17",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "provider": "Wind / 刘泽晖、叶丙南",
+      "path": "私有归档编号:FINAL01-05",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "firstAvailableDate": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "note": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论；报告署名作者（具体归属及角色限制见获准观点全文）"
     }
-  ],
+  ,
+{
+  "id": "WP01-01",
+  "sourceId": "WP01-01",
+  "channel": "微信公众号",
+  "title": "【广发宏观陈嘉荔】美联储12月会继续降息吗？停止缩表的考量是什么？",
+  "date": "2025-10-30",
+  "publicationDate": "2025-10-30",
+  "provider": "郭磊宏观茶座",
+  "path": "私有归档编号:WP01-01",
+  "authors": "广发证券／陈嘉荔",
+  "accountActual": "郭磊宏观茶座",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-02",
+  "sourceId": "WP01-02",
+  "channel": "微信公众号",
+  "title": "招商宏观 | 关于12月美联储货币政策的悖论",
+  "date": "2025-11-17",
+  "publicationDate": "2025-11-17",
+  "provider": "招商宏观静思录",
+  "path": "私有归档编号:WP01-02",
+  "authors": "招商宏观／张静静团队",
+  "accountActual": "招商宏观静思录",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-05",
+  "sourceId": "WP01-05",
+  "channel": "微信公众号",
+  "title": "海外宏观｜美联储描绘明年乐观的经济前景（2025年12月）",
+  "date": "2025-12-11",
+  "publicationDate": "2025-12-11",
+  "provider": "中信证券研究",
+  "path": "私有归档编号:WP01-05",
+  "authors": "中信证券／李翀、崔嵘、韦昕澄",
+  "accountActual": "中信证券研究",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "note": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+,
+{
+  "id": "LR03-WX-01",
+  "sourceId": "LR03-WX-01",
+  "channel": "微信公众号",
+  "title": "【广发宏观团队】年初以来大类资产在定价什么",
+  "date": "2025-09-14",
+  "publicationDate": "2025-09-14",
+  "provider": "郭磊宏观茶座",
+  "path": "私有归档编号:LR03-WX-01",
+  "authors": "广发证券／郭磊（宏观框架）",
+  "accountActual": "郭磊宏观茶座",
+  "dateBasis": "原HTML页头使用的create_time与ct；publish_time节点空，保留列表线索不修复。",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-02",
+  "sourceId": "LR03-WX-02",
+  "channel": "微信公众号",
+  "title": "【广发宏观团队】如何看宏大叙事对资产定价的影响",
+  "date": "2025-10-19",
+  "publicationDate": "2025-10-19",
+  "provider": "郭磊宏观茶座",
+  "path": "私有归档编号:LR03-WX-02",
+  "authors": "广发证券／郭磊（宏观框架）",
+  "accountActual": "郭磊宏观茶座",
+  "dateBasis": "原HTML页头使用的create_time与ct；publish_time节点空，保留列表线索不修复。",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-03",
+  "sourceId": "LR03-WX-03",
+  "channel": "微信公众号",
+  "title": "【广发宏观团队】全球资产主流叙事：一致预期松动但尚未逆转",
+  "date": "2025-11-02",
+  "publicationDate": "2025-11-02",
+  "provider": "郭磊宏观茶座",
+  "path": "私有归档编号:LR03-WX-03",
+  "authors": "广发证券／郭磊（宏观框架）",
+  "accountActual": "郭磊宏观茶座",
+  "dateBasis": "原HTML页头使用的create_time与ct；publish_time节点空，保留列表线索不修复。",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-04",
+  "sourceId": "LR03-WX-04",
+  "channel": "微信公众号",
+  "title": "【广发宏观团队】新增长线索弥补金融条件",
+  "date": "2025-12-21",
+  "publicationDate": "2025-12-21",
+  "provider": "郭磊宏观茶座",
+  "path": "私有归档编号:LR03-WX-04",
+  "authors": "广发证券／郭磊（宏观框架）",
+  "accountActual": "郭磊宏观茶座",
+  "dateBasis": "原HTML页头使用的create_time与ct；publish_time节点空，保留列表线索不修复。",
+  "note": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+],
   "hypotheses": [
     {
       "title": "货币政策｜连续降息、缩表收官与准备金管理分开看",
@@ -7714,17 +8494,17 @@
     {
       "provider": "知识星球",
       "status": "逐月原文配额已验收",
-      "detail": "仅当前本地已接受原文储备；检索未声明穷尽，不是历史时点信息集或全站总量。"
+      "detail": "仅当前已接受原文储备；检索未声明穷尽，不是历史时点信息集或全站总量。"
     },
     {
       "provider": "Wind",
-      "status": "逐月原文配额已验收",
-      "detail": "仅当前本地已接受原文储备；检索未声明穷尽，不是历史时点信息集或全站总量。"
+      "status": "59篇；12月按用户数量例外接受，采集已停止",
+      "detail": "默认每月15篇，真实15/15/15/14；数量例外不变更其他篇门槛。旧中邮相关观点待单独复核，不作为本轮新增结论依据；继承Wind计数不等于本轮重新质量审核。"
     },
     {
       "provider": "微信公众号",
-      "status": "逐月原文配额已验收",
-      "detail": "仅当前本地已接受原文储备；检索未声明穷尽，不是历史时点信息集或全站总量。"
+      "status": "正式父准库23篇；另4篇已分析参考",
+      "detail": "本轮7篇均已完成分析：采用6篇、未采用1篇（中金点睛）；另复用前次中信1篇，合计呈现7段。正式父准库23篇保持不变，另4篇标为已分析参考，不计入正式父准数；待分析0篇。既有held及旧中邮重复件不自动升格。"
     }
   ],
   "monthlyCoverage": {
@@ -7733,8 +8513,8 @@
     "requiredCells": 12,
     "coveredCells": 12,
     "acceptedCells": 12,
-    "complete": true,
-    "basis": "父方准入子集重新计算，不以渠道总量替代逐月数量；技术通过不等于研究语义接受。",
+    "complete": false,
+    "basis": "Wind59篇（15/15/15/14），默认每月15，12月按用户数量例外接受；公众号23篇（5/6/6/6）。数量不代表整阶段研究完成。",
     "rows": [
       {
         "month": "2025-09",
@@ -7757,10 +8537,10 @@
             "archives": []
           },
           "Wind": {
-            "bodyCount": 12,
-            "verifiedBodyCount": 12,
-            "archiveEntries": 12,
-            "requiredCount": 10,
+            "bodyCount": 15,
+            "verifiedBodyCount": 15,
+            "archiveEntries": 15,
+            "requiredCount": 15,
             "accepted": true,
             "quotaAccepted": true,
             "accountCount": null,
@@ -7770,7 +8550,7 @@
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "原已准储备加本轮父准增量；限定研究呈现，未声明检索穷尽。",
             "archives": []
           },
           "微信公众号": {
@@ -7787,9 +8567,9 @@
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "父准库逐月5/6/6/6保持不变；本月另有1篇已分析参考，不计入父准数。",
             "archives": []
-          }
+          ,"libraryReviewedCandidateCount":1}
         }
       },
       {
@@ -7813,10 +8593,10 @@
             "archives": []
           },
           "Wind": {
-            "bodyCount": 10,
-            "verifiedBodyCount": 10,
-            "archiveEntries": 10,
-            "requiredCount": 10,
+            "bodyCount": 15,
+            "verifiedBodyCount": 15,
+            "archiveEntries": 15,
+            "requiredCount": 15,
             "accepted": true,
             "quotaAccepted": true,
             "accountCount": null,
@@ -7826,26 +8606,26 @@
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "原已准储备加本轮父准增量；限定研究呈现，未声明检索穷尽。",
             "archives": []
           },
           "微信公众号": {
-            "bodyCount": 5,
-            "verifiedBodyCount": 5,
-            "archiveEntries": 5,
+            "bodyCount": 6,
+            "verifiedBodyCount": 6,
+            "archiveEntries": 6,
             "requiredCount": 5,
             "accepted": true,
             "quotaAccepted": true,
-            "accountCount": 3,
+            "accountCount": 4,
             "searchExecuted": true,
             "searchExhaustive": false,
             "actualEligibleTotal": null,
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "父准库逐月5/6/6/6保持不变；本月另有1篇已分析参考，不计入父准数。",
             "archives": []
-          }
+          ,"libraryReviewedCandidateCount":1}
         }
       },
       {
@@ -7869,10 +8649,10 @@
             "archives": []
           },
           "Wind": {
-            "bodyCount": 10,
-            "verifiedBodyCount": 10,
-            "archiveEntries": 10,
-            "requiredCount": 10,
+            "bodyCount": 15,
+            "verifiedBodyCount": 15,
+            "archiveEntries": 15,
+            "requiredCount": 15,
             "accepted": true,
             "quotaAccepted": true,
             "accountCount": null,
@@ -7882,26 +8662,26 @@
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "原已准储备加本轮父准增量；限定研究呈现，未声明检索穷尽。",
             "archives": []
           },
           "微信公众号": {
-            "bodyCount": 5,
-            "verifiedBodyCount": 5,
-            "archiveEntries": 5,
+            "bodyCount": 6,
+            "verifiedBodyCount": 6,
+            "archiveEntries": 6,
             "requiredCount": 5,
             "accepted": true,
             "quotaAccepted": true,
-            "accountCount": 5,
+            "accountCount": 6,
             "searchExecuted": true,
             "searchExhaustive": false,
             "actualEligibleTotal": null,
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "父准库逐月5/6/6/6保持不变；本月另有1篇已分析参考，不计入父准数。",
             "archives": []
-          }
+          ,"libraryReviewedCandidateCount":1}
         }
       },
       {
@@ -7925,10 +8705,10 @@
             "archives": []
           },
           "Wind": {
-            "bodyCount": 10,
-            "verifiedBodyCount": 10,
-            "archiveEntries": 10,
-            "requiredCount": 10,
+            "bodyCount": 14,
+            "verifiedBodyCount": 14,
+            "archiveEntries": 14,
+            "requiredCount": 15,
             "accepted": true,
             "quotaAccepted": true,
             "accountCount": null,
@@ -7936,15 +8716,15 @@
             "searchExhaustive": false,
             "actualEligibleTotal": null,
             "shortageEvidenceVerified": false,
-            "acceptanceBasis": "minimum_verified_originals",
-            "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "acceptanceBasis": "explicit_user_quantity_exception",
+            "status": "用户接受现有数量：14 / 默认要求15；停止补采",
+            "reason": "数量例外仅适用第三篇2025年12月；不豁免质量、引用及发布审核。",
             "archives": []
-          },
+          ,"defaultQuotaAccepted":false,"effectiveQuotaAccepted":true,"quantityException":{"stage": "renewed-easing-qt-end", "month": "2025-12", "channel": "Wind", "requiredCount": 15, "acceptedCount": 14, "acceptedByUser": true, "qualityReviewWaived": false}},
           "微信公众号": {
-            "bodyCount": 5,
-            "verifiedBodyCount": 5,
-            "archiveEntries": 5,
+            "bodyCount": 6,
+            "verifiedBodyCount": 6,
+            "archiveEntries": 6,
             "requiredCount": 5,
             "accepted": true,
             "quotaAccepted": true,
@@ -7955,9 +8735,9 @@
             "shortageEvidenceVerified": false,
             "acceptanceBasis": "minimum_verified_originals",
             "status": "原文配额已验收",
-            "reason": "逐月独立已准入原文；检索穷尽与配额分开。",
+            "reason": "父准库逐月5/6/6/6保持不变；本月另有1篇已分析参考，不计入父准数。",
             "archives": []
-          }
+          ,"libraryReviewedCandidateCount":1}
         }
       }
     ]
@@ -16258,7 +17038,11 @@
           "知识星球-52ed9c3d09f5b4d4",
           "知识星球-b7d7f4e40e40c175",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"WP01-01",
+"WP01-02",
+"WP01-05"
+],
         "reportIds": [
           "star-4a4749d5b8e09506",
           "star-8acc2e02b169971b",
@@ -16295,7 +17079,11 @@
           "知识星球-52ed9c3d09f5b4d4",
           "知识星球-b7d7f4e40e40c175",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"WP01-01",
+"WP01-02",
+"WP01-05"
+],
         "deepDive": {
           "expectationTimeline": [
             {
@@ -16808,6 +17596,46 @@
               "retrospectiveOnly": true,
               "firstAvailableDate": null,
               "dateRole": "material-archive-day-not-expression-or-publication-proof"
+            },
+            {
+              "id": "local02-WP01-05-C1",
+              "date": "2025-12-11",
+              "title": "12月11日：2026年利率路径的条件预测",
+              "text": "中信证券李翀、崔嵘、韦昕澄在2025年12月11日的公众号分析中，预计次年1月暂停降息。这一判断包含两项作者前提：1月会议前新增的非农与CPI信息大概率不改变经济判断，且12月降息已经提前回应了失业率可能走高的风险。对于后续路径，作者依据在没有新增关税条件下、商品通胀可能于2026年第一季度见顶的判断，预计鲍威尔任主席期间余下两次会议合计还有25个基点的降息。对2026年下半年，作者以新主席人选分情景：若哈塞特胜出，仍可能有降息空间。若由其他候选人出任，作者则预计下半年可能暂停降息。这个人选比较是中信的条件预测，不能改写成对个人政治动机的认定。其风险包括通胀意外反弹、就业超预期转弱、关税变化和美联储独立性变化。上述期限和幅度均为作者预测，不是点阵图所作的委员会承诺，也不以准备金管理购债支持该预测；购债的准备金供给目的与政策利率路径应分开。",
+              "sourceIds": [
+                "WP01-05"
+              ],
+              "reportIds": [
+                "WP01-05"
+              ],
+              "evidenceRefs": [
+                "WP01-05-C1"
+              ],
+              "claimIds": [
+                "WP01-05-C1"
+              ],
+              "atomIds": [
+                "WP01-05-identity",
+                "WP01-05-premise",
+                "WP01-05-horizon",
+                "WP01-05-scenario",
+                "WP01-05-counterexample",
+                "WP01-05-risk",
+                "WP01-05-boundary"
+              ],
+              "dateNote": "原页刊发日；仅当前追溯使用，不证明历史首次可得。",
+              "supportingEvidence": [
+                {
+                  "id": "WP01-05-C1",
+                  "reportId": "WP01-05",
+                  "actor": "中信证券／李翀、崔嵘、韦昕澄",
+                  "publicationDate": "2025-12-11",
+                  "locatorLabel": "原文审定段落 001、005、012、014、019、021、022、026、030"
+                }
+              ],
+              "firstAvailableDate": null,
+              "historicalAsOfEligible": false,
+              "retrospectiveOnly": true
             },
             {
               "id": "third-macro-policy-path-expectationTimeline-08",
@@ -17878,7 +18706,47 @@
               "firstAvailableDate": null,
               "dateRole": "retrospective-mechanism-undated"
             }
-          ],
+          ,
+{
+  "id": "local02-WP01-01-C1",
+  "date": "2025-10-30",
+  "title": "10月30日：结束QT与准备金下降的边界",
+  "text": "2025年10月30日，广发证券陈嘉荔在郭磊宏观茶座发表的分析，把结束缩表主要理解为预防资金市场风险，而不是主动扩大货币宽松。其依据是隔夜逆回购缓冲已接近耗尽，常设回购工具使用增多，担保融资与三方回购利率相对准备金利率的利差上升；即使准备金总量仍称充裕，边际融资也可能趋紧。讨论对应10月会议决定自12月1日起结束缩表：作者担心继续压缩准备金会放大常规结算冲击，因而强调维持利率操作的稳定。但文中同时指出，停止缩表后，即使资产负债表规模暂时稳定，流通现金等非准备金负债增加仍可能使准备金下降。作者列出的风险还包括增长、投资和就业明显转弱使降息预期前移，赤字与长债供给增加使曲线波动，关税升级推高成本，以及商业地产和中小银行压力使信贷收紧。因此，这里保留的是工具目的与资金压力的条件解释，不能据此认定停止缩表就是QE、准备金必增或所有风险资产受益；文中利率预测点数、政策意图及2019年机制的强断言不在本段认证范围内。",
+  "sourceIds": [
+    "WP01-01"
+  ],
+  "reportIds": [
+    "WP01-01"
+  ],
+  "evidenceRefs": [
+    "WP01-01-C1"
+  ],
+  "claimIds": [
+    "WP01-01-C1"
+  ],
+  "atomIds": [
+    "WP01-01-identity",
+    "WP01-01-premise",
+    "WP01-01-horizon",
+    "WP01-01-counterexample",
+    "WP01-01-risk",
+    "WP01-01-boundary"
+  ],
+  "dateNote": "原页刊发日；仅当前追溯使用，不证明历史首次可得。",
+  "supportingEvidence": [
+    {
+      "id": "WP01-01-C1",
+      "reportId": "WP01-01",
+      "actor": "广发证券／陈嘉荔",
+      "publicationDate": "2025-10-30",
+      "locatorLabel": "原文审定段落 001、005、006、007、009"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+],
           "divergence": [
             {
               "id": "third-macro-policy-path-divergence-01",
@@ -18284,7 +19152,46 @@
               "firstAvailableDate": null,
               "dateRole": "material-archive-day-not-expression-or-publication-proof"
             }
-          ],
+          ,
+{
+  "id": "local02-WP01-02-C1",
+  "date": "2025-11-17",
+  "title": "11月17日：12月会议前后的两种市场情景",
+  "text": "招商宏观张静静团队在2025年11月16日周报、11月17日公众号文章中，提出了12月会议前后的两种市场情景。在作者所述通胀压力尚存、数据缺失且部分官员转向谨慎的背景下，若会前形势平稳，作者认为美联储没有必要继续降息；但不降息本身又可能引起会后美股下跌。另一种情景是，会前美股已经大幅下跌，作者判断这会显著增加美联储转向宽松的压力。两种情景的区别在于下跌发生在会议之前还是之后，并非无条件的降息预测。原报告同时提示国内政策落实力度和海外衰退可能超出预期，不能把既定市场环境视为不变。这一判断只能作为作者对政策与市场相互影响的情景讨论，不是已验证的联储托市规则；文章没有提供股市跌幅阈值、金融条件传导的定量证据，也未证明股票下跌本身足以决定委员会投票。",
+  "sourceIds": [
+    "WP01-02"
+  ],
+  "reportIds": [
+    "WP01-02"
+  ],
+  "evidenceRefs": [
+    "WP01-02-C1"
+  ],
+  "claimIds": [
+    "WP01-02-C1"
+  ],
+  "atomIds": [
+    "WP01-02-identity",
+    "WP01-02-premise",
+    "WP01-02-counterexample",
+    "WP01-02-risk",
+    "WP01-02-boundary"
+  ],
+  "dateNote": "原页刊发日；仅当前追溯使用，不证明历史首次可得。",
+  "supportingEvidence": [
+    {
+      "id": "WP01-02-C1",
+      "reportId": "WP01-02",
+      "actor": "招商宏观／张静静团队",
+      "publicationDate": "2025-11-17",
+      "locatorLabel": "原文审定段落 001、005、006、010、011"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+],
           "implicationTimeline": [
             {
               "id": "third-macro-policy-path-implicationTimeline-01",
@@ -19121,7 +20028,20 @@
               "firstAvailableDate": null,
               "dateRole": "retrospective-mechanism-undated"
             }
-          ]
+          ,
+{
+  "id": "local02-cme-gap",
+  "date": null,
+  "title": "政策预期数据边界：历史FedWatch仍缺失",
+  "text": "CME FedWatch历史概率缺口：两份二手图表／措辞缺少明确观察时刻，尚无可核验的历史概率分布；未接入CME概率数据，不以当前概率回填，也不展示未获批准的截图数值。",
+  "sourceIds": [],
+  "reportIds": [],
+  "evidenceRefs": [],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+]
         },
         "historicalAsOfEligible": false,
         "retrospectiveOnly": true,
@@ -30752,7 +31672,9 @@
           "知识星球-549de903b39c3f65",
           "知识星球-7e2935c52b29e5b9",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"LR03-WX-04"
+],
         "reportIds": [
           "star-083a5013251a532b",
           "star-5044957f9b95359d",
@@ -30779,7 +31701,9 @@
           "知识星球-549de903b39c3f65",
           "知识星球-7e2935c52b29e5b9",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"LR03-WX-04"
+],
         "deepDive": {
           "expectationTimeline": [
             {
@@ -31383,7 +32307,40 @@
               "firstAvailableDate": null,
               "dateRole": "material-or-release-window-anchor"
             }
-          ],
+          ,
+{
+  "id": "local03-LR03-WX-04-C1",
+  "date": "2025-12-21",
+  "title": "12月21日：增长能否抵消金融条件收敛",
+  "text": "郭磊在2025年12月21日展望2026年时，提出增长新线索能否抵消金融条件收敛，是下一阶段需要观察的问题，而非已发生的结果。他认为美联储剩余降息空间减少、美国可能推出新经济政策及相对欧洲的增长优势，不利于美元继续单边走弱；日元融资成本上升可能增加风险资产去杠杆压力，中国稳投资、稳地产和治理内卷也可能约束国内利率下限。作为可能的对冲，作者列出美国财政与税收安排对居民消费的增量作用、欧洲在地缘缓和条件下的增长机会，以及中国投资、消费、房地产和AI应用方面的潜在改善。关键条件是增长线索得到确认，且改善幅度足以弥补融资条件变化；两者的相对斜率当时仍待观察。本页只把它作为期末增长情景，不认定刺激已经兑现或风险资产必然上涨；融资成本上升也不单独证明实际去杠杆已经发生。文末保留重大冲击下高频模型样本外效果不稳、中东局势与国内地产超预期风险。本节点不采用同文对停摆后CPI环比的混合表述、降息概率或未经核定的债汇周度数字。",
+  "sourceIds": [
+    "LR03-WX-04"
+  ],
+  "reportIds": [
+    "LR03-WX-04"
+  ],
+  "evidenceRefs": [
+    "LR03-WX-04-C1"
+  ],
+  "claimIds": [
+    "LR03-WX-04-C1"
+  ],
+  "dateNote": "已分析参考；原页刊发日期，仅当前追溯。",
+  "supportingEvidence": [
+    {
+      "id": "LR03-WX-04-C1",
+      "reportId": "LR03-WX-04",
+      "actor": "广发证券／郭磊（宏观框架）",
+      "publicationDate": "2025-12-21",
+      "locatorLabel": "原文正文行 6—14、83"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+],
           "realityTimeline": [
             {
               "id": "third-macro-demand-supply-realityTimeline-01",
@@ -39840,7 +40797,40 @@
               "historicalAsOfEligible": false,
               "availableFrom": null
             }
-          ]
+          ,
+{
+  "id": "local03-LR03-WX-02-C1",
+  "date": "2025-10-19",
+  "title": "10月19日：用基本面验证跨资产叙事",
+  "text": "郭磊在2025年10月19日讨论宏大叙事如何改变资产定价：当财政货币、贸易、地缘与技术条件较快变化、未来更难预测时，跨资产的共同故事可能强化预期反馈，并让短期基本面验证滞后。放到美债主题，这一方法提醒复盘者把政策与现金流证据同市场解释分开，而不是把利率变化直接归因于某个流行故事；这是本页的方法应用，不是作者给出的美债交易结论。作者主张区分叙事层级和资金期限，跟踪传播阶段，并以科技企业营收、用户与付费转化、生产率及商品供需变化作动态验证；同时在不同叙事之间分散，限制单一叙事权重、分批止盈，有条件时以期权控制风险，警惕叙事泛化与循环交易。长期故事不能消除估值约束，高估值仍可能触发调整。本文对均值回复、组合分散及动量适用性的论述只作有争议的方法参考，未提供可复现策略检验，不据此宣称传统配置失效或动量必胜；文末的模型样本外、地缘和国内地产风险仍须保留。",
+  "sourceIds": [
+    "LR03-WX-02"
+  ],
+  "reportIds": [
+    "LR03-WX-02"
+  ],
+  "evidenceRefs": [
+    "LR03-WX-02-C1"
+  ],
+  "claimIds": [
+    "LR03-WX-02-C1"
+  ],
+  "dateNote": "已分析参考；原页刊发日期，仅当前追溯。",
+  "supportingEvidence": [
+    {
+      "id": "LR03-WX-02-C1",
+      "reportId": "LR03-WX-02",
+      "actor": "广发证券／郭磊（宏观框架）",
+      "publicationDate": "2025-10-19",
+      "locatorLabel": "原文正文行 6—16、90"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+]
         },
         "aspectSummaries": {
           "expectationTimeline": {
@@ -40423,7 +41413,9 @@
           "知识星球-7494d778e27d2c50",
           "知识星球-833228d5af7216ca",
           "知识星球-9c957c6d6b5bbe94"
-        ],
+        ,
+"LR03-WX-02"
+],
         "reportIds": [
           "star-328fab889f66cd15",
           "star-3e8882a371c833af",
@@ -40452,7 +41444,9 @@
           "知识星球-7494d778e27d2c50",
           "知识星球-833228d5af7216ca",
           "知识星球-9c957c6d6b5bbe94"
-        ],
+        ,
+"LR03-WX-02"
+],
         "frameworkEvidence": [
           {
             "id": "third-framework-curve",
@@ -47130,7 +48124,40 @@
               "historicalAsOfEligible": false,
               "availableFrom": null
             }
-          ],
+          ,
+{
+  "id": "local03-LR03-WX-01-C1",
+  "date": "2025-09-14",
+  "title": "9月14日：美元与跨资产叙事的反转条件",
+  "text": "郭磊在2025年9月14日把年内跨资产行情解释为三条相互关联的线索：美元信用担忧促使资金寻找非美元配置，供应链重组提高关键资源与备用产能的价值，技术变革预期则推动算力投资及相关需求。这是作者的叙事框架，不是对资金流向或政策冲击贡献的识别。对美元主题的启发在于，不能仅用降息解释所有资产：若美国经济不着陆或再通胀打断宽松，美元定价可能反转；若地缘关系重新融合，避险和产业备份需求可能减弱；若技术路径分化或扩张趋于平稳，金属与基础设施的需求想象也可能调整。即使长期框架不变，流动性预期差、地缘变化、商业化与盈利兑现仍会改变短中期斜率。文末另提示重大经济或市场冲击下高频模型的样本外效果有限，以及中东局势升级、国内地产压力超预期的风险。本节点只采用上述有归属的定性框架，不把作者的美元信用判断当成已证事实，也不引用其资产涨幅和通胀概括。",
+  "sourceIds": [
+    "LR03-WX-01"
+  ],
+  "reportIds": [
+    "LR03-WX-01"
+  ],
+  "evidenceRefs": [
+    "LR03-WX-01-C1"
+  ],
+  "claimIds": [
+    "LR03-WX-01-C1"
+  ],
+  "dateNote": "已分析参考；原页刊发日期，仅当前追溯。",
+  "supportingEvidence": [
+    {
+      "id": "LR03-WX-01-C1",
+      "reportId": "LR03-WX-01",
+      "actor": "广发证券／郭磊（宏观框架）",
+      "publicationDate": "2025-09-14",
+      "locatorLabel": "原文正文行 5—11、80"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+],
           "divergence": [
             {
               "id": "usd-div-sep",
@@ -47517,7 +48544,40 @@
               "historicalAsOfEligible": false,
               "availableFrom": null
             }
-          ],
+          ,
+{
+  "id": "local03-LR03-WX-03-C1",
+  "date": "2025-11-02",
+  "title": "11月2日：叙事松动不等于趋势逆转",
+  "text": "郭磊在2025年11月2日将当时的全球资产叙事判断为共识有所松动、尚未根本逆转。他把美元反弹与降息路径重新受到质疑、黄金的单边行情受阻、贸易与地缘缓和、AI资本开支回报受到审视，以及金属需求量级分歧并列观察。这些是作者对当时市场的解释，不是本页另行核定的行情序列或全市场共识。作者维持“尚未逆转”的前提是财政扩张与货币宽松格局仍在、地缘与贸易秩序及央行购金趋势没有单边反转、AI资本开支尚未出现二阶拐点；同时指出估值已较充分，叙事松动可能放大波动，应避免配置依赖的故事彼此完全串联。与9月框架对照，这体现同一作者在不同信息日期下的条件更新，不增加独立机构票。若上述支撑改变，就需要重新评估原判断；不能把短期美元反弹直接推为长期趋势逆转，也不能以本页的广义美元图替代原文未明确定义的美元指数。本节点不采用文中个别公司投资数额、黄金技术价位或政策动机判断。",
+  "sourceIds": [
+    "LR03-WX-03"
+  ],
+  "reportIds": [
+    "LR03-WX-03"
+  ],
+  "evidenceRefs": [
+    "LR03-WX-03-C1"
+  ],
+  "claimIds": [
+    "LR03-WX-03-C1"
+  ],
+  "dateNote": "已分析参考；原页刊发日期，仅当前追溯。",
+  "supportingEvidence": [
+    {
+      "id": "LR03-WX-03-C1",
+      "reportId": "LR03-WX-03",
+      "actor": "广发证券／郭磊（宏观框架）",
+      "publicationDate": "2025-11-02",
+      "locatorLabel": "原文正文行 6—14"
+    }
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+}
+],
           "implicationTimeline": [
             {
               "id": "usd-imp-sep",
@@ -48368,7 +49428,7 @@
               "id": "usd-val-horizon",
               "date": "2025-12-31",
               "title": "阶段截止与历史资格：初稿不等于第三篇完成",
-              "text": "12月11日机构对2026年需求、政策人事与美元先抑后扬的展望保留ongoing，晚发统计和当前回取价格仅用于追溯，不进入更早历史截面。尚待父方独立准入的StarResume01不读、不计、不提前引用；父02旧星球唯一转录的发言人身份未核，不能算具名机构票，也不能替代四个月原文配额。技术pins、字面与算术通过后，仍须父方独立语义审核和增量储备补齐，当前文件不接生产、不发布、不宣称整篇完成。",
+              "text": "12月11日机构对2026年需求、政策人事与美元先抑后扬的展望保留ongoing，晚发统计和当前回取价格仅用于追溯，不进入更早历史截面。尚待父方独立准入的StarResume01不读、不计、不提前引用；父02旧星球唯一转录的发言人身份未核，不能算具名机构票，也不能替代四个月原文配额。上述流程说明保留原研究边界；当前版本仅获有限研究公开呈现授权，不宣称整篇完成。",
               "sourceIds": [
                 "fred-DTWEXBGS",
                 "wind-0b26cf09af21185c",
@@ -49153,7 +50213,10 @@
           "知识星球-b10620e4b25bbf4e",
           "知识星球-de115d398733e6f3",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"LR03-WX-01",
+"LR03-WX-03"
+],
         "reportIds": [
           "star-328fab889f66cd15",
           "star-3e8882a371c833af",
@@ -49179,7 +50242,10 @@
           "知识星球-b10620e4b25bbf4e",
           "知识星球-de115d398733e6f3",
           "知识星球-fa0af45571aa1749"
-        ],
+        ,
+"LR03-WX-01",
+"LR03-WX-03"
+],
         "frameworkEvidence": [
           {
             "id": "third-framework-usd-identity",
@@ -53514,7 +54580,11 @@
       "广义美元不是DXY；外国增长、外国利差、OIS、期限溢价、高频惊喜与同期共识缺失，保持null。",
       "实际观察日与统计公布日、初值与后修订分开；当前回取及首次可得未知不提升历史资格。",
       "行情只是描述；相邻日、端点及事件后窗口不是因果贡献，国债收益率变化不是债券总回报。"
-    ]
+    ,
+"旧中邮相关观点待单独复核，不作为本轮新增结论依据；继承Wind计数不等于本轮重新质量审核。",
+"CME FedWatch历史概率缺口：两份二手图表／措辞缺少明确观察时刻，尚无可核验的历史概率分布；未接入CME概率数据，不以当前概率回填，也不展示未获批准的截图数值。",
+"本轮7篇均已完成分析：采用6篇、未采用1篇（中金点睛）；另复用前次中信1篇，合计呈现7段。正式父准库23篇保持不变，另4篇标为已分析参考，不计入正式父准数；待分析0篇。既有held及旧中邮重复件不自动升格。"
+]
   },
   "researchEvidence": [
     {
@@ -59084,7 +60154,221 @@
         "源原件准入不等于本节点父方研究准入。"
       ]
     }
+  ,
+{
+  "id": "WP01-01-C1",
+  "analysisEntryId": "local02-WP01-01-C1",
+  "topicId": "policy-path",
+  "channel": "微信公众号",
+  "reportId": "WP01-01",
+  "sourceId": "WP01-01",
+  "actor": "广发证券／陈嘉荔",
+  "expressedAt": "2025-10-30",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "claim": "2025年10月30日，广发证券陈嘉荔在郭磊宏观茶座发表的分析，把结束缩表主要理解为预防资金市场风险，而不是主动扩大货币宽松。其依据是隔夜逆回购缓冲已接近耗尽，常设回购工具使用增多，担保融资与三方回购利率相对准备金利率的利差上升；即使准备金总量仍称充裕，边际融资也可能趋紧。讨论对应10月会议决定自12月1日起结束缩表：作者担心继续压缩准备金会放大常规结算冲击，因而强调维持利率操作的稳定。但文中同时指出，停止缩表后，即使资产负债表规模暂时稳定，流通现金等非准备金负债增加仍可能使准备金下降。作者列出的风险还包括增长、投资和就业明显转弱使降息预期前移，赤字与长债供给增加使曲线波动，关税升级推高成本，以及商业地产和中小银行压力使信贷收紧。因此，这里保留的是工具目的与资金压力的条件解释，不能据此认定停止缩表就是QE、准备金必增或所有风险资产受益；文中利率预测点数、政策意图及2019年机制的强断言不在本段认证范围内。",
+  "scope": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "pages": [
+    "p001",
+    "p005",
+    "p006",
+    "p007",
+    "p009"
   ],
+  "evidenceExcerpt": null,
+  "conditions": "全部条件、期限、反例与风险保留在上方不可拆全文中。",
+  "reality": null,
+  "status": "限定追溯观点；尚未核验预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "首次历史可得未知，不进入严格历史模式；不提供原始全文。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-02-C1",
+  "analysisEntryId": "local02-WP01-02-C1",
+  "topicId": "policy-path",
+  "channel": "微信公众号",
+  "reportId": "WP01-02",
+  "sourceId": "WP01-02",
+  "actor": "招商宏观／张静静团队",
+  "expressedAt": "2025-11-17",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "claim": "招商宏观张静静团队在2025年11月16日周报、11月17日公众号文章中，提出了12月会议前后的两种市场情景。在作者所述通胀压力尚存、数据缺失且部分官员转向谨慎的背景下，若会前形势平稳，作者认为美联储没有必要继续降息；但不降息本身又可能引起会后美股下跌。另一种情景是，会前美股已经大幅下跌，作者判断这会显著增加美联储转向宽松的压力。两种情景的区别在于下跌发生在会议之前还是之后，并非无条件的降息预测。原报告同时提示国内政策落实力度和海外衰退可能超出预期，不能把既定市场环境视为不变。这一判断只能作为作者对政策与市场相互影响的情景讨论，不是已验证的联储托市规则；文章没有提供股市跌幅阈值、金融条件传导的定量证据，也未证明股票下跌本身足以决定委员会投票。",
+  "scope": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "pages": [
+    "p001",
+    "p005",
+    "p006",
+    "p010",
+    "p011"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "全部条件、期限、反例与风险保留在上方不可拆全文中。",
+  "reality": null,
+  "status": "限定追溯观点；尚未核验预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "首次历史可得未知，不进入严格历史模式；不提供原始全文。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+},
+{
+  "id": "WP01-05-C1",
+  "analysisEntryId": "local02-WP01-05-C1",
+  "topicId": "policy-path",
+  "channel": "微信公众号",
+  "reportId": "WP01-05",
+  "sourceId": "WP01-05",
+  "actor": "中信证券／李翀、崔嵘、韦昕澄",
+  "expressedAt": "2025-12-11",
+  "dateBasis": "原页刊发日期；首次历史可得未知",
+  "claim": "中信证券李翀、崔嵘、韦昕澄在2025年12月11日的公众号分析中，预计次年1月暂停降息。这一判断包含两项作者前提：1月会议前新增的非农与CPI信息大概率不改变经济判断，且12月降息已经提前回应了失业率可能走高的风险。对于后续路径，作者依据在没有新增关税条件下、商品通胀可能于2026年第一季度见顶的判断，预计鲍威尔任主席期间余下两次会议合计还有25个基点的降息。对2026年下半年，作者以新主席人选分情景：若哈塞特胜出，仍可能有降息空间。若由其他候选人出任，作者则预计下半年可能暂停降息。这个人选比较是中信的条件预测，不能改写成对个人政治动机的认定。其风险包括通胀意外反弹、就业超预期转弱、关税变化和美联储独立性变化。上述期限和幅度均为作者预测，不是点阵图所作的委员会承诺，也不以准备金管理购债支持该预测；购债的准备金供给目的与政策利率路径应分开。",
+  "scope": "仅完整不可拆的已准条件观点；不认证全文章事实，不作独立机构票或预测命中。",
+  "pages": [
+    "p001",
+    "p005",
+    "p012",
+    "p014",
+    "p019",
+    "p021",
+    "p022",
+    "p026",
+    "p030"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "全部条件、期限、反例与风险保留在上方不可拆全文中。",
+  "reality": null,
+  "status": "限定追溯观点；尚未核验预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "首次历史可得未知，不进入严格历史模式；不提供原始全文。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true
+}
+,
+{
+  "id": "LR03-WX-01-C1",
+  "analysisEntryId": "local03-LR03-WX-01-C1",
+  "topicId": "dollar-relative",
+  "channel": "微信公众号",
+  "reportId": "LR03-WX-01",
+  "sourceId": "LR03-WX-01",
+  "actor": "广发证券／郭磊（宏观框架）",
+  "expressedAt": "2025-09-14",
+  "dateBasis": "原HTML刊发日；历史首次可得未知",
+  "claim": "郭磊在2025年9月14日把年内跨资产行情解释为三条相互关联的线索：美元信用担忧促使资金寻找非美元配置，供应链重组提高关键资源与备用产能的价值，技术变革预期则推动算力投资及相关需求。这是作者的叙事框架，不是对资金流向或政策冲击贡献的识别。对美元主题的启发在于，不能仅用降息解释所有资产：若美国经济不着陆或再通胀打断宽松，美元定价可能反转；若地缘关系重新融合，避险和产业备份需求可能减弱；若技术路径分化或扩张趋于平稳，金属与基础设施的需求想象也可能调整。即使长期框架不变，流动性预期差、地缘变化、商业化与盈利兑现仍会改变短中期斜率。文末另提示重大经济或市场冲击下高频模型的样本外效果有限，以及中东局势升级、国内地产压力超预期的风险。本节点只采用上述有归属的定性框架，不把作者的美元信用判断当成已证事实，也不引用其资产涨幅和通胀概括。",
+  "scope": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "pages": [
+    "正文行5—11",
+    "正文行80—80"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "适用条件、风险和限制见本条完整原创转述。",
+  "reality": null,
+  "status": "已分析参考；限定研究使用，未认证预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "仅当前追溯；未使用图表数字。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-02-C1",
+  "analysisEntryId": "local03-LR03-WX-02-C1",
+  "topicId": "treasury-curve",
+  "channel": "微信公众号",
+  "reportId": "LR03-WX-02",
+  "sourceId": "LR03-WX-02",
+  "actor": "广发证券／郭磊（宏观框架）",
+  "expressedAt": "2025-10-19",
+  "dateBasis": "原HTML刊发日；历史首次可得未知",
+  "claim": "郭磊在2025年10月19日讨论宏大叙事如何改变资产定价：当财政货币、贸易、地缘与技术条件较快变化、未来更难预测时，跨资产的共同故事可能强化预期反馈，并让短期基本面验证滞后。放到美债主题，这一方法提醒复盘者把政策与现金流证据同市场解释分开，而不是把利率变化直接归因于某个流行故事；这是本页的方法应用，不是作者给出的美债交易结论。作者主张区分叙事层级和资金期限，跟踪传播阶段，并以科技企业营收、用户与付费转化、生产率及商品供需变化作动态验证；同时在不同叙事之间分散，限制单一叙事权重、分批止盈，有条件时以期权控制风险，警惕叙事泛化与循环交易。长期故事不能消除估值约束，高估值仍可能触发调整。本文对均值回复、组合分散及动量适用性的论述只作有争议的方法参考，未提供可复现策略检验，不据此宣称传统配置失效或动量必胜；文末的模型样本外、地缘和国内地产风险仍须保留。",
+  "scope": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "pages": [
+    "正文行6—16",
+    "正文行90—90"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "适用条件、风险和限制见本条完整原创转述。",
+  "reality": null,
+  "status": "已分析参考；限定研究使用，未认证预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "仅当前追溯；未使用图表数字。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-03-C1",
+  "analysisEntryId": "local03-LR03-WX-03-C1",
+  "topicId": "dollar-relative",
+  "channel": "微信公众号",
+  "reportId": "LR03-WX-03",
+  "sourceId": "LR03-WX-03",
+  "actor": "广发证券／郭磊（宏观框架）",
+  "expressedAt": "2025-11-02",
+  "dateBasis": "原HTML刊发日；历史首次可得未知",
+  "claim": "郭磊在2025年11月2日将当时的全球资产叙事判断为共识有所松动、尚未根本逆转。他把美元反弹与降息路径重新受到质疑、黄金的单边行情受阻、贸易与地缘缓和、AI资本开支回报受到审视，以及金属需求量级分歧并列观察。这些是作者对当时市场的解释，不是本页另行核定的行情序列或全市场共识。作者维持“尚未逆转”的前提是财政扩张与货币宽松格局仍在、地缘与贸易秩序及央行购金趋势没有单边反转、AI资本开支尚未出现二阶拐点；同时指出估值已较充分，叙事松动可能放大波动，应避免配置依赖的故事彼此完全串联。与9月框架对照，这体现同一作者在不同信息日期下的条件更新，不增加独立机构票。若上述支撑改变，就需要重新评估原判断；不能把短期美元反弹直接推为长期趋势逆转，也不能以本页的广义美元图替代原文未明确定义的美元指数。本节点不采用文中个别公司投资数额、黄金技术价位或政策动机判断。",
+  "scope": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "pages": [
+    "正文行6—14"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "适用条件、风险和限制见本条完整原创转述。",
+  "reality": null,
+  "status": "已分析参考；限定研究使用，未认证预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "仅当前追溯；未使用图表数字。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+},
+{
+  "id": "LR03-WX-04-C1",
+  "analysisEntryId": "local03-LR03-WX-04-C1",
+  "topicId": "demand-supply",
+  "channel": "微信公众号",
+  "reportId": "LR03-WX-04",
+  "sourceId": "LR03-WX-04",
+  "actor": "广发证券／郭磊（宏观框架）",
+  "expressedAt": "2025-12-21",
+  "dateBasis": "原HTML刊发日；历史首次可得未知",
+  "claim": "郭磊在2025年12月21日展望2026年时，提出增长新线索能否抵消金融条件收敛，是下一阶段需要观察的问题，而非已发生的结果。他认为美联储剩余降息空间减少、美国可能推出新经济政策及相对欧洲的增长优势，不利于美元继续单边走弱；日元融资成本上升可能增加风险资产去杠杆压力，中国稳投资、稳地产和治理内卷也可能约束国内利率下限。作为可能的对冲，作者列出美国财政与税收安排对居民消费的增量作用、欧洲在地缘缓和条件下的增长机会，以及中国投资、消费、房地产和AI应用方面的潜在改善。关键条件是增长线索得到确认，且改善幅度足以弥补融资条件变化；两者的相对斜率当时仍待观察。本页只把它作为期末增长情景，不认定刺激已经兑现或风险资产必然上涨；融资成本上升也不单独证明实际去杠杆已经发生。文末保留重大冲击下高频模型样本外效果不稳、中东局势与国内地产超预期风险。本节点不采用同文对停摆后CPI环比的混合表述、降息概率或未经核定的债汇周度数字。",
+  "scope": "已实质阅读，定性观点限定采用；已获有限研究呈现授权，不计入正式父准23篇。不认证全文数字，不增加独立机构票。",
+  "pages": [
+    "正文行6—14",
+    "正文行83—83"
+  ],
+  "evidenceExcerpt": null,
+  "conditions": "适用条件、风险和限制见本条完整原创转述。",
+  "reality": null,
+  "status": "已分析参考；限定研究使用，未认证预测结果",
+  "realitySourceIds": [],
+  "limitations": [
+    "仅当前追溯；未使用图表数字。"
+  ],
+  "firstAvailableDate": null,
+  "historicalAsOfEligible": false,
+  "retrospectiveOnly": true,
+  "parentAccepted": false
+,"forecastHorizon":{"literalResearchWindow": "2026年展望；条件是否兑现及相对斜率待观察", "effectiveDeadline": null}}
+],
   "realityComparisons": [
     {
       "id": "pair-third-macro-demand-supply-expectationTimeline-02-wind-150dde04c81a7701",
@@ -60841,7 +62125,7 @@
       "mechanism": "本月该方面无具日期节点；全期无日机制见综合主题，不补造月结论。",
       "divergence": "五矿认为准备金注入缓解资金面焦虑，中金认为金融流动性对风险资产更有利、长债影响有限；交银也强调技术性缓冲。这些判断可以同时成立，却不能因此把RMP归成旨在压低长期期限风险的QE。首月计划规模、总接受面值和纯新增资金是三种量；只有拆出再投资与RMP份额，才能讨论净新增影响。本研究保留官方操作分类与私人机构资产推论，既不否认短期资金渠道，也不夸大为已识别的长期宽松贡献。\n\n交银的降息尾段强调短期先观望，中邮则认为关税传导消化后全年仍可能降更多，东兴把相对温和通胀与50至75个基点空间结合。这不是一方“鹰”、另一方“鸽”就能概括：短期暂停可以与较大累计幅度同时成立，前提是通胀在年初之后回落、就业需要保护。若增长持续强劲或成本扩散，幅度应下调；若就业快速恶化，观望期限可能缩短。2026年尚在本研究窗口之外，不在12月31日预先判胜负。\n\n11月25日匿名展望把春季暂停、下半年人事与财政推动更松作为主线；12月15日自称大摩的发言人却将保护性降息前置到1月与4月，下半年暂停。前者更重财政回补和政治推动，后者更重贸易冲击对就业的延时。因此分歧不是简单的更鸽或更鹰，而是何时增长改善、何时就业需要保护。另有12月14日发言人强调新主席仍受组织内讨论与集体决策制约，不宜由候选人直接推出全年政策。这些是跨发言人的条件对照，不是同作者撤回或实时修订。\n\n12月24日讲者认为财政发债结构配合短券购买可产生类似QE的债券供需效果；12月14日另一讲者更重运行缓冲、现钞及财政存款需求。这两种解释可以部分并存，但经济效果相似不能将工具正式分类改成QE。已接受纽约联储原稿把购买目的写为维持充裕准备金；它确认操作目的，不预先否定任何间接资产通道。真正要比较的是财政期限选择、资金分配和风险资本是否改变，而不是用扩表一个词抹去目的、再投与新增的差别。\n\n中邮认为企业年初集中调价值得等待，同时预计一季度以后关税影响消化可打开空间；东兴把2月至8月价格压力较小作为窗口。预测并非都在说同一个月，也不包含已经实现的2026年数据。可比较的是新关税是否出现、成本传导和服务价格是否如假设回落，而不能把“年初峰值”与“全年降温”当作相互否定。材料引用的市场隐含次数只归给报告，不扩成独立市场共识。\n\n9月14日前瞻强调当时商品回落与服务缓冲；10月28日材料强调利润及库存缓冲逐渐耗尽；12月18日受访者又区分促销成交价与标价、供应商提价与零售端吸收。这些不是同一口径的反向事实，也没有被证为同作者修订。真正可比较的是成本缓冲能持续多久、需求多强才允许转嫁。11月25日匿名年度展望另把需求驱动的通胀上行放在次年第四季度，它与渠道次年一季度调价关注不同窗口，不能让年初峰值或年末上行相互替代。\n\n华泰12月17日强调政府岗位扰动之外私人部门仍扩张，并看招聘意愿改善；中信同日列出私人新增和制造业仍弱，进而关注服务业集中及裁员边际变化。两份报告并不需要在总量正负上互相否定，分歧是少数行业支撑能否推广成广泛恢复。可比期限应是未来私人招聘，而不是用已经公布的11月总非农给所有未来判断评分。中信关于平均每月高估的压力测试没有升级为BLS对11月减去固定数的事实。\n\n中金9月29日倾向AI、财政与传统需求接力，华泰12月17日预计住房仅弱修复，认为需求刺激有可能抬房价而未改善中低收入负担。材料时点与关注对象不同，不能叫同一机构修订，也不能只凭GDP较强判住房预测错误。若借款成本有效下降、供给响应增强，传统需求修复会更广；若收入与供给限制仍在，总量韧性可以和住房偏弱同时成立。跨2026年的期限保留未到期。\n\n第三季度GDP首发4.3%、私人国内最终销售3.0%，而9月实际消费首发月率为0.0%，11月就业首报仍仅增加6.4万人。季度增速、单月支出和岗位流量的窗口不同，不能以其中一项否定其他项。对AI生产率或财富效应的机构解释，本研究保留条件，没有由这些数字直接识别贡献；GDP预定advance、second未发布，也不以它们制造“连续上修超预期”。\n\n12月15日策略谈认为次年美国内需再平衡、库存周期见底，非科技需求会接力；12月4日进口材料却强调消费品前置库存仍压新单；12月18日受访者则看到电动工具等具体品类低于安全库存、适合小步补货。三者不能直接互相否定：宏观周期、消费品进口与单渠道商品各有范围，保税库存覆盖还待核。只有相同品类、同库存口径和同窗口的采购动销，才能判断哪一条较接近现实。文件名归档时序也不证明一个发言人已看到另一份材料。\n\n东吴和申万宏源11月23日将新数据不足视为暂停的重要依据；中信10月30日此前则认为，暂停需要政府恢复正常运行并出现不支持继续降息的数据，Kevin策略研究上述署名文章认为融资成本仍过高，等待只改变时点。区别在于决策者损失函数：避免误降息与防止就业风险恶化哪个代价更大。12月实际降息只能说明暂停基准没有实现，不能证明申万市场定价阈值或中信票型推断的机制正确；没有同期独立概率原件，也不把作者的定价转述汇总成市场共识。\n\n9月和12月SEP表中2025年末联邦基金利率中位数均为3.6%、2026年末均为3.4%，但次年GDP增速预测从1.8%变为2.3%，PCE通胀从2.6%变为2.4%。这些表中数值按官方公布精度保留，利率是年末目标区间中点的预测，增长和通胀是第四季度相对上一年第四季度变化，不是下一场会议承诺。中金的长端中枢则来自自然利率差与期限溢价假设，它不是SEP的同变量复制。即使终点中位数不变，更强增长与较低通胀的条件组合仍可能改变实际长端、通胀补偿和曲线形状。因此不能把SEP中位数未改称为政策和市场完全没有新信息，也不能用券商模型贴近某日10年期值来验证联储预测。\n\n中金12月11日认为资金改善对风险资产更有利、对长债利率影响有限；交银国际12月12日强调RMP与压低长期利率的QE不同；民银国际12月15日保留投资者由短券转向长券的间接传导。前两种判断关注政策目的和第一轮传导，后一种关注私人资产替代，不能以工具名称排除一切长端影响，也不能因替代可能性就证明已经压低长端。验证需要观察持仓、融资及供给变化；本稿只有实际价格和资金指标，没有相应数量识别。\n\n12月11日匿名会后转录把准备金购买视作数量工具正常化，不应过度解读成新一轮QE；12月24日前卫转录也承认不是传统QE，却在财政发行结构配合的情景下，认为长端可获得类似的供需改善。区别在政策目的与间接资产效果，而不是谁识别了另一种政策。后者对风险资产实质利好同样保留条件：购买节奏要超过其估算的资金需求，不能只有情绪反应。本增量不接受用总资产减去若干负债的余额作为完整准备金，也不把资本约束放松直接加总为联储创造的基础货币。\n\n中金12月11日的先弱后强以独立性不显著受损为条件；东吴9月21日政治压力情景则把更多宽松与美元信用风险结合。招商银行12月11日关注财政、货币支撑下的相对增长。它们分别覆盖短期人事交易、潜在尾部风险与中期基本面，不是同作者反复改口。若未来更多宽松没有损害可信度且改善需求，美元可获得支撑；若回报和信任下降，结论可反向。到本截止这些条件并未被完整测量。\n\n11月25日匿名年度转录和12月3日卓宏材料更强调美国宽松及信用条件，保留2026年偏弱方向；12月24日前卫转录把欧洲、日本的自身问题重新放进比较，弱美元倾向仍在，持续大幅下行却不是基准。它们不是同作者连续修改指数目标，也没有可共同评分的数值区间。真正可比较的是，美国政策压力是否形成比非美更大的回报下降，以及非美风险是否提供反向美元需求。缺少外国利率与同版本经济资料时，这个分歧应留下，而不是用12月底美元回落宣告其中一方已经获胜。",
       "implication": "12月9日至12月10日，2年期收益率由3.61%降至3.54%，10年期由4.18%降至4.13%，程序计算分别下行7和5个基点，期限差由57升至59个基点。这是会期相邻日观察，不是纯降息冲击：当天同时有沟通、预测和准备金管理安排。随后12月12日买入、12月15日结算，资金数量渠道时间与会期利率价格渠道不同。招商银行12月11日据此提示年末资金利率仍可能波动、长债还受增长牵制；不能仅用当日曲线走陡证明RMP像QE一样压低长端。\n\n12月24日材料对债券较积极，对股票商品估值却要求购买超过运行需求，对信贷只给方向性判断，并仍看淡次年美国经济。这种分层本身是对流动性好就全面复苏的约束。若资金摩擦先缓解而信贷、实际支出和广泛招聘未动，只能确认运行层改善；若后续信用获得和需求共同改善，才扩大为复苏含义。这里没有新增行情窗口或因果估计，也不把讲者拟合相关关系认定为扩表导致信贷扩张。\n\n12月18日11月CPI同比较低，相邻日2年期收益率由3.49%到3.46%，10年期由4.16%到4.12%，程序计算分别下降3和4个基点。它是物价发布日附近的真实日频反应，不能全部归因于CPI，也不能以该反应推定0.2%就是单月环比。年末价格判断仍须等待后续连续采集的数据，短端路径与长期风险补偿可能不同，美元更需海外相对条件。\n\n12月18日渠道调价情景若兑现，短期商品通胀缓和就不能线性外推；但其目的恰是修复毛利，未必代表居民需求很强。传导是成本转嫁减轻企业利润负担，却降低消费者实际购买力，政策要同时看价格持续性与就业损失，而非只按物价一个方向决策。若提价使销售单位下降、订单再弱，企业盈利恢复与总需求扩张不能画等号；若售价、销量及招聘一起改善，需求支持的权重才上升。这只是源于渠道前提的研究推论，不是一份新的官方通胀预测。\n\n12月16日就业公布附近，2年期收益率从前一日3.51%到3.48%，10年期从4.18%到4.15%，程序计算均下行3个基点。机构随后分别强调私人恢复或行业集中，这些评论属于公布后分析。它们可继续检验后续融资和需求条件，却不能解释为12月10日委员会已看到11月6.4万、失业率4.6%，更不能把后来数据与此前降息混成因果证明。\n\n渠道材料提供一条较具体的风险链：低价促销改善动销，但毛利和库存占款仍限制新采购；进口材料还把订金、假期临时招聘和现金流联系。若销售收入强主要依赖价格或折扣结构、回款不足，融资利率下降未必马上增加采购或招聘。观察应是现金转换、真实新订单和广泛用工；若利润现金流及补单一同改善，传统需求接力更可靠。宏观资产上涨与上述条件可能同时出现，却没有在这些转录中构成严格因果识别。\n\n第三季度GDP首次发布日附近，2年期收益率从12月22日3.44%到12月23日3.48%，10年期从4.17%到4.18%，程序计算分别上行4和1个基点。它与就业发布附近收益率下行构成方向对照，但不是两项数据各自独立的因果估计。总量韧性可能减少追加保险式宽松需要，私人需求、就业和风险补偿又能限制长端；美元还要海外相对路径，不能由美国GDP独自裁决。\n\n12月1日至31日共同有效观察值，2年期下降7个基点，10年期上升9个基点，利差扩大16个基点。12月10日降息之后至第五个共同观察日12月17日，2年期下降5个基点，10年期却上升3个基点。招商银行关于长端受经济动能牵制的条件判断具有可比较的价格实例，但尚未证明增长或供给贡献。进入期末，资金工具可缓冲运行风险，不能保证长久期融资成本持续下降；2026年通胀和政策节奏仍留待之后的真实版本检验。\n\n12月10日至其后第五个共同观察日12月17日，广义美元变动-0.43%，至第十个共同观察日12月24日变动-1.03%；12月月内首末值变化-1.03%。这些窗口包含会后就业及通胀原稿，不是单一降息或RMP的因果贡献。中金和招商银行的次年修复情景尚未到期，下降不能证明它们后半段已错；也不能在当前回溯版中补入2026年数据为其正名。",
-      "validation": "9月就业只在11月20日稿公布后讨论，11月就业和CPI只在12月16日、18日原稿公布后讨论；10月家庭缺失不意味着企业调查初值不存在，CPI两月累计不改写为单月环比。12月23日第三季度首次估计不制造原先拟定但未实际公开的两次估计。2026年年初暂停、全年进一步降息和次年经济修复在本截止仍未到期，保留ongoing；没有在12月31日前公开的12月观察值初报不能倒填。\n\n12月11日机构对2026年需求、政策人事与美元先抑后扬的展望保留ongoing，晚发统计和当前回取价格仅用于追溯，不进入更早历史截面。尚待父方独立准入的StarResume01不读、不计、不提前引用；父02旧星球唯一转录的发言人身份未核，不能算具名机构票，也不能替代四个月原文配额。技术pins、字面与算术通过后，仍须父方独立语义审核和增量储备补齐，当前文件不接生产、不发布、不宣称整篇完成。"
+      "validation": "9月就业只在11月20日稿公布后讨论，11月就业和CPI只在12月16日、18日原稿公布后讨论；10月家庭缺失不意味着企业调查初值不存在，CPI两月累计不改写为单月环比。12月23日第三季度首次估计不制造原先拟定但未实际公开的两次估计。2026年年初暂停、全年进一步降息和次年经济修复在本截止仍未到期，保留ongoing；没有在12月31日前公开的12月观察值初报不能倒填。\n\n12月11日机构对2026年需求、政策人事与美元先抑后扬的展望保留ongoing，晚发统计和当前回取价格仅用于追溯，不进入更早历史截面。尚待父方独立准入的StarResume01不读、不计、不提前引用；父02旧星球唯一转录的发言人身份未核，不能算具名机构票，也不能替代四个月原文配额。上述流程说明保留原研究边界；当前版本仅获有限研究公开呈现授权，不宣称整篇完成。"
     }
   ],
   "revisionChains": [
@@ -60998,5 +62282,445 @@
     "aspectSummaries": 35,
     "institutionVotesAdded": 0,
     "sourceSnapshot": "ParentAdmission06/EffectiveAccepted"
-  }
+  },
+  "windIncrement": [
+    {
+      "id": "SEP02-01",
+      "title": "20250912-国新证券-国新证券8月美国CPI数据解读：8月美国CPI环比同比均小幅提高.pdf",
+      "publicationDate": "2025-09-12",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "郝大明"
+      ],
+      "authorRole": "分析师",
+      "alias": "私有归档编号:SEP02-01",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "SEP02-01-C1",
+          "renderedView": "主题：美国通胀、就业与当时降息判断\n作者归属：国新证券分析师郝大明\n获准观点：郝大明在9月12日认为，8月CPI环比同比上行、核心及居住和服务同比仍较高，通胀本身暂不支持降息；但就业数据支持降息，因此该期CPI暂不改变其降息判断。此为当时作者判断，而非通胀已达标或降息必然发生。\n条件：作者认为8月CPI环比同比较7月小幅提高，关税影响显现；传导归因为作者解释，未经官方交叉核验\n作者认为核心CPI、居住和服务价格同比与7月相同且仍较高、均在3%以上，不能删掉通胀不支持降息这一反向前提\n作者同时依赖就业数据支持降息；该报告未在此展开就业数据实证，不能改成审核者认证的就业事实\n期限：2025-09-12基于8月CPI的当时、暂时判断；不外推2025年第四季度或长期政策规则\n风险：地缘政治恶化超预期\n欧美经济衰退超预期\n反向信息：通胀偏高、不支持降息与就业支持降息必须联合保留，不能只取支持降息半句\n审核限制：保留作者归属与原文暂时性；不把关税影响当已识别因果\n不引用未复核的分项精确数值；不混淆季调与非季调\n中国货币政策空间论断不在白名单；没有预测—结果配对",
+          "legacyFields": {
+            "subject": "美国通胀、就业与当时降息判断",
+            "author": "国新证券分析师郝大明",
+            "summary": "郝大明在9月12日认为，8月CPI环比同比上行、核心及居住和服务同比仍较高，通胀本身暂不支持降息；但就业数据支持降息，因此该期CPI暂不改变其降息判断。此为当时作者判断，而非通胀已达标或降息必然发生。",
+            "conditions": [
+              "作者认为8月CPI环比同比较7月小幅提高，关税影响显现；传导归因为作者解释，未经官方交叉核验",
+              "作者认为核心CPI、居住和服务价格同比与7月相同且仍较高、均在3%以上，不能删掉通胀不支持降息这一反向前提",
+              "作者同时依赖就业数据支持降息；该报告未在此展开就业数据实证，不能改成审核者认证的就业事实"
+            ],
+            "horizon": "2025-09-12基于8月CPI的当时、暂时判断；不外推2025年第四季度或长期政策规则",
+            "risks": [
+              "地缘政治恶化超预期",
+              "欧美经济衰退超预期"
+            ],
+            "counterweight": "通胀偏高、不支持降息与就业支持降息必须联合保留，不能只取支持降息半句",
+            "reviewerLimits": [
+              "保留作者归属与原文暂时性；不把关税影响当已识别因果",
+              "不引用未复核的分项精确数值；不混淆季调与非季调",
+              "中国货币政策空间论断不在白名单；没有预测—结果配对"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "SEP03-01",
+      "title": "20250912-东海证券-东海证券海外观察美国2025年8月CPI数据：通胀预期内上行，后续关注9月FOMC点阵图降息指引.pdf",
+      "publicationDate": "2025-09-12",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘思佳"
+      ],
+      "authorRole": "证券分析师",
+      "alias": "私有归档编号:SEP03-01",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "SEP03-01-C1",
+          "renderedView": "主题：2025年9月会前通胀、就业与降息判断\n作者归属：东海证券分析师刘思佳\n获准观点：刘思佳在2025年9月12日认为，核心CPI环比稳定且符合预期，结合其称疲软的PPI、走弱就业及初请上升，8月通胀能够支持本月重启降息，后续应看9月FOMC点阵图；仅保留其当时有条件判断，不认证降息已发生或必然发生。\n条件：核心CPI稳定且符合预期是作者前提，非通胀达标；全部数量未官方核验。\nPPI疲软、就业走弱和初请上升为并列必要上下文，报告未展开独立实证，不能改写为审核确认。\n总CPI环比高于文中预期，标题及末段笼统符合预期须收窄到核心，不得描述所有通胀指标均符合预期。\n期限：2025-09-12对本月9月FOMC及年内降息路径的会前判断；无幅度/次数承诺，不外推第四季度结果。\n风险：美国进口价格上行超预期\n美国经济和就业下行超预期\n反向信息：报告事件段总CPI环比0.4%高于其列预期0.3%，同比及环比上行；价格压力仍在，不可删去反向信息。\n审核限制：仅作者观点及版本归属，不认证数值、市场反应因果、PPI就业统计或政策结果。\n住房同比下降/企稳、季节性与利率需求归因及图7二手车预测均不作为此观点支持。\n不提供QT收官直接证据；无后发统计、预测结果配对或历史首次可得证明。",
+          "legacyFields": {
+            "subject": "2025年9月会前通胀、就业与降息判断",
+            "author": "东海证券分析师刘思佳",
+            "summary": "刘思佳在2025年9月12日认为，核心CPI环比稳定且符合预期，结合其称疲软的PPI、走弱就业及初请上升，8月通胀能够支持本月重启降息，后续应看9月FOMC点阵图；仅保留其当时有条件判断，不认证降息已发生或必然发生。",
+            "conditions": [
+              "核心CPI稳定且符合预期是作者前提，非通胀达标；全部数量未官方核验。",
+              "PPI疲软、就业走弱和初请上升为并列必要上下文，报告未展开独立实证，不能改写为审核确认。",
+              "总CPI环比高于文中预期，标题及末段笼统符合预期须收窄到核心，不得描述所有通胀指标均符合预期。"
+            ],
+            "horizon": "2025-09-12对本月9月FOMC及年内降息路径的会前判断；无幅度/次数承诺，不外推第四季度结果。",
+            "risks": [
+              "美国进口价格上行超预期",
+              "美国经济和就业下行超预期"
+            ],
+            "counterweight": "报告事件段总CPI环比0.4%高于其列预期0.3%，同比及环比上行；价格压力仍在，不可删去反向信息。",
+            "reviewerLimits": [
+              "仅作者观点及版本归属，不认证数值、市场反应因果、PPI就业统计或政策结果。",
+              "住房同比下降/企稳、季节性与利率需求归因及图7二手车预测均不作为此观点支持。",
+              "不提供QT收官直接证据；无后发统计、预测结果配对或历史首次可得证明。"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "SEP02-02",
+      "title": "20250918-国金证券-国金证券8月美国非农数据点评：鲍威尔暂时通过了独立性的压力测试.pdf",
+      "publicationDate": "2025-09-18",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "宋雪涛"
+      ],
+      "authorRole": "分析师",
+      "alias": "私有归档编号:SEP02-02",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "SEP02-02-C1",
+          "renderedView": "主题：降息向美国住房实体活动传导的边界\n作者归属：国金证券分析师宋雪涛\n获准观点：宋雪涛在9月18日认为，降息预期对制造业、房地产等利率敏感部门已有但有限的刺激。住房方面，他将十年期美债及挂钩房贷利率下行，与更多体现为再融资而非新购房、住宅许可仍疲软并列，强调货币政策不能解决全国住宅供给短缺；不能据此宣称降息已经带来住房扩张。\n条件：作者描述十年期美债利率及与其挂钩的抵押贷款利率下降；该传递及数量未官方复核\n作者观察更多仍是再融资而不是新购买；不能把再融资改善直接等同新增购房或实物投资\n作者同时描述住宅许可仍疲软、走弱至周期最低；未经官方交叉复核，不认证周期极值\n全国住宅供给短缺是作者援引鲍威尔表述的政策边界，非本审核核验的官方逐字发言\n期限：2025-09-18九月会议后当时观察；原段没有定量预测期限，不能补造季度或未来持续长度\n风险：特朗普政策不确定性加大、市场动荡及海外资金更快逃离美元\n关税更明确后全球经济受更大影响；下半年全球同步宽松超预期甚至共振扩表，明显缓解长端利率压力\n原文风险3：技术突破带来制造业回流加剧，美国生产成本明显降息，信用需求激增。生产成本明显降息语义不成立，保持字面不擅改为下降；此分支只作诊断，不推出成本或信用的方向性结论\n反向信息：利率敏感部门已有刺激，但程度有限；再融资不能替代新购买，宽松不能解决住宅供给短缺。风险段全球宽松和信用需求变化不可删除。\n审核限制：仅作者定性观察包，含全部条件与风险；不认证图5量值或周期最低数值\n独立于美元图3、独立性叙事和政治动机推断，不引入这些作为住房结论前提\n风险3措辞未解决；不允许据其构建成本—信用模型或预测；不认证政策会议原话",
+          "legacyFields": {
+            "subject": "降息向美国住房实体活动传导的边界",
+            "author": "国金证券分析师宋雪涛",
+            "summary": "宋雪涛在9月18日认为，降息预期对制造业、房地产等利率敏感部门已有但有限的刺激。住房方面，他将十年期美债及挂钩房贷利率下行，与更多体现为再融资而非新购房、住宅许可仍疲软并列，强调货币政策不能解决全国住宅供给短缺；不能据此宣称降息已经带来住房扩张。",
+            "conditions": [
+              "作者描述十年期美债利率及与其挂钩的抵押贷款利率下降；该传递及数量未官方复核",
+              "作者观察更多仍是再融资而不是新购买；不能把再融资改善直接等同新增购房或实物投资",
+              "作者同时描述住宅许可仍疲软、走弱至周期最低；未经官方交叉复核，不认证周期极值",
+              "全国住宅供给短缺是作者援引鲍威尔表述的政策边界，非本审核核验的官方逐字发言"
+            ],
+            "horizon": "2025-09-18九月会议后当时观察；原段没有定量预测期限，不能补造季度或未来持续长度",
+            "risks": [
+              "特朗普政策不确定性加大、市场动荡及海外资金更快逃离美元",
+              "关税更明确后全球经济受更大影响；下半年全球同步宽松超预期甚至共振扩表，明显缓解长端利率压力",
+              "原文风险3：技术突破带来制造业回流加剧，美国生产成本明显降息，信用需求激增。生产成本明显降息语义不成立，保持字面不擅改为下降；此分支只作诊断，不推出成本或信用的方向性结论"
+            ],
+            "counterweight": "利率敏感部门已有刺激，但程度有限；再融资不能替代新购买，宽松不能解决住宅供给短缺。风险段全球宽松和信用需求变化不可删除。",
+            "reviewerLimits": [
+              "仅作者定性观察包，含全部条件与风险；不认证图5量值或周期最低数值",
+              "独立于美元图3、独立性叙事和政治动机推断，不引入这些作为住房结论前提",
+              "风险3措辞未解决；不允许据其构建成本—信用模型或预测；不认证政策会议原话"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "OCT01-05",
+      "title": "20251003-民生证券-民生证券海外市场点评：美国政府关门，财政博弈的序曲.pdf",
+      "publicationDate": "2025-10-03",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "陶川",
+        "林彦"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:OCT01-05",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "OCT01-05-R1",
+          "renderedView": "民生证券陶川、林彦于2025-10-03的停摆条件分析；武朔为研究助理，不升格为署名分析师。\n作者认为短期经济拖累取决于停摆时长且可能后续回补；若永久解雇联邦雇员的承诺兑现，失业率或短期上行；若非农和CPI延迟，联储对私人数据的依赖可能增大。\nADP对非农的指示作用下降，9月还存在技术性调整；ADP走弱推动的年内降息市场定价不是非农实际值，也不是联储决定；不保留“唯一就业数据”的排他性断言。\n原风险：美国经贸政策大幅变动；关税扩散超预期，导致全球经济超预期放缓和市场调整幅度加大。\n2025年10月停摆期间的短期就业/数据扰动及当时年内政策预期，不作后验事实。\n这一分支在p1独立完整提出，p1末至p2才转向债务利率测算；不依赖图6支出份额、100—150bp推论或资产配置结论；不认证每周GDP拖累系数。"
+        }
+      ]
+    },
+    {
+      "id": "OCT01-08",
+      "title": "20251006-招银国际-招银国际美国经济：PMI显示经济放缓.pdf",
+      "publicationDate": "2025-10-06",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:OCT01-08",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "OCT01-08-R1",
+          "renderedView": "招银国际刘泽晖、叶丙南于2025-10-06的条件预测；与10月27日报告信息集不同，不作为第二家机构或同信息集互斥分歧。\n服务业扩张停滞、制造业疲弱，PMI就业分项虽回升仍低于50，仅收缩趋缓；价格压力仍大、关税成本与需求不振并存。作者假设停摆可能两周内结束，10月会议仍可能参考9月数据；州初请加总代理提示就业未再弱、通胀仍高于目标。\n停摆超两周可能增强避险；非农尚未公布，州初请代理不是非农实值，PMI就业回升不等于就业总量增加；不得删除数据可得性假设。\n在上述条件下作者认为2025年10月或暂停降息；随着经济持续放缓，12月可能再降息。不是已实现路径。\n批发业同时列入扩张/收缩是局部矛盾，该行业分类完全禁用；不以PMI阈值推算GDP，不准每周GDP拖累系数；不把作者预期变成共识。"
+        }
+      ]
+    },
+    {
+      "id": "OCT01-04",
+      "title": "20251014-国金证券-国金证券AI视角下的美国就业市场（2025-10-14）.pdf",
+      "publicationDate": "2025-10-14",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "宋雪涛"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:OCT01-04",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "OCT01-04-R1",
+          "renderedView": "国金证券宋雪涛在2025-10-14以4R框架提出企业适应AI的阶段性解释；仅保留再培训/行业异质性这一限定观点，不批准AI并非总体就业疲软主因的强结论。\n4R是作者观察模型：Retraining再培训、Revaluation再评估、Recalibration再调整、Revolution AI革命，行业不同步；作者依据纽约联储实体企业调查，认为多数非科技企业仍以再培训为主，利润率有保障时谨慎裁员，应用仍偏任务、与流程和组织的契合待完善。\n科技与部分传媒企业已有精简和人力替代，不能概括成AI无冲击；p7引用Hosseini和Lichtinger的资浅岗位负面研究，作者虽质疑其即时传导，不能删除该反例；p8引用Ozkan和Sullivan的AI使用率与行业失业率正相关，原文明言因果性仍需检验。\n保留作者全部三项风险：调查主观、AI渗透率估算误差；非法移民扰动就业调查，影响占比与增速；企业利润率驱动复杂，单一就业解释可能过简。\n仅为截至2025-10-14的阶段性解释，没有确定未来实现期限；不将调查计划或任务潜力视为已实现替代。\nIndeed任务可替代潜力不是实际就业替代；Claude产品使用分布不能代表全AI渗透；图2同比放缓不等于存量下降；离职不等于裁员；不准用图14约15万、图15相关走势、图16离职率证明加息唯一因果或低裁员事实。"
+        }
+      ]
+    },
+    {
+      "id": "OCT01-06",
+      "title": "20251026-东海证券-东海证券海外观察：美国2025年9月CPI数据，通胀超预期放缓，小步伐降息仍是基准情形.pdf",
+      "publicationDate": "2025-10-26",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘思佳"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:OCT01-06",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "OCT01-06-R1",
+          "renderedView": "东海证券刘思佳于2025-10-26的会前预测；报告联系人不列为本报告证券分析师。\n作者认为9月通胀低于预期仍不足以改变小步降息节奏：家庭食品短期波动、住房在8月上行后9月回调均不确认趋势，炼厂关停及后续复产使成品油价格不确定，服务通胀仍约束降幅。\n不能把短期通胀回落外推为持续趋势或更大降幅的充分理由；原风险为关税谈判不及预期导致通胀预期上行，以及经济和就业下行超预期。\n仅限2025年10月FOMC会前：作者以25bp为基准、认为难以超预期大幅降息；不是会议结果。\np1末段本身给出完整条件，无折年率推算依赖；禁止图4经济引用、图7定量及住房季节性/医疗裁员/炼厂解释的已识别因果表述，不借预测后验为误图背书。"
+        }
+      ]
+    },
+    {
+      "id": "OCT01-03",
+      "title": "20251027-招银国际-招银国际美国经济：通胀略低于预期，支持联储降息.pdf",
+      "publicationDate": "2025-10-27",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:OCT01-03",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "OCT01-03-R1",
+          "renderedView": "招银国际刘泽晖、叶丙南于2025-10-27提出的条件预测，不是委员会规则或市场共识。\n以9月通胀反弹低于预期、联储更关注就业风险为判断前提；关税效应仍释放，其他服务通胀高企，不能只留降息支持。\n停摆可能使10月CPI停止公布，长期停摆后首份CPI可能因采样少出现偏差，故降息时点不确定；这是作者风险情景，不是已发生事实。\n作者预计2025年10月或12月再降一次至年末3.75%—4%；以准备金趋近合理充裕的作者判断预计近期停止QT；2026年增速走平和通胀回落的基准下，再降两次至年末3.25%—3.5%。\n仅保留上述不可拆条件预测；不认证准备金阈值、关税/移民因果或预测兑现；不依赖图5储蓄单位和量值。"
+        }
+      ]
+    },
+    {
+      "id": "FINAL01-01",
+      "title": "20251113-民生证券-民生证券海外市场点评：美国政府停摆的“后遗症”.pdf",
+      "publicationDate": "2025-11-13",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "陶川",
+        "林彦"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:FINAL01-01",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "FINAL01-01-C1",
+          "renderedView": "陶川、林彦（民生证券）预计，政府重启后，TGA此前吸收的现金有望部分释放，从而缓解前期市场流动性不足。\n原文链条是政府结束停摆→现金“有望部分”释放→流动性压力有望改善；只能连同尚未实现的现金释放预期使用，不得把政府开门当成现金自动释放的充分条件。\n作者提及此前大量发债与关门抬高TGA，却未论证后续净发债、其他负债及资产变动是否抵消。不存在作者给出的准备金/M2净增保证；审核者不补写净发债不抵消为作者原前提。\n限2025年11月13日政府重启后的短期预期；作者同时提示临时拨款至2026年1月30日及再停摆风险。这是报告所述期限，不是已核政策日程。\n必须保留作者风险：两党博弈再关门；资产价格上涨过快增大波动；关税扩散超预期引发全球经济放缓、市场调整加大。\n只保作者在刊期的判断，不认证未核统计、官员原话或政策日程；不授权数字事实、交易建议、历史可得性或发布。仅TGA条件预期；不认证余额/利差数值，不推出准备金、M2、QE或风险资产普涨。后段“只要预期不转向衰退”的资产论证完整保留为禁用上下文，不从ADP或政治分支导出资金结论。"
+        }
+      ]
+    },
+    {
+      "id": "NOV01-05",
+      "title": "20251118-中邮证券-中邮证券海外宏观周报：美国政府恢复运转，市场再平衡.pdf",
+      "publicationDate": "2025-11-18",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "李起"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:NOV01-05",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "NOV01-05-R1",
+          "renderedView": "中邮证券李起于2025-11-18周报第6页第3条转述纽约联储主席威廉姆斯的准备金管理观点；高晓洁为研究助理。这不是官方原话核验或联储共识。\n据中邮转述，银行准备金从充裕向略高于充足转变；联储监测回购利率、隔夜拆借利率及拖延结算支付比例等指标判断储备需求，一旦基本达到充足水平，将进入储备管理购入阶段以避免准备金快速下降。\n中邮转述特别强调：可能重新购债扩表是维护短期利率调控和市场流动性的技术操作，不是货币政策转向信号；不可据此称为QE或确定降息。\n原文只说可能很快、且以准备金基本达到充足为触发条件；没有确定操作日期、购债金额或降息次数。\n周报总风险是若劳动市场韧性超预期或通胀重新加速，美联储可能推迟降息；该风险属于利率政策，不能反向充当准备金技术操作的充分条件。\n审阅者限制：仅为报告作者当时的条件观点或二手转述；未联网核官方数据、日程、官员原话、政治因果或预测结果。不认证数字及真实历史可得，firstAvailableAt=null；支持段内其他句子和图表不获独立经济许可。仅中邮二手技术转述；GDP 11月26日和第5页日程未经核验禁用；第7页表无采样时点、利率档位众数不等于均值或确定次数，禁止生成概率。"
+        }
+      ]
+    },
+    {
+      "id": "NOV01-03",
+      "title": "20251120-银河证券-银河证券9月美国非农数据点评：淡化非农就业数据扰动.pdf",
+      "publicationDate": "2025-11-20",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "张迪"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:NOV01-03",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "NOV01-03-R1",
+          "renderedView": "银河证券分析师张迪2025-11-20的规范性政策观点：12月美联储从政策意愿看“不想降”，从实际经济状况看“应该降”；吴佳文为研究助理。\n作者认为统计质量下降、样本变化与数据噪声降低单月就业的决策权重；ADP低位、企业需求预期谨慎及谨慎用工说明经济在走弱通道。高利率对周期行业、中小企业融资成本的压制不会因再等待两个月自行缓解。\n作者把高关税主要解释为成本推动而非需求过热，据此认为维持高利率不能解决同一问题、可能拖累下行；这是作者机制判断，未独立识别政治或经济因果。\n必须保留相反信息：就业尚未失速，工时稳定、工资韧性与劳动参与率低限制短期失业上升；联储顾虑通胀再抬头、关税扰动及过早转向风险，故经济上应该降不代表政策必然降。\n截至2025-11-20，对2025年四季度及12月政策取舍的判断，不是会议结果或确定降息时间表。\n原文全部三风险：劳动力市场数据和经济超预期下行；银行系统意外流动性问题；特朗普政策超预期刺激通胀。\n审阅者限制：仅为报告作者当时的条件观点或二手转述；未联网核官方数据、日程、官员原话、政治因果或预测结果。不认证数字及真实历史可得，firstAvailableAt=null；支持段内其他句子和图表不获独立经济许可。支撑来自实际查看四页原图的人工视觉概括；不输出伪OCR、文字偏移或图中精确数据。"
+        }
+      ]
+    },
+    {
+      "id": "NOV01-04",
+      "title": "20251120-方正证券-方正证券9月美国非农数据点评：强非农下，降息或更纠结.pdf",
+      "publicationDate": "2025-11-20",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "燕翔",
+        "石琳"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:NOV01-04",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "NOV01-04-R1",
+          "renderedView": "方正证券燕翔、石琳于2025-11-20认为强非农背景下12月降息更纠结；不认证就业已反转。\n作者认为强非农与通胀担忧掣肘12月降息，同时假设10—11月非农将在12月会议后公布、9月为最后一份；这是未经官方核验的信息集前提，必须保留归属而非当作事实。\n作者同时保留10—11月停摆的就业负向隐患，明确暂不能得出就业边际反转，倾向温和下行；这里仅记作者判断，不用跨稿冲突的时薪数字或“持平”认证该趋势。\n作者预测即使2025年12月不降息，大概率2026年1月再启动；仍不确定，既非已发生政策，也不是市场概率的量化认证。\n原文风险完整保留：美国通胀再度反弹、美联储表态偏鹰、特朗普关税再超预期；不将短期美债震荡或美股好消息扩入本观点。\n审阅者限制：仅为报告作者当时的条件观点或二手转述；未联网核官方数据、日程、官员原话、政治因果或预测结果。不认证数字及真实历史可得，firstAvailableAt=null；支持段内其他句子和图表不获独立经济许可。时薪0.3%及持平均禁用；图10是10年美债收益率领先三个月、右轴逆序与花旗经济意外指数的图示相关，并非因果预测模型。"
+        }
+      ]
+    },
+    {
+      "id": "NOV01-01",
+      "title": "20251121-招银国际-招银国际美国经济：非农就业喜忧参半，降息时点可能略有推迟.pdf",
+      "publicationDate": "2025-11-21",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:NOV01-01",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "NOV01-01-R1",
+          "renderedView": "招银国际刘泽晖、叶丙南于2025-11-21判断，12月可能维持利率、降息延后至2026年一季度；这是条件预测。\n作者依据ADP、Indeed招聘及PMI就业指数的短期改善，同时认为未来两个季度经济活动和就业需求可能放缓、移民政策减少供给且AI抑制部分初级岗位，就业可能再走弱；这些均是作者代理判断及机制解释。\n作者假设12月会议缺乏10—11月就业数据；并判断房价、房租和油价回落可能抵消关税商品压力，但通胀仍高于目标，因此更谨慎。该会议资料假设未经官方核验，须与预测一起保留，不能写成已证日程。\n概述另给出反例：近期流动性趋紧引发市场波动，若市场动荡，美联储也可能为稳定市场选择降息，故并非必然等待。\n作者区分2025年12月、2026年一季度，以及2026年底：在明年经济增速走平、通胀回落条件下，预测明年降息两次、年末目标3.25%—3.5%；仅保留作者预测，不认证中性利率或结果。\n作者法律尾提示前瞻与实际可能显著不同、意见预测可能随时调整及投资回报不确定；不得将有条件路径写为承诺。\n审阅者限制：仅为报告作者当时的条件观点或二手转述；未联网核官方数据、日程、官员原话、政治因果或预测结果。不认证数字及真实历史可得，firstAvailableAt=null；支持段内其他句子和图表不获独立经济许可。概述“关税可能小幅回落但仍高于目标水平”原字保留为诊断，不修成经济依据；63.4%与本批其他稿62.4%冲突，参与率及对应归因禁用。"
+        }
+      ]
+    },
+    {
+      "id": "DEC03-01",
+      "title": "20251208-世纪证券-世纪证券宏观周报（12月第1周）：美联储12月降息预期继续强化.pdf",
+      "publicationDate": "2025-12-08",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "陈江月"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:DEC03-01",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "DEC03-01-C1",
+          "renderedView": "世纪证券分析师陈江月在印刷刊期2025年12月8日的《宏观周报（12月第1周）》中提出以下当时回顾与解释。\n适用期限是报告所回顾的上周及当时对2025年12月美联储降息、日本央行加息的预期；并非未来各期限美债或全市场的恒常规则。\n作者以11月ADP弱于预期、9月核心PCE同比下降且低于报告所列预期、密歇根大学12月一年期通胀预期下降为背景，判断美联储12月降息预期继续强化、市场风险偏好上升；这些数据方向与预期比较均仅归属作者，未获官方外核。\n但作者同时称日本央行鹰派立场冲击全球债市、市场预期日本央行12月加息至0.75%，叠加美国财政部近期密集发行中长期国债、供需进一步失衡，美债利率仍有所上行。日央行、加息预期、国债供给与供需解释必须联合保留；加息水平为作者转述的市场预期，不是已实现或官方承诺。\n可保留的反例是：在该报告所述当时背景下，降息预期强化并不保证美债利率下行；这里只记录作者回顾和解释，不确认变动数值、已识别因果、贡献大小或充分必要条件。\n须同时保留作者两项风险：基本面超预期弱化、美联储降息不及预期。\n无官方数据、发布日程、政策或政治动机外核；不推出主席候选人能决定委员会政策，不认证未来结果，不作投资建议。"
+        }
+      ]
+    },
+    {
+      "id": "DEC02-03",
+      "title": "20251211-长江证券-长江证券2025年12月美联储议息会议点评：重启准备金管理型扩表.pdf",
+      "publicationDate": "2025-12-11",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "于博"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:DEC02-03",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "DEC02-03-C1",
+          "renderedView": "长江证券于博在2025-12-11报告中将购短债解读为准备金管理型扩表，仅是作者对会议的二手解读。\n作者转述：委员会判断准备金余额已回落至充裕水平，视需要启动短期美国国债购买，以持续维持充裕准备金供应。\n报告转述纽约联储计划在其所称“未来30天”买入400亿美元短期国债；仅保留这一有界窗口，不自行补起始日，不外推固定长期月规模。\n报告提示关税水平上升、二次通胀风险未消，通胀反弹可能阻碍降息；这一利率风险不把准备金管理改写为利率刺激。\n不认证官方公告、金额或窗口起止；未作新官方检索。准备金管理不等于QE，点阵图参与者不等于票委，禁止“6票不降息”、二手CME概率当共识或承诺以及利率路径/市场反应因果。"
+        }
+      ]
+    },
+    {
+      "id": "DEC02-05",
+      "title": "20251211-浦银国际-浦银国际宏观观点：美联储12月如期降息，但表述较为鹰派.pdf",
+      "publicationDate": "2025-12-11",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "金晓雯"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:DEC02-05",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "DEC02-05-C1",
+          "renderedView": "浦银国际金晓雯于2025-12-11预测：2026年或还有两次各25bp降息、年底利率或至3%—3.25%；这是作者条件预测，不是官方指引或未来事实。\n作者认为经济动能放缓和劳动力市场继续走弱或驱动降息，但以美国经济软着陆、2026年通胀仍偏高为基本假设，限制降息幅度；联储内部意见分歧和当前可耐心等待的利率位置也约束节奏。\n作者预计降息或较集中于2026年上半年，不一定连续，而应根据经济数据逐次会议判断。\n若作者对2026年下半年经济企稳的判断正确，下半年加息预期可能升温；但作者认为当年经济状态尚不足以触发升息，加息不是其基准。\n主席人选会影响决议但无独裁权，最终由12名FOMC投票委员表决，仍主要取决于劳动力市场下行与通胀上行压力的平衡。\n必须并列保留四项风险：降息过慢引起衰退；关税通胀并非一次性、持续过久可能再通胀；政策刺激成效不及预期；特朗普再推出大规模加征关税。\nP1观点与P2风险为不可拆的单一条件预测包；不认证SEP/CME图表数值或二手官方表述，不以条件预测声称未来已发生。"
+        }
+      ]
+    },
+    {
+      "id": "FINAL01-05",
+      "title": "20251217-招银国际-招银国际美国经济：就业小幅走弱.pdf",
+      "publicationDate": "2025-12-17",
+      "dateBasis": "已核印刷刊期；不代表历史首次可得",
+      "channel": "Wind",
+      "authors": [
+        "刘泽晖",
+        "叶丙南"
+      ],
+      "authorRole": "报告署名作者（具体归属及角色限制见获准观点全文）",
+      "alias": "私有归档编号:FINAL01-05",
+      "scope": "仅以下已审核限定观点；不是全报告经济事实认证，不作新增综合结论",
+      "firstAvailableAt": null,
+      "historicalAsOfEligible": false,
+      "claims": [
+        {
+          "id": "FINAL01-05-C1",
+          "renderedView": "刘泽晖、叶丙南（招银国际）判断就业整体小幅走弱、尚未大幅恶化。\n作者观察11月新增就业集中少数行业、失业率走高，同时明确政府停摆导致10月部分数据缺失、非农数据噪音大；这些观察只能作为作者当时解释，不能作为已核统计。\n反向证据必须一并保留：作者称初请和续请小幅改善，服务业PMI就业与Indeed招聘回升，10月剔除汽车汽油零售扩张、消费仍有韧性；不能改成全面失速。\n限2025年12月17日对10—11月已公布材料的当时诊断，不外推2026年经济、通胀或降息路径。\n作者同时提示家庭调查回复率低、权重变化、10月缺数造成质量较差；法律尾不保证信息准确有效完整，前瞻判断可能不同于实际。\n只保作者在刊期的判断，不认证未核统计、官员原话或政策日程；不授权数字事实、交易建议、历史可得性或发布。禁止无薪休假不算失业的BLS归因、兼职人数归因、AI替代因果、6月政治表态降息和通胀先降后升。图53编号保原；图20禁引，不依赖图20。"
+        }
+      ]
+    }
+  ],
+  "experimentStatus": {
+    "status": "authorized-limited-research-publication-03",
+    "notice": "有限研究呈现，已获公开发布授权；不代表完整阶段验收。本轮7篇均已完成分析：采用6篇、未采用1篇（中金点睛）；另复用前次中信1篇，合计呈现7段。正式父准库23篇保持不变，另4篇标为已分析参考，不计入正式父准数；待分析0篇。既有held及旧中邮重复件不自动升格。Wind仍为59篇，12月14篇按用户数量例外接受，停止补采且不豁免质量。",
+    "fullStageReady": false,
+    "publication": true,
+    "wechatNewOriginalBodies": 2,
+    "windAcceptedTotal": 59,
+    "windRequiredPerMonth": 15
+  ,"wechatNewAcceptedLibrary":3,"wechatAcceptedTotal":23,"wechatReusedBodies":1,"wechatPendingAnalysis":0,"windQuantityException":true,"libraryReviewedCandidateCount":4,"wechatLocalUsedCount":4,"wechatLocalNotUsedCount":0,"wechatBatchAnalysedCount":7,"wechatCandidateParentAccepted":false}
 }

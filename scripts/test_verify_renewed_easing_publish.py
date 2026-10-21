@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ThirdPublicationTests(unittest.TestCase):
     def setUp(self):
-        self.raw = (ROOT / 'src/data/historyReplayRenewedEasingQtEnd.json').read_bytes()
+        self.raw = (ROOT / 'release/snapshots/renewed-easing-publication-1.json').read_bytes()
         self.data = json.loads(self.raw)
         self.receipt = json.loads((ROOT / 'release/replay-renewed-easing-publication.json').read_bytes())
 

@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import { HistoryReplay, type HistoryReplayData, type ReplayAnalysisEntry } from './historyReplay'
-import third from './data/historyReplayRenewedEasingQtEnd.json'
+// Publication-1 is an immutable public fixture, not the current release contract.
+import third from '../release/snapshots/renewed-easing-publication-1.json'
 import template from './data/historyReplayHawkishTransition.json'
 
 // Strict real artifact compatibility, no cast/any or relaxed shared interface.

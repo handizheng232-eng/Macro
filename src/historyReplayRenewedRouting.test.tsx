@@ -61,11 +61,11 @@ it('真实浏览器history back/forward恢复第三页，主导航离开卸载',
   expect(screen.queryByLabelText('按日期截止查看')).not.toBeInTheDocument()
 })
 
-it('第三独立hash真实加载232节点、5+35导读、26辅助卡，历史边界卸载', () => {
+it('第三独立hash真实加载240节点、5+35导读、26辅助卡，历史边界卸载', () => {
   window.history.replaceState(null, '', third)
   const { container } = render(<App />)
   expect(screen.getByRole('article', { name: '再降息与QT收官研究工作台' })).toBeInTheDocument()
-  expect(container.querySelectorAll('.replay-analysis-entries > li')).toHaveLength(232)
+  expect(container.querySelectorAll('.replay-analysis-entries > li')).toHaveLength(240)
   expect(container.querySelectorAll('[data-period-summary]')).toHaveLength(5)
   expect(container.querySelectorAll('[data-aspect-summary]')).toHaveLength(35)
   expect(container.querySelectorAll('.replay-framework-card')).toHaveLength(26)

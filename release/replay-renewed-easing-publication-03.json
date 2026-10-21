@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "renewed-easing-limited-publication-03",
+  "stageSlug": "renewed-easing-qt-end",
+  "scope": "approved-limited-research-presentation-not-full-stage-certification",
+  "publicationAuthorized": true,
+  "pageQAComplete": true,
+  "fullStageReady": false,
+  "datasetSHA256": "98f0b3ced413972cf0d4ba40bed254aeaff0516091dc20602b9c04f494163c6b",
+  "approvedNodeDigests": {
+    "local02-WP01-05-C1": "cbd65d02252bb12805454cc9230ea1434c34042f658d98a5ac70b07cb685526d",
+    "local02-WP01-01-C1": "a54ab1ca99c2e3fc5e7908602f771cbf5d327574e12ff1a23be995224998b43d",
+    "local02-WP01-02-C1": "601855261f6ef533dd1b9a222fc4e850174452972d3b3500e8fa94ad09144aa8",
+    "local03-LR03-WX-04-C1": "3b20569277dbef88e0043274a4df953f0a033eae36f0ec4595f79d1b7a0d38d9",
+    "local03-LR03-WX-02-C1": "2a2542417e884c0e545a6342a2ca87f907f3ab52ed12acdeeaa3145a718df3f4",
+    "local03-LR03-WX-01-C1": "75f31199f9fe7aa26b899ac90645ba51de8fdbf127e5a1d0e25ea3e6d56f468c",
+    "local03-LR03-WX-03-C1": "2429d613af605b724fe5ff06cb2b36750ebd176dde087a86cd7f3e75a0c9ca7d"
+  },
+  "cmeGapDigest": "29cf473e75b5f23e58e6aff65d8c23a21f15fbc4114d572dc7a0c1fd722781ce",
+  "windIncrementDigest": "d461f311f5c49facd6f5a1dfef8a25bd2524b5fb000dc712f918d5da9aca259d",
+  "marketPathsDigest": "8703be325574375193f280a1cca47a3d211a2104fe7d1b8ecb53729da7130da5",
+  "marketAnalysisDigest": "26d1eb2eb64096cf2edc740efa702e5b86a86c122e97c4e0138c86373e3704e4",
+  "publicFilePins": {
+    "src/historyReplay.tsx": "9665b849d9e1376598e2b1eca0746068411906a3f9d91a807f7099230b3a2feb",
+    "src/data/historyReplay.json": "75b18a5b1293f40ec2866713aacb5780124c8cc6f73d00895bc34b789114a9e1",
+    "src/data/historyReplayHawkishTransition.json": "d683b28d02ad287e20f2ff2ca269207bd0f0e379f7133ed6c89a986d13c2a01a",
+    "src/data/historyReplayTariffPause.json": "ccf808dba9014507ad2243454095f4427e3ce7e88683f74cdc2ac7fc3e7b00c1",
+    "release/snapshots/renewed-easing-publication-1.json": "2e0d6395afd344f50717a679dd73510993562f24ed91d446cbb824a380fc5c44"
+  },
+  "qualityScope": {
+    "formalWechatLibrary": 23,
+    "additionalAnalyzedReferences": 4,
+    "currentBatchAnalyzed": 7,
+    "currentBatchUsed": 6,
+    "currentBatchHeld": 1,
+    "earlierTrialReused": 1,
+    "researchParagraphs": 7,
+    "windMonthly": [
+      15,
+      15,
+      15,
+      14
+    ],
+    "defaultWindQuota": 15,
+    "quantityExceptionMonth": "2025-12",
+    "qualityWaived": false,
+    "CMEHistoricalObservationTimeVerified": false,
+    "oldNarrowInflationBranchStillPending": true,
+    "rawOriginalReadbackPerformedByPublicCI": false
+  },
+  "distAssetPins": {
+    "assets/index-4zqAs91p.css": "13224760f044561276ca0713c829b35178b87527cd115d7fd97ed92fd610899e",
+    "assets/index-DwNeKhbu.js": "bd7917bbcd4214422f2473e03bf4c1758708102b949a153cf9799495e3a49623"
+  }
+}
