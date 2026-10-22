@@ -5,11 +5,13 @@ import json
 import unittest
 from pathlib import Path
 from verify_renewed_limited_publish import verify, verify_assets
+from verify_economic_mechanisms_publish import baseline_bytes, DATA
 ROOT = Path(__file__).resolve().parents[1]
 
 class LimitedPublicationTests(unittest.TestCase):
     def setUp(self):
-        self.raw = (ROOT/'src/data/historyReplayRenewedEasingQtEnd.json').read_bytes()
+        # Replay release 03 against its exact inverse-restored approved bytes.
+        self.raw = baseline_bytes(DATA, ROOT)
         self.data = json.loads(self.raw)
         self.receipt = json.loads((ROOT/'release/replay-renewed-easing-publication-03.json').read_bytes())
 

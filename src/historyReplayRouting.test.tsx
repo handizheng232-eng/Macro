@@ -92,24 +92,23 @@ it('主导航离开卸载工作台，真实back恢复鹰派子页与资料截止
   expect(replayCutoff()).toHaveValue(hawkishTransitionData.asOf)
 })
 
-it('新阶段三渠道默认独立关闭，进入历史截面卸载、恢复不继承展开状态', async () => {
+it.each(['星球', 'Wind', '微信', ...(hawkishTransitionData.localResearchEvidence.length ? ['本地研报'] : [])])('%s渠道默认独立关闭，进入历史截面卸载、恢复不继承展开状态', async (channel) => {
   const user = userEvent.setup()
   window.history.replaceState(null, '', hawkishHash)
   render(<App />)
   const channels = ['星球', 'Wind', '微信']
   if (hawkishTransitionData.localResearchEvidence.length) channels.push('本地研报')
-  for (const channel of channels) {
-    if (channel === '本地研报') {
-      const library = replayDisclosure('来源库 / 研报库明细')
-      expect(library).not.toHaveAttribute('open')
-      await user.click(library.querySelector(':scope > summary')!)
-    }
-    const details = replayDisclosure(`${channel}观点明细`)
-    expect(details).not.toHaveAttribute('open')
-    await user.click(details.querySelector(':scope > summary')!)
-    expect(details).toHaveAttribute('open')
-    expect(screen.getByRole('region', { name: `${channel}观点独立追溯` })).toBeVisible()
+  for (const name of channels) expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
+  if (channel === '本地研报') {
+    const library = replayDisclosure('来源库 / 研报库明细')
+    expect(library).not.toHaveAttribute('open')
+    await user.click(library.querySelector(':scope > summary')!)
   }
+  const details = replayDisclosure(`${channel}观点明细`)
+  await user.click(details.querySelector(':scope > summary')!)
+  expect(details).toHaveAttribute('open')
+  expect(within(details).getByRole('region', { name: `${channel}观点独立追溯` })).toBeVisible()
+  for (const name of channels.filter(name => name !== channel)) expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
   fireEvent.change(replayCutoff(), { target: { value: '2026-01-01' } })
   for (const channel of channels) {
     expect(screen.queryByLabelText(`${channel}观点明细`)).not.toBeInTheDocument()

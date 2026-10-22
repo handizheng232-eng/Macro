@@ -66,6 +66,7 @@ export interface ReplayDeepDive {
 }
 export interface ReplayPeriodSummary {
   paragraphs: string[]; sourceIds: string[]; reportIds: string[]; evidenceRefs: string[]
+  paragraphSources?: { sourceId: string; label: string }[][]
 }
 export interface ReplayAspectSummary {
   text: string; sourceIds: string[]; reportIds: string[]; evidenceRefs: string[]
@@ -428,7 +429,13 @@ function AnalysisEntries({ entries, data, sources, cutoff }: { entries: ReplayAn
 
 function AnalysisDetails({ section, data, sources, cutoff, topicId }: { section: ReplayMarketAnalysis['sections'][number]; data: HistoryReplayData; sources: ReplaySource[]; cutoff: string; topicId?: string }) {
   if (topicId) return <div className="replay-reading-columns">
-    <ReadingColumn title="阶段总结" id={`${topicId}-summary`}><div className="replay-period-summary" data-period-summary={section.id}>{section.periodSummary?.paragraphs.length ? section.periodSummary.paragraphs.map((paragraph, index) => <p key={index}>{displayResearchText(paragraph, data)}</p>) : <p className="replay-empty">尚无经核验阶段总结</p>}</div></ReadingColumn>
+    <ReadingColumn title="阶段总结" id={`${topicId}-summary`}><div className="replay-period-summary" data-period-summary={section.id}>{section.periodSummary?.paragraphs.length ? section.periodSummary.paragraphs.map((paragraph, index) => <div key={index} data-summary-paragraph={index}>
+      <p>{displayResearchText(paragraph, data)}</p>
+      {!!section.periodSummary?.paragraphSources?.[index]?.length && <div className="replay-entry-references" aria-label="本段研究依据">{section.periodSummary.paragraphSources[index].map(ref => {
+        const source = sources.find(item => item.id === ref.sourceId)
+        return <span className="replay-source-ref" key={ref.sourceId}>{source && safeUrl(source.url) ? <a data-summary-source={ref.sourceId} href={source.url} target="_blank" rel="noreferrer" title={source.note}>{ref.label} ↗</a> : <span className="replay-missing">来源未在截止日前核验</span>}</span>
+      })}</div>}
+    </div>) : <p className="replay-empty">尚无经核验阶段总结</p>}</div></ReadingColumn>
     {analysisBlocks.map(block => {
       const entries = section.deepDive?.[block.key]
       const summary = section.aspectSummaries?.[block.key]

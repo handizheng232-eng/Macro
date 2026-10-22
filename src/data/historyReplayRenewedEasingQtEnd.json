@@ -14,6 +14,182 @@
   ],
   "sources": [
     {
+      "id": "EM01-press-sep17",
+      "title": "美联储｜9月17日记者会最终转录",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20250917.pdf",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "",
+      "publicationDate": null,
+      "eventDate": "2025-09-17",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。日期指讲话发生日；最终转录首次公开时间未知。"
+    },
+    {
+      "id": "EM01-press-oct29",
+      "title": "美联储｜10月29日记者会最终转录",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20251029.pdf",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "",
+      "publicationDate": null,
+      "eventDate": "2025-10-29",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。日期指讲话发生日；最终转录首次公开时间未知。"
+    },
+    {
+      "id": "EM01-powell-sep23",
+      "title": "鲍威尔｜9月23日经济展望",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/newsevents/speech/powell20250923a.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-09-23",
+      "publicationDate": "2025-09-23",
+      "eventDate": "2025-09-23",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-beige-sep-dallas",
+      "title": "褐皮书｜9月3日达拉斯地区报告",
+      "publisher": "Federal Reserve Bank of Dallas / Minneapolis",
+      "url": "https://www.minneapolisfed.org/beige-book-reports/2025/2025-09-da",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-09-03",
+      "publicationDate": "2025-09-03",
+      "eventDate": null,
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-beige-nov",
+      "title": "褐皮书｜11月26日全国摘要",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy/beigebook202511-summary.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-11-26",
+      "publicationDate": "2025-11-26",
+      "eventDate": null,
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-spf-q4",
+      "title": "费城联储｜11月17日专业预测者调查",
+      "publisher": "Federal Reserve Bank of Philadelphia",
+      "url": "https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/spf-q4-2025",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-11-17",
+      "publicationDate": "2025-11-17",
+      "eventDate": null,
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-minutes-sep",
+      "title": "美联储｜9月会议纪要（10月8日发布）",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20250917.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-10-08",
+      "publicationDate": "2025-10-08",
+      "eventDate": "2025-09-17",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-minutes-oct",
+      "title": "美联储｜10月会议纪要（11月19日发布）",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20251029.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-11-19",
+      "publicationDate": "2025-11-19",
+      "eventDate": "2025-10-29",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
+      "id": "EM01-minutes-dec",
+      "title": "美联储｜12月会议纪要（12月30日发布）",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20251210.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-12-30",
+      "publicationDate": "2025-12-30",
+      "eventDate": "2025-12-10",
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。页面说明12月30日曾更正利率上限的两处文字；本轮仅引用市场预期和通胀补偿段，不使用更正处。"
+    },
+    {
+      "id": "EM01-mpr-housing-method",
+      "title": "美联储｜住房租金传导方法（2025年2月报告）",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/monetarypolicy/2025-02-mpr-part1.htm",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-02-07",
+      "publicationDate": "2025-02-07",
+      "eventDate": null,
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。前史方法说明，不作为本阶段新增经济读数；页面最后更新为2025年2月27日。"
+    },
+    {
+      "id": "EM01-stl-tariffs-oct16",
+      "title": "圣路易斯联储｜10月16日关税价格传导研究",
+      "publisher": "Federal Reserve Bank of St. Louis",
+      "url": "https://www.stlouisfed.org/on-the-economy/2025/oct/how-tariffs-are-affecting-prices-2025",
+      "kind": "官方原始资料／限定经济段落追溯引用",
+      "date": "2025-10-16",
+      "publicationDate": "2025-10-16",
+      "eventDate": null,
+      "firstAvailableDate": null,
+      "availableFrom": null,
+      "historicalAsOfEligible": false,
+      "retrospectiveOnly": true,
+      "status": "local-economic-context-parent-review-pending",
+      "note": "本轮选定经济段落追溯引用，待父方复核；首次历史可得不据当前取得日补造。"
+    },
+    {
       "id": "wx-f61eabb3b39d97",
       "publisher": "Kevin策略研究",
       "url": "https://mp.weixin.qq.com/s?__biz=MzA3NjU1NTQwMA%3D%3D&mid=2649784813&idx=1&sn=12dfc8f362f4b557e81e32a59107e786",
@@ -30051,107 +30227,189 @@
         "firstAvailableDate": null,
         "periodSummary": {
           "paragraphs": [
-            "9月通胀研究的起点是关税商品压力与服务缓冲并存，而不是价格已经回到目标。中邮会前认为住房、租金和二手车价格可以降低短期障碍，华泰后来把企业利润、转嫁成本和压低支出分别讨论。9月11日的8月CPI与9月26日的8月PCE都显示核心仍偏高；PCE较晚公布，不能进入9月会议之前。企业吸收成本若伴随压招聘，也会同时削弱就业，不能把短期价格传导较弱当作没有经济损失。 星球材料提示价格横盘相对无关税的通缩路径仍可含成本压力，聚合权重和企业定价能力决定总指数能看到多少。",
-            "10月24日发布9月CPI后，核心放缓和总项同比上升同时成立。华泰解释住房抽样波动抵消商品价格，并提醒非住房服务并非全面降温；民银也强调服务对冲。报告对降息障碍和盘中市场反应的解释应按作者归属保留，不能扩成已核市场共识。日频行情不等于盘中观察，低核心月率也不自动识别长债或美元变化的净原因。 10月28日归档材料认为让利、利润及库存缓冲在减弱，但需求恢复快慢决定后续转嫁速度；正文所述10月27日另存日期疑点。",
-            "11月至12月的核心变化是统计方法与版本边界。华泰11月展望补发，后来BLS明确10月调查未采、不能追采，部分非调查分项仍能取得。12月18日11月CPI同比较低，但季调0.2%是9月至11月累计，不是11月环比。9月PCE直到12月5日首发，12月23日又有PIO更新；不能把同观察月的新版本覆盖会前旧值，也不能让当前辅助图层替当时信息。",
-            "期末较低同比与2026年通胀回落预期给政策留下空间，但年初重新调价、关税新措施和服务扩散仍是条件。中邮的一季度峰值与以后回落、东兴的2月至8月窗口属于未来预测，SEP也是第四季度口径的适当政策预测，不是触发承诺。持续性检验需要商品、服务、工资和就业共同约束；普通连续月率缺口、同期定价原件和首次历史可得仍未解决，因此本主题只构成已接受资料上的追溯研究初稿。 渠道受访者补充了销售促销与毛利修复的转换：净成交价温和可与下一季度逐步转嫁同时成立；单渠道门槛、保税库存假说和全国成本分担不升级为官方证据。"
+            "9月｜涨价来源并不一致。9月11日公布的8月CPI中，住房月涨0.4%，是总项上涨的最大推动；食品和汽油也在涨，机票、汽车等推高核心价格，医疗、娱乐和通信则有所抵消。因此，不能把总CPI的回升全部归于关税。关税的更具体线索来自商品价格与企业成本：鲍威尔9月17日解释，进口商、生产商和零售商等中间环节正在承担较多成本，向消费者转嫁比预想更慢、更小，但并非没有传导。这是其当时判断，依据官方最终转录追溯核查，不是已经识别的全国税负分担比例。",
+            "9月｜缓冲会改变涨价的时间，不保证成本消失。9月3日褐皮书达拉斯地区报告记录，企业通过提前备货、自行吸收成本和更换供应商减轻关税影响；这是地区调查，不能外推为全国统一进度。鲍威尔9月23日的基准解释是，关税沿供应链逐步传递，一次性价格水平上移可能跨越数季，期间通胀仍会偏高。预期也不是单一方向：10月8日发布的9月会议纪要追述，会前纽约联储调查中的PCE通胀预期仅略升，但弱就业报告已使投资者更关注就业下行。这里还原的是纪要所记会前判断，而非把10月公开文件当作9月公众已经掌握的材料。",
+            "9月｜机构解读与分歧：中邮证券李起9月3日把房价、租金和二手车批发价格回落视为缓冲，判断服务降温有望对冲商品成本，使通胀不致阻挡9月降息。华泰易峘、胡李鹏9月22日则从企业利润出发，强调冲击大小取决于能否提价转嫁，以及是否削减其他支出。两者的日期与关注环节不同，并非对同一份CPI作相反判断：前者看服务能否抵消商品涨价，后者看消费者涨价较慢时成本落到哪里。利润缓冲若被耗尽，仍可能转为提价或压低用工；因此，短期缓冲不等于关税影响已经消失。",
+            "10月｜能源推高总项，住房放缓减轻核心压力。10月24日补发的9月CPI中，汽油季调月涨4.1%，是总项月涨0.3%的最大推动；住房月涨降至0.2%，其中业主等价租金仅涨0.1%，核心月涨因而缓至0.2%。但机票、娱乐、家居和服装仍涨，不能概括为服务全面降温。住房还有一层时间差：美联储此前的货币政策报告解释，住房服务通胀滞后于新租客新租约的市场租金。因此，住房指数降温可以反映此前租金涨幅回落的逐步传入，不能单凭一个月低读数认定当月住房需求突然转弱，也不由此认证某种抽样误差就是主因。",
+            "10月｜核心放缓没有终结关税争论。圣路易斯联储10月16日研究认为，关税传导当时仍不完全，价格调整延迟、竞争约束及企业对关税持续性的判断都可能影响速度；这是模型研究提出的解释，不是逐项确认的原因。鲍威尔10月29日则把商品涨价、住房服务降温和非住房服务横盘区分开，并指出后者部分来自金融服务的非市场估算，不能全当作需求过热信号（讲话内容据官方最终转录追溯）。11月19日公开的10月会议纪要记载，会前投资者仍预期10月和12月各降25个基点，但12月存在不确定性；鲍威尔会上明确否认12月降息已成定局。低核心月率支持继续观察，不等于后续宽松已获保证。",
+            "10月｜机构解读与分歧：华泰胡李鹏、易峘10月25日将9月核心CPI放缓主要解释为住房分项波动，并提醒非住房服务并未全面降温；这比仅凭低核心月率判断通胀普遍改善更审慎。该文认为关税影响可能幅度较小、持续较长，并结合政府停摆、就业降温和买断计划到期的短期冲击，维持10月、12月各降息一次的基准。这是数据公布后的机构解释，不是全市场共识；其住房抽样波动判断也不等于官方已经认定统计误差。后续应检验住房回落能否持续、其他服务是否升温，不能把单月缓解直接外推为持续降温。",
+            "11月｜看企业如何应对成本，而不是补造缺失的CPI。11月26日褐皮书汇总截至11月17日的访谈：制造和零售业普遍承受关税相关投入成本压力，但能否转嫁取决于需求、竞争、消费者价格敏感度和客户抵制；一些企业利润被压缩，一些材料价格却因需求疲弱、关税推迟或降低而回落。保险、公用事业、技术和医疗成本也在上涨。由此可见，温和的终端涨价可以和较强的成本压力同时存在；利润吸收不是成本消失，成本上涨也不保证企业立即成功提价。受访者预计成本压力延续，但近期提价计划并不一致。",
+            "11月｜专业预测者仍防范通胀回落慢于预期。11月17日费城联储SPF调查中，33位预测者对当季通胀的判断变化不大，却上调2026年和2027年各项CPI、PCE通胀预测；未来十年平均PCE通胀预测维持2.20%。这与企业访谈共同显示，短期成本压力和长期预期相对稳定可以并存，并不支持通胀已经失控或已经解决的单边结论。SPF是专业预测者调查，不是消费者预期、交易商报价或SEP。这个月没有可用的10月总项及核心CPI调查读数，因而不能据统计空窗断言11月已经连续降温；12月后来公布的结果应留在下一月更新。",
+            "11月｜机构解读与分歧：华泰易峘、胡李鹏11月10日认为，现场或电话采价使CPI更易受停摆影响，企业票据则可能支持PPI补报，PCE还要等待上游数据。其当时展望是重开后可能补发10月CPI、PPI，10月PCE可能延至12月中旬；这不是对本月通胀已下降的确认。该月这里保留的是单一机构对数据恢复的条件判断，不硬凑跨机构分歧。后来12月18日官方明确10月CPI调查未采且不能追采，因此不能把局部分项仍可取得，解释成总项和核心指数已经按这一展望补齐。",
+            "12月｜晚发数据补上部分信息，但并非一条完整的月度降温轨迹。12月5日首发的9月PCE总项与核心同比分别为2.8%和2.8%，这是12月10日会议前可获得的版本。12月18日公布的11月CPI显示，总项和核心自9月至11月均累计上涨0.2%；同期住房涨0.2%、能源涨1.1%，住宿、娱乐和服装下降有所抵消。住房涨幅温和与部分非必需消费项目降价，压低了这段期间的读数，但能源和部分商品并未同步走弱。由于10月调查缺失、11月14日才恢复采价，这个累计数不是11月单月环比，也不足以辨认两个月各自的转折。它更不能倒填为12月10日会前证据。",
+            "12月｜通胀预期有所缓和，仍要检验成本何时传完。12月30日公开的会议纪要记载，会间短期限通胀补偿下降，纽约联储操作负责人将其部分归于能源价格走低和一些投资者重新评估关税影响；调查及模型预期却大致不变，所以资产定价变化不等于所有人的通胀预测同步下调。鲍威尔12月10日提出，若没有新的重大关税，商品通胀可能在2026年一季度附近见顶、下半年回落；运输、实施和分批调价使传导需时，但他也强调时间估计不精确（据最终转录追溯）。因此，年末的合理更新是近期价格压力可能缓和，而不是2026年的回落已兑现；若企业延后转嫁使涨价持续更久，这条基准路径仍须调整。",
+            "12月｜机构解读与分歧：中邮证券李起12月15日强调，年初通常是企业集中调价的窗口，联储可能先暂停、观察通胀与就业；其进一步宽松的判断则以关税影响逐步消化、通胀担忧缓解为前提，期限在一季度以后。这里的差别是短期重新调价风险与稍后成本消化的时间条件，不是两个互相否定的通胀预测，也不代表所有机构都赞同同一路径。这篇会后文章早于12月18日CPI公布，不能写成已经由较低同比证实；跨入2026年的判断在本阶段末仍待观察，更不能回填为12月10日会议前已知的结论。"
           ],
           "sourceIds": [
-            "bea-personal-income-and-outlays-august-2025",
-            "bea-personal-income-and-outlays-data-update-september-2025",
-            "bea-personal-income-and-outlays-september-2025",
-            "fed-document-fomcprojtabl20250917-pdf",
-            "fed-document-fomcprojtabl20251210-pdf",
-            "fed-document-monetary20251210a-htm",
             "fraser-cpi-aug-pdf",
-            "fraser-cpi-nov-pdf",
+            "EM01-press-sep17",
+            "EM01-beige-sep-dallas",
+            "EM01-powell-sep23",
+            "EM01-minutes-sep",
             "fraser-cpi-sep-pdf",
-            "fred-DGS10",
-            "fred-DGS2",
-            "star-083a5013251a532b",
-            "star-4a4749d5b8e09506",
-            "star-5044957f9b95359d",
-            "star-afd2d93977b23a07",
-            "star-eec879bf9c1dd24f",
-            "wind-2be64119a0569c70",
-            "wind-a87c62bdee638496",
-            "wind-b1077fbfcd741510",
-            "wind-e0fcfc6ce00c58ae",
-            "wx-72798b2febb609",
-            "wx-92fa80a396ae39",
+            "EM01-mpr-housing-method",
+            "EM01-stl-tariffs-oct16",
+            "EM01-press-oct29",
+            "EM01-minutes-oct",
+            "EM01-beige-nov",
+            "EM01-spf-q4",
+            "fraser-cpi-nov-pdf",
+            "bea-personal-income-and-outlays-september-2025",
+            "EM01-minutes-dec",
+            "fed-document-FOMCpresconf20251210-pdf",
             "wx-b520c4f79cfb82",
-            "wx-b62db7cb91667b",
             "wx-f5a332b50b171d",
-            "wx-f61eabb3b39d97",
-            "知识星球-6346f57e87db1fec",
-            "知识星球-7e2935c52b29e5b9",
-            "知识星球-b7d7f4e40e40c175"
+            "wx-b62db7cb91667b",
+            "wx-72798b2febb609",
+            "wx-92fa80a396ae39"
           ],
           "reportIds": [
-            "star-083a5013251a532b",
-            "star-4a4749d5b8e09506",
-            "star-5044957f9b95359d",
-            "star-afd2d93977b23a07",
-            "star-eec879bf9c1dd24f",
-            "wind-2be64119a0569c70",
-            "wind-a87c62bdee638496",
-            "wind-b1077fbfcd741510",
-            "wind-e0fcfc6ce00c58ae",
-            "wx-72798b2febb609",
-            "wx-92fa80a396ae39",
             "wx-b520c4f79cfb82",
-            "wx-b62db7cb91667b",
             "wx-f5a332b50b171d",
-            "wx-f61eabb3b39d97",
-            "知识星球-6346f57e87db1fec",
-            "知识星球-7e2935c52b29e5b9",
-            "知识星球-b7d7f4e40e40c175"
+            "wx-b62db7cb91667b",
+            "wx-72798b2febb609",
+            "wx-92fa80a396ae39"
           ],
           "evidenceRefs": [
-            "third-macro-inflation-vintages-expectationTimeline-01",
-            "third-macro-inflation-vintages-expectationTimeline-02",
-            "third-macro-inflation-vintages-expectationTimeline-03",
-            "third-macro-inflation-vintages-expectationTimeline-04",
-            "third-macro-inflation-vintages-expectationTimeline-05",
-            "third-star-macro-inflation-vintages-expectationTimeline-01",
-            "third-star-macro-inflation-vintages-expectationTimeline-02",
-            "third-star-macro-inflation-vintages-expectationTimeline-03",
-            "third-star-macro-inflation-vintages-expectationTimeline-04",
             "third-macro-inflation-vintages-realityTimeline-01",
             "third-macro-inflation-vintages-realityTimeline-02",
             "third-macro-inflation-vintages-realityTimeline-03",
             "third-macro-inflation-vintages-realityTimeline-04",
-            "third-macro-inflation-vintages-realityTimeline-07",
             "third-macro-inflation-vintages-realityTimeline-05",
-            "third-macro-inflation-vintages-realityTimeline-06",
+            "third-macro-inflation-vintages-expectationTimeline-01",
+            "third-macro-inflation-vintages-expectationTimeline-02",
             "third-macro-inflation-vintages-mechanism-01",
-            "third-macro-inflation-vintages-mechanism-02",
-            "third-macro-inflation-vintages-mechanism-03",
-            "third-macro-inflation-vintages-mechanism-04",
-            "third-macro-inflation-vintages-mechanism-05",
-            "third-star-macro-inflation-vintages-mechanism-01",
-            "third-star-macro-inflation-vintages-mechanism-02",
+            "third-macro-inflation-vintages-expectationTimeline-03",
             "third-macro-inflation-vintages-divergence-01",
+            "third-macro-inflation-vintages-expectationTimeline-04",
             "third-macro-inflation-vintages-divergence-03",
-            "third-macro-inflation-vintages-divergence-02",
-            "third-star-macro-inflation-vintages-divergence-01",
-            "third-macro-inflation-vintages-implicationTimeline-01",
-            "third-macro-inflation-vintages-implicationTimeline-02",
-            "third-macro-inflation-vintages-implicationTimeline-03",
-            "third-star-macro-inflation-vintages-implicationTimeline-01",
-            "third-macro-inflation-vintages-examples-01",
-            "third-macro-inflation-vintages-examples-02",
-            "third-macro-inflation-vintages-examples-03",
-            "third-star-macro-inflation-vintages-examples-01",
-            "third-star-macro-inflation-vintages-examples-02",
-            "third-macro-inflation-vintages-validation-01",
-            "third-macro-inflation-vintages-validation-02",
-            "third-macro-inflation-vintages-validation-03",
-            "third-star-macro-inflation-vintages-validation-01"
+            "third-macro-inflation-vintages-divergence-02"
           ],
           "historicalAsOfEligible": false,
           "retrospectiveOnly": true,
-          "firstAvailableDate": null
+          "firstAvailableDate": null,
+          "paragraphSources": [
+            [
+              {
+                "sourceId": "fraser-cpi-aug-pdf",
+                "label": "BLS｜8月CPI（9月11日）"
+              },
+              {
+                "sourceId": "EM01-press-sep17",
+                "label": "美联储｜9月17日记者会最终转录"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-beige-sep-dallas",
+                "label": "褐皮书｜9月3日达拉斯地区报告"
+              },
+              {
+                "sourceId": "EM01-powell-sep23",
+                "label": "鲍威尔｜9月23日经济展望"
+              },
+              {
+                "sourceId": "EM01-minutes-sep",
+                "label": "美联储｜9月会议纪要（10月8日发布）"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-b520c4f79cfb82",
+                "label": "中邮证券｜中邮·海外宏观|周观点：美联储重启降息，美元或延续走弱（2025-09-03）"
+              },
+              {
+                "sourceId": "wx-f5a332b50b171d",
+                "label": "华泰证券研究所｜华泰 | 宏观：为何关税冲击下美国企业盈利维持韧性（2025-09-22）"
+              }
+            ],
+            [
+              {
+                "sourceId": "fraser-cpi-sep-pdf",
+                "label": "BLS｜9月CPI（10月24日）"
+              },
+              {
+                "sourceId": "EM01-mpr-housing-method",
+                "label": "美联储｜住房租金传导方法（2025年2月报告）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-stl-tariffs-oct16",
+                "label": "圣路易斯联储｜10月16日关税价格传导研究"
+              },
+              {
+                "sourceId": "EM01-press-oct29",
+                "label": "美联储｜10月29日记者会最终转录"
+              },
+              {
+                "sourceId": "EM01-minutes-oct",
+                "label": "美联储｜10月会议纪要（11月19日发布）"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-b62db7cb91667b",
+                "label": "华泰证券研究所｜华泰 | 宏观：美国9月CPI回落铺平降息道路（2025-10-25）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-beige-nov",
+                "label": "褐皮书｜11月26日全国摘要"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-spf-q4",
+                "label": "费城联储｜11月17日专业预测者调查"
+              },
+              {
+                "sourceId": "EM01-beige-nov",
+                "label": "褐皮书｜11月26日全国摘要"
+              },
+              {
+                "sourceId": "fraser-cpi-nov-pdf",
+                "label": "BLS｜11月CPI（12月18日）"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-72798b2febb609",
+                "label": "华泰证券研究所｜华泰 | 宏观：美国政府何时重开？（2025-11-10）"
+              },
+              {
+                "sourceId": "fraser-cpi-nov-pdf",
+                "label": "BLS｜11月CPI发布版（12月18日；后发核验）"
+              }
+            ],
+            [
+              {
+                "sourceId": "bea-personal-income-and-outlays-september-2025",
+                "label": "BEA｜9月收入与支出首报（12月5日）"
+              },
+              {
+                "sourceId": "fraser-cpi-nov-pdf",
+                "label": "BLS｜11月CPI（12月18日）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-minutes-dec",
+                "label": "美联储｜12月会议纪要（12月30日发布）"
+              },
+              {
+                "sourceId": "fed-document-FOMCpresconf20251210-pdf",
+                "label": "美联储｜12月10日记者会最终转录"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-92fa80a396ae39",
+                "label": "中邮证券｜中邮·海外宏观|降息符合预期，购债操作重启——12月美联储议息会议点评（2025-12-15）"
+              }
+            ]
+          ]
         },
         "aspectSummaries": {
           "expectationTimeline": {
@@ -34616,130 +34874,218 @@
         "firstAvailableDate": null,
         "periodSummary": {
           "paragraphs": [
-            "9月增长与就业的组合是需求有韧性、招聘有压力，而不是简单的强经济或衰退二选一。中金和招商银行把AI投资、消费及传统融资约束，与劳动力供需同时走弱并列；华泰认为利润缓冲限制大规模裁员。官方8月就业首报弱、失业率温和上升，随后第二季度GDP第三估值和8月实际消费仍强。这些时期和指标不同，总量韧性不能抹掉就业风险，低失业率也不能证明招聘容易。 星球研究另把新增流量、就业存量和参与变化分开；单渠道额增量减、财年周数调整提醒收入韧性不等于实际需求全面恢复。",
-            "10月至11月，政府停摆使实际支出扰动与统计可见度降低叠在一起。机构认为支出可能以后回补，却对民间就业样本和未来数据补发有不同判断；银行及私募信贷链又形成另一种需求风险。11月20日才发布9月非农，岗位回升、失业率上行并伴随8月下修，申万、中信和东吴对可信度与政策权重分别解释。不能从后来修订或替代数据倒推会前已经知道真实就业，也不把工资记录型企业调查与当期家庭访谈缺口混为一谈。 前置促销订单与常规补货有不同周期，政策或关税缓和也可能先推动旧货交付而非新需求。",
-            "12月晚发统计进一步显示增长、消费与就业的非同步。9月实际消费首报月增零，10月至11月CES直到12月16日合并首发，10月家庭调查仍缺而不追采；8月和9月岗位又分别修订。12月23日第三季度GDP首次公布较强，私人国内最终需求较温和，没有此前advance或second已发布值可用。季度、单月、岗位流量和SEP第四季度口径分别比较，才不会用一个强头条替代整个阶段。",
-            "期末私人就业正增长与行业集中并存，恢复趋势与脆弱平衡仍有条件分歧。华泰强调暂时政府扰动、招聘意愿改善及住房弱修复，中信更重行业广度和失业风险，中金期待传统需求接力AI与财政。后续要在融资成本、实际借款、投资、住房和广泛招聘中检验，而不是只看股价或GDP。2026年再加速、地产与政策窗口尚未到期，本稿保持统计版本和首次可得边界，不宣称全阶段资料或第三篇验收完成。 新读材料对AI持续投入与融资反身性、库存见底与消费品进口空窗有条件分歧；促销接近销售目标却损害毛利，使现金回收及后续补单成为更具体的反证。"
+            "9月｜增长：消费修订增强韧性判断，但GDP反弹不全是内需扩张。9月25日公布的第二季度GDP第三估值为环比折年增长3.8%，上修主要来自消费，尤其新增服务业调查带来的运输、金融和保险服务修订；进口下降也在GDP核算中形成正贡献，投资和出口下降则抵消部分增长。进口扣除是为剔除支出中的国外生产，不能解释成少进口本身创造了同等国内产出。更贴近消费与固定投资的私人国内最终销售增长2.9%，9月26日公布的8月实际消费月增0.4%，支持需求仍有韧性，但不证明所有部门同步走强。鲍威尔9月23日仍指出住房偏弱、设备和无形资产投资较强，全年增长放缓主要对应消费增速较上年下降。",
+            "9月｜就业：供给增速下降与招聘需求降温同时发生。9月5日的8月非农首报仅增2.2万，医疗扩招被联邦政府和采矿等行业减员部分抵消，不能把低增量只归于移民变化。鲍威尔9月17日解释，移民减少及参与率下降降低了劳动力增长和维持失业率稳定所需的新增岗位，但实际招聘仍可能低于这一水平；低招聘、低裁员的组合尤其脆弱，一旦裁员增加，失业者未必能迅速找到下份工作（据最终转录追溯）。失业率是失业人数占劳动力的比重，退出求职会同时改变这个分母与统计身份，低失业率本身不能认证需求强劲。10月8日纪要对会前市场的追述也显示，弱就业报告使投资者转向防范下行，而非等待GDP先陷入衰退。",
+            "9月｜机构解读与分歧：中金刘刚、杨萱庭9月18日把增长描述为结构分化而非已陷衰退：AI投资较强，传统制造与地产受高融资成本压制，降息有望帮助后者修复。华泰易峘、胡李鹏9月22日则着重解释弱招聘为何尚未演变为大规模裁员，认为企业盈利和毛利率韧性对用工形成缓冲，并预计政府买断计划扰动过后就业可能趋稳。两者分别强调融资传导和盈利缓冲，不能用总量韧性代替就业改善。传统需求修复仍须借款成本下降传到实际支出，就业趋稳也以弱招聘没有转成裁员、失业和需求互相拖累为边界。",
+            "10月｜增长：消费和AI投资托住总量，住房与停摆形成另一面。鲍威尔10月29日称，停摆前资料所示增长比此前预计稍强，主要因为消费更稳健，设备和无形资产投资继续扩张，而住房仍弱；他认为数据中心投资更多由长期回报预期驱动，未必像住房那样对小幅利率变化敏感。这解释了为什么高利率下仍可出现强投资与弱地产并存，而不能由AI扩张推断利率对所有部门都已宽松。其当时基准是停摆暂时拖累支出、重启后大体回补，不是永久产能损失。11月19日公开的会议纪要追述，投资者当时也大体维持经济有韧性的判断；这不是后来第三季度GDP首报的倒推。",
+            "10月｜就业：消费尚稳不等于企业愿意扩招。9月官方就业报告尚未发布时，鲍威尔依据仍可获得的资料判断，招聘和裁员都低，家庭觉得工作更难找，企业却觉得招聘更容易；这组相反方向的感受更符合劳动力需求降温，而不只是供给不足。企业宣布裁员与实际失业之间也有时差，他强调当时初领失业金尚未显示相应跳升，不能用新闻宣布量当已经实现的失业人数。增长和就业背离仍可能包含供给增长放缓、行业差异及生产率变化，不能把供给增速下降写成全社会劳动力存量必然下降。面对这种脆弱平衡，会上虽再降息，12月是否继续却仍待观察，并非会前市场路径已经得到承诺。",
+            "10月｜机构解读与分歧：华泰易峘、胡李鹏10月8日把停摆理解为政府雇员收入和购买暂缓、随后可能回补的短期冲击，同时依据当时高频材料判断增长和消费仍有韧性。就业方面，该文承认ADP转弱，却因尚未出现大规模裁员而判断劳动力市场只是放缓、未失速。这里主要保留华泰的条件框架，而不是制造机构间的相反结论：关键在于暂缓支出是否回补、私人需求与招聘是否继续承压。若收入受损持续或私人部门也转弱，就不能靠政府重开解释全部恢复；当时官方就业报告尚缺，也不能把这一机构判断当作后来BLS读数。",
+            "11月｜增长：居民分层与政府扰动，比单一强弱标签更重要。11月26日褐皮书所汇总的访谈显示，多数地区活动大体持平，总体消费进一步下降，高端零售却有韧性；一些零售商认为停摆影响了购买，电动车经销商则提到税收抵免到期后的销量下降，制造业略有改善但仍受关税与不确定性制约。这是截至11月17日的地区观察，不是全国GDP估算。11月17日SPF将2025、2026年全年平均实际增长预测略上调，却把第四季度环比折年增长预测从1.3%降至1.1%。全年好一点、当季弱一点可以同时成立，既不应把高端消费当所有家庭状况，也不应把停摆当全部疲弱的原因。",
+            "11月｜就业：迟来的岗位回升，没有消除低招聘风险。11月20日首发9月非农增11.9万，医疗、餐饮和社会援助贡献较多，运输仓储及联邦政府减员；同时8月由增2.2万下修为减0.4万。家庭调查的9月失业率为4.4%、参与率为62.4%，与企业岗位数不是同一调查，不能由非农回升推定失业率也应下降。褐皮书进一步记录，更多企业用冻结招聘、只补离职空缺和自然流失控制人数，而非大规模裁员；总体招工变容易，特定技能与移民减少相关的短缺却仍在。SPF对第四季度月均新增岗位的预测从7.07万下调至3.08万，说明专业预测者并未把总量增长韧性直接翻译成强招聘；该调查早于11月20日首报，不能说下调是对那份报告的反应。",
+            "11月｜机构解读与分歧：华泰易峘、胡李鹏11月10日更重视其援引的ADP等民间指标，判断就业企稳，并维持2026年经济再加速的展望；这是补发官方报告前的判断。9月非农首报公布后，中信李翀、崔嵘、韦昕澄11月21日更关注失业率连续上升及岗位数后续修订风险，申万宏源赵伟、陈达飞等11月23日则认为较高回复率支持首报的信息量，失业流量也不足以把失业率上升全归于供给变化。真正可比较的是后两家对同一首报可靠性和风险权重的侧重，不能把较早的华泰展望硬列为同信息集争论。未来增长再加速、就业持续改善均未在当月得到完整验证。",
+            "12月｜增长：会前的韧性判断，后来才得到季度分项检验。12月5日首报显示9月名义消费月增0.3%、实际消费持平，说明当月支出增加并不等于购买量同步增加；这也不否定整个季度的消费增长。12月10日鲍威尔仍以消费、AI相关投资和停摆后回补解释增长前景（据最终转录追溯），不是依据尚未公布的GDP。直到12月23日，第三季度GDP才首报环比折年增长4.3%：医疗等服务和商品消费、出口、政府支出增加，投资下降主要受私人库存投资减少影响，进口下降也提供核算支持。私人国内最终销售增长3.0%，比第二季度2.9%仅略快，说明强GDP头条不等于内需同幅加速，也不能把库存投资减少误读为固定投资全面萎缩。",
+            "12月｜就业：会后资料增加了行业与人员流动的细节。12月16日才合并首发10月和11月企业调查，11月非农增6.4万，医疗和建筑扩招，运输仓储及联邦政府仍减员；10月联邦岗位骤减主要对应接受延期辞职安排的人员退出工资册，不能一概视为停摆休假者失业。9月岗位又由11.9万修订为10.8万。家庭调查没有10月数据，11月失业率4.6%只能与9月比较；BLS称这一变化较小，但经济原因兼职人数比9月明显增加，提示工时不足也值得关注。供给、招聘与行业调整须合看，不能只用一个比率或强GDP否定风险。12月30日纪要追述，会前投资者大体预期降25个基点；那是晚发就业数据之前的判断，不能把12月16日结果包装成12月10日决策已经知道的理由。",
+            "12月｜机构解读与分歧：12月17日，华泰易峘、胡李鹏在就业点评中强调政府岗位扰动之外私人部门仍扩张，招聘意愿及裁员通知信号支持后续改善；中信李翀、崔嵘、韦昕澄同日也记录私人新增岗位，但更重视服务业贡献集中、制造业仍弱的结构。两者不是争论私人就业是否正增长，而是这种支撑能否扩展为更广泛的恢复。增长方面，华泰同日地产研究仍预计2026年住房只弱修复：高房价、按揭成本、信用标准和供给约束限制可负担性；若需求侧宽信用更有力，地产可能好于基准，却也可能抬房价、难以改善中低收入负担。因此，就业改善预期并不等于住房和居民需求普遍走强。这些会后研究及其未来情景，不能倒填为12月10日会前判断，也未由12月23日季度GDP首报一并证实。"
           ],
           "sourceIds": [
             "bea-gdp2-third",
-            "bea-gross-domestic-product-3rd-quarter-2025-initial-estimate-and-corporate-profits",
             "bea-personal-income-and-outlays-august-2025",
-            "bea-personal-income-and-outlays-data-update-september-2025",
-            "bea-personal-income-and-outlays-september-2025",
-            "fed-document-fomcprojtabl20250917-pdf",
-            "fed-document-fomcprojtabl20251210-pdf",
+            "EM01-powell-sep23",
             "fraser-empsit-aug-pdf",
-            "fraser-empsit-nov-pdf",
+            "EM01-press-sep17",
+            "EM01-minutes-sep",
+            "EM01-press-oct29",
+            "EM01-minutes-oct",
+            "EM01-beige-nov",
+            "EM01-spf-q4",
             "fraser-empsit-sep-pdf",
-            "fred-DGS10",
-            "fred-DGS2",
-            "star-083a5013251a532b",
-            "star-5044957f9b95359d",
-            "star-80718497b331b41f",
-            "star-8acc2e02b169971b",
-            "star-afd2d93977b23a07",
-            "wind-150dde04c81a7701",
-            "wind-2651ea23fa100563",
-            "wind-c61e5bb589ebc45b",
-            "wind-df363bd0c70590ba",
-            "wind-e0fcfc6ce00c58ae",
-            "wx-036a0332cf1768",
-            "wx-093af3f5d565bd",
-            "wx-21fb337e9d94e4",
-            "wx-4ffed8defe2684",
-            "wx-59f9fa67d80211",
-            "wx-72798b2febb609",
-            "wx-8e16b9d655751c",
-            "wx-b1a74b0632a278",
-            "wx-d3b3df918319d9",
-            "wx-f5a332b50b171d",
+            "bea-personal-income-and-outlays-september-2025",
+            "fed-document-FOMCpresconf20251210-pdf",
+            "bea-gross-domestic-product-3rd-quarter-2025-initial-estimate-and-corporate-profits",
+            "fraser-empsit-nov-pdf",
+            "EM01-minutes-dec",
             "wx-f61eabb3b39d97",
-            "知识星球-52ed9c3d09f5b4d4",
-            "知识星球-549de903b39c3f65",
-            "知识星球-7e2935c52b29e5b9",
-            "知识星球-fa0af45571aa1749"
+            "wx-f5a332b50b171d",
+            "wx-21fb337e9d94e4",
+            "wx-72798b2febb609",
+            "wx-b1a74b0632a278",
+            "wx-036a0332cf1768",
+            "wx-8e16b9d655751c",
+            "wx-4ffed8defe2684",
+            "wx-093af3f5d565bd"
           ],
           "reportIds": [
-            "star-083a5013251a532b",
-            "star-5044957f9b95359d",
-            "star-80718497b331b41f",
-            "star-8acc2e02b169971b",
-            "star-afd2d93977b23a07",
-            "wind-150dde04c81a7701",
-            "wind-2651ea23fa100563",
-            "wind-c61e5bb589ebc45b",
-            "wind-df363bd0c70590ba",
-            "wind-e0fcfc6ce00c58ae",
-            "wx-036a0332cf1768",
-            "wx-093af3f5d565bd",
-            "wx-21fb337e9d94e4",
-            "wx-4ffed8defe2684",
-            "wx-59f9fa67d80211",
-            "wx-72798b2febb609",
-            "wx-8e16b9d655751c",
-            "wx-b1a74b0632a278",
-            "wx-d3b3df918319d9",
-            "wx-f5a332b50b171d",
             "wx-f61eabb3b39d97",
-            "知识星球-52ed9c3d09f5b4d4",
-            "知识星球-549de903b39c3f65",
-            "知识星球-7e2935c52b29e5b9",
-            "知识星球-fa0af45571aa1749"
+            "wx-f5a332b50b171d",
+            "wx-21fb337e9d94e4",
+            "wx-72798b2febb609",
+            "wx-b1a74b0632a278",
+            "wx-036a0332cf1768",
+            "wx-8e16b9d655751c",
+            "wx-4ffed8defe2684",
+            "wx-093af3f5d565bd"
           ],
           "evidenceRefs": [
-            "third-macro-demand-supply-expectationTimeline-01",
-            "third-macro-demand-supply-expectationTimeline-02",
-            "third-macro-demand-supply-expectationTimeline-03",
-            "third-macro-demand-supply-expectationTimeline-04",
-            "third-macro-demand-supply-expectationTimeline-05",
-            "third-macro-demand-supply-expectationTimeline-06",
-            "third-macro-demand-supply-expectationTimeline-07",
-            "third-macro-demand-supply-expectationTimeline-08",
-            "third-star-macro-demand-supply-expectationTimeline-01",
-            "third-star-macro-demand-supply-expectationTimeline-02",
-            "third-star-macro-demand-supply-expectationTimeline-03",
-            "third-star-macro-demand-supply-expectationTimeline-04",
             "third-macro-demand-supply-realityTimeline-01",
             "third-macro-demand-supply-realityTimeline-02",
             "third-macro-demand-supply-realityTimeline-03",
             "third-macro-demand-supply-realityTimeline-04",
-            "third-macro-demand-supply-realityTimeline-07",
             "third-macro-demand-supply-realityTimeline-05",
             "third-macro-demand-supply-realityTimeline-06",
-            "third-macro-demand-supply-mechanism-01",
-            "third-macro-demand-supply-mechanism-02",
+            "third-macro-demand-supply-expectationTimeline-01",
+            "third-macro-demand-supply-expectationTimeline-02",
             "third-macro-demand-supply-mechanism-03",
+            "third-macro-demand-supply-expectationTimeline-04",
             "third-macro-demand-supply-mechanism-04",
-            "third-macro-demand-supply-mechanism-05",
-            "third-star-macro-demand-supply-mechanism-01",
-            "third-star-macro-demand-supply-mechanism-02",
-            "third-star-macro-demand-supply-mechanism-03",
+            "third-macro-demand-supply-expectationTimeline-05",
+            "third-macro-demand-supply-expectationTimeline-06",
             "third-macro-demand-supply-divergence-01",
+            "third-macro-demand-supply-expectationTimeline-07",
+            "third-macro-demand-supply-expectationTimeline-08",
             "third-macro-demand-supply-divergence-02",
-            "third-macro-demand-supply-divergence-03",
-            "third-macro-demand-supply-divergence-04",
-            "third-star-macro-demand-supply-divergence-01",
-            "third-star-macro-demand-supply-divergence-02",
-            "third-macro-demand-supply-implicationTimeline-01",
-            "third-macro-demand-supply-implicationTimeline-02",
-            "third-macro-demand-supply-implicationTimeline-03",
-            "third-macro-demand-supply-implicationTimeline-04",
-            "third-star-macro-demand-supply-implicationTimeline-01",
-            "third-macro-demand-supply-examples-01",
-            "third-macro-demand-supply-examples-02",
-            "third-macro-demand-supply-examples-04",
-            "third-macro-demand-supply-examples-03",
-            "third-star-macro-demand-supply-examples-01",
-            "third-star-macro-demand-supply-examples-02",
-            "third-macro-demand-supply-validation-01",
-            "third-macro-demand-supply-validation-02",
-            "third-macro-demand-supply-validation-03",
-            "third-star-macro-demand-supply-validation-01"
+            "third-macro-demand-supply-divergence-03"
           ],
           "historicalAsOfEligible": false,
           "retrospectiveOnly": true,
-          "firstAvailableDate": null
+          "firstAvailableDate": null,
+          "paragraphSources": [
+            [
+              {
+                "sourceId": "bea-gdp2-third",
+                "label": "BEA｜第二季度GDP第三估值（9月25日）"
+              },
+              {
+                "sourceId": "bea-personal-income-and-outlays-august-2025",
+                "label": "BEA｜8月收入与支出（9月26日）"
+              },
+              {
+                "sourceId": "EM01-powell-sep23",
+                "label": "鲍威尔｜9月23日经济展望"
+              }
+            ],
+            [
+              {
+                "sourceId": "fraser-empsit-aug-pdf",
+                "label": "BLS｜8月就业首报（9月5日）"
+              },
+              {
+                "sourceId": "EM01-press-sep17",
+                "label": "美联储｜9月17日记者会最终转录"
+              },
+              {
+                "sourceId": "EM01-minutes-sep",
+                "label": "美联储｜9月会议纪要（10月8日发布）"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-f61eabb3b39d97",
+                "label": "中金公司研究部｜美联储还能再降几次？（2025-09-18）"
+              },
+              {
+                "sourceId": "wx-f5a332b50b171d",
+                "label": "华泰证券研究所｜华泰 | 宏观：为何关税冲击下美国企业盈利维持韧性（2025-09-22）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-press-oct29",
+                "label": "美联储｜10月29日记者会最终转录"
+              },
+              {
+                "sourceId": "EM01-minutes-oct",
+                "label": "美联储｜10月会议纪要（11月19日发布）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-press-oct29",
+                "label": "美联储｜10月29日记者会最终转录"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-21fb337e9d94e4",
+                "label": "华泰证券研究所｜华泰 | 宏观：海外的“多事之秋”在十一长假拉开帷幕（2025-10-08）"
+              }
+            ],
+            [
+              {
+                "sourceId": "EM01-beige-nov",
+                "label": "褐皮书｜11月26日全国摘要"
+              },
+              {
+                "sourceId": "EM01-spf-q4",
+                "label": "费城联储｜11月17日专业预测者调查"
+              }
+            ],
+            [
+              {
+                "sourceId": "fraser-empsit-sep-pdf",
+                "label": "BLS｜9月就业首报（11月20日）"
+              },
+              {
+                "sourceId": "EM01-beige-nov",
+                "label": "褐皮书｜11月26日全国摘要"
+              },
+              {
+                "sourceId": "EM01-spf-q4",
+                "label": "费城联储｜11月17日专业预测者调查"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-72798b2febb609",
+                "label": "华泰证券研究所｜华泰 | 宏观：美国政府何时重开？（2025-11-10）"
+              },
+              {
+                "sourceId": "wx-b1a74b0632a278",
+                "label": "申万宏源证券｜热点思考 | 跟随市场——9月非农点评与12月美联储降息展望（申万宏观·赵伟团队）（2025-11-23）"
+              },
+              {
+                "sourceId": "wx-036a0332cf1768",
+                "label": "中信证券研究部｜海外宏观｜分化的非农数据能否带来12月降息？（2025-11-21）"
+              }
+            ],
+            [
+              {
+                "sourceId": "bea-personal-income-and-outlays-september-2025",
+                "label": "BEA｜9月收入与支出首报（12月5日）"
+              },
+              {
+                "sourceId": "fed-document-FOMCpresconf20251210-pdf",
+                "label": "美联储｜12月10日记者会最终转录"
+              },
+              {
+                "sourceId": "bea-gross-domestic-product-3rd-quarter-2025-initial-estimate-and-corporate-profits",
+                "label": "BEA｜第三季度GDP首报（12月23日）"
+              }
+            ],
+            [
+              {
+                "sourceId": "fraser-empsit-nov-pdf",
+                "label": "BLS｜11月就业发布版（12月16日）"
+              },
+              {
+                "sourceId": "EM01-minutes-dec",
+                "label": "美联储｜12月会议纪要（12月30日发布）"
+              }
+            ],
+            [
+              {
+                "sourceId": "wx-8e16b9d655751c",
+                "label": "华泰证券研究所｜华泰 | 宏观：短期扰动之外美国私人就业维持扩张——11月非农点评（2025-12-17）"
+              },
+              {
+                "sourceId": "wx-4ffed8defe2684",
+                "label": "中信证券研究部｜海外宏观｜美国就业真实情况究竟如何？（2025-12-17）"
+              },
+              {
+                "sourceId": "wx-093af3f5d565bd",
+                "label": "华泰证券研究所｜华泰 | 宏观深度：特朗普为何急于搞活美国地产市场？——美国宏观深度报告系列之一（2025-12-17）"
+              }
+            ]
+          ]
         },
         "aspectSummaries": {
           "expectationTimeline": {

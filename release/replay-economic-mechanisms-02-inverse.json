@@ -1,0 +1,224 @@
+{
+  "src/data/historyReplayRenewedEasingQtEnd.json": {
+    "baselineSHA256": "98f0b3ced413972cf0d4ba40bed254aeaff0516091dc20602b9c04f494163c6b",
+    "currentSHA256": "4e093acb52a162879f7bcada2524ae370dc3aa3bf4565c9a50b2f16750448135",
+    "operations": [
+      {
+        "start": 15,
+        "end": 191,
+        "currentSHA256": "09638bea14854220d28834a05700a350b7c0ec517ae5cc2f31cc6131be93871a",
+        "baselineText": ""
+      },
+      {
+        "start": 30229,
+        "end": 30241,
+        "currentSHA256": "e29f04b6d78f5c5c806b812a43b880861a9510c918ed5aafff28655e3fbcb4ec",
+        "baselineText": "            \"9月通胀研究的起点是关税商品压力与服务缓冲并存，而不是价格已经回到目标。中邮会前认为住房、租金和二手车价格可以降低短期障碍，华泰后来把企业利润、转嫁成本和压低支出分别讨论。9月11日的8月CPI与9月26日的8月PCE都显示核心仍偏高；PCE较晚公布，不能进入9月会议之前。企业吸收成本若伴随压招聘，也会同时削弱就业，不能把短期价格传导较弱当作没有经济损失。 星球材料提示价格横盘相对无关税的通缩路径仍可含成本压力，聚合权重和企业定价能力决定总指数能看到多少。\",\n            \"10月24日发布9月CPI后，核心放缓和总项同比上升同时成立。华泰解释住房抽样波动抵消商品价格，并提醒非住房服务并非全面降温；民银也强调服务对冲。报告对降息障碍和盘中市场反应的解释应按作者归属保留，不能扩成已核市场共识。日频行情不等于盘中观察，低核心月率也不自动识别长债或美元变化的净原因。 10月28日归档材料认为让利、利润及库存缓冲在减弱，但需求恢复快慢决定后续转嫁速度；正文所述10月27日另存日期疑点。\",\n            \"11月至12月的核心变化是统计方法与版本边界。华泰11月展望补发，后来BLS明确10月调查未采、不能追采，部分非调查分项仍能取得。12月18日11月CPI同比较低，但季调0.2%是9月至11月累计，不是11月环比。9月PCE直到12月5日首发，12月23日又有PIO更新；不能把同观察月的新版本覆盖会前旧值，也不能让当前辅助图层替当时信息。\",\n            \"期末较低同比与2026年通胀回落预期给政策留下空间，但年初重新调价、关税新措施和服务扩散仍是条件。中邮的一季度峰值与以后回落、东兴的2月至8月窗口属于未来预测，SEP也是第四季度口径的适当政策预测，不是触发承诺。持续性检验需要商品、服务、工资和就业共同约束；普通连续月率缺口、同期定价原件和首次历史可得仍未解决，因此本主题只构成已接受资料上的追溯研究初稿。 渠道受访者补充了销售促销与毛利修复的转换：净成交价温和可与下一季度逐步转嫁同时成立；单渠道门槛、保税库存假说和全国成本分担不升级为官方证据。\"\n"
+      },
+      {
+        "start": 30243,
+        "end": 30243,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"bea-personal-income-and-outlays-august-2025\",\n            \"bea-personal-income-and-outlays-data-update-september-2025\",\n            \"bea-personal-income-and-outlays-september-2025\",\n            \"fed-document-fomcprojtabl20250917-pdf\",\n            \"fed-document-fomcprojtabl20251210-pdf\",\n            \"fed-document-monetary20251210a-htm\",\n"
+      },
+      {
+        "start": 30244,
+        "end": 30248,
+        "currentSHA256": "c8fe932ac51f09e874f2da8c7f6d4fb7c0d7760615f42f42614d03bade0a2374",
+        "baselineText": "            \"fraser-cpi-nov-pdf\",\n"
+      },
+      {
+        "start": 30249,
+        "end": 30259,
+        "currentSHA256": "90d427cc0be3135b0b8ca7f2110009113bb3fc950da077267f1ca98115731957",
+        "baselineText": "            \"fred-DGS10\",\n            \"fred-DGS2\",\n            \"star-083a5013251a532b\",\n            \"star-4a4749d5b8e09506\",\n            \"star-5044957f9b95359d\",\n            \"star-afd2d93977b23a07\",\n            \"star-eec879bf9c1dd24f\",\n            \"wind-2be64119a0569c70\",\n            \"wind-a87c62bdee638496\",\n            \"wind-b1077fbfcd741510\",\n            \"wind-e0fcfc6ce00c58ae\",\n            \"wx-72798b2febb609\",\n            \"wx-92fa80a396ae39\",\n"
+      },
+      {
+        "start": 30260,
+        "end": 30260,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"wx-b62db7cb91667b\",\n"
+      },
+      {
+        "start": 30261,
+        "end": 30264,
+        "currentSHA256": "f72f81b95aa57fb3d676e8281c4bc24f63122ea6eecf999cc1edef5ffac6f448",
+        "baselineText": "            \"wx-f61eabb3b39d97\",\n            \"知识星球-6346f57e87db1fec\",\n            \"知识星球-7e2935c52b29e5b9\",\n            \"知识星球-b7d7f4e40e40c175\"\n"
+      },
+      {
+        "start": 30266,
+        "end": 30266,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"star-083a5013251a532b\",\n            \"star-4a4749d5b8e09506\",\n            \"star-5044957f9b95359d\",\n            \"star-afd2d93977b23a07\",\n            \"star-eec879bf9c1dd24f\",\n            \"wind-2be64119a0569c70\",\n            \"wind-a87c62bdee638496\",\n            \"wind-b1077fbfcd741510\",\n            \"wind-e0fcfc6ce00c58ae\",\n            \"wx-72798b2febb609\",\n            \"wx-92fa80a396ae39\",\n"
+      },
+      {
+        "start": 30267,
+        "end": 30267,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"wx-b62db7cb91667b\",\n"
+      },
+      {
+        "start": 30268,
+        "end": 30271,
+        "currentSHA256": "f72f81b95aa57fb3d676e8281c4bc24f63122ea6eecf999cc1edef5ffac6f448",
+        "baselineText": "            \"wx-f61eabb3b39d97\",\n            \"知识星球-6346f57e87db1fec\",\n            \"知识星球-7e2935c52b29e5b9\",\n            \"知识星球-b7d7f4e40e40c175\"\n"
+      },
+      {
+        "start": 30273,
+        "end": 30273,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"third-macro-inflation-vintages-expectationTimeline-01\",\n            \"third-macro-inflation-vintages-expectationTimeline-02\",\n            \"third-macro-inflation-vintages-expectationTimeline-03\",\n            \"third-macro-inflation-vintages-expectationTimeline-04\",\n            \"third-macro-inflation-vintages-expectationTimeline-05\",\n            \"third-star-macro-inflation-vintages-expectationTimeline-01\",\n            \"third-star-macro-inflation-vintages-expectationTimeline-02\",\n            \"third-star-macro-inflation-vintages-expectationTimeline-03\",\n            \"third-star-macro-inflation-vintages-expectationTimeline-04\",\n"
+      },
+      {
+        "start": 30277,
+        "end": 30277,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"third-macro-inflation-vintages-realityTimeline-07\",\n"
+      },
+      {
+        "start": 30278,
+        "end": 30280,
+        "currentSHA256": "2f68f841f1ad3dcbd946fbbc183ff3c96aa6db50d3942116ab6627b7cfd1db24",
+        "baselineText": "            \"third-macro-inflation-vintages-realityTimeline-06\",\n"
+      },
+      {
+        "start": 30281,
+        "end": 30282,
+        "currentSHA256": "fe961ceb56b46cc817ccb6d9953d62f9b7ee6a5973495b075857daf723683d20",
+        "baselineText": "            \"third-macro-inflation-vintages-mechanism-02\",\n            \"third-macro-inflation-vintages-mechanism-03\",\n            \"third-macro-inflation-vintages-mechanism-04\",\n            \"third-macro-inflation-vintages-mechanism-05\",\n            \"third-star-macro-inflation-vintages-mechanism-01\",\n            \"third-star-macro-inflation-vintages-mechanism-02\",\n"
+      },
+      {
+        "start": 30283,
+        "end": 30284,
+        "currentSHA256": "82579469f898e07ba020fd56092a1ee0152e78db00f5117b839408042f8015b2",
+        "baselineText": ""
+      },
+      {
+        "start": 30285,
+        "end": 30286,
+        "currentSHA256": "0a4d789e4da220adbaa8dfe59c71cd116f397ff3dba91773348d99bee0505ec6",
+        "baselineText": "            \"third-macro-inflation-vintages-divergence-02\",\n            \"third-star-macro-inflation-vintages-divergence-01\",\n            \"third-macro-inflation-vintages-implicationTimeline-01\",\n            \"third-macro-inflation-vintages-implicationTimeline-02\",\n            \"third-macro-inflation-vintages-implicationTimeline-03\",\n            \"third-star-macro-inflation-vintages-implicationTimeline-01\",\n            \"third-macro-inflation-vintages-examples-01\",\n            \"third-macro-inflation-vintages-examples-02\",\n            \"third-macro-inflation-vintages-examples-03\",\n            \"third-star-macro-inflation-vintages-examples-01\",\n            \"third-star-macro-inflation-vintages-examples-02\",\n            \"third-macro-inflation-vintages-validation-01\",\n            \"third-macro-inflation-vintages-validation-02\",\n            \"third-macro-inflation-vintages-validation-03\",\n            \"third-star-macro-inflation-vintages-validation-01\"\n"
+      },
+      {
+        "start": 30289,
+        "end": 30412,
+        "currentSHA256": "def93bc0437801b1d644e0d116cb65085b9cf3481c60344533b8d78ed5b88a9e",
+        "baselineText": "          \"firstAvailableDate\": null\n"
+      },
+      {
+        "start": 34876,
+        "end": 34888,
+        "currentSHA256": "70d7efdfeeea226a6b29f9004108866705eaf5f7e7e25e28e007aa020229c64e",
+        "baselineText": "            \"9月增长与就业的组合是需求有韧性、招聘有压力，而不是简单的强经济或衰退二选一。中金和招商银行把AI投资、消费及传统融资约束，与劳动力供需同时走弱并列；华泰认为利润缓冲限制大规模裁员。官方8月就业首报弱、失业率温和上升，随后第二季度GDP第三估值和8月实际消费仍强。这些时期和指标不同，总量韧性不能抹掉就业风险，低失业率也不能证明招聘容易。 星球研究另把新增流量、就业存量和参与变化分开；单渠道额增量减、财年周数调整提醒收入韧性不等于实际需求全面恢复。\",\n            \"10月至11月，政府停摆使实际支出扰动与统计可见度降低叠在一起。机构认为支出可能以后回补，却对民间就业样本和未来数据补发有不同判断；银行及私募信贷链又形成另一种需求风险。11月20日才发布9月非农，岗位回升、失业率上行并伴随8月下修，申万、中信和东吴对可信度与政策权重分别解释。不能从后来修订或替代数据倒推会前已经知道真实就业，也不把工资记录型企业调查与当期家庭访谈缺口混为一谈。 前置促销订单与常规补货有不同周期，政策或关税缓和也可能先推动旧货交付而非新需求。\",\n            \"12月晚发统计进一步显示增长、消费与就业的非同步。9月实际消费首报月增零，10月至11月CES直到12月16日合并首发，10月家庭调查仍缺而不追采；8月和9月岗位又分别修订。12月23日第三季度GDP首次公布较强，私人国内最终需求较温和，没有此前advance或second已发布值可用。季度、单月、岗位流量和SEP第四季度口径分别比较，才不会用一个强头条替代整个阶段。\",\n            \"期末私人就业正增长与行业集中并存，恢复趋势与脆弱平衡仍有条件分歧。华泰强调暂时政府扰动、招聘意愿改善及住房弱修复，中信更重行业广度和失业风险，中金期待传统需求接力AI与财政。后续要在融资成本、实际借款、投资、住房和广泛招聘中检验，而不是只看股价或GDP。2026年再加速、地产与政策窗口尚未到期，本稿保持统计版本和首次可得边界，不宣称全阶段资料或第三篇验收完成。 新读材料对AI持续投入与融资反身性、库存见底与消费品进口空窗有条件分歧；促销接近销售目标却损害毛利，使现金回收及后续补单成为更具体的反证。\"\n"
+      },
+      {
+        "start": 34891,
+        "end": 34891,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"bea-gross-domestic-product-3rd-quarter-2025-initial-estimate-and-corporate-profits\",\n"
+      },
+      {
+        "start": 34892,
+        "end": 34893,
+        "currentSHA256": "fe6d0f936d725ca7906a89ec092453724148c98edc8080bcee080c29e824eef4",
+        "baselineText": "            \"bea-personal-income-and-outlays-data-update-september-2025\",\n            \"bea-personal-income-and-outlays-september-2025\",\n            \"fed-document-fomcprojtabl20250917-pdf\",\n            \"fed-document-fomcprojtabl20251210-pdf\",\n"
+      },
+      {
+        "start": 34894,
+        "end": 34900,
+        "currentSHA256": "d6b666006b4ac874c78b4853e357adb2cef401af25fdaa421b5be3c000f06ba2",
+        "baselineText": "            \"fraser-empsit-nov-pdf\",\n"
+      },
+      {
+        "start": 34901,
+        "end": 34906,
+        "currentSHA256": "1909b64125c850aa80c804d2a82566a1ada72b7d3043e289a707cb785d9040ef",
+        "baselineText": "            \"fred-DGS10\",\n            \"fred-DGS2\",\n            \"star-083a5013251a532b\",\n            \"star-5044957f9b95359d\",\n            \"star-80718497b331b41f\",\n            \"star-8acc2e02b169971b\",\n            \"star-afd2d93977b23a07\",\n            \"wind-150dde04c81a7701\",\n            \"wind-2651ea23fa100563\",\n            \"wind-c61e5bb589ebc45b\",\n            \"wind-df363bd0c70590ba\",\n            \"wind-e0fcfc6ce00c58ae\",\n            \"wx-036a0332cf1768\",\n            \"wx-093af3f5d565bd\",\n            \"wx-21fb337e9d94e4\",\n            \"wx-4ffed8defe2684\",\n            \"wx-59f9fa67d80211\",\n            \"wx-72798b2febb609\",\n            \"wx-8e16b9d655751c\",\n            \"wx-b1a74b0632a278\",\n            \"wx-d3b3df918319d9\",\n            \"wx-f5a332b50b171d\",\n"
+      },
+      {
+        "start": 34907,
+        "end": 34915,
+        "currentSHA256": "7b4d90c505fb9ebdaf8226af20c76e7df446191074c4bb34ff541858d1a527a1",
+        "baselineText": "            \"知识星球-52ed9c3d09f5b4d4\",\n            \"知识星球-549de903b39c3f65\",\n            \"知识星球-7e2935c52b29e5b9\",\n            \"知识星球-fa0af45571aa1749\"\n"
+      },
+      {
+        "start": 34917,
+        "end": 34917,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"star-083a5013251a532b\",\n            \"star-5044957f9b95359d\",\n            \"star-80718497b331b41f\",\n            \"star-8acc2e02b169971b\",\n            \"star-afd2d93977b23a07\",\n            \"wind-150dde04c81a7701\",\n            \"wind-2651ea23fa100563\",\n            \"wind-c61e5bb589ebc45b\",\n            \"wind-df363bd0c70590ba\",\n            \"wind-e0fcfc6ce00c58ae\",\n            \"wx-036a0332cf1768\",\n            \"wx-093af3f5d565bd\",\n            \"wx-21fb337e9d94e4\",\n            \"wx-4ffed8defe2684\",\n            \"wx-59f9fa67d80211\",\n            \"wx-72798b2febb609\",\n            \"wx-8e16b9d655751c\",\n            \"wx-b1a74b0632a278\",\n            \"wx-d3b3df918319d9\",\n            \"wx-f5a332b50b171d\",\n"
+      },
+      {
+        "start": 34918,
+        "end": 34926,
+        "currentSHA256": "7b4d90c505fb9ebdaf8226af20c76e7df446191074c4bb34ff541858d1a527a1",
+        "baselineText": "            \"知识星球-52ed9c3d09f5b4d4\",\n            \"知识星球-549de903b39c3f65\",\n            \"知识星球-7e2935c52b29e5b9\",\n            \"知识星球-fa0af45571aa1749\"\n"
+      },
+      {
+        "start": 34928,
+        "end": 34928,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"third-macro-demand-supply-expectationTimeline-01\",\n            \"third-macro-demand-supply-expectationTimeline-02\",\n            \"third-macro-demand-supply-expectationTimeline-03\",\n            \"third-macro-demand-supply-expectationTimeline-04\",\n            \"third-macro-demand-supply-expectationTimeline-05\",\n            \"third-macro-demand-supply-expectationTimeline-06\",\n            \"third-macro-demand-supply-expectationTimeline-07\",\n            \"third-macro-demand-supply-expectationTimeline-08\",\n            \"third-star-macro-demand-supply-expectationTimeline-01\",\n            \"third-star-macro-demand-supply-expectationTimeline-02\",\n            \"third-star-macro-demand-supply-expectationTimeline-03\",\n            \"third-star-macro-demand-supply-expectationTimeline-04\",\n"
+      },
+      {
+        "start": 34932,
+        "end": 34932,
+        "currentSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "baselineText": "            \"third-macro-demand-supply-realityTimeline-07\",\n"
+      },
+      {
+        "start": 34934,
+        "end": 34936,
+        "currentSHA256": "7a95b1f456a286a0d17eb8a970ae3b824d5bf50d12181cb1871748400a10676b",
+        "baselineText": "            \"third-macro-demand-supply-mechanism-01\",\n            \"third-macro-demand-supply-mechanism-02\",\n"
+      },
+      {
+        "start": 34937,
+        "end": 34938,
+        "currentSHA256": "303c5901ca28b2437ca704e4369cf9178ab47fa3944d7fc30103c58cb141c21d",
+        "baselineText": ""
+      },
+      {
+        "start": 34939,
+        "end": 34941,
+        "currentSHA256": "d1a2ec4d70bd65be33d2958c394382c3a83606b6b60af8e53aa08a2738d2ce89",
+        "baselineText": "            \"third-macro-demand-supply-mechanism-05\",\n            \"third-star-macro-demand-supply-mechanism-01\",\n            \"third-star-macro-demand-supply-mechanism-02\",\n            \"third-star-macro-demand-supply-mechanism-03\",\n"
+      },
+      {
+        "start": 34942,
+        "end": 34944,
+        "currentSHA256": "db229ce5ca41318db8011b4ac3bb07a2d0611ef0ee4bee700e3f726f3f24a503",
+        "baselineText": ""
+      },
+      {
+        "start": 34945,
+        "end": 34946,
+        "currentSHA256": "fe133fa766de9a4585a019cbd832257b3a9f1895329019c69d5ce8a581844b34",
+        "baselineText": "            \"third-macro-demand-supply-divergence-03\",\n            \"third-macro-demand-supply-divergence-04\",\n            \"third-star-macro-demand-supply-divergence-01\",\n            \"third-star-macro-demand-supply-divergence-02\",\n            \"third-macro-demand-supply-implicationTimeline-01\",\n            \"third-macro-demand-supply-implicationTimeline-02\",\n            \"third-macro-demand-supply-implicationTimeline-03\",\n            \"third-macro-demand-supply-implicationTimeline-04\",\n            \"third-star-macro-demand-supply-implicationTimeline-01\",\n            \"third-macro-demand-supply-examples-01\",\n            \"third-macro-demand-supply-examples-02\",\n            \"third-macro-demand-supply-examples-04\",\n            \"third-macro-demand-supply-examples-03\",\n            \"third-star-macro-demand-supply-examples-01\",\n            \"third-star-macro-demand-supply-examples-02\",\n            \"third-macro-demand-supply-validation-01\",\n            \"third-macro-demand-supply-validation-02\",\n            \"third-macro-demand-supply-validation-03\",\n            \"third-star-macro-demand-supply-validation-01\"\n"
+      },
+      {
+        "start": 34949,
+        "end": 35088,
+        "currentSHA256": "9b59a17893a3522d9dd20c78404326ccbde4ec3e7ad18e43d1eff8a91db49c7b",
+        "baselineText": "          \"firstAvailableDate\": null\n"
+      }
+    ]
+  },
+  "src/historyReplay.tsx": {
+    "baselineSHA256": "4813b34470e5463500c4e275b6821b35c0c041fff18767e0096c01c7d8adcb74",
+    "currentSHA256": "7dd406c063a7a9fc5d700faedf40297b5a68636709d0f6b78d7d47378e759c1b",
+    "operations": [
+      {
+        "start": 68,
+        "end": 69,
+        "currentSHA256": "bc287db65413f0e794a5dabfa181d30cb6b7c1fb13d6c11f989419f6a7e29718",
+        "baselineText": ""
+      },
+      {
+        "start": 431,
+        "end": 438,
+        "currentSHA256": "3166a5508b59a475e1aa13732c68b98bc8ea7484f303509333b9849a6b3998c2",
+        "baselineText": "    <ReadingColumn title=\"阶段总结\" id={`${topicId}-summary`}><div className=\"replay-period-summary\" data-period-summary={section.id}>{section.periodSummary?.paragraphs.length ? section.periodSummary.paragraphs.map((paragraph, index) => <p key={index}>{displayResearchText(paragraph, data)}</p>) : <p className=\"replay-empty\">尚无经核验阶段总结</p>}</div></ReadingColumn>\n"
+      }
+    ]
+  }
+}
