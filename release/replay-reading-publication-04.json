@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "replay-reading-controls-04",
+  "scope": "renewed-easing-qt-end-ui-only",
+  "publicationAuthorized": true,
+  "pageQAComplete": true,
+  "researchReceiptSHA256": "730a305809b359c0272381eee8a9eaac0b5270b362a412e2205d3de708541646",
+  "publicFilePins": {
+    "src/App.tsx": "a05e799b667f845fc9023aa59c1ffd33875bfad1d765bb25a4475c2b022e8b75",
+    "src/historyReplay.tsx": "4813b34470e5463500c4e275b6821b35c0c041fff18767e0096c01c7d8adcb74",
+    "src/historyReplay.css": "95623d7db9a9b661531154535386060f9a97c1e1e7735aeb5261f0b0c84cfd08",
+    "src/replayHierarchy.ts": "1ba2b0f35af8c804600e3ed22ece17be8d1e29da96aac04ae7f9a5b7c7471882",
+    "src/replayOutline.tsx": "56a258470a5e5b8b9b827b068d63b61f71683a7d3d991846fe29286519f66c7a",
+    "src/replayReading.tsx": "beae40d24befc2f903863c5b4d84645b8f1351e706d404bd7d4764883eb67367",
+    "docs/macro-replay-template.md": "74ae89d8754d7975eeed0faca37ee6b393b869afde45c967c212ed54262d56a3",
+    "docs/macro-replay-reading-template.md": "25c36a6ca87e835a18c102f341047a3398408487c3848372b493e08edbbb9b79",
+    "src/data/historyReplay.json": "ac475bfbe5bdf05ee7ae8e42ad5d3c3633191df3ab3f132c38d75d01e3336f82",
+    "src/data/historyReplay.README.md": "34909da6bdaf2b5b8adf1e28c8384181ee883b8c282efac9e33747c6ae7d552f",
+    "src/data/historyReplayHawkishTransition.json": "2cb3ef8c71c63dacccdd9a1b111e0d7e470c72a6df520133c06890d85b7a9d75",
+    "src/data/historyReplayRenewedEasingQtEnd.json": "98f0b3ced413972cf0d4ba40bed254aeaff0516091dc20602b9c04f494163c6b",
+    "src/data/historyReplayTariffPause.json": "ccf808dba9014507ad2243454095f4427e3ce7e88683f74cdc2ac7fc3e7b00c1",
+    "src/data/usConsumptionData.json": "f7a6b8e708268ee63e715ea0f7430672030c408fabfb760bb478aae730492621",
+    "src/data/usEmploymentData.json": "be7ab48e409c7b75ec211f1f71a9a16da8cdb26d49819bccbb215283566bdc3f",
+    "src/data/usGdpData.json": "56e7e760c3fc88a01348646e674fba67edb018c0f5c4027000444233df95f10a",
+    "src/data/usInflationData.json": "71bf725580d023679f3fe2a5672458da038f8168c5f03a1ab9dd335897b05ce5",
+    "src/data/usLateModulesData.json": "f82b751385a8ca0e932a42cf7a59986246e4a6391bc61848a5a7037649889efa",
+    "src/data/usMacroData.json": "b9c14aac3c566c9148d7accbde17d272680e0e9d6b22684f04981338dd8c071c"
+  },
+  "distAssetPins": {
+    "assets/index-CpPQtimk.css": "131f9e5c3c759942e60f0846f9fed993726eac998d63b75efeb726822b4b82c0",
+    "assets/index-j6ak1dET.js": "63fb532e6f2ea3cc8112638fc63d32b40834970b4aa0ae8be8d6be4d29f1aa4a"
+  },
+  "pinEncoding": "git-lf"
+}

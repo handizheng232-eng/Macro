@@ -61,14 +61,16 @@ it('真实浏览器history back/forward恢复第三页，主导航离开卸载',
   expect(screen.queryByLabelText('按日期截止查看')).not.toBeInTheDocument()
 })
 
-it('第三独立hash真实加载240节点、5+35导读、26辅助卡，历史边界卸载', () => {
+it('第三独立hash保留240节点、5+35导读，移除辅助图表且历史边界卸载', () => {
   window.history.replaceState(null, '', third)
   const { container } = render(<App />)
   expect(screen.getByRole('article', { name: '再降息与QT收官研究工作台' })).toBeInTheDocument()
   expect(container.querySelectorAll('.replay-analysis-entries > li')).toHaveLength(240)
   expect(container.querySelectorAll('[data-period-summary]')).toHaveLength(5)
   expect(container.querySelectorAll('[data-aspect-summary]')).toHaveLength(35)
-  expect(container.querySelectorAll('.replay-framework-card')).toHaveLength(26)
+  expect(container.querySelectorAll('.replay-framework-card')).toHaveLength(0)
+  expect(container.querySelectorAll('[data-reading-column]')).toHaveLength(40)
+  expect(container.querySelector('#reading-paths svg')).not.toBeNull()
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '来源库 / 研报库明细']) expect(replayDisclosure(label)).not.toHaveAttribute('open')
   expect(screen.queryByRole('heading', { name: '预期 → 现实：事件时间轴' })).not.toBeInTheDocument()
   fireEvent.change(replayCutoff(), { target: { value: '2025-10-01' } })
