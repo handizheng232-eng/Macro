@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "economic-mechanisms-publication-02",
+  "scope": "renewed-easing-qt-end-two-summaries-and-paragraph-citations",
+  "publicationAuthorized": true,
+  "pageQAComplete": true,
+  "fullStageReady": false,
+  "pinEncoding": "git-lf",
+  "datasetSHA256": "4e093acb52a162879f7bcada2524ae370dc3aa3bf4565c9a50b2f16750448135",
+  "baselineCommit": "d4d58145c71f0c80ac7efbd1521f25d8dd2c419e",
+  "authorization": "用户明确授权上线 EconomicMechanisms02：保留16段官方机制解释，补8段逐月具名机构总结。仅有限追溯引用，不升级完整阶段或历史可得资格。",
+  "reviewBasis": {
+    "officialParentReadbackSHA256": "421193d5029941636edb6eacdb4d09ee41b2c1251588dbacb601357ae131177a",
+    "institutionParentReadbackSHA256": "4c6bd8815d180ad3d60c3971b1b65711045622eb6d6efa50d86efa8249705726",
+    "browserQAInheritedSHA256": "557111faa6b5551dad1d288b8ff77441d83e41654d1e3f7d5f250a721f459dfd",
+    "publicCIDoesNotReadPrivateOriginals": true,
+    "originalPendingSourceLabelsRetainedAsFrozenMetadata": true
+  },
+  "publicFilePins": {
+    "docs/macro-replay-reading-template.md": "25c36a6ca87e835a18c102f341047a3398408487c3848372b493e08edbbb9b79",
+    "docs/macro-replay-template.md": "74ae89d8754d7975eeed0faca37ee6b393b869afde45c967c212ed54262d56a3",
+    "release/replay-economic-mechanisms-02-inverse.json": "e4c5965f9f8ec863201bb1f88dbf22312519aa7fe631f8661da6e50f4c0fc110",
+    "release/replay-reading-publication-04.json": "4eaea86b4a7823f982e5b049076795ed64e1b24fb2467b67bbc32b62ca9af2d9",
+    "release/replay-renewed-easing-publication-03.json": "730a305809b359c0272381eee8a9eaac0b5270b362a412e2205d3de708541646",
+    "src/App.tsx": "a05e799b667f845fc9023aa59c1ffd33875bfad1d765bb25a4475c2b022e8b75",
+    "src/data/historyReplay.README.md": "34909da6bdaf2b5b8adf1e28c8384181ee883b8c282efac9e33747c6ae7d552f",
+    "src/data/historyReplay.json": "ac475bfbe5bdf05ee7ae8e42ad5d3c3633191df3ab3f132c38d75d01e3336f82",
+    "src/data/historyReplayEconomicMechanisms02.fixture.json": "cd04e038f71f2b9f63e23d6b3d0da44c971c8aa71726fe350ba76236bf31871b",
+    "src/data/historyReplayHawkishTransition.json": "2cb3ef8c71c63dacccdd9a1b111e0d7e470c72a6df520133c06890d85b7a9d75",
+    "src/data/historyReplayRenewedEasingQtEnd.json": "4e093acb52a162879f7bcada2524ae370dc3aa3bf4565c9a50b2f16750448135",
+    "src/data/historyReplayTariffPause.json": "ccf808dba9014507ad2243454095f4427e3ce7e88683f74cdc2ac7fc3e7b00c1",
+    "src/data/usConsumptionData.json": "f7a6b8e708268ee63e715ea0f7430672030c408fabfb760bb478aae730492621",
+    "src/data/usEmploymentData.json": "be7ab48e409c7b75ec211f1f71a9a16da8cdb26d49819bccbb215283566bdc3f",
+    "src/data/usGdpData.json": "56e7e760c3fc88a01348646e674fba67edb018c0f5c4027000444233df95f10a",
+    "src/data/usInflationData.json": "71bf725580d023679f3fe2a5672458da038f8168c5f03a1ab9dd335897b05ce5",
+    "src/data/usLateModulesData.json": "f82b751385a8ca0e932a42cf7a59986246e4a6391bc61848a5a7037649889efa",
+    "src/data/usMacroData.json": "b9c14aac3c566c9148d7accbde17d272680e0e9d6b22684f04981338dd8c071c",
+    "src/historyReplay.css": "95623d7db9a9b661531154535386060f9a97c1e1e7735aeb5261f0b0c84cfd08",
+    "src/historyReplay.tsx": "7dd406c063a7a9fc5d700faedf40297b5a68636709d0f6b78d7d47378e759c1b",
+    "src/replayHierarchy.ts": "1ba2b0f35af8c804600e3ed22ece17be8d1e29da96aac04ae7f9a5b7c7471882",
+    "src/replayOutline.tsx": "56a258470a5e5b8b9b827b068d63b61f71683a7d3d991846fe29286519f66c7a",
+    "src/replayReading.tsx": "beae40d24befc2f903863c5b4d84645b8f1351e706d404bd7d4764883eb67367"
+  },
+  "approvedSummaryDigests": {
+    "inflation-vintages": "36814c2dfa8c579af354a191a331a75c62a554746bc395e96f45dbec4c0dadae",
+    "demand-supply": "d97184d06cc451b68fa0681618d187e81bcacedd4c5d4cbf86b5b431106fe7db"
+  },
+  "approvedAddedSourceDigests": {
+    "EM01-press-sep17": "fcbbf5aaf97355177d9c5cc8764a162fb8c3c3675c9732061e37cdb7296d95f0",
+    "EM01-press-oct29": "6e3dacd2beb02a72337e910c65f2a35959b4ae970068ba4a96d66def2db67491",
+    "EM01-powell-sep23": "6dc692550c71ee4f9285dc218df8b34b5ad66c855221ca29ba68e88289bae3aa",
+    "EM01-beige-sep-dallas": "549049d77cb1fb997c5bd0533e25a40451b120e464c022da0a66c65c2a80cc39",
+    "EM01-beige-nov": "486af65578ef0953151a025e0644d55c292c66c1adb65fbc8db88be7b1af4393",
+    "EM01-spf-q4": "5e4fd82fbaa5d08ce885646c665a69c625ee8a11521b3dc06c4e8891b68b428f",
+    "EM01-minutes-sep": "1417e128319db2f4884d18be734c9255e31f643d36d58fbf8ac389bc961340f4",
+    "EM01-minutes-oct": "e7bfb29102a8c47be7742c4d6f06cd1301ff95aac4396317c1d28b6b00a7d91a",
+    "EM01-minutes-dec": "7f837dac11408f0cae0ffcc0d107898c1cff7d6679cd1b27457999a2a7ca6b4a",
+    "EM01-mpr-housing-method": "0e246b586a25837bd124f790a1b27fb23ee99b86b14834665afe574e4a636aeb",
+    "EM01-stl-tariffs-oct16": "064a8082d94dc914d11a32d0cbc43a13d127cba9834439cf469257abac1ad065"
+  },
+  "distAssetPins": {
+    "assets/index-CpPQtimk.css": "131f9e5c3c759942e60f0846f9fed993726eac998d63b75efeb726822b4b82c0",
+    "assets/index-OoZNOUhV.js": "3bbc7ec395157c79ff7d9093b9d7e5e46ed1afed5eb5683097ffcc72be0db604"
+  }
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "topic": "inflation-vintages",
+    "mechanismSHA256": [
+      "aa7bbff3b4afedba26cb6366b6e50be5afa00096a804dace2c5d664fe106b8c6",
+      "8544d3ad4a88a73ca95935dbcc50556d9aff263a5274bde74782b9da690eed17",
+      "a2adf77c054ad574c73476d9409a141c5120ba960ee83498e12b2cdb65b8eb2c",
+      "8fd4b2db93895385336e9e859363f56f683439f970c8dfb3a55063e74a9a6a66",
+      "5ec6d4626545922e3edea17ba7491e02a8a826fd074f69986d66d1480313bc92",
+      "c7a79e53745600693340da8bb52c3575c1f7c6b3da713b183183e8db5a8cff85",
+      "b0bf097ce5f75d729fce23f3a98f89aaea855330ce60b6a98a66c13ec86cd9ca",
+      "39b11473c1dcf3fd53bb4425be1fde4e8f45bda274b37c57ab5077f402d39775"
+    ],
+    "mechanismSources": [
+      [
+        {
+          "sourceId": "fraser-cpi-aug-pdf",
+          "label": "BLS｜8月CPI（9月11日）"
+        },
+        {
+          "sourceId": "EM01-press-sep17",
+          "label": "美联储｜9月17日记者会最终转录"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-beige-sep-dallas",
+          "label": "褐皮书｜9月3日达拉斯地区报告"
+        },
+        {
+          "sourceId": "EM01-powell-sep23",
+          "label": "鲍威尔｜9月23日经济展望"
+        },
+        {
+          "sourceId": "EM01-minutes-sep",
+          "label": "美联储｜9月会议纪要（10月8日发布）"
+        }
+      ],
+      [
+        {
+          "sourceId": "fraser-cpi-sep-pdf",
+          "label": "BLS｜9月CPI（10月24日）"
+        },
+        {
+          "sourceId": "EM01-mpr-housing-method",
+          "label": "美联储｜住房租金传导方法（2025年2月报告）"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-stl-tariffs-oct16",
+          "label": "圣路易斯联储｜10月16日关税价格传导研究"
+        },
+        {
+          "sourceId": "EM01-press-oct29",
+          "label": "美联储｜10月29日记者会最终转录"
+        },
+        {
+          "sourceId": "EM01-minutes-oct",
+          "label": "美联储｜10月会议纪要（11月19日发布）"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-beige-nov",
+          "label": "褐皮书｜11月26日全国摘要"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-spf-q4",
+          "label": "费城联储｜11月17日专业预测者调查"
+        },
+        {
+          "sourceId": "EM01-beige-nov",
+          "label": "褐皮书｜11月26日全国摘要"
+        },
+        {
+          "sourceId": "fraser-cpi-nov-pdf",
+          "label": "BLS｜11月CPI（12月18日）"
+        }
+      ],
+      [
+        {
+          "sourceId": "bea-personal-income-and-outlays-september-2025",
+          "label": "BEA｜9月收入与支出首报（12月5日）"
+        },
+        {
+          "sourceId": "fraser-cpi-nov-pdf",
+          "label": "BLS｜11月CPI（12月18日）"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-minutes-dec",
+          "label": "美联储｜12月会议纪要（12月30日发布）"
+        },
+        {
+          "sourceId": "fed-document-FOMCpresconf20251210-pdf",
+          "label": "美联储｜12月10日记者会最终转录"
+        }
+      ]
+    ],
+    "institutions": [
+      {
+        "month": 9,
+        "textSHA256": "b7a155d8fd71cbd926e59d276ce372401957b545ab1964692969159d168f5ad3",
+        "nodes": [
+          "third-macro-inflation-vintages-expectationTimeline-01",
+          "third-macro-inflation-vintages-expectationTimeline-02",
+          "third-macro-inflation-vintages-mechanism-01"
+        ],
+        "sourceIds": [
+          "wx-b520c4f79cfb82",
+          "wx-f5a332b50b171d"
+        ]
+      },
+      {
+        "month": 10,
+        "textSHA256": "b0f8da3d410c78714755ea646ce8a2cd8c3f0ed00d28bcb72d87b4d139f5fb22",
+        "nodes": [
+          "third-macro-inflation-vintages-expectationTimeline-03",
+          "third-macro-inflation-vintages-divergence-01"
+        ],
+        "sourceIds": [
+          "wx-b62db7cb91667b"
+        ]
+      },
+      {
+        "month": 11,
+        "textSHA256": "cd04f02f5cdf2b54fdcf0effcb8eac684cf3e791db76dc20f58dc8a28467d5fc",
+        "nodes": [
+          "third-macro-inflation-vintages-expectationTimeline-04",
+          "third-macro-inflation-vintages-divergence-03"
+        ],
+        "sourceIds": [
+          "wx-72798b2febb609"
+        ]
+      },
+      {
+        "month": 12,
+        "textSHA256": "c9146a18d596d4176d9022bfe0112bbf9c0eeb402fa92f031e55dcfc1fab10f8",
+        "nodes": [
+          "third-macro-inflation-vintages-divergence-02"
+        ],
+        "sourceIds": [
+          "wx-92fa80a396ae39"
+        ]
+      }
+    ]
+  },
+  {
+    "topic": "demand-supply",
+    "mechanismSHA256": [
+      "dcd835577983ff7d9e9ab7ab82a46e9009c59192f01110c6d25af949495ef1bc",
+      "148d3506cb26fc3e00ba9b8efb41d303d40bd1deb55decc0bae6f25fdccc1dd6",
+      "742eab0a17cb4354a5c95501a4dcee49bb3f134cf1c2970f36682dc01b9d677c",
+      "e0a28cb96d84d331e59836be8ca3c2c35f03362d52d50a6fdd370fbdc1201a9f",
+      "0091d0eb7d6e722e365eaa5f92d6e721c4de63cd8002fff8768789c6f35eea8a",
+      "d4ed221c523be9ce7df452caf99e6a082abd66e46cd6f549890075bbdad6f643",
+      "cbb31f714f60133bd268da82576141983cf2861a86906e40df6fc4645c082e3b",
+      "5acdf3e0ffc9eeda74ea019d47fc205c83f90cf68ba0b388763fe44d6a2c92ae"
+    ],
+    "mechanismSources": [
+      [
+        {
+          "sourceId": "bea-gdp2-third",
+          "label": "BEA｜第二季度GDP第三估值（9月25日）"
+        },
+        {
+          "sourceId": "bea-personal-income-and-outlays-august-2025",
+          "label": "BEA｜8月收入与支出（9月26日）"
+        },
+        {
+          "sourceId": "EM01-powell-sep23",
+          "label": "鲍威尔｜9月23日经济展望"
+        }
+      ],
+      [
+        {
+          "sourceId": "fraser-empsit-aug-pdf",
+          "label": "BLS｜8月就业首报（9月5日）"
+        },
+        {
+          "sourceId": "EM01-press-sep17",
+          "label": "美联储｜9月17日记者会最终转录"
+        },
+        {
+          "sourceId": "EM01-minutes-sep",
+          "label": "美联储｜9月会议纪要（10月8日发布）"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-press-oct29",
+          "label": "美联储｜10月29日记者会最终转录"
+        },
+        {
+          "sourceId": "EM01-minutes-oct",
+          "label": "美联储｜10月会议纪要（11月19日发布）"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-press-oct29",
+          "label": "美联储｜10月29日记者会最终转录"
+        }
+      ],
+      [
+        {
+          "sourceId": "EM01-beige-nov",
+          "label": "褐皮书｜11月26日全国摘要"
+        },
+        {
+          "sourceId": "EM01-spf-q4",
+          "label": "费城联储｜11月17日专业预测者调查"
+        }
+      ],
+      [
+        {
+          "sourceId": "fraser-empsit-sep-pdf",
+          "label": "BLS｜9月就业首报（11月20日）"
+        },
+        {
+          "sourceId": "EM01-beige-nov",
+          "label": "褐皮书｜11月26日全国摘要"
+        },
+        {
+          "sourceId": "EM01-spf-q4",
+          "label": "费城联储｜11月17日专业预测者调查"
+        }
+      ],
+      [
+        {
+          "sourceId": "bea-personal-income-and-outlays-september-2025",
+          "label": "BEA｜9月收入与支出首报（12月5日）"
+        },
+        {
+          "sourceId": "fed-document-FOMCpresconf20251210-pdf",
+          "label": "美联储｜12月10日记者会最终转录"
+        },
+        {
+          "sourceId": "bea-gross-domestic-product-3rd-quarter-2025-initial-estimate-and-corporate-profits",
+          "label": "BEA｜第三季度GDP首报（12月23日）"
+        }
+      ],
+      [
+        {
+          "sourceId": "fraser-empsit-nov-pdf",
+          "label": "BLS｜11月就业发布版（12月16日）"
+        },
+        {
+          "sourceId": "EM01-minutes-dec",
+          "label": "美联储｜12月会议纪要（12月30日发布）"
+        }
+      ]
+    ],
+    "institutions": [
+      {
+        "month": 9,
+        "textSHA256": "82c0f71ab2eb286b29e8b7cda3c9563c5ffc8529ad73e0309029129df0ec022f",
+        "nodes": [
+          "third-macro-demand-supply-expectationTimeline-01",
+          "third-macro-demand-supply-expectationTimeline-02",
+          "third-macro-demand-supply-mechanism-03"
+        ],
+        "sourceIds": [
+          "wx-f61eabb3b39d97",
+          "wx-f5a332b50b171d"
+        ]
+      },
+      {
+        "month": 10,
+        "textSHA256": "ad9a3939bc992a27a96abf72aa7151fd810f9674885fd8bfc8a902dddb1fab8f",
+        "nodes": [
+          "third-macro-demand-supply-expectationTimeline-04",
+          "third-macro-demand-supply-mechanism-04"
+        ],
+        "sourceIds": [
+          "wx-21fb337e9d94e4"
+        ]
+      },
+      {
+        "month": 11,
+        "textSHA256": "113155a39e5fe6ced54854e5a9a10ac1e91f1c093458d00f9268a20280a7571a",
+        "nodes": [
+          "third-macro-demand-supply-expectationTimeline-05",
+          "third-macro-demand-supply-expectationTimeline-06",
+          "third-macro-demand-supply-divergence-01"
+        ],
+        "sourceIds": [
+          "wx-72798b2febb609",
+          "wx-b1a74b0632a278",
+          "wx-036a0332cf1768"
+        ]
+      },
+      {
+        "month": 12,
+        "textSHA256": "4f6acc693984392d86d6664b87d2feb0b120da2c6b650c2316f02a9d40f533be",
+        "nodes": [
+          "third-macro-demand-supply-expectationTimeline-07",
+          "third-macro-demand-supply-expectationTimeline-08",
+          "third-macro-demand-supply-divergence-02",
+          "third-macro-demand-supply-divergence-03"
+        ],
+        "sourceIds": [
+          "wx-8e16b9d655751c",
+          "wx-4ffed8defe2684",
+          "wx-093af3f5d565bd"
+        ]
+      }
+    ]
+  }
+]

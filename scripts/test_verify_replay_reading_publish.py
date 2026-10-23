@@ -5,14 +5,17 @@ import unittest
 from unittest.mock import patch
 from pathlib import Path
 from verify_replay_reading_publish import verify_reading, ROOT
+from verify_economic_mechanisms_publish import baseline_root
 
 
 class ReadingPublicationTests(unittest.TestCase):
     def setUp(self):
+        # All original assertions run on the exact immutable release-04 fixture.
+        self.root = self.enterContext(baseline_root(ROOT))
         self.receipt = json.loads((ROOT / 'release/replay-reading-publication-04.json').read_bytes())
 
     def test_current_release_and_reusable_template(self):
-        result = verify_reading(self.receipt)
+        result = verify_reading(self.receipt, root=self.root)
         self.assertEqual(result['newResearchParagraphs'], 7)
         self.assertFalse(result['fullStageReady'])
         self.assertTrue(result['researchReceiptUnchanged'])
@@ -29,19 +32,19 @@ class ReadingPublicationTests(unittest.TestCase):
             changed = copy.deepcopy(self.receipt)
             changed[field] = value
             with self.assertRaises(ValueError):
-                verify_reading(changed)
+                verify_reading(changed, root=self.root)
         for name in list(self.receipt['publicFilePins']):
             changed = copy.deepcopy(self.receipt)
             del changed['publicFilePins'][name]
             with self.assertRaises(ValueError):
-                verify_reading(changed)
+                verify_reading(changed, root=self.root)
 
     def test_changed_ui_data_or_template_rejected(self):
         for name in self.receipt['publicFilePins']:
             changed = copy.deepcopy(self.receipt)
             changed['publicFilePins'][name] = '0' * 64
             with self.assertRaises(ValueError):
-                verify_reading(changed)
+                verify_reading(changed, root=self.root)
 
     def test_original_research_receipt_is_read_not_replaced(self):
         original = Path.read_bytes
@@ -50,7 +53,7 @@ class ReadingPublicationTests(unittest.TestCase):
             return raw + b'\n' if path.name == 'replay-renewed-easing-publication-03.json' else raw
         with patch.object(Path, 'read_bytes', changed_read):
             with self.assertRaises(ValueError):
-                verify_reading(self.receipt)
+                verify_reading(self.receipt, root=self.root)
 
 
 if __name__ == '__main__':
