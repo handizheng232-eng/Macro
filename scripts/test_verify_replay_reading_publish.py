@@ -6,12 +6,14 @@ from unittest.mock import patch
 from pathlib import Path
 from verify_replay_reading_publish import verify_reading, ROOT
 from verify_economic_mechanisms_publish import baseline_root
+from verify_heatmap_publish import previous_root
 
 
 class ReadingPublicationTests(unittest.TestCase):
     def setUp(self):
         # All original assertions run on the exact immutable release-04 fixture.
-        self.root = self.enterContext(baseline_root(ROOT))
+        previous = self.enterContext(previous_root(ROOT))
+        self.root = self.enterContext(baseline_root(previous))
         self.receipt = json.loads((ROOT / 'release/replay-reading-publication-04.json').read_bytes())
 
     def test_current_release_and_reusable_template(self):

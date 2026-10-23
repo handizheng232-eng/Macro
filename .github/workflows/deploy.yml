@@ -44,7 +44,8 @@ jobs:
           python -B -m unittest discover -s scripts -p 'test_verify_renewed_limited_publish.py' -v
           python -B -m unittest discover -s scripts -p 'test_verify_replay_reading_publish.py' -v
           python -B -m unittest discover -s scripts -p 'test_verify_economic_mechanisms_publish.py' -v
-          python -B scripts/verify_economic_mechanisms_publish.py --dist dist
+          python -B -m unittest discover -s scripts -p 'test_verify_heatmap_publish.py' -v
+          python -B scripts/verify_heatmap_publish.py --dist dist
       - name: Verify explicitly authorized partial tariff-pause release
         run: python -B scripts/verify_tariff_partial_publish.py --self-test --dist dist
       - name: Setup Pages

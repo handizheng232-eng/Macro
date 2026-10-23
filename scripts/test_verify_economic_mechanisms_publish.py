@@ -6,11 +6,16 @@ from verify_economic_mechanisms_publish import (
     verify_economic, verify_revision, baseline_bytes, ROOT, RECEIPT, DATA, FIXTURE,
 )
 from verify_renewed_limited_publish import digest
+from verify_heatmap_publish import previous_root
 
 class EconomicPublicationTests(unittest.TestCase):
+    def setUp(self):
+        # Unchanged assertions operate on the exact pre-heatmap public bytes.
+        self.root = self.enterContext(previous_root(ROOT))
+
     def test_authorized_revision(self):
         receipt = json.loads((ROOT / RECEIPT).read_bytes())
-        result = verify_economic(receipt)
+        result = verify_economic(receipt, root=self.root)
         self.assertEqual(result['officialParagraphs'], 16)
         self.assertEqual(result['institutionParagraphs'], 8)
         self.assertFalse(result['fullStageReady'])
@@ -25,7 +30,7 @@ class EconomicPublicationTests(unittest.TestCase):
                 changed = copy.deepcopy(receipt)
                 changed[field] = value
                 with self.assertRaises(ValueError):
-                    verify_economic(changed)
+                    verify_economic(changed, root=self.root)
         for name in receipt['publicFilePins']:
             for mode in ['remove', 'alter']:
                 with self.subTest(name=name, mode=mode):
@@ -35,7 +40,7 @@ class EconomicPublicationTests(unittest.TestCase):
                     else:
                         changed['publicFilePins'][name] = '0' * 64
                     with self.assertRaises(ValueError):
-                        verify_economic(changed)
+                        verify_economic(changed, root=self.root)
 
     def test_scope_and_condition_mutations_without_outer_hash_shortcut(self):
         baseline = json.loads(baseline_bytes(DATA))

@@ -1,5 +1,6 @@
 import { render, cleanup, fireEvent, screen } from '@testing-library/react'
 import { HistoryReplay, type HistoryReplayData } from './historyReplay'
+import { replayCutoff, replayDisclosure } from './historyReplay.testHelpers'
 import first from './data/historyReplay.json'
 import second from './data/historyReplayHawkishTransition.json'
 
@@ -17,16 +18,16 @@ it('两篇真实复盘的主章节、顺序与层级一致；补充证据不另�
   const secondOutline = outline(b.container.querySelector('.history-replay')!)
   // The accessible document name and stage boundaries intentionally differ.
   expect(secondOutline).toEqual(firstOutline)
-  const library = screen.getByLabelText('来源库 / 研报库明细')
-  expect(library).toContainElement(screen.getByLabelText('逐条预期现实对照'))
-  expect(library).toContainElement(screen.getByLabelText('本地研报观点明细'))
+  const library = replayDisclosure('来源库 / 研报库明细')
+  expect(library).toContainElement(replayDisclosure('逐条预期现实对照'))
+  expect(library).toContainElement(replayDisclosure('本地研报观点明细'))
 })
 
 it('两篇均保留三渠道默认折叠及相同的五主题分析字段', () => {
   for (const data of [first, second]) {
     const view = render(<HistoryReplay data={data} onBack={() => {}} />)
     for (const name of ['星球', 'Wind', '微信']) {
-      expect(screen.getByLabelText(`${name}观点明细`)).not.toHaveAttribute('open')
+      expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
     }
     const topics = Array.from(view.container.querySelectorAll('.replay-analysis-topic'))
     expect(topics).toHaveLength(5)
@@ -36,7 +37,7 @@ it('两篇均保留三渠道默认折叠及相同的五主题分析字段', () =
         ...((data as HistoryReplayData).marketAnalysis?.sections[index].deepDive?.examples?.length ? ['实例 / 原文与数据'] : []), '验证条件',
       ])
     }
-    const library = screen.getByLabelText('来源库 / 研报库明细')
+    const library = replayDisclosure('来源库 / 研报库明细')
     expect(library).not.toHaveAttribute('open')
     fireEvent.click(library.querySelector(':scope > summary')!)
     expect(library).toHaveAttribute('open')
@@ -54,7 +55,7 @@ it.each([first, second])('$title：独立事件时间轴从DOM真正删除，事
   expect(screen.getByRole('region', { name: '判断与反证' })).toBeInTheDocument()
   const pairs = screen.getByRole('region', { name: '市场路径对照' })
   for (const event of data.events.filter(event => event.date <= data.asOf)) expect(pairs).toHaveTextContent(event.title)
-  fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: data.startDate } })
+  fireEvent.change(replayCutoff(), { target: { value: data.startDate } })
   expect(view.container.querySelector('.replay-timeline')).toBeNull()
   expect(JSON.stringify(data.events)).toBe(rawEvents)
 })
@@ -115,7 +116,7 @@ it('五主题共用深度结构：七类分段、精度、署名、条件及实�
   const nav = screen.getByRole('navigation', { name: '综合分析主题目录' })
   expect(nav.querySelectorAll('a')).toHaveLength(5)
   for (const link of nav.querySelectorAll('a')) expect(view.container.querySelector(link.getAttribute('href')!)).toBeTruthy()
-  fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-06-30' } })
+  fireEvent.change(replayCutoff(), { target: { value: '2026-06-30' } })
   expect(screen.queryByRole('region', { name: '综合市场分析' })).not.toBeInTheDocument()
   expect(screen.queryByRole('navigation', { name: '综合分析主题目录' })).not.toBeInTheDocument()
   expect(view.container.textContent).not.toContain('测试mechanism首段')
@@ -187,7 +188,7 @@ it('框架辅助图按实际单位分轴、月季观察期不补日，显式显�
   expect(region.querySelector('a[href="#framework/not-a-module"]')).toBeNull()
   expect(region.querySelector('a[href="https://example.org/test-series"]')).toBeTruthy()
   expect(region.textContent).not.toMatch(/test-only-framework|TEST_ONLY_NOT_A_REAL_HASH|\/test/)
-  fireEvent.change(screen.getByLabelText('按日期截止查看'), { target: { value: '2026-08-01' } })
+  fireEvent.change(replayCutoff(), { target: { value: '2026-08-01' } })
   expect(screen.queryByRole('region', { name: '货币政策 · 框架辅助证据' })).not.toBeInTheDocument()
   expect(view.container.innerHTML).not.toContain('test-only-monthly')
   expect(JSON.stringify(data)).toBe(raw)
