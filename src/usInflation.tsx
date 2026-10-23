@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import inflationData from './data/usInflationData.json'
 import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
+import { heatmapPeriodIndices } from './heatmapTimeRange'
 
 type RangeKey = MacroTimeRange
 
@@ -84,6 +85,7 @@ type HeatmapRow = {
   group: string
   depth: number
   weight: number
+  weightDate?: string | null
   yoy: Array<number | null>
   mom: Array<number | null>
   source: { provider: string; code: string }
@@ -177,6 +179,7 @@ type InflationDataset = {
       description: string
       periods: string[]
       rows: HeatmapRow[]
+      history?: { periods: string[]; rows: HeatmapRow[]; note: string }
       source: { provider: string; route: string }
     }
     cpiDetail: {
@@ -544,9 +547,13 @@ function heatCellColor(value: number | null, mode: 'yoy' | 'mom'): string {
   return value >= 0 ? `rgba(197, 68, 68, ${alpha})` : `rgba(47, 127, 163, ${alpha})`
 }
 
-function CpiHeatmapTable() {
+export function CpiHeatmapTable() {
   const table = dataset.actual.cpiHeatmap
   const [mode, setMode] = useState<'yoy' | 'mom'>('yoy')
+  const [range, setRange] = useState<MacroTimeRange>('1Y')
+  const history = table.history ?? table
+  const indices = heatmapPeriodIndices(history.periods, range)
+  const periods = indices.map((index) => history.periods[index])
   return (
     <article className="cpi-heatmap-card">
       <header>
@@ -560,30 +567,31 @@ function CpiHeatmapTable() {
           <button className={mode === 'mom' ? 'active' : ''} type="button" onClick={() => setMode('mom')}>季调环比</button>
         </div>
       </header>
+      <div className="heatmap-range-controls"><div className="range-switch" role="group" aria-label="CPI分项温度表时间范围">{MACRO_TIME_RANGE_OPTIONS.map((option) => <button type="button" key={option.key} className={range === option.key ? 'active' : ''} aria-pressed={range === option.key} onClick={() => setRange(option.key)}>{option.label}</button>)}</div><p>显示 {formatDate(periods[periods.length - 1])}—{formatDate(periods[0])} · {periods.length}个月；可用历史 {formatDate(history.periods[history.periods.length - 1])}—{formatDate(history.periods[0])}。各分项起点不同，缺月留空；向右滑动查看较早月份。</p></div>
       <div className="heatmap-legend" aria-hidden="true">
         <span>负增长</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>正增长</span>
       </div>
       <div className="cpi-heatmap-wrap">
-        <table className="cpi-heatmap" aria-label={table.title}>
+        <table className="cpi-heatmap" style={{ minWidth: `${Math.max(1240, periods.length * 76 + 400)}px` }} aria-label={table.title}>
           <thead>
             <tr>
-              <th>分项</th>
-              <th>组别</th>
-              <th>权重 %</th>
-              {table.periods.map((period) => <th key={period}>{formatDate(period)}</th>)}
+              <th scope="col">分项</th>
+              <th scope="col">组别</th>
+              <th scope="col">最新权重 %</th>
+              {periods.map((period) => <th scope="col" key={period}>{formatDate(period)}</th>)}
             </tr>
           </thead>
           <tbody>
-            {table.rows.map((row, rowIndex) => {
-              const values = mode === 'yoy' ? row.yoy : row.mom
-              const startsGroup = rowIndex === 0 || table.rows[rowIndex - 1].group !== row.group
+            {history.rows.map((row, rowIndex) => {
+              const values = indices.map((index) => (mode === 'yoy' ? row.yoy[index] : row.mom[index]) ?? null)
+              const startsGroup = rowIndex === 0 || history.rows[rowIndex - 1].group !== row.group
               return (
                 <tr className={`${row.depth === 0 ? 'major' : ''} ${startsGroup ? 'group-start' : ''}`} key={row.id}>
-                  <th style={{ paddingLeft: `${16 + row.depth * 16}px` }}>{row.label}</th>
+                  <th scope="row" style={{ paddingLeft: `${16 + row.depth * 16}px` }}>{row.label}</th>
                   <td><span className={`heatmap-group group-${row.group}`}>{row.group}</span></td>
-                  <td className="heatmap-weight">{formatValue(row.weight)}</td>
+                  <td className="heatmap-weight" title={row.weightDate ? `权重快照：${formatDate(row.weightDate)}` : '总项目权重为定义值，或原快照未披露观察日期'}>{formatValue(row.weight)}{row.weightDate && <small>{formatDate(row.weightDate)}</small>}</td>
                   {values.map((value, index) => (
-                    <td className="heat-value" key={`${row.id}-${table.periods[index]}`} style={{ backgroundColor: heatCellColor(value, mode) }}>
+                    <td className="heat-value" key={`${row.id}-${periods[index]}`} style={{ backgroundColor: heatCellColor(value, mode) }}>
                       {value === null ? '—' : formatValue(value, 1)}
                     </td>
                   ))}
@@ -595,9 +603,10 @@ function CpiHeatmapTable() {
       </div>
       <footer>
         <strong>{mode === 'yoy' ? '当月同比' : '季调环比'}</strong>
-        <span>月份按从新到旧排列；2025-10为iFinD上游缺口，不做插值，最近12个可用月因此跳过该月。</span>
+        <span>月份按从新到旧排列；2025-10等缺失月份保留空列，不插值、不跳月。权重为最新权重快照，不随所选历史区间回溯。</span>
         <b>{table.source.provider}</b>
       </footer>
+      <p className="heatmap-history-note">{table.history?.note}</p>
     </article>
   )
 }

@@ -21,10 +21,10 @@ from typing import Any, Iterable
 
 try:
     from scripts.ifind_history import assert_full_history, metadata_start_date
-    from scripts.employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError
+    from scripts.employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError, calendar_history_periods, shift_month
 except ModuleNotFoundError:
     from ifind_history import assert_full_history, metadata_start_date
-    from employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError
+    from employment_sector_structure import build_sector_monitor, fetch_sector_levels, ReconciliationError, calendar_history_periods, shift_month
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usEmploymentData.json"
@@ -181,7 +181,7 @@ def month_over_month(dates: list[str], values: list[float]) -> tuple[list[str], 
     result_values: list[float] = []
     for index in range(1, len(values)):
         previous = values[index - 1]
-        if previous == 0:
+        if previous == 0 or compact_date(dates[index - 1])[:6] != shift_month(compact_date(dates[index])[:6], -1):
             continue
         result_dates.append(dates[index])
         result_values.append((values[index] / previous - 1) * 100)
@@ -1052,7 +1052,16 @@ def build_dataset(
                 "latestObservation": source_dates[-1],
             },
         })
+    wage_history_periods = calendar_history_periods(set.union(*wage_period_sets))
+    wage_history_rows = []
+    for row in wage_sector_rows:
+        value_map = {date[:6]: value for date, value in zip(*wage_mom[row["id"]])}
+        wage_history_rows.append({**row, "values": [round(value_map[p], 3) if p in value_map else None for p in wage_history_periods]})
     wage_sector_monitor = {
+        "history": {
+            "periods": wage_history_periods, "rows": wage_history_rows,
+            "note": f"本次BLS原始包时薪水平始于{min(d[:6] for dates, _ in bls_parsed.values() for d in dates)}；可计算环比历史{wage_history_periods[-1]}—{wage_history_periods[0]}，仅为本次实得历史，非全部官方历史。环比仅使用连续相邻月份，缺月为null、不跨缺口计算。近12月和2018—19基准列是固定比较窗口，不随所选历史区间改变。",
+        },
         "title": "分行业平均时薪环比变化",
         "description": "BLS CES季调全体雇员平均时薪水平计算月度环比；与行业新增就业并读，用于区分就业广度与工资压力。",
         "eyebrow": "CES · INDUSTRY HOURLY EARNINGS",

@@ -854,6 +854,13 @@ td:last-child { color: var(--subtle); }
 .employment-heat-legend .neutral { background: #f3f4f5; }
 .employment-heat-legend .hot { background: rgba(197,68,68,.42); }
 .employment-heatmap-wrap { overflow-x: auto; }
+.heatmap-range-controls { padding: 12px 16px; border-top: 1px solid #e0e5eb; }
+.heatmap-range-controls .range-switch { width: max-content; max-width: 100%; overflow-x: auto; }
+.heatmap-range-controls p, .heatmap-history-note { margin: 10px 0 0; color: #52606b; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+.heatmap-history-note { padding: 0 16px 16px; }
+.employment-heatmap-wrap, .cpi-heatmap-wrap { max-width: 100%; }
+.employment-heatmap th:first-child, .cpi-heatmap th:first-child { position: sticky; left: 0; z-index: 1; }
+.cpi-heatmap .heatmap-weight small { display: block; font-size: 9px; white-space: nowrap; color: #52606b; }
 .employment-heatmap { min-width: 1260px; table-layout: fixed; }
 .sector-monitor-table { min-width: 1500px; }
 .sector-monitor-table tbody td.sector-benchmark { background: #f4f6f8; color: #26313b; }

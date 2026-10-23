@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import employmentData from './data/usEmploymentData.json'
 import { macroReleaseTiming } from './macroReleaseTiming'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
+import { completePeriodMean, heatmapPeriodIndices } from './heatmapTimeRange'
 
 type RangeKey = MacroTimeRange
 
@@ -101,8 +102,9 @@ type SectorMonitor = {
   source: { provider: string; url: string; fetchedAt?: string }
   reconciliation?: {
     note: string
-    checks: Array<{ id: string; label: string; values: number[]; tolerance: number }>
+    checks: Array<{ id: string; label: string; values: Array<number | null>; tolerance: number }>
   }
+  history?: { periods: string[]; rows: SectorMonitor['rows']; reconciliation?: SectorMonitor['reconciliation']; note: string }
 }
 
 type AvailabilityItem = {
@@ -600,26 +602,35 @@ function heatColor(value: number | null, maxAbs: number): string {
 }
 
 export function SectorMonitorTable({ table }: { table: SectorMonitor }) {
-  const detailRows = table.rows.filter((row) => !row.rowType || row.rowType === 'detail')
+  const [range, setRange] = useState<MacroTimeRange>('1Y')
+  const history = table.history ?? table
+  const indices = heatmapPeriodIndices(history.periods, range)
+  const periods = indices.map((index) => history.periods[index])
+  const rows = history.rows.map((row) => ({ ...row, values: indices.map((index) => row.values[index] ?? null) }))
+  const detailRows = rows.filter((row) => !row.rowType || row.rowType === 'detail')
   const maxAbs = Math.max(0, ...detailRows.flatMap((row) => row.values.filter((value): value is number => value !== null).map(Math.abs)))
   const decimals = table.decimals ?? 0
-  const checks = table.reconciliation?.checks ?? []
-  const reconciled = checks.length > 0 && checks.every((check) => check.values.length === table.periods.length && check.values.every((value) => Number.isFinite(value) && Math.abs(value) <= check.tolerance + 1e-9))
+  const checks = (history.reconciliation?.checks ?? []).map((check) => ({ ...check, values: indices.map((index) => check.values[index] ?? null) }))
+  const hasMissingChecks = checks.some((check) => check.values.some((value) => value === null))
+  const hasFailedChecks = checks.some((check) => check.values.some((value) => value !== null && (!Number.isFinite(value) || Math.abs(value) > check.tolerance + 1e-9)))
+  const monthLabel = (period: string) => formatDate(`${period}01`).slice(0, 7)
   return (
     <article className="employment-heatmap-card">
       <header><div><span>{table.eyebrow ?? 'CES · INDUSTRY BREADTH'}</span><h3>{table.title}</h3><p>{table.description}</p></div><div className="employment-heat-legend"><span>下降</span><i className="cool" /><i className="neutral" /><i className="hot" /><span>上升</span></div></header>
+      <div className="heatmap-range-controls"><div className="range-switch" role="group" aria-label={`${table.title}时间范围`}>{MACRO_TIME_RANGE_OPTIONS.map((option) => <button type="button" key={option.key} className={range === option.key ? 'active' : ''} aria-pressed={range === option.key} onClick={() => setRange(option.key)}>{option.label}</button>)}</div><p>显示 {monthLabel(periods[periods.length - 1])}—{monthLabel(periods[0])} · {periods.length}个月；可用历史 {monthLabel(history.periods[history.periods.length - 1])}—{monthLabel(history.periods[0])}。历史不足所选年限时仅显示实际数据，向右滑动查看较早月份。</p></div>
       <div className="employment-heatmap-wrap">
-        <table className="employment-heatmap sector-monitor-table" aria-label={table.ariaLabel ?? '行业就业广度与结构表'}>
-          <thead><tr><th scope="col">行业</th>{table.periods.map((period) => <th scope="col" key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th scope="col">{table.recentLabel ?? '近12月均值'}</th><th scope="col">{table.baselineLabel ?? '2018—19基准'}</th><th scope="col">{table.codeLabel ?? 'iFinD指标码'}</th></tr></thead>
-          <tbody>{table.rows.map((row) => <tr key={row.id} className={`sector-row--${row.rowType ?? 'detail'}`} data-parent-id={row.parentId ?? undefined}><th scope="row" data-depth={row.depth ?? 0} style={{ paddingLeft: `${12 + (row.depth ?? 0) * 16}px` }}>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${table.periods[index]}`} style={row.rowType === 'total' || row.rowType === 'subtotal' ? undefined : { backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, decimals)}</td>)}<td className="sector-benchmark">{row.recent12mAverage === null ? '—' : formatValue(row.recent12mAverage, Math.max(decimals, 1))}</td><td className="sector-benchmark">{row.baseline2018To2019 === null ? '—' : formatValue(row.baseline2018To2019, Math.max(decimals, 1))}</td><td><a href={row.source.url} target="_blank" rel="noreferrer" title={row.source.name}>{row.source.code}</a></td></tr>)}</tbody>
+        <table className="employment-heatmap sector-monitor-table" style={{ minWidth: `${Math.max(1500, periods.length * 76 + 660)}px` }} aria-label={table.ariaLabel ?? '行业就业广度与结构表'}>
+          <thead><tr><th scope="col">行业</th>{periods.map((period) => <th scope="col" key={period}>{monthLabel(period)}</th>)}<th scope="col">所选区间月均</th><th scope="col">{table.recentLabel ?? '近12月均值'}</th><th scope="col">{table.baselineLabel ?? '2018—19基准'}</th><th scope="col">{table.codeLabel ?? 'iFinD指标码'}</th></tr></thead>
+          <tbody>{rows.map((row) => { const mean = completePeriodMean(row.values); return <tr key={row.id} className={`sector-row--${row.rowType ?? 'detail'}`} data-parent-id={row.parentId ?? undefined}><th scope="row" data-depth={row.depth ?? 0} style={{ paddingLeft: `${12 + (row.depth ?? 0) * 16}px` }}>{row.label}</th>{row.values.map((value, index) => <td key={`${row.id}-${periods[index]}`} style={row.rowType === 'total' || row.rowType === 'subtotal' ? undefined : { backgroundColor: heatColor(value, maxAbs) }}>{value === null ? '—' : formatValue(value, decimals)}</td>)}<td className="sector-benchmark">{mean === null ? '—' : formatValue(mean, Math.max(decimals, 1))}</td><td className="sector-benchmark">{row.recent12mAverage === null ? '—' : formatValue(row.recent12mAverage, Math.max(decimals, 1))}</td><td className="sector-benchmark">{row.baseline2018To2019 === null ? '—' : formatValue(row.baseline2018To2019, Math.max(decimals, 1))}</td><td><a href={row.source.url} target="_blank" rel="noreferrer" title={row.source.name}>{row.source.code}</a></td></tr> })}</tbody>
         </table>
       </div>
       <footer><strong>单位：{table.unit ?? '千人/月'}</strong><span>{table.note ?? '同一色阶按明细行最大绝对值缩放；基准期与近12个月均为简单月均，不对缺失月份插值。'}</span><b>{table.source.provider}</b>{table.source.fetchedAt && <span>行业数据取数时间：{formatSnapshotTime(table.source.fetchedAt)}（北京时间）；最新月份：{formatDate(`${table.periods[0]}01`).slice(0, 7)}</span>}</footer>
-      {table.reconciliation && <section className="employment-sector-reconciliation" aria-label="行业就业加总核验">
+      <p className="heatmap-history-note">{table.history?.note} 所选区间月均随区间变化，缺月时显示“—”，不缩短分母；近12月及2018—19列保持固定基准。色阶按所选区间明细行重算。</p>
+      {history.reconciliation && <section className="employment-sector-reconciliation" aria-label="行业就业加总核验">
         <h4>逐月加总与新增非农核验</h4>
-        <p>{table.reconciliation.note}</p>
-        <strong role="status">{reconciled ? '各项差额均在容差内' : '存在超容差差额'}</strong>
-        <div className="employment-heatmap-wrap"><table className="employment-heatmap" aria-label="行业就业逐月闭合核验表"><thead><tr><th scope="col">核验项（千人）</th>{table.periods.map((period) => <th scope="col" key={period}>{formatDate(`${period}01`).slice(0, 7)}</th>)}<th scope="col">容差</th></tr></thead><tbody>{checks.map((check) => <tr key={check.id}><th scope="row">{check.label}</th>{check.values.map((value, index) => <td key={table.periods[index]} className={Math.abs(value) > check.tolerance + 1e-9 ? 'sector-check-failed' : undefined}>{formatValue(value, Math.max(decimals, 1))}</td>)}<td>±{formatValue(check.tolerance, Math.max(decimals, 1))}</td></tr>)}</tbody></table></div>
+        <p>{history.reconciliation.note}</p>
+        <strong role="status">{hasFailedChecks ? '存在超容差差额' : hasMissingChecks || !checks.length ? '部分月份缺少数据，未完成全区间核验' : '各项差额均在容差内'}</strong>
+        <div className="employment-heatmap-wrap"><table className="employment-heatmap" style={{ minWidth: `${Math.max(1260, periods.length * 76 + 400)}px` }} aria-label="行业就业逐月闭合核验表"><thead><tr><th scope="col">核验项（千人）</th>{periods.map((period) => <th scope="col" key={period}>{monthLabel(period)}</th>)}<th scope="col">容差</th></tr></thead><tbody>{checks.map((check) => <tr key={check.id}><th scope="row">{check.label}</th>{check.values.map((value, index) => <td key={periods[index]} className={value !== null && Math.abs(value) > check.tolerance + 1e-9 ? 'sector-check-failed' : undefined}>{value === null ? '—' : formatValue(value, Math.max(decimals, 1))}</td>)}<td>±{formatValue(check.tolerance, Math.max(decimals, 1))}</td></tr>)}</tbody></table></div>
       </section>}
     </article>
   )

@@ -599,7 +599,22 @@ def build_heatmap(parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str,
             "mom": [round(mom_map[p], 2) if p in mom_map else None for p in periods],
             "source": {"provider": "iFinD EDB", "code": SERIES_SPEC[yoy_key][0]},
         })
-    return {"periods": periods, "rows": rows}
+    # Rate observation union, not weight dates or an intersection hiding gaps.
+    observed = {date[:6] for _, _, yoy, mom, _, _ in HEATMAP_ROWS for key in (yoy, mom) for date in parsed[key][0]}
+    history_periods = sorted(observed | set(detect_missing_months(observed)), reverse=True)
+    history_rows = []
+    for row, (_, _, yoy, mom, weight_key, _) in zip(rows, HEATMAP_ROWS):
+        rate_maps = {field: {d[:6]: v for d, v in zip(*parsed[key])} for field, key in (("yoy", yoy), ("mom", mom))}
+        history_rows.append({
+            **row,
+            **{field: [round(values[p], 2) if p in values else None for p in history_periods] for field, values in rate_maps.items()},
+            "weightDate": parsed[weight_key][0][-1] if weight_key else None,
+        })
+    history = {
+        "periods": history_periods, "rows": history_rows,
+        "note": f"本次原始快照实际可用历史：{history_periods[-1]}—{history_periods[0]}；各行起点不同，缺月为null，不补值。weight为最新权重快照，非逐月历史权重；各行weightDate为该权重观察日期，总项目100%为定义值、无观察日期。",
+    }
+    return {"periods": periods, "rows": rows, "history": history}
 
 
 def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapshot: str) -> dict[str, Any]:

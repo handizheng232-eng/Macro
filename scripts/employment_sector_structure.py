@@ -56,6 +56,17 @@ def shift_month(period, offset):
     return f"{year:04d}{month + 1:02d}"
 
 
+def calendar_history_periods(observed):
+    """Descending calendar axis bounded by actual available observations."""
+    if not observed:
+        return []
+    first, last = min(observed), max(observed)
+    periods = [last]
+    while periods[-1] > first:
+        periods.append(shift_month(periods[-1], -1))
+    return periods
+
+
 def fetch_sector_levels(end_year=None):
     """Fetch fixed baseline and recent years, never lose baseline to rolling API cap.
 
@@ -131,7 +142,7 @@ def build_sector_monitor(bundle, payroll_dates, payroll_values, raw_snapshot):
         missing = sorted({p for p in required if p not in values or shift_month(p, -1) not in values})
         if missing:
             raise ValueError(f"Missing contiguous monthly levels for {code}: {missing}")
-        changes[key] = {p: float(values[p] - values[shift_month(p, -1)]) for p in required}
+        changes[key] = {p: float(values[p] - values[shift_month(p, -1)]) for p in values if shift_month(p, -1) in values}
     missing_chart = sorted(required - payroll.keys())
     if missing_chart:
         raise ValueError(f"Missing monthly payroll comparison: {missing_chart}")
@@ -155,8 +166,8 @@ def build_sector_monitor(bundle, payroll_dates, payroll_values, raw_snapshot):
             # Each rounded level has error <= resolution / 2. A month difference
             # uses TWO levels, so its maximum error is resolution (not / 2).
             tolerance = round(sum(resolution[k] for k in children) + resolution[parent], 1)
-            checks.append({"id": check_id, "label": label, "values": [round(sum(changes[k][p] for k in children) - changes[parent][p], 1) for p in months], "tolerance": tolerance})
-        checks.append({"id": "table-vs-payroll", "label": "表中非农－iFinD月度柱（跨源修订差额）", "values": [round(changes["payroll_total"][p] - payroll[p], 4) for p in months], "tolerance": 0})
+            checks.append({"id": check_id, "label": label, "values": [round(sum(changes[k][p] for k in children) - changes[parent][p], 1) if all(p in changes[k] for k in [*children, parent]) else None for p in months], "tolerance": tolerance})
+        checks.append({"id": "table-vs-payroll", "label": "表中非农－iFinD月度柱（跨源修订差额）", "values": [round(changes["payroll_total"][p] - payroll[p], 4) if p in changes["payroll_total"] and p in payroll else None for p in months], "tolerance": 0})
         return checks
 
     reconciliation = {
@@ -183,4 +194,14 @@ def build_sector_monitor(bundle, payroll_dates, payroll_values, raw_snapshot):
             "baseline2018To2019": round(statistics.fmean(changes[key][p] for p in BASELINE_PERIODS), 2),
             "source": {"provider": "BLS Public Data API", "institution": "U.S. Bureau of Labor Statistics", "code": code, "name": f"All employees, thousands, seasonally adjusted: {label}", "rawUnit": "千人", "url": f"https://data.bls.gov/timeseries/{code}", "latestObservation": max(levels[code]), "transform": "当月季调全体雇员水平减前一连续月份水平", "rawSnapshot": raw_snapshot},
         })
-    return {"title": "行业就业广度与结构表", "description": "完整私营行业与联邦、州、地方政府；最近12个月月增量与2018—2019完整24个月基准。", "periods": periods, "rows": rows, "unit": "千人", "decimals": 1, "codeLabel": "BLS CES序列", "recentLabel": "近12月平均月增", "baselineLabel": "2018—19月均增量", "note": "BLS同批次CES全体雇员季调水平按连续月份差分。父级总计/小计与叶子行业分层展示，不重复加总；私人教育医疗不含政府教育，州/地方政府不再叠加教育细项。只允许官方发布水平舍入残差，逐月差额另列；非农总计与上方iFinD月度柱严格匹配，不与3个月均线比较。缺月拒绝更新，不缩短均值分母。", "reconciliation": reconciliation, "source": {"provider": "BLS Public Data API", "url": "https://www.bls.gov/ces/", "rawSnapshot": raw_snapshot, "fetchedAt": bundle.get("fetchedAt"), "classificationUrl": "https://www.bls.gov/webapps/legacy/cesbtab1.htm", "aggregationUrl": "https://www.bls.gov/web/empsit/cesfaq.htm"}}
+    history_periods = calendar_history_periods({p for values in changes.values() for p in values})
+    history = {
+        "periods": history_periods,
+        "rows": [{**row, "values": [changes[row["id"]].get(p) for p in history_periods]} for row in rows],
+        "reconciliation": {
+            "checks": checks_for(history_periods),
+            "note": "完整实得历史逐月对账，差额单位千人；父子加总容差沿用发布精度，跨源容差为0。只在双方所有输入有效时计算，否则null（未核验，不是通过）。历史修订差异或缺口保留真实残差，不通过取交集删月或倒填数据消除；严格拒绝更新合同仍用于最近12月及2018—19完整24月，其他历史残差披露但不据此覆盖原值。",
+        },
+        "note": f"本次BLS原始包水平始于{min(p for values in levels.values() for p in values)}；可计算月增历史{history_periods[-1]}—{history_periods[0]}，仅为本次实得历史，非全部官方历史。需要连续前月水平才能差分；缺月为null。近12月与2018—19基准列是固定比较窗口，不随所选历史区间改变。",
+    }
+    return {"history": history, "title": "行业就业广度与结构表", "description": "完整私营行业与联邦、州、地方政府；最近12个月月增量与2018—2019完整24个月基准。", "periods": periods, "rows": rows, "unit": "千人", "decimals": 1, "codeLabel": "BLS CES序列", "recentLabel": "近12月平均月增", "baselineLabel": "2018—19月均增量", "note": "BLS同批次CES全体雇员季调水平按连续月份差分。父级总计/小计与叶子行业分层展示，不重复加总；私人教育医疗不含政府教育，州/地方政府不再叠加教育细项。只允许官方发布水平舍入残差，逐月差额另列；非农总计与上方iFinD月度柱严格匹配，不与3个月均线比较。缺月拒绝更新，不缩短均值分母。", "reconciliation": reconciliation, "source": {"provider": "BLS Public Data API", "url": "https://www.bls.gov/ces/", "rawSnapshot": raw_snapshot, "fetchedAt": bundle.get("fetchedAt"), "classificationUrl": "https://www.bls.gov/webapps/legacy/cesbtab1.htm", "aggregationUrl": "https://www.bls.gov/web/empsit/cesfaq.htm"}}
