@@ -1,0 +1,146 @@
+{
+  "src/App.tsx": {
+    "currentSHA256": "2af34491f303df219222830f7433ff602a96b6e25899d124ac5a6c9a41610ece",
+    "baselineSHA256": "a05e799b667f845fc9023aa59c1ffd33875bfad1d765bb25a4475c2b022e8b75",
+    "operations": [
+      {
+        "start": 24,
+        "end": 25,
+        "currentSHA256": "505f44209cf304d0b9daa12cb72ff3c40bde97c17a5db9b62a9aff195573ace3",
+        "baselineText": ""
+      },
+      {
+        "start": 189,
+        "end": 190,
+        "currentSHA256": "c59f3b81ea2480d3a022054bfd80332780463d8d397881376e7ab78f0a1e0e83",
+        "baselineText": "const recentSubperiods = [\n"
+      },
+      {
+        "start": 417,
+        "end": 420,
+        "currentSHA256": "4397ce04600db0b50d7b96c380de6c403a98900e80ee0e7c068226c0e881669c",
+        "baselineText": "function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void }) {\n  const regime = macroRegimes[9]\n"
+      },
+      {
+        "start": 425,
+        "end": 432,
+        "currentSHA256": "e44371875b42d2f69f541181ec97dccd1290ba592b25470c996dac40d59e1544",
+        "baselineText": "          <button className=\"history-back\" type=\"button\" onClick={onBack}>\n            <ArrowLeft size={15} />返回宏观分期总览\n          </button>\n          <p className=\"eyebrow\">EASING-TO-TIGHTENING · SECOND-ORDER REPLAY</p>\n"
+      },
+      {
+        "start": 435,
+        "end": 436,
+        "currentSHA256": "8c78b07f59258545dc5063fdaa408705a49d6d5341c8d2099452920698006587",
+        "baselineText": "        <div className=\"as-of\"><span>阶段状态</span><strong>进行中 · 边界暂定</strong></div>\n"
+      },
+      {
+        "start": 438,
+        "end": 439,
+        "currentSHA256": "a83ba42fd7ab9629ee8ce69a4060f3bef573112b553b5da0d00db5bbb8bb234a",
+        "baselineText": "      <section className=\"recent-stage-overview\" aria-label=\"当前阶段总览\">\n"
+      },
+      {
+        "start": 442,
+        "end": 446,
+        "currentSHA256": "111c6957f1bf3e4d3f52d9a3293a1045f20b36c25b1e7130a139fa71bc60b405",
+        "baselineText": "          <a href={regime.source} target=\"_blank\" rel=\"noreferrer\">{regime.sourceLabel} ↗</a>\n"
+      },
+      {
+        "start": 463,
+        "end": 470,
+        "currentSHA256": "75a87abedd75ad402cabaf973316718442f57eae51e536d709dda0a6fa2e57cf",
+        "baselineText": "      <section className=\"subperiod-review\" aria-label=\"当前阶段细分时段\">\n"
+      },
+      {
+        "start": 474,
+        "end": 476,
+        "currentSHA256": "c3bd572bc11ff92e9d525a379d5197e1f278371766f7c18cc86544a11c6e37c6",
+        "baselineText": "            <p>先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。</p>\n"
+      },
+      {
+        "start": 477,
+        "end": 478,
+        "currentSHA256": "2d03291e8a02475835f2cf92bd084365e348ed6a7eac1181538a1f633780fae4",
+        "baselineText": "          <strong>5 个二级时段</strong>\n"
+      },
+      {
+        "start": 481,
+        "end": 482,
+        "currentSHA256": "af1620343dc99df51bc07cf9e6d493f5756e7e45c771bd85ae6a77c1a7c6a0e7",
+        "baselineText": "          {[...recentSubperiods].reverse().map((subperiod) => (\n"
+      },
+      {
+        "start": 501,
+        "end": 505,
+        "currentSHA256": "0bcd517c0cffb8af24f6ac7a7b6ad52dc0a102f828c60ea725babdb425c58355",
+        "baselineText": "                  <a href={subperiod.source} target=\"_blank\" rel=\"noreferrer\">{subperiod.sourceLabel} ↗</a>\n"
+      },
+      {
+        "start": 520,
+        "end": 521,
+        "currentSHA256": "6d77e41bbf233dc9a5962a2254d478cbdd00a2488e1f76f102641120210106bc",
+        "baselineText": "function HistoryReview({ onOpenRecent }: { onOpenRecent: () => void }) {\n"
+      },
+      {
+        "start": 597,
+        "end": 602,
+        "currentSHA256": "9ce41f1c3f4ff865e0eb6773802e6e98d2776b5d132bd27b05624efd40fb6c75",
+        "baselineText": ""
+      },
+      {
+        "start": 734,
+        "end": 735,
+        "currentSHA256": "d719c4c78d8e4ad6fd34d7446c91571c063f647a44748808336b554f39ec1c36",
+        "baselineText": ""
+      },
+      {
+        "start": 744,
+        "end": 745,
+        "currentSHA256": "a6136a6b3ec714cd8dbca3d9a2adfdd7aa18dc7d7d7422bd4b6f22fd12727a03",
+        "baselineText": ""
+      },
+      {
+        "start": 761,
+        "end": 762,
+        "currentSHA256": "7e84961f6c39d7b003cee81dad89730e2bc3c7cc79f9d3831d21d3e6296f48d1",
+        "baselineText": ""
+      },
+      {
+        "start": 781,
+        "end": 782,
+        "currentSHA256": "7e84961f6c39d7b003cee81dad89730e2bc3c7cc79f9d3831d21d3e6296f48d1",
+        "baselineText": ""
+      },
+      {
+        "start": 789,
+        "end": 790,
+        "currentSHA256": "7e84961f6c39d7b003cee81dad89730e2bc3c7cc79f9d3831d21d3e6296f48d1",
+        "baselineText": ""
+      },
+      {
+        "start": 796,
+        "end": 805,
+        "currentSHA256": "dacc3c9d71e7c1fff4452847da0560be7e32f01240d125f8271b7868f1d724c1",
+        "baselineText": ""
+      },
+      {
+        "start": 966,
+        "end": 967,
+        "currentSHA256": "ab9550ebbca57d633982b4f591b06512138f973eb5ce3fd05c9e9d953d1e3e45",
+        "baselineText": "          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />\n"
+      }
+    ]
+  },
+  "src/styles.css": {
+    "currentSHA256": "5ae5b4cc0fa9ff46ae1ff3e5fe8a662718de78691bb51fbb272cbee9d70c926e",
+    "baselineSHA256": "272f354d322d01608de50706100f9a506a0f3b56d8813e66276e04d974febcb7",
+    "operations": [
+      {
+        "start": 379,
+        "end": 383,
+        "currentSHA256": "9637d23ce169cfadb1683d955496bfd25ffff77ba90e8346b835c88b995ab92b",
+        "baselineText": ""
+      }
+    ]
+  }
+}

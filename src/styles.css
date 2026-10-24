@@ -377,6 +377,10 @@ td:last-child { color: var(--subtle); }
 .subperiod-question p { margin: 0; color: #30353a; font-size: 12px; line-height: 1.6; }
 .subperiod-question a { flex: 0 0 auto; color: var(--blue); font-size: 10px; text-decoration: none; white-space: nowrap; }
 .subperiod-question a:hover { text-decoration: underline; }
+.subperiod-question > .subperiod-sources { display: grid; gap: 5px; flex: 0 1 260px; }
+.subperiod-question .subperiod-sources a { white-space: normal; overflow-wrap: anywhere; }
+.history-detail-heading nav[aria-label="历史复盘层级"] { margin-bottom: 20px; color: var(--subtle); font-size: 11px; line-height: 1.8; }
+.history-detail-heading nav[aria-label="历史复盘层级"] .history-back { display: inline-flex; margin-bottom: 0; }
 
 .replay-query { max-width: 1440px; margin: 0 auto 16px; display: flex; align-items: flex-end; gap: 16px; padding: 20px 22px; background: var(--white); border-top: 2px solid var(--ink); }
 .query-field { min-width: 220px; }

@@ -22,6 +22,7 @@ import {
 } from './usMacroConfig'
 import { UsMacroDetail } from './usMacro'
 import { HistoryReplay } from './historyReplay'
+import { inflationOverview, inflationSubperiods, type OverviewSubperiod } from './inflationOverview'
 import hawkishReplayData from './data/historyReplayHawkishTransition.json'
 import renewedEasingReplayData from './data/historyReplayRenewedEasingQtEnd.json'
 import tariffPauseReplayData from './data/historyReplayTariffPause.json'
@@ -186,7 +187,7 @@ const macroRegimes = [
   },
 ]
 
-const recentSubperiods = [
+const recentSubperiods: OverviewSubperiod[] = [
   {
     number: '10.1',
     period: '2024.09—2024.12',
@@ -414,28 +415,35 @@ function ThemeTracker() {
   )
 }
 
-function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void }) {
-  const regime = macroRegimes[9]
+function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSibling }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void; inflation?: boolean; onOpenSibling: () => void }) {
+  const regime = inflation ? { ...macroRegimes[8], ...inflationOverview } : macroRegimes[9]
+  const subperiods = inflation ? inflationSubperiods : recentSubperiods
 
   return (
     <>
       <div className="page-heading history-detail-heading">
         <div>
-          <button className="history-back" type="button" onClick={onBack}>
-            <ArrowLeft size={15} />返回宏观分期总览
-          </button>
-          <p className="eyebrow">EASING-TO-TIGHTENING · SECOND-ORDER REPLAY</p>
+          <nav aria-label="历史复盘层级">
+            <button className="history-back" type="button" onClick={onBack}>
+              <ArrowLeft size={15} />返回宏观分期总览
+            </button>
+            <span> / {regime.title}</span>
+          </nav>
+          <p className="eyebrow">{inflation ? 'INFLATION · QT · RATE REPRICING' : 'EASING-TO-TIGHTENING'} · SECOND-ORDER REPLAY</p>
           <h1>{regime.title}</h1>
           <p>{regime.period} · {regime.thesis}</p>
         </div>
-        <div className="as-of"><span>阶段状态</span><strong>进行中 · 边界暂定</strong></div>
+        <div className="as-of"><span>阶段状态</span><strong>{inflation ? '分期方案 · 待复盘' : '进行中 · 边界暂定'}</strong></div>
       </div>
 
-      <section className="recent-stage-overview" aria-label="当前阶段总览">
+      <section className="recent-stage-overview" aria-label={inflation ? '通胀反击阶段总览' : '当前阶段总览'}>
         <div className="recent-stage-boundary">
           <span>一级边界</span>
           <p>{regime.boundary}</p>
-          <a href={regime.source} target="_blank" rel="noreferrer">{regime.sourceLabel} ↗</a>
+          <div>
+            <a href={regime.source} target="_blank" rel="noreferrer">{regime.sourceLabel} ↗</a>
+            {inflation && <p><a href={macroRegimes[9].source} target="_blank" rel="noreferrer">下一时期边界：2024-09-18 降息声明 ↗</a></p>}
+          </div>
         </div>
         <div className="recent-stage-axes">
           {[
@@ -453,18 +461,25 @@ function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onO
         </div>
       </section>
 
-      <section className="subperiod-review" aria-label="当前阶段细分时段">
+      <nav aria-label="相邻时期">
+        <button className="history-back" type="button" onClick={onOpenSibling}>
+          {inflation ? `下一时期：${macroRegimes[9].title}` : `上一时期：${macroRegimes[8].title}`} <ChevronRight size={15} />
+        </button>
+      </nav>
+
+      <section className="subperiod-review" aria-label={inflation ? '通胀反击阶段细分时段' : '当前阶段细分时段'}>
         <header>
           <div>
             <span>SECOND-ORDER PERIODS</span>
             <h2>细分时段复盘</h2>
-            <p>先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。</p>
+            <p>{inflation ? '按政策方向与传导机制拟分八段，倒序展示。本页是分期方案，非官方经济周期划分；八段均待复盘，未开始详细研究。' : '先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。'}</p>
+            {inflation && <p>月界是研究组织边界，不表示所有转折发生在月首。美联储栏为已核政策锚点；美债、美元及复盘问题均待检验，尚未核验行情，不作为既定结论。</p>}
           </div>
-          <strong>5 个二级时段</strong>
+          <strong>{subperiods.length} 个二级时段</strong>
         </header>
 
         <div className="subperiod-list">
-          {[...recentSubperiods].reverse().map((subperiod) => (
+          {[...subperiods].reverse().map((subperiod) => (
             <article key={subperiod.number}>
               <div className="subperiod-index">
                 <small>{subperiod.period}</small>
@@ -484,7 +499,10 @@ function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onO
                 </div>
                 <div className="subperiod-question">
                   <div><span>复盘问题</span><p>{subperiod.question}</p></div>
-                  <a href={subperiod.source} target="_blank" rel="noreferrer">{subperiod.sourceLabel} ↗</a>
+                  <div className="subperiod-sources">
+                    <a href={subperiod.source} target="_blank" rel="noreferrer">{subperiod.sourceLabel} ↗</a>
+                    {subperiod.extraSources?.map((source) => <p key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></p>)}
+                  </div>
                 </div>
                 {(subperiod.number === '10.2' || subperiod.number === '10.3' || subperiod.number === '10.4' || subperiod.number === '10.5') && (
                   <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.2' ? 'tariff-pause' : subperiod.number === '10.3' ? 'renewed-easing-qt-end' : subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
@@ -500,7 +518,7 @@ function RecentHistoryReview({ onBack, onOpenReplay }: { onBack: () => void; onO
   )
 }
 
-function HistoryReview({ onOpenRecent }: { onOpenRecent: () => void }) {
+function HistoryReview({ onOpenRecent, onOpenInflation }: { onOpenRecent: () => void; onOpenInflation: () => void }) {
   const [selectedRegime, setSelectedRegime] = useState(9)
   const activeRegime = macroRegimes[selectedRegime]
 
@@ -577,6 +595,11 @@ function HistoryReview({ onOpenRecent }: { onOpenRecent: () => void }) {
             {activeRegime.number === '10' && (
               <button className="regime-detail-action" type="button" onClick={onOpenRecent}>
                 进入当前阶段细分复盘 <ChevronRight size={16} />
+              </button>
+            )}
+            {activeRegime.number === '09' && (
+              <button className="regime-detail-action" type="button" onClick={onOpenInflation}>
+                进入通胀反击阶段细分复盘 <ChevronRight size={16} />
               </button>
             )}
           </article>
@@ -709,6 +732,7 @@ function App() {
     return navItems.some((item) => item.id === pageFromHash) ? pageFromHash as PageId : 'today'
   })
   const [historyDetail, setHistoryDetail] = useState(() => window.location.hash === '#history/easing-to-tightening')
+  const [inflationDetail, setInflationDetail] = useState(() => window.location.hash === '#history/inflation-qt-repricing')
   const [historyReplay, setHistoryReplay] = useState(() => historyReplayStageFromHash(window.location.hash))
   const [frameworkDetail, setFrameworkDetail] = useState<UsMacroCategory | null>(() => categoryFromFrameworkHash(window.location.hash))
 
@@ -718,6 +742,7 @@ function App() {
       const nextPage = navItems.some((item) => item.id === pageFromHash) ? pageFromHash as PageId : 'today'
       setActivePage(nextPage)
       setHistoryDetail(window.location.hash === '#history/easing-to-tightening')
+      setInflationDetail(window.location.hash === '#history/inflation-qt-repricing')
       setHistoryReplay(historyReplayStageFromHash(window.location.hash))
       setFrameworkDetail(categoryFromFrameworkHash(window.location.hash))
     }
@@ -734,6 +759,7 @@ function App() {
     window.history.pushState(null, '', `#${page}`)
     setActivePage(page)
     setHistoryDetail(false)
+    setInflationDetail(false)
     setFrameworkDetail(null)
     setHistoryReplay(null)
   }
@@ -753,6 +779,7 @@ function App() {
     window.history.pushState(null, '', '#history/easing-to-tightening')
     setActivePage('history')
     setHistoryDetail(true)
+    setInflationDetail(false)
     setHistoryReplay(null)
   }
 
@@ -760,12 +787,22 @@ function App() {
     window.history.pushState(null, '', `#history/easing-to-tightening/${stage}`)
     setActivePage('history')
     setHistoryDetail(false)
+    setInflationDetail(false)
     setHistoryReplay(stage)
   }
 
   const closeRecentHistory = () => {
     window.history.pushState(null, '', '#history')
     setHistoryDetail(false)
+    setInflationDetail(false)
+  }
+
+  const openInflationHistory = () => {
+    window.history.pushState(null, '', '#history/inflation-qt-repricing')
+    setActivePage('history')
+    setHistoryDetail(false)
+    setHistoryReplay(null)
+    setInflationDetail(true)
   }
 
   return (
@@ -927,7 +964,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : historyDetail ? <RecentHistoryReview onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} /> : <HistoryReview onOpenRecent={openRecentHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail) ? <RecentHistoryReview inflation={inflationDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (
