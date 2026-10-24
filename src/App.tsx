@@ -23,6 +23,7 @@ import {
 import { UsMacroDetail } from './usMacro'
 import { HistoryReplay } from './historyReplay'
 import { inflationOverview, inflationSubperiods, type OverviewSubperiod } from './inflationOverview'
+import { pandemicOverview, pandemicSubperiods } from './pandemicOverview'
 import hawkishReplayData from './data/historyReplayHawkishTransition.json'
 import renewedEasingReplayData from './data/historyReplayRenewedEasingQtEnd.json'
 import tariffPauseReplayData from './data/historyReplayTariffPause.json'
@@ -415,9 +416,10 @@ function ThemeTracker() {
   )
 }
 
-function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSibling }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void; inflation?: boolean; onOpenSibling: () => void }) {
-  const regime = inflation ? { ...macroRegimes[8], ...inflationOverview } : macroRegimes[9]
-  const subperiods = inflation ? inflationSubperiods : recentSubperiods
+function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, pandemic = false, onOpenSibling, onOpenPandemic }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void; inflation?: boolean; pandemic?: boolean; onOpenSibling: () => void; onOpenPandemic: () => void }) {
+  const regime = pandemic ? { ...macroRegimes[7], ...pandemicOverview } : inflation ? { ...macroRegimes[8], ...inflationOverview } : macroRegimes[9]
+  const subperiods = pandemic ? pandemicSubperiods : inflation ? inflationSubperiods : recentSubperiods
+  const pending = inflation || pandemic
 
   return (
     <>
@@ -429,20 +431,21 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSi
             </button>
             <span> / {regime.title}</span>
           </nav>
-          <p className="eyebrow">{inflation ? 'INFLATION · QT · RATE REPRICING' : 'EASING-TO-TIGHTENING'} · SECOND-ORDER REPLAY</p>
+          <p className="eyebrow">{pandemic ? 'PANDEMIC · POLICY CONFLUENCE' : inflation ? 'INFLATION · QT · RATE REPRICING' : 'EASING-TO-TIGHTENING'} · SECOND-ORDER REPLAY</p>
           <h1>{regime.title}</h1>
           <p>{regime.period} · {regime.thesis}</p>
         </div>
-        <div className="as-of"><span>阶段状态</span><strong>{inflation ? '分期方案 · 待复盘' : '进行中 · 边界暂定'}</strong></div>
+        <div className="as-of"><span>阶段状态</span><strong>{pending ? '分期方案 · 待复盘' : '进行中 · 边界暂定'}</strong></div>
       </div>
 
-      <section className="recent-stage-overview" aria-label={inflation ? '通胀反击阶段总览' : '当前阶段总览'}>
+      <section className="recent-stage-overview" aria-label={pandemic ? '疫情政策合流阶段总览' : inflation ? '通胀反击阶段总览' : '当前阶段总览'}>
         <div className="recent-stage-boundary">
           <span>一级边界</span>
           <p>{regime.boundary}</p>
           <div>
             <a href={regime.source} target="_blank" rel="noreferrer">{regime.sourceLabel} ↗</a>
             {inflation && <p><a href={macroRegimes[9].source} target="_blank" rel="noreferrer">下一时期边界：2024-09-18 降息声明 ↗</a></p>}
+            {pandemic && <p><a href={macroRegimes[8].source} target="_blank" rel="noreferrer">下一时期边界：2022-03-16 加息声明 ↗</a></p>}
           </div>
         </div>
         <div className="recent-stage-axes">
@@ -462,18 +465,19 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSi
       </section>
 
       <nav aria-label="相邻时期">
+        {inflation && <button className="history-back" type="button" onClick={onOpenPandemic}>上一时期：{macroRegimes[7].title} <ArrowLeft size={15} /></button>}
         <button className="history-back" type="button" onClick={onOpenSibling}>
-          {inflation ? `下一时期：${macroRegimes[9].title}` : `上一时期：${macroRegimes[8].title}`} <ChevronRight size={15} />
+          {pandemic ? `下一时期：${macroRegimes[8].title}` : inflation ? `下一时期：${macroRegimes[9].title}` : `上一时期：${macroRegimes[8].title}`} <ChevronRight size={15} />
         </button>
       </nav>
 
-      <section className="subperiod-review" aria-label={inflation ? '通胀反击阶段细分时段' : '当前阶段细分时段'}>
+      <section className="subperiod-review" aria-label={pandemic ? '疫情政策合流阶段细分时段' : inflation ? '通胀反击阶段细分时段' : '当前阶段细分时段'}>
         <header>
           <div>
             <span>SECOND-ORDER PERIODS</span>
             <h2>细分时段复盘</h2>
-            <p>{inflation ? '按政策方向与传导机制拟分八段，倒序展示。本页是分期方案，非官方经济周期划分；八段均待复盘，未开始详细研究。' : '先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。'}</p>
-            {inflation && <p>月界是研究组织边界，不表示所有转折发生在月首。美联储栏为已核政策锚点；美债、美元及复盘问题均待检验，尚未核验行情，不作为既定结论。</p>}
+            <p>{pandemic ? '按政策方向与传导机制拟分六段，倒序展示。本页是分期方案，非官方经济周期划分；六段均待复盘，仅核官方政策锚点，未启动研报与公众号采集。' : inflation ? '按政策方向与传导机制拟分八段，倒序展示。本页是分期方案，非官方经济周期划分；八段均待复盘，未开始详细研究。' : '先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。'}</p>
+            {pending && <p>月界是研究组织边界，不表示所有转折发生在月首。美联储栏为已核政策锚点；美债、美元及复盘问题均待检验，尚未核验行情，不作为既定结论。</p>}
           </div>
           <strong>{subperiods.length} 个二级时段</strong>
         </header>
@@ -518,7 +522,7 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSi
   )
 }
 
-function HistoryReview({ onOpenRecent, onOpenInflation }: { onOpenRecent: () => void; onOpenInflation: () => void }) {
+function HistoryReview({ onOpenRecent, onOpenInflation, onOpenPandemic }: { onOpenRecent: () => void; onOpenInflation: () => void; onOpenPandemic: () => void }) {
   const [selectedRegime, setSelectedRegime] = useState(9)
   const activeRegime = macroRegimes[selectedRegime]
 
@@ -600,6 +604,11 @@ function HistoryReview({ onOpenRecent, onOpenInflation }: { onOpenRecent: () => 
             {activeRegime.number === '09' && (
               <button className="regime-detail-action" type="button" onClick={onOpenInflation}>
                 进入通胀反击阶段细分复盘 <ChevronRight size={16} />
+              </button>
+            )}
+            {activeRegime.number === '08' && (
+              <button className="regime-detail-action" type="button" onClick={onOpenPandemic}>
+                进入疫情政策合流阶段细分复盘 <ChevronRight size={16} />
               </button>
             )}
           </article>
@@ -733,6 +742,7 @@ function App() {
   })
   const [historyDetail, setHistoryDetail] = useState(() => window.location.hash === '#history/easing-to-tightening')
   const [inflationDetail, setInflationDetail] = useState(() => window.location.hash === '#history/inflation-qt-repricing')
+  const [pandemicDetail, setPandemicDetail] = useState(() => window.location.hash === '#history/pandemic-policy-confluence')
   const [historyReplay, setHistoryReplay] = useState(() => historyReplayStageFromHash(window.location.hash))
   const [frameworkDetail, setFrameworkDetail] = useState<UsMacroCategory | null>(() => categoryFromFrameworkHash(window.location.hash))
 
@@ -743,6 +753,7 @@ function App() {
       setActivePage(nextPage)
       setHistoryDetail(window.location.hash === '#history/easing-to-tightening')
       setInflationDetail(window.location.hash === '#history/inflation-qt-repricing')
+      setPandemicDetail(window.location.hash === '#history/pandemic-policy-confluence')
       setHistoryReplay(historyReplayStageFromHash(window.location.hash))
       setFrameworkDetail(categoryFromFrameworkHash(window.location.hash))
     }
@@ -760,6 +771,7 @@ function App() {
     setActivePage(page)
     setHistoryDetail(false)
     setInflationDetail(false)
+    setPandemicDetail(false)
     setFrameworkDetail(null)
     setHistoryReplay(null)
   }
@@ -780,6 +792,7 @@ function App() {
     setActivePage('history')
     setHistoryDetail(true)
     setInflationDetail(false)
+    setPandemicDetail(false)
     setHistoryReplay(null)
   }
 
@@ -788,6 +801,7 @@ function App() {
     setActivePage('history')
     setHistoryDetail(false)
     setInflationDetail(false)
+    setPandemicDetail(false)
     setHistoryReplay(stage)
   }
 
@@ -795,6 +809,7 @@ function App() {
     window.history.pushState(null, '', '#history')
     setHistoryDetail(false)
     setInflationDetail(false)
+    setPandemicDetail(false)
   }
 
   const openInflationHistory = () => {
@@ -803,6 +818,16 @@ function App() {
     setHistoryDetail(false)
     setHistoryReplay(null)
     setInflationDetail(true)
+    setPandemicDetail(false)
+  }
+
+  const openPandemicHistory = () => {
+    window.history.pushState(null, '', '#history/pandemic-policy-confluence')
+    setActivePage('history')
+    setHistoryDetail(false)
+    setHistoryReplay(null)
+    setInflationDetail(false)
+    setPandemicDetail(true)
   }
 
   return (
@@ -964,7 +989,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail) ? <RecentHistoryReview inflation={inflationDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (

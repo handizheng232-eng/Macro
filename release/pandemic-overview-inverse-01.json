@@ -1,0 +1,140 @@
+{
+  "src/App.tsx": {
+    "currentSHA256": "2551223e862092f623f8cb9778ad4c839103e57081faaebcfbe9241c8d36737a",
+    "baselineSHA256": "2af34491f303df219222830f7433ff602a96b6e25899d124ac5a6c9a41610ece",
+    "operations": [
+      {
+        "start": 25,
+        "end": 26,
+        "currentSHA256": "4e30deb6e0b85134ef27c7d927683f5952b926fbf5d4aeea3e9cc0f2d99cbd3e",
+        "baselineText": ""
+      },
+      {
+        "start": 418,
+        "end": 422,
+        "currentSHA256": "37f943e07507697525def3981da94027c1ab3d80f3a60a89a3b0be471b7ba2b9",
+        "baselineText": "function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, onOpenSibling }: { onBack: () => void; onOpenReplay: (stage: HistoryReplayStage) => void; inflation?: boolean; onOpenSibling: () => void }) {\n  const regime = inflation ? { ...macroRegimes[8], ...inflationOverview } : macroRegimes[9]\n  const subperiods = inflation ? inflationSubperiods : recentSubperiods\n"
+      },
+      {
+        "start": 433,
+        "end": 434,
+        "currentSHA256": "f2da6439ba63402c7f621bb69cde9d933d846d8d44e6adcd56776f9dc3e892f2",
+        "baselineText": "          <p className=\"eyebrow\">{inflation ? 'INFLATION · QT · RATE REPRICING' : 'EASING-TO-TIGHTENING'} · SECOND-ORDER REPLAY</p>\n"
+      },
+      {
+        "start": 437,
+        "end": 438,
+        "currentSHA256": "468c8803333a66eccdcbcae6dfdaa7967af7562b572c565100fed1da580a7ef1",
+        "baselineText": "        <div className=\"as-of\"><span>阶段状态</span><strong>{inflation ? '分期方案 · 待复盘' : '进行中 · 边界暂定'}</strong></div>\n"
+      },
+      {
+        "start": 440,
+        "end": 441,
+        "currentSHA256": "11af008340b4a9fc6ae371ac1cb42750fa13472fa54b53f48c560bd780e8713e",
+        "baselineText": "      <section className=\"recent-stage-overview\" aria-label={inflation ? '通胀反击阶段总览' : '当前阶段总览'}>\n"
+      },
+      {
+        "start": 447,
+        "end": 448,
+        "currentSHA256": "aaff0e1715544e52bb11f8efa74784f1249f38e6c28b6497472ae747563398e9",
+        "baselineText": ""
+      },
+      {
+        "start": 467,
+        "end": 468,
+        "currentSHA256": "c6e1ee387426556faaa4c9b7c327ca52cfcd41f3c1a81259c3332934b5aae447",
+        "baselineText": ""
+      },
+      {
+        "start": 469,
+        "end": 470,
+        "currentSHA256": "42e806c87d770c341be9963785f579a89be1e4945d0229b4d46ec60cfe496f1a",
+        "baselineText": "          {inflation ? `下一时期：${macroRegimes[9].title}` : `上一时期：${macroRegimes[8].title}`} <ChevronRight size={15} />\n"
+      },
+      {
+        "start": 473,
+        "end": 474,
+        "currentSHA256": "c51ae88e50cda8aae025e6635beaa9a85d8e6ad4e8fcdc211a1b720a27462ae6",
+        "baselineText": "      <section className=\"subperiod-review\" aria-label={inflation ? '通胀反击阶段细分时段' : '当前阶段细分时段'}>\n"
+      },
+      {
+        "start": 478,
+        "end": 480,
+        "currentSHA256": "3317d5c1149e450ed5b29d26f3428ad49690472fa2a709311ae742bcb842bb85",
+        "baselineText": "            <p>{inflation ? '按政策方向与传导机制拟分八段，倒序展示。本页是分期方案，非官方经济周期划分；八段均待复盘，未开始详细研究。' : '先按政策方向与传导机制拆成五段。美债和美元部分是待检验的工作假说，不作为既定结论。'}</p>\n            {inflation && <p>月界是研究组织边界，不表示所有转折发生在月首。美联储栏为已核政策锚点；美债、美元及复盘问题均待检验，尚未核验行情，不作为既定结论。</p>}\n"
+      },
+      {
+        "start": 524,
+        "end": 525,
+        "currentSHA256": "a002ba3a4af119684ba422caf28552f852ee779aa79f073ad01979740a4a422e",
+        "baselineText": "function HistoryReview({ onOpenRecent, onOpenInflation }: { onOpenRecent: () => void; onOpenInflation: () => void }) {\n"
+      },
+      {
+        "start": 606,
+        "end": 611,
+        "currentSHA256": "6ecc322a559083a9955881216a2f32ed631628f115befb64d414b0725006b0e0",
+        "baselineText": ""
+      },
+      {
+        "start": 744,
+        "end": 745,
+        "currentSHA256": "c9639981771a023ac01b84e0613e1433dd96c24206d4bd0b90383e52542d50d2",
+        "baselineText": ""
+      },
+      {
+        "start": 755,
+        "end": 756,
+        "currentSHA256": "7cea453dd599e09517654e172e5ae508c047df9ddad83dbb5b09555218bb321b",
+        "baselineText": ""
+      },
+      {
+        "start": 773,
+        "end": 774,
+        "currentSHA256": "ce1f573d45eb842afc8ba71d271dafb360fc4c481f44314a8de9e3316e696c72",
+        "baselineText": ""
+      },
+      {
+        "start": 794,
+        "end": 795,
+        "currentSHA256": "ce1f573d45eb842afc8ba71d271dafb360fc4c481f44314a8de9e3316e696c72",
+        "baselineText": ""
+      },
+      {
+        "start": 803,
+        "end": 804,
+        "currentSHA256": "ce1f573d45eb842afc8ba71d271dafb360fc4c481f44314a8de9e3316e696c72",
+        "baselineText": ""
+      },
+      {
+        "start": 811,
+        "end": 812,
+        "currentSHA256": "ce1f573d45eb842afc8ba71d271dafb360fc4c481f44314a8de9e3316e696c72",
+        "baselineText": ""
+      },
+      {
+        "start": 820,
+        "end": 830,
+        "currentSHA256": "7c06e204db82550f98a8ce294d138c4b6ac622151c431ca8b824837145e362d2",
+        "baselineText": ""
+      },
+      {
+        "start": 991,
+        "end": 992,
+        "currentSHA256": "a8e52c7fb5ac897510d4102c82ccada57cdbab1ab006b7dd49eec920c61742dc",
+        "baselineText": "          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail) ? <RecentHistoryReview inflation={inflationDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} />\n"
+      }
+    ]
+  },
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "11065c1ff995bb83f2d2999d7c11f93db6aa74b09fd34e3a9a1994d312673d28",
+    "baselineSHA256": "77643c7d05588379d63ca3c1b3bfee71cf5d350fc023582b5c58c8c5a91c4bc0",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "0afaa0e944d1bb51eb083f6048a5adbf1cb21f0386fe57569522474ab7e81f7d",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_inflation_overview_publish.py' -v\n          python -B scripts/verify_inflation_overview_publish.py --legacy-tests --dist dist\n"
+      }
+    ]
+  }
+}
