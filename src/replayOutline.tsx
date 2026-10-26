@@ -44,7 +44,9 @@ export function ReplayOutline({ items, navigate }: { items: ReadingItem[]; navig
   const jump = (id: string) => {
     cancelAnimationFrame(restoreFrame.current)
     const anchors = Array.from(document.querySelectorAll<HTMLElement>('.replay-reading-controls [id]')).filter(e => !e.closest('.replay-outline') && visible(e) && e.getBoundingClientRect().top <= 150)
-    const anchor = anchors.at(-1) || document.getElementById('replay-page-top')!
+    const origin = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    const anchor = origin?.id && origin.matches('[data-reading-origin]') && visible(origin)
+      ? origin : anchors.at(-1) || document.getElementById('replay-page-top')!
     setHistory(previous => [...previous.slice(-19), { id: anchor.id, offset: anchor.getBoundingClientRect().top, y: window.scrollY }])
     closeOnNarrow()
     navigate(id)

@@ -6,3 +6,5 @@ src/data/historyReplayRenewedEasingQtEnd.json -text
 src/data/historyReplayTariffPause.json -text
 release/snapshots/renewed-easing-publication-1.json -text
 src/historyReplay.tsx -text
+src/data/historyReplayTaper.json -text
+public/taper-charts/*.svg -text

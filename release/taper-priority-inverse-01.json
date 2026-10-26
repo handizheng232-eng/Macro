@@ -1,0 +1,206 @@
+{
+  ".gitattributes": {
+    "currentSHA256": "7697d713f09a5b3efd850d48a384f43deb8de6ae412c1eefea360083bcb899ae",
+    "baselineSHA256": "163a7f7247460b5f1c959a080f3612c4b5f75e8b981a50ac58f95c593863ebcc",
+    "operations": [
+      {
+        "start": 8,
+        "end": 10,
+        "currentSHA256": "9dd6b21dd8eb10e974295b2dca35133a1a4cfad9e9e9de7e47d82449d41955fb",
+        "baselineText": ""
+      }
+    ]
+  },
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "d355ca360c0606f4d62b6dc43d0d4ec4e1280604ba4038b572338629e8a546d6",
+    "baselineSHA256": "11065c1ff995bb83f2d2999d7c11f93db6aa74b09fd34e3a9a1994d312673d28",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "75d35fdc93e5a6da83fffd33ecd54688f2c92d65ca39aa6f1431f87555948238",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_pandemic_overview_publish.py' -v\n          python -B scripts/verify_pandemic_overview_publish.py --legacy-tests --dist dist\n"
+      },
+      {
+        "start": 47,
+        "end": 48,
+        "currentSHA256": "e17a54c9b329bbc57c65b76ff1c16df0ffd4e94f072c5cac50f2ccfc6a0ac501",
+        "baselineText": "        run: python -B scripts/verify_tariff_partial_publish.py --self-test --dist dist\n"
+      }
+    ]
+  },
+  "src/App.tsx": {
+    "currentSHA256": "d8d8e9f299706ab29d5d5a284531eeaebffc21c1e559e13224a86018ea6cccb2",
+    "baselineSHA256": "2551223e862092f623f8cb9778ad4c839103e57081faaebcfbe9241c8d36737a",
+    "operations": [
+      {
+        "start": 29,
+        "end": 30,
+        "currentSHA256": "3817576e209f096550cfbb4922f25e056b0a972aecc5eb6c036c93b829961e5e",
+        "baselineText": ""
+      },
+      {
+        "start": 32,
+        "end": 33,
+        "currentSHA256": "fb76df901bd50667ee02f454936b5798b44856106cb9a84bb8da84b3d0d212b4",
+        "baselineText": "type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end' | 'tariff-pause'\n"
+      },
+      {
+        "start": 35,
+        "end": 36,
+        "currentSHA256": "79eb8409262a576ee67cdf580cd092ab406eb032e0344feba93c14c64bbb76bf",
+        "baselineText": ""
+      },
+      {
+        "start": 512,
+        "end": 513,
+        "currentSHA256": "937b4c8ffd44bb365fbc7d8a974d2f34880f8e859088bad4ae655ad49cf885f4",
+        "baselineText": ""
+      },
+      {
+        "start": 802,
+        "end": 803,
+        "currentSHA256": "619122f6fbc06e7af10ad0d4b61c8ad961e4dbc9df2b15f370aa7654a26c8c72",
+        "baselineText": "    window.history.pushState(null, '', `#history/easing-to-tightening/${stage}`)\n"
+      },
+      {
+        "start": 994,
+        "end": 995,
+        "currentSHA256": "cc9f32cc44948b85a106d9e7d896898739100f40e3009f9e0477a2de3e8e8101",
+        "baselineText": "          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />\n"
+      }
+    ]
+  },
+  "src/historyReplay.tsx": {
+    "currentSHA256": "68d8b66940fd64ad1239a20da49f0cbd48f16d6c9830231889a91b0b16f0bf7c",
+    "baselineSHA256": "7dd406c063a7a9fc5d700faedf40297b5a68636709d0f6b78d7d47378e759c1b",
+    "operations": [
+      {
+        "start": 9,
+        "end": 10,
+        "currentSHA256": "76b03b67778eb59ca02571f1a540a5c19eb71a03aca78754ccf4d2ef8a8ad516",
+        "baselineText": ""
+      },
+      {
+        "start": 53,
+        "end": 54,
+        "currentSHA256": "88086fe1ae5a31ac9bb7c973b4eb1827af4005b3be2ef971fa49a21bd00ac3d0",
+        "baselineText": ""
+      },
+      {
+        "start": 111,
+        "end": 118,
+        "currentSHA256": "793123b4ee2c922b59774dc22d758bdb82d1e061c8923f269130aa465f41b107",
+        "baselineText": ""
+      },
+      {
+        "start": 119,
+        "end": 122,
+        "currentSHA256": "80bea311a42d19854aa60d32b9fa66cb47f88e446e0fdf7951e644eadfc7dc35",
+        "baselineText": ""
+      },
+      {
+        "start": 163,
+        "end": 164,
+        "currentSHA256": "9d7eca3f33e73bffdff3d0b3fa7512fc1292cce99697ec4728cc955ce16c9c05",
+        "baselineText": ""
+      },
+      {
+        "start": 234,
+        "end": 235,
+        "currentSHA256": "7cf8c8fbdb9cea393aa4639b37c8fec4aad7fec03b0cf9925cde5be770930cf0",
+        "baselineText": "    <div className=\"replay-path-grid\">{rates.length > 0 && <MarketPathChart series={rates} title=\"利率路径\" unit=\"%\" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</div>\n"
+      },
+      {
+        "start": 448,
+        "end": 449,
+        "currentSHA256": "41bddd4a4586bd2ee11d74c08a9ff54a0cf271a33832cee1cb62034c46395d8b",
+        "baselineText": "        return <span className=\"replay-source-ref\" key={ref.sourceId}>{source && safeUrl(source.url) ? <a data-summary-source={ref.sourceId} href={source.url} target=\"_blank\" rel=\"noreferrer\" title={source.note}>{ref.label} ↗</a> : <span className=\"replay-missing\">来源未在截止日前核验</span>}</span>\n"
+      },
+      {
+        "start": 479,
+        "end": 480,
+        "currentSHA256": "f2acdfa8540bc93031ec12a5294219797be6b2a3dae992dc53f9e690c35bd910",
+        "baselineText": "  const hasMarketValues = Boolean(data.marketPaths?.series.some((series) => series.observations.some(finiteObservation)))\n"
+      },
+      {
+        "start": 482,
+        "end": 483,
+        "currentSHA256": "f7ed1f72808e47be2a454fe9d55b98e205e8d4157b0ecd2c046018d5940e302b",
+        "baselineText": "  const availableSources = sources.filter((source) => (safeUrl(source.url) || data.partialRelease) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))\n"
+      },
+      {
+        "start": 530,
+        "end": 531,
+        "currentSHA256": "0b132b8c1e6a068fc856ccbaed8f0157dd149c98264c81babc56a68b041a7e5f",
+        "baselineText": "  return <ReadingLabels.Provider value={readingControls ? outline : []}><article className={`history-replay${readingControls ? ' replay-reading-controls' : ''}`} aria-label={data.workbenchLabel || '政策反转研究工作台'}>\n"
+      },
+      {
+        "start": 534,
+        "end": 535,
+        "currentSHA256": "be211a5298c6f759591262a3c22395e3d2859cdab383e1d20d484b0e886bced4",
+        "baselineText": "      <div className=\"replay-date\"><span>{data.partialRelease || data.experimentStatus ? '研究窗口截止' : '资料核验截止'}</span><strong>{formatReplayDate(data.asOf) || '准备中 · 尚无核验日期'}</strong></div>\n"
+      },
+      {
+        "start": 537,
+        "end": 539,
+        "currentSHA256": "30eedaae586ceda318d9cf9258077aee96afdd57e4e26c50df36cd7060687f24",
+        "baselineText": ""
+      },
+      {
+        "start": 545,
+        "end": 546,
+        "currentSHA256": "243f69a92516bd44fdaadd5103ef335ada1266c53ac69aad5608c408190bf1fe",
+        "baselineText": "    <div className=\"replay-toolbar\"><label htmlFor=\"replay-cutoff\">按日期截止查看<input id=\"replay-cutoff\" type=\"date\" max={data.asOf || undefined} value={selectedCutoff} onChange={(event) => setSelectedCutoff(event.target.value)} /></label><button type=\"button\" onClick={() => setSelectedCutoff(data.asOf)}>恢复资料截止日</button><span role=\"status\">{historical ? '严格历史截面' : data.experimentStatus ? (data.experimentStatus.publication ? '当前有限研究视图' : '实验性本地资料视图') : data.partialRelease ? '当前阶段性资料视图' : '当前完整资料视图'}：{formatReplayDate(cutoff) || '准备中'} · {events.length} 条事件</span></div>\n"
+      },
+      {
+        "start": 551,
+        "end": 552,
+        "currentSHA256": "d8fe13b04727433285f3efe6a7fae82de323c69f2b42e17173987f0d253ab7d9",
+        "baselineText": "      <header><h2>{data.marketAnalysis.title}</h2><span>{data.experimentStatus ? '保留基线正文；新增公众号限定观点纳入对应主题' : data.partialRelease ? '已审核内容阶段性整理' : '当前完整资料综合研究'} · 非历史时点预期</span></header>\n"
+      },
+      {
+        "start": 599,
+        "end": 600,
+        "currentSHA256": "31ab72c1e98948d839a4f03fde16b7b59e5094da24e351b0633e5752f7c71c84",
+        "baselineText": ""
+      },
+      {
+        "start": 604,
+        "end": 605,
+        "currentSHA256": "d4b3e1fbb80fb7462c53d6bb47deeaf6e4dab19c891a60bc84036250990e558f",
+        "baselineText": ""
+      },
+      {
+        "start": 638,
+        "end": 664,
+        "currentSHA256": "4a599587b12c3a967c3fdb4ccbdd3049a5464e86b521f9e84b680c3e378a40bf",
+        "baselineText": "      <div className=\"replay-acquisition\">{data.acquisition.map((channel) => <article key={channel.provider}><h3>{channel.provider}</h3><strong>{channel.status}</strong><p>{channel.detail}</p></article>)}{!data.acquisition.length && <p className=\"replay-empty\">渠道核验准备中；不将全站接入状态视为本页已获取数据。</p>}</div></section>\n"
+      }
+    ]
+  },
+  "src/pandemicOverview.test.tsx": {
+    "currentSHA256": "7cbb7839191d7dabdc43317e31508d2867c06de5ef587ca439e99f1c4fa0a495",
+    "baselineSHA256": "bd117011442f43d76f4dadbee29009d17c3dd7bc03895b2e24669d6aaafc2dbe",
+    "operations": [
+      {
+        "start": 36,
+        "end": 39,
+        "currentSHA256": "a7f76abfb4aeed108905846e5ec43938eee5f566d827c414da4a1c5b88d17246",
+        "baselineText": "      expect(card.querySelectorAll('button')).toHaveLength(0)\n"
+      }
+    ]
+  },
+  "src/replayOutline.tsx": {
+    "currentSHA256": "a2c6813eb3fa16622ab0e5bea78ecdc4d16d6519056acf8407faaf9c8f874f59",
+    "baselineSHA256": "56a258470a5e5b8b9b827b068d63b61f71683a7d3d991846fe29286519f66c7a",
+    "operations": [
+      {
+        "start": 46,
+        "end": 49,
+        "currentSHA256": "fbd4d9e799ca379ff778b8ffdbce54a7fa75a564ee9fc4cf3348a9540ed4abff",
+        "baselineText": "    const anchor = anchors.at(-1) || document.getElementById('replay-page-top')!\n"
+      }
+    ]
+  }
+}

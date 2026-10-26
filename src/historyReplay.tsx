@@ -7,6 +7,7 @@ import replayData from './data/historyReplay.json'
 import { US_MACRO_PAGES } from './usMacroConfig'
 import { formatReplayDate, formatReplayText } from './replayDateFormat'
 import './historyReplay.css'
+import './taperReplay.css'
 
 export interface ReplaySource {
   id: string; title: string; publisher: string; date: string; url: string; kind: string; status: string; note: string
@@ -50,6 +51,7 @@ export interface ReplayMarketSeries {
   sourceMetadata?: { provider?: string | null; institution?: string | null; code?: string | null; name?: string | null; rawUnit?: string | null; sourceUpdateDate?: string | null; updateDate?: string | null; inheritedTransformation?: string | null }
 }
 export interface ReplayMarketPaths {
+  approvedCharts?: { src: string; title: string; seriesIds: string[] }[]
   series: ReplayMarketSeries[]; sources?: unknown; eventWindows?: unknown
   cmeHistoricalImpliedPath?: { status?: string; observations?: unknown[]; limitations?: string[] | string }
 }
@@ -107,7 +109,17 @@ export interface ReplayMonthlyCoverage {
     archives: { path: string; sha256: string; date: string; title: string; reportId?: string | null }[]
   }> }[]
 }
+interface PriorityCoverage {
+  bodyNodes: number; summaryContributions: number; newPages: number; originalAcquired: number; originalUsed: number; repostUsed: number
+  monthly: { month: string; baselineOriginals: number; newOriginals: number; originalAcquired: number; relevantOriginals: number; originalUsed: number; auxiliaryReposts: number; target: number; acquisitionGap: number }[]
+  accounts: { account: string; originalAcquired: number; originalUsed: number; repostAcquired: number; repostUsed: number; historyState: string }[]
+  institutions: { institution: string; originalAcquired: number; originalUsed: number; repostUsed: number; bodyNodes: number }[]
+  articles: { sourceId: string; title: string; account: string; institution: string; date: string; original: boolean; used: boolean; kind: string; reason: string; bodyNodeIds: string[] }[]
+}
 export interface HistoryReplayData {
+  priorityCoverage?: PriorityCoverage
+  sourceMethodology?: { general: string[]; bySource: { sourceId: string; note: string }[] }
+  localReview?: { fullStageReady: boolean; publicReleaseAllowed: boolean; strictHistoricalEligible: boolean; notice: string; coverage: { month: string; wind: { independentWorkSuggestions: number; target: number; gap: number; draftUsedWorks: number }; wechat: { previouslyReadBodies: number; draftUsedBodies: number; notUsedBodies: number; target?: number; acquisitionGap?: number; limitedLocalUsedBodies?: number }; star: { obtained: number; state: string } }[]; wechat: { id: string; month: string; title: string; used: boolean; reason: string }[] }
   title: string; startDate: string; asOf: string; summary: string[]
   endDate?: string; workbenchLabel?: string; eyebrow?: string
   partialRelease?: { status: string; fullStageReady: boolean; notice: string }
@@ -149,6 +161,7 @@ const conditionText = (value: unknown): string => Array.isArray(value) ? value.m
 // Internal audit markers stay in the data; the adjacent source sections remain
 // visible, while opaque IDs do not interrupt the reading copy of the new study.
 const displayResearchText = (text: string, data: HistoryReplayData): string => {
+  if (data.localReview) return text // Exact parent-admitted economic text; dates in separate controls still format normally.
   const readingText = data.readingTextOverrides?.find(item => item.rawText === text)?.displayText ?? text
   const ids = new Set([
     ...(data.monthlyReplay || []).flatMap(month => [...month.opinionIds, ...month.factIds, ...month.sourceIds, ...month.reportIds]),
@@ -219,7 +232,7 @@ function MarketPaths({ paths, cutoff, historical }: { paths: ReplayMarketPaths; 
     <header><h2>真实行情路径</h2><span>{historical ? '历史截面 · 仅已确认可得观测' : '当前取得的追溯路径 · 不等同于历史时点可得版本'}</span></header>
     {historical && <p className="replay-notice">historicalAsOfEligible 必须为 true，且 releaseDate 不晚于截止日。首次发布日期未确认的国债值不进入历史截面；当前取得时间不替代首次发布日期。</p>}
     <p className="replay-notice">利率 % 两线同轴；美元独立轴，贸易加权广义美元指数不是DXY。原始单位单独显示；null 不填补，不伪造首次发布日期，不将同期变化归因于单一事件。</p>
-    <div className="replay-path-grid">{rates.length > 0 && <MarketPathChart series={rates} title="利率路径" unit="%" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</div>
+    <div className="replay-path-grid">{paths.approvedCharts && !historical ? paths.approvedCharts.map(chart => <figure className="replay-path-chart" key={chart.src}><figcaption><h3>{chart.title}</h3></figcaption><p className="replay-swipe-hint">小屏可横向滑动查看完整坐标与曲线</p><div className="replay-chart-scroll"><img data-approved-market-chart src={chart.src} alt={chart.title} style={{ minWidth: 900, width: '100%', height: 'auto', display: 'block' }} /></div><p>{chart.seriesIds.map(id => { const item = series.find(s => s.id === id); return `${item?.title} · ${item?.unit}` }).join('；')}。观察期：2021年12月1日至2022年3月15日；来源与逐点记录见下。当前回取，不是当时快照。</p></figure>) : <>{rates.length > 0 && <MarketPathChart series={rates} title="利率路径" unit="%" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</>}</div>
     <div className="replay-path-metadata">{series.map((item) => {
       const valid = item.observations.filter(finiteObservation)
       const latest = valid.at(-1)
@@ -433,7 +446,7 @@ function AnalysisDetails({ section, data, sources, cutoff, topicId }: { section:
       <p>{displayResearchText(paragraph, data)}</p>
       {!!section.periodSummary?.paragraphSources?.[index]?.length && <div className="replay-entry-references" aria-label="本段研究依据">{section.periodSummary.paragraphSources[index].map(ref => {
         const source = sources.find(item => item.id === ref.sourceId)
-        return <span className="replay-source-ref" key={ref.sourceId}>{source && safeUrl(source.url) ? <a data-summary-source={ref.sourceId} href={source.url} target="_blank" rel="noreferrer" title={source.note}>{ref.label} ↗</a> : <span className="replay-missing">来源未在截止日前核验</span>}</span>
+        return <span className="replay-source-ref" key={ref.sourceId}>{source && safeUrl(source.url) ? <a data-summary-source={ref.sourceId} href={source.url} target="_blank" rel="noreferrer" title={source.note}>{ref.label} ↗</a> : source && data.localReview ? <span>{ref.label} · 授权资料，仅展示书目</span> : <span className="replay-missing">来源未在截止日前核验</span>}</span>
       })}</div>}
     </div>) : <p className="replay-empty">尚无经核验阶段总结</p>}</div></ReadingColumn>
     {analysisBlocks.map(block => {
@@ -464,10 +477,10 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
   const [query, setQuery] = useState('')
   const cutoff = selectedCutoff && selectedCutoff <= data.asOf ? selectedCutoff : data.asOf
   const historical = Boolean(cutoff && cutoff < data.asOf)
-  const hasMarketValues = Boolean(data.marketPaths?.series.some((series) => series.observations.some(finiteObservation)))
+  const hasMarketValues = !(historical && data.localReview) && Boolean(data.marketPaths?.series.some((series) => series.observations.some(finiteObservation)))
   const sources = data.sources.filter((source) => (knownBy(source.date, cutoff) || (!historical && source.retrospectiveOnly)) && (!historical || (source.historicalAsOfEligible !== false && availableBy(source, cutoff))))
   const matches = (values: string[]) => values.join(' ').toLowerCase().includes(query.trim().toLowerCase())
-  const availableSources = sources.filter((source) => (safeUrl(source.url) || data.partialRelease) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))
+  const availableSources = sources.filter((source) => (safeUrl(source.url) || data.partialRelease || data.localReview) && matches([source.title, source.publisher, source.kind, historical ? '' : source.note, historical ? '' : source.status]))
   const events = data.events.filter((event) => knownBy(event.date, cutoff) && (!historical || (event.historicalAsOfEligible !== false && knownBy(event.availableFrom || event.date, cutoff) && [...event.expectationSourceIds, ...event.realitySourceIds].every(id => sources.some(source => source.id === id))))).sort((a, b) => a.date.localeCompare(b.date))
   const reports = data.reports.filter((report) => (historical ? report.historicalAsOfEligible !== false && knownBy(reportDate(report), cutoff) && availableBy(report, cutoff) : !reportDate(report) || knownBy(reportDate(report), cutoff)) && matches([report.title, report.provider, report.scope || '', report.geography || '', ...(report.topics || []), historical ? '' : report.note || '']))
   const sourceLinks = (ids: string[]) => ids.map((id) => {
@@ -515,26 +528,28 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
     { id: 'reading-acquisition', title: '下载渠道状态' },
   ])
 
-  return <ReadingLabels.Provider value={readingControls ? outline : []}><article className={`history-replay${readingControls ? ' replay-reading-controls' : ''}`} aria-label={data.workbenchLabel || '政策反转研究工作台'}>
+  return <ReadingLabels.Provider value={readingControls ? outline : []}><article className={`history-replay${readingControls ? ' replay-reading-controls' : ''}${data.localReview ? ' replay-local-review' : ''}`} aria-label={data.workbenchLabel || '政策反转研究工作台'}>
     {readingControls && <ReplayOutline key={historical ? 'historical' : 'current'} items={outline} navigate={goToReadingTarget} />}
     <header className="replay-heading" id={readingControls ? 'replay-page-top' : undefined} tabIndex={readingControls ? -1 : undefined} style={data.experimentStatus ? { flexWrap: 'wrap' } : undefined}>
       <div><button type="button" className="history-back" aria-label="返回父阶段复盘" onClick={onBack}>← 返回父阶段复盘</button><p className="eyebrow">{data.eyebrow || 'POLICY REVERSAL · RESEARCH WORKBENCH'}</p><h1>{data.title}</h1><p>{data.endDate ? `阶段区间：${formatReplayDate(`${data.startDate}—${data.endDate}`)}；阶段划分与判断均可修订。` : `开放时期：${formatReplayDate(data.startDate)} 起，终点未形成；阶段划分与判断均可修订。`}</p></div>
-      <div className="replay-date"><span>{data.partialRelease || data.experimentStatus ? '研究窗口截止' : '资料核验截止'}</span><strong>{formatReplayDate(data.asOf) || '准备中 · 尚无核验日期'}</strong></div>
+      <div className="replay-date"><span>{data.partialRelease || data.experimentStatus || data.localReview ? '研究窗口截止' : '资料核验截止'}</span><strong>{formatReplayDate(data.asOf) || '准备中 · 尚无核验日期'}</strong></div>
       {data.experimentStatus && <p className="replay-notice" aria-label={data.experimentStatus.publication ? '有限研究发布说明' : '实验性本地审核说明'} style={{ gridColumn: '1 / -1', flexBasis: '100%' }}><strong>{data.experimentStatus.notice}</strong></p>}
     </header>
+    {data.localReview && <p className="replay-notice" aria-label="阶段性研究发布说明">{data.localReview.notice}</p>}
+    {historical && data.localReview && <p className="replay-empty">本篇尚无获准的当时信息集；不以观察日或材料日期补造首次可得。</p>}
     <figure className="replay-method-map" aria-label="复盘方法框架">
       <figcaption><h2>复盘方法框架</h2><span>预期与现实对照，持续验证</span></figcaption>
       <ol>{['事前预期', '数据 / 政策事件', '美债 / 美元重定价', '后续验证 / 修正'].map((step) => <li key={step}>{step}</li>)}</ol>
       <div className="replay-method-feedback">↶ 反馈：修正预期</div>
       <p>方法示意，不是确定的因果链；日频变化不等于因果，需结合信息发布时间与其他冲击验证。</p>
     </figure>
-    <div className="replay-toolbar"><label htmlFor="replay-cutoff">按日期截止查看<input id="replay-cutoff" type="date" max={data.asOf || undefined} value={selectedCutoff} onChange={(event) => setSelectedCutoff(event.target.value)} /></label><button type="button" onClick={() => setSelectedCutoff(data.asOf)}>恢复资料截止日</button><span role="status">{historical ? '严格历史截面' : data.experimentStatus ? (data.experimentStatus.publication ? '当前有限研究视图' : '实验性本地资料视图') : data.partialRelease ? '当前阶段性资料视图' : '当前完整资料视图'}：{formatReplayDate(cutoff) || '准备中'} · {events.length} 条事件</span></div>
+    <div className="replay-toolbar"><label htmlFor="replay-cutoff">按日期截止查看<input id="replay-cutoff" type="date" max={data.asOf || undefined} value={selectedCutoff} onChange={(event) => setSelectedCutoff(event.target.value)} /></label><button type="button" onClick={() => setSelectedCutoff(data.asOf)}>恢复资料截止日</button><span role="status">{historical ? '严格历史截面' : data.experimentStatus ? (data.experimentStatus.publication ? '当前有限研究视图' : '实验性本地资料视图') : data.localReview ? '阶段性研究视图（未完成整阶段验收）' : data.partialRelease ? '当前阶段性资料视图' : '当前完整资料视图'}：{formatReplayDate(cutoff) || '准备中'} · {events.length} 条事件</span></div>
     {data.partialRelease && <p className="replay-notice" aria-label="阶段性发布说明">{data.partialRelease.notice}</p>}
     <p className="replay-notice">防后见偏差：按信息发布日期而非观测期筛选。历史截面隐藏当前总结、事后解释和判断；来源日期不明的材料不进入截面。未提供逐版本存档，不等同于完整的实时数据回放。</p>
     {readingControls && <div className="replay-reading-toolbar"><button type="button" onClick={() => setReadingBlocks(true)}>展开全篇大板块</button><button type="button" onClick={() => setReadingBlocks(false)}>收起全篇大板块</button><span>仅控制一级模块；主题正文与来源明细保持各自状态。</span></div>}
     {!historical && <ReadingBlock enabled={readingControls} id="reading-analysis" title={data.marketAnalysis?.title || '研究摘要'} intro="当前资料综合研究 · 非历史时点预期">
     {(data.marketAnalysis ? <section className="replay-panel replay-market-analysis" aria-label="综合市场分析">
-      <header><h2>{data.marketAnalysis.title}</h2><span>{data.experimentStatus ? '保留基线正文；新增公众号限定观点纳入对应主题' : data.partialRelease ? '已审核内容阶段性整理' : '当前完整资料综合研究'} · 非历史时点预期</span></header>
+      <header><h2>{data.marketAnalysis.title}</h2><span>{data.localReview ? '限定准入 · 阶段性研究发布' : data.experimentStatus ? '保留基线正文；新增公众号限定观点纳入对应主题' : data.partialRelease ? '已审核内容阶段性整理' : '当前完整资料综合研究'} · 非历史时点预期</span></header>
       <div className="replay-analysis-conclusion" aria-label="阶段开篇总述">{data.marketAnalysis.conclusion.split(/\r?\n\s*\r?\n/).filter(paragraph => paragraph.trim()).map((paragraph, index) => <Fragment key={index}>{data.marketAnalysis?.conclusionHeadings?.[index] && <h3>{data.marketAnalysis.conclusionHeadings[index]}</h3>}<p>{displayResearchText(paragraph, data)}</p></Fragment>)}</div>
       <nav className="replay-topic-directory" aria-label="综合分析主题目录">{data.marketAnalysis.sections.map((section, index) => <a key={section.id} href={`#replay-topic-${index}`} onClick={event => {
         // This dashboard uses hash routes. Local reading anchors must not navigate
@@ -582,10 +597,12 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
 
     {hasMarketValues && <ReadingBlock enabled={readingControls} id="reading-paths" title="真实行情路径" intro="观测与版本分别披露"><MarketPaths paths={data.marketPaths!} cutoff={cutoff} historical={historical} /></ReadingBlock>}
     {!data.partialRelease && <ReadingBlock enabled={readingControls} id="reading-comparison" title="市场预期与现实路径对照" intro="定性证据与量化数据分开">
+    {!historical && data.localReview && <section aria-label="五主题逐月路径对照">{data.marketAnalysis?.sections.map((section, index) => <details key={section.id}><summary>{section.title} · 逐月预期、现实与市场含义</summary><div className="replay-table-wrap"><table><thead><tr><th>月份</th><th>机构预期</th><th>官方现实</th><th>市场含义</th></tr></thead><tbody>{['2021-12', '2022-01', '2022-02', '2022-03'].map(month => <tr key={month}><th>{formatReplayDate(month)}</th>{(['expectationTimeline', 'realityTimeline', 'implicationTimeline'] as const).map(role => <td key={role}>{section.deepDive?.[role]?.filter(n => n.id.includes(month)).map(n => <p key={n.id}>{displayResearchText(n.text, data)} <button type="button" id={`analysis-citation-${n.id}`} data-reading-origin onClick={event => { event.currentTarget.focus({ preventScroll: true }); document.querySelector<HTMLButtonElement>(`.replay-outline [data-reading-target="replay-topic-${index}-${role}"]`)?.click(); goToReadingTarget(`analysis-entry-${n.id}`) }}>查看原节点与出处</button></p>)}</td>)}</tr>)}</tbody></table></div></details>)}</section>}
     {!data.partialRelease && <section className="replay-panel" aria-label="市场路径对照"><header><h2>市场预期与现实路径对照</h2><span>定性证据与量化数据分开</span></header><p className="replay-notice">{hasMarketValues ? '真实序列已接入，逐点观测日、首次发布日期与缺口见上方；会前利率期货隐含路径仍缺失，不把政策目标或事后路径冒充会前市场共识。路径仅供对照，不计算单一事件归因。' : '完整事件窗口量化数据缺失：尚无经核验的会前利率期货隐含路径、全区间美元与美债序列。局部官方快照见事件现实字段；不绘制模拟曲线，不计算全月收益或单一事件归因。'}</p><div className="replay-table-wrap"><table><thead><tr><th>发布日期 / 事件</th><th>当时预期（不等同于市场共识）</th><th>落地现实</th><th>市场反应 / 验证状态</th></tr></thead><tbody>{events.map((event) => <tr key={event.id}><th scope="row">{formatReplayDate(event.date)}<br />{event.title}</th><td>{formatReplayText(evidenceText(event.expectation, event.expectationSourceIds, event.date))}{sourceLinks(event.expectationSourceIds)}</td><td><p>观察期：{formatReplayText(formatReplayDate(event.observationPeriod) || '未注明')} · 不等同于发布日期</p>{formatReplayText(evidenceText(event.reality, event.realitySourceIds))}{sourceLinks(event.realitySourceIds)}</td><td>{historical ? '历史截面隐藏事后市场解释' : event.marketResponse || '缺少量化行情，待验证'}{!historical && event.interpretation && <p>研究解释（非事实）：{displayResearchText(event.interpretation, data)}</p>}</td></tr>)}</tbody></table>{!events.length && <p className="replay-empty">暂无可对照事件。</p>}</div></section>}
     </ReadingBlock>}
     <details className="replay-disclosure" id={readingControls ? 'reading-library' : undefined} aria-label="来源库 / 研报库明细">
     <summary>{readingControls ? <h2><ReadingLabel id="reading-library">来源库 / 研报库</ReadingLabel></h2> : '来源库 / 研报库'} · 公开来源 {availableSources.length} / 授权研报 {reports.length}（点击展开）</summary>
+    {!historical && data.localReview && data.sourceMethodology && <details><summary>来源版本、限定使用与原稿状态说明</summary><p>以下为原稿封口时的原始说明，历史false状态不回写；本版已获阶段性公网发布授权；以下保留原稿审阅时状态，不代表当前发布状态。研究配额与历史资格未升级。</p>{data.sourceMethodology.general.map(text => <p key={text}>{text}</p>)}{data.sourceMethodology.bySource.map(item => <p key={item.sourceId}>{sources.find(s => s.id === item.sourceId)?.title}：{item.note}</p>)}</details>}
     {!historical && data.experimentStatus && <details className="replay-disclosure" aria-label="本轮新增研究（已审核限定内容）">
       <summary>本轮新增研究（已审核限定内容） · {data.windIncrement?.length || 0} 份Wind研报（点击展开）</summary>
       <p className="replay-notice">本区保留17份Wind作者观点及审核限制；新增公众号完整条件观点另已纳入政策主题正文，不代表整阶段研究完成。印刷刊期不证明历史首次可得；严格历史模式卸载本区及新增来源标题。原始PDF仅留私有归档，编号不是下载链接。</p>
@@ -619,7 +636,32 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
     <ReadingBlock enabled={readingControls} id="reading-acquisition" title="下载渠道状态" intro="当前获取状态 · 不随历史截止回放">
     <section className="replay-panel" aria-label="下载渠道状态"><header><h2>下载渠道状态</h2><span>当前获取状态 · 不随历史截止回放</span></header>
       {!historical && data.monthlyCoverage && <MonthlyCoverage coverage={data.monthlyCoverage} showRequired={Boolean(data.experimentStatus)} />}
-      <div className="replay-acquisition">{data.acquisition.map((channel) => <article key={channel.provider}><h3>{channel.provider}</h3><strong>{channel.status}</strong><p>{channel.detail}</p></article>)}{!data.acquisition.length && <p className="replay-empty">渠道核验准备中；不将全站接入状态视为本页已获取数据。</p>}</div></section>
+      {!historical && data.priorityCoverage && <section aria-label="重点账号限定接入覆盖">
+        <h3>重点公众号：取得、正文采用与历史覆盖</h3>
+        <p>累计原发取得{data.priorityCoverage.originalAcquired}篇，原发限定采用{data.priorityCoverage.originalUsed}篇，转载辅助{data.priorityCoverage.repostUsed}篇。本轮{data.priorityCoverage.newPages}个页面对应{data.priorityCoverage.bodyNodes}个正文节点、{data.priorityCoverage.summaryContributions}项总结贡献；资料篇数与引用观点数不是同一统计，跨栏目引用不增加作品或机构票。</p>
+        <p>正式配额未验收，原发候选数量达到每月目标不等于全阶段完成。相关列仅计已有实际支持分支；背景文章、重复转载及索引不作新增经济证据。原发日期按公众号页头或精确ct，不用报告印刷日替代。历史列表均未穷尽；奇霖、泽平、经济学家圈、张伟仍缺目标期原文。</p>
+        <div className="replay-table-wrap"><table aria-label="重点公众号逐月实际覆盖"><thead><tr><th>月份</th><th>原发取得（旧＋新）</th><th>相关 / 限定采用原发</th><th>转载辅助采用</th><th>目标 / 取得差额</th><th>正式配额</th></tr></thead><tbody>{data.priorityCoverage.monthly.map(row => <tr key={row.month}><th>{formatReplayDate(row.month)}</th><td>{row.originalAcquired}（{row.baselineOriginals}＋{row.newOriginals}）</td><td>{row.relevantOriginals} / {row.originalUsed}</td><td>{row.auxiliaryReposts}</td><td>{row.target} / {row.acquisitionGap}</td><td>未验收</td></tr>)}</tbody></table></div>
+        <div className="replay-table-wrap"><table aria-label="重点账号原文与正文采用"><thead><tr><th>账号</th><th>原发取得 / 限定采用</th><th>转载取得 / 辅助采用</th><th>目标期历史覆盖</th></tr></thead><tbody>{data.priorityCoverage.accounts.map(row => <tr key={row.account}><th>{row.account}</th><td>{row.originalAcquired} / {row.originalUsed}</td><td>{row.repostAcquired} / {row.repostUsed}</td><td>{row.historyState}</td></tr>)}</tbody></table></div>
+        <div className="replay-table-wrap"><table aria-label="新增机构实际正文使用"><thead><tr><th>同期研究机构</th><th>原发取得 / 限定采用</th><th>转载辅助</th><th>涉及正文节点（跨机构不可相加）</th></tr></thead><tbody>{data.priorityCoverage.institutions.map(row => <tr key={row.institution}><th>{row.institution}</th><td>{row.originalAcquired} / {row.originalUsed}</td><td>{row.repostUsed}</td><td>{row.bodyNodes}</td></tr>)}</tbody></table></div>
+        <p>招商宏观静思录页头对应的同期研究归西部证券；CS宏观研究为中信证券，不是中信期货；国金证券不是中金公司。首席经济学家论坛仅为转载分发，不另计机构。FWPDF038仍held：论坛完整转载只准就业、工资及类滞胀限定分支，不恢复PDF配额；同作品不重复计票，国金债务宽限规模分支未接入。</p>
+        <details><summary>本轮{data.priorityCoverage.newPages}个页面的采用与排除</summary>{data.priorityCoverage.articles.map(item => <article key={item.sourceId}><h4>{item.title}</h4><p>{formatReplayDate(item.date)} · {item.account} · {item.institution} · {item.original ? '原发候选' : item.kind === 'wechat-republication' ? '转载' : '索引'} · {item.used ? '父准限定正文采用' : '不采用'}</p><p>{item.reason}</p>{item.bodyNodeIds.map(nodeId => <button type="button" key={nodeId} id={`priority-citation-${item.sourceId}-${nodeId}`} data-priority-target={nodeId} data-reading-origin onClick={event => {
+          event.currentTarget.focus({ preventScroll: true })
+          const sectionIndex = data.marketAnalysis?.sections.findIndex(section => Object.values(section.deepDive || {}).flat().some(node => node.id === nodeId)) ?? -1
+          const section = data.marketAnalysis?.sections[sectionIndex]
+          const role = Object.entries(section?.deepDive || {}).find(([, nodes]) => nodes.some((node: ReplayAnalysisEntry) => node.id === nodeId))?.[0]
+          if (role) document.querySelector<HTMLButtonElement>(`.replay-outline [data-reading-target="replay-topic-${sectionIndex}-${role}"]`)?.click()
+          goToReadingTarget(`analysis-entry-${nodeId}`)
+        }}>查看限定正文与出处</button>)}</article>)}</details>
+      </section>}
+      {!historical && data.localReview && <div>
+        <p>Wind为独立作品建议数，非正式配额全部父准；81份PDF不等于81份合格资料。表中差额只是建议数距目标的差额，正式配额须先对账，不是每月还需重下15篇。</p>
+        {data.priorityCoverage && <h3>基线取得与Wind待对账快照（下表公众号旧数不含本轮；最新累计见上表）</h3>}
+        <p>{data.priorityCoverage && '基线：'}公众号取得{data.localReview.wechat.length}篇，已分析采用{data.localReview.wechat.filter(item => item.used).length}篇、已分析不采用{data.localReview.wechat.filter(item => !item.used).length}篇、待分析0篇。采用与限定父准只针对实际支持分支，不等于整源正式配额认证。</p>
+        <p>{data.priorityCoverage ? '本轮新增重点账号及赵伟原发已进入正文，仍有重点池缺口；长江宏观经济研究、东方金诚投资人服务的基线保留。' : '已检索10个重点账号但未取得重点池增量，重点池未达标；本轮实际账号仍为长江宏观经济研究、东方金诚投资人服务。'}同作者续评与跨渠道同作品不增加独立机构票。知识星球取得0篇，已查入口历史范围不明，不能推断全渠道无资料。</p>
+        <div className="replay-table-wrap"><table aria-label="新标准逐月渠道状态"><thead><tr><th>月份</th><th>Wind建议 / 目标 / 建议差额</th><th>正文消费Wind</th><th>公众号取得且已读 / 采用 / 不采用 / 待分析</th><th>公众号目标 / 取得差额</th><th>限定本地父准采用 / 正式配额</th></tr></thead><tbody>{data.localReview.coverage.map(row => <tr key={row.month}><th>{formatReplayDate(row.month)}</th><td>{row.wind.independentWorkSuggestions} / {row.wind.target} / {row.wind.gap}</td><td>{row.wind.draftUsedWorks}</td><td>{row.wechat.previouslyReadBodies} / {row.wechat.draftUsedBodies} / {row.wechat.notUsedBodies} / 0</td><td>{row.wechat.target ?? '未设新合同'} / {row.wechat.acquisitionGap ?? '待核'}</td><td>{row.wechat.limitedLocalUsedBodies ?? '待核'} / 未验收</td></tr>)}</tbody></table></div>
+        <details><summary>{data.localReview.wechat.length}篇公众号逐篇采用与不采用理由</summary>{data.localReview.wechat.map(item => <article key={item.id}><h4>{item.title}</h4><p>{item.month} · {item.used ? '已分析采用' : '已分析不采用'} · {item.reason}</p></article>)}</details>
+      </div>}
+      <div className="replay-acquisition">{data.acquisition.map((channel) => <article key={channel.provider}><h3>{channel.provider}</h3><strong>{channel.status}</strong><p>{channel.detail}</p></article>)}{!data.acquisition.length && !data.localReview && <p className="replay-empty">渠道核验准备中；不将全站接入状态视为本页已获取数据。</p>}</div></section>
     </ReadingBlock>
     {readingControls && <button type="button" className="replay-page-return" aria-label="回到页面顶部" onClick={() => {
       document.getElementById('replay-page-top')?.focus({ preventScroll: true })

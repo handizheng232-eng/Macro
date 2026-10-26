@@ -34,7 +34,9 @@ describe('pandemic policy overview', () => {
     for (let i = 1; i < periods.length; i++) expect(Date.parse(periods[i][0]) - Date.parse(periods[i - 1][1])).toBe(86400000)
     for (const card of cards) {
       expect(within(card as HTMLElement).getByText('待复盘')).toBeInTheDocument()
-      expect(card.querySelectorAll('button')).toHaveLength(0)
+      const isAdmittedLocalChild = card.querySelector('h3')?.textContent === '加速Taper与转鹰准备'
+      expect(card.querySelectorAll('button')).toHaveLength(isAdmittedLocalChild ? 1 : 0)
+      if (isAdmittedLocalChild) expect(within(card as HTMLElement).getByRole('button', { name: '进入加速Taper与转鹰准备阶段性研究版' })).toBeInTheDocument()
       expect(card.querySelectorAll('a').length).toBeGreaterThan(0)
       for (const link of card.querySelectorAll('a')) expect(link.href).toMatch(/^https:\/\/www\.federalreserve\.gov\//)
     }

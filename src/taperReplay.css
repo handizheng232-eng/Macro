@@ -1,0 +1,4 @@
+.replay-local-review .replay-path-grid { grid-template-columns: minmax(0, 1fr); }
+.replay-local-review img[data-approved-market-chart] { min-width: 760px !important; }
+.replay-local-review .replay-path-chart > p { line-height: 1.8; overflow-wrap: anywhere; }
+.replay-local-review .replay-path-chart .replay-swipe-hint { display: block; }

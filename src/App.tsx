@@ -27,11 +27,13 @@ import { pandemicOverview, pandemicSubperiods } from './pandemicOverview'
 import hawkishReplayData from './data/historyReplayHawkishTransition.json'
 import renewedEasingReplayData from './data/historyReplayRenewedEasingQtEnd.json'
 import tariffPauseReplayData from './data/historyReplayTariffPause.json'
+import taperReplayData from './data/historyReplayTaper.json'
 
 type PageId = 'today' | 'framework' | 'themes' | 'history' | 'methods'
-type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end' | 'tariff-pause'
+type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end' | 'tariff-pause' | 'accelerated-taper-hawkish-preparation'
 
 function historyReplayStageFromHash(hash: string): HistoryReplayStage | null {
+  if (hash === '#history/pandemic-policy-confluence/accelerated-taper-hawkish-preparation') return 'accelerated-taper-hawkish-preparation'
   if (hash === '#history/easing-to-tightening/tariff-pause') return 'tariff-pause'
   if (hash === '#history/easing-to-tightening/policy-reversal') return 'policy-reversal'
   if (hash === '#history/easing-to-tightening/hawkish-transition') return 'hawkish-transition'
@@ -508,6 +510,7 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, pandemic
                     {subperiod.extraSources?.map((source) => <p key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></p>)}
                   </div>
                 </div>
+                {subperiod.number === '08.6' && <button className="regime-detail-action" type="button" onClick={() => onOpenReplay('accelerated-taper-hawkish-preparation')}>进入{subperiod.title}阶段性研究版 <ChevronRight size={16} /></button>}
                 {(subperiod.number === '10.2' || subperiod.number === '10.3' || subperiod.number === '10.4' || subperiod.number === '10.5') && (
                   <button className="regime-detail-action" type="button" onClick={() => onOpenReplay(subperiod.number === '10.2' ? 'tariff-pause' : subperiod.number === '10.3' ? 'renewed-easing-qt-end' : subperiod.number === '10.4' ? 'hawkish-transition' : 'policy-reversal')}>
                     进入{subperiod.title}研究工作台 <ChevronRight size={16} />
@@ -797,7 +800,7 @@ function App() {
   }
 
   const openHistoryReplay = (stage: HistoryReplayStage) => {
-    window.history.pushState(null, '', `#history/easing-to-tightening/${stage}`)
+    window.history.pushState(null, '', `#history/${stage === 'accelerated-taper-hawkish-preparation' ? 'pandemic-policy-confluence' : 'easing-to-tightening'}/${stage}`)
     setActivePage('history')
     setHistoryDetail(false)
     setInflationDetail(false)
@@ -989,7 +992,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end'} onBack={openRecentHistory} data={historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end' || historyReplay === 'accelerated-taper-hawkish-preparation'} onBack={historyReplay === 'accelerated-taper-hawkish-preparation' ? openPandemicHistory : openRecentHistory} data={historyReplay === 'accelerated-taper-hawkish-preparation' ? taperReplayData : historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (
