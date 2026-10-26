@@ -1,0 +1,32 @@
+{
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "92538159a367aa91d68ed3a68275e45f185c771f6cb90594e0cb29d956751ec9",
+    "baselineSHA256": "d355ca360c0606f4d62b6dc43d0d4ec4e1280604ba4038b572338629e8a546d6",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "9b0714fa770e8dea672b6b7449f8e2778bee2cdf72682f8b83946664221dffdd",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_taper_priority_publish.py' -v\n          python -B scripts/verify_taper_priority_publish.py --legacy-tests --dist dist\n"
+      }
+    ]
+  },
+  "src/taperPriority.test.tsx": {
+    "currentSHA256": "f2d90971a515c193c69d222ad6003f163712bdada786774c34dc964dc37f15e1",
+    "baselineSHA256": "96b33ef827ad18c51d27a5a581c4edbacd9be9a2fc6cbd3275e16d6511a5d80f",
+    "operations": [
+      {
+        "start": 0,
+        "end": 1,
+        "currentSHA256": "2cb3a8116e950628a0b53cfa3d1decbf9a7e293151b9f968fcc84b3fcedfacdf",
+        "baselineText": "import { readFileSync } from 'node:fs'\n"
+      },
+      {
+        "start": 5,
+        "end": 7,
+        "currentSHA256": "b1a521ae919a50d4bd6183946ddcfd4b07ebfd002d576ce4295f4f5e4ece97be",
+        "baselineText": "const read = (name: string) => JSON.parse(readFileSync(`../../PriorityCombinedReview01/${name}.json`, 'utf8'))\nconst nodes: {nodeId: string; sectionId: string; role: string; node: {text: string}}[] = read('reviewed-nodes')\nconst plan: {summaryGroups: {sectionId: string; baselineText: string; month: string; contributions: {addition: string}[]}[]} = read('stable-ID-integration-plan')\n"
+      }
+    ]
+  }
+}

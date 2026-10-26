@@ -1,0 +1,1989 @@
+{
+  "nodes": [
+    {
+      "nodeId": "priority02-policy-dec-cicc",
+      "sectionId": "taper-policy",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-policy-dec-cicc",
+        "title": "12月｜中金：加快退出购债不等于增长风险消失",
+        "text": "中金刘政宁、张文朗等在12月6日刊出的周报中，预计高通胀会促使联储在12月讨论加快Taper，提出每月削减购债额度翻倍、2022年3月结束购债的可能路径。作者并不认为当时偏弱的新增非农足以推翻这一判断，因为失业率、参与率和工资提供了不同方向的补充信息。但收紧的资产含义取决于原因：增长改善、通胀温和时的加息，与高通胀倒逼、Omicron又威胁消费时的加息，不能类比。若12月点阵指引大幅提前，作者担心资产价格再受扰动；其对曲线变平的政策错误解释是研究判断，不是对市场动机的独立识别。",
+        "month": "2021-12",
+        "date": "2021-12-06",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-iqqoC8Y0C4gn"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-iqqoC8Y0C4gn:b000002-b000022"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-iqqoC8Y0C4gn:b000002-b000022",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2021-12-06",
+            "locatorLabel": "公众号正文块 2—22（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-iqqoC8Y0C4gn",
+            "label": "中金宏观｜中金 | 美联储转鹰：亡羊补牢，还是加剧担忧？｜2021-12-06"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-policy-dec-cs",
+      "sectionId": "taper-policy",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-policy-dec-cs",
+        "title": "12月｜中信：短期利空兑现与中期紧缩风险并存",
+        "text": "中信证券12月16日点评把会议后的风险资产反应解释为此前紧缩预期已经升温、短期利空兑现，同时强调中长期利率上行风险仍在累积。文章承认，此次点阵所示的次年加息路径强于其此前预计的2022年9月、12月各加一次；点阵仍是参与者预测，并非委员会承诺。作者认为经济已从2021年的增速高点放缓，但中期一至两年增长仍强，关注点因此是2022年二季度就业缺口能否回补、通胀能回落多少。若老龄化、疫情死亡及工作意愿变化使参与率难恢复，劳动供给缺口可能继续推升核心通胀，迫使联储更快收紧。",
+        "month": "2021-12",
+        "date": "2021-12-16",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-Rz_2GT0XJZa2"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-Rz_2GT0XJZa2:b000006-b000022"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-Rz_2GT0XJZa2:b000006-b000022",
+            "actor": "中信证券｜中信证券研究部（此公众号正文未单列个人作者）",
+            "publicationDate": "2021-12-16",
+            "locatorLabel": "公众号正文块 6—22（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-Rz_2GT0XJZa2",
+            "label": "CS宏观研究｜美联储放弃“暂时性”通胀论，加快货币紧缩——美联储2021年12月议息会议点评｜2021-12-16"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-policy-jan-haitong-early",
+      "sectionId": "taper-policy",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-policy-jan-haitong-early",
+        "title": "1月上旬｜海通：具备加息条件，但首加更可能在5月",
+        "text": "海通李俊、梁中华1月9日认为，高通胀、低失业率及经济修复已经使加息条件具备；其劳动供给解释是，老龄化和提前退休可能让部分参与率缺口长期存在，不能无限等待全部就业回归。不过，条件具备不等于立即行动：考虑沟通所需时间与疫情发展，作者仍判断5月首次加息更可能，并预计随后讨论缩表、四季度启动被动缩表。其认为流动性充裕与回购便利工具能降低再现资金紧张的概率，但这不是流动性风险保证；文章对充分就业的判断也不等于失业率一项已证明所有劳动市场约束消失。",
+        "month": "2022-01",
+        "date": "2022-01-09",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-5xySawhWAOWb"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-5xySawhWAOWb:b000013-b000025",
+          "wx-5xySawhWAOWb:b000043-b000061"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-5xySawhWAOWb:b000013-b000025",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-09",
+            "locatorLabel": "公众号正文块 13—25（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-5xySawhWAOWb:b000043-b000061",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-09",
+            "locatorLabel": "公众号正文块 43—61（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-5xySawhWAOWb",
+            "label": "梁中华宏观研究｜联储加息几次？影响有多大？——美元流动性研究系列一（海通宏观 李俊、梁中华）｜2022-01-09"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-inflation-jan-haitong",
+      "sectionId": "taper-inflation",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-inflation-jan-haitong",
+        "title": "1月｜海通：见顶判断不等于通胀回到低位",
+        "text": "海通李俊、梁中华1月13日从总体CPI月度涨幅放缓、消费者通胀预期及截尾类价格指标降温、供应链压力边际缓解出发，提出美国通胀或将见顶。但作者同时强调疫情干扰、供应链压力和劳动供给扭曲仍在，因此见顶后仍可能保持高位，并未给出确定的见顶月份。政策上，该文仍因沟通时间和疫情发展而倾向5月首加。它与长江1月14日强调缺芯、新车供给不足及二手车替代需求、短期汽车价格难回落的解释，关注层次不同：总体环比可能降温并不要求每个分项立刻回落，不能仅凭标题把二者判成互斥预测。长江同时保留国际食品价格回落可能令食品涨势降温的反向信息，这不等于已向美国CPI即时传导；美国疫情超预期反弹与美联储政策转向仍是其风险。",
+        "month": "2022-01",
+        "date": "2022-01-13",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-VYnUasra7oZU",
+          "wx-rmq4JRZrrPga"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-VYnUasra7oZU:b000033-b000045",
+          "c053f993dba54a079600",
+          "d210a8cdbde0532e286b"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-VYnUasra7oZU:b000033-b000045",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-13",
+            "locatorLabel": "公众号正文块 33—45（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "c053f993dba54a079600",
+            "reportId": "wx-rmq4JRZrrPga",
+            "actor": "长江宏观经济研究",
+            "publicationDate": "2022-01-14",
+            "locatorLabel": "正文行[24, 32]"
+          },
+          {
+            "id": "d210a8cdbde0532e286b",
+            "reportId": "wx-rmq4JRZrrPga",
+            "actor": "长江宏观经济研究",
+            "publicationDate": "2022-01-14",
+            "locatorLabel": "正文行[38, 43]"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-VYnUasra7oZU",
+            "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）｜2022-01-13"
+          },
+          {
+            "sourceId": "wx-rmq4JRZrrPga",
+            "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-curve-jan-guangfa",
+      "sectionId": "taper-curve",
+      "role": "mechanism",
+      "node": {
+        "id": "priority02-curve-jan-guangfa",
+        "title": "1月｜广发：国内稳增长与海外收紧是并行约束",
+        "text": "广发郭磊1月20日把国内稳增长与海外流动性收敛视为同时作用的两条线索：中国需求不足、建筑业下行促使政策托底，海外增长修复与通胀约束则推动退出宽松。在这一框架下，稳增长有利于形成盈利企稳预期，但海外利率上行又可能压制成长类资产估值，国内债券也不必与美债同步。作者把10年期美债收益率作为全球无风险利率的观察指标，并明确利率与股指的历史关系会随盈利、估值主导因素而变；因此不能把相关性写成美债单独决定中国股市。其看法是利率仍可能震荡上行，但油价和联储节奏使斜率难测；宏观及流动性环境超预期均为风险。",
+        "month": "2022-01",
+        "date": "2022-01-20",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-aJz4lPp02cmR"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-aJz4lPp02cmR:b000025-b000055"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-aJz4lPp02cmR:b000025-b000055",
+            "actor": "广发证券｜郭磊",
+            "publicationDate": "2022-01-20",
+            "locatorLabel": "公众号正文块 25—55（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-aJz4lPp02cmR",
+            "label": "郭磊宏观茶座｜【广发宏观郭磊】宏观面的两条逻辑线｜2022-01-20"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-policy-jan-haitong-update",
+      "sectionId": "taper-policy",
+      "role": "examples",
+      "node": {
+        "id": "priority02-policy-jan-haitong-update",
+        "title": "1月修正链｜海通前移首加判断，但未同步前移缩表到年中",
+        "text": "同为李俊、梁中华，1月9日海通把首加较大概率放在5月；1月27日会议点评则在高通胀、就业强劲和联储更明确的收紧指引下，改判3月加息概率高。这个变化属于同作者在新会议信息后的预测更新，不是两家机构相互印证。缩表判断却仍较晚：该文预计二至三季度给出计划表、年底较大概率启动被动缩表，并保留就业、通胀和金融状况决定操作节奏的条件。流动性较充裕及回购便利是作者认为资金紧张概率较小的理由，不等于缩表不会扰动市场。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-5xySawhWAOWb",
+          "wx-CWZGwTXc1mup"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-5xySawhWAOWb:b000043-b000061",
+          "wx-CWZGwTXc1mup:b000128-b000211"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-5xySawhWAOWb:b000043-b000061",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-09",
+            "locatorLabel": "公众号正文块 43—61（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-CWZGwTXc1mup:b000128-b000211",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 128—211（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-5xySawhWAOWb",
+            "label": "梁中华宏观研究｜联储加息几次？影响有多大？——美元流动性研究系列一（海通宏观 李俊、梁中华）｜2022-01-09"
+          },
+          {
+            "sourceId": "wx-CWZGwTXc1mup",
+            "label": "梁中华宏观研究｜何时缩表？——美联储1月议息会议点评（海通宏观 李俊、梁中华）｜2022-01-27"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-growth-jan-haitong",
+      "sectionId": "taper-growth",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-growth-jan-haitong",
+        "title": "1月｜海通的增长强劲判断，包含补库存而非全面终端加速",
+        "text": "海通李俊、李林芷、梁中华1月29日解读美国四季度GDP初值，将增长较快归于此前Delta影响减弱、限制放松、居民储蓄支持消费以及企业补库存。文章本身已区分结构：库存是私人投资的重要拉动力，建筑投资仍拖累，非耐用品和服务消费的环比增速有所下降，不能从总量反弹推出所有终端需求加速。作者把经济、就业修复与较高核心PCE共同视为3月加息的支撑；这说明其对政策约束的判断，不能用上一季度GDP证明1月Omicron期间的活动没有走弱。本文只沿用该初值时点的结构解释，不把其季度增速或贡献数当成现行修订值。",
+        "month": "2022-01",
+        "date": "2022-01-29",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-6jd9hQB4Y2JV"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-6jd9hQB4Y2JV:b000026-b000177"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-6jd9hQB4Y2JV:b000026-b000177",
+            "actor": "海通证券｜李俊、李林芷、梁中华（标题署名）",
+            "publicationDate": "2022-01-29",
+            "locatorLabel": "公众号正文块 26—177（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-6jd9hQB4Y2JV",
+            "label": "梁中华宏观研究｜经济强劲，静待加息——美国四季度GDP点评（海通宏观 李俊、李林芷、梁中华）｜2022-01-29"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-inflation-feb-haitong",
+      "sectionId": "taper-inflation",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-inflation-feb-haitong",
+        "title": "2月｜海通：商品降温与租金见顶假说",
+        "text": "海通李俊、梁中华2月11日继续判断通胀或将见顶：若供应链缓解、疫情减弱带动商品消费向服务转移，商品价格压力可能下降；作者还认为CPI权重调整会强化这一作用，但该权重效应并未在本文被独立量化验证。服务涨价范围扩大、租金仍上行又是关键制约。作者依据标普/CS二十大城市房价同比此前见顶、房价领先租金的历史关系，预计租金近期放缓，但图没有给出固定领先月数，不能把房价见顶当作租金立刻转降的保证。供应链压力及劳动供给扭曲仍可能使通胀维持高位；若非农恢复持续好于预期、疫情高峰已过而通胀仍高，作者认为紧缩可能更快、更强。",
+        "month": "2022-02",
+        "date": "2022-02-11",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-Rh3dV2IE5QuU"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-Rh3dV2IE5QuU:b000030-b000054"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-Rh3dV2IE5QuU:b000030-b000054",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-02-11",
+            "locatorLabel": "公众号正文块 30—54（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-Rh3dV2IE5QuU",
+            "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）｜2022-02-11"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-inflation-feb-cicc",
+      "sectionId": "taper-inflation",
+      "role": "mechanism",
+      "node": {
+        "id": "priority02-inflation-feb-cicc",
+        "title": "2月｜中金：供给受损、财政货币扩张与服务粘性",
+        "text": "中金刘政宁、张文朗等2月20日认为，疫情同时压缩供给，因而只盯需求缺口可能低估通胀；财政支持增加私人部门净资产和购买力，也是其解释持续价格压力的重要环节。作者以超额M2约领先核心PCE八个季度的经验关系为中期框架，在不考虑联储紧缩时得到更高预测，综合其他因素后仍维持2022年底核心PCE约4%的判断。这是作者模型预测，不是M2必然推高价格的因果证明，图也未给出可完整复算的预测方程。短期则关注能源食品、芯片运输约束、租金粘性，以及疫情减弱、夏季旅游到来时服务价格反弹的风险：若芯片及运输问题未解决，商品价格难快速下降；失业率走低在其历史关系中意味着租金仍有上行空间。加快紧缩可以抑制需求，却可能增加中期衰退风险，软着陆并非当然结果。",
+        "month": "2022-02",
+        "date": "2022-02-20",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-K3uGNGefGPv4"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-K3uGNGefGPv4:b000008-b000039",
+          "wx-K3uGNGefGPv4:b000063-b000063"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-K3uGNGefGPv4:b000008-b000039",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-02-20",
+            "locatorLabel": "公众号正文块 8—39（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-K3uGNGefGPv4:b000063-b000063",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-02-20",
+            "locatorLabel": "公众号正文块 63—63（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-K3uGNGefGPv4",
+            "label": "中金宏观｜中金宏观 | 如何预测美国通胀？｜2022-02-20"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-policy-mar-cs",
+      "sectionId": "taper-policy",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-policy-mar-cs",
+        "title": "3月｜中信：前快后慢的加息路径依赖后续通胀回落",
+        "text": "中信诸建芳、崔嵘3月9日预计2022年加息4次、主要在上半年，2023年再加3—4次并结束周期，终点约2%—2.25%。其依据包括用规则模型、失业率和实际政策利率历史类比判断政策已偏迟；作者也承认规则模型拟合有限，因此这些参照不是联储的正式触发阈值。前快后慢尤其依赖高基数等因素使下半年通胀回落，以及增长在周期和紧缩作用下放缓；长期利率预测也不能当作加息上限承诺。俄乌冲突短期推升通胀、而作者判断美国金融状况尚未显著收紧，故不排除5月或6月加息50基点；若冲突恶化或通胀超预期回落、持续高企，基准路径都需调整。本文保留这套条件预测，不把不同信息日的加息次数直接排成鹰鸽名次。",
+        "month": "2022-03",
+        "date": "2022-03-09",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-BOXspDG0y28l"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-BOXspDG0y28l:b000038-b000087",
+          "wx-BOXspDG0y28l:b000095-b000111"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-BOXspDG0y28l:b000038-b000087",
+            "actor": "中信证券｜诸建芳、崔嵘（作者栏；联系人不列作者）",
+            "publicationDate": "2022-03-09",
+            "locatorLabel": "公众号正文块 38—87（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-BOXspDG0y28l:b000095-b000111",
+            "actor": "中信证券｜诸建芳、崔嵘（作者栏；联系人不列作者）",
+            "publicationDate": "2022-03-09",
+            "locatorLabel": "公众号正文块 95—111（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-BOXspDG0y28l",
+            "label": "CS宏观研究｜【中信证券海外宏观】四问本轮加息周期：滞后多久？终点多高？节奏多快？俄乌影响？｜2022-03-09"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-growth-mar-cs",
+      "sectionId": "taper-growth",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "priority02-growth-mar-cs",
+        "title": "3月｜中信：增长缓冲能否抵消油价冲击",
+        "text": "中信崔嵘3月11日认为俄乌冲突不大可能使美国迅速陷入滞胀，理由是经济仍过热、供应链及劳动供给改善、有效订单增多和Omicron影响消退。文章同时假设冲突有望较快明朗，但保留美欧后续能源制裁可能再次推高油价的风险；不能把这一对战事的判断当成已知事实。在作者设定的国际油价年底升至140美元/桶情景下，预计年底通胀约5%、全年实际增长约2.5%—2.8%，仍高于其采用的潜在增速参照。模型参数未完整披露，油价终点也不等于全年均价，因此这里记录的是情景判断，而非测得的战争净影响。作者还要求观察3—4月充分就业后的工资走势，不能由2月单月时薪近乎不变推出工资压力已经结束。",
+        "month": "2022-03",
+        "date": "2022-03-11",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-f_VPPJjS5lYB"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-f_VPPJjS5lYB:b000025-b000032"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-f_VPPJjS5lYB:b000025-b000032",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-03-11",
+            "locatorLabel": "公众号正文块 25—32（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-f_VPPJjS5lYB",
+            "label": "CS宏观研究｜【中信证券海外宏观】俄乌冲突是否会让美国经济陷入滞胀？——2022年2月美国CPI点评｜2022-03-11"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-inflation-mar-haitong",
+      "sectionId": "taper-inflation",
+      "role": "examples",
+      "node": {
+        "id": "priority02-inflation-mar-haitong",
+        "title": "3月｜海通保留寻顶判断，并加入能源再冲高情景",
+        "text": "海通李俊、梁中华从1月13日、2月11日的通胀或将见顶，到3月11日改为区分短期上冲和较长时期寻顶，并没有给出已经实现的峰值。新加入的风险是地缘冲突推动能源价格大幅波动；保留的降温前提则是供应链继续缓解、疫情和防控约束减弱，以及房价同比领先租金的关系仍有解释力。作者仍预计租金近期放缓，但没有固定领先期可据此确定月份；供应链压力和劳动供给扭曲也使见顶后的回落可能很慢。这是同作者在新增冲击后的条件更新，不能把三篇累计成三个独立看空通胀的机构意见。",
+        "month": "2022-03",
+        "date": "2022-03-11",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-y7Cxt03GFvxB",
+          "wx-Rh3dV2IE5QuU",
+          "wx-VYnUasra7oZU"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-y7Cxt03GFvxB:b000020-b000024",
+          "wx-Rh3dV2IE5QuU:b000030-b000037",
+          "wx-VYnUasra7oZU:b000033-b000039"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-y7Cxt03GFvxB:b000020-b000024",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-03-11",
+            "locatorLabel": "公众号正文块 20—24（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-Rh3dV2IE5QuU:b000030-b000037",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-02-11",
+            "locatorLabel": "公众号正文块 30—37（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-VYnUasra7oZU:b000033-b000039",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-13",
+            "locatorLabel": "公众号正文块 33—39（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-y7Cxt03GFvxB",
+            "label": "梁中华宏观研究｜通胀压力再增加——美国2022年2月物价数据点评（海通宏观 李俊、梁中华）｜2022-03-11"
+          },
+          {
+            "sourceId": "wx-Rh3dV2IE5QuU",
+            "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）｜2022-02-11"
+          },
+          {
+            "sourceId": "wx-VYnUasra7oZU",
+            "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）｜2022-01-13"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-policy-mar-cicc-repost",
+      "sectionId": "taper-policy",
+      "role": "divergence",
+      "node": {
+        "id": "priority02-policy-mar-cicc-repost",
+        "title": "3月｜中金与中信：近期加息相近，后续紧缩情景不同",
+        "text": "3月11日中金宏观转载的中金点睛文章，把连续小幅加息与前置加息区分为两条路径：前者可减轻市场冲击却较难迅速压低通胀，后者能展示抗通胀决心但可能冲击资产。考虑美元融资局部紧张，作者提出3月先加25基点、若通胀持续高企则5月加50基点，并不排除二季度末缩表。中信3月9日、11日同样预计3月加25基点，也不排除随后较大步长，但其全年4次、下半年放慢的基准依赖通胀回落和增长放缓。可比较的是对持续通胀和后续路径的条件，而不是把两天不同信息集强行合成为同日互斥分歧。中金这篇是转载辅助，不增加公众号原发数，也不增加中金的机构票。",
+        "month": "2022-03",
+        "date": "2022-03-11",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-pnEzTPDuvwFA",
+          "wx-BOXspDG0y28l",
+          "wx-f_VPPJjS5lYB"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-pnEzTPDuvwFA:b000009-b000014",
+          "wx-BOXspDG0y28l:b000077-b000087",
+          "wx-f_VPPJjS5lYB:b000031-b000032"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-pnEzTPDuvwFA:b000009-b000014",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-03-11",
+            "locatorLabel": "公众号正文块 9—14（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-BOXspDG0y28l:b000077-b000087",
+            "actor": "中信证券｜诸建芳、崔嵘（作者栏；联系人不列作者）",
+            "publicationDate": "2022-03-09",
+            "locatorLabel": "公众号正文块 77—87（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-f_VPPJjS5lYB:b000031-b000032",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-03-11",
+            "locatorLabel": "公众号正文块 31—32（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-pnEzTPDuvwFA",
+            "label": "中金宏观｜中金 | 面对通胀，欧美央行或集体紧缩｜2022-03-11"
+          },
+          {
+            "sourceId": "wx-BOXspDG0y28l",
+            "label": "CS宏观研究｜【中信证券海外宏观】四问本轮加息周期：滞后多久？终点多高？节奏多快？俄乌影响？｜2022-03-09"
+          },
+          {
+            "sourceId": "wx-f_VPPJjS5lYB",
+            "label": "CS宏观研究｜【中信证券海外宏观】俄乌冲突是否会让美国经济陷入滞胀？——2022年2月美国CPI点评｜2022-03-11"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-dollar-jan-haitong",
+      "sectionId": "taper-dollar",
+      "role": "implicationTimeline",
+      "node": {
+        "id": "priority02-dollar-jan-haitong",
+        "title": "1月｜海通：美元强弱取决于相对增长与实际利差",
+        "text": "海通李俊、梁中华1月9日虽然援引历史上加息前美元走强、加息后可能回落的经验，却没有据此机械判断本轮加息后美元必跌。其基准是美国增长修复和政策正常化领先欧日，短端相对实际利率上升支撑美元，2022年美元指数有望回到100上方，即使加息落地仍可能维持高位。相同研究对美债的判断也带条件：若疫情影响消退、经济继续修复，使实际收益率回升至作者采用的疫情前平均约-0.2%，同时通胀补偿下降较慢，作者认为年内10年期名义收益率突破2%的可能性较高。通胀补偿不是纯粹的预期测量，美元与债券预测也不是已经实现的结果；新兴经济体压力需结合本国汇率弹性和政策空间判断。",
+        "month": "2022-01",
+        "date": "2022-01-09",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-5xySawhWAOWb"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-5xySawhWAOWb:b000065-b000089"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-5xySawhWAOWb:b000065-b000089",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-09",
+            "locatorLabel": "公众号正文块 65—89（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-5xySawhWAOWb",
+            "label": "梁中华宏观研究｜联储加息几次？影响有多大？——美元流动性研究系列一（海通宏观 李俊、梁中华）｜2022-01-09"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "priority02-inflation-feb-comparison",
+      "sectionId": "taper-inflation",
+      "role": "divergence",
+      "node": {
+        "id": "priority02-inflation-feb-comparison",
+        "title": "2月条件比较｜租金领先指标给出不同方向",
+        "text": "海通2月11日与中金2月20日的关键差别，不只是一个说见顶、一个说通胀偏高，而是租金预测的领先变量不同。海通用二十大城市房价同比已经转折推测租金近期放缓，中金用失业率下降与租金约半年滞后的历史关系判断仍有上涨空间。两者都承认商品供给约束未完全消失，却对服务价格接棒的持续性给出不同权重。资料日不同，而且海通讨论近期拐点、中金还给出年底核心PCE判断，不能把总体CPI峰值与年底PCE水平直接比较输赢。后续应分别观察租金环比、劳动供给和服务恢复；图示历史相关性本身不足以保证任何一条领先关系继续稳定。",
+        "month": "2022-02",
+        "date": "2022-02-20",
+        "dateRole": "retrospective-source-publication-date",
+        "sourceIds": [
+          "wx-Rh3dV2IE5QuU",
+          "wx-K3uGNGefGPv4"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-Rh3dV2IE5QuU:b000030-b000037",
+          "wx-K3uGNGefGPv4:b000023-b000039"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-Rh3dV2IE5QuU:b000030-b000037",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-02-11",
+            "locatorLabel": "公众号正文块 30—37（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-K3uGNGefGPv4:b000023-b000039",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-02-20",
+            "locatorLabel": "公众号正文块 23—39（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-Rh3dV2IE5QuU",
+            "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）｜2022-02-11"
+          },
+          {
+            "sourceId": "wx-K3uGNGefGPv4",
+            "label": "中金宏观｜中金宏观 | 如何预测美国通胀？｜2022-02-20"
+          }
+        ],
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "firstAvailableDate": null,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false,
+        "dateNote": "公众号页头静态时间空；精确ct/create_time核日期，首次可得未知，仅当前追溯。"
+      }
+    },
+    {
+      "nodeId": "pwr01-policy-dec-comparison",
+      "sectionId": "taper-policy",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-policy-dec-comparison",
+        "title": "12月｜退出购债更快，不等于各家都预计立即加息",
+        "text": "面对同一次12月会议，西部证券张静静12月16日仍把首次加息放在2022年12月；海通梁中华、李俊12月17日则倾向2022年三至四季度加息一至两次。两者都没有把加快退出购债直接等同于立即加息，但约束条件不同：西部预计通胀中枢下降，并把中期选举前政策转鸽及股市调整后的预期安抚作为重要前提；海通担心供应链、劳动供给和房价向租金传导使通胀难降，主要等待就业进一步恢复。西部的选举—政策联系是作者的政治经济假说，其样本选择不能证明联储必然服从选举日程；海通的就业达标时点也只是预测。疫情、就业和政策超预期都可能改变这两条路径，不能把其首加月份当作委员会承诺。",
+        "month": "2021-12",
+        "date": "2021-12-17",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-WL7OOLCiG1TH",
+          "wx-mrYGTlHZjVF2"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-WL7OOLCiG1TH:b000091-b000160",
+          "wx-mrYGTlHZjVF2:b000076-b000114"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-WL7OOLCiG1TH:b000091-b000160",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-16",
+            "locatorLabel": "公众号正文块 91—160（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mrYGTlHZjVF2:b000076-b000114",
+            "actor": "海通证券｜梁中华、李俊",
+            "publicationDate": "2021-12-17",
+            "locatorLabel": "公众号正文块 76—114（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-WL7OOLCiG1TH",
+            "label": "招商宏观静思录｜西部宏观丨Taper提速与更强加息预期对市场有何影响？——12月美联储议息会议点评｜2021-12-16"
+          },
+          {
+            "sourceId": "wx-mrYGTlHZjVF2",
+            "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）｜2021-12-17"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-inflation-dec-comparison",
+      "sectionId": "taper-inflation",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-inflation-dec-comparison",
+        "title": "12月｜成本缓和与涨价扩散：西部和海通的权重差异",
+        "text": "12月西部证券张静静认为，能源和运输成本趋稳、职位空缺与辞职指标的边际变化以及时薪增速略降，可能预示供需矛盾缓和；若未来数月工资增速继续下降，内生通胀压力才更有理由被判断为减轻，其基准是2022年二至三季度通胀中枢明显下移。海通梁中华、李俊12月17日更重视涨价向更多领域扩散，以及供应链紧张、劳动力供给扭曲和房价上涨对租金的后续带动，因而认为通胀仍难降温。差异在于成本回落能否抵消服务和住房的接续压力，不是某一家否认所有涨价。西部的一次工资同比回落不足以证明工资—价格循环已经解除，海通的持续性判断也不等于已识别工资对价格的净因果；疫情变化仍会同时干扰两家的供给修复假设。",
+        "month": "2021-12",
+        "date": "2021-12-17",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-TQ-zkpma5zxr",
+          "wx-WL7OOLCiG1TH",
+          "wx-mrYGTlHZjVF2"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-TQ-zkpma5zxr:b000083-b000114",
+          "wx-WL7OOLCiG1TH:b000105-b000111",
+          "wx-mrYGTlHZjVF2:b000051-b000089"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-TQ-zkpma5zxr:b000083-b000114",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-03",
+            "locatorLabel": "公众号正文块 83—114（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-WL7OOLCiG1TH:b000105-b000111",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-16",
+            "locatorLabel": "公众号正文块 105—111（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mrYGTlHZjVF2:b000051-b000089",
+            "actor": "海通证券｜梁中华、李俊",
+            "publicationDate": "2021-12-17",
+            "locatorLabel": "公众号正文块 51—89（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-TQ-zkpma5zxr",
+            "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景｜2021-12-03"
+          },
+          {
+            "sourceId": "wx-WL7OOLCiG1TH",
+            "label": "招商宏观静思录｜西部宏观丨Taper提速与更强加息预期对市场有何影响？——12月美联储议息会议点评｜2021-12-16"
+          },
+          {
+            "sourceId": "wx-mrYGTlHZjVF2",
+            "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）｜2021-12-17"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-growth-dec-slack",
+      "sectionId": "taper-growth",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-growth-dec-slack",
+        "title": "12月｜低参与率是闲置产能，还是难以回归的劳动供给？",
+        "text": "西部证券12月3日没有把新增非农偏弱直接解释为经济转差，而把失业率下降、参与率回升和失业金领取减少并列。张静静更看重壮年参与率仍低于疫情前所代表的潜在劳动供给，并认为储蓄消耗和较高工资可能吸引部分劳动者回流，支持继续复苏、缓和用工成本。但这依赖回流确能发生，提前退休和疫情仍可能形成障碍。海通12月17日同样预计经济继续修复，却提醒部分就业损失可能具有长期性，因此低参与率未必全部是可以立即动员的劳动力。两篇对疫情冲击有限的判断都是当时预测，不能据此证明随后服务活动没有受扰；两套调查也不能互相替代。",
+        "month": "2021-12",
+        "date": "2021-12-17",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-TQ-zkpma5zxr",
+          "wx-mrYGTlHZjVF2"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-TQ-zkpma5zxr:b000083-b000114",
+          "wx-mrYGTlHZjVF2:b000076-b000089"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-TQ-zkpma5zxr:b000083-b000114",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-03",
+            "locatorLabel": "公众号正文块 83—114（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mrYGTlHZjVF2:b000076-b000089",
+            "actor": "海通证券｜梁中华、李俊",
+            "publicationDate": "2021-12-17",
+            "locatorLabel": "公众号正文块 76—89（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-TQ-zkpma5zxr",
+            "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景｜2021-12-03"
+          },
+          {
+            "sourceId": "wx-mrYGTlHZjVF2",
+            "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）｜2021-12-17"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-dollar-dec-relative",
+      "sectionId": "taper-dollar",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-dollar-dec-relative",
+        "title": "12月｜美元走强还是转弱，取决于相对政策而非单边加息",
+        "text": "海通12月17日以美国收紧预期和上一轮经验为依据，判断美元仍可能强势，并强调各国国内政策和汇率弹性会改变外溢影响。西部证券12月29日提出相反的年度方向情景：欧洲能源压力持续、工资补偿和经济重启可能促使欧央行转鹰，而美国在中期选举及高估值股市风险下可能转鸽；若两边政策立场收敛乃至换位，欧元可能反弹、美元可能转弱。西部同时区分欧美财政支持方式、耐用品和住房通胀结构，因而不是仅凭美国会加息便推美元方向。这里必须保留其美国转鸽和欧洲转鹰的联合前提，尤其选举影响属于未证实的作者解释；原文把中期选举落地写成9月、把正通胀1.8%称为通缩，均不作为事实依据。两文资料日相差近两周，属于年度情景比较而非同日市场共识投票。",
+        "month": "2021-12",
+        "date": "2021-12-29",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-q01GEVaQQ_Aj",
+          "wx-mrYGTlHZjVF2"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-q01GEVaQQ_Aj:b000156-b000169",
+          "wx-q01GEVaQQ_Aj:b000183-b000215",
+          "wx-q01GEVaQQ_Aj:b000217-b000287",
+          "wx-mrYGTlHZjVF2:b000095-b000114"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-q01GEVaQQ_Aj:b000156-b000169",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-29",
+            "locatorLabel": "公众号正文块 156—169（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-q01GEVaQQ_Aj:b000183-b000215",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-29",
+            "locatorLabel": "公众号正文块 183—215（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-q01GEVaQQ_Aj:b000217-b000287",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-29",
+            "locatorLabel": "公众号正文块 217—287（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mrYGTlHZjVF2:b000095-b000114",
+            "actor": "海通证券｜梁中华、李俊",
+            "publicationDate": "2021-12-17",
+            "locatorLabel": "公众号正文块 95—114（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-q01GEVaQQ_Aj",
+            "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加｜2021-12-29"
+          },
+          {
+            "sourceId": "wx-mrYGTlHZjVF2",
+            "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）｜2021-12-17"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-policy-jan-revisions",
+      "sectionId": "taper-policy",
+      "role": "expectationTimeline",
+      "node": {
+        "id": "pwr01-policy-jan-revisions",
+        "title": "1月｜西部与中信的首加预测分别如何前移",
+        "text": "西部证券1月7日明确修正此前选举后首加的判断：缩表讨论使加息临近，转而预计选举前后各加息一次，并以3月首加为假设，推演二季度讨论缩表、用缩表替代选举前更多加息；1月27日进一步倾向3月、6月和12月三次加息，依据仍包括下半年通胀缓和、曲线倒挂风险和选举前政策缓和。中信证券崔嵘1月8日则以就业不出现负增长等严重破坏为基准，预计5月首加；1月20日保留5月基准，但明确若通胀继续上行且就业受疫情扰动较小，3月也可能。1月27日会后，中信在就业强劲、Omicron影响可能较快消散的判断下，改判3月首加几成定局，同时预计5月讨论后宣布、6月开启缩表。这里是各家随新增信息更新的两条修订链，不是不同日期的预测互相投票；西部把利差直接换算成可加息次数的做法及中信1月20日关于缩表难在上半年的自相矛盾措辞，均不能作为可复算政策约束。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-GzXp4-749VTo",
+          "wx-BSnOcBG6rRBw",
+          "wx-Z_9Te8SjLsOT",
+          "wx-Hg_jj8T5M-Fk",
+          "wx-mgFC18RpSdi5"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-GzXp4-749VTo:b000116-b000129",
+          "wx-BSnOcBG6rRBw:b000176-b000196",
+          "wx-Z_9Te8SjLsOT:b000017-b000035",
+          "wx-Hg_jj8T5M-Fk:b000064-b000077",
+          "wx-mgFC18RpSdi5:b000022-b000031"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-GzXp4-749VTo:b000116-b000129",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-07",
+            "locatorLabel": "公众号正文块 116—129（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-BSnOcBG6rRBw:b000176-b000196",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 176—196（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-Z_9Te8SjLsOT:b000017-b000035",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-01-08",
+            "locatorLabel": "公众号正文块 17—35（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-Hg_jj8T5M-Fk:b000064-b000077",
+            "actor": "中信证券｜诸建芳、崔嵘",
+            "publicationDate": "2022-01-20",
+            "locatorLabel": "公众号正文块 64—77（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mgFC18RpSdi5:b000022-b000031",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 22—31（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-GzXp4-749VTo",
+            "label": "招商宏观静思录｜西部宏观丨美联储“酝酿”缩表意味着什么？｜2022-01-07"
+          },
+          {
+            "sourceId": "wx-BSnOcBG6rRBw",
+            "label": "招商宏观静思录｜西部宏观丨怎么看美联储能够实现的加息节奏？｜2022-01-27"
+          },
+          {
+            "sourceId": "wx-Z_9Te8SjLsOT",
+            "label": "CS宏观研究｜【中信证券海外宏观】就业真的不好吗？如何影响Fed收紧节奏？——2021年12月美国非农就业数据点评｜2022-01-08"
+          },
+          {
+            "sourceId": "wx-Hg_jj8T5M-Fk",
+            "label": "CS宏观研究｜【中信证券海外宏观】美联储收紧路径与影响——这一次有何不同？｜2022-01-20"
+          },
+          {
+            "sourceId": "wx-mgFC18RpSdi5",
+            "label": "CS宏观研究｜【中信证券海外宏观】鲍威尔再放鹰，3月加息几成定局——美联储2022年1月议息会议点评｜2022-01-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-curve-jan-qt",
+      "sectionId": "taper-curve",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-curve-jan-qt",
+        "title": "1月｜缩表能缓和曲线变平，但不保证长端服从政策",
+        "text": "中信证券1月6日和西部证券1月7日都把较早缩表理解为缓解收益率曲线过快变平的一种方式：减少债券持有可能抬升长端收益率，使加息对短端的推动不至于完全主导曲线。西部1月27日又强调，这种作用有边界，长端还受增长、通胀、疫情和机构配置需求影响，持续加息仍可能使曲线倒挂。国金证券同期赵伟团队的1月27日文章则转述鲍威尔对期限利差的态度为监测而非控制，提醒读者不要把券商讨论的曲线风险当作联储的硬性加息上限。三者可以形成政策工具与市场结果的比较，但不构成缩表必然令曲线陡峭的因果证明。西部原文的历史收益率差额算术及政策影响权重未获支持，本段不采用其确定次数和量化权重。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-djoGXTMVJkTV",
+          "wx-GzXp4-749VTo",
+          "wx-BSnOcBG6rRBw",
+          "wx-bKQRH85-RCNB"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-djoGXTMVJkTV:b000019-b000029",
+          "wx-GzXp4-749VTo:b000083-b000107",
+          "wx-BSnOcBG6rRBw:b000176-b000196",
+          "wx-bKQRH85-RCNB:b000022-b000026"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-djoGXTMVJkTV:b000019-b000029",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-01-06",
+            "locatorLabel": "公众号正文块 19—29（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-GzXp4-749VTo:b000083-b000107",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-07",
+            "locatorLabel": "公众号正文块 83—107（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-BSnOcBG6rRBw:b000176-b000196",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 176—196（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-bKQRH85-RCNB:b000022-b000026",
+            "actor": "国金证券｜赵伟",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 22—26（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-djoGXTMVJkTV",
+            "label": "CS宏观研究｜【中信证券海外宏观】美联储年内会缩表吗？——美联储12月议息会议纪要点评｜2022-01-06"
+          },
+          {
+            "sourceId": "wx-GzXp4-749VTo",
+            "label": "招商宏观静思录｜西部宏观丨美联储“酝酿”缩表意味着什么？｜2022-01-07"
+          },
+          {
+            "sourceId": "wx-BSnOcBG6rRBw",
+            "label": "招商宏观静思录｜西部宏观丨怎么看美联储能够实现的加息节奏？｜2022-01-27"
+          },
+          {
+            "sourceId": "wx-bKQRH85-RCNB",
+            "label": "赵伟宏观探索｜赵伟：鲍威尔的“一小步”，美联储的“一大步”（国金证券）｜2022-01-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-growth-jan-transmission",
+      "sectionId": "taper-growth",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-growth-jan-transmission",
+        "title": "1月｜从紧缩到住房和资本开支，西部保留了时滞与反例",
+        "text": "西部证券1月27日把紧缩的实体传导分成两段：长端利率上升可能带动抵押贷款利率，约束地产销售和房价涨幅，随后压低居住类通胀；融资环境趋紧又可能使企业资本开支由加速转为放缓。但作者同时指出，当时成屋库存偏低、房价仍涨、新屋开工景气较高，因此并未预测2022年住房销售立即进入下行趋势；企业投资明显放缓的判断放在2023年，且以三季度开始缩表为假设。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-BSnOcBG6rRBw"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-BSnOcBG6rRBw:b000197-b000222"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-BSnOcBG6rRBw:b000197-b000222",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 197—222（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-BSnOcBG6rRBw",
+            "label": "招商宏观静思录｜西部宏观丨怎么看美联储能够实现的加息节奏？｜2022-01-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-inflation-jan-housing",
+      "sectionId": "taper-inflation",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-inflation-jan-housing",
+        "title": "1月｜商品供给修复与住房传导约束并存",
+        "text": "西部证券1月27日仍把通胀压力最强的阶段放在上半年，预计二季度后、尤其下半年明显放缓，其背景是供应链问题逐步化解和财政推动力减弱。紧缩还可能经抵押贷款利率、销售和房价影响居住类通胀，但作者保留了低库存、房价仍涨与开工较强的反例，并未断言住房通胀立即转降。中信证券1月20日同样把供给瓶颈和供需缺口改善作为通胀降温的重要条件，强调加息能抑制需求，却不能从根本上修复供给；若通胀继续上行、就业又受疫情扰动较小，首加时点可以前移。因此，两家存在降温条件上的交集，不能因首加月份一度不同便说它们对所有通胀机制相互否定。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-BSnOcBG6rRBw",
+          "wx-Hg_jj8T5M-Fk"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-BSnOcBG6rRBw:b000087-b000117",
+          "wx-BSnOcBG6rRBw:b000197-b000222",
+          "wx-Hg_jj8T5M-Fk:b000064-b000077"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-BSnOcBG6rRBw:b000087-b000117",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 87—117（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-BSnOcBG6rRBw:b000197-b000222",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 197—222（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-Hg_jj8T5M-Fk:b000064-b000077",
+            "actor": "中信证券｜诸建芳、崔嵘",
+            "publicationDate": "2022-01-20",
+            "locatorLabel": "公众号正文块 64—77（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-BSnOcBG6rRBw",
+            "label": "招商宏观静思录｜西部宏观丨怎么看美联储能够实现的加息节奏？｜2022-01-27"
+          },
+          {
+            "sourceId": "wx-Hg_jj8T5M-Fk",
+            "label": "CS宏观研究｜【中信证券海外宏观】美联储收紧路径与影响——这一次有何不同？｜2022-01-20"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-policy-jan-guojin-repost",
+      "sectionId": "taper-policy",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-policy-jan-guojin-repost",
+        "title": "1月｜国金会前判断：充分就业的评估不必等于岗位完全回补",
+        "text": "1月25日首席经济学家论坛转载的国金证券赵伟研究提出，若劳动供给障碍难以消除，联储可能更侧重旺盛的招聘需求来评估充分就业，而不必等待就业人数完全恢复到疫情前；若同时认定通胀压力持续，退出宽松便更容易推进。该文还设想，疫情缓解后供应链约束减弱，核心通胀的主要压力可能更多转向劳动力成本。但其反例同样重要：若通胀维持高位而就业修复不足，政策将面对类似滞胀的两难。这是会前条件分析，不是已经公布的新政策标准。该转载与1月24日Wind国金周报属同作品，不增独立研究或机构票；这里采用的是该转载中就业界定、通胀驱动与政策两难的条件分析，不延伸到该作品的GDP分母、缩表规模或偿债日程推算。",
+        "month": "2022-01",
+        "date": "2022-01-25",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-M1C2trId_zT4"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-M1C2trId_zT4:b000057-b000074",
+          "wx-M1C2trId_zT4:b000108-b000115"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-M1C2trId_zT4:b000057-b000074",
+            "actor": "国金证券｜赵伟",
+            "publicationDate": "2022-01-25",
+            "locatorLabel": "公众号正文块 57—74（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-M1C2trId_zT4:b000108-b000115",
+            "actor": "国金证券｜赵伟",
+            "publicationDate": "2022-01-25",
+            "locatorLabel": "公众号正文块 108—115（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-M1C2trId_zT4",
+            "label": "首席经济学家论坛｜赵伟：美联储一月议息会议3大看点｜2022-01-25"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-curve-jan-cs-assets",
+      "sectionId": "taper-curve",
+      "role": "implicationTimeline",
+      "node": {
+        "id": "pwr01-curve-jan-cs-assets",
+        "title": "1月｜中信的实际利率路径依赖增长韧性和较快缩表",
+        "text": "中信证券1月20日把实际利率作为本轮资产定价的主要变量：在美国经济继续增长、联储较早且较快缩表的前提下，预计实际收益率回升，并给出年内十年期名义美债收益率达到2.1%—2.2%的判断；由此担心高估值成长股回调，而美元上半年可能受美欧利差及风险偏好支撑。1月27日会后，作者又把时间顺序拆开，认为3月加息预期兑现后或有短暂修复，但后续缩表预期仍可能推升收益率。这不是名义利率与实际利率的机械等量换算，也不是任何紧缩都必然推高长端；疫情对增长超预期冲击、通胀超预期维持高位或回落，都会改变其基准。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-Hg_jj8T5M-Fk",
+          "wx-mgFC18RpSdi5"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-Hg_jj8T5M-Fk:b000103-b000115",
+          "wx-mgFC18RpSdi5:b000028-b000031"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-Hg_jj8T5M-Fk:b000103-b000115",
+            "actor": "中信证券｜诸建芳、崔嵘",
+            "publicationDate": "2022-01-20",
+            "locatorLabel": "公众号正文块 103—115（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-mgFC18RpSdi5:b000028-b000031",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 28—31（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-Hg_jj8T5M-Fk",
+            "label": "CS宏观研究｜【中信证券海外宏观】美联储收紧路径与影响——这一次有何不同？｜2022-01-20"
+          },
+          {
+            "sourceId": "wx-mgFC18RpSdi5",
+            "label": "CS宏观研究｜【中信证券海外宏观】鲍威尔再放鹰，3月加息几成定局——美联储2022年1月议息会议点评｜2022-01-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-growth-feb-cycle",
+      "sectionId": "taper-growth",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-growth-feb-cycle",
+        "title": "2月｜西部的衰退情景，与中信对就业韧性的观察不在同一期限",
+        "text": "西部证券张静静2月17日重新质疑疫情后的回升是否是一轮新资本开支周期。其依据是失业率很快回到低位、期限利差峰值偏低，以及住房补库存、企业延后投资和基建落地可能只是阶段性脉冲；作者进一步以2—3月逐步开放为背景，假定服务消费从3月起反弹两个季度、四季度降温，且缺少新财政转移支付延长脉冲，由此认为2023年衰退概率不低。低失业率或服务增速放缓本身并不能证明衰退，这一结论仍依赖周期类比、需求透支和脉冲期限假设。中信证券2月6日从新公布就业资料出发，更强调岗位恢复和招工紧张并存，并警惕用上一轮周期简单类比本轮；这是当月劳动市场与紧缩风险的观察，不是直接否定2023年衰退。两者可比较对周期持续性的权重，不能拿不同期限判定谁已经预测正确。",
+        "month": "2022-02",
+        "date": "2022-02-17",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-f41gFkgO04dw",
+          "wx-u3G6c7q4S4bk"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-f41gFkgO04dw:b000098-b000159",
+          "wx-u3G6c7q4S4bk:b000040-b000048",
+          "wx-u3G6c7q4S4bk:b000064-b000072"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-f41gFkgO04dw:b000098-b000159",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-02-17",
+            "locatorLabel": "公众号正文块 98—159（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-u3G6c7q4S4bk:b000040-b000048",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-06",
+            "locatorLabel": "公众号正文块 40—48（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-u3G6c7q4S4bk:b000064-b000072",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-06",
+            "locatorLabel": "公众号正文块 64—72（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-f41gFkgO04dw",
+            "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"
+          },
+          {
+            "sourceId": "wx-u3G6c7q4S4bk",
+            "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧｜2022-02-06"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-inflation-feb-riskbalance",
+      "sectionId": "taper-inflation",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-inflation-feb-riskbalance",
+        "title": "2月｜通胀降温的前提：需求回落、就业修复和战争风险",
+        "text": "中信证券2月6日把美国职位空缺和时薪上涨并列，认为劳动力供不应求使工资—价格循环风险继续上升；其对欧洲则更强调能源，不能把两边工资机制混为一谈。西部证券2月17日的降温情景更偏向需求端：在住房补库、延后投资和基建落地仅属旧周期尾声的短暂脉冲、2—3月逐步开放且没有新增财政转移支付支撑的假设下，若服务消费自3月反弹两个季度后于四季度放缓、2023年进入衰退，作者预计供需矛盾可能快速缓解，并为联储结束紧缩乃至降息提供条件。这不是已经出现的通胀拐点，也不是只凭低失业率就能推出的结果。到2月25日，中信又把战争区分为相对有限和持续升级两种情景：前者对美国通胀的冲击弱于欧洲、未必改变3月小幅首加；后者可能把能源与工资压力叠加，侵蚀实际消费并使政策两难。月底的新冲击不能倒用于解释此前公布的1月价格资料。",
+        "month": "2022-02",
+        "date": "2022-02-25",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-f41gFkgO04dw",
+          "wx-u3G6c7q4S4bk",
+          "wx-7DHNTEXdrhps"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-f41gFkgO04dw:b000120-b000159",
+          "wx-u3G6c7q4S4bk:b000046-b000055",
+          "wx-7DHNTEXdrhps:b000119-b000131"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-f41gFkgO04dw:b000120-b000159",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-02-17",
+            "locatorLabel": "公众号正文块 120—159（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-u3G6c7q4S4bk:b000046-b000055",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-06",
+            "locatorLabel": "公众号正文块 46—55（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-7DHNTEXdrhps:b000119-b000131",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-25",
+            "locatorLabel": "公众号正文块 119—131（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-f41gFkgO04dw",
+            "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"
+          },
+          {
+            "sourceId": "wx-u3G6c7q4S4bk",
+            "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧｜2022-02-06"
+          },
+          {
+            "sourceId": "wx-7DHNTEXdrhps",
+            "label": "CS宏观研究｜【中信证券海外宏观】“俄乌冲突”的历史演变及对资产价格的影响预测｜2022-02-25"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-policy-feb-steps",
+      "sectionId": "taper-policy",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-policy-feb-steps",
+        "title": "2月｜首步大小与全年紧缩不能只看加息次数",
+        "text": "西部证券2月17日给出的路径是3月加息50基点、二季度再加25基点、三季度缩表、12月再加25基点；它把住房补库、延后投资和基建落地视为旧周期尾声的短暂脉冲，并以2—3月逐步开放、缺少新增财政转移支付支撑为前提，假定服务消费自3月反弹两个季度后在四季度放缓，进而与2023年可能衰退、紧缩可能在2022年结束的判断相连。中信证券2月21日刊出的2月20日报告则认为，没有进一步数据支持时，3月加息50基点的概率不高，更倾向全年三至四次、先急后缓，但强调较快缩表的紧缩力度不可忽视。中信的判断不仅依赖通胀回落和增长已过高点，还以相关提名后续获确认为假设，将提名人选及7月才上任的柯林斯纳入潜在票委阵容（此前由哈克代行投票权），推测其长期偏好可能重新重视就业；这不是已经确定的投票结果。两家的首步预测存在方向差异，但信息日并不完全相同，且次数字段不能忽略单次幅度和缩表，不能据此直接排出全年鹰鸽名次。",
+        "month": "2022-02",
+        "date": "2022-02-21",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-f41gFkgO04dw",
+          "wx-2Hckv7bX4F_G"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-f41gFkgO04dw:b000112-b000159",
+          "wx-2Hckv7bX4F_G:b000026-b000033",
+          "wx-2Hckv7bX4F_G:b000123-b000137"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-f41gFkgO04dw:b000112-b000159",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-02-17",
+            "locatorLabel": "公众号正文块 112—159（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-2Hckv7bX4F_G:b000026-b000033",
+            "actor": "中信证券｜诸建芳、崔嵘",
+            "publicationDate": "2022-02-21",
+            "locatorLabel": "公众号正文块 26—33（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-2Hckv7bX4F_G:b000123-b000137",
+            "actor": "中信证券｜诸建芳、崔嵘",
+            "publicationDate": "2022-02-21",
+            "locatorLabel": "公众号正文块 123—137（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-f41gFkgO04dw",
+            "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"
+          },
+          {
+            "sourceId": "wx-2Hckv7bX4F_G",
+            "label": "CS宏观研究｜【中信证券海外宏观】“加息长跑”还是“短程冲刺”？——美联储2022年FOMC票委全解析｜2022-02-21"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-growth-feb-war",
+      "sectionId": "taper-growth",
+      "role": "validation",
+      "node": {
+        "id": "pwr01-growth-feb-war",
+        "title": "2月｜战争何时会改变美国增长与政策判断",
+        "text": "中信证券2月25日倾向冲突持续数周、以局部冲突和制裁为主的中性情景，其基准还依赖西方不直接出兵、对能源制裁保持克制的判断，认为能源影响对欧洲更强，美国仍可在3月加息25基点。但作者也列出持续数月以上的区域性战争及更严厉制裁情景：能源与工资共同推高价格，实际消费受侵蚀，美国增长放缓，联储陷入两难，避险需求可能压低债券收益率。2月27日面对部分俄罗斯银行被宣布限制使用SWIFT，作者仍维持中性判断，理由是机构名单及细节尚待落实、措施并非全面切断支付，西方仍对能源制裁谨慎。后者是新信息下延续原判断，不是第二家机构佐证；若军事冲突或能源制裁升级，原中性路径就须重新评估。关于冲突较快收束的预测不因事后可能不准而删除，但不能作为已知事实。",
+        "month": "2022-02",
+        "date": "2022-02-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-7DHNTEXdrhps",
+          "wx-AiYWw801Ld_J"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-7DHNTEXdrhps:b000062-b000101",
+          "wx-7DHNTEXdrhps:b000119-b000131",
+          "wx-AiYWw801Ld_J:b000031-b000064"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-7DHNTEXdrhps:b000062-b000101",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-25",
+            "locatorLabel": "公众号正文块 62—101（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-7DHNTEXdrhps:b000119-b000131",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-25",
+            "locatorLabel": "公众号正文块 119—131（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-AiYWw801Ld_J:b000031-b000064",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-27",
+            "locatorLabel": "公众号正文块 31—64（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-7DHNTEXdrhps",
+            "label": "CS宏观研究｜【中信证券海外宏观】“俄乌冲突”的历史演变及对资产价格的影响预测｜2022-02-25"
+          },
+          {
+            "sourceId": "wx-AiYWw801Ld_J",
+            "label": "CS宏观研究｜【中信证券海外宏观】SWIFT制裁对全球经济与市场影响几何？｜2022-02-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-dollar-feb-swift",
+      "sectionId": "taper-dollar",
+      "role": "mechanism",
+      "node": {
+        "id": "pwr01-dollar-feb-swift",
+        "title": "2月｜支付制裁与去美元化：长期可能性不是短期美元方向",
+        "text": "中信证券崔嵘2月27日明确区分SWIFT的信息传递与实际清算、资金流：限制部分机构接入会增加跨境支付的难度和成本，并不等于全部资金往来已被切断。作者据此担心贸易、能源出口及俄罗斯金融稳定受损，同时承认替代系统的外国银行参与有限、实际效果待评估。对美国，文中在局部冲突、西方不直接出兵且能源制裁仍克制的中性情景下，仍判断3月加息25基点不受明显阻碍，却提出制裁可能促使部分国家在储备、美债购买和结算方式上推进去美元化。后一判断属于中长期制度变化情景，未给出资金规模或实现速度，不能转写成美元指数即将下跌，也不能从替代系统存在就推断美元支付已被替代。能源制裁与军事冲突进一步升级仍是原文风险。",
+        "month": "2022-02",
+        "date": "2022-02-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-AiYWw801Ld_J"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-AiYWw801Ld_J:b000031-b000064"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-AiYWw801Ld_J:b000031-b000064",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-02-27",
+            "locatorLabel": "公众号正文块 31—64（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-AiYWw801Ld_J",
+            "label": "CS宏观研究｜【中信证券海外宏观】SWIFT制裁对全球经济与市场影响几何？｜2022-02-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-growth-dec-feb-revision",
+      "sectionId": "taper-growth",
+      "role": "examples",
+      "node": {
+        "id": "pwr01-growth-dec-feb-revision",
+        "title": "跨月修订｜西部从闲置劳动供给转向周期尾声判断",
+        "text": "西部证券的劳动供给解释本身也发生了变化。12月3日，张静静把壮年参与率偏低解释为仍有闲置劳动力，支持经济继续复苏的判断；2月17日，她转而强调参与率在历次周期中并不稳定，失业率迅速回落、利差偏低和投资脉冲更像旧资本开支周期的尾声。后文并非简单重复前文：它降低了低参与率作为未来增长缓冲的权重，并将住房补库、延后投资和基建落地看作旧周期尾声的短暂脉冲，以2—3月逐步开放且缺少新增财政转移支付支撑为背景，假设服务消费自3月反弹两个季度、四季度降温，才推到2023年可能衰退。此处保留同作者判断变化，不将其伪装成两家机构分歧；两篇均未证明潜在劳动者必然回流或必然永久退出。",
+        "month": "2022-02",
+        "date": "2022-02-17",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-TQ-zkpma5zxr",
+          "wx-f41gFkgO04dw"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-TQ-zkpma5zxr:b000101-b000114",
+          "wx-f41gFkgO04dw:b000098-b000144"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-TQ-zkpma5zxr:b000101-b000114",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2021-12-03",
+            "locatorLabel": "公众号正文块 101—114（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-f41gFkgO04dw:b000098-b000144",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-02-17",
+            "locatorLabel": "公众号正文块 98—144（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-TQ-zkpma5zxr",
+            "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景｜2021-12-03"
+          },
+          {
+            "sourceId": "wx-f41gFkgO04dw",
+            "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-inflation-feb-threeway",
+      "sectionId": "taper-inflation",
+      "role": "validation",
+      "node": {
+        "id": "pwr01-inflation-feb-threeway",
+        "title": "2月｜把西部需求情景与已读海通、中金候选放在同一检验框架",
+        "text": "已读候选中，海通2月11日以供给修复、商品转服务和房价领先租金关系讨论近期通胀寻顶，但承认租金和劳动供给仍可能使高位持续；中金2月20日则用超额M2与核心PCE的经验关系、就业与租金关系，维持年底核心PCE偏高的判断，模型参数未完整披露；其服务价格上行风险还以疫情减弱和夏季旅游到来为背景。新增的西部2月17日提供了另一条需求情景：若住房补库、延后投资和基建落地仅属旧周期尾声的短暂脉冲，在2—3月逐步开放且缺少新增财政转移支付支撑的背景下，服务消费从3月反弹两个季度后在四季度放缓，2023年衰退可能较快化解供需矛盾。比较对象因此应分别是近期商品和租金变化、年底核心PCE，以及跨年的需求衰退风险；不是把不同指标、期限和信息日压成三票看多或看空通胀。三者都是待验的机构解释，既有两篇仍保留候选资格，不因参与比较而升级为父准。",
+        "month": "2022-02",
+        "date": "2022-02-20",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-f41gFkgO04dw",
+          "wx-Rh3dV2IE5QuU",
+          "wx-K3uGNGefGPv4"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-f41gFkgO04dw:b000112-b000159",
+          "wx-Rh3dV2IE5QuU:b000030-b000054",
+          "wx-K3uGNGefGPv4:b000008-b000039",
+          "wx-K3uGNGefGPv4:b000063-b000063"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-f41gFkgO04dw:b000112-b000159",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-02-17",
+            "locatorLabel": "公众号正文块 112—159（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-Rh3dV2IE5QuU:b000030-b000054",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-02-11",
+            "locatorLabel": "公众号正文块 30—54（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-K3uGNGefGPv4:b000008-b000039",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-02-20",
+            "locatorLabel": "公众号正文块 8—39（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-K3uGNGefGPv4:b000063-b000063",
+            "actor": "中金公司｜刘政宁 张文朗等",
+            "publicationDate": "2022-02-20",
+            "locatorLabel": "公众号正文块 63—63（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-f41gFkgO04dw",
+            "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"
+          },
+          {
+            "sourceId": "wx-Rh3dV2IE5QuU",
+            "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）｜2022-02-11"
+          },
+          {
+            "sourceId": "wx-K3uGNGefGPv4",
+            "label": "中金宏观｜中金宏观 | 如何预测美国通胀？｜2022-02-20"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    },
+    {
+      "nodeId": "pwr01-policy-jan-qt-comparison",
+      "sectionId": "taper-policy",
+      "role": "divergence",
+      "node": {
+        "id": "pwr01-policy-jan-qt-comparison",
+        "title": "1月｜首加趋同后，缩表启动时间仍有分歧",
+        "text": "1月27日会后，中信证券在就业强劲、Omicron影响可能较快消散的判断下，预计3月首次加息、5月讨论后宣布并于6月开启缩表；西部证券也转向3月首加，但将6月公布缩表、7月开始到期不续作作为测算假设，而非已公布安排。已读海通同日候选同样提高3月首加的可能性，却预计二至三季度给出计划、年底较大概率启动被动缩表，并保留通胀、就业和金融条件决定节奏的限制。因此，首加月份趋同没有消除对资产负债表工具速度的分歧。西部的到期规模测算未经本轮复算，不能直接当作可执行缩表上限；中信的较快路径与海通的较晚路径，也都不是联储承诺。",
+        "month": "2022-01",
+        "date": "2022-01-27",
+        "dateRole": "retrospective-analysis-latest-cited-publication",
+        "sourceIds": [
+          "wx-mgFC18RpSdi5",
+          "wx-BSnOcBG6rRBw",
+          "wx-5xySawhWAOWb",
+          "wx-CWZGwTXc1mup"
+        ],
+        "reportIds": [],
+        "evidenceRefs": [
+          "wx-mgFC18RpSdi5:b000022-b000031",
+          "wx-BSnOcBG6rRBw:b000087-b000174",
+          "wx-5xySawhWAOWb:b000043-b000061",
+          "wx-CWZGwTXc1mup:b000128-b000211"
+        ],
+        "supportingEvidence": [
+          {
+            "id": "wx-mgFC18RpSdi5:b000022-b000031",
+            "actor": "中信证券｜崔嵘",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 22—31（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-BSnOcBG6rRBw:b000087-b000174",
+            "actor": "西部证券｜张静静",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 87—174（非PDF页）",
+            "evidenceBasis": "正文条件分析；只在单列范围实际看图，不认证全篇数字"
+          },
+          {
+            "id": "wx-5xySawhWAOWb:b000043-b000061",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-09",
+            "locatorLabel": "公众号正文块 43—61（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          },
+          {
+            "id": "wx-CWZGwTXc1mup:b000128-b000211",
+            "actor": "海通证券｜李俊、梁中华",
+            "publicationDate": "2022-01-27",
+            "locatorLabel": "公众号正文块 128—211（非PDF页）",
+            "evidenceBasis": "原HTML DOM元素与结构化MD对应；图片仅按单列目检范围"
+          }
+        ],
+        "paragraphSources": [
+          {
+            "sourceId": "wx-mgFC18RpSdi5",
+            "label": "CS宏观研究｜【中信证券海外宏观】鲍威尔再放鹰，3月加息几成定局——美联储2022年1月议息会议点评｜2022-01-27"
+          },
+          {
+            "sourceId": "wx-BSnOcBG6rRBw",
+            "label": "招商宏观静思录｜西部宏观丨怎么看美联储能够实现的加息节奏？｜2022-01-27"
+          },
+          {
+            "sourceId": "wx-5xySawhWAOWb",
+            "label": "梁中华宏观研究｜联储加息几次？影响有多大？——美元流动性研究系列一（海通宏观 李俊、梁中华）｜2022-01-09"
+          },
+          {
+            "sourceId": "wx-CWZGwTXc1mup",
+            "label": "梁中华宏观研究｜何时缩表？——美联储1月议息会议点评（海通宏观 李俊、梁中华）｜2022-01-27"
+          }
+        ],
+        "firstAvailableDate": null,
+        "firstAvailable": null,
+        "strictEligible": false,
+        "historicalAsOfEligible": false,
+        "retrospectiveOnly": true,
+        "assertionType": "attributed-research-candidate",
+        "parentAccepted": false
+      }
+    }
+  ],
+  "plan": {
+    "summaryGroups": [
+      {
+        "sectionId": "taper-inflation",
+        "baselineText": "12月公布的11月价格资料显示，问题不仅是能源价格高。BLS列出汽油、住房、食品及汽车的较大贡献，BEA也记录商品和服务价格同时上涨；联储关注的是供给响应慢于强需求、涨价范围扩散。\n\n在这一官方事实背景下，长江团队12月13日也把总体与核心通胀高企联系到收紧压力，兼看能源与服装、食品饮料涨价；中国银行赵雪情12月13日则认为，即使能源与二手车涨势消退，供应链扰动、劳动供给结构性不足与总需求上升仍会共同支撑高通胀。二者都是具名机制解释，不是对工资—价格螺旋的认证。长江未给见顶日期，政策方向、疫情和贸易摩擦仍是其原文风险。",
+        "month": "2021-12",
+        "contributions": [
+          {
+            "addition": "中金12月6日则把供给冲击的持续性放在核心位置，预计高通胀推动加快Taper，却担忧在Omicron威胁消费时过早给出激进加息指引会增加资产扰动。中信12月16日会后关注二季度劳动参与率缺口能否回补、通胀回落多少；若缺口具有刚性，紧缩反而可能加快。两文跨越会议，分别是会前情景与会后风险判断，不能视为对同一份信息的直接分歧。"
+          },
+          {
+            "addition": "新增机构比较显示，12月的分歧主要在成本缓和能否盖过涨价扩散。西部证券张静静把能源、运输及劳动供给的边际改善作为2022年二至三季度通胀中枢下降的依据，但须继续看到工资增速回落；海通梁中华、李俊更担心供应链、用工扭曲和房价向租金传导，使通胀即使剔除暂时因素也难降。前者不是已证实供需恢复正常，后者也不等于工资—价格循环已经成立；疫情变化仍会改变两条路径。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-inflation",
+        "baselineText": "1月公布的12月CPI总体同比仍高，住房和二手车是环比主要贡献，而能源环比下降。因此‘同比继续升高’不等于所有价格分项同步加速。消费数量与名义金额亦须分开。\n\n同月长江1月17日从生产端补充：供应链约束推高运输仓储价格，能源和食品环比回落却形成抵消，总体与核心PPI的预期差方向并不相同。它与该团队对汽车缺芯、二手车替代需求的分析并列，说明消费端降温不能仅凭某个生产端分项推断，更不能机械设定同幅度传导；国内疫情反复和政策调整仍是风险。",
+        "month": "2022-01",
+        "contributions": [
+          {
+            "addition": "海通李俊、梁中华1月13日从总体月度涨幅、调查预期及截尾指标放缓、供应链边际改善提出或将见顶，同时明确疫情、供应链和劳动供给扭曲仍使通胀可能保持高位，未给确定峰值月份。与长江1月14日汽车供给偏紧的解释比较，这是总体与分项的条件差别，而非见顶与涨价不能同时成立。长江也保留国际食品价格回落可能使食品涨势降温的反向信息，但这不等于已向美国CPI即时传导；美国疫情超预期反弹和联储政策转向仍是其风险。海通也未据此取消紧缩判断，仍因沟通及疫情而倾向5月首加。"
+          },
+          {
+            "addition": "1月西部证券与中信证券都把供应链改善视为通胀后续缓和的重要条件，但西部还讨论利率经地产销售和房价传到居住类通胀的路径，同时保留低库存和开工较强的制约，不能据此宣布租金立即降温。国金赵伟的会前研究则提出另一风险：若供给瓶颈缓解而用工错配仍在，核心通胀压力可能转向劳动力成本；若就业修复不足而价格持续高企，政策反而更两难。该文在论坛的转载与既有Wind报告是同作品，不构成新增独立机构票。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-inflation",
+        "baselineText": "2月发布的1月CPI把食品、电力和住房列为主要贡献；汽油、天然气下降部分抵消电力上涨。2月25日的PCE同样观察1月，不能因为发布日期在战争爆发后，就把这些价格解释为战争结果。\n\n长江2月12日把汽车生产改善、汽车涨价趋缓与租金粘性、电力涨价并列，因此没有从单个分项降温推出总体压力结束；同时把高通胀和强就业共同作为3月首加判断的依据，保留疫情超预期反弹和政策转向风险。这与华安关注商品趋缓、工资和服务拖慢回落的情景可比较，但不同机构对全年加息次数的预测不能从长江的首加月份判断中推出来。",
+        "month": "2022-02",
+        "contributions": [
+          {
+            "addition": "海通2月11日依据供应链缓解、商品向服务转移及房价同比领先租金，继续预计通胀或见顶、租金近期放缓，但承认供应链和劳动扭曲会令高位持续；房价图没有固定领先月数，CPI权重调整的影响也未独立量化。中金2月20日则用失业率与租金约半年滞后的关系，强调租金仍有上涨空间，并认为疫情减弱、夏季旅游到来时服务价格有上行风险，并在超额M2历史关系与其他因素综合判断下维持年底核心PCE约4%的预测。后者不是货币扩张的因果认证，也不与海通近期总体CPI拐点构成可直接评分的对赌；资料日、指标与期限均需对齐。"
+          },
+          {
+            "addition": "2月新增西部证券的需求侧情景与已有通胀讨论并置：作者把住房补库、延后投资和基建落地视为旧周期尾声的短暂脉冲，以2—3月逐步开放且没有新增财政转移支付支撑为前提，假定服务消费从3月反弹两个季度、四季度放缓；在由此推演的2023年衰退情景下，作者认为供需矛盾可能快速缓解，不能当作当月通胀已见顶。中信月初强调用工紧张和工资压力，月底又把战争对能源的冲击分成有限与升级情景，后者可能侵蚀美国实际消费并加重政策两难。已读海通的近期寻顶与中金年底核心PCE偏高候选，期限、指标和机制均不同，中金的服务价格上行风险还以疫情减弱及夏季旅游到来为背景，仍需分别检验租金、劳动供给和服务需求，而非用机构数判胜负。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-inflation",
+        "baselineText": "3月10日发布的2月CPI中，汽油、住房和食品贡献突出，核心上涨则以住房为最大因素。既有通胀压力与新增供给风险交织，但整个月的观察不能全部归于月底开始的战争。\n\n长江3月11日强调原油、租金和运输压力，认为一季度CPI同比难现拐点；3月14日于博、黄文琛则在商品需求转向服务、生产恢复、供应链缓慢修复、基数走高及预期3月加息抑制需求的条件下，提出二季度可能回落。作者把信心回落视为需求可能走弱的线索，同时指出汽车需求仍强、芯片短缺、租金滞后及运输堵点仍在，生产修复也未消除供需缺口。能源和食品面临战争冲击，中期原油供给还需观察伊核谈判与美国页岩油产量；2月平均时薪涨幅放缓和预期加息压低通胀预期，只是其认为工资—价格螺旋仍弱的依据，不能由单月工资断言螺旋不会形成。地缘冲突持续超预期和海外货币政策转向仍是风险；7月港口谈判若失败可能阻碍后续供应链恢复，但属于二季度之后的风险窗口。酒店图只到2021年、就餐活动恢复不齐、供应链压力虽较峰值回落仍高，都不支持把降温前提当成已实现。长江两个季度的判断并不矛盾，也不能与民生3月11日的二季度情景强造分歧：民生依赖翘尾减弱，以及报告采用的Manheim领先二手车CPI两个月、Zillow领先租金CPI三个月的经验关系尚未被打破，同时保留能源食品压力、海外央行加息超预期、地缘政治与通胀失控风险。两者资料日和机制依据不同，预测也尚不等于结果。",
+        "month": "2022-03",
+        "contributions": [
+          {
+            "addition": "海通3月11日把短期能源冲击再推高通胀，与供应链缓解、疫情约束减弱及房价领先租金所支持的较长期寻顶分开，强调即使见顶也可能缓慢回落。中信同日则要求观察3—4月工资走势，不从2月时薪近乎不变认定工资压力结束；其增长缓冲情景以供应链、劳动供给和订单改善为前提，不能用来否定油价进一步上涨的风险。它们分别补充期限和供需条件，不把战争后风险倒填成2月整月物价的已识别原因。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-growth",
+        "baselineText": "12月看到的11月就业和消费并不支持一个单一的强弱标签。机构调查新增岗位与家庭调查失业率衡量不同对象；名义消费增加也不意味着实际购买量同比例增长。劳动力参与仍低于疫情前，是政策权衡的重要约束。\n\n长江12月7日把增长与就业继续恢复视为加息预期逐渐主导定价的条件，判断首次加息会在2022年；疫情恶化、政策调整和贸易摩擦仍可能改变路径。东方金诚白雪对不同观察周的解释则提醒，收紧预期增强时，对疫情及未来增长的担忧仍可能压低长端利率。这不是同信息集下互斥的增长预测，而是宏观修复与前景风险并存的两种观察角度。",
+        "month": "2021-12",
+        "contributions": [
+          {
+            "addition": "中金12月6日认为新增非农偏弱之外，失业率下降、参与率改善与工资信号仍支持加快Taper讨论，但Omicron可能压制消费，使抗通胀与保护复苏发生张力。中信12月16日认为增速从高点回落不等于中期增长失去韧性，并关注二季度就业缺口修复：若老龄化等因素限制劳动供给，等待全部岗位回归可能加重通胀约束。这里没有用单一就业流量替代充分就业的综合判断，也没有把疫情风险写成已经发生的衰退。"
+          },
+          {
+            "addition": "西部证券12月3日进一步把失业率下降和参与率回升并列，认为壮年参与率缺口可能意味着仍有可回流的劳动供给，储蓄消耗及工资激励可能支持就业；海通12月17日则提醒部分退出可能长期化。因此，低参与率既可能是复苏的余量，也可能是供给约束，关键是疫情和就业意愿能否允许实际回流，不能只用新增非农的强弱替代这一判断。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-growth",
+        "baselineText": "1月同时出现上季度GDP较快增长、12月实际消费下降与Omicron压制本季活动的信号。它们观察期不同、结构不同，不构成简单矛盾。四季度核算中的库存、出口和消费增加，不能直接证明1月内需全面加速。\n\n长江1月5日仍将12月信心小幅回升置于疫情、通胀和长期前景压力下理解，1月17日又呈现12月零售中线上、家具及文体娱乐偏弱、杂货及建材相对较强的结构。它们与该团队对两套就业调查和劳动供给的解释并列，说明消费者情绪、名义支出和就业修复不能互作替代指标；观察月不同，实际购买量也需另辨。政策、疫情及前稿列明的贸易摩擦风险仍在。",
+        "month": "2022-01",
+        "contributions": [
+          {
+            "addition": "海通1月9日认为低失业率背后可能存在难以恢复的退休与老龄化缺口，故加息不必等待参与率完全回归；1月29日对四季度GDP的乐观解释又同时包含储蓄支持消费与企业补库存，并承认建筑投资拖累、服务及非耐用品环比增速放缓。因此它不是1月各行业同步加速的证据。广发郭磊1月20日讨论的国内稳增长与海外收紧并行，则是中外周期差异的资产约束，不是另一份对美国当月GDP的预测；宏观与流动性环境超预期仍可改变其判断。"
+          },
+          {
+            "addition": "西部证券1月27日把紧缩影响延伸到住房和投资：贷款利率上行可能约束销售与房价，但低库存、房价仍涨和开工较强使其没有预测当年地产立即下行；资本开支明显放缓则放在假设三季度缩表之后的2023年。中信在月初至会后的首加预测前移，也说明就业修复与通胀压力的组合比单一增长标签更能解释风险权衡。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-growth",
+        "baselineText": "2月新发布的1月非农增加与疫情妨碍工作人数上升并存；1月实际消费回升又以商品为主，不能概括为所有服务已经恢复。月底机构对服务业初值改善的解释，涉及更晚观察窗口。\n\n长江2月22日进一步指出，1月零售反弹中线上、汽车、家具和建材较强，但名义销售额也受到价格上涨影响。与之并列，页头2月14日、3月4日修订的文章把消费者信心转弱联系到高通胀及长期前景压力：金额回升与信心下降并不矛盾，后者也不证明实际消费已收缩。两篇均提示政策方向调整和海外疫情恶化；其中修订稿只作后修追溯，不回填2月14日信息集。",
+        "month": "2022-02",
+        "contributions": [
+          {
+            "addition": "海通2月11日将紧缩可能更快、更强，明确系于疫情高峰已过、通胀仍高且后续非农持续好于预期的情形，不能把该条件写成已实现的全年就业趋势。中金2月20日则把供给受损和财政支持购买力并置，认为加快紧缩虽可压低通胀，也会使总需求放缓、增加中期衰退风险。前者强调现时就业给政策的空间，后者强调未来紧缩的代价，两者并非互斥增长预测，也都不能替代尚未公布的季度产出。"
+          },
+          {
+            "addition": "西部证券2月17日从较低失业率、偏窄期限利差出发，将住房补库、延后投资和基建落地看作旧周期尾声的短暂脉冲，以2—3月逐步开放且缺少新增财政转移支付支撑为前提，假定服务消费自3月反弹两个季度、四季度放缓，提出2023年衰退风险。这与其12月将低参与率视为潜在复苏余量的解释存在权重变化，是同作者修订而非两家投票。中信2月6日仍重视就业恢复与用工紧张并存，2月25日、27日则把持续战争或能源制裁升级列为可能侵蚀消费、改变政策路径的条件；当月就业韧性不能否定未来衰退，未来情景也不能回写当月实际活动。"
+          }
+        ]
+      },
+      {
+        "sectionId": "taper-growth",
+        "baselineText": "3月公布的2月就业修复较广，参与率和就业人口比却仍低于疫情前。就业改善与战争带来的后续增长风险分属不同观察层次，不能由前者宣布外部风险无关，也不能由后者回写已发布岗位结果。\n\n长江3月1日从2月PMI初值出发，把防疫放松与旅游娱乐服务恢复相连，同时注意到俄乌冲突带来的能源及避险冲击；政策调整和疫情恶化仍是风险。这与第一财经研究院和长江就业点评的行业修复解释并列，但PMI不能替代消费或GDP。另有页头3月15日、5月6日修订的长江存档，将信心下降与短期通胀担忧相连，而较长期调查预期未变；作者只判断增长可能受压，并提示政策力度和地缘风险。这一后修解释不属于3月15日当时信息集。",
+        "month": "2022-03",
+        "contributions": [
+          {
+            "addition": "中信崔嵘3月11日以供应链回稳、劳动供给回升、订单增加和Omicron消退解释增长缓冲，并在冲突有望较快明朗、但能源制裁仍可能扩大的背景下，估计油价年底升至140美元/桶时全年增长约2.5%—2.8%、年底通胀约5%。这是参数未完整披露的作者情景，年底油价也不是全年均价。中金同日转载文更关注高通胀迫使紧缩与局部美元融资压力并存，提出首加较小、后续视通胀加快及提前缩表的可能；它提示金融条件的传导风险，而非另一份可直接比较的同口径GDP预测。"
+          }
+        ]
+      }
+    ]
+  }
+}

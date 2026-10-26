@@ -1,11 +1,10 @@
-import { readFileSync } from 'node:fs'
+import fixture from './data/taperPriorityPublic.fixture.json'
 import { cleanup, fireEvent, render } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest'
 import data from './data/historyReplayTaper.json'
 import { HistoryReplay } from './historyReplay'
-const read = (name: string) => JSON.parse(readFileSync(`../../PriorityCombinedReview01/${name}.json`, 'utf8'))
-const nodes: {nodeId: string; sectionId: string; role: string; node: {text: string}}[] = read('reviewed-nodes')
-const plan: {summaryGroups: {sectionId: string; baselineText: string; month: string; contributions: {addition: string}[]}[]} = read('stable-ID-integration-plan')
+const nodes: {nodeId: string; sectionId: string; role: string; node: {text: string}}[] = fixture.nodes
+const plan: {summaryGroups: {sectionId: string; baselineText: string; month: string; contributions: {addition: string}[]}[]} = fixture.plan
 afterEach(() => { cleanup(); vi.restoreAllMocks() })
 it('projects all 33 parent-admitted body objects exactly once and both complete summary contributions', () => {
   const sections = data.marketAnalysis.sections
