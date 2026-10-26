@@ -1,0 +1,38 @@
+{
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "302ec639b59d483ec137a7b1615bc73b367c4dc20cf2bf2cf3c8d41ecf69dcaa",
+    "baselineSHA256": "5f0206607fca79f4c92410fd2132ce19cbb71cedca988e595eaf96406fdf98f8",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "324ab52e8ab5db1eb4ec4bcb20c103e57de5b14134d0ebd34a7f3315547a3fd6",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_rate_liftoff_publish.py' -v\n          python -B scripts/verify_rate_liftoff_publish.py --legacy-tests --dist dist\n"
+      }
+    ]
+  },
+  "src/historyReplay.tsx": {
+    "currentSHA256": "bd7611347823cbb51d1836fabb8bc5b0fe146203f85fb86a307bff992dc8de61",
+    "baselineSHA256": "dec9acc3d52a514790b00e0c65817b4c32f56f64fdcdaf405ac5d9748a2a0fd5",
+    "operations": [
+      {
+        "start": 221,
+        "end": 222,
+        "currentSHA256": "19244b12bc8f3dd4bd33757e922ed503b66dda67c2eab7875296052fe36495d4",
+        "baselineText": "function MarketPaths({ paths, cutoff, historical }: { paths: ReplayMarketPaths; cutoff: string; historical: boolean }) {\n"
+      },
+      {
+        "start": 234,
+        "end": 235,
+        "currentSHA256": "043f4333f2f64c4dd6df2449440949def1a6499a0735446861345e378f29104f",
+        "baselineText": "    <div className=\"replay-path-grid\">{paths.approvedCharts && !historical ? paths.approvedCharts.map(chart => <figure className=\"replay-path-chart\" key={chart.src}><figcaption><h3>{chart.title}</h3></figcaption><p className=\"replay-swipe-hint\">小屏可横向滑动查看完整坐标与曲线</p><div className=\"replay-chart-scroll\"><img data-approved-market-chart src={chart.src} alt={chart.title} style={{ minWidth: 900, width: '100%', height: 'auto', display: 'block' }} /></div><p>{chart.seriesIds.map(id => { const item = series.find(s => s.id === id); return `${item?.title} · ${item?.unit}` }).join('；')}。观察期：2021年12月1日至2022年3月15日；来源与逐点记录见下。当前回取，不是当时快照。</p></figure>) : <>{rates.length > 0 && <MarketPathChart series={rates} title=\"利率路径\" unit=\"%\" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</>}</div>\n"
+      },
+      {
+        "start": 599,
+        "end": 600,
+        "currentSHA256": "08012c549ebd62f6a6b17c1a3365efc8955f4ce91c4d54fc3d19b79a2263c9a2",
+        "baselineText": "    {hasMarketValues && <ReadingBlock enabled={readingControls} id=\"reading-paths\" title=\"真实行情路径\" intro=\"观测与版本分别披露\"><MarketPaths paths={data.marketPaths!} cutoff={cutoff} historical={historical} /></ReadingBlock>}\n"
+      }
+    ]
+  }
+}

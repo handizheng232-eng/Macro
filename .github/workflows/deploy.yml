@@ -42,8 +42,8 @@ jobs:
           python -B -m unittest discover -s scripts -p 'test_verify_renewed_easing_publish.py' -v
           python -B scripts/verify_renewed_easing_publish.py --dataset release/snapshots/renewed-easing-publication-1.json --receipt release/replay-renewed-easing-publication.json
           python -B -m unittest discover -s scripts -p 'test_verify_renewed_limited_publish.py' -v
-          python -B -m unittest discover -s scripts -p 'test_verify_rate_liftoff_publish.py' -v
-          python -B scripts/verify_rate_liftoff_publish.py --legacy-tests --dist dist
+          python -B -m unittest discover -s scripts -p 'test_verify_rate_liftoff_publish_02.py' -v
+          python -B scripts/verify_rate_liftoff_publish_02.py --legacy-tests --dist dist
       - name: Verify explicitly authorized partial tariff-pause release
         run: python -B scripts/verify_tariff_partial_publish.py --self-test
       - name: Setup Pages
