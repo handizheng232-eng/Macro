@@ -1,0 +1,140 @@
+{
+  ".gitattributes": {
+    "currentSHA256": "171395d7b8ad346486eb1b744e8abf7309838429b5c740c9d2d46f5e58128b44",
+    "baselineSHA256": "7697d713f09a5b3efd850d48a384f43deb8de6ae412c1eefea360083bcb899ae",
+    "operations": [
+      {
+        "start": 10,
+        "end": 14,
+        "currentSHA256": "6b5768931c695219f7bab3ea8ffa799007f0ce4df207b0836f7fd6a7274c6c57",
+        "baselineText": ""
+      }
+    ]
+  },
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "5f0206607fca79f4c92410fd2132ce19cbb71cedca988e595eaf96406fdf98f8",
+    "baselineSHA256": "92538159a367aa91d68ed3a68275e45f185c771f6cb90594e0cb29d956751ec9",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "62a5720dc337e82e2adaa27f050ff065a72ad5db6d8c286131d90f121f0b6ef7",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_taper_priority_publish_02.py' -v\n          python -B scripts/verify_taper_priority_publish_02.py --legacy-tests --dist dist\n"
+      }
+    ]
+  },
+  "src/App.tsx": {
+    "currentSHA256": "c97597331ea5e982d71e15d0a069fada92d82d3a203c68df898d8a8b3222065f",
+    "baselineSHA256": "d8d8e9f299706ab29d5d5a284531eeaebffc21c1e559e13224a86018ea6cccb2",
+    "operations": [
+      {
+        "start": 30,
+        "end": 31,
+        "currentSHA256": "11015c45c0ffa3df5d2ba09e9abc3593de0081bce764f0a3e7dff061919bd049",
+        "baselineText": ""
+      },
+      {
+        "start": 33,
+        "end": 34,
+        "currentSHA256": "9217a655aa21416fe646f8fdec9c01193b40f2d2f16be51d7540d785bfc14611",
+        "baselineText": "type HistoryReplayStage = 'policy-reversal' | 'hawkish-transition' | 'renewed-easing-qt-end' | 'tariff-pause' | 'accelerated-taper-hawkish-preparation'\n"
+      },
+      {
+        "start": 36,
+        "end": 37,
+        "currentSHA256": "0a4f89aeea0f11d497be9c41dd8aae0aac2d029cc90201cc5efeb3f8055dff39",
+        "baselineText": ""
+      },
+      {
+        "start": 514,
+        "end": 515,
+        "currentSHA256": "26a7cf13f52bebb086f29d03657adfd83705c2520856ca26947b516e63a41fb1",
+        "baselineText": ""
+      },
+      {
+        "start": 805,
+        "end": 806,
+        "currentSHA256": "724b571d7bc30a428f2f913ad860cf85c0bd386778c280926f1c0575ff1ff81a",
+        "baselineText": "    window.history.pushState(null, '', `#history/${stage === 'accelerated-taper-hawkish-preparation' ? 'pandemic-policy-confluence' : 'easing-to-tightening'}/${stage}`)\n"
+      },
+      {
+        "start": 997,
+        "end": 998,
+        "currentSHA256": "cd0d5bc2fdbfea08dec74ac5582c9e996f4e13f9a8753a1d96ce755ee58a92ad",
+        "baselineText": "          historyReplay ? <HistoryReplay key={historyReplay} readingControls={historyReplay === 'renewed-easing-qt-end' || historyReplay === 'accelerated-taper-hawkish-preparation'} onBack={historyReplay === 'accelerated-taper-hawkish-preparation' ? openPandemicHistory : openRecentHistory} data={historyReplay === 'accelerated-taper-hawkish-preparation' ? taperReplayData : historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />\n"
+      }
+    ]
+  },
+  "src/historyReplay.tsx": {
+    "currentSHA256": "dec9acc3d52a514790b00e0c65817b4c32f56f64fdcdaf405ac5d9748a2a0fd5",
+    "baselineSHA256": "68d8b66940fd64ad1239a20da49f0cbd48f16d6c9830231889a91b0b16f0bf7c",
+    "operations": [
+      {
+        "start": 474,
+        "end": 476,
+        "currentSHA256": "7cdd9649cfb7e5e85eece4cc9ab629aebd61a5a30e5505ca0fe6f3d4ead9d12b",
+        "baselineText": ""
+      },
+      {
+        "start": 553,
+        "end": 554,
+        "currentSHA256": "448d8cad0481fab4c0a74dffe05367df12beccfd10105eeca0e11302b632ce48",
+        "baselineText": "      <header><h2>{data.marketAnalysis.title}</h2><span>{data.localReview ? '限定准入 · 阶段性研究发布' : data.experimentStatus ? '保留基线正文；新增公众号限定观点纳入对应主题' : data.partialRelease ? '已审核内容阶段性整理' : '当前完整资料综合研究'} · 非历史时点预期</span></header>\n"
+      },
+      {
+        "start": 601,
+        "end": 602,
+        "currentSHA256": "2e9fec8f94344c5891e88afd0c00602b1706002986c2a319a8517341ae23339a",
+        "baselineText": "    {!historical && data.localReview && <section aria-label=\"五主题逐月路径对照\">{data.marketAnalysis?.sections.map((section, index) => <details key={section.id}><summary>{section.title} · 逐月预期、现实与市场含义</summary><div className=\"replay-table-wrap\"><table><thead><tr><th>月份</th><th>机构预期</th><th>官方现实</th><th>市场含义</th></tr></thead><tbody>{['2021-12', '2022-01', '2022-02', '2022-03'].map(month => <tr key={month}><th>{formatReplayDate(month)}</th>{(['expectationTimeline', 'realityTimeline', 'implicationTimeline'] as const).map(role => <td key={role}>{section.deepDive?.[role]?.filter(n => n.id.includes(month)).map(n => <p key={n.id}>{displayResearchText(n.text, data)} <button type=\"button\" id={`analysis-citation-${n.id}`} data-reading-origin onClick={event => { event.currentTarget.focus({ preventScroll: true }); document.querySelector<HTMLButtonElement>(`.replay-outline [data-reading-target=\"replay-topic-${index}-${role}\"]`)?.click(); goToReadingTarget(`analysis-entry-${n.id}`) }}>查看原节点与出处</button></p>)}</td>)}</tr>)}</tbody></table></div></details>)}</section>}\n"
+      },
+      {
+        "start": 606,
+        "end": 607,
+        "currentSHA256": "da6e14b85bd25d0efbe486b9ff146e62709cbc8d173f9e51f515c3152fe6bd6a",
+        "baselineText": "    {!historical && data.localReview && data.sourceMethodology && <details><summary>来源版本、限定使用与原稿状态说明</summary><p>以下为原稿封口时的原始说明，历史false状态不回写；本版已获阶段性公网发布授权；以下保留原稿审阅时状态，不代表当前发布状态。研究配额与历史资格未升级。</p>{data.sourceMethodology.general.map(text => <p key={text}>{text}</p>)}{data.sourceMethodology.bySource.map(item => <p key={item.sourceId}>{sources.find(s => s.id === item.sourceId)?.title}：{item.note}</p>)}</details>}\n"
+      },
+      {
+        "start": 658,
+        "end": 659,
+        "currentSHA256": "593e5839c3e307d661b3b5c4781308448f5a1dbc48b692f4bbc633333c1c9c67",
+        "baselineText": "        <p>Wind为独立作品建议数，非正式配额全部父准；81份PDF不等于81份合格资料。表中差额只是建议数距目标的差额，正式配额须先对账，不是每月还需重下15篇。</p>\n"
+      },
+      {
+        "start": 660,
+        "end": 663,
+        "currentSHA256": "447f904e50961f7c52e4da041cc59effd652b2b0e8164775fef14baf185f48aa",
+        "baselineText": "        <p>{data.priorityCoverage && '基线：'}公众号取得{data.localReview.wechat.length}篇，已分析采用{data.localReview.wechat.filter(item => item.used).length}篇、已分析不采用{data.localReview.wechat.filter(item => !item.used).length}篇、待分析0篇。采用与限定父准只针对实际支持分支，不等于整源正式配额认证。</p>\n        <p>{data.priorityCoverage ? '本轮新增重点账号及赵伟原发已进入正文，仍有重点池缺口；长江宏观经济研究、东方金诚投资人服务的基线保留。' : '已检索10个重点账号但未取得重点池增量，重点池未达标；本轮实际账号仍为长江宏观经济研究、东方金诚投资人服务。'}同作者续评与跨渠道同作品不增加独立机构票。知识星球取得0篇，已查入口历史范围不明，不能推断全渠道无资料。</p>\n        <div className=\"replay-table-wrap\"><table aria-label=\"新标准逐月渠道状态\"><thead><tr><th>月份</th><th>Wind建议 / 目标 / 建议差额</th><th>正文消费Wind</th><th>公众号取得且已读 / 采用 / 不采用 / 待分析</th><th>公众号目标 / 取得差额</th><th>限定本地父准采用 / 正式配额</th></tr></thead><tbody>{data.localReview.coverage.map(row => <tr key={row.month}><th>{formatReplayDate(row.month)}</th><td>{row.wind.independentWorkSuggestions} / {row.wind.target} / {row.wind.gap}</td><td>{row.wind.draftUsedWorks}</td><td>{row.wechat.previouslyReadBodies} / {row.wechat.draftUsedBodies} / {row.wechat.notUsedBodies} / 0</td><td>{row.wechat.target ?? '未设新合同'} / {row.wechat.acquisitionGap ?? '待核'}</td><td>{row.wechat.limitedLocalUsedBodies ?? '待核'} / 未验收</td></tr>)}</tbody></table></div>\n"
+      }
+    ]
+  },
+  "src/inflationOverview.test.tsx": {
+    "currentSHA256": "dcde8d860f950fda055abee84e2b97921669a776fd465d36e8c3c6aecb18f0be",
+    "baselineSHA256": "b258c82196cbae6aa37e4af97fdeba987ea563c324aa97f614d0102b69aeaac5",
+    "operations": [
+      {
+        "start": 16,
+        "end": 17,
+        "currentSHA256": "76fdebe82886f49baa00d108c55816dffb871c94b587bd76b6ef76ce87ae107a",
+        "baselineText": "it('直达八段分期方案，日期连续、全部待复盘且没有假详情入口', () => {\n"
+      },
+      {
+        "start": 27,
+        "end": 34,
+        "currentSHA256": "03c6366ba6fde68fd38b832869e596fbb6740bc485733b2bf1826c910af6bbae",
+        "baselineText": "    expect(within(card).getByText('待复盘')).toBeInTheDocument()\n    expect(within(card).queryAllByRole('button')).toHaveLength(0)\n"
+      }
+    ]
+  },
+  "src/inflationOverview.ts": {
+    "currentSHA256": "2fb5b2fbc048d66ae5005a2925c490d8d4b84ae2432aaf9dc23a7e5b392fbd45",
+    "baselineSHA256": "e5d495d80c84d44275cfcac5bb12ce555622559e226971b1d9b90c81c5e398fb",
+    "operations": [
+      {
+        "start": 33,
+        "end": 34,
+        "currentSHA256": "b8dad55751889958907362e9fbbd3aeb80781e39542b7b00d090591688fba83e",
+        "baselineText": "    number: '09.1', period: '2022-03-16至2022-05-31', title: '加息启动与缩表定调', status: '待复盘',\n"
+      }
+    ]
+  }
+}

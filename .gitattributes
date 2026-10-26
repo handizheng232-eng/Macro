@@ -8,3 +8,7 @@ release/snapshots/renewed-easing-publication-1.json -text
 src/historyReplay.tsx -text
 src/data/historyReplayTaper.json -text
 public/taper-charts/*.svg -text
+
+src/data/historyReplayRateLiftoffQtGuidance.json -text
+public/replay-rate-liftoff/*.svg -text
+src/test/rateLiftoffPublicPins.json -text

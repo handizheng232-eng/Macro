@@ -1,0 +1,1417 @@
+[
+  {
+    "id": "POL-CORE",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/0",
+    "sha256": "cae989c5d78e08323864f3e72691b41aafb8d5a55fa0e1adebeda4259653375c"
+  },
+  {
+    "id": "POL-M03",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/1",
+    "sha256": "91090f8e268b0e6ee9e3ac47febec500988e93b141dac3262339aa308bcac697"
+  },
+  {
+    "id": "POL-M04",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/2",
+    "sha256": "1dcd860a87aa1156c92ec5f2096ecf47c3add96f2aa7c511ff98835a7e35b944"
+  },
+  {
+    "id": "POL-M05",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/3",
+    "sha256": "6aff9224b317d3de38a4f1b53bd904780c7825290565f6e17d9ae7287012125d"
+  },
+  {
+    "id": "INF-CORE",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/0",
+    "sha256": "4c93ff0e92a293898bcabc4a35df5766745ffc56ab333c56d80ae599a243f5a2"
+  },
+  {
+    "id": "M03-INF-COMPLETE",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/1",
+    "sha256": "e67ec787972e9ce5a44b48adc4e279567d937062fa9f3eef276b5f4328e013e5"
+  },
+  {
+    "id": "M04-INF-COMPLETE",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/2",
+    "sha256": "9e1128a0c9f05f3db3c4935e1d191a2161b1c1714eac4d7d12d13280b77b5c57"
+  },
+  {
+    "id": "M05-INF-COMPLETE",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/3",
+    "sha256": "04a363ac629e6a4b41d9686a2c2dd7a3a8c9eff4dee92fa881148cc36172bb94"
+  },
+  {
+    "id": "GROW-CORE",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/0",
+    "sha256": "94ffd3bbd150164f978d81f287454545f10d2734a05f4095e8e6b65ca6600332"
+  },
+  {
+    "id": "M03-GROW-COMPLETE",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/1",
+    "sha256": "51a3af6c4b6904680097c518858084e123bc5cabf8b26aee98d0a0a6b58033a8"
+  },
+  {
+    "id": "M04-GROW-COMPLETE",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/2",
+    "sha256": "e13bcbd09e87323bdae510e1702f850a003253fa2489e6984f2fe3993e51ff69"
+  },
+  {
+    "id": "M05-GROW-COMPLETE",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/3",
+    "sha256": "f118e802cff51f6bb334ab790125d9b2c1bee734204af66cd0838010e3889518"
+  },
+  {
+    "id": "YC-CORE",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/0",
+    "sha256": "dc99343312e19ac4911ad6a607f9b625c707463a4334738ab85349e353ecab9e"
+  },
+  {
+    "id": "YC-M03",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/1",
+    "sha256": "fbcd23cf8584845c7abdfc98da13e78e6d3aaf91d31f32903861a680ce82b290"
+  },
+  {
+    "id": "YC-M04",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/2",
+    "sha256": "b468ed828abeded4d145fe40bcc3b6d5d0b705e474b0cdbf90281060b8cee5cc"
+  },
+  {
+    "id": "YC-M05",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/3",
+    "sha256": "a6326bc86dc246988685dae2daee987421c41395d962289222f37075606f2324"
+  },
+  {
+    "id": "USD-CORE",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/0",
+    "sha256": "98ff7ae93d3c2effbe3911de6788cf7a4fb1a1a897b42024f99b35d0cf56bae8"
+  },
+  {
+    "id": "USD-M03",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/1",
+    "sha256": "bebf47fc96e803e195cf68eecabbe8647d8412dfa31d2f1e5b654ce7ca927ba8"
+  },
+  {
+    "id": "USD-M04",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/2",
+    "sha256": "5c1446c485b204b6c1e1abe5142389472c1b4b39db0d470c42a63d14b575a6fe"
+  },
+  {
+    "id": "USD-M05",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/3",
+    "sha256": "a2852c0bd30286508f5586f1be4cb511499b832f130c4a090aee671420295c95"
+  },
+  {
+    "id": "VIEW-WR02-C05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/0/text",
+    "sha256": "0f2e6a6ea3c17402a2edbf460488d01f0a43954c35caadd2d8de75249b3040e4"
+  },
+  {
+    "id": "VIEW-WR02-C05",
+    "pointer": "/windResearchEvidence/10/claim",
+    "sha256": "0f2e6a6ea3c17402a2edbf460488d01f0a43954c35caadd2d8de75249b3040e4"
+  },
+  {
+    "id": "VIEW-WC-N00",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/1/text",
+    "sha256": "2662ef0eb628be948c34d47e798845d5fb1c72b67f94d14cc352317b1dba95b5"
+  },
+  {
+    "id": "VIEW-WC-N00",
+    "pointer": "/wechatResearchEvidence/12/claim",
+    "sha256": "2662ef0eb628be948c34d47e798845d5fb1c72b67f94d14cc352317b1dba95b5"
+  },
+  {
+    "id": "VIEW-WC-N01",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/2/text",
+    "sha256": "de0325147097a3548278eb2e130afd4361df11643e2a84b0a3cadd3ed72426e3"
+  },
+  {
+    "id": "VIEW-WC-N01",
+    "pointer": "/wechatResearchEvidence/13/claim",
+    "sha256": "de0325147097a3548278eb2e130afd4361df11643e2a84b0a3cadd3ed72426e3"
+  },
+  {
+    "id": "VIEW-WC-N06",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/3/text",
+    "sha256": "c96856758038f7f1e3908221aac8f8683d79afdfa6f0aadc8f26ecfe442b6972"
+  },
+  {
+    "id": "VIEW-WC-N06",
+    "pointer": "/wechatResearchEvidence/18/claim",
+    "sha256": "c96856758038f7f1e3908221aac8f8683d79afdfa6f0aadc8f26ecfe442b6972"
+  },
+  {
+    "id": "VIEW-WC-N07",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/4/text",
+    "sha256": "5c35f4817f00c9274f48cddc0d0902f0f32c3008d16c522ea96b577bd9bc7ef8"
+  },
+  {
+    "id": "VIEW-WC-N07",
+    "pointer": "/wechatResearchEvidence/19/claim",
+    "sha256": "5c35f4817f00c9274f48cddc0d0902f0f32c3008d16c522ea96b577bd9bc7ef8"
+  },
+  {
+    "id": "VIEW-WC-N09",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/5/text",
+    "sha256": "a0027bed517c7fa6bcd53e28df581098d11de2538bf5627ba29b00fdf6ab6624"
+  },
+  {
+    "id": "VIEW-WC-N09",
+    "pointer": "/wechatResearchEvidence/20/claim",
+    "sha256": "a0027bed517c7fa6bcd53e28df581098d11de2538bf5627ba29b00fdf6ab6624"
+  },
+  {
+    "id": "VIEW-WC-N12",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/6/text",
+    "sha256": "9e1ecd75dfc4bb3b243ca699f15e122f292794a69d573bada8a4291ba4bf83d3"
+  },
+  {
+    "id": "VIEW-WC-N12",
+    "pointer": "/wechatResearchEvidence/23/claim",
+    "sha256": "9e1ecd75dfc4bb3b243ca699f15e122f292794a69d573bada8a4291ba4bf83d3"
+  },
+  {
+    "id": "VIEW-WR01-C07",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/7/text",
+    "sha256": "e910741469b4996984bed960339648f67742e4398b6027c3c0a1beded2ca625b"
+  },
+  {
+    "id": "VIEW-WR01-C07",
+    "pointer": "/windResearchEvidence/5/claim",
+    "sha256": "e910741469b4996984bed960339648f67742e4398b6027c3c0a1beded2ca625b"
+  },
+  {
+    "id": "VIEW-WC-N05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/8/text",
+    "sha256": "1027ead825f66c6a4773cffc158cc41227e4970444ed9e73aeae327f4feb0f3c"
+  },
+  {
+    "id": "VIEW-WC-N05",
+    "pointer": "/wechatResearchEvidence/17/claim",
+    "sha256": "1027ead825f66c6a4773cffc158cc41227e4970444ed9e73aeae327f4feb0f3c"
+  },
+  {
+    "id": "VIEW-WR01-C03",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/9/text",
+    "sha256": "9da78c4b8b48ede5d17eb27f6adced037063eb9e213c40e9963437720d548aaa"
+  },
+  {
+    "id": "VIEW-WR01-C03",
+    "pointer": "/windResearchEvidence/2/claim",
+    "sha256": "9da78c4b8b48ede5d17eb27f6adced037063eb9e213c40e9963437720d548aaa"
+  },
+  {
+    "id": "VIEW-WR01-C02",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/10/text",
+    "sha256": "cbb4d6b8049e623a3ef2895f6ffb744b8ab92316dd3c68b144b18e690baed18e"
+  },
+  {
+    "id": "VIEW-WR01-C02",
+    "pointer": "/windResearchEvidence/1/claim",
+    "sha256": "cbb4d6b8049e623a3ef2895f6ffb744b8ab92316dd3c68b144b18e690baed18e"
+  },
+  {
+    "id": "VIEW-WR01-C01",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/11/text",
+    "sha256": "3366d38ca39b079bcd94185c338dad2f38198f6b3170ec5fe84e3b9cf0d06f1d"
+  },
+  {
+    "id": "VIEW-WR01-C01",
+    "pointer": "/windResearchEvidence/0/claim",
+    "sha256": "3366d38ca39b079bcd94185c338dad2f38198f6b3170ec5fe84e3b9cf0d06f1d"
+  },
+  {
+    "id": "VIEW-WC-N17",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/12/text",
+    "sha256": "45447235436b3059ec50de4bdef9f21931eaffff91dd539bfb592b2212f4c369"
+  },
+  {
+    "id": "VIEW-WC-N17",
+    "pointer": "/wechatResearchEvidence/28/claim",
+    "sha256": "45447235436b3059ec50de4bdef9f21931eaffff91dd539bfb592b2212f4c369"
+  },
+  {
+    "id": "VIEW-WC-N19",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/13/text",
+    "sha256": "310f319928f104f6d402643aff4c809d38974eb54e8d113ace1afe4946de630a"
+  },
+  {
+    "id": "VIEW-WC-N19",
+    "pointer": "/wechatResearchEvidence/30/claim",
+    "sha256": "310f319928f104f6d402643aff4c809d38974eb54e8d113ace1afe4946de630a"
+  },
+  {
+    "id": "VIEW-WR03-C04",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/14/text",
+    "sha256": "7e0c0a59ac38f97d4c0e8a6fa73575d6bb3b7899bb84958527ebc49e43451a7d"
+  },
+  {
+    "id": "VIEW-WR03-C04",
+    "pointer": "/windResearchEvidence/21/claim",
+    "sha256": "7e0c0a59ac38f97d4c0e8a6fa73575d6bb3b7899bb84958527ebc49e43451a7d"
+  },
+  {
+    "id": "VIEW-WR03-C05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/15/text",
+    "sha256": "1d09304c8cc08b39ade70e3d111e516793cbe2bfa02432f0a44fdea047d847ad"
+  },
+  {
+    "id": "VIEW-WR03-C05",
+    "pointer": "/windResearchEvidence/22/claim",
+    "sha256": "1d09304c8cc08b39ade70e3d111e516793cbe2bfa02432f0a44fdea047d847ad"
+  },
+  {
+    "id": "VIEW-WC-N29",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/16/text",
+    "sha256": "75342aff6e7389f7f4e07f34f0dfad33b9164b18f7885a9ae345e1bb94ff475b"
+  },
+  {
+    "id": "VIEW-WC-N29",
+    "pointer": "/wechatResearchEvidence/40/claim",
+    "sha256": "75342aff6e7389f7f4e07f34f0dfad33b9164b18f7885a9ae345e1bb94ff475b"
+  },
+  {
+    "id": "VIEW-WR03-C01",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/17/text",
+    "sha256": "c3e18614874dc30d29109441e9bcca5702d335c6347c5f74a289f2547dd8bc3f"
+  },
+  {
+    "id": "VIEW-WR03-C01",
+    "pointer": "/windResearchEvidence/18/claim",
+    "sha256": "c3e18614874dc30d29109441e9bcca5702d335c6347c5f74a289f2547dd8bc3f"
+  },
+  {
+    "id": "VIEW-WC-N33",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/18/text",
+    "sha256": "0ae44e1d57afef871314dead6eb35bc2e5fd38294cdc6cf81edc7a26c70634ee"
+  },
+  {
+    "id": "VIEW-WC-N33",
+    "pointer": "/wechatResearchEvidence/44/claim",
+    "sha256": "0ae44e1d57afef871314dead6eb35bc2e5fd38294cdc6cf81edc7a26c70634ee"
+  },
+  {
+    "id": "VIEW-WC-N34",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/19/text",
+    "sha256": "55371ac4376b79993b2e34674bd7570916972df905d6a7af6ff69660b691b079"
+  },
+  {
+    "id": "VIEW-WC-N34",
+    "pointer": "/wechatResearchEvidence/45/claim",
+    "sha256": "55371ac4376b79993b2e34674bd7570916972df905d6a7af6ff69660b691b079"
+  },
+  {
+    "id": "VIEW-WC-L06",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/20/text",
+    "sha256": "01312c0cb9e025b306ec76c6127a038250e128474cfe15bfacc8ca7800521340"
+  },
+  {
+    "id": "VIEW-WC-L06",
+    "pointer": "/wechatResearchEvidence/3/claim",
+    "sha256": "01312c0cb9e025b306ec76c6127a038250e128474cfe15bfacc8ca7800521340"
+  },
+  {
+    "id": "VIEW-WC-L13",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/21/text",
+    "sha256": "e45bafcfa20da6b9df9eb0fa5f208e2f301187e850e2dc70f58af5706b8099f7"
+  },
+  {
+    "id": "VIEW-WC-L13",
+    "pointer": "/wechatResearchEvidence/8/claim",
+    "sha256": "e45bafcfa20da6b9df9eb0fa5f208e2f301187e850e2dc70f58af5706b8099f7"
+  },
+  {
+    "id": "VIEW-WC-L14",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/22/text",
+    "sha256": "b5d0fcc61e69c84855be8a9fae1967daadd774f208290b0d9a006c33de0bccb7"
+  },
+  {
+    "id": "VIEW-WC-L14",
+    "pointer": "/wechatResearchEvidence/9/claim",
+    "sha256": "b5d0fcc61e69c84855be8a9fae1967daadd774f208290b0d9a006c33de0bccb7"
+  },
+  {
+    "id": "VIEW-WC-N31",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/23/text",
+    "sha256": "7eb41cd0728783bc6bc05655ecf108add200fef546b3bf9ef8bab80ae6b134b4"
+  },
+  {
+    "id": "VIEW-WC-N31",
+    "pointer": "/wechatResearchEvidence/42/claim",
+    "sha256": "7eb41cd0728783bc6bc05655ecf108add200fef546b3bf9ef8bab80ae6b134b4"
+  },
+  {
+    "id": "VIEW-WC-N32",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/24/text",
+    "sha256": "4c496012016acb1b4c93cf38836ce0c768215788abbc7820a8b2963b7983bd6f"
+  },
+  {
+    "id": "VIEW-WC-N32",
+    "pointer": "/wechatResearchEvidence/43/claim",
+    "sha256": "4c496012016acb1b4c93cf38836ce0c768215788abbc7820a8b2963b7983bd6f"
+  },
+  {
+    "id": "VIEW-WR04-C05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/25/text",
+    "sha256": "e770ad1b7e04b668f51e83e47b6a57f657fe0aab380c5da12dc930ef6b4a441a"
+  },
+  {
+    "id": "VIEW-WR04-C05",
+    "pointer": "/windResearchEvidence/31/claim",
+    "sha256": "e770ad1b7e04b668f51e83e47b6a57f657fe0aab380c5da12dc930ef6b4a441a"
+  },
+  {
+    "id": "VIEW-WR04-C07",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/26/text",
+    "sha256": "ff33eaad768e39c57ff533a4836336c0a165fb3b169665529e4fe495a87b1f64"
+  },
+  {
+    "id": "VIEW-WR04-C07",
+    "pointer": "/windResearchEvidence/33/claim",
+    "sha256": "ff33eaad768e39c57ff533a4836336c0a165fb3b169665529e4fe495a87b1f64"
+  },
+  {
+    "id": "VIEW-WC-L07",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/27/text",
+    "sha256": "7d0bf6e2553131d530e5f85fa6fb990cee943539c93883ecadda9f5dfb420117"
+  },
+  {
+    "id": "VIEW-WC-L07",
+    "pointer": "/wechatResearchEvidence/4/claim",
+    "sha256": "7d0bf6e2553131d530e5f85fa6fb990cee943539c93883ecadda9f5dfb420117"
+  },
+  {
+    "id": "VIEW-WR04-C02",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/28/text",
+    "sha256": "9dba8fb04d7a7bb52bc58e1493022e5706cd1e3e509a79fd31e7600b698fa45d"
+  },
+  {
+    "id": "VIEW-WR04-C02",
+    "pointer": "/windResearchEvidence/28/claim",
+    "sha256": "9dba8fb04d7a7bb52bc58e1493022e5706cd1e3e509a79fd31e7600b698fa45d"
+  },
+  {
+    "id": "VIEW-WR04-C04",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/29/text",
+    "sha256": "54ae33cc5e534625fd2cce4759321dc071c5a1b53879589e9c53894df81c309d"
+  },
+  {
+    "id": "VIEW-WR04-C04",
+    "pointer": "/windResearchEvidence/30/claim",
+    "sha256": "54ae33cc5e534625fd2cce4759321dc071c5a1b53879589e9c53894df81c309d"
+  },
+  {
+    "id": "VIEW-WC-L05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/30/text",
+    "sha256": "25a8b70ce6171ea6ca3ecaa98e8a45f88645e01b8f1fa56d5e89bd040b2ec383"
+  },
+  {
+    "id": "VIEW-WC-L05",
+    "pointer": "/wechatResearchEvidence/2/claim",
+    "sha256": "25a8b70ce6171ea6ca3ecaa98e8a45f88645e01b8f1fa56d5e89bd040b2ec383"
+  },
+  {
+    "id": "VIEW-WR03-C08",
+    "pointer": "/marketAnalysis/sections/0/deepDive/expectationTimeline/31/text",
+    "sha256": "158dd11ba75e2924bacea07e2990f9fbf4acdcd935762ef1ab10cb4d5e3c9e2a"
+  },
+  {
+    "id": "VIEW-WR03-C08",
+    "pointer": "/windResearchEvidence/25/claim",
+    "sha256": "158dd11ba75e2924bacea07e2990f9fbf4acdcd935762ef1ab10cb4d5e3c9e2a"
+  },
+  {
+    "id": "POL-MAR-ACTUAL",
+    "pointer": "/marketAnalysis/sections/0/deepDive/realityTimeline/0/text",
+    "sha256": "4a9875d97b3ae06ee314cefd7c9893ec7b10a32f7c24445870ac50e311aec3d0"
+  },
+  {
+    "id": "POL-APR-ACTUAL",
+    "pointer": "/marketAnalysis/sections/0/deepDive/realityTimeline/1/text",
+    "sha256": "f26c8783958e6961854fa6c00189995a2d38c1db3af3162b90c35bdc258cfa00"
+  },
+  {
+    "id": "POL-MAY-ACTUAL",
+    "pointer": "/marketAnalysis/sections/0/deepDive/realityTimeline/2/text",
+    "sha256": "8f2d0c7a4486d0b43c14e1e24c8a3ea6d9279bfa4cb4d8aed14e09dd65391ab6"
+  },
+  {
+    "id": "POL-TOOLS",
+    "pointer": "/marketAnalysis/sections/0/deepDive/mechanism/0/text",
+    "sha256": "5ea6b16aab8e25a19e20498619283dc42b510011f0243ad78d182155dd6228b8"
+  },
+  {
+    "id": "POL-TRANSMISSION",
+    "pointer": "/marketAnalysis/sections/0/deepDive/mechanism/1/text",
+    "sha256": "ae185ec36baee73419cbae60e237a5dd435504bf28a7ca1ba8bf33c1fbb163d0"
+  },
+  {
+    "id": "REV-CITIC",
+    "pointer": "/marketAnalysis/sections/0/deepDive/divergence/0/text",
+    "sha256": "88851179a54b08cc203f0c7a326024085be4411bf88cc56ce6a089c5e1e689a7"
+  },
+  {
+    "id": "policy-market-2022-03",
+    "pointer": "/marketAnalysis/sections/0/deepDive/implicationTimeline/0/text",
+    "sha256": "f4f372bf4e48d9f485df8b2067d46820a515da055ca699a598a60f02ce33957a"
+  },
+  {
+    "id": "policy-market-2022-04",
+    "pointer": "/marketAnalysis/sections/0/deepDive/implicationTimeline/1/text",
+    "sha256": "e6154522ef8bb9bf884458e5e359b1d79d2c42f3b6a622f74c6b84d362c21668"
+  },
+  {
+    "id": "policy-market-2022-05",
+    "pointer": "/marketAnalysis/sections/0/deepDive/implicationTimeline/2/text",
+    "sha256": "715f70714bd5ab1b2191923b2e29e15c85701cd46434d420c98963bd829b3dcb"
+  },
+  {
+    "id": "POL-REACTION",
+    "pointer": "/marketAnalysis/sections/0/deepDive/implicationTimeline/3/text",
+    "sha256": "19689c5a352c341195d5ae662fb8d6b18f03dab98aaa4c927301458dcd560ec8"
+  },
+  {
+    "id": "POL-PAIR",
+    "pointer": "/marketAnalysis/sections/0/deepDive/examples/0/text",
+    "sha256": "9d4c936d083563802d7c6c2737441bc59e2e39779afc190811505f18e019bc3e"
+  },
+  {
+    "id": "POL-TEST",
+    "pointer": "/marketAnalysis/sections/0/deepDive/validation/0/text",
+    "sha256": "2cf5996adeb2ec7658b62a81f63197ae95bb3ac21addb3536db55cf71642ac4b"
+  },
+  {
+    "id": "policy-intro-expectationTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/expectationTimeline/text",
+    "sha256": "ae076c6226161dcbaaa8de18f876f7d80e0d569d280288357ebf7a50b77a2730"
+  },
+  {
+    "id": "policy-intro-realityTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/realityTimeline/text",
+    "sha256": "906ffb92d81bc78b0da1d187b86b11a70dfc5db46f6174fa2b30729af64e899d"
+  },
+  {
+    "id": "policy-intro-mechanism",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/mechanism/text",
+    "sha256": "36b974ab93403c20eb0b2cdcdf00260649073d99c1df1ff86755f534d132cab5"
+  },
+  {
+    "id": "policy-intro-divergence",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/divergence/text",
+    "sha256": "2240a8e954043e0c9af40d838619e560cf645454b6eec8a11cde781e8ee83464"
+  },
+  {
+    "id": "policy-intro-implicationTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/implicationTimeline/text",
+    "sha256": "d81ae886d1e1688da9d147f7a7c8a8dddcda5d11b62af882895fb17994b7df95"
+  },
+  {
+    "id": "policy-intro-examples",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/examples/text",
+    "sha256": "fc05699d6220c1ccdc753739c65b92ddd2e2e8a09e3486497455d80347f18e6d"
+  },
+  {
+    "id": "policy-intro-validation",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/validation/text",
+    "sha256": "e2dad7c40235ce057610ae164d527969eb7e66d444decd0dada826f43089b6cc"
+  },
+  {
+    "id": "VIEW-WC-N02",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/0/text",
+    "sha256": "69cd5117710051f039b18afe77b54efe32383a83cf8e1638bca9aec404301fea"
+  },
+  {
+    "id": "VIEW-WC-N02",
+    "pointer": "/wechatResearchEvidence/14/claim",
+    "sha256": "69cd5117710051f039b18afe77b54efe32383a83cf8e1638bca9aec404301fea"
+  },
+  {
+    "id": "VIEW-WR01-C04",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/1/text",
+    "sha256": "41168b87d5ed69ed691872a5fdec0b62bc8ba8f617dc1caeb4c3417b8c06dff9"
+  },
+  {
+    "id": "VIEW-WR01-C04",
+    "pointer": "/windResearchEvidence/3/claim",
+    "sha256": "41168b87d5ed69ed691872a5fdec0b62bc8ba8f617dc1caeb4c3417b8c06dff9"
+  },
+  {
+    "id": "VIEW-WR02-C01",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/2/text",
+    "sha256": "635207fce23e7954d48bb76a913ca0fcfa8148c0c202e46624b0407196106395"
+  },
+  {
+    "id": "VIEW-WR02-C01",
+    "pointer": "/windResearchEvidence/6/claim",
+    "sha256": "635207fce23e7954d48bb76a913ca0fcfa8148c0c202e46624b0407196106395"
+  },
+  {
+    "id": "VIEW-WR02-C04",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/3/text",
+    "sha256": "5635b774ed01f586011976803041f9178eee778d7670bde54d31572375ae9e52"
+  },
+  {
+    "id": "VIEW-WR02-C04",
+    "pointer": "/windResearchEvidence/9/claim",
+    "sha256": "5635b774ed01f586011976803041f9178eee778d7670bde54d31572375ae9e52"
+  },
+  {
+    "id": "VIEW-WC-N03",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/4/text",
+    "sha256": "83475a0542cf361ae08b8024e58c8eadb3480acccf465c6936fb2c8dde452021"
+  },
+  {
+    "id": "VIEW-WC-N03",
+    "pointer": "/wechatResearchEvidence/15/claim",
+    "sha256": "83475a0542cf361ae08b8024e58c8eadb3480acccf465c6936fb2c8dde452021"
+  },
+  {
+    "id": "VIEW-WC-N15",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/5/text",
+    "sha256": "49a7532709c25f5c97b0b933772f2d0dc059769737e2ed50856c1bfa5c42a8e7"
+  },
+  {
+    "id": "VIEW-WC-N15",
+    "pointer": "/wechatResearchEvidence/26/claim",
+    "sha256": "49a7532709c25f5c97b0b933772f2d0dc059769737e2ed50856c1bfa5c42a8e7"
+  },
+  {
+    "id": "VIEW-WR03-C03",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/6/text",
+    "sha256": "927ec56b6bc10aa2d4027f8ba09c1a2f82a80f80bbbf55e5b456f18437c5561a"
+  },
+  {
+    "id": "VIEW-WR03-C03",
+    "pointer": "/windResearchEvidence/20/claim",
+    "sha256": "927ec56b6bc10aa2d4027f8ba09c1a2f82a80f80bbbf55e5b456f18437c5561a"
+  },
+  {
+    "id": "VIEW-WR02-C12",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/7/text",
+    "sha256": "c461b7df1306e63c2ae94acfe5f0eab30e4269581a8a0aa8ec78b2f000105a3c"
+  },
+  {
+    "id": "VIEW-WR02-C12",
+    "pointer": "/windResearchEvidence/16/claim",
+    "sha256": "c461b7df1306e63c2ae94acfe5f0eab30e4269581a8a0aa8ec78b2f000105a3c"
+  },
+  {
+    "id": "VIEW-WC-N27",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/8/text",
+    "sha256": "85cb054e01775cbcbab00ca3af830d21911237402f0d1a41f9151c143affdeb6"
+  },
+  {
+    "id": "VIEW-WC-N27",
+    "pointer": "/wechatResearchEvidence/38/claim",
+    "sha256": "85cb054e01775cbcbab00ca3af830d21911237402f0d1a41f9151c143affdeb6"
+  },
+  {
+    "id": "VIEW-WC-N22",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/9/text",
+    "sha256": "83f2bd8b3078772168d60793d2b876fb446510bab4d01918b45d6eb8b895b37e"
+  },
+  {
+    "id": "VIEW-WC-N22",
+    "pointer": "/wechatResearchEvidence/33/claim",
+    "sha256": "83f2bd8b3078772168d60793d2b876fb446510bab4d01918b45d6eb8b895b37e"
+  },
+  {
+    "id": "VIEW-WC-L03",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/10/text",
+    "sha256": "f554d656f7f501d38ba897c782d6aaaa78227aee7142ae944f27234b11e76bb6"
+  },
+  {
+    "id": "VIEW-WC-L03",
+    "pointer": "/wechatResearchEvidence/1/claim",
+    "sha256": "f554d656f7f501d38ba897c782d6aaaa78227aee7142ae944f27234b11e76bb6"
+  },
+  {
+    "id": "VIEW-WC-L01",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/11/text",
+    "sha256": "f06b7cc6046a1cf4b8fd1d7f275a469ddcf8cdc0ba2105ba775f7192d43116bd"
+  },
+  {
+    "id": "VIEW-WC-L01",
+    "pointer": "/wechatResearchEvidence/0/claim",
+    "sha256": "f06b7cc6046a1cf4b8fd1d7f275a469ddcf8cdc0ba2105ba775f7192d43116bd"
+  },
+  {
+    "id": "VIEW-WC-L18",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/12/text",
+    "sha256": "fa56203898a27e5c2be2858624667d53fa8ff31a345223e0cb4f856aa590e820"
+  },
+  {
+    "id": "VIEW-WC-L18",
+    "pointer": "/wechatResearchEvidence/11/claim",
+    "sha256": "fa56203898a27e5c2be2858624667d53fa8ff31a345223e0cb4f856aa590e820"
+  },
+  {
+    "id": "VIEW-WC-N30",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/13/text",
+    "sha256": "25fb5ed20ca37ee4663bffa9d4456c5e262f34a4c9c576383fcb304e0a250636"
+  },
+  {
+    "id": "VIEW-WC-N30",
+    "pointer": "/wechatResearchEvidence/41/claim",
+    "sha256": "25fb5ed20ca37ee4663bffa9d4456c5e262f34a4c9c576383fcb304e0a250636"
+  },
+  {
+    "id": "VIEW-WC-L17",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/14/text",
+    "sha256": "6f9de140e9ec00092dd1c0f49a4d60258c6c69136644c1e907dc77d563b27d22"
+  },
+  {
+    "id": "VIEW-WC-L17",
+    "pointer": "/wechatResearchEvidence/10/claim",
+    "sha256": "6f9de140e9ec00092dd1c0f49a4d60258c6c69136644c1e907dc77d563b27d22"
+  },
+  {
+    "id": "VIEW-WR03-C10",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/15/text",
+    "sha256": "eb212b3154d38407894b1e7c4fe01671e15adb08da32d880242193ad40dcba10"
+  },
+  {
+    "id": "VIEW-WR03-C10",
+    "pointer": "/windResearchEvidence/26/claim",
+    "sha256": "eb212b3154d38407894b1e7c4fe01671e15adb08da32d880242193ad40dcba10"
+  },
+  {
+    "id": "VIEW-WC-L12",
+    "pointer": "/marketAnalysis/sections/1/deepDive/expectationTimeline/16/text",
+    "sha256": "8deb8e6066775bd1f8990f8f415da81dbd3c93e823750d73e0d417ee4d26cab6"
+  },
+  {
+    "id": "VIEW-WC-L12",
+    "pointer": "/wechatResearchEvidence/7/claim",
+    "sha256": "8deb8e6066775bd1f8990f8f415da81dbd3c93e823750d73e0d417ee4d26cab6"
+  },
+  {
+    "id": "M03-INF-FACTS",
+    "pointer": "/marketAnalysis/sections/1/deepDive/realityTimeline/0/text",
+    "sha256": "9536ba26ee0b48a88eda586b76d2c806116c207a602aac0b24ca9f27e262acc9"
+  },
+  {
+    "id": "M04-INF-FACTS",
+    "pointer": "/marketAnalysis/sections/1/deepDive/realityTimeline/1/text",
+    "sha256": "1dc96d2b37a225da9a3a488c7f8c1bdb47c15d22975c47ca2fca67151e2dedcc"
+  },
+  {
+    "id": "M05-INF-FACTS",
+    "pointer": "/marketAnalysis/sections/1/deepDive/realityTimeline/2/text",
+    "sha256": "7d7acacff3e8ff33945aba3a0587603e084d4b7f3ffc0993e5a17a99f7285073"
+  },
+  {
+    "id": "INF-BASE",
+    "pointer": "/marketAnalysis/sections/1/deepDive/mechanism/0/text",
+    "sha256": "e1809c4c21a81c37505a383dc80de7e7de1da97f82103f34a88606b325fe3fe8"
+  },
+  {
+    "id": "INF-SUPPLY",
+    "pointer": "/marketAnalysis/sections/1/deepDive/mechanism/1/text",
+    "sha256": "4462ce842539a45cfee149b103a4b91049a2bed687bac0a16b1a444c3cad9a13"
+  },
+  {
+    "id": "INF-CONDITIONS",
+    "pointer": "/marketAnalysis/sections/1/deepDive/divergence/0/text",
+    "sha256": "eda7aaaf89d13613100f096a7519afad040e99eecbafd3de2267bb3078513866"
+  },
+  {
+    "id": "inflation-market-2022-03",
+    "pointer": "/marketAnalysis/sections/1/deepDive/implicationTimeline/0/text",
+    "sha256": "458851ce746f192bd84de9111741bd10776a5eb12e760ae1462cfc722579cb41"
+  },
+  {
+    "id": "inflation-market-2022-04",
+    "pointer": "/marketAnalysis/sections/1/deepDive/implicationTimeline/1/text",
+    "sha256": "444beeab9b4482bb2856fc0544be72bfe6f8e9a692f77bd1cb5a8e1c9c2c7757"
+  },
+  {
+    "id": "inflation-market-2022-05",
+    "pointer": "/marketAnalysis/sections/1/deepDive/implicationTimeline/2/text",
+    "sha256": "ae5e8c5a51a0b9f502d6054bfcb5733a6e4d23d11491e50e2ad7eaa5f4b904bd"
+  },
+  {
+    "id": "INF-MARKET",
+    "pointer": "/marketAnalysis/sections/1/deepDive/implicationTimeline/3/text",
+    "sha256": "b98ca7599a6121cf959958a55c0bc73ab8ddc5b3ba833db0456fc58c2f0c948b"
+  },
+  {
+    "id": "INF-WAGE-MEASURES",
+    "pointer": "/marketAnalysis/sections/1/deepDive/examples/0/text",
+    "sha256": "3b205556a2a5996aba03ce971b1645e448a043f629f5d144c5dcc00857af19e4"
+  },
+  {
+    "id": "INF-TEST",
+    "pointer": "/marketAnalysis/sections/1/deepDive/validation/0/text",
+    "sha256": "599490f103073b5b2a08d03bbadec9e01d3cac56abf51a897ef67582fc01da80"
+  },
+  {
+    "id": "inflation-intro-expectationTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/expectationTimeline/text",
+    "sha256": "860ff5a9957ff410487ff1984e8c3180d9154439861108d1d83fa4d0cd8029ef"
+  },
+  {
+    "id": "inflation-intro-realityTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/realityTimeline/text",
+    "sha256": "a0d7a5435b64cf9e593557db7bb4df1e0e68ea69ad14443edd51cc1639d822ff"
+  },
+  {
+    "id": "inflation-intro-mechanism",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/mechanism/text",
+    "sha256": "82269c650e06d2cfec9416c4f7dbf00fed4b2270fb0d9436e37e4f4c70719728"
+  },
+  {
+    "id": "inflation-intro-divergence",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/divergence/text",
+    "sha256": "116456911a31c4662cfa7c9dbf4605abbf45432027fa3742e4937cc81a1bbfad"
+  },
+  {
+    "id": "inflation-intro-implicationTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/implicationTimeline/text",
+    "sha256": "b6ba04baf376536fd5c9c71313fb70891e2c615f33143028e64c783c574ebf21"
+  },
+  {
+    "id": "inflation-intro-examples",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/examples/text",
+    "sha256": "b741e5b98614dff02c35d8c6a352feaf28d2f20d5635a4f32a25b189798aebfc"
+  },
+  {
+    "id": "inflation-intro-validation",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/validation/text",
+    "sha256": "0ab6c94b3b3c99fa4d6c07af4d1f315b754bc6b301646b6dc376f776ba0cd0d9"
+  },
+  {
+    "id": "VIEW-WR02-C02",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/0/text",
+    "sha256": "b5ba8bc3ab0254e3d8e7222ee116ea73239ca9358b61cf3bb26174aa1ccbf8c2"
+  },
+  {
+    "id": "VIEW-WR02-C02",
+    "pointer": "/windResearchEvidence/7/claim",
+    "sha256": "b5ba8bc3ab0254e3d8e7222ee116ea73239ca9358b61cf3bb26174aa1ccbf8c2"
+  },
+  {
+    "id": "VIEW-WC-N21",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/1/text",
+    "sha256": "dc6031eaf3f332dcfddd577360cb476c77182adcd5634d010ce80b3fb77ffd2b"
+  },
+  {
+    "id": "VIEW-WC-N21",
+    "pointer": "/wechatResearchEvidence/32/claim",
+    "sha256": "dc6031eaf3f332dcfddd577360cb476c77182adcd5634d010ce80b3fb77ffd2b"
+  },
+  {
+    "id": "VIEW-WC-N26",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/2/text",
+    "sha256": "400960a9c0b994322f22d9ca7abba548ddbb4147d0d3c6976d08303b2b7457ee"
+  },
+  {
+    "id": "VIEW-WC-N26",
+    "pointer": "/wechatResearchEvidence/37/claim",
+    "sha256": "400960a9c0b994322f22d9ca7abba548ddbb4147d0d3c6976d08303b2b7457ee"
+  },
+  {
+    "id": "VIEW-WC-N13",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/3/text",
+    "sha256": "af2a275791ebda5f78c58e6fde99e8f9e2bd4779c7776702207b4376e4110956"
+  },
+  {
+    "id": "VIEW-WC-N13",
+    "pointer": "/wechatResearchEvidence/24/claim",
+    "sha256": "af2a275791ebda5f78c58e6fde99e8f9e2bd4779c7776702207b4376e4110956"
+  },
+  {
+    "id": "VIEW-WR02-C09",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/4/text",
+    "sha256": "1b2ac5594a3f215ae5a059e4c4844512601b349c4af1d84e505a0ccf839bbef8"
+  },
+  {
+    "id": "VIEW-WR02-C09",
+    "pointer": "/windResearchEvidence/13/claim",
+    "sha256": "1b2ac5594a3f215ae5a059e4c4844512601b349c4af1d84e505a0ccf839bbef8"
+  },
+  {
+    "id": "VIEW-WR02-C13",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/5/text",
+    "sha256": "77eacc5302ff8bfb940255454c259d17cd8f16ff7681a5a777b3bb968c67b3b5"
+  },
+  {
+    "id": "VIEW-WR02-C13",
+    "pointer": "/windResearchEvidence/17/claim",
+    "sha256": "77eacc5302ff8bfb940255454c259d17cd8f16ff7681a5a777b3bb968c67b3b5"
+  },
+  {
+    "id": "VIEW-WR03-C02",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/6/text",
+    "sha256": "945a8ba84cb210c1140787ece5c882649d823ca552543633f0abcf1dd696806b"
+  },
+  {
+    "id": "VIEW-WR03-C02",
+    "pointer": "/windResearchEvidence/19/claim",
+    "sha256": "945a8ba84cb210c1140787ece5c882649d823ca552543633f0abcf1dd696806b"
+  },
+  {
+    "id": "VIEW-WC-N23",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/7/text",
+    "sha256": "e9299a53c2dad1664eaacbba4c3912b040071506396dfaf4eeb47279fdbe9e20"
+  },
+  {
+    "id": "VIEW-WC-N23",
+    "pointer": "/wechatResearchEvidence/34/claim",
+    "sha256": "e9299a53c2dad1664eaacbba4c3912b040071506396dfaf4eeb47279fdbe9e20"
+  },
+  {
+    "id": "VIEW-WC-N28",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/8/text",
+    "sha256": "e24901d9cf80157c1c40c776db1e80a1afa2e8c1dd7404cae1028a34b2bf8798"
+  },
+  {
+    "id": "VIEW-WC-N28",
+    "pointer": "/wechatResearchEvidence/39/claim",
+    "sha256": "e24901d9cf80157c1c40c776db1e80a1afa2e8c1dd7404cae1028a34b2bf8798"
+  },
+  {
+    "id": "VIEW-WC-N20",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/9/text",
+    "sha256": "ae78ada75efe911872e54461d7f72e49ed7aee625a0d451e121ce249096b5102"
+  },
+  {
+    "id": "VIEW-WC-N20",
+    "pointer": "/wechatResearchEvidence/31/claim",
+    "sha256": "ae78ada75efe911872e54461d7f72e49ed7aee625a0d451e121ce249096b5102"
+  },
+  {
+    "id": "VIEW-WR02-C08",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/10/text",
+    "sha256": "d46391daa024a02a43b991400188cb59f3da6d0ed3ad07cb21d60849142f8595"
+  },
+  {
+    "id": "VIEW-WR02-C08",
+    "pointer": "/windResearchEvidence/12/claim",
+    "sha256": "d46391daa024a02a43b991400188cb59f3da6d0ed3ad07cb21d60849142f8595"
+  },
+  {
+    "id": "VIEW-WC-N24",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/11/text",
+    "sha256": "bce83cf20613c5b74bfab4f3d2e5cafdf252908c6c335a855ab023260d2a119c"
+  },
+  {
+    "id": "VIEW-WC-N24",
+    "pointer": "/wechatResearchEvidence/35/claim",
+    "sha256": "bce83cf20613c5b74bfab4f3d2e5cafdf252908c6c335a855ab023260d2a119c"
+  },
+  {
+    "id": "VIEW-WC-L10",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/12/text",
+    "sha256": "8290d17a44ca00c25a1f7e8a096168d8df2aa34d75351baec5ab44ba90888377"
+  },
+  {
+    "id": "VIEW-WC-L10",
+    "pointer": "/wechatResearchEvidence/6/claim",
+    "sha256": "8290d17a44ca00c25a1f7e8a096168d8df2aa34d75351baec5ab44ba90888377"
+  },
+  {
+    "id": "VIEW-WR04-C06",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/13/text",
+    "sha256": "f42a6f7e138fc662c2309fddae0565c13ddbaf305c6ac5fa6e6083c9a57d7515"
+  },
+  {
+    "id": "VIEW-WR04-C06",
+    "pointer": "/windResearchEvidence/32/claim",
+    "sha256": "f42a6f7e138fc662c2309fddae0565c13ddbaf305c6ac5fa6e6083c9a57d7515"
+  },
+  {
+    "id": "VIEW-WR04-C03",
+    "pointer": "/marketAnalysis/sections/2/deepDive/expectationTimeline/14/text",
+    "sha256": "f07611e3131a9ae4a6e5b3eb8a817420b9e9928342b1e6d4db55963fd2284261"
+  },
+  {
+    "id": "VIEW-WR04-C03",
+    "pointer": "/windResearchEvidence/29/claim",
+    "sha256": "f07611e3131a9ae4a6e5b3eb8a817420b9e9928342b1e6d4db55963fd2284261"
+  },
+  {
+    "id": "M03-GROW-FACTS",
+    "pointer": "/marketAnalysis/sections/2/deepDive/realityTimeline/0/text",
+    "sha256": "944ebb0fe51fbc72f3c8401fdc6f13942eb4bedda9afa44fdc4837e120be4712"
+  },
+  {
+    "id": "M04-GROW-FACTS",
+    "pointer": "/marketAnalysis/sections/2/deepDive/realityTimeline/1/text",
+    "sha256": "9e8e1b2cdaee055b5fb0844f44dc0a32e052874e1ead327bb6ec0d1bd215a9ec"
+  },
+  {
+    "id": "M05-GROW-FACTS",
+    "pointer": "/marketAnalysis/sections/2/deepDive/realityTimeline/2/text",
+    "sha256": "ee5e7f253d79127a9eb38617795e068823a0289769e512722215174caa172b91"
+  },
+  {
+    "id": "GROW-INCOME",
+    "pointer": "/marketAnalysis/sections/2/deepDive/mechanism/0/text",
+    "sha256": "b28d03daaef4baea0e65c3b227fb70462006e2266934fa9e5bbb8533fe28489b"
+  },
+  {
+    "id": "GROW-LABOR",
+    "pointer": "/marketAnalysis/sections/2/deepDive/mechanism/1/text",
+    "sha256": "d2406ab827624e4dfb191523b9c9caffdd13ae3058b227e253e8735acbf9bf8b"
+  },
+  {
+    "id": "GROW-HORIZON",
+    "pointer": "/marketAnalysis/sections/2/deepDive/divergence/0/text",
+    "sha256": "c42d1b5b645c00a0072a8e4c023376b65e5037184aa0ce63578c6c90b3e27c6a"
+  },
+  {
+    "id": "growth-employment-market-2022-03",
+    "pointer": "/marketAnalysis/sections/2/deepDive/implicationTimeline/0/text",
+    "sha256": "dd49ca4f59d67ab38ecce550b7d934184eb91d7ab99a356b2fea6827d79565fb"
+  },
+  {
+    "id": "growth-employment-market-2022-04",
+    "pointer": "/marketAnalysis/sections/2/deepDive/implicationTimeline/1/text",
+    "sha256": "b211773d26b1218a98a937741f69f493fa6c104fbddd97a63c640339bc680a3e"
+  },
+  {
+    "id": "growth-employment-market-2022-05",
+    "pointer": "/marketAnalysis/sections/2/deepDive/implicationTimeline/2/text",
+    "sha256": "91bd4ab7ead1638d3747d96dc77ee9601fba2f0b99ab0e191bcff188766f7d38"
+  },
+  {
+    "id": "GROW-ASSET",
+    "pointer": "/marketAnalysis/sections/2/deepDive/implicationTimeline/3/text",
+    "sha256": "5aebc2b786a95d7ef60d4df98842008932bb720cab2fe263d6132d64b5935293"
+  },
+  {
+    "id": "GROW-GDP-PAIR",
+    "pointer": "/marketAnalysis/sections/2/deepDive/examples/0/text",
+    "sha256": "6db4fc970e11edc2864dd0b4fbfa9c7ac2c5da86e7543d7b8bef62eb530f1204"
+  },
+  {
+    "id": "GROW-TEST",
+    "pointer": "/marketAnalysis/sections/2/deepDive/validation/0/text",
+    "sha256": "c1869858504e3004ca2727744256c7792dea8b152eb0f51c2fc83ac9cef70c58"
+  },
+  {
+    "id": "growth-employment-intro-expectationTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/expectationTimeline/text",
+    "sha256": "6d048617a11b7788ee65686b71f111ce49923b683a43b9341c647c78ff816cb7"
+  },
+  {
+    "id": "growth-employment-intro-realityTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/realityTimeline/text",
+    "sha256": "ca2cfedc07a0994f01224de869dfeab0adf87c5d82f372276c137bc8018947f6"
+  },
+  {
+    "id": "growth-employment-intro-mechanism",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/mechanism/text",
+    "sha256": "dd3cd8357d7460fbe900593aa53538c77642b5849bde7714dce78ec6f55c18f2"
+  },
+  {
+    "id": "growth-employment-intro-divergence",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/divergence/text",
+    "sha256": "d898484d05f2bf02b5b6c6e1527bf2c7110f1de9d923714f735cbb236c6f3c6a"
+  },
+  {
+    "id": "growth-employment-intro-implicationTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/implicationTimeline/text",
+    "sha256": "5589f081800e170171e6e03d5ed109a685718aac5cbe19e8745ca980e4fca1d0"
+  },
+  {
+    "id": "growth-employment-intro-examples",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/examples/text",
+    "sha256": "dc78bb0efcd553d5defcbe40dc307709d1cbc5e6afa968f935ecadd4cca07ec9"
+  },
+  {
+    "id": "growth-employment-intro-validation",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/validation/text",
+    "sha256": "7c10900ca8de528686df1955c44afa89ca84b482bd501355ecbde6a0096578ad"
+  },
+  {
+    "id": "VIEW-WR02-C03",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/0/text",
+    "sha256": "d5f058d7f6ec48a874bb4045046faceed08c09649540e4d56e296bcd7e283a26"
+  },
+  {
+    "id": "VIEW-WR02-C03",
+    "pointer": "/windResearchEvidence/8/claim",
+    "sha256": "d5f058d7f6ec48a874bb4045046faceed08c09649540e4d56e296bcd7e283a26"
+  },
+  {
+    "id": "VIEW-WC-N04",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/1/text",
+    "sha256": "e07671e076bda7b3c03d0b77c69af1e5dca10029743575b031c0368e98c3a48e"
+  },
+  {
+    "id": "VIEW-WC-N04",
+    "pointer": "/wechatResearchEvidence/16/claim",
+    "sha256": "e07671e076bda7b3c03d0b77c69af1e5dca10029743575b031c0368e98c3a48e"
+  },
+  {
+    "id": "VIEW-WC-N10",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/2/text",
+    "sha256": "c924169f4908c50805951b64c3df034051de7a7dfe3f1ee18b77dbe89eb14221"
+  },
+  {
+    "id": "VIEW-WC-N10",
+    "pointer": "/wechatResearchEvidence/21/claim",
+    "sha256": "c924169f4908c50805951b64c3df034051de7a7dfe3f1ee18b77dbe89eb14221"
+  },
+  {
+    "id": "VIEW-WR03-C07",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/3/text",
+    "sha256": "2381644a3d63672a01a93ae2b700a843a444013e53a18f6fd7d200564f1bc4e4"
+  },
+  {
+    "id": "VIEW-WR03-C07",
+    "pointer": "/windResearchEvidence/24/claim",
+    "sha256": "2381644a3d63672a01a93ae2b700a843a444013e53a18f6fd7d200564f1bc4e4"
+  },
+  {
+    "id": "VIEW-WC-N14",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/4/text",
+    "sha256": "5f1187c49140a632b0beb2d33e8e65bafb35a7cfa2e3886812cf65abb0f8c78d"
+  },
+  {
+    "id": "VIEW-WC-N14",
+    "pointer": "/wechatResearchEvidence/25/claim",
+    "sha256": "5f1187c49140a632b0beb2d33e8e65bafb35a7cfa2e3886812cf65abb0f8c78d"
+  },
+  {
+    "id": "VIEW-WR02-C10",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/5/text",
+    "sha256": "74ee58d10ac0dd6b4f9a57c144b78240ff70744f948e177cb5d985535b10298f"
+  },
+  {
+    "id": "VIEW-WR02-C10",
+    "pointer": "/windResearchEvidence/14/claim",
+    "sha256": "74ee58d10ac0dd6b4f9a57c144b78240ff70744f948e177cb5d985535b10298f"
+  },
+  {
+    "id": "VIEW-WC-N16",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/6/text",
+    "sha256": "1dd0859b03de95a5fae12eed145fc08bb10698e1b44e9f408be332d6f12a53ae"
+  },
+  {
+    "id": "VIEW-WC-N16",
+    "pointer": "/wechatResearchEvidence/27/claim",
+    "sha256": "1dd0859b03de95a5fae12eed145fc08bb10698e1b44e9f408be332d6f12a53ae"
+  },
+  {
+    "id": "VIEW-WR04-C01",
+    "pointer": "/marketAnalysis/sections/3/deepDive/expectationTimeline/7/text",
+    "sha256": "a82d6927d7ee4a2b569b0a57e46683a916556280729eb21f6034ced3bc9dd65e"
+  },
+  {
+    "id": "VIEW-WR04-C01",
+    "pointer": "/windResearchEvidence/27/claim",
+    "sha256": "a82d6927d7ee4a2b569b0a57e46683a916556280729eb21f6034ced3bc9dd65e"
+  },
+  {
+    "id": "YC-OBS-03",
+    "pointer": "/marketAnalysis/sections/3/deepDive/realityTimeline/0/text",
+    "sha256": "000a01378726152ff3b5e65e7c661746ed6967163313c61e0278abffce7b60dd"
+  },
+  {
+    "id": "YC-OBS-04",
+    "pointer": "/marketAnalysis/sections/3/deepDive/realityTimeline/1/text",
+    "sha256": "2bf46cec7d77a231d73d799ee8047afe7e8142ea17d2769a160d068cda735a99"
+  },
+  {
+    "id": "YC-OBS-05",
+    "pointer": "/marketAnalysis/sections/3/deepDive/realityTimeline/2/text",
+    "sha256": "b4c737aedf3e9845910aa694b63c091d732edeb4ce1d923678c3a3eed6deb503"
+  },
+  {
+    "id": "YC-DECOMP",
+    "pointer": "/marketAnalysis/sections/3/deepDive/mechanism/0/text",
+    "sha256": "1b4ca1082b2f4607d5567ab8effa2866c8997399e668ecf83a89362efbe668d7"
+  },
+  {
+    "id": "YC-INVERSION",
+    "pointer": "/marketAnalysis/sections/3/deepDive/mechanism/1/text",
+    "sha256": "71d9b34100230a2ad13af520c3c4e777d17c51e24840175b8189f7f06a4cf584"
+  },
+  {
+    "id": "REV-XB",
+    "pointer": "/marketAnalysis/sections/3/deepDive/divergence/0/text",
+    "sha256": "c2d5f734b7a3d294349d67e87e7c9d449f21f90c58b43e703aa664c8aebb70e2"
+  },
+  {
+    "id": "YC-COMPARE",
+    "pointer": "/marketAnalysis/sections/3/deepDive/divergence/1/text",
+    "sha256": "1d17c7e5ac15e66735d4b500b4ce73a1fe0b7ff283d46bfa921e98db01a02193"
+  },
+  {
+    "id": "yieldcurve-market-2022-03",
+    "pointer": "/marketAnalysis/sections/3/deepDive/implicationTimeline/0/text",
+    "sha256": "46dece42f90f5ddc5506aaa6a5b88360df9d4dd11896574c5eb18b777c201b0d"
+  },
+  {
+    "id": "yieldcurve-market-2022-04",
+    "pointer": "/marketAnalysis/sections/3/deepDive/implicationTimeline/1/text",
+    "sha256": "cd88a430537eb6211303100beb2f474b09bfb96607bf979bf4bcd87da5ecce9c"
+  },
+  {
+    "id": "yieldcurve-market-2022-05",
+    "pointer": "/marketAnalysis/sections/3/deepDive/implicationTimeline/2/text",
+    "sha256": "b49770bbb121cc84dac14bdceb3799184563247c58a9f94373e458e58bdc5919"
+  },
+  {
+    "id": "YC-MARKET",
+    "pointer": "/marketAnalysis/sections/3/deepDive/implicationTimeline/3/text",
+    "sha256": "a4b106a0327fc6835eb963a46200b487f27839f5e0f3cd65586119a1e02eb7be"
+  },
+  {
+    "id": "YC-FORECAST-PAIR",
+    "pointer": "/marketAnalysis/sections/3/deepDive/examples/0/text",
+    "sha256": "88e23c9db13d3436ff7036178690b00d528ffe61b49ed36b6e6ff5cfaa108873"
+  },
+  {
+    "id": "YC-TEST",
+    "pointer": "/marketAnalysis/sections/3/deepDive/validation/0/text",
+    "sha256": "6f070f6556a1f49522e1d06e93dcdba83801f727c08dd0ad91fd2dba64e2b248"
+  },
+  {
+    "id": "yieldcurve-intro-expectationTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/expectationTimeline/text",
+    "sha256": "ce34cfc60d93331a08f648202e7d9a34764ebf9a416748c74b18e7ef5c1faae1"
+  },
+  {
+    "id": "yieldcurve-intro-realityTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/realityTimeline/text",
+    "sha256": "863cfd53715cbf08494b75e3fd86752f82f2eb4455bbaeb3e72c52f0a501308f"
+  },
+  {
+    "id": "yieldcurve-intro-mechanism",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/mechanism/text",
+    "sha256": "339e75d4ede23d80642f020446432733e5221ee292e308b1146d47b25ad46334"
+  },
+  {
+    "id": "yieldcurve-intro-divergence",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/divergence/text",
+    "sha256": "4ec72c31effad41308157c631ef091c98c67def9ef2fcd841283282cb2a81c75"
+  },
+  {
+    "id": "yieldcurve-intro-implicationTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/implicationTimeline/text",
+    "sha256": "6483a5a3a70c0e3c86e05dce2fd5450f0ea5b5b6d217d4669a4cc8326db2b06e"
+  },
+  {
+    "id": "yieldcurve-intro-examples",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/examples/text",
+    "sha256": "5aafd27802d2aa1a430f20792f76f86a605176d417e75e7f951eef76811d0eca"
+  },
+  {
+    "id": "yieldcurve-intro-validation",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/validation/text",
+    "sha256": "9ece37fed06e234d98b26d24975fa83b579aace57a1cb547181f94d5f0f758c6"
+  },
+  {
+    "id": "VIEW-WC-N11",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/0/text",
+    "sha256": "1aca91319d7327ba7dd30bae44d1887484f47e446160bfd1e25011b9f275f105"
+  },
+  {
+    "id": "VIEW-WC-N11",
+    "pointer": "/wechatResearchEvidence/22/claim",
+    "sha256": "1aca91319d7327ba7dd30bae44d1887484f47e446160bfd1e25011b9f275f105"
+  },
+  {
+    "id": "VIEW-WR01-C06",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/1/text",
+    "sha256": "6f522e7fa715f7c668ebd07a8b043776e6d3fe353bb0b9f7919b5d32d9260c02"
+  },
+  {
+    "id": "VIEW-WR01-C06",
+    "pointer": "/windResearchEvidence/4/claim",
+    "sha256": "6f522e7fa715f7c668ebd07a8b043776e6d3fe353bb0b9f7919b5d32d9260c02"
+  },
+  {
+    "id": "VIEW-WC-N25",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/2/text",
+    "sha256": "33e184c7b7eb341c226f3583ad4302fc793853bbe831fe22ba8e03850bb06221"
+  },
+  {
+    "id": "VIEW-WC-N25",
+    "pointer": "/wechatResearchEvidence/36/claim",
+    "sha256": "33e184c7b7eb341c226f3583ad4302fc793853bbe831fe22ba8e03850bb06221"
+  },
+  {
+    "id": "VIEW-WR03-C06",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/3/text",
+    "sha256": "eb1f4b403a900c1d3cc4d7ba86631cb364f14c32b14cbd0e6c95c61b9deedd85"
+  },
+  {
+    "id": "VIEW-WR03-C06",
+    "pointer": "/windResearchEvidence/23/claim",
+    "sha256": "eb1f4b403a900c1d3cc4d7ba86631cb364f14c32b14cbd0e6c95c61b9deedd85"
+  },
+  {
+    "id": "VIEW-WC-N18",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/4/text",
+    "sha256": "94349c1b185b4a9b28b40126c644890ff34a67da48dcf7d0c395a9a1d8ff479a"
+  },
+  {
+    "id": "VIEW-WC-N18",
+    "pointer": "/wechatResearchEvidence/29/claim",
+    "sha256": "94349c1b185b4a9b28b40126c644890ff34a67da48dcf7d0c395a9a1d8ff479a"
+  },
+  {
+    "id": "VIEW-WR02-C11",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/5/text",
+    "sha256": "af5abb598e0e6768a7988ace1d9b7731bee9512dd85d39b4074c5bc30c51d099"
+  },
+  {
+    "id": "VIEW-WR02-C11",
+    "pointer": "/windResearchEvidence/15/claim",
+    "sha256": "af5abb598e0e6768a7988ace1d9b7731bee9512dd85d39b4074c5bc30c51d099"
+  },
+  {
+    "id": "VIEW-WR02-C07",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/6/text",
+    "sha256": "7167703188a4b383a6c1f76c31fdc7cf9336952fcb63118aefd5bd969fe05a41"
+  },
+  {
+    "id": "VIEW-WR02-C07",
+    "pointer": "/windResearchEvidence/11/claim",
+    "sha256": "7167703188a4b383a6c1f76c31fdc7cf9336952fcb63118aefd5bd969fe05a41"
+  },
+  {
+    "id": "VIEW-WC-L09",
+    "pointer": "/marketAnalysis/sections/4/deepDive/expectationTimeline/7/text",
+    "sha256": "4d28f82e4160a1e4c53e6f2ffdcf845a8138abbb9825d8168d36e6c9842e2a49"
+  },
+  {
+    "id": "VIEW-WC-L09",
+    "pointer": "/wechatResearchEvidence/5/claim",
+    "sha256": "4d28f82e4160a1e4c53e6f2ffdcf845a8138abbb9825d8168d36e6c9842e2a49"
+  },
+  {
+    "id": "USD-observed-2022-03",
+    "pointer": "/marketAnalysis/sections/4/deepDive/realityTimeline/0/text",
+    "sha256": "f975723a13fb7841390af45a21038f7f9471b7c6b16eab35103e81061b4bb725"
+  },
+  {
+    "id": "USD-observed-2022-04",
+    "pointer": "/marketAnalysis/sections/4/deepDive/realityTimeline/1/text",
+    "sha256": "c9bca88b6bc2b97e98b422507b7c356832a9baec06f60eea2cffc093817bd116"
+  },
+  {
+    "id": "USD-observed-2022-05",
+    "pointer": "/marketAnalysis/sections/4/deepDive/realityTimeline/2/text",
+    "sha256": "f2f9fc3b5fac9586ec836303651b0c2f96d8b7dead7044ec1fb5a0bcc20194c5"
+  },
+  {
+    "id": "USD-OBS",
+    "pointer": "/marketAnalysis/sections/4/deepDive/realityTimeline/3/text",
+    "sha256": "e49be0d7efd16bc99fc396111b558f6788bad50aee3b32f45c27531425477b88"
+  },
+  {
+    "id": "USD-FUNDING",
+    "pointer": "/marketAnalysis/sections/4/deepDive/mechanism/0/text",
+    "sha256": "c00744734eb1485f41bcef1ff7411072b3dec01821a942abcc04a593deb05dc3"
+  },
+  {
+    "id": "USD-RELATIVE",
+    "pointer": "/marketAnalysis/sections/4/deepDive/mechanism/1/text",
+    "sha256": "f1d4ce59b7e82476980082a4a6d3dc84cfcdd4903ae11c38acea976819b77517"
+  },
+  {
+    "id": "USD-COMPARE",
+    "pointer": "/marketAnalysis/sections/4/deepDive/divergence/0/text",
+    "sha256": "a2852c0bd30286508f5586f1be4cb511499b832f130c4a090aee671420295c95"
+  },
+  {
+    "id": "USD-market-2022-03",
+    "pointer": "/marketAnalysis/sections/4/deepDive/implicationTimeline/0/text",
+    "sha256": "0307e104d345f004dec2c1be2840209b1017be45c006ee5d51e096addf437497"
+  },
+  {
+    "id": "USD-market-2022-04",
+    "pointer": "/marketAnalysis/sections/4/deepDive/implicationTimeline/1/text",
+    "sha256": "c11afb27467dd77757d18059988ad08dfc16c61b6d60185a3dbf8f149cfa0cc0"
+  },
+  {
+    "id": "USD-market-2022-05",
+    "pointer": "/marketAnalysis/sections/4/deepDive/implicationTimeline/2/text",
+    "sha256": "5b471ee1ff280f8e2acbe6fa8996517192ebdf75c76e8105e2df17422b641504"
+  },
+  {
+    "id": "USD-MARKET",
+    "pointer": "/marketAnalysis/sections/4/deepDive/implicationTimeline/3/text",
+    "sha256": "2d9e591aaac2abf4a901d2692bcadd3a3d955ab632f09c007fc327b6256ce58e"
+  },
+  {
+    "id": "USD-REVISION",
+    "pointer": "/marketAnalysis/sections/4/deepDive/examples/0/text",
+    "sha256": "b3c5d875ddcc09e749701060d6f297bd1df28f4ea0c3a9128efa1e2ecf50e75f"
+  },
+  {
+    "id": "USD-TEST",
+    "pointer": "/marketAnalysis/sections/4/deepDive/validation/0/text",
+    "sha256": "d90c4357a62d31cfb71abb440a3bd0a124f205181af529e9d7ff8458aa99b0b0"
+  },
+  {
+    "id": "USD-intro-expectationTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/expectationTimeline/text",
+    "sha256": "909d6bf02091ae265542514023acbc7c23fd838c84c1bfc56f75e0595751ea34"
+  },
+  {
+    "id": "USD-intro-realityTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/realityTimeline/text",
+    "sha256": "8de7d752acf6877344aa35e6466f5a177c0076db65b30f70514a84f422792b8f"
+  },
+  {
+    "id": "USD-intro-mechanism",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/mechanism/text",
+    "sha256": "728acb2eccb05c9d6a0180f0a4673e126cf356bae33a510020a9e7c858292fbd"
+  },
+  {
+    "id": "USD-intro-divergence",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/divergence/text",
+    "sha256": "836e3630733995b9f0d338d1b49a10050fab0e433ca6d36ec0f0c4087c3b0435"
+  },
+  {
+    "id": "USD-intro-implicationTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/implicationTimeline/text",
+    "sha256": "dac033e8ebfc6da25314b90cf37c14006e30979f20923e8aed17b685c4941271"
+  },
+  {
+    "id": "USD-intro-examples",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/examples/text",
+    "sha256": "74bc45671f8560be55f24c031da3631c8b0081371494e25b6ee5debafc1a6522"
+  },
+  {
+    "id": "USD-intro-validation",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/validation/text",
+    "sha256": "8820031811829fb1e02bb403e0046657278638483c97e9c1a5306c91dd4a4979"
+  },
+  {
+    "id": "OPEN-01",
+    "pointer": "/marketAnalysis/conclusion#paragraph/0",
+    "sha256": "8b8b25dc423b9b2e98657047a37717c7c23660fa7d018f04b57fa62d944f23b2"
+  },
+  {
+    "id": "OPEN-02",
+    "pointer": "/marketAnalysis/conclusion#paragraph/1",
+    "sha256": "5f83ba94e36b360b6af0d74bdd4710508b5765fed9c6e7552793cf1e15ff0a18"
+  },
+  {
+    "id": "OPEN-03",
+    "pointer": "/marketAnalysis/conclusion#paragraph/2",
+    "sha256": "0ce5811ae497d4afbb328408a9ce3fe491b2c4d9ecfb73c85e7b88a51a6998a2"
+  },
+  {
+    "id": "OPEN-04",
+    "pointer": "/marketAnalysis/conclusion#paragraph/3",
+    "sha256": "83118c6f43012692f0b985e0d97ff4cee0e47ab0fd1792478da5aa74becff703"
+  },
+  {
+    "id": "OPEN-05",
+    "pointer": "/marketAnalysis/conclusion#paragraph/4",
+    "sha256": "8e5949e1245e5d1d9afcab9278e3c2f39ed36d183556a1f879e9c60a25d75a5f"
+  },
+  {
+    "id": "OPEN-06",
+    "pointer": "/marketAnalysis/conclusion#paragraph/5",
+    "sha256": "6a7e2996b2e9783c1d4289d012fc5a5e71650e6ccb9b67fa35bd814f22cbf328"
+  }
+]

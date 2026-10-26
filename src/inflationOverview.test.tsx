@@ -14,7 +14,7 @@ const stages = [
   ['QT减速与降息准备', '2024-06-01', '2024-09-17'],
 ]
 
-it('直达八段分期方案，日期连续、全部待复盘且没有假详情入口', () => {
+it('直达八段分期方案，日期连续、仅父准首篇有本地入口且其余仍待复盘', () => {
   window.history.replaceState(null, '', route)
   render(<App />)
   expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument()
@@ -25,8 +25,13 @@ it('直达八段分期方案，日期连续、全部待复盘且没有假详情�
     const card = cards.find((node) => within(node).queryByRole('heading', { name }))!
     expect(card).toBeDefined()
     expect(card).toHaveTextContent(`${start}至${end}`)
-    expect(within(card).getByText('待复盘')).toBeInTheDocument()
-    expect(within(card).queryAllByRole('button')).toHaveLength(0)
+    if (name === '加息启动与缩表定调') {
+          expect(within(card).getByText('阶段性已发布 · 配额未验收')).toBeInTheDocument()
+          expect(within(card).getByRole('button', { name: '进入加息启动与缩表定调阶段性研究版' })).toBeInTheDocument()
+        } else {
+          expect(within(card).getByText('待复盘')).toBeInTheDocument()
+          expect(within(card).queryAllByRole('button')).toHaveLength(0)
+        }
     const links = within(card).getAllByRole('link')
     for (const link of links) expect(link.getAttribute('href')).toMatch(/^https:\/\/www\.federalreserve\.gov\//)
   }

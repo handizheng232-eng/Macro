@@ -31,7 +31,7 @@ export const inflationOverview = {
 
 export const inflationSubperiods: OverviewSubperiod[] = [
   {
-    number: '09.1', period: '2022-03-16至2022-05-31', title: '加息启动与缩表定调', status: '待复盘',
+    number: '09.1', period: '2022-03-16至2022-05-31', title: '加息启动与缩表定调', status: '阶段性已发布 · 配额未验收',
     thesis: '阶段观察：政策利率开始上调，缩表由讨论转为明确的实施安排。',
     fed: '3月16日上调目标区间至0.25%—0.50%；5月4日升至0.75%—1.00%，并公布6月1日开始缩表的计划。',
     treasury: '待检验问题：短端对加息路径的调整，与长端对实际利率及缩表的调整是否同步？',
