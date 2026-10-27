@@ -1,0 +1,38 @@
+{
+  ".github/workflows/deploy.yml": {
+    "currentSHA256": "f6d2363cf6e33dd3a5aa5e312705ab73446291f3ba5ad36f4e73695ab3496b6a",
+    "baselineSHA256": "302ec639b59d483ec137a7b1615bc73b367c4dc20cf2bf2cf3c8d41ecf69dcaa",
+    "operations": [
+      {
+        "start": 44,
+        "end": 46,
+        "currentSHA256": "cda733fb819b325856a902566a7ff56b1bdff644eecdd6c9e127da710d66523e",
+        "baselineText": "          python -B -m unittest discover -s scripts -p 'test_verify_rate_liftoff_publish_02.py' -v\n          python -B scripts/verify_rate_liftoff_publish_02.py --legacy-tests --dist dist\n"
+      }
+    ]
+  },
+  "src/historyReplay.tsx": {
+    "currentSHA256": "e03bc86a229a10b6495946cf89b4b9387463a137640cf77d645b8352b1c19a7e",
+    "baselineSHA256": "bd7611347823cbb51d1836fabb8bc5b0fe146203f85fb86a307bff992dc8de61",
+    "operations": [
+      {
+        "start": 55,
+        "end": 56,
+        "currentSHA256": "d288fffe4ed55e14b4480ae224828b8d6ca0ffe28a2d9b26197bd54d43d1e84b",
+        "baselineText": ""
+      },
+      {
+        "start": 222,
+        "end": 237,
+        "currentSHA256": "2c901fc5a771b539906a90b5404fca7fa293ddb0364520eaa0d851961ba07856",
+        "baselineText": ""
+      },
+      {
+        "start": 250,
+        "end": 251,
+        "currentSHA256": "99dfc0615d75fac4018612543939747ec81e76f0ca864bd94523af64a661d40a",
+        "baselineText": "    <div className=\"replay-path-grid\">{paths.approvedCharts && !historical ? paths.approvedCharts.map(chart => <figure className=\"replay-path-chart\" key={chart.src}><figcaption><h3>{chart.title}</h3></figcaption><p className=\"replay-swipe-hint\">小屏可横向滑动查看完整坐标与曲线</p><div className=\"replay-chart-scroll\"><img data-approved-market-chart src={chart.src} alt={chart.title} style={{ minWidth: 900, width: '100%', height: 'auto', display: 'block' }} /></div><p>{chart.seriesIds.map(id => { const item = series.find(s => s.id === id); return `${item?.title} · ${item?.unit}` }).join('；')}。观察期：{approvedChartPeriod ? (chart.src === 'replay-rate-liftoff/06-event-window.svg' ? '2022年5月4日至2022年5月5日' : approvedChartPeriod) : '2021年12月1日至2022年3月15日'}；来源与逐点记录见下。当前回取，不是当时快照。</p></figure>) : <>{rates.length > 0 && <MarketPathChart series={rates} title=\"利率路径\" unit=\"%\" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</>}</div>\n"
+      }
+    ]
+  }
+}

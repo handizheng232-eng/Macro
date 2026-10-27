@@ -53,6 +53,7 @@ export interface ReplayMarketSeries {
 export interface ReplayMarketPaths {
   approvedCharts?: { src: string; title: string; seriesIds: string[] }[]
   series: ReplayMarketSeries[]; sources?: unknown; eventWindows?: unknown
+  derivedSeries?: { id: string; title: string; unit: string }[]
   cmeHistoricalImpliedPath?: { status?: string; observations?: unknown[]; limitations?: string[] | string }
 }
 export interface ReplayAnalysisEntry {
@@ -219,6 +220,21 @@ function MarketPathChart({ series, title, unit, researchWindow, valueLabel = '�
   </figure>
 }
 
+// Frozen chart metadata: OfficialMarketEvidence01/charts.py labels and
+// build_market.py: 100 * (DGS10 - DGS2) and 100 * (DGS10 - DGS3MO),
+// verified against daily.csv.
+// These labels do not create observations or change historical eligibility.
+const approvedDerivedSeries = [
+  { id: '2s10_bp', title: '10年－2年', unit: 'bp' },
+  { id: '10y3m_bp', title: '10年－3个月', unit: 'bp' },
+]
+function marketSeriesLabel(paths: ReplayMarketPaths, id: string) {
+  const item = paths.series.find(s => s.id === id)
+    ?? paths.derivedSeries?.find(s => s.id === id)
+    ?? approvedDerivedSeries.find(s => s.id === id)
+  return `${item?.title || id} · ${item?.unit || '单位未知'}`
+}
+
 function MarketPaths({ paths, cutoff, historical, approvedChartPeriod }: { paths: ReplayMarketPaths; cutoff: string; historical: boolean; approvedChartPeriod?: string }) {
   const eligible = (observation: ReplayMarketObservation) => observation.historicalAsOfEligible === true && knownBy(observation.releaseDate, cutoff)
   const series = paths.series.map((item) => ({ ...item, observations: item.observations
@@ -232,7 +248,7 @@ function MarketPaths({ paths, cutoff, historical, approvedChartPeriod }: { paths
     <header><h2>真实行情路径</h2><span>{historical ? '历史截面 · 仅已确认可得观测' : '当前取得的追溯路径 · 不等同于历史时点可得版本'}</span></header>
     {historical && <p className="replay-notice">historicalAsOfEligible 必须为 true，且 releaseDate 不晚于截止日。首次发布日期未确认的国债值不进入历史截面；当前取得时间不替代首次发布日期。</p>}
     <p className="replay-notice">利率 % 两线同轴；美元独立轴，贸易加权广义美元指数不是DXY。原始单位单独显示；null 不填补，不伪造首次发布日期，不将同期变化归因于单一事件。</p>
-    <div className="replay-path-grid">{paths.approvedCharts && !historical ? paths.approvedCharts.map(chart => <figure className="replay-path-chart" key={chart.src}><figcaption><h3>{chart.title}</h3></figcaption><p className="replay-swipe-hint">小屏可横向滑动查看完整坐标与曲线</p><div className="replay-chart-scroll"><img data-approved-market-chart src={chart.src} alt={chart.title} style={{ minWidth: 900, width: '100%', height: 'auto', display: 'block' }} /></div><p>{chart.seriesIds.map(id => { const item = series.find(s => s.id === id); return `${item?.title} · ${item?.unit}` }).join('；')}。观察期：{approvedChartPeriod ? (chart.src === 'replay-rate-liftoff/06-event-window.svg' ? '2022年5月4日至2022年5月5日' : approvedChartPeriod) : '2021年12月1日至2022年3月15日'}；来源与逐点记录见下。当前回取，不是当时快照。</p></figure>) : <>{rates.length > 0 && <MarketPathChart series={rates} title="利率路径" unit="%" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</>}</div>
+    <div className="replay-path-grid">{paths.approvedCharts && !historical ? paths.approvedCharts.map(chart => <figure className="replay-path-chart" key={chart.src}><figcaption><h3>{chart.title}</h3></figcaption><p className="replay-swipe-hint">小屏可横向滑动查看完整坐标与曲线</p><div className="replay-chart-scroll"><img data-approved-market-chart src={chart.src} alt={chart.title} style={{ minWidth: 900, width: '100%', height: 'auto', display: 'block' }} /></div><p>{chart.seriesIds.map(id => marketSeriesLabel(paths, id)).join('；')}。观察期：{approvedChartPeriod ? (chart.src === 'replay-rate-liftoff/06-event-window.svg' ? '2022年5月4日至2022年5月5日' : approvedChartPeriod) : '2021年12月1日至2022年3月15日'}；来源与逐点记录见下。当前回取，不是当时快照。</p></figure>) : <>{rates.length > 0 && <MarketPathChart series={rates} title="利率路径" unit="%" />}{others.map((item) => <MarketPathChart key={item.id} series={[item]} title={item.title} unit={chartUnit(item.unit)} />)}</>}</div>
     <div className="replay-path-metadata">{series.map((item) => {
       const valid = item.observations.filter(finiteObservation)
       const latest = valid.at(-1)
