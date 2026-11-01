@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "generatedAt": "2026-10-15T00:18:28+00:00",
+  "generatedAt": "2026-11-01T00:34:04+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -329,18 +329,18 @@
       "id": "actual",
       "label": "实际通胀",
       "title": "核心PCE同比",
-      "value": 3.007595976,
+      "value": 3.121159603,
       "unit": "%",
-      "observation": "20260831",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
       "id": "survey",
       "label": "调查通胀",
       "title": "密歇根大学1年预期",
-      "value": 4.6,
+      "value": 4.7,
       "unit": "%",
-      "observation": "20260930",
+      "observation": "20261031",
       "source": "iFinD EDB"
     },
     {
@@ -7621,7 +7621,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             1.6948,
@@ -8422,14 +8423,15 @@
             3.573947988,
             3.823333966,
             3.453010337,
-            3.361543189,
-            3.419031825
+            3.373362962,
+            3.444183323,
+            3.648874225
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.419031825,
+          "latestObservation": "20260930",
+          "latestValue": 3.648874225,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -8438,7 +8440,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -9244,7 +9246,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.0708,
@@ -10045,14 +10048,15 @@
             3.083872407,
             3.161709771,
             3.041234253,
-            2.983468262,
-            3.007595976
+            2.995338825,
+            3.034442462,
+            3.121159603
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.007595976,
+          "latestObservation": "20260930",
+          "latestValue": 3.121159603,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -10061,7 +10065,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -10867,7 +10871,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.5286,
@@ -11669,13 +11674,14 @@
             4.449115736,
             3.435587072,
             3.33867267,
-            3.550674507
+            3.569699066,
+            3.947617654
           ],
           "color": "#ba7a2e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.550674507,
+          "latestObservation": "20260930",
+          "latestValue": 3.947617654,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -11684,7 +11690,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -12490,7 +12496,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             3.093,
@@ -13291,14 +13298,15 @@
             3.342523183,
             3.542471774,
             3.46123313,
-            3.371990372,
-            3.360737738
+            3.388590012,
+            3.387816197,
+            3.514472904
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.360737738,
+          "latestObservation": "20260930",
+          "latestValue": 3.514472904,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -13307,7 +13315,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -18356,7 +18364,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.6361,
@@ -18474,13 +18483,14 @@
             2.8529,
             2.7145,
             2.6936,
-            2.5794
+            2.5794,
+            2.6104
           ],
           "color": "#1c3557",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.5794,
+          "latestObservation": "20260930",
+          "latestValue": 2.6104,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -18489,7 +18499,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -18611,7 +18621,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.2723,
@@ -18729,13 +18740,14 @@
             2.9052,
             2.6283,
             2.6046,
-            2.5698
+            2.5698,
+            2.6649
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 2.5698,
+          "latestObservation": "20260930",
+          "latestValue": 2.6649,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -18744,7 +18756,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -21233,7 +21245,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             2.0708,
@@ -22034,14 +22047,15 @@
             3.083872407,
             3.161709771,
             3.041234253,
-            2.983468262,
-            3.007595976
+            2.995338825,
+            3.034442462,
+            3.121159603
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 3.007595976,
+          "latestObservation": "20260930",
+          "latestValue": 3.121159603,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -22050,7 +22064,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -22855,7 +22869,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             -0.0708,
@@ -23655,14 +23670,15 @@
             -0.283872407,
             -0.261709771,
             -0.441234253,
-            -0.483468262,
-            -0.607595976
+            -0.495338825,
+            -0.634442462,
+            -0.521159603
           ],
           "color": "#9aa0a6",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": -0.607595976,
+          "latestObservation": "20260930",
+          "latestValue": -0.521159603,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -23671,7 +23687,7 @@
             "rawUnit": "%",
             "transformation": "核心CPI同比减核心PCE同比，结果单位为百分点",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -25789,7 +25805,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.133,
@@ -25963,13 +25980,14 @@
             0.177,
             0.019,
             0.138,
-            0.198
+            0.198,
+            0.221
           ],
           "color": "#6b4a9e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 0.198,
+          "latestObservation": "20260930",
+          "latestValue": 0.221,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -25978,7 +25996,7 @@
             "rawUnit": "百分点",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -26156,7 +26174,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.041,
@@ -26330,13 +26349,14 @@
             -0.022,
             -0.016,
             0.037,
-            0.02
+            0.02,
+            0.048
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 0.02,
+          "latestObservation": "20260930",
+          "latestValue": 0.048,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -26345,7 +26365,7 @@
             "rawUnit": "百分点",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -26523,7 +26543,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.023,
@@ -26697,13 +26718,14 @@
             0.021,
             0.028,
             0.011,
-            0.017
+            0.017,
+            0.006
           ],
           "color": "#ba7a2e",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 0.017,
+          "latestObservation": "20260930",
+          "latestValue": 0.006,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -26712,7 +26734,7 @@
             "rawUnit": "百分点",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -26890,7 +26912,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.095,
@@ -27064,13 +27087,14 @@
             0.287,
             -0.437,
             -0.107,
-            0.15
+            0.15,
+            0.377
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 0.15,
+          "latestObservation": "20260930",
+          "latestValue": 0.377,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -27079,7 +27103,7 @@
             "rawUnit": "百分点",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -27257,7 +27281,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.508,
@@ -27431,13 +27456,14 @@
             0.137,
             0.106,
             -0.079,
-            -0.085
+            -0.085,
+            -0.052
           ],
           "color": "#9aa0a6",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": -0.085,
+          "latestObservation": "20260930",
+          "latestValue": -0.052,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -27446,7 +27472,7 @@
             "rawUnit": "百分点",
             "transformation": "总CPI季调环比减去四项iFinD直接影响值之和",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ],
@@ -32040,7 +32066,8 @@
             "20260531",
             "20260630",
             "20260731",
-            "20260831"
+            "20260831",
+            "20260930"
           ],
           "values": [
             0.1489,
@@ -32852,14 +32879,15 @@
             0.2481,
             0.4605,
             0.15,
-            0.0678,
-            0.359
+            0.0902,
+            0.3731,
+            0.3665
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260831",
-          "latestValue": 0.359,
+          "latestObservation": "20260930",
+          "latestValue": 0.3665,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -32868,7 +32896,7 @@
             "rawUnit": "2017年=100",
             "transformation": "由月度指数计算环比：(I_t / I_t-1 - 1) × 100%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           }
         }
       ]
@@ -32987,7 +33015,8 @@
             "20250930",
             "20251231",
             "20260331",
-            "20260630"
+            "20260630",
+            "20260930"
           ],
           "values": [
             3.8,
@@ -33091,12 +33120,13 @@
             3.6,
             3.3,
             3.4,
+            3.1,
             3.1
           ],
           "color": "#c94c4c",
           "frequency": "季",
           "defaultActive": true,
-          "latestObservation": "20260630",
+          "latestObservation": "20260930",
           "latestValue": 3.1,
           "source": {
             "provider": "iFinD EDB",
@@ -33106,7 +33136,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260630"
+            "latestObservation": "20260930"
           }
         },
         {
@@ -34931,7 +34961,7 @@
           "label": "食品",
           "group": "食品",
           "depth": 0,
-          "weight": 13.54,
+          "weight": 13.51,
           "yoy": [
             2.5,
             2.7,
@@ -34970,7 +35000,7 @@
           "label": "家庭食品",
           "group": "食品",
           "depth": 1,
-          "weight": 8.23,
+          "weight": 8.2,
           "yoy": [
             1.8,
             2.2,
@@ -35009,7 +35039,7 @@
           "label": "外出就餐",
           "group": "食品",
           "depth": 1,
-          "weight": 5.31,
+          "weight": 5.3,
           "yoy": [
             3.5,
             3.4,
@@ -35048,7 +35078,7 @@
           "label": "能源",
           "group": "能源",
           "depth": 0,
-          "weight": 7.35,
+          "weight": 7.42,
           "yoy": [
             20.4,
             16.3,
@@ -35087,7 +35117,7 @@
           "label": "能源商品",
           "group": "能源",
           "depth": 1,
-          "weight": 4.04,
+          "weight": 4.15,
           "yoy": [
             35.3,
             28.0,
@@ -35126,7 +35156,7 @@
           "label": "能源服务",
           "group": "能源",
           "depth": 1,
-          "weight": 3.3,
+          "weight": 3.27,
           "yoy": [
             4.6,
             4.0,
@@ -35165,7 +35195,7 @@
           "label": "电力",
           "group": "能源",
           "depth": 2,
-          "weight": 2.55,
+          "weight": 2.53,
           "yoy": [
             4.4,
             3.8,
@@ -35204,7 +35234,7 @@
           "label": "管道燃气",
           "group": "能源",
           "depth": 2,
-          "weight": 0.75,
+          "weight": 0.74,
           "yoy": [
             5.0,
             4.4,
@@ -35282,7 +35312,7 @@
           "label": "服饰",
           "group": "核心商品",
           "depth": 1,
-          "weight": 2.41,
+          "weight": 2.44,
           "yoy": [
             3.4,
             3.6,
@@ -35399,7 +35429,7 @@
           "label": "核心服务",
           "group": "核心服务",
           "depth": 0,
-          "weight": 60.27,
+          "weight": 60.24,
           "yoy": [
             3.1,
             3.0,
@@ -35477,7 +35507,7 @@
           "label": "主要住所租金",
           "group": "核心服务",
           "depth": 2,
-          "weight": 7.74,
+          "weight": 7.73,
           "yoy": [
             2.8,
             2.7,
@@ -35555,7 +35585,7 @@
           "label": "医疗服务",
           "group": "核心服务",
           "depth": 1,
-          "weight": 6.86,
+          "weight": 6.83,
           "yoy": [
             1.5,
             1.6,
@@ -35594,7 +35624,7 @@
           "label": "运输服务",
           "group": "核心服务",
           "depth": 1,
-          "weight": 6.31,
+          "weight": 6.26,
           "yoy": [
             2.7,
             2.4,
@@ -35633,7 +35663,7 @@
           "label": "机票",
           "group": "核心服务",
           "depth": 2,
-          "weight": 1.05,
+          "weight": 1.04,
           "yoy": [
             22.4,
             23.4,
@@ -35672,7 +35702,7 @@
           "label": "教育通信服务",
           "group": "核心服务",
           "depth": 1,
-          "weight": 4.93,
+          "weight": 5.02,
           "yoy": [
             3.1,
             3.1,
@@ -35711,7 +35741,7 @@
           "label": "其他个人服务",
           "group": "核心服务",
           "depth": 1,
-          "weight": 0.94,
+          "weight": 0.93,
           "yoy": [
             5.1,
             4.4,
@@ -35750,7 +35780,7 @@
           "label": "超级核心服务",
           "group": "超级核心",
           "depth": 0,
-          "weight": 28.52,
+          "weight": 28.48,
           "yoy": [
             3.2,
             3.1,
@@ -39902,7 +39932,7 @@
             "label": "食品",
             "group": "食品",
             "depth": 0,
-            "weight": 13.54,
+            "weight": 13.51,
             "yoy": [
               2.5,
               2.7,
@@ -42639,14 +42669,14 @@
               "provider": "iFinD EDB",
               "code": "G004754697"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "food_home_yoy",
             "label": "家庭食品",
             "group": "食品",
             "depth": 1,
-            "weight": 8.23,
+            "weight": 8.2,
             "yoy": [
               1.8,
               2.2,
@@ -45383,14 +45413,14 @@
               "provider": "iFinD EDB",
               "code": "G004754698"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "food_away_yoy",
             "label": "外出就餐",
             "group": "食品",
             "depth": 1,
-            "weight": 5.31,
+            "weight": 5.3,
             "yoy": [
               3.5,
               3.4,
@@ -48127,14 +48157,14 @@
               "provider": "iFinD EDB",
               "code": "G005419489"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "cpi_energy_yoy",
             "label": "能源",
             "group": "能源",
             "depth": 0,
-            "weight": 7.35,
+            "weight": 7.42,
             "yoy": [
               20.4,
               16.3,
@@ -50871,14 +50901,14 @@
               "provider": "iFinD EDB",
               "code": "G002600364"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "energy_goods_yoy",
             "label": "能源商品",
             "group": "能源",
             "depth": 1,
-            "weight": 4.04,
+            "weight": 4.15,
             "yoy": [
               35.3,
               28.0,
@@ -53615,14 +53645,14 @@
               "provider": "iFinD EDB",
               "code": "G004754819"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "energy_services_yoy",
             "label": "能源服务",
             "group": "能源",
             "depth": 1,
-            "weight": 3.3,
+            "weight": 3.27,
             "yoy": [
               4.6,
               4.0,
@@ -56359,14 +56389,14 @@
               "provider": "iFinD EDB",
               "code": "G005419525"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "electricity_yoy",
             "label": "电力",
             "group": "能源",
             "depth": 2,
-            "weight": 2.55,
+            "weight": 2.53,
             "yoy": [
               4.4,
               3.8,
@@ -59103,14 +59133,14 @@
               "provider": "iFinD EDB",
               "code": "G005419526"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "utility_gas_yoy",
             "label": "管道燃气",
             "group": "能源",
             "depth": 2,
-            "weight": 0.75,
+            "weight": 0.74,
             "yoy": [
               5.0,
               4.4,
@@ -61847,7 +61877,7 @@
               "provider": "iFinD EDB",
               "code": "G005419527"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "cpi_goods_yoy",
@@ -64591,14 +64621,14 @@
               "provider": "iFinD EDB",
               "code": "G004754833"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "apparel_yoy",
             "label": "服饰",
             "group": "核心商品",
             "depth": 1,
-            "weight": 2.41,
+            "weight": 2.44,
             "yoy": [
               3.4,
               3.6,
@@ -67335,7 +67365,7 @@
               "provider": "iFinD EDB",
               "code": "G002600368"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "edu_goods_yoy",
@@ -70079,7 +70109,7 @@
               "provider": "iFinD EDB",
               "code": "G005419343"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "other_goods_yoy",
@@ -72823,14 +72853,14 @@
               "provider": "iFinD EDB",
               "code": "G005419356"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "cpi_services_yoy",
             "label": "核心服务",
             "group": "核心服务",
             "depth": 0,
-            "weight": 60.27,
+            "weight": 60.24,
             "yoy": [
               3.1,
               3.0,
@@ -75567,7 +75597,7 @@
               "provider": "iFinD EDB",
               "code": "G004754950"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "cpi_housing_yoy",
@@ -78318,7 +78348,7 @@
             "label": "主要住所租金",
             "group": "核心服务",
             "depth": 2,
-            "weight": 7.74,
+            "weight": 7.73,
             "yoy": [
               2.8,
               2.7,
@@ -81055,7 +81085,7 @@
               "provider": "iFinD EDB",
               "code": "G005419515"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "oer_yoy",
@@ -83806,7 +83836,7 @@
             "label": "医疗服务",
             "group": "核心服务",
             "depth": 1,
-            "weight": 6.86,
+            "weight": 6.83,
             "yoy": [
               1.5,
               1.6,
@@ -86543,14 +86573,14 @@
               "provider": "iFinD EDB",
               "code": "G002600370"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "transport_services_yoy",
             "label": "运输服务",
             "group": "核心服务",
             "depth": 1,
-            "weight": 6.31,
+            "weight": 6.26,
             "yoy": [
               2.7,
               2.4,
@@ -89287,14 +89317,14 @@
               "provider": "iFinD EDB",
               "code": "G004754981"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "airfare_yoy",
             "label": "机票",
             "group": "核心服务",
             "depth": 2,
-            "weight": 1.05,
+            "weight": 1.04,
             "yoy": [
               22.4,
               23.4,
@@ -92031,14 +92061,14 @@
               "provider": "iFinD EDB",
               "code": "G005419622"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "edu_services_yoy",
             "label": "教育通信服务",
             "group": "核心服务",
             "depth": 1,
-            "weight": 4.93,
+            "weight": 5.02,
             "yoy": [
               3.1,
               3.1,
@@ -94775,14 +94805,14 @@
               "provider": "iFinD EDB",
               "code": "G004755020"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "personal_services_yoy",
             "label": "其他个人服务",
             "group": "核心服务",
             "depth": 1,
-            "weight": 0.94,
+            "weight": 0.93,
             "yoy": [
               5.1,
               4.4,
@@ -97519,14 +97549,14 @@
               "provider": "iFinD EDB",
               "code": "G005419508"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           },
           {
             "id": "cpi_supercore_yoy",
             "label": "超级核心服务",
             "group": "超级核心",
             "depth": 0,
-            "weight": 28.52,
+            "weight": 28.48,
             "yoy": [
               3.2,
               3.1,
@@ -100263,7 +100293,7 @@
               "provider": "iFinD EDB",
               "code": "G005419378"
             },
-            "weightDate": "20260731"
+            "weightDate": "20260831"
           }
         ],
         "note": "本次原始快照实际可用历史：191302—202609；各行起点不同，缺月为null，不补值。weight为最新权重快照，非逐月历史权重；各行weightDate为该权重观察日期，总项目100%为定义值、无观察日期。"
@@ -101015,7 +101045,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             5.2,
@@ -101602,13 +101633,14 @@
             4.6,
             4.2,
             4.0,
-            4.6
+            4.6,
+            4.7
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 4.6,
+          "latestObservation": "20261031",
+          "latestValue": 4.7,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -101617,7 +101649,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           }
         },
         {
@@ -102143,7 +102175,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             2.7,
@@ -102322,13 +102355,14 @@
             3.3,
             3.3,
             3.3,
-            3.4
+            3.4,
+            3.5
           ],
           "color": "#8a9096",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 3.4,
+          "latestObservation": "20261031",
+          "latestValue": 3.5,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -102337,7 +102371,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "dash": "5 4"
         }
@@ -102940,7 +102974,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             5.2,
@@ -103527,13 +103562,14 @@
             4.6,
             4.2,
             4.0,
-            4.6
+            4.6,
+            4.7
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 4.6,
+          "latestObservation": "20261031",
+          "latestValue": 4.7,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -103542,7 +103578,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           }
         },
         {
@@ -103725,7 +103761,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             2.7,
@@ -103904,13 +103941,14 @@
             3.3,
             3.3,
             3.3,
-            3.4
+            3.4,
+            3.5
           ],
           "color": "#8a9096",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 3.4,
+          "latestObservation": "20261031",
+          "latestValue": 3.5,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -103919,7 +103957,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           }
         },
         {
@@ -104462,7 +104500,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             6.3945071,
@@ -105001,13 +105040,14 @@
             3.0388659524128,
             2.3860010975264,
             2.3988314711863,
-            2.6598766275721
+            2.6598766275721,
+            2.9754407067699
           ],
           "color": "#2f7fa3",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 2.6598766275721,
+          "latestObservation": "20261031",
+          "latestValue": 2.9754407067699,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -105016,7 +105056,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "dash": "3 4"
         },
@@ -105560,7 +105600,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             6.4809404,
@@ -106099,13 +106140,14 @@
             2.5285370025905,
             2.4256475977547,
             2.4868127231858,
-            2.5964461935638
+            2.5964461935638,
+            2.7703132522983
           ],
           "color": "#765a9b",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 2.5964461935638,
+          "latestObservation": "20261031",
+          "latestValue": 2.7703132522983,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -106114,7 +106156,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "dash": "3 4"
         },
@@ -106658,7 +106700,8 @@
             "20260630",
             "20260731",
             "20260831",
-            "20260930"
+            "20260930",
+            "20261031"
           ],
           "values": [
             6.1976115,
@@ -107197,13 +107240,14 @@
             2.4654242558262,
             2.4358204697877,
             2.4985705017538,
-            2.5820960839004
+            2.5820960839004,
+            2.7255144784141
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20260930",
-          "latestValue": 2.5820960839004,
+          "latestObservation": "20261031",
+          "latestValue": 2.7255144784141,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -107212,7 +107256,7 @@
             "rawUnit": "%",
             "transformation": "iFinD直接值",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "dash": "3 4"
         }
@@ -110199,7 +110243,7 @@
       "id": "energy-nowcast",
       "eyebrow": "LEADING · ENERGY",
       "title": "汽油零售价与CPI能源",
-      "description": "EIA周频全美汽油零售价先按月取算术平均，再计算同比，与CPI能源同比对齐。它的领先主要来自发布时间更早，而不是固定跨月领先；最新月内均值仅覆盖至2026-10-09。",
+      "description": "EIA周频全美汽油零售价先按月取算术平均，再计算同比，与CPI能源同比对齐。它的领先主要来自发布时间更早，而不是固定跨月领先；最新月内均值仅覆盖至2026-10-23。",
       "unit": "%",
       "reference": 0,
       "defaultRange": "10Y",
@@ -110991,13 +111035,13 @@
             25.9763,
             28.1682,
             36.4555,
-            40.8842
+            39.8002
           ],
           "color": "#c94c4c",
           "frequency": "月",
           "defaultActive": true,
-          "latestObservation": "20261009",
-          "latestValue": 40.8842,
+          "latestObservation": "20261023",
+          "latestValue": 39.8002,
           "source": {
             "provider": "iFinD EDB",
             "institution": "iFinD 经济数据库",
@@ -111006,9 +111050,9 @@
             "rawUnit": "美元/加仑",
             "transformation": "周频价格按月取算术平均，再计算12个月同比",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20261009"
+            "latestObservation": "20261023"
           },
-          "observationCoverageEnd": "20261009",
+          "observationCoverageEnd": "20261023",
           "displayPeriod": "202610"
         },
         {
@@ -116310,6 +116354,6 @@
     "note": "iFinD EDB 各序列独立更新日期；CPI/PCE/调查/盈亏平衡通胀率不共享同一截至日。"
   },
   "rawSnapshots": {
-    "ifind": "data/raw/daily-refresh/20261015T081630+0800/inflation/20261015T001828+0000_ifind_inflation.json"
+    "ifind": "data/raw/daily-refresh/20261101-manual/inflation/20261101T003404+0000_ifind_inflation.json"
   }
 }

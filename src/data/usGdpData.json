@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-15T00:17:51+00:00",
+  "generatedAt": "2026-11-01T00:33:42+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -152,18 +152,18 @@
       "id": "real-gdp",
       "label": "头条增长",
       "title": "实际GDP环比折年",
-      "value": 2.2,
+      "value": 3.4,
       "unit": "%",
-      "observation": "20260630",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
       "id": "pdfp",
       "label": "私人内需",
       "title": "PDFP环比折年",
-      "value": 4.6,
+      "value": 4.9,
       "unit": "%",
-      "observation": "20260630",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
@@ -188,9 +188,9 @@
       "id": "wei",
       "label": "周度温度计",
       "title": "WEI经济活动指数",
-      "value": 2.71,
+      "value": 2.98,
       "unit": "原始值",
-      "observation": "20261002",
+      "observation": "20261023",
       "source": "iFinD EDB"
     }
   ],
@@ -529,7 +529,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2182.681,
@@ -849,13 +850,14 @@
                 24112.966,
                 24125.479,
                 24274.383,
-                24408.011
+                24408.011,
+                24611.077
               ],
               "color": "#1859b8",
               "unit": "十亿美元",
               "frequency": "季",
-              "latestValue": 24408.011,
-              "latestObservation": "20260630",
+              "latestValue": 24611.077,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -863,7 +865,7 @@
                 "name": "美国:GDP:不变价:支出法:折年数:季调:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -907,7 +909,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 18116.7,
@@ -947,13 +950,14 @@
                 23680.2,
                 23811.2,
                 23945.1,
-                24070.9
+                24070.9,
+                24200.4
               ],
               "color": "#c94c4c",
               "unit": "十亿美元",
               "frequency": "季",
-              "latestValue": 24070.9,
-              "latestObservation": "20260630",
+              "latestValue": 24200.4,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国国会预算办公室",
@@ -961,7 +965,7 @@
                 "name": "美国:10年经济预测:实际潜在GDP:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "CBO十年经济预测当前版本；仅展示至最新实际GDP季度"
             }
@@ -3494,12 +3498,12 @@
         }
       ],
       "expenditureShares": {
-        "period": "20260630",
+        "period": "20260930",
         "rows": [
           {
             "id": "nominal_consumption",
             "label": "消费 C",
-            "value": 67.5,
+            "value": 67.6,
             "color": "#1859b8",
             "source": {
               "provider": "iFinD EDB",
@@ -3508,13 +3512,13 @@
               "name": "美国:GDP:支出法:个人消费:折年数:季调:当季值",
               "rawUnit": "十亿美元",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260630"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "nominal_investment",
             "label": "私人投资 I",
-            "value": 17.9,
+            "value": 18.6,
             "color": "#c94c4c",
             "source": {
               "provider": "iFinD EDB",
@@ -3523,13 +3527,13 @@
               "name": "美国:GDP:支出法:国内私人投资:折年数:季调:当季值",
               "rawUnit": "十亿美元",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260630"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "nominal_government",
             "label": "政府购买 G",
-            "value": 17.3,
+            "value": 17.5,
             "color": "#8a9096",
             "source": {
               "provider": "iFinD EDB",
@@ -3538,13 +3542,13 @@
               "name": "美国:GDP:支出法:政府消费支出和投资:折年数:季调:当季值",
               "rawUnit": "十亿美元",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260630"
+              "latestObservation": "20260930"
             }
           },
           {
             "id": "nominal_net_exports",
             "label": "净出口 NX",
-            "value": -2.7,
+            "value": -3.7,
             "color": "#a56a12",
             "source": {
               "provider": "iFinD EDB",
@@ -3553,7 +3557,7 @@
               "name": "美国:GDP:支出法:净出口:折年数:季调:当季值",
               "rawUnit": "十亿美元",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260630"
+              "latestObservation": "20260930"
             }
           }
         ],
@@ -3894,7 +3898,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 -1.0,
@@ -4213,13 +4218,14 @@
                 3.9,
                 0.2,
                 2.5,
-                2.2
+                2.2,
+                3.4
               ],
               "color": "#17233b",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.2,
-              "latestObservation": "20260630",
+              "latestValue": 3.4,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -4227,7 +4233,7 @@
                 "name": "美国:GDP:不变价:支出法:环比折年率:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -4550,7 +4556,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.1,
@@ -4869,13 +4876,14 @@
                 4.0,
                 0.3,
                 2.3,
-                2.8
+                2.8,
+                1.7
               ],
               "color": "#2f7fa3",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.8,
-              "latestObservation": "20260630",
+              "latestValue": 1.7,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -4883,7 +4891,7 @@
                 "name": "美国:GDP:不变价:最终销售:环比折年率:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -5206,7 +5214,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.9,
@@ -5525,13 +5534,14 @@
                 2.9,
                 0.5,
                 2.3,
-                3.8
+                3.8,
+                5.0
               ],
               "color": "#855c9c",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 3.8,
-              "latestObservation": "20260630",
+              "latestValue": 5.0,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -5539,7 +5549,7 @@
                 "name": "美国:不变价:国内采购总额:最终销售:环比折年率:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -5862,7 +5872,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 3.5,
@@ -6181,13 +6192,14 @@
                 3.2,
                 1.8,
                 1.8,
-                4.6
+                4.6,
+                4.9
               ],
               "color": "#2f8a7a",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 4.6,
-              "latestObservation": "20260630",
+              "latestValue": 4.9,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -6195,7 +6207,7 @@
                 "name": "美国:不变价:国内私人采购:最终销售:环比折年率:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -6535,7 +6547,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 4.3,
@@ -6854,13 +6867,14 @@
                 2.45,
                 1.28,
                 0.49,
-                2.51
+                2.51,
+                2.52
               ],
               "color": "#1859b8",
               "unit": "百分点",
               "frequency": "季",
-              "latestValue": 2.51,
-              "latestObservation": "20260630",
+              "latestValue": 2.52,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -6868,7 +6882,7 @@
                 "name": "美国:GDP:不变价:支出法:环比贡献率:个人消费:折年数:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "iFinD元数据为%；经济含义为对GDP增速的百分点贡献"
             },
@@ -7192,7 +7206,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 -4.71,
@@ -7511,13 +7526,14 @@
                 0.15,
                 0.19,
                 1.25,
-                0.82
+                0.82,
+                3.27
               ],
               "color": "#c94c4c",
               "unit": "百分点",
               "frequency": "季",
-              "latestValue": 0.82,
-              "latestObservation": "20260630",
+              "latestValue": 3.27,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -7525,7 +7541,7 @@
                 "name": "美国:GDP:不变价:支出法:环比贡献率:国内私人投资:折年数:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "iFinD元数据为%；经济含义为对GDP增速的百分点贡献"
             },
@@ -7849,7 +7865,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 0.04,
@@ -8168,13 +8185,14 @@
                 0.28,
                 -1.01,
                 0.8,
-                -0.01
+                -0.01,
+                0.9
               ],
               "color": "#8a9096",
               "unit": "百分点",
               "frequency": "季",
-              "latestValue": -0.01,
-              "latestObservation": "20260630",
+              "latestValue": 0.9,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -8182,7 +8200,7 @@
                 "name": "美国:GDP:不变价:支出法:环比贡献率:政府消费支出和投资:折年数:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "iFinD元数据为%；经济含义为对GDP增速的百分点贡献"
             },
@@ -8506,7 +8524,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 -0.68,
@@ -8825,13 +8844,14 @@
                 1.0,
                 -0.25,
                 -0.04,
-                -1.1
+                -1.1,
+                -3.32
               ],
               "color": "#a56a12",
               "unit": "百分点",
               "frequency": "季",
-              "latestValue": -1.1,
-              "latestObservation": "20260630",
+              "latestValue": -3.32,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -8839,7 +8859,7 @@
                 "name": "美国:GDP:不变价:支出法:环比贡献率:净出口:折年数:季调:当季值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "iFinD元数据为%；经济含义为对GDP增速的百分点贡献"
             }
@@ -9170,7 +9190,8 @@
               "20250930",
               "20251231",
               "20260331",
-              "20260630"
+              "20260630",
+              "20260930"
             ],
             "values": [
               -1.0,
@@ -9489,13 +9510,14 @@
               3.9,
               0.2,
               2.5,
-              2.2
+              2.2,
+              3.4
             ],
             "color": "#17233b",
             "unit": "%",
             "frequency": "季",
-            "latestValue": 2.2,
-            "latestObservation": "20260630",
+            "latestValue": 3.4,
+            "latestObservation": "20260930",
             "source": {
               "provider": "iFinD EDB",
               "institution": "美国经济分析局",
@@ -9503,7 +9525,7 @@
               "name": "美国:GDP:不变价:支出法:环比折年率:季调:当季值",
               "rawUnit": "%",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260630"
+              "latestObservation": "20260930"
             }
           }
         }
@@ -9839,7 +9861,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.6115,
@@ -10155,13 +10178,14 @@
                 2.6007,
                 2.046,
                 2.6392,
-                2.1916
+                2.1916,
+                2.0657
               ],
               "color": "#1859b8",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.1916,
-              "latestObservation": "20260630",
+              "latestValue": 2.0657,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -10169,7 +10193,7 @@
                 "name": "美国:GDP:不变价:支出法:折年数:季调:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "由实际GDP水平计算4季同比"
             },
@@ -11809,7 +11833,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 9.2851,
@@ -12125,13 +12150,14 @@
                 5.4526,
                 5.1219,
                 5.748,
-                6.3103
+                6.3103,
+                5.8676
               ],
               "color": "#c94c4c",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 6.3103,
-              "latestObservation": "20260630",
+              "latestValue": 5.8676,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -12139,7 +12165,7 @@
                 "name": "美国:GDP:支出法:折年数:季调:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "由名义GDP水平计算4季同比"
             },
@@ -12460,7 +12486,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.6115,
@@ -12776,13 +12803,14 @@
                 2.6007,
                 2.046,
                 2.6392,
-                2.1916
+                2.1916,
+                2.0657
               ],
               "color": "#1859b8",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.1916,
-              "latestObservation": "20260630",
+              "latestValue": 2.0657,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -12790,7 +12818,7 @@
                 "name": "美国:GDP:不变价:支出法:折年数:季调:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "由实际GDP水平计算4季同比"
             },
@@ -13111,7 +13139,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 6.4985,
@@ -13427,13 +13456,14 @@
                 2.7795,
                 3.0143,
                 3.0288,
-                4.0298
+                4.0298,
+                3.7252
               ],
               "color": "#ba7a2e",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 4.0298,
-              "latestObservation": "20260630",
+              "latestValue": 3.7252,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -13441,7 +13471,7 @@
                 "name": "美国:GDP:2017价:支出法:平减指数:季调:当季值",
                 "rawUnit": "2017年=100",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "由官方GDP平减指数计算4季同比"
             }
@@ -14450,7 +14480,10 @@
                 "20260911",
                 "20260918",
                 "20260925",
-                "20261002"
+                "20261002",
+                "20261009",
+                "20261016",
+                "20261023"
               ],
               "values": [
                 1.42,
@@ -15431,13 +15464,16 @@
                 3.05,
                 3.02,
                 2.97,
-                2.71
+                2.68,
+                3.03,
+                3.25,
+                2.98
               ],
               "color": "#1859b8",
               "unit": "",
               "frequency": "周",
-              "latestValue": 2.71,
-              "latestObservation": "20261002",
+              "latestValue": 2.98,
+              "latestObservation": "20261023",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "达拉斯联储",
@@ -15445,7 +15481,7 @@
                 "name": "美国:经济活动指数",
                 "rawUnit": "",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20261002"
+                "latestObservation": "20261023"
               },
               "transformLabel": "iFinD单位字段为空；对应Dallas Fed Weekly Economic Index"
             },
@@ -15766,7 +15802,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.6115,
@@ -16082,13 +16119,14 @@
                 2.6007,
                 2.046,
                 2.6392,
-                2.1916
+                2.1916,
+                2.0657
               ],
               "color": "#1859b8",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.1916,
-              "latestObservation": "20260630",
+              "latestValue": 2.0657,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -16096,7 +16134,7 @@
                 "name": "美国:GDP:不变价:支出法:折年数:季调:当季值",
                 "rawUnit": "十亿美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "季度实际GDP水平计算4季同比"
             }
@@ -20456,7 +20494,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 59.7805,
@@ -20753,14 +20792,15 @@
                 111.0547,
                 111.4343,
                 111.895,
-                111.9511,
-                112.5673
+                112.0822,
+                112.698,
+                112.7154
               ],
               "color": "#ba7a2e",
               "unit": "指数",
               "frequency": "月",
-              "latestValue": 112.5673,
-              "latestObservation": "20260831",
+              "latestValue": 112.7154,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国经济分析局",
@@ -20768,7 +20808,7 @@
                 "name": "美国:2017价:个人消费支出:折年数:季调:当月值",
                 "rawUnit": "百万美元",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "2021-12=100"
             },
@@ -22067,7 +22107,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 4.8462,
@@ -23357,17 +23398,18 @@
                 100.4635,
                 101.3251,
                 101.1544,
-                101.9943,
-                102.0552,
-                102.2565,
-                102.4587,
-                102.4814
+                101.9928,
+                102.1384,
+                102.3748,
+                102.613,
+                102.6785,
+                103.3588
               ],
               "color": "#6f7883",
               "unit": "指数",
               "frequency": "月",
-              "latestValue": 102.4814,
-              "latestObservation": "20260831",
+              "latestValue": 103.3588,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美联储",
@@ -23375,7 +23417,7 @@
                 "name": "美国:工业生产指数:季调:当月值",
                 "rawUnit": "2017年=100",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               },
               "transformLabel": "2021-12=100"
             }
@@ -23503,10 +23545,14 @@
       "industrial_production": []
     },
     "accountingChecks": {
-      "latestContributionPeriod": "20260630",
-      "latestContributionResidualPp": 0.02,
-      "latestDeflatorPeriod": "20260630",
-      "latestDeflatorIdentityResidual": 0.000239,
+      "latestContributionPeriod": "20260930",
+      "latestContributionResidualPp": -0.03,
+      "latestContributionTolerancePp": 0.07,
+      "headlineResolutionPp": 0.1,
+      "componentResolutionPp": 0.01,
+      "contributionRoundingMethod": "头条0.1个百分点、四项贡献各0.01个百分点；最大舍入残差=0.1/2+4×0.01/2=0.07个百分点，不修改原值。",
+      "latestDeflatorPeriod": "20260930",
+      "latestDeflatorIdentityResidual": -0.000257,
       "latestGdpGdiMeanPeriod": "20260630",
       "latestGdpGdiMeanResidualBillion": 0.0
     },
@@ -23517,6 +23563,6 @@
     "PPT用于定义研究顺序和解释；除明确标注的2022 vintage案例外，页面时序数值均由iFinD EDB重新提取。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/daily-refresh/20261015T081630+0800/gdp/20261015T001751+0000_ifind_gdp.json"
+    "ifind": "data/raw/daily-refresh/20261101-manual/gdp/20261101T003342+0000_ifind_gdp.json"
   }
 }
