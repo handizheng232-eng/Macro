@@ -2,7 +2,8 @@
 
 Usage: python scripts/run_data_tests.py [--python /absolute/python]
 Environment: DATA_TEST_PYTHON, REPLAY_RESEARCH_ROOT, TMPDIR (private scratch).
-No download, archive copying, test selection, skips, or publication is performed.
+Every test is executed: current data tests here, frozen publication tests in
+their exact public-version fixtures. No private archive copying or skips.
 """
 import argparse
 import importlib
@@ -16,6 +17,7 @@ import tempfile
 import unittest
 
 from research_archive import REPO_ROOT, research_root
+from macro_publication_snapshot import split_suite, legacy_case_ids, run_legacy_tests
 
 
 def protect_archive(root):
@@ -88,9 +90,16 @@ def main(argv=None):
                       'discovery': 'scripts/test_*.py'}, ensure_ascii=True), flush=True)
     suite = unittest.defaultTestLoader.discover(str(REPO_ROOT / 'scripts'), pattern='test_*.py')
     expected = suite.countTestCases()
-    result = unittest.TextTestRunner(verbosity=2).run(suite)
-    success = result.wasSuccessful() and not result.skipped and result.testsRun == expected and expected > 0
-    print(json.dumps({'discovered': expected, 'run': result.testsRun,
+    current, historical = split_suite(suite)
+    historical_ids = [case.id() for case in historical]
+    if len(historical_ids) != len(set(historical_ids)) or set(historical_ids) != legacy_case_ids():
+        raise ValueError('Historical test discovery differs from pinned suite')
+    result = unittest.TextTestRunner(verbosity=2).run(current)
+    legacy = run_legacy_tests()
+    executed = result.testsRun + legacy['run']
+    success = result.wasSuccessful() and not result.skipped and executed == expected and expected > 0
+    print(json.dumps({'discovered': expected, 'run': executed, 'currentRun': result.testsRun,
+                      'historicalRun': legacy['run'], 'historicalIds': legacy['ids'],
                       'failures': len(result.failures), 'errors': len(result.errors),
                       'skipped': len(result.skipped), 'passed': success}), flush=True)
     return 0 if success else 1

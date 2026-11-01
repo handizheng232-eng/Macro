@@ -110,7 +110,7 @@ FRED_SERIES_SPEC: dict[str, FredSpec] = {
     "DFEDTARL": ("目标区间下限", "%", "日", "Federal Reserve Board", (0, 25), "20081216", "Federal Funds Target Range - Lower Limit"),
     "DFEDTARU": ("目标区间上限", "%", "日", "Federal Reserve Board", (0, 25), "20081216", "Federal Funds Target Range - Upper Limit"),
     "IOER": ("超额准备金利率", "%", "日", "Federal Reserve Board", (0, 25), "20081009", "Interest Rate on Excess Reserves"),
-    "DTWEXB": ("旧版广义美元指数", "1973年3月=100", "日", "Federal Reserve Board", (50, 200), "19950104", "Trade Weighted U.S. Dollar Index: Broad, Goods"),
+    "DTWEXB": ("旧版广义美元指数", "1997年1月=100", "日", "Federal Reserve Board", (50, 200), "19950104", "Trade Weighted U.S. Dollar Index: Broad, Goods"),
     "DTWEXBGS": ("现行广义美元指数", "2006年1月=100", "日", "Federal Reserve Board", (50, 200), "20060102", "Nominal Broad U.S. Dollar Index"),
 }
 FRED_CSV_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={code}"

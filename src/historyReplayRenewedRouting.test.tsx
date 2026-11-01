@@ -1,7 +1,7 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
-import { replayCutoff, replayDisclosure, replaySearch, replayWorkbench, replayHeading } from './historyReplay.testHelpers'
+import { replayCutoff, replayDisclosure, replaySearch, replayWorkbench, replayHeading, replayNavigation, queryReplayLabel, queryReplayRegion } from './historyReplay.testHelpers'
 import firstData from './data/historyReplay.json'
 import secondData from './data/historyReplayHawkishTransition.json'
 
@@ -70,7 +70,7 @@ it('真实浏览器history back/forward恢复第三页，主导航离开卸载',
   await traverse('forward')
   expect(window.location.hash).toBe(third)
   expect(replayWorkbench('再降息与QT收官研究工作台')).toBeInTheDocument()
-  await user.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '今日总览' }))
+  await user.click(replayNavigation('主导航').getByRole('button', { name: '今日总览' }))
   expect(screen.queryByLabelText('按日期截止查看')).not.toBeInTheDocument()
 })
 
@@ -87,9 +87,9 @@ it('第三独立hash保留240节点、5+35导读，移除辅助图表且历史�
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '来源库 / 研报库明细']) expect(replayDisclosure(label)).not.toHaveAttribute('open')
   expect(screen.queryByRole('heading', { name: '预期 → 现实：事件时间轴' })).not.toBeInTheDocument()
   fireEvent.change(replayCutoff(), { target: { value: '2025-10-01' } })
-  expect(screen.queryByRole('region', { name: '综合市场分析' })).not.toBeInTheDocument()
+  expect(queryReplayRegion('综合市场分析')).not.toBeInTheDocument()
   expect(container.querySelectorAll('[data-period-summary], [data-aspect-summary], .replay-framework-card')).toHaveLength(0)
-  for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '逐月预期现实与修订链', '月份与渠道覆盖']) expect(screen.queryByLabelText(label)).not.toBeInTheDocument()
+  for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '逐月预期现实与修订链', '月份与渠道覆盖']) expect(queryReplayLabel(label)).not.toBeInTheDocument()
   act(() => window.dispatchEvent(new HashChangeEvent('hashchange')))
   expect(replayCutoff()).toHaveValue('2025-10-01')
 })

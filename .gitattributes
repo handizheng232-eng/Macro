@@ -1,5 +1,7 @@
 # Keep verified replay snapshots byte-identical across Windows and Linux.
 # Their publication receipts bind the original UTF-8 bytes, including line ends.
+* text=auto eol=lf
+release/snapshots/*.zip -text
 src/data/historyReplay.json -text
 src/data/historyReplayHawkishTransition.json -text
 src/data/historyReplayRenewedEasingQtEnd.json -text

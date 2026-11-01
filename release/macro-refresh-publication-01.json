@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "macro-refresh-publication-01",
+  "scope": "us-nine-modules-five-macro-snapshots",
+  "publicationAuthorized": true,
+  "pageQAComplete": true,
+  "snapshotSHA256": "3324f23b14e8182e287fadc5926c1d94db21d2c89154cd08e36ff03b0555d048",
+  "dataPins": {
+    "src/data/usConsumptionData.json": "05258753a777671648e2e2fd7ee2931c91dec4ff0b4144e6d256f89318f28497",
+    "src/data/usEmploymentData.json": "8bf59730ddf14ab20e38bbd21c76805a765027db6c03c48a44eb9fa4e511d5cb",
+    "src/data/usGdpData.json": "bd900c89823a7544acb47ba0f994de963c755e2b8b64896db0d4fed434209f67",
+    "src/data/usInflationData.json": "444767f04e13360c2c9df3d0afed51935e352390bb9ee6acb7d5d9566946b71c",
+    "src/data/usLateModulesData.json": "9ddaadd8c9746f83d9ee9cd641735c34b4d9a0634a6050122efaef658fc1c67d"
+  },
+  "infrastructurePins": {
+    ".gitattributes": "40aac13c520d97e82b7425e29ec83c9cdbbee782b122658c54c9fcc3825b50d1",
+    ".github/workflows/deploy.yml": "089198c1cf000683e389fce010782924e27949955eb91545bb0fbe807dcdca8f",
+    "scripts/refresh_ifind_us_gdp.py": "cc5c999360892ad6a188ca6896cd1391b776b51e7d90455c582c00c396d3bd8b",
+    "scripts/refresh_ifind_us_late_modules.py": "321b54b2f989a34d851a6e58a4f1b068ebc4427b32bbeb7c6c614429ec2b2452",
+    "scripts/run_data_tests.py": "2c1266add7ee2ef7b526350e44f37ce2ad932cbeae2f6831a6cc9462e009e2f6",
+    "scripts/test_refresh_ifind_us_gdp.py": "eee944d32cf46ba3d08650af166cd4860650e7b62ea7addcf42ef2f7519a2128",
+    "src/historyReplay.testHelpers.tsx": "6e8fbcdf8f83024b0e2db33180ca5ca82faaae51248bc68ec0335537d5917deb",
+    "src/historyReplayRenewedRouting.test.tsx": "a7e9284d939fb0dfd5e24c64223cbe453dda52af0a2aaaae4948ef862d693242",
+    "src/historyReplayRouting.test.tsx": "d11883a0251662f3a0e8ea859d3b75d6ee280bb1f93caa9e1e0faa64b7079ca7",
+    "src/historyReplayTestHelpers.test.tsx": "b33548ab1ed5d0021330cfe8d104c45cd3e97ca924673d993352cf28f596d6a4",
+    "src/taperCitation.test.tsx": "bd59c3387a066f4c0a9ae7d07cff1a86a74071422d6982cd3161ebe9d4459952",
+    "src/taperPriority.test.tsx": "68f0f46cbf2f67838c3ef7dcf89d68de45ad8ea22933710f709a5c15950ff80a"
+  },
+  "implementationPins": {
+    "docs/macro-refresh-publication.md": "c1a5667c4e86cb9aed03cc38c17177759bcf9603a6424f79e6c19452f320fe46",
+    "scripts/macro_publication_snapshot.py": "a16bd3d9bf80a1ce8eec135a0eee1d4d23c0e92c8981930f4ecd6ed65effe9f6",
+    "scripts/test_macro_precision_contracts.py": "ef048070ea206278b4c6233ccf012458b346636dc649e2234243d9c9d42a3b92",
+    "scripts/test_macro_publication_snapshot.py": "85036ddaa65220bb800d562b84bfa3937ebc658cd5e50a228db42cdd848087ea",
+    "scripts/test_verify_macro_refresh_publish.py": "72fee4faf60204c7c95778788db2593f5aa2953adfea0277cc7d131e7e7ec8d7",
+    "scripts/verify_macro_refresh_publish.py": "878625192d4456e3bc146429667569b79362badbbff199b93e241c6917f9d677"
+  },
+  "distPins": {
+    "assets/index-Bi5QgWdX.js": "f7f3c5750e0e1a22d8463014f3748e50af046c38f73fbedae9f8c34837f27ff0",
+    "assets/index-BveAf4T6.css": "3f88e86ae0df97176f68ea252b8e12fde9ffcddcc829f541d1594122951df7fe",
+    "index.html": "a1da5399cc4e3a92c7a4b909300ef09ed49a00ff80ca6247fd6188681188fa78",
+    "replay-rate-liftoff/01-nominal.svg": "5927e50b5f98ff3775c61164e45d7c9021b89104f50232339e3c582c2abd2424",
+    "replay-rate-liftoff/02-real-bei.svg": "866b64caa7dfd435984a5211b296b4ac090e7a42ceb747fce1e184fe8c5cc13d",
+    "replay-rate-liftoff/03-spreads.svg": "4b6cd5c650b99fc0a4c66df61312f3af07e26ee2023f38f73fbab98319a75062",
+    "replay-rate-liftoff/04-dollar.svg": "be218d14050ffe94df26245eeb11215947ab1572a6149175c8f5312edd14f609",
+    "replay-rate-liftoff/05-bei.svg": "4c9182477fedb4fdc594fdee18e32c56658cdd42e0e67029a26d63569e22b64f",
+    "replay-rate-liftoff/06-event-window.svg": "3b2f09023b9d6745703c83efc2602afb74af0ad89aa353be1081802beb45b9e7",
+    "taper-charts/curve.svg": "9a8799516cb0a080fd25582103ff63058a37246f57364a55bdc9469b7e839c4d",
+    "taper-charts/dollar.svg": "d38a0639066e180494f1c0d142b459c21ad384683c543f08203b46094f891f9d",
+    "taper-charts/equity.svg": "2d0dbda1395d5e6caaf4ca9d48ed6066b91fa8983f568521ce8d788e2f421217",
+    "taper-charts/nominal.svg": "4829316a20fb5309d0171db565ba9f758abeb789307fb7bc8d3c9fceb426ed6f",
+    "taper-charts/oil.svg": "9cc90587bda69d4e3a2c359a24ef51333c6fc8987183f74ca11e05274228cb1f",
+    "taper-charts/real-bei.svg": "93b7edf3fcc47d385224b946cfe5eea5a1d5a7431611469fe0fe28027770a6a2"
+  },
+  "vintages": {
+    "src/data/usConsumptionData.json": "2026-11-01T00:34:40+00:00",
+    "src/data/usEmploymentData.json": "2026-11-01T00:33:43+00:00",
+    "src/data/usGdpData.json": "2026-11-01T00:33:42+00:00",
+    "src/data/usInflationData.json": "2026-11-01T00:34:04+00:00",
+    "src/data/usLateModulesData.json": "2026-11-01T00:35:03+00:00"
+  },
+  "authorization": "用户要求更新最新数据并上线，并在认证失效后确认已重新登录；授权自动修复发布环境，不改写旧研究验收。",
+  "validationEvidenceSHA256": "8b9cd077548ee9569d9c22737063ce34d96aab43123b01110df367c4dd67b420",
+  "browserQA": {
+    "local-desktop": "91ed13466658da8a99ba51be07d1da3bc4d33605ab70105a13d8bc76ee3aae68",
+    "local-mobile": "366ea35200fd9e90564f668d37e573753d281400081314fe098ee7c8844afad1",
+    "nine-local": "330d0aa0c49dde0f4bf95738a9ee8dd024fbe47bb169b42a32a115f465b06c9d"
+  }
+}

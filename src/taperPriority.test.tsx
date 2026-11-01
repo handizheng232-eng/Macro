@@ -26,15 +26,22 @@ it('new coverage citations jump to every admitted node and return to the actual 
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {})
   vi.spyOn(window, 'requestAnimationFrame').mockImplementation(callback => { callback(0); return 1 })
   const { container } = render(<HistoryReplay data={data} onBack={() => {}} readingControls />)
+  // Index the unchanged citation controls once. Repeated attribute selectors
+  // otherwise scan the entire real archive for every one of the 33 jumps.
+  const citations = [...container.querySelectorAll<HTMLElement>('[data-priority-target]')]
+  const returnControl = [...container.querySelectorAll('.replay-outline-actions button')].find(n => n.textContent === '返回刚才位置')!
   for (const n of nodes) {
-    const citation = container.querySelector(`[data-priority-target="${n.nodeId}"]`)
-    expect(citation, n.nodeId).not.toBeNull()
+    const citation = citations.find(control => control.dataset.priorityTarget === n.nodeId)
+    expect(citation, n.nodeId).toBeInTheDocument()
     for (let parent = citation!.parentElement; parent; parent = parent.parentElement) {
       if (parent instanceof HTMLDetailsElement && !parent.open) fireEvent.click(parent.querySelector(':scope > summary')!)
     }
     fireEvent.click(citation!)
-    expect(container.querySelector(`[data-analysis-entry="${n.nodeId}"]`)).toHaveFocus()
-    fireEvent.click([...container.querySelectorAll('.replay-outline-actions button')].find(n => n.textContent === '返回刚才位置')!)
+    const target = document.getElementById(`analysis-entry-${n.nodeId}`)
+    expect(target).toHaveAttribute('data-analysis-entry', n.nodeId)
+    expect(target).toHaveFocus()
+    expect(returnControl).toBeInTheDocument()
+    fireEvent.click(returnControl)
     expect(citation).toHaveFocus()
   }
 })

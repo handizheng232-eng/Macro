@@ -2,7 +2,7 @@ import { formatReplayDate, formatReplayText } from './replayDateFormat'
 import { act, fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
-import { replayCutoff, replayDisclosure, replaySearch, replayWorkbench, queryReplayWorkbench, replayHeading, replayToolbar } from './historyReplay.testHelpers'
+import { replayCutoff, replayDisclosure, replaySearch, replayWorkbench, queryReplayWorkbench, replayHeading, replayToolbar, replayRegion, replayNavigation, queryReplayRegion, queryReplayLabel } from './historyReplay.testHelpers'
 import type { HistoryReplayData } from './historyReplay'
 import policyReversalData from './data/historyReplay.json'
 import hawkishTransitionData from './data/historyReplayHawkishTransition.json'
@@ -59,7 +59,7 @@ it.each(switchCases)('$event：从 $fromLabel 切页，$state', async ({ event, 
   if (to.data.localResearchEvidence?.length) expect(replayDisclosure('本地研报观点明细')).not.toHaveAttribute('open')
   if (state === '内容隔离') {
     expect(replayToolbar().getByRole('status')).toHaveTextContent(`${formatReplayDate(to.data.asOf)} · ${to.data.events.filter((entry) => entry.date <= to.data.asOf).length} 条事件`)
-    expect(within(screen.getByRole('region', { name: '市场路径对照' })).queryAllByRole('rowheader').map((heading) => heading.textContent)).toEqual(
+    expect(within(replayRegion('市场路径对照')).queryAllByRole('rowheader').map((heading) => heading.textContent)).toEqual(
       to.data.events.filter((entry) => entry.date <= to.data.asOf).sort((a, b) => a.date.localeCompare(b.date)).map((entry) => `${formatReplayDate(entry.date)}${entry.title}`),
     )
     const libraryHeading = replayDisclosure('来源库 / 研报库明细').querySelector(':scope > summary')!
@@ -103,7 +103,7 @@ it('主导航离开卸载工作台，真实back恢复鹰派子页与资料截止
   const user = userEvent.setup()
   window.history.replaceState(null, '', hawkishHash)
   render(<App />)
-  await user.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('button', { name: '今日总览' }))
+  await user.click(replayNavigation('主导航').getByRole('button', { name: '今日总览' }))
   expect(queryReplayWorkbench('鹰派换届研究工作台')).not.toBeInTheDocument()
   expect(screen.queryByLabelText('按日期截止查看')).not.toBeInTheDocument()
   await traverse('back')
@@ -142,10 +142,10 @@ it.each(channelCases)('$channel 渠道：$state', async ({ channel, state }) => 
   } else {
     fireEvent.change(replayCutoff(), { target: { value: '2026-01-01' } })
     for (const name of channels) {
-      expect(screen.queryByLabelText(`${name}观点明细`)).not.toBeInTheDocument()
-      expect(screen.queryByRole('region', { name: `${name}观点独立追溯` })).not.toBeInTheDocument()
+      expect(queryReplayLabel(`${name}观点明细`)).not.toBeInTheDocument()
+      expect(queryReplayRegion(`${name}观点独立追溯`)).not.toBeInTheDocument()
     }
-    expect(screen.queryByRole('region', { name: '综合市场分析' })).not.toBeInTheDocument()
+    expect(queryReplayRegion('综合市场分析')).not.toBeInTheDocument()
     await user.click(replayToolbar().getByRole('button', { name: '恢复资料截止日' }))
     for (const name of channels) expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
   }
@@ -172,7 +172,7 @@ it('直接加载鹰派换届hash，不回退到时期总览或九月工作台', 
   render(<App />)
   expect(replayWorkbench('鹰派换届研究工作台')).toBeInTheDocument()
   expect(queryReplayWorkbench('政策反转研究工作台')).not.toBeInTheDocument()
-  expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument()
+  expect(replayRegion('综合市场分析')).toBeInTheDocument()
   act(() => window.dispatchEvent(new HashChangeEvent('hashchange')))
   expect(replayWorkbench('鹰派换届研究工作台')).toBeInTheDocument()
 })

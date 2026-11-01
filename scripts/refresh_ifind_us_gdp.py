@@ -15,6 +15,7 @@ import string
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
+from decimal import Decimal
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -244,6 +245,28 @@ def parse_raw(raw: dict[str, dict[str, Any]]) -> dict[str, tuple[list[str], list
     return {key: fetch_response_series(item["payload"], SERIES_SPEC[key][0]) for key, item in raw.items()}
 
 
+def contribution_rounding_check(headline, components):
+    """BEA headline (0.1 pp) versus four official contributions (0.01 pp).
+
+    Each rounded input contributes at most half its reporting increment to the
+    residual. The bound is derived, not fitted to a particular release:
+    0.1/2 + 4*0.01/2 = 0.07 pp. Do not apply this to chained-dollar levels.
+    """
+    h = Decimal(str(headline))
+    values = [Decimal(str(value)) for value in components]
+    h_step, c_step = Decimal('0.1'), Decimal('0.01')
+    if len(values) != 4 or not h.is_finite() or any(not value.is_finite() for value in values):
+        raise ValueError('GDP closure requires one finite headline and four finite contributions')
+    if h.quantize(h_step) != h or any(value.quantize(c_step) != value for value in values):
+        raise ValueError('GDP source precision differs from the declared reporting contract')
+    total = sum(values)
+    tolerance = (h_step + len(values) * c_step) / 2
+    residual = total - h
+    return {'componentSum': float(total), 'residualPp': float(residual),
+            'tolerancePp': float(tolerance), 'headlineResolutionPp': float(h_step),
+            'componentResolutionPp': float(c_step), 'passed': abs(residual) <= tolerance}
+
+
 def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str, Any]:
     parsed = parse_raw(raw)
     actual_last = parsed["real_gdp_level"][0][-1]
@@ -281,7 +304,9 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
     nber = chart("nber-dashboard", "NBER月度活动拼图", "以2021年12月为100，对照就业、实际消费与工业生产；iFinD EDB未检出六项中的实际收入除转移支付、实际制造与贸易销售。", "指数", nber_series, eyebrow="3.2/3.4 · RECESSION CHECK", default_range="5Y", reference=100, rebased_at="2021-12=100", explanation={"what": "NBER看经济活动下降的深度、广度与持续性，而不是机械套用两季负增长。", "howToRead": "多条月度硬数据持续、同步跌破基期才更接近广泛衰退；2022H1就业和消费并未同步坍塌。", "caveat": "本图接入四项；缺少的两项明确标记未接入。NBER没有固定六指标公式，峰谷判断是回顾性的。", "pptSlide": "PPT第105、109页 · 图3-7"})
 
     contrib_periods, contrib_values = align_common_periods({key: parsed[key] for key in ("real_gdp_saar", "contrib_consumption", "contrib_investment", "contrib_government", "contrib_net_exports")})
-    contribution_sum = sum(contrib_values[key][-1] for key in ("contrib_consumption", "contrib_investment", "contrib_government", "contrib_net_exports"))
+    contribution_check = contribution_rounding_check(contrib_values['real_gdp_saar'][-1], [contrib_values[key][-1] for key in ("contrib_consumption", "contrib_investment", "contrib_government", "contrib_net_exports")])
+    if not contribution_check['passed']:
+        raise ValueError(f'GDP contribution residual exceeds reporting-precision bound: {contribution_check}')
     deflator_periods, deflator_values = align_common_periods({"nominal": parsed["nominal_gdp_level"], "real": parsed["real_gdp_level"], "deflator": parsed["deflator_level"]})
     mean_periods, mean_values = align_common_periods({"gdp": parsed["real_gdp_level"], "gdi": (parsed["gdi_level"][0], [value / 1000 for value in parsed["gdi_level"][1]]), "mean": (parsed["gdp_gdi_mean"][0], [value / 1000 for value in parsed["gdp_gdi_mean"][1]])})
 
@@ -340,7 +365,11 @@ def build_dataset(raw: dict[str, dict[str, Any]], raw_snapshot: str) -> dict[str
             "missingPeriods": {key: detect_missing_periods(dates, SERIES_SPEC[key][4]) for key, (dates, _values) in parsed.items() if SERIES_SPEC[key][4] in {"月", "季"}},
             "accountingChecks": {
                 "latestContributionPeriod": contrib_periods[-1],
-                "latestContributionResidualPp": round(contribution_sum - contrib_values["real_gdp_saar"][-1], 6),
+                "latestContributionResidualPp": contribution_check['residualPp'],
+                "latestContributionTolerancePp": contribution_check['tolerancePp'],
+                "headlineResolutionPp": contribution_check['headlineResolutionPp'],
+                "componentResolutionPp": contribution_check['componentResolutionPp'],
+                "contributionRoundingMethod": "头条0.1个百分点、四项贡献各0.01个百分点；最大舍入残差=0.1/2+4×0.01/2=0.07个百分点，不修改原值。",
                 "latestDeflatorPeriod": deflator_periods[-1],
                 "latestDeflatorIdentityResidual": round(deflator_values["nominal"][-1] / deflator_values["real"][-1] * 100 - deflator_values["deflator"][-1], 6),
                 "latestGdpGdiMeanPeriod": mean_periods[-1],

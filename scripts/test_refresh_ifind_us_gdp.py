@@ -92,7 +92,10 @@ class GdpDatasetTest(unittest.TestCase):
 
     def test_accounting_closures(self):
         checks = self.data["dataQuality"]["accountingChecks"]
-        self.assertLessEqual(abs(checks["latestContributionResidualPp"]), 0.02)
+        self.assertEqual(checks['headlineResolutionPp'], 0.1)
+        self.assertEqual(checks['componentResolutionPp'], 0.01)
+        self.assertEqual(checks['latestContributionTolerancePp'], (0.1 + 4 * 0.01) / 2)
+        self.assertLessEqual(abs(checks["latestContributionResidualPp"]), checks['latestContributionTolerancePp'])
         self.assertLessEqual(abs(checks["latestDeflatorIdentityResidual"]), 0.001)
         self.assertLessEqual(abs(checks["latestGdpGdiMeanResidualBillion"]), 0.001)
 
