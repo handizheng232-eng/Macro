@@ -11,9 +11,11 @@ import argparse
 import calendar
 import json
 import math
+import os
 import re
 import statistics
 import string
+import tempfile
 import urllib.parse
 import urllib.request
 from collections import OrderedDict
@@ -23,8 +25,10 @@ from typing import Any, Iterable
 
 try:
     from scripts.ifind_history import assert_full_history, metadata_start_date
+    from scripts.pce_distribution import build_distribution, fetch_distribution, DEFAULT_BACKUP_DIR
 except ModuleNotFoundError:
     from ifind_history import assert_full_history, metadata_start_date
+    from pce_distribution import build_distribution, fetch_distribution, DEFAULT_BACKUP_DIR
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usInflationData.json"
@@ -822,11 +826,14 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
     headline_lookup = {item["id"]: item for item in survey_series + breakeven_series}
     pce_lookup = {item["id"]: item for item in pce_trend}
 
+    # Optional for old replay fixtures; never fetch inside a deterministic build.
+    distribution = build_distribution(raw["__pceDistribution"]) if "__pceDistribution" in raw else None
+
     return {
         "schemaVersion": 5,
         "generatedAt": generated_at,
-        "source": "iFinD EDB",
-        "sourceProviders": ["iFinD EDB"],
+        "source": "iFinD EDB；PCE分项涨幅分布来自Dallas Fed官方" if distribution else "iFinD EDB",
+        "sourceProviders": ["iFinD EDB", "Federal Reserve Bank of Dallas"] if distribution else ["iFinD EDB"],
         "framework": build_framework(),
         "headline": [
             {"id": "actual", "label": "实际通胀", "title": "核心PCE同比", "value": pce_lookup["core_pce_yoy"]["latestValue"], "unit": "%", "observation": pce_lookup["core_pce_yoy"]["latestObservation"], "source": "iFinD EDB"},
@@ -834,6 +841,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
             {"id": "implied", "label": "市场隐含", "title": "5y5y远期通胀补偿", "value": five_year_five_year[0]["latestValue"], "unit": "%", "observation": five_year_five_year[0]["latestObservation"], "source": "iFinD EDB"},
         ],
         "actual": {
+            **({"pceDistribution": distribution} if distribution else {}),
             "cpiTrend": {
                 "id": "cpi-trend", "eyebrow": "ACTUAL · CPI",
                 "title": "CPI同比分项", "description": "iFinD EDB 美国劳工局数据：总CPI、核心、食品与能源当月同比。",
@@ -989,29 +997,65 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
     }
 
 
+def write_dataset(path: Path, dataset: dict[str, Any], backup_dir: Path | None = None) -> None:
+    """Back up exact original bytes, then atomically replace a validated dataset."""
+    text = json.dumps(dataset, ensure_ascii=False, indent=2, allow_nan=False)
+    if path.exists():
+        backups = Path(backup_dir) if backup_dir is not None else DEFAULT_BACKUP_DIR / 'dataset-backups'
+        backups.mkdir(parents=True, exist_ok=True)
+        original = path.read_bytes()
+        with tempfile.NamedTemporaryFile(mode='wb', dir=backups, prefix=path.name + '.',
+                                         suffix='.backup', delete=False) as handle:
+            backup = Path(handle.name)
+            handle.write(original)
+            handle.flush()
+            os.fsync(handle.fileno())
+        if backup.read_bytes() != original:
+            raise OSError('Original dataset backup verification failed')
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="\n", dir=path.parent,
+                                         prefix=path.name + ".", suffix=".tmp", delete=False) as handle:
+            temporary = Path(handle.name)
+            handle.write(text)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR)
     parser.add_argument("--input", type=Path, help="Use a saved iFinD raw bundle instead of fetching.")
+    parser.add_argument("--pce-backup-dir", type=Path, default=DEFAULT_BACKUP_DIR,
+                        help="Durable Dallas source-byte backup outside ignored data/raw (or PCE_DISTRIBUTION_BACKUP_DIR).")
     args = parser.parse_args()
 
     generated_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     if args.input:
         raw = json.loads(args.input.read_text(encoding="utf-8"))
+        if "__pceDistribution" not in raw:
+            raise ValueError("Replay bundle lacks __pceDistribution; refusing to remove the validated PCE distribution.")
     else:
         token, log_file = read_token()
         print(f"read iFinD session from {log_file.name}")
         raw = fetch_all(token)
+        raw["__pceDistribution"] = fetch_distribution(args.raw_dir / "pce-distribution", args.pce_backup_dir)
         args.raw_dir.mkdir(parents=True, exist_ok=True)
         stamp = generated_at.replace(":", "").replace("-", "")
         raw_path = args.raw_dir / f"{stamp}_ifind_inflation.json"
         raw_path.write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"raw saved to {raw_path}")
 
-    dataset = build_dataset(raw, generated_at, str(raw_path.relative_to(REPO_ROOT)).replace("\\", "/") if not args.input else str(args.input))
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(dataset, ensure_ascii=False, indent=2), encoding="utf-8")
+    snapshot_path = args.input.resolve() if args.input else raw_path.resolve()
+    snapshot = snapshot_path.relative_to(REPO_ROOT).as_posix() if snapshot_path.is_relative_to(REPO_ROOT) else str(snapshot_path)
+    dataset = build_dataset(raw, generated_at, snapshot)
+    write_dataset(args.output, dataset, args.pce_backup_dir / 'dataset-backups')
     print(f"wrote {args.output}")
     print(f"cpiTrend: {len(dataset['actual']['cpiTrend']['series'])} series")
     print(f"pceTrend: {len(dataset['actual']['pceTrend']['series'])} series")

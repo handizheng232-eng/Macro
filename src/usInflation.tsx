@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { ArrowLeft, CheckCircle2, ChevronRight, Info } from 'lucide-react'
 import inflationData from './data/usInflationData.json'
 import { macroReleaseTiming } from './macroReleaseTiming'
+import { PceDistributionChart, type PceDistributionData } from './pceDistribution'
 import { MACRO_TIME_RANGE_OPTIONS, macroTimeRangeCutoff, type MacroTimeRange } from './macroTimeRange'
 import { heatmapPeriodIndices } from './heatmapTimeRange'
 
@@ -140,6 +141,7 @@ type InflationDataset = {
   actual: {
     cpiTrend: ChartDefinition
     pceTrend: ChartDefinition
+    pceDistribution?: PceDistributionData
     goodsServices: ChartDefinition
     shelterLag: ChartDefinition & { availability: string }
     underlying: ChartDefinition & { caveat: string }
@@ -890,9 +892,9 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
           <button className="history-back" type="button" onClick={onBack}>
             <ArrowLeft size={15} />返回宏观框架
           </button>
-          <p className="eyebrow">US ECONOMY · IFIND INFLATION RESEARCH FRAMEWORK</p>
+          <p className="eyebrow">US ECONOMY · INFLATION RESEARCH FRAMEWORK</p>
           <h1>美国通胀</h1>
-          <p>按“总量—结构—底层中枢—预期锚—发布前先行”组织，iFinD负责定期刷新，所有派生序列公开公式与限制。</p>
+          <p>按“总量—结构—底层中枢—预期锚—发布前先行”组织，接入iFinD与达拉斯联储官方数据，所有派生序列公开公式与限制。</p>
         </div>
         <div className="as-of"><span>本页最近观测</span><strong>{formatDate(latestObservation)}</strong></div>
       </div>
@@ -925,6 +927,7 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
           <MultiSeriesChart chart={dataset.actual.cpiTrend} />
           <MultiSeriesChart chart={dataset.actual.pceTrend} />
         </div>
+        {dataset.actual.pceDistribution && <div className="inflation-chart-grid single"><PceDistributionChart data={dataset.actual.pceDistribution} /></div>}
         <div className="inflation-chart-grid">
           <MultiSeriesChart chart={dataset.actual.goodsServices} />
           <MultiSeriesChart chart={dataset.actual.shelterLag} />

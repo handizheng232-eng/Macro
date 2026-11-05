@@ -64,10 +64,14 @@ class IfindDatasetContractTests(unittest.TestCase):
     def setUpClass(cls):
         cls.dataset = json.loads(DATASET_PATH.read_text(encoding="utf-8"))
 
-    def test_dataset_is_ifind_only(self):
+    def test_dataset_sources_explicitly_separate_dallas_distribution_from_ifind(self):
         self.assertEqual(self.dataset["schemaVersion"], 5)
-        self.assertEqual(self.dataset["source"], "iFinD EDB")
-        self.assertEqual(self.dataset["sourceProviders"], ["iFinD EDB"])
+        self.assertEqual(self.dataset["source"], "iFinD EDB；PCE分项涨幅分布来自Dallas Fed官方")
+        self.assertEqual(self.dataset["sourceProviders"], ["iFinD EDB", "Federal Reserve Bank of Dallas"])
+        self.assertEqual(self.dataset["actual"]["pceDistribution"]["source"]["provider"], "Federal Reserve Bank of Dallas")
+        for chart in ("cpiTrend", "pceTrend", "coreSplit"):
+            for series in self.dataset["actual"][chart]["series"]:
+                self.assertEqual(series["source"]["provider"], "iFinD EDB")
         serialized = json.dumps(self.dataset, ensure_ascii=False)
         self.assertNotIn("OpenBB", serialized)
         self.assertNotIn("Wind EDB", serialized)

@@ -2,7 +2,7 @@ import { formatReplayText } from './replayDateFormat'
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
-import { replayDisclosure, replayHeading, replaySearch } from './historyReplay.testHelpers'
+import { replayDisclosure, replayHeading, replaySearch, replayRegion } from './historyReplay.testHelpers'
 import { HistoryReplay, type HistoryReplayData } from './historyReplay'
 
 it('微信当前覆盖审计在历史模式整体卸载，恢复日期仍为默认折叠', async () => {
@@ -82,16 +82,21 @@ it('真实history.back和forward在父子页面间往返', async () => {
     window.history.forward()
     await navigated
   })
-  await waitFor(() => expect(screen.getByRole('region', { name: '综合市场分析' })).toBeInTheDocument())
+  await waitFor(() => expect(replayRegion('综合市场分析')).toBeInTheDocument())
   expect(screen.getByRole('figure', { name: '复盘方法框架' })).toBeInTheDocument()
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '来源库 / 研报库明细']) {
     expect(replayDisclosure(label)).not.toHaveAttribute('open')
   }
-  await user.click(replayDisclosure('来源库 / 研报库明细').querySelector(':scope > summary')!)
-  expect(replayDisclosure('来源库 / 研报库明细')).toHaveAttribute('open')
-  expect(replaySearch()).toHaveRole('searchbox')
-  expect(replaySearch()).toHaveAccessibleName('检索资料')
-  expect(replaySearch()).toBeVisible()
+  const library = replayDisclosure('来源库 / 研报库明细')
+  await user.click(library.querySelector(':scope > summary')!)
+  // A native disclosure toggle does not replace the node. Assert the live handle
+  // instead of recalculating its accessible name after style-cache invalidation.
+  expect(library).toBeInTheDocument()
+  expect(library).toHaveAttribute('open')
+  const search = replaySearch()
+  expect(search).toHaveRole('searchbox')
+  expect(search).toHaveAccessibleName('检索资料')
+  expect(search).toBeVisible()
 })
 
 it('已发布的10.2至10.5提供入口，旧独立hash可加载并返回父阶段', async () => {

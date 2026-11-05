@@ -14,3 +14,4 @@ public/taper-charts/*.svg -text
 src/data/historyReplayRateLiftoffQtGuidance.json -text
 public/replay-rate-liftoff/*.svg -text
 src/test/rateLiftoffPublicPins.json -text
+scripts/fixtures/pce_distribution_20261105.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

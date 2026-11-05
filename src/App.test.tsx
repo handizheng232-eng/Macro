@@ -159,7 +159,12 @@ describe('宏观框架', () => {
     await user.click(screen.getByRole('button', { name: '打开美国通胀模块' }))
     expect(window.location.hash).toBe('#framework/us-inflation')
     expect(screen.getByRole('heading', { name: '美国通胀' })).toBeInTheDocument()
-    expect(screen.getAllByRole('img', { name: /折线图|柱状图/ })).toHaveLength(18)
+    const inflationCharts = screen.getAllByRole('img', { name: /折线图|柱状图/ })
+    const pceDistributionChart = screen.getByRole('img', { name: 'PCE分项价格涨幅分布——按消费支出权重加权堆叠柱状图' })
+    // The approved additive PCE chart must not replace any of the 18 old charts.
+    expect(inflationCharts).toHaveLength(19)
+    expect(inflationCharts).toContain(pceDistributionChart)
+    expect(inflationCharts.filter(chart => chart !== pceDistributionChart)).toHaveLength(18)
     expect(within(screen.getByRole('region', { name: '通胀研究路线图' })).getAllByRole('article')).toHaveLength(6)
     expect(screen.getByRole('table', { name: 'CPI与PCE数据身份证' })).toBeInTheDocument()
     expect(screen.getByRole('table', { name: '通胀指标说明' })).toBeInTheDocument()

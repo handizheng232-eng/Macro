@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "pce-distribution-authorization-01",
+  "publicationAuthorized": true,
+  "scope": "us-inflation-pce-weighted-distribution-addition",
+  "request": "好的，进行上线",
+  "recordedAt": "2026-11-05T02:15:03.318617+00:00",
+  "baselineCommit": "528f3da6607f09d10143ecf368e2f6f9b74a3590",
+  "reviewedDatasetSemanticSHA256": "e58d236114fea0a36a1d26e5d9aff91a8c43af1c9861d2db724053441d1ebf42",
+  "sourceFixtureSHA256": "6011555d2823cc5b18784695a8a2edecf66b7a75d2fd336e4e4712a246c73151",
+  "historicalResearchAuthorizationExpanded": false,
+  "otherMacroDataRefreshAuthorized": false
+}

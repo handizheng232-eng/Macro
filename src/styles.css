@@ -599,6 +599,26 @@ td:last-child { color: var(--subtle); }
 .chart-source-list span { color: var(--subtle); font: 7px 'IBM Plex Mono', monospace; }
 .chart-method-note { margin: 9px 0 0; color: #7a5c2b; font-size: 8px; line-height: 1.55; }
 .chart-verification { display: flex; align-items: center; gap: 5px; margin: 9px 0 0; color: #24705f; font-size: 8px; }
+.pce-distribution-card { min-width: 0; scroll-margin-top: 132px; }
+.pce-distribution-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding: 10px 16px; color: var(--muted); font-size: 10px; }
+.pce-distribution-toolbar label { display: flex; align-items: center; gap: 8px; }
+.pce-distribution-toolbar select { border: 1px solid var(--line); border-radius: 3px; padding: 5px 8px; background: #fff; color: var(--ink); font: 11px 'IBM Plex Mono', monospace; }
+.pce-chart-scroll { max-width: 100%; overflow-x: auto; }
+.pce-distribution-card .multi-series-svg { touch-action: pan-x pan-y; }
+.deep-research-page .pce-distribution-card .chart-axis-text { font-size: 12px; }
+.pce-selected-month { fill: none; stroke: var(--navy); stroke-width: 1.5; stroke-dasharray: 4 3; pointer-events: none; }
+.pce-distribution-card .contribution-legend span, .pce-distribution-readout > span { font-size: 10px; }
+.pce-distribution-readout strong { font-size: 11px; }
+.pce-distribution-coverage { padding: 10px 16px; color: var(--subtle); font-size: 10px; line-height: 1.7; }
+.pce-distribution-details { border-top: 1px solid var(--line); }
+.pce-distribution-details summary { padding: 11px 16px; color: var(--blue); font-size: 11px; cursor: pointer; }
+.pce-distribution-method summary { padding-top: 10px; color: var(--blue); font-size: 10px; cursor: pointer; }
+.pce-table-scroll { overflow-x: auto; max-width: 100%; }
+.pce-table-scroll table { width: 100%; min-width: 690px; border-collapse: collapse; font-size: 10px; font-variant-numeric: tabular-nums; }
+.pce-table-scroll th, .pce-table-scroll td { padding: 9px 12px; text-align: right; border-top: 1px solid var(--line); white-space: nowrap; }
+.pce-table-scroll thead { background: #f1f4f8; }
+.pce-table-scroll th:first-child { position: sticky; left: 0; text-align: left; background: #f7f9fc; }
+.pce-distribution-card footer .chart-method-note, .pce-distribution-card footer .chart-source-list a, .pce-distribution-card footer .chart-verification { font-size: 10px; line-height: 1.8; }
 .contribution-latest { flex: 0 0 auto; min-width: 94px; padding: 9px 11px; background: var(--navy); color: #fff; text-align: right; }
 .contribution-latest strong, .contribution-latest span { display: block; }
 .contribution-latest strong { font: 16px 'IBM Plex Mono', monospace; font-weight: 500; }

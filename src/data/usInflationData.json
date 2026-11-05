@@ -1,9 +1,10 @@
 {
   "schemaVersion": 5,
   "generatedAt": "2026-11-01T00:34:04+00:00",
-  "source": "iFinD EDB",
+  "source": "iFinD EDB；PCE分项涨幅分布来自Dallas Fed官方",
   "sourceProviders": [
-    "iFinD EDB"
+    "iFinD EDB",
+    "Federal Reserve Bank of Dallas"
   ],
   "framework": {
     "title": "从读数到机制，再到发布前映射",
@@ -354,6 +355,1142 @@
     }
   ],
   "actual": {
+    "pceDistribution": {
+      "title": "PCE分项价格涨幅分布——按消费支出权重加权",
+      "description": "按分项季调月度环比折年涨幅分桶，展示各桶占消费支出的权重；不是分项数量占比，也不是同比。",
+      "unit": "消费支出占比（%）",
+      "periods": [
+        "202509",
+        "202510",
+        "202511",
+        "202512",
+        "202601",
+        "202602",
+        "202603",
+        "202604",
+        "202605",
+        "202606",
+        "202607",
+        "202608",
+        "202609"
+      ],
+      "buckets": [
+        {
+          "id": "nonpositive",
+          "label": "未上涨（≤0%）",
+          "color": "#94a3b8",
+          "lowerExclusive": null,
+          "upperInclusive": 0,
+          "derived": true,
+          "values": [
+            13.49938045213051,
+            25.111385246660973,
+            24.75338009589801,
+            28.44583020064411,
+            18.60292199358412,
+            28.650766644205305,
+            21.273411383644003,
+            24.65891554300451,
+            22.023933371911397,
+            32.83391276099832,
+            28.190235110853678,
+            22.842949798227764,
+            25.576404665845672
+          ]
+        },
+        {
+          "id": "0-2",
+          "label": "0%—2%",
+          "color": "#66a78e",
+          "lowerExclusive": 0,
+          "upperInclusive": 2,
+          "derived": false,
+          "values": [
+            35.4877389891431,
+            30.6976854895071,
+            29.3685497936353,
+            17.0298705897833,
+            21.0779268646989,
+            14.8358451592875,
+            12.3606540236177,
+            12.3097194780517,
+            11.7429730321598,
+            17.9786869633969,
+            15.3690950586871,
+            12.4091298741665,
+            6.25029260707453
+          ]
+        },
+        {
+          "id": "2-3",
+          "label": "2%—3%",
+          "color": "#a8bc6b",
+          "lowerExclusive": 2,
+          "upperInclusive": 3,
+          "derived": false,
+          "values": [
+            12.6023174716296,
+            10.2058617697175,
+            11.8044272041597,
+            2.86185482759008,
+            18.2059999941837,
+            18.4538427728289,
+            17.945744068281,
+            15.0365915652365,
+            11.0149966013045,
+            17.6852086694905,
+            6.52615110128966,
+            35.2311618369244,
+            15.5276880449415
+          ]
+        },
+        {
+          "id": "3-5",
+          "label": "3%—5%",
+          "color": "#dfbf62",
+          "lowerExclusive": 3,
+          "upperInclusive": 5,
+          "derived": false,
+          "values": [
+            10.464720702277,
+            12.7844752439714,
+            9.32296904645867,
+            22.0119079569675,
+            14.0049834063132,
+            12.2391676572932,
+            17.8863181359153,
+            5.28032621740548,
+            25.9852324065723,
+            4.35137119016122,
+            30.5068785320967,
+            5.43057808609123,
+            25.840403256328
+          ]
+        },
+        {
+          "id": "5-10",
+          "label": "5%—10%",
+          "color": "#d98d57",
+          "lowerExclusive": 5,
+          "upperInclusive": 10,
+          "derived": false,
+          "values": [
+            17.2762779135883,
+            8.40636888946283,
+            15.3568947798922,
+            17.7656759164858,
+            7.94558366464889,
+            10.0125852479849,
+            13.9499926341612,
+            28.2231345924446,
+            13.1080011163564,
+            17.8317935786165,
+            14.4775168453847,
+            10.9290953622074,
+            10.1602334209278
+          ]
+        },
+        {
+          "id": "gt10",
+          "label": ">10%",
+          "color": "#bf5956",
+          "lowerExclusive": 10,
+          "upperInclusive": null,
+          "derived": false,
+          "values": [
+            10.6695644712315,
+            12.7942233606802,
+            9.39377907995612,
+            11.8848605085292,
+            20.1625840765712,
+            15.8077925184002,
+            16.5838797543808,
+            14.4913126038572,
+            16.1248634716956,
+            9.31902683733656,
+            4.93012335168816,
+            13.1570850423827,
+            16.6449780048825
+          ]
+        }
+      ],
+      "source": {
+        "provider": "Federal Reserve Bank of Dallas",
+        "institution": "达拉斯联邦储备银行（底层分项来自BEA）",
+        "sourceUrl": "https://www.dallasfed.org/research/pce",
+        "chartDataUrl": "https://www.dallasfed.org/-/media/documents/research/pce/pcedata.xlsx",
+        "detailDataUrl": "https://www.dallasfed.org/~/media/documents/research/pce/detail",
+        "fetchedAt": "2026-11-05T00:35:41.010874+00:00",
+        "latestObservation": "202609",
+        "sourceObservation": "202609",
+        "pageTitle": "Trimmed Mean PCE Inflation rate, September 2026",
+        "detailObservation": null,
+        "detailMatchEvidence": "明细无显式观察日期；官网当月标题与图表最新月相同，且同批明细按六桶加总与最新图表闭合。该证据为匹配核验，不是明细原载日期。",
+        "resources": {
+          "page": {
+            "url": "https://www.dallasfed.org/research/pce",
+            "fetchedAt": "2026-11-05T00:35:39.621539+00:00",
+            "sha256": "be6f77ab2cd7f649c15e30bd35cd92b3d724456fb5b911fa134ed8d5a5b55d84"
+          },
+          "chart": {
+            "url": "https://www.dallasfed.org/-/media/documents/research/pce/pcedata.xlsx",
+            "fetchedAt": "2026-11-05T00:35:40.462502+00:00",
+            "sha256": "87188f3257b1de70bc0f4321f5f672d15163fd99ff687bb2eff15cd4dc4240cd"
+          },
+          "detail": {
+            "url": "https://www.dallasfed.org/~/media/documents/research/pce/detail",
+            "fetchedAt": "2026-11-05T00:35:41.010874+00:00",
+            "sha256": "9527a5718a4eb8ab7c537c4d3b9918480646599d117b04feffd1c33d1e0340ce"
+          }
+        }
+      },
+      "methodology": {
+        "rate": "分项价格季调月度环比折年率（%）：100*((P_t/P_{t-1})^12-1)，不是同比；直接使用官方明细折年率，不由已舍入月率推算。",
+        "weight": "使用Dallas明细Weight列的官方消费支出权重（%）。其方法为上月名义支出占比与按上月价格计价的本月数量支出占比的均值，不是两个月名义支出占比的简单平均；不自行换用CPI权重或等权。",
+        "weightFormula": "w_i,t = 0.5*(P_i,t-1*Q_i,t-1/sum_j(P_j,t-1*Q_j,t-1) + P_i,t-1*Q_i,t/sum_j(P_j,t-1*Q_j,t)); Weight=100*w_i,t",
+        "boundaries": "r≤0；0<r≤2；2<r≤3；3<r≤5；5<r≤10；r>10。r为月度环比折年率（%），不先四舍五入再分桶。",
+        "residual": "未上涨（≤0%）=100减官方五个上涨桶之和，包含价格不变及下降，不能称为纯下降。最新月再与明细独立加总核对。",
+        "coverage": "本次官方图表可得13个月：202509—202609；明细仅最新截面。使用全部分项（含被截尾项目），不是截尾后分布。缺失不插值；不使用1977年以来截尾均值历史反推分布，不构造同比。",
+        "references": [
+          {
+            "url": "https://www.dallasfed.org/research/pce",
+            "locator": "Distribution chart description"
+          },
+          {
+            "url": "https://www.dallasfed.org/research/pce/glossary",
+            "locator": "Annualized rates; Components of personal consumption expenditures"
+          },
+          {
+            "url": "https://www.dallasfed.org/research/pce/descr",
+            "locator": "Trimming describes a different statistic, not exclusion from this distribution"
+          },
+          {
+            "url": "https://www.dallasfed.org/-/media/documents/research/papers/2005/wp0506.pdf",
+            "locator": "Printed page 5, equation (2): two terms priced at prior-month prices"
+          },
+          {
+            "url": "https://www.dallasfed.org/-/media/Documents/research/pce/tech.pdf",
+            "locator": "2009 revision; historical component definitions, not current component count"
+          }
+        ]
+      },
+      "quality": {
+        "monthlySums": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ],
+        "maximumSumResidual": 0.0,
+        "latestComponentCount": 177,
+        "latestWeightSum": 99.99999999999973,
+        "latestBucketMaxDifference": 3.375077994860476e-13,
+        "tolerancePercentagePoints": 1e-08,
+        "latestZeroRateWeight": 0.10368565190711904,
+        "missingPeriods": []
+      },
+      "latestComponents": [
+        {
+          "label": "Video discs, tapes, and permanent digital downloads",
+          "annualizedRate": -80.4289732309352,
+          "weight": 0.0665714599189956
+        },
+        {
+          "label": "Household linens",
+          "annualizedRate": -43.473284145619,
+          "weight": 0.337753442399381
+        },
+        {
+          "label": "Film and photographic supplies",
+          "annualizedRate": -29.8865262254783,
+          "weight": 0.00685728029631313
+        },
+        {
+          "label": "Moving, storage, and freight services",
+          "annualizedRate": -24.0021891818829,
+          "weight": 0.109318896502331
+        },
+        {
+          "label": "Fresh milk",
+          "annualizedRate": -21.3653983093371,
+          "weight": 0.14545475338629
+        },
+        {
+          "label": "Televisions",
+          "annualizedRate": -20.3730343550648,
+          "weight": 0.173031294929704
+        },
+        {
+          "label": "Window coverings",
+          "annualizedRate": -16.2286932943738,
+          "weight": 0.159696453441434
+        },
+        {
+          "label": "Household paper products",
+          "annualizedRate": -15.6394692106738,
+          "weight": 0.293156550413652
+        },
+        {
+          "label": "Eggs",
+          "annualizedRate": -14.1447742175413,
+          "weight": 0.0797276100640394
+        },
+        {
+          "label": "Prescription drugs",
+          "annualizedRate": -13.9600883245989,
+          "weight": 2.7654897697419
+        },
+        {
+          "label": "Beef and veal",
+          "annualizedRate": -11.7785272925845,
+          "weight": 0.303341956977557
+        },
+        {
+          "label": "Pork",
+          "annualizedRate": -10.9189437802555,
+          "weight": 0.225468269599491
+        },
+        {
+          "label": "Professional association dues",
+          "annualizedRate": -10.2274715826831,
+          "weight": 0.0700157355596845
+        },
+        {
+          "label": "Legal services",
+          "annualizedRate": -10.2232922254153,
+          "weight": 0.753545861669313
+        },
+        {
+          "label": "Cosmetic / perfumes / bath / nail preparations and implements",
+          "annualizedRate": -9.84572910852959,
+          "weight": 0.368859137971517
+        },
+        {
+          "label": "Women's and girls' clothing",
+          "annualizedRate": -9.40798476960164,
+          "weight": 1.23045072032267
+        },
+        {
+          "label": "Furniture",
+          "annualizedRate": -9.34413045780261,
+          "weight": 0.77342527360325
+        },
+        {
+          "label": "Live entertainment, excluding sports",
+          "annualizedRate": -9.23140980998501,
+          "weight": 0.305781093812597
+        },
+        {
+          "label": "Motion picture theaters",
+          "annualizedRate": -9.21620303498434,
+          "weight": 0.0585214149066462
+        },
+        {
+          "label": "Museums and libraries",
+          "annualizedRate": -9.19265498185089,
+          "weight": 0.0904356888068814
+        },
+        {
+          "label": "Accessories and parts",
+          "annualizedRate": -8.02464875215148,
+          "weight": 0.360031785616133
+        },
+        {
+          "label": "Small electric household appliances",
+          "annualizedRate": -7.74103717339971,
+          "weight": 0.0580791538321609
+        },
+        {
+          "label": "Carpets and other floor coverings",
+          "annualizedRate": -7.47858766487983,
+          "weight": 0.136555924493615
+        },
+        {
+          "label": "Veterinary and other services for pets",
+          "annualizedRate": -6.65262571703882,
+          "weight": 0.365472937017377
+        },
+        {
+          "label": "Other meats",
+          "annualizedRate": -5.31852094628342,
+          "weight": 0.225508475151717
+        },
+        {
+          "label": "Food products, not elsewhere classified",
+          "annualizedRate": -4.95314825435806,
+          "weight": 1.17116986720731
+        },
+        {
+          "label": "Child care",
+          "annualizedRate": -4.60863483848394,
+          "weight": 0.317083321271667
+        },
+        {
+          "label": "Day care and nursery schools",
+          "annualizedRate": -4.60847338122382,
+          "weight": 0.100790852146851
+        },
+        {
+          "label": "Communication",
+          "annualizedRate": -4.49770322189009,
+          "weight": 1.47122837075308
+        },
+        {
+          "label": "Processed dairy products",
+          "annualizedRate": -4.01012126207029,
+          "weight": 0.338785384906514
+        },
+        {
+          "label": "Tools, hardware, and supplies",
+          "annualizedRate": -3.83688589455458,
+          "weight": 0.245101980936492
+        },
+        {
+          "label": "Natural gas",
+          "annualizedRate": -3.78821659914201,
+          "weight": 0.344780479471759
+        },
+        {
+          "label": "Clothing materials",
+          "annualizedRate": -3.78221689585054,
+          "weight": 0.013638616771755
+        },
+        {
+          "label": "Sewing items",
+          "annualizedRate": -3.77171212972956,
+          "weight": 0.00552156250569578
+        },
+        {
+          "label": "Pets and related products",
+          "annualizedRate": -3.12260583077655,
+          "weight": 0.540773612006056
+        },
+        {
+          "label": "Employment agency services",
+          "annualizedRate": -3.09727380559775,
+          "weight": 0.00751397098267015
+        },
+        {
+          "label": "Spirits",
+          "annualizedRate": -2.79758121885911,
+          "weight": 0.254885331978138
+        },
+        {
+          "label": "Household cleaning products",
+          "annualizedRate": -2.08275467604887,
+          "weight": 0.194250891937839
+        },
+        {
+          "label": "Fats and oils",
+          "annualizedRate": -2.07112498559125,
+          "weight": 0.147201461266328
+        },
+        {
+          "label": "Sporting equipment, supplies, guns, and ammunition",
+          "annualizedRate": -1.80630950055007,
+          "weight": 0.619469279562963
+        },
+        {
+          "label": "Paramedical services",
+          "annualizedRate": -1.4039690197371,
+          "weight": 3.19967846279699
+        },
+        {
+          "label": "Final consumption expenditures of nonprofit institutions serving households ",
+          "annualizedRate": -0.959212705129519,
+          "weight": 2.96981885343771
+        },
+        {
+          "label": "Alcohol in purchased meals",
+          "annualizedRate": -0.822721696768358,
+          "weight": 0.825938192093908
+        },
+        {
+          "label": "Net motor vehicle and other transportation insurance ",
+          "annualizedRate": -0.65266633356924,
+          "weight": 0.50735833082272
+        },
+        {
+          "label": "Major household appliances",
+          "annualizedRate": -0.543112887550978,
+          "weight": 0.371141919881234
+        },
+        {
+          "label": "Bakery products",
+          "annualizedRate": -0.488467534421643,
+          "weight": 0.594523968048558
+        },
+        {
+          "label": "Photographic equipment",
+          "annualizedRate": -0.477973219230976,
+          "weight": 0.0263614404094747
+        },
+        {
+          "label": "Beer",
+          "annualizedRate": -0.383214410230259,
+          "weight": 0.488845907664464
+        },
+        {
+          "label": "Commercial banks",
+          "annualizedRate": -0.111725639908244,
+          "weight": 1.25430601464339
+        },
+        {
+          "label": "Motorcycles",
+          "annualizedRate": 0.0,
+          "weight": 0.0992541065951043
+        },
+        {
+          "label": "Food produced and consumed on farms",
+          "annualizedRate": 0.0,
+          "weight": 0.00443154531201474
+        },
+        {
+          "label": "Sugar and sweets",
+          "annualizedRate": 0.0477440907681092,
+          "weight": 0.362167147167688
+        },
+        {
+          "label": "Corrective eyeglasses and contact lenses",
+          "annualizedRate": 0.419535086973499,
+          "weight": 0.228041424941952
+        },
+        {
+          "label": "Physician services",
+          "annualizedRate": 0.616603898859469,
+          "weight": 3.98579975633648
+        },
+        {
+          "label": "Standard clothing issued to military personnel",
+          "annualizedRate": 0.805518793412307,
+          "weight": 0.00233638931268519
+        },
+        {
+          "label": "Luggage and similar personal items",
+          "annualizedRate": 0.908248104546327,
+          "weight": 0.249377171323184
+        },
+        {
+          "label": "Fish and seafood",
+          "annualizedRate": 1.16645109757567,
+          "weight": 0.106946768921
+        },
+        {
+          "label": "Funeral and burial services",
+          "annualizedRate": 1.18448444415177,
+          "weight": 0.146205257027841
+        },
+        {
+          "label": "Vegetables (fresh)",
+          "annualizedRate": 1.47026977430946,
+          "weight": 0.318276085987703
+        },
+        {
+          "label": "Parking fees and tolls",
+          "annualizedRate": 1.67950921953319,
+          "weight": 0.13882530455259
+        },
+        {
+          "label": "Life insurance ",
+          "annualizedRate": 1.68727932447934,
+          "weight": 0.587045735334533
+        },
+        {
+          "label": "Educational books",
+          "annualizedRate": 1.89409722090718,
+          "weight": 0.04480685431402
+        },
+        {
+          "label": "Net household insurance ",
+          "annualizedRate": 1.91459815377017,
+          "weight": 0.0804647118548483
+        },
+        {
+          "label": "Other fuels",
+          "annualizedRate": 2.16011694819366,
+          "weight": 0.0286129513341274
+        },
+        {
+          "label": "Wine",
+          "annualizedRate": 2.29387860230494,
+          "weight": 0.336994004190669
+        },
+        {
+          "label": "New light trucks",
+          "annualizedRate": 2.39516664036796,
+          "weight": 1.68437587223711
+        },
+        {
+          "label": "Water supply and sewage maintenance",
+          "annualizedRate": 2.47515666929269,
+          "weight": 0.465575827492806
+        },
+        {
+          "label": "Religious organizations' services to households",
+          "annualizedRate": 2.4760802130691,
+          "weight": 0.04162614840459
+        },
+        {
+          "label": "Proprietary hospitals",
+          "annualizedRate": 2.75377738596751,
+          "weight": 0.909932057977478
+        },
+        {
+          "label": "Nonprofit hospitals' services to households",
+          "annualizedRate": 2.7634124237778,
+          "weight": 5.34187942551447
+        },
+        {
+          "label": "Government hospitals",
+          "annualizedRate": 2.76349870871672,
+          "weight": 1.62074388491419
+        },
+        {
+          "label": "Other purchased meals",
+          "annualizedRate": 2.90405930267152,
+          "weight": 5.09794787287611
+        },
+        {
+          "label": "Tenant-occupied stationary homes and landlord durables",
+          "annualizedRate": 3.00305356920984,
+          "weight": 3.53807966131557
+        },
+        {
+          "label": "Tenant-occupied mobile homes",
+          "annualizedRate": 3.00309531829681,
+          "weight": 0.0695466707837152
+        },
+        {
+          "label": "Group housing",
+          "annualizedRate": 3.00355463487109,
+          "weight": 0.0159973425023435
+        },
+        {
+          "label": "Electricity",
+          "annualizedRate": 3.00682214808816,
+          "weight": 1.33916206625803
+        },
+        {
+          "label": "Net health insurance ",
+          "annualizedRate": 3.11424966698106,
+          "weight": 1.36474173204089
+        },
+        {
+          "label": "Audio discs, tapes, vinyl, and permanent digital downloads",
+          "annualizedRate": 3.23181320254604,
+          "weight": 0.0131472155778824
+        },
+        {
+          "label": "Labor organization dues",
+          "annualizedRate": 3.42838061889954,
+          "weight": 0.0870986279721284
+        },
+        {
+          "label": "Motor vehicle leasing",
+          "annualizedRate": 3.43777661561479,
+          "weight": 0.262966647975552
+        },
+        {
+          "label": "Other personal business services",
+          "annualizedRate": 3.50950580838418,
+          "weight": 0.117699520499649
+        },
+        {
+          "label": "Garbage and trash collection",
+          "annualizedRate": 3.53337962058863,
+          "weight": 0.195671488116489
+        },
+        {
+          "label": "Food supplied to military",
+          "annualizedRate": 3.59016308506778,
+          "weight": 0.0123386372497829
+        },
+        {
+          "label": "Higher education school lunches",
+          "annualizedRate": 3.59867329395002,
+          "weight": 0.107710674413293
+        },
+        {
+          "label": "Food supplied to civilians",
+          "annualizedRate": 3.59874840636433,
+          "weight": 0.160545237321759
+        },
+        {
+          "label": "Computer software and accessories",
+          "annualizedRate": 3.61515407851511,
+          "weight": 1.11958614370143
+        },
+        {
+          "label": "Commercial and vocational schools ",
+          "annualizedRate": 3.86443478804523,
+          "weight": 0.409855399391234
+        },
+        {
+          "label": "Audio-video, photographic, and information processing equipment services",
+          "annualizedRate": 4.14597933180973,
+          "weight": 0.794162403984674
+        },
+        {
+          "label": "Owner-occupied stationary homes",
+          "annualizedRate": 4.17920092766423,
+          "weight": 11.4502151622463
+        },
+        {
+          "label": "Owner-occupied mobile homes",
+          "annualizedRate": 4.18776879524451,
+          "weight": 0.44231468188831
+        },
+        {
+          "label": "Rental value of farm dwellings",
+          "annualizedRate": 4.18842432317161,
+          "weight": 0.137279624433682
+        },
+        {
+          "label": "Other depository institutions and regulated investment companies",
+          "annualizedRate": 4.21808372325902,
+          "weight": 1.1975045039153
+        },
+        {
+          "label": "Nursing homes",
+          "annualizedRate": 4.32229172372371,
+          "weight": 1.2997159522408
+        },
+        {
+          "label": "Repair of household appliances",
+          "annualizedRate": 4.39626023785011,
+          "weight": 0.0544963924004716
+        },
+        {
+          "label": "Repair of furniture, furnishings, and floor coverings",
+          "annualizedRate": 4.39820344826269,
+          "weight": 0.00915793134035304
+        },
+        {
+          "label": "New foreign autos",
+          "annualizedRate": 4.49377855054047,
+          "weight": 0.0727899186632743
+        },
+        {
+          "label": "New domestic autos",
+          "annualizedRate": 4.49516550443926,
+          "weight": 0.123292559542635
+        },
+        {
+          "label": "Therapeutic medical equipment",
+          "annualizedRate": 4.81626151458705,
+          "weight": 0.248439041771245
+        },
+        {
+          "label": "Other medical products",
+          "annualizedRate": 4.81630594436075,
+          "weight": 0.0446147611200516
+        },
+        {
+          "label": "Social assistance",
+          "annualizedRate": 4.89407580951666,
+          "weight": 1.15227325766112
+        },
+        {
+          "label": "Housing at schools",
+          "annualizedRate": 5.00970142957524,
+          "weight": 0.220648070615959
+        },
+        {
+          "label": "Watches",
+          "annualizedRate": 5.14548741675189,
+          "weight": 0.0864106663007067
+        },
+        {
+          "label": "Social advocacy and civic and social organizations",
+          "annualizedRate": 5.25520415476514,
+          "weight": 0.130131970704626
+        },
+        {
+          "label": "Maintenance and repair of recreational vehicles and sports equipment",
+          "annualizedRate": 5.26759365229276,
+          "weight": 0.040299365181134
+        },
+        {
+          "label": "Tires",
+          "annualizedRate": 5.26900470469906,
+          "weight": 0.265504065049367
+        },
+        {
+          "label": "Pension funds",
+          "annualizedRate": 5.31159574701511,
+          "weight": 0.389033390621778
+        },
+        {
+          "label": "Hairdressing salons and personal grooming establishments",
+          "annualizedRate": 5.50595454020836,
+          "weight": 0.47419768480348
+        },
+        {
+          "label": "Dental services",
+          "annualizedRate": 5.85967467837948,
+          "weight": 0.935945050267661
+        },
+        {
+          "label": "Elementary and secondary school lunches",
+          "annualizedRate": 5.93143004102707,
+          "weight": 0.0329998238103355
+        },
+        {
+          "label": "Elementary and secondary schools",
+          "annualizedRate": 5.99043969985426,
+          "weight": 0.2164577586173
+        },
+        {
+          "label": "Laundry and drycleaning services",
+          "annualizedRate": 6.02080038546926,
+          "weight": 0.0700693429626524
+        },
+        {
+          "label": "Coffee, tea, and other beverage materials",
+          "annualizedRate": 6.11070095697363,
+          "weight": 0.126357116078968
+        },
+        {
+          "label": "Used autos",
+          "annualizedRate": 6.11917119984124,
+          "weight": 0.208912516649565
+        },
+        {
+          "label": "Processed fruits and vegetables",
+          "annualizedRate": 6.39756111858327,
+          "weight": 0.222859375988386
+        },
+        {
+          "label": "Shoes and other footwear",
+          "annualizedRate": 6.5871027322629,
+          "weight": 0.583328955395424
+        },
+        {
+          "label": "Calculators, typewriters, and other information processing equipment",
+          "annualizedRate": 6.83799265363542,
+          "weight": 0.00185838996955456
+        },
+        {
+          "label": "Telephone and related communication equipment",
+          "annualizedRate": 6.8672505982964,
+          "weight": 0.174125779406966
+        },
+        {
+          "label": "Recreational books",
+          "annualizedRate": 6.87143376988685,
+          "weight": 0.164771287589064
+        },
+        {
+          "label": "Miscellaneous household products",
+          "annualizedRate": 6.96760977022772,
+          "weight": 0.103837539548861
+        },
+        {
+          "label": "Outdoor equipment and supplies",
+          "annualizedRate": 7.88910613063522,
+          "weight": 0.0487291292978395
+        },
+        {
+          "label": "Casino gambling",
+          "annualizedRate": 8.06574933035388,
+          "weight": 0.73694543588358
+        },
+        {
+          "label": "Lotteries",
+          "annualizedRate": 8.06581062788565,
+          "weight": 0.239567016580054
+        },
+        {
+          "label": "Pari-mutuel net receipts",
+          "annualizedRate": 8.06623973668507,
+          "weight": 0.0305070795723272
+        },
+        {
+          "label": "Used light trucks",
+          "annualizedRate": 8.32709408818885,
+          "weight": 0.84070256432799
+        },
+        {
+          "label": "Motor vehicle maintenance and repair ",
+          "annualizedRate": 9.01071458510312,
+          "weight": 1.35699546231203
+        },
+        {
+          "label": "Tobacco",
+          "annualizedRate": 9.10418584575893,
+          "weight": 0.492178501215637
+        },
+        {
+          "label": "Poultry",
+          "annualizedRate": 9.25061429899072,
+          "weight": 0.361389839824653
+        },
+        {
+          "label": "Membership clubs and participant sports centers",
+          "annualizedRate": 9.50923113681967,
+          "weight": 0.393009273008565
+        },
+        {
+          "label": "Amusement parks, campgrounds, and related recreational services",
+          "annualizedRate": 9.55090773223468,
+          "weight": 0.425584704878738
+        },
+        {
+          "label": "Package tours",
+          "annualizedRate": 9.55276465203693,
+          "weight": 0.126687695063937
+        },
+        {
+          "label": "Cereals",
+          "annualizedRate": 9.60505065276733,
+          "weight": 0.371883488955624
+        },
+        {
+          "label": "Fruit (fresh)",
+          "annualizedRate": 9.8276650522316,
+          "weight": 0.288305080445055
+        },
+        {
+          "label": "Financial service charges, fees, and commissions ",
+          "annualizedRate": 10.1859243343171,
+          "weight": 2.69373179358576
+        },
+        {
+          "label": "Electric appliances for personal care",
+          "annualizedRate": 10.4238729100968,
+          "weight": 0.060259188219523
+        },
+        {
+          "label": "Hair, dental, shaving, and miscellaneous personal care products except electrical products",
+          "annualizedRate": 10.4238729100968,
+          "weight": 0.589810983870962
+        },
+        {
+          "label": "Foundations and grantmaking and giving services to households",
+          "annualizedRate": 10.5277058535111,
+          "weight": 0.0512531445209124
+        },
+        {
+          "label": "Other household services",
+          "annualizedRate": 10.7580777417984,
+          "weight": 0.201376209248992
+        },
+        {
+          "label": "Dishes and flatware",
+          "annualizedRate": 11.3149383651319,
+          "weight": 0.149426168489497
+        },
+        {
+          "label": "Other recreational vehicles",
+          "annualizedRate": 11.4415285756911,
+          "weight": 0.152964257085379
+        },
+        {
+          "label": "Pleasure aircraft",
+          "annualizedRate": 11.4437551592757,
+          "weight": 0.0117668249514584
+        },
+        {
+          "label": "Pleasure boats",
+          "annualizedRate": 11.4439488161577,
+          "weight": 0.178432240778722
+        },
+        {
+          "label": "Bicycles and accessories",
+          "annualizedRate": 11.4442393137589,
+          "weight": 0.0345142329441793
+        },
+        {
+          "label": "Clothing repair, rental, and alterations",
+          "annualizedRate": 11.487162061296,
+          "weight": 0.032204647332978
+        },
+        {
+          "label": "Miscellaneous personal care services",
+          "annualizedRate": 11.4953621118556,
+          "weight": 0.600322502136255
+        },
+        {
+          "label": "Repair and hire of footwear",
+          "annualizedRate": 11.4956529628909,
+          "weight": 0.002010277611297
+        },
+        {
+          "label": "Lubricants and fluids",
+          "annualizedRate": 12.4964812563413,
+          "weight": 0.0615457658907531
+        },
+        {
+          "label": "Musical instruments",
+          "annualizedRate": 12.7360309282529,
+          "weight": 0.0437481081054035
+        },
+        {
+          "label": "Tax preparation and other related services",
+          "annualizedRate": 13.0723174546021,
+          "weight": 0.245075177235008
+        },
+        {
+          "label": "Mineral waters, soft drinks, and vegetable juices",
+          "annualizedRate": 13.6083199318958,
+          "weight": 0.54878345146618
+        },
+        {
+          "label": "Men's and boys' clothing",
+          "annualizedRate": 14.2473892927533,
+          "weight": 0.752406704356244
+        },
+        {
+          "label": "Domestic services",
+          "annualizedRate": 15.6775852410739,
+          "weight": 0.174197255944256
+        },
+        {
+          "label": "Nonprofit private higher education services to households",
+          "annualizedRate": 15.6902690768828,
+          "weight": 0.401671335871465
+        },
+        {
+          "label": "Proprietary and public higher education",
+          "annualizedRate": 15.7014526029218,
+          "weight": 0.548814722451245
+        },
+        {
+          "label": "Flowers, seeds, and potted plants",
+          "annualizedRate": 15.9977707381527,
+          "weight": 0.38932376405452
+        },
+        {
+          "label": "Nonprescription drugs",
+          "annualizedRate": 16.3447755020263,
+          "weight": 0.601515266852291
+        },
+        {
+          "label": "Audio equipment",
+          "annualizedRate": 17.8363946096608,
+          "weight": 0.146794938460488
+        },
+        {
+          "label": "Personal computers/tablets and peripheral equipment",
+          "annualizedRate": 18.0425346743363,
+          "weight": 0.514144134581742
+        },
+        {
+          "label": "Intercity buses",
+          "annualizedRate": 18.921319975889,
+          "weight": 0.005597506326567
+        },
+        {
+          "label": "Water transportation ",
+          "annualizedRate": 18.923521463919,
+          "weight": 0.0358856890034419
+        },
+        {
+          "label": "Railway transportation",
+          "annualizedRate": 18.9246223996132,
+          "weight": 0.00675900005753861
+        },
+        {
+          "label": "Other road transportation service",
+          "annualizedRate": 18.9248426020896,
+          "weight": 0.193053659938222
+        },
+        {
+          "label": "Nonelectric cookware and tableware",
+          "annualizedRate": 24.3504194678863,
+          "weight": 0.145195650938612
+        },
+        {
+          "label": "Jewelry",
+          "annualizedRate": 24.8311141239082,
+          "weight": 0.416726081538289
+        },
+        {
+          "label": "Spectator sports",
+          "annualizedRate": 27.0554645945454,
+          "weight": 0.225638026375557
+        },
+        {
+          "label": "Clocks, lamps, lighting fixtures, and other household decorative items",
+          "annualizedRate": 27.893219714861,
+          "weight": 0.31188787046736
+        },
+        {
+          "label": "Taxicabs and ride sharing services",
+          "annualizedRate": 29.1522918673234,
+          "weight": 0.213536155155549
+        },
+        {
+          "label": "Intracity mass transit",
+          "annualizedRate": 29.1603964361162,
+          "weight": 0.0954524482679626
+        },
+        {
+          "label": "Children's and infants' clothing",
+          "annualizedRate": 30.7538194130057,
+          "weight": 0.134255273449575
+        },
+        {
+          "label": "Hotels and motels",
+          "annualizedRate": 32.0508878164971,
+          "weight": 0.736284277913642
+        },
+        {
+          "label": "Stationery and miscellaneous printed materials",
+          "annualizedRate": 41.4383148408642,
+          "weight": 0.154532273622191
+        },
+        {
+          "label": "Newspapers and periodicals",
+          "annualizedRate": 58.5707776533708,
+          "weight": 0.466540760746229
+        },
+        {
+          "label": "Games, toys, and hobbies",
+          "annualizedRate": 63.5216053265621,
+          "weight": 0.695229941807377
+        },
+        {
+          "label": "Air transportation ",
+          "annualizedRate": 68.392788727819,
+          "weight": 1.06192691452585
+        },
+        {
+          "label": "Other video equipment",
+          "annualizedRate": 70.0186384195941,
+          "weight": 0.0528837030278533
+        },
+        {
+          "label": "Motor vehicle rental",
+          "annualizedRate": 88.635113715317,
+          "weight": 0.152749827473508
+        },
+        {
+          "label": "Gasoline and other motor fuel",
+          "annualizedRate": 190.028410797044,
+          "weight": 2.23207377379319
+        },
+        {
+          "label": "Fuel oil",
+          "annualizedRate": 453.782649680107,
+          "weight": 0.122676074408504
+        }
+      ],
+      "notes": [
+        "官方历史图表为当前版本，可能随BEA修订变化，不是逐月首次发布版本。",
+        "明细项目数按本次实际非空数据行统计；旧方法文档的178项不能冒充本次项目数。",
+        "iFinD优先检索未发现现成分桶，故此卡片单独使用Dallas官方来源；抓取时间不代表其他iFinD序列已刷新。"
+      ]
+    },
     "cpiTrend": {
       "id": "cpi-trend",
       "eyebrow": "ACTUAL · CPI",
