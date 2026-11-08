@@ -8,10 +8,11 @@ src/data/historyReplayRenewedEasingQtEnd.json -text
 src/data/historyReplayTariffPause.json -text
 release/snapshots/renewed-easing-publication-1.json -text
 src/historyReplay.tsx -text
-src/data/historyReplayTaper.json -text
+src/data/historyReplayTaper.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 public/taper-charts/*.svg -text
 
-src/data/historyReplayRateLiftoffQtGuidance.json -text
+src/data/historyReplayRateLiftoffQtGuidance.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 public/replay-rate-liftoff/*.svg -text
 src/test/rateLiftoffPublicPins.json -text
+src/test/replayEditorialOpenings.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/fixtures/pce_distribution_20261105.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

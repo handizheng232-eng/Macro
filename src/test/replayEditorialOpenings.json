@@ -1,0 +1,452 @@
+[
+  {
+    "page": "A",
+    "section": "taper-policy",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/0/judgement",
+    "before": "本阶段的政策主线是为加息腾出空间，而不是已经在全期内持续提高政策利率。12月加快净购债减量，1月强化很快加息的指引并公布缩表原则，2月发布的1月讨论继续保留数据依赖，3月准备证词仍把战争影响列为高度不确定。工具按顺序准备，但宣布与实施不能混用。",
+    "after": "这一阶段，美联储越来越难同时维持高水平货币支持和等待就业全面恢复。需求较强，生产和劳动供给却跟不上，涨价从少数受疫情冲击的行业扩散；Omicron又会压低服务需求、妨碍人员到岗，经济暂时放缓未必能换来通胀降温。政策因此先为退出宽松创造条件：12月加快减购，1月提出很快加息并公布缩表原则，到3月把当月启动加息列入准备证词。主线由‘还要支持复苏多久’转向‘怎样撤回支持，才能压住通胀又不把复苏打断’；截至3月15日，利率行动和实际缩表仍未进入本期。"
+  },
+  {
+    "page": "A",
+    "section": "taper-policy",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/expectation",
+    "before": "机构预期由首加时点逐步转向全年力度、缩表速度和通胀风险。预测各有信息日期与前提：供给缓解、财政退出、工资和服务价格、疫情及战争风险会改变路径。下文按发表月保留具体判断，不把不同日期的情景合成市场共识。",
+    "after": "首加预期的变化，取决于机构认为联储还需等待什么。2021年12月16日，招商银行预计次年6月前首加，并保留通胀迟迟不降时提前的可能；长江仍看或不早于年中，更重视继续观察通胀及Taper结束前不加息的顺序。到1月27日，招商银行把基准前移到3月，但全年3次、三季度缩表的设想仍依赖财政退出后供需缺口收窄、通胀趋降。这里需要比较的是就业与通胀怎样改变等待的成本，而非把各家的月份排成固定鹰鸽名单。"
+  },
+  {
+    "page": "A",
+    "section": "taper-policy",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/reality",
+    "before": "官方材料依次记录减购提速、很快加息的指引、缩表原则和3月准备证词。声明、纪要与记者会分别表达决定、讨论和解释，不能与实际交易执行混用；2月纪要追述1月会议，3月材料止于15日前。",
+    "after": "实际变化是退出准备不断提速，政策利率却在本期内保持近零：12月加快净购债减量，1月明确很快适合加息，3月准备证词继续支持当月行动。通胀与劳动市场状况没有让疫情风险变成自动推迟正常化的理由。相对长江12月16日‘或不早于年中’的判断，3月证词所指向的行动时间更早；这比较的是官方意向与具名预测，首次加息结果仍在3月15日截止日之后。缩表也只走到原则准备，不能计作已经收回流动性。"
+  },
+  {
+    "page": "A",
+    "section": "taper-policy",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/mechanism",
+    "before": "通胀持续与就业改善减弱了维持高支持的理由，疫情却同时影响需求和供给。减购先放慢新增支持，加息与缩表按先后准备；供给改善是否持续、价格是否按预期回落，决定退出宽松的速度，而不是工具名称本身。",
+    "after": "强需求遇到供给瓶颈时，继续增加货币支持可能更多推高价格，而不是同比例增加产出。鲍威尔据此解释撤回支持的必要性，同时承认疫情会扰动需求和供给。加快减购先减少新增支持，为随后调整短期资金价格留出空间；停止净购买后，既有证券存量仍有宽松作用。缩表则要在加息开始后通过调整本金再投资推进。把这几步拆开，才能看清政策预期可以先影响融资条件，却不等于证券持仓和准备金当月已按同样规模下降。"
+  },
+  {
+    "page": "A",
+    "section": "taper-policy",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/divergence",
+    "before": "首加月份不同可能来自信息更新，也可能来自通胀和增长条件不同。12月两家机构的时点判断可比较；跨到1月或3月，则须先核新数据和风险假设。方向相近的预测并不互为独立证明。",
+    "after": "最值得追踪的修正，是‘可以再等几个月’这一假设逐渐变弱。长江12月仍倾向年中，1月9日改为最快5月或6月；招商银行1月27日已转向3月。两者信息日不同，但都在重新权衡劳动供给难恢复与通胀持续的代价。3月证词又让年中才行动的设想更难维持。尚未解决的是首步以后的速度：财政退坡能否使通胀回落、增长能承受多少紧缩，仍决定全年路径，不能从首加时间前移推导全年每次会议的幅度。"
+  },
+  {
+    "page": "A",
+    "section": "taper-inflation",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/1/judgement",
+    "before": "按发布月梳理，11月到次年2月的CPI资料分别在本期四个月进入讨论。能源、汽车、住房、食品和服务的相对作用变化，决定了同比高企并不等于所有月度分项同步加速。官方将强需求与更持久的供应约束联系起来，但对工资循环、预期失锚等仍保留风险与事实之别。",
+    "after": "通胀的核心矛盾是：部分商品和供应链指标开始出现缓和线索，整体涨价却没有随之迅速退去。需求仍强，住房、食品和服务压力接续，供给修复又受疫情制约。1月讨论的商品降温和通胀寻顶，到2月需要面对租金与服务的持续性；3月新增能源风险进一步增加了回落的不确定性。因而本期真正要判断的，是局部价格降温能否扩展为持续的整体降温，而不只是找到一个同比高点。"
+  },
+  {
+    "page": "A",
+    "section": "taper-inflation",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/expectation",
+    "before": "机构对通胀的讨论从压力扩散，转向商品与服务能否接续，再转向能源冲击和未来季度。判断总体通胀维持高位与核心稍后回落可以兼容，关键是价格假设、领先关系和观察期限是否相同。",
+    "after": "机构对通胀的分歧，主要在商品降温能否盖过服务和住房的接续压力。海通1月13日从总体月度涨幅与供应链边际改善提出‘或将见顶’，但仍预计高位持续，未指定峰值月份；华安2月11日把一季度筑顶建立在汽车供给改善等条件上，同时认为工资和服务恢复会拖慢下降。到3月10日，东吴另设3、4月WTI月均均为120美元的情景，推演总体CPI进一步上升，却仍预计核心CPI一季度末见顶。总体、核心和不同油价假设应分别检验。"
+  },
+  {
+    "page": "A",
+    "section": "taper-inflation",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/reality",
+    "before": "四个发布月分别带来前月CPI信息，PCE与政策材料补充价格、支出和供需解释。能源、汽车、住房、食品的作用并不固定；本文保留原发布版本和季调口径，不以当前修订值替换当时数值。",
+    "after": "本期公布的价格资料显示，总体通胀继续上行，分项却并非齐涨齐加速：12月CPI中的能源环比下降，随后1月食品、电力和住房贡献突出，2月又由汽油、住房和食品带动。3月10日公布的2月CPI同比达到7.9%，局部降温仍未扩展为总体同比回落。海通所关注的供应链缓和，尚不足以抵消住房、食品等压力；商品改善能否带动整体降温，仍是寻顶判断的关键。海通未指定见顶月，华安的一季度筑顶预测到3月15日也尚待完整季度数据检验。"
+  },
+  {
+    "page": "A",
+    "section": "taper-inflation",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/mechanism",
+    "before": "强需求与供给响应受阻共同解释压力持续，商品供应改善却未必消除服务、住房和工资风险。3月新增能源风险进一步改变总体价格情景；官方分项贡献、官员解释与机构模型在下文分别呈现。",
+    "after": "供给修复对通胀的影响要经过不同环节。汽车产能和物流改善，可能缓解缺芯及替代需求带来的商品涨价；消费转向服务后，租金和用工约束却可能接着支撑价格。房价向租金传导存在滞后，工资压力能否转嫁还取决于需求和企业定价能力。基数抬升可以降低同比，却不要求当月价格停止上涨。因此，商品先降温、总体同比随后回落、核心服务仍偏强可以先后出现；工资—价格相互强化在这些材料中仍是风险，不能只凭两者同涨就认定循环已经形成。"
+  },
+  {
+    "page": "A",
+    "section": "taper-inflation",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/divergence",
+    "before": "分歧应围绕条件与期限比较，而非只分看涨或看跌。筑顶后慢回落并不矛盾，能源高价情景也不自动否定核心降温；工资—价格相互强化和预期失锚仍须与已观察事实区分。",
+    "after": "需要检验的假设是供给改善会有多快，以及改善之后还有什么压力留下。海通2月11日更看重商品需求转向服务、供应链缓解及房价对租金的领先关系；中金2月20日则更重视租金、疫情减弱后的服务需求，仍预计年底核心PCE约4%。前者讨论近期寻顶，后者讨论年底中枢，本来就可能同时成立。3月能源冲击又改变总体通胀的条件，但尚不能用半个月油价替代东吴设定的整月均价，更不能在本期给随后季度的预测评分。"
+  },
+  {
+    "page": "A",
+    "section": "taper-growth",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/2/judgement",
+    "before": "增长和就业必须沿观察期与发布版本阅读。四季度GDP较快增长、12月实际消费下降、1月疫情缺勤增加以及2月岗位修复可以同时存在。库存、服务与商品的结构变化，以及非农和家庭调查的差异，不能被一个经济强弱标签覆盖。",
+    "after": "经济仍在修复，但修复的速度和供给能力并不匹配。企业招工需求较强，参与率却尚未恢复；居民支出也在商品、服务和疫情扰动之间切换。四季度GDP较快增长未能消除12月实际消费下降和1月Omicron冲击，到2月就业又呈现较广恢复。政策面临的难题是：等待劳动供给回归可能延长通胀压力，过快压低需求又会损伤就业与投资。本阶段应把眼前修复和未来紧缩代价一起看，而不是在‘过热’与‘衰退’之间只选一个标签。"
+  },
+  {
+    "page": "A",
+    "section": "taper-growth",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/expectation",
+    "before": "机构从招工难与工资压力，逐步讨论疫情缓和后的服务修复，以及紧缩对投资、就业和需求的代价。供给回归与需求降温是不同路径，这些预测取决于疫情、行业缺口和政策速度等条件。",
+    "after": "对复苏还能走多远，关键判断是退出劳动市场的人能否回来。西部12月3日把壮年参与率缺口看作潜在供给，认为储蓄消耗和工资激励可能带动回流；海通12月17日更担心部分退出长期化。两种判断都会影响就业改善能否伴随成本降温。到2月17日，西部又以没有新增财政转移支付为前提，设想服务消费自3月反弹两个季度后减弱，并讨论2023年衰退风险。这是对持续性的预测，不能与当月新增岗位直接判输赢。"
+  },
+  {
+    "page": "A",
+    "section": "taper-growth",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/reality",
+    "before": "就业、消费和GDP观察期不同，季度增长较快可与随后单月消费走弱并存。非农和家庭调查也测量不同对象；本栏将初报、修订、季调更新与人口控制变化分开，避免把统计差异写成经济矛盾。",
+    "after": "现实先是结构分化，随后出现恢复：上季度GDP较快增长与12月实际消费下降并存，1月疫情缺勤增加却没有阻止非农初报增加，3月4日发布的2月就业增长又较广。岗位恢复说明企业仍有用工需求，但参与率和就业人口比仍低于疫情前，劳动供给尚未跟上。西部所设想的劳动力回流，因此还不能仅靠新增岗位来确认；海通担心的供给缺口依然存在，但尚不能据此认定退出者不会回来。需求修复与供给不足并存，意味着就业改善暂时没有消除工资和成本压力。"
+  },
+  {
+    "page": "A",
+    "section": "taper-growth",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/mechanism",
+    "before": "劳动力供给受退休、照护和疫情担忧约束，需求恢复又加大招工压力。消费还取决于商品服务结构及工资、福利的不同变化；季度库存贡献属于核算关系，不能直接推出随后内需全面加速。",
+    "after": "劳动供给恢复快慢，会改变同一份需求对产量和工资的作用。若暂时离场者随疫情缓和回归，企业可能在增加雇佣的同时缓解招工压力；若退休、照护等约束持续，需求较强就更容易转成用工成本压力。消费还受收入来源影响：工资增加可被福利退出部分抵消，价格上涨又侵蚀购买力。信达3月14日进一步指出，紧缩可经信贷、财富和融资成本压低家庭及企业支出，也可能限制扩产和库存。需求放慢有助于缓和缺口，但并不自动修复供给。"
+  },
+  {
+    "page": "A",
+    "section": "taper-growth",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/divergence",
+    "before": "岗位增加、参与不足和行业工资压力可同时存在。机构对服务恢复的解释不等于GDP已加速，较晚PMI也不能验证较早消费。紧缩可能压低需求，同时可能损害扩产和库存缓冲，需保留两侧影响。",
+    "after": "分歧不在于是否看到了就业恢复，而在于恢复是否还有持续空间。西部12月把低参与率更多理解为可回流的余量，2月则更担心服务和投资只是短暂脉冲；海通强调部分劳动退出难逆转，中信2月的研究仍重视岗位修复与用工紧张并存。前两类判断决定供给能否跟上，后一阶段的争论还涉及需求会持续多久。2月就业修复只能检验眼前活动，尚不能推翻2023年衰退情景；也不能把消费者信心下降直接换成已经发生的实际消费收缩。"
+  },
+  {
+    "page": "A",
+    "section": "taper-curve",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/3/judgement",
+    "before": "全期短端收益率上升更多、曲线收窄，但单日和月内路径并不一致。12月会议附近的利差方向不等于整月方向；1月实际利率上升而通胀补偿下降，2月方向反转，3月又有明显波动。名义10年收益率不是一条能单独解释所有冲击的指标。",
+    "after": "美债面对两股方向不同的力量：通胀持续和退出宽松预期推高近端利率，疫情、战争与未来增长风险又牵制长端。全期2年收益率上行多于10年，曲线趋平，但长端内部的变化并不一致：1月实际收益率上升、通胀补偿下降，2月则反过来。问题因此从‘加息会不会推高利率’变成‘市场抬高了哪一段利率、在担心哪一种风险’。期末收益率水平并不能单独告诉我们政策、增长与避险各贡献了多少。"
+  },
+  {
+    "page": "A",
+    "section": "taper-curve",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/expectation",
+    "before": "机构分别强调加息预期、疫情和避险、通胀及未来缩表。收益率上行空间有限或可能再升，都依赖具体条件与期限；下文保留这些前提，不用一个点位概括整段预测。",
+    "after": "曲线预测要先看期限和触发条件。招商银行1月27日认为加息推动短端，而疫情和缩表节奏未明可能限制长端，较快缩表又构成向上的风险。东方金诚白雪2月10日在CPI公布前判断，通胀仍高但难明显超预期、通胀预期趋稳，会限制首加前长端继续大幅上行；华安次日则保留高通胀持续时更快加息、收益率上行的情景。两者跨越数据发布，不能作为同一信息下的多空对赌。"
+  },
+  {
+    "page": "A",
+    "section": "taper-curve",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/reality",
+    "before": "政策仍在为加息和缩表作准备，通胀资料不断更新。官方立场与实际收益率路径应并列阅读，未来缩表原则不是当月实际操作，收益率升降也不能倒推出委员会已承诺的动作。",
+    "after": "全期短端上行更多，10年减2年利差收窄；月内则经历反复，实际收益率与通胀补偿的方向也曾互换。到3月15日，10年收益率已高于2%，长端并未因增长与避险顾虑而停止上行。白雪2月10日判断继续大幅上行空间有限，依赖通胀预期趋稳，却未给出明确上限，越过2%本身不足以判其预测落空。东吴3月10日提出的再过2%情景还要求通胀意外推动实际利率回升；达到价位与这条传导得到验证，是两回事。"
+  },
+  {
+    "page": "A",
+    "section": "taper-curve",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/mechanism",
+    "before": "短端更受政策路径讨论影响，长端还面临增长、避险和未来缩表的不确定性。实际利率与通胀补偿有时相互抵消，名义长端的变化因而不能直接归为单一通胀或政策因素。",
+    "after": "短端更直接受未来政策利率路径影响，长端还要反映更远期的增长、通胀及风险补偿。疫情或战争带来的避险需求，可能与加息预期同时存在，于是短端上行较快而曲线趋平。缩表预期又涉及未来私人部门承接更多证券的安排，可能对长端形成向上压力，但当期尚未发生的减持不能作为实际流量解释。观察名义收益率时再拆看实际收益率和通胀补偿，有助于区分这些竞争性解释；两者都含风险因素，不能直接当作纯政策冲击或纯通胀预期。"
+  },
+  {
+    "page": "A",
+    "section": "taper-curve",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/divergence",
+    "before": "此前趋平不要求会议当日也趋平，不同日期预测也不构成同信息下的对赌。需要先对齐数据公布前后、通胀条件和目标期限；缺少可比预测时，保留研究空缺而不制造分歧。",
+    "after": "曲线判断的分歧，实质是紧缩、供给冲击和增长风险谁更占上风。白雪2月10日更看重已有紧缩定价和通胀预期趋稳，华安2月11日把通胀高位迟迟不降列为更快紧缩的触发条件；3月战争又同时增加避险与能源通胀压力。检验时应看这些前提如何变化，而非只看收益率是否越过2%。尤其东吴提出的‘通胀意外推动实际利率回升’，需要独立的预期基准；只有最终价位，尚不能证明其传导判断正确。"
+  },
+  {
+    "page": "A",
+    "section": "taper-dollar",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/4/judgement",
+    "before": "广义美元在12月内回落，1月小升、2月略降，3月上半月走强，说明美国转鹰并不对应每月同向汇率变化。现有数据口径是美联储商品与服务贸易加权指数，不是ICE DXY；研报的DXY判断因此只能保留条件解释，不能直接打分。",
+    "after": "美元的主线是相对优势怎样变化，而非美国转鹰就一路上涨。美国通胀和紧缩预期提供支撑，其他央行跟随收紧却可能削弱这一优势；到3月，欧洲受到的能源与增长冲击又成为机构解释美元的重要依据。广义美元在12月回落、1月小升、2月略降，3月上半月走强，显示月内路径并不服从单一加息逻辑。现有行情是美联储广义贸易加权口径，机构讨论的DXY目标仍须用相应篮子另验。"
+  },
+  {
+    "page": "A",
+    "section": "taper-dollar",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/expectation",
+    "before": "美元研究先强调非美收紧和避险变化，后转向欧洲能源与增长风险。各报告给出的窗口和条件不同，人民币结汇或黄金机制也只构成局部背景，不替代完整美元预测。",
+    "after": "招商银行12月16日预计美元短期可能调整，前提是避险回落及英国等非美经济体收紧预期给非美货币反弹空间；1月27日仍认为美国加息已有部分反映、海外跟随收紧会限制美元上行。到3月13日，中信期货更重视地缘风险对欧洲能源成本与复苏的打击，并保留风险缓和的可能。预测变化对应相对增长和政策条件的变化，并非同一组条件下忽然改口；‘上行有限’也未给出可直接评分的涨幅上限。"
+  },
+  {
+    "page": "A",
+    "section": "taper-dollar",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/reality",
+    "before": "实际路径使用美联储商品与服务贸易加权广义美元指数：12月回落、1月小升、2月略降、3月上半月走强。它不是ICE DXY，不能直接检验研报的DXY点位判断。",
+    "after": "广义美元没有随美国转鹰逐月走高：12月和2月各自首末观察日之间回落，1月小幅上升，3月上半月转强。收紧预期提供支撑，却没有排除阶段调整，美元强弱仍要看非美政策与增长的相对变化。招商银行此前强调海外跟随收紧可能限制美元上行，3月中信期货则更担心欧洲能源成本和复苏受损；后期走强使相对增长差异更值得关注，但不能单凭汇率涨幅确定能源冲击的贡献。这里的广义贸易加权美元与机构讨论的DXY篮子不同，后者的目标仍需同口径行情检验。"
+  },
+  {
+    "page": "A",
+    "section": "taper-dollar",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/mechanism",
+    "before": "美元是相对价格，既取决于美国政策，也受海外收紧预期、增长前景和地缘风险影响。同一美联储转鹰背景下，相对优势可能增强或减弱，具体方向须与作者的条件和日期相连。",
+    "after": "汇率比较的是两边。美国利率预期上升会改变美元资产的相对吸引力，但若英国、欧元区的政策预期也上调，美元的新增优势就可能收窄。战争还会改变相对增长：中信期货3月13日认为，能源成本与不确定性对欧洲复苏的压制支持美元，风险缓和则可能削弱这一支撑。避险和融资压力另有作用，却不能由美元上涨直接认定资本流向或全球美元短缺；人民币结汇需求也只解释特定双边汇率的一部分。"
+  },
+  {
+    "page": "A",
+    "section": "taper-dollar",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/divergence",
+    "before": "春节当周与随后几天方向不同可以兼容，1月与3月解释变化也可能反映新信息。现有若干月份只有一家直接美元研究，缺少同日、同指标、同期限的可比目标，尚不足以组织完整跨机构对照。",
+    "after": "最重要的分歧在于欧美政策是否会收敛。海通12月17日看重美国收紧预期，西部12月29日的年度偏弱美元情景则同时要求欧洲转鹰和美国转鸽，其中选举影响属于作者假设。到1月，招商银行仍关注海外跟随收紧；3月中信期货则强调欧洲增长受损。不同信息日和期限下，条件已经改变，不能把它们做成同期机构投票。广义美元的阶段涨跌也不足以裁定DXY年度情景，真正要继续核的是相对政策与增长假设是否成立。"
+  },
+  {
+    "page": "B",
+    "section": "policy",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/0/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/0/judgement",
+    "before": "首次25个基点与随后50个基点表明收紧已经进入行动阶段；缩表则由未来会议的讨论，走到具有开始日期、上限和过渡期的计划。两者不应拼成已经实现的全年路径。3月21日的条件性加快表态与4月5日更快缩表的个人预期，说明政策讨论的重心是撤回支持的速度；5月记者会仍把后续步幅系于经济金融状况。到5月底，未解问题不是是否启动正常化，而是价格压力回落多快、紧缩对增长的代价何时显现。",
+    "after": "首加之后，政策的难题从‘何时退出零利率’变成‘需要多快压低需求’。就业与私人支出仍有韧性，给撤回支持留下空间；能源、供应链和劳动供给约束又意味着，提高融资成本不能直接消除涨价来源。3月先加25个基点，随后讨论更大步幅，5月加50个基点并确定6月启动缩表，体现的是在增长风险尚未消失时优先处理通胀持续性。到5月底，加息已进入行动，缩表完成的是日期与规则的确定，仍不能把未来减持量当作本期实绩。"
+  },
+  {
+    "page": "B",
+    "section": "policy",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/expectation",
+    "before": "机构路径从首次25个基点之后能否加快，推进到50个基点与QT过渡期；每条预测保留原信息日和通胀、增长条件。",
+    "after": "3月会前与会后的预期，需要分开读。东吴3月16日会前报告预计首次25个基点、QT可能5月公布6月实施；若通胀压力累积，5月可能加50个基点，但也保留不确定性下只加25的路径。首加后，中信3月17日把全年节奏设为先急后缓，后半程依赖增长和通胀；中金5月3日则以消费投资韧性和雇佣成本压力，预计5、6月各50个基点，并保留后续通胀意外时加快的风险。争论已转向紧缩速度能持续多久，而非只猜首次幅度。"
+  },
+  {
+    "page": "B",
+    "section": "policy",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/reality",
+    "before": "政策行动、实施说明和公开纪要分开：3月首加、5月再加及宣布QT，不能混成6月已经实际缩表。",
+    "after": "政策实际沿加快正常化推进：3月16日首次加25个基点，5月4日再加50个基点，并宣布6月1日开始缩表。就这几项可比内容，东吴3月16日会前报告的首次幅度、5月公布QT及6月计划实施时间，与已宣布结果相符；它保留的5月50个基点情景也出现了。符合单家报告的一部分预测，不等于全部政策路径符合市场预期。6月实施与实际减持量尚未进入本期，5月末只能验证公告，不能验证执行。"
+  },
+  {
+    "page": "B",
+    "section": "policy",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/mechanism",
+    "before": "利率约束资金价格，缩表改变本金再投资及资产承接；需求管理不等于修复供给，准备金变化也不是上限的机械镜像。",
+    "after": "加息先提高短期资金价格，再经贷款、贴现率和企业融资影响支出与投资；缩表安排则减少未来到期本金再投资，让私人部门需要承接更多证券。两种工具都可能收紧金融条件，但不存在已核的固定等价换算。更关键的是，货币政策主要约束需求，无法直接增加能源和劳动力供给。若供给修复缓慢，压低通胀可能需要更大的需求调整，增长代价也更高；若供给恢复，所需紧缩程度可能减轻。缩表月度上限只是操作约束，不是保证实现的减持量。"
+  },
+  {
+    "page": "B",
+    "section": "policy",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/0/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/0/divergence",
+    "before": "比较的是相同政策问题下的条件和期限，不是把机构数量当委员会票数；同一作者随资料更新可以修订。",
+    "after": "首步结果已经较清楚，真正未决的是‘通胀会及时回落，从而允许下半年放慢’这一假设。中信3月17日预计先急后缓，中金5月3日仍保留通胀再超预期时6月75个基点风险，平安避险5月12日也把更大步幅系于通胀韧性。它们的信息日和观察对象不同，后者不能倒填为3月的共同预期。5月当时未积极考虑75个基点的表态，也没有永久排除数据变化后的调整；截至月底，应保留对后续速度的分歧，而不提前判定全年路径。"
+  },
+  {
+    "page": "B",
+    "section": "inflation",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/1/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/1/judgement",
+    "before": "本阶段价格信息的变化，是从能源冲击推高总体通胀，走向总体同比有所回落但核心和服务仍有韧性。3月31日、4月29日、5月27日发布的PCE分别观察2、3、4月；同期CPI与PCE并非同一篮子。4月CPI同比低于3月而核心环比重新加快，正说明同比回落不自动意味着当下价格压力迅速解除。机构关于二季度见顶、下半年慢降和再度反弹的讨论，主要分歧在供给修复、租金及工资持续性，而不是对一个单一同比数字的简单多空投票。",
+    "after": "这一阶段的矛盾是总体通胀开始出现回落线索，持续性压力却仍在。能源冲击先把总体价格推高，随后二手车等部分商品缓和，但租金、服务需求和劳动成本没有同步降温。5月公布的4月CPI同比下降，核心环比却重新加快，说明‘见顶’与‘很快回到低通胀’相距甚远。机构讨论因而从峰值何时出现，转向回落能有多快、是否足以让联储放慢紧缩；增长代价与供给修复的不确定性也随之更重要。"
+  },
+  {
+    "page": "B",
+    "section": "inflation",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/expectation",
+    "before": "机构共同面对高通胀，差别主要是供给修复、服务工资持续性以及同比回落能有多快；点值始终带原期限。",
+    "after": "3月17日西部预计二季度可能见顶，依赖俄乌不失控、疫情降温或二手车需求得到满足等条件，同时认为下半年中枢仍可能不低于4%。海通3月27日更重视工资与既有储蓄支持需求、劳动供给回归偏慢，担心既有紧缩定价不够。到5月，长城依据食品传导和房租滞后模型提出5、6月仍在8%以上、年底约6.7%的情景。分歧集中在需求缓冲能持续多久、服务和住房压力多快消退，不宜把‘见顶’简单理解为乐观，把‘高位’理解为否认任何降温。"
+  },
+  {
+    "page": "B",
+    "section": "inflation",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/reality",
+    "before": "逐发布月阅读CPI与PCE、总体与核心、同比与环比；观察月不是发布月，分项支出也不等同价格贡献。",
+    "after": "实际走势是总体同比先升后降，核心压力并未同步解除。4月12日发布的3月CPI同比为8.5%；5月11日发布的4月CPI同比降至8.3%，核心环比却从3月的0.3%升至0.6%。5月27日公布的4月PCE总体和核心同比也回落。总体降温为西部3月提出的二季度寻顶提供了线索，但核心环比重新加快，显示部分商品缓和尚不足以带来全面、持续的降温，也使海通对通胀持续性的担忧仍有现实依据。二季度峰值和下半年中枢尚待后续数据，不能由4月同比下降提前定论。"
+  },
+  {
+    "page": "B",
+    "section": "inflation",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/mechanism",
+    "before": "基数影响同比，供给与服务压力影响持续性；劳动回流可以缓和工资风险，不能把风险叙事写成已证循环。",
+    "after": "同比回落可以来自比较基数抬高，也可以来自当期涨价放慢，两者对政策的含义不同。汽车等商品压力缓解有助于降温，但消费转向服务后，租金调整滞后和招工困难仍可能维持价格压力。劳动者因储蓄消耗、生活成本提高而回流，又可能缓解工资风险，这是中信4月2日提出的反向力量。因此需要同时看环比、分项和劳动供给，不能由总体同比下降直接推出需求已经足够弱，也不能把工资与物价同涨认定为已证实的螺旋。"
+  },
+  {
+    "page": "B",
+    "section": "inflation",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/1/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/1/divergence",
+    "before": "慢回落、磨顶与反弹应按前提比较；不同季度的悲观点值不可移期，住房与QT时滞仍是作者模型假设。",
+    "after": "‘通胀将见顶’这一方向，与‘回落会很慢’并不冲突，真正有分歧的是慢到什么程度。中信5月12日以基数及部分高频价格放缓支持同比降温，仍预计二季度CPI和核心CPI在7.8%和6%以上；长城同日更重视食品传导和房租滞后，给出更久的高位情景。4月核心环比再加快，使把同比下降直接理解为快速解除压力更缺依据，但尚未给上述季度及年底预测定输赢。后续须检验各自的供给、租金和需求假设，而非只比较目标数字大小。"
+  },
+  {
+    "page": "B",
+    "section": "growth-employment",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/2/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/2/judgement",
+    "before": "这一阶段最容易混淆的是不同统计时钟。3月30日发布的还是2021年第四季度第三估计，4月28日才第一次看到2022年一季度GDP；5月26日又是同一季度的二报，不是新的二季度结果。一季度头条负增长与消费、固定投资的正贡献并存，3、4月就业初报也显示继续增加。真正待判断的是这种韧性如何承受实际收入压力和融资成本上升，而不是把一次负GDP或低失业率分别当作已经衰退或必能软着陆的充分证据。",
+    "after": "增长的主线是眼前内需尚有韧性，购买力与融资成本却开始构成更明显的约束。一季度GDP初报为负，并不意味着消费、固定投资和就业同时收缩；到4月，就业与实际消费仍在增加，但实际收入偏弱、储蓄率下降，使这种支出韧性能维持多久成为问题。联储因此有空间启动加息，也必须面对紧缩逐渐传到住房、投资和雇佣的代价。判断软着陆不能只看一季GDP或一个失业率，而要看需求降温时劳动供给能否改善。"
+  },
+  {
+    "page": "B",
+    "section": "growth-employment",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/expectation",
+    "before": "机构把当前就业和内需韧性与远期紧缩代价并置，服务恢复持续多久、储蓄缓冲多强，是比衰退标签更具体的问题。",
+    "after": "3月17日华创把劳动市场紧张和私人部门资产负债表较强视为持续收紧的基础，消费企稳还需通胀预期受控与活动恢复；海通3月27日则认为工资和累积储蓄可以缓冲财政退坡。到4月20日，西部将眼前韧性与2023年衰退风险分开，后者依赖储蓄消耗、购买力受损、服务脉冲消退和高成本压低投资。分歧在缓冲能撑多久、紧缩何时传到实体，而非谁承认或否认当前仍有增长。"
+  },
+  {
+    "page": "B",
+    "section": "growth-employment",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/reality",
+    "before": "3月读到的是窗前就业、2月消费与上季GDP；4、5月依次加入一季度初报、二报和3、4月就业，版本不能倒填。",
+    "after": "现实没有呈现全面同步转弱：一季度GDP环比折年率初报为-1.4%、二报为-1.5%，消费和固定投资仍有正贡献；3、4月就业初报继续增加，4月实际消费也回升。这种内需韧性与海通关于工资和累积储蓄能够缓冲财政退坡的判断方向相符，负GDP并未意味着私人支出已全面收缩。不过，实际收入偏弱、储蓄率下降，说明缓冲正在承受购买力损耗，眼前能支撑消费不等于能够长期维持。西部关于2023年衰退的情景尚未到验证期，当前分歧仍在缓冲能持续多久。"
+  },
+  {
+    "page": "B",
+    "section": "growth-employment",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/mechanism",
+    "before": "购买力压力、储蓄缓冲和服务恢复可以同时存在；劳动供给回流与需求降温共同构成软着陆可能路径而非保证。",
+    "after": "家庭可以用工资和既有储蓄缓冲补贴退坡，所以实际收入偏弱时，消费不一定马上收缩；但缓冲会受价格持续上涨和储蓄消耗约束。企业则要在当前订单与未来融资成本之间权衡，房贷和资本成本上升可能逐步压低住房、投资及雇佣。海通与西部讨论的紧缩代价主要沿这条链条展开。GDP中的进口扣除和库存贡献属于核算关系，不能把净出口拖累直接解释为国内生产被进口挤掉，也不能由头条负值推定所有终端需求已经下降。"
+  },
+  {
+    "page": "B",
+    "section": "growth-employment",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/2/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/2/divergence",
+    "before": "短期不衰退与远期风险升高并不互斥；只有观察日、情景和期限真正可比时，才适合裁定分歧。",
+    "after": "需要分开的两条判断是‘现在还能增长’与‘以后能否软着陆’。中信4月29日用消费、固定投资和就业说明一季度负GDP并非全面衰退，同时担忧高通胀与紧缩压低远期内需；西部4月20日更重视储蓄消耗和成本上升，提出2023年风险。两者对短期事实并没有根本冲突，差别在传导期限和缓冲持续性。5月就业与支出数据仍不能为远期情景判输赢，后续应观察收入、储蓄和融资成本怎样改变企业与家庭行为。"
+  },
+  {
+    "page": "B",
+    "section": "yieldcurve",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/3/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/3/judgement",
+    "before": "3月16日至5月31日，2年、10年和30年收益率分别上升58、66和61个基点，10年减2年利差由24扩大至32个基点；这个阶段端点并不能抹掉中间的趋平与倒挂讨论。4月10年利率上行多于2年，5月月末又低于4月末。相同的名义利率变化也可有不同构成：全阶段10年实际收益率上升82个基点，而10年盈亏平衡通胀率下降16个基点。因此应把政策路径、期限和通胀补偿分开读，而不是用一个“鹰派”标签解释所有曲线形状。",
+    "after": "本阶段美债的主线由首加定价转向更快加息、未来缩表与增长代价的共同重估。3月短端上行更快，部分期限趋平；4月长端明显抬升，5月名义收益率月末又回落。全期10年实际收益率上升、通胀补偿下降，表明名义长端走高并不只是在交易通胀更高。核心矛盾是收紧抬高资金和持债要求，同时可能压低未来增长；两股力量对不同期限的作用不同，曲线形状也不会只随‘鹰派程度’单向变化。"
+  },
+  {
+    "page": "B",
+    "section": "yieldcurve",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/expectation",
+    "before": "长债预测要区分先回落后上行、年中高点及十年均值坐标，原有风险与条件不能因后来行情而改写。",
+    "after": "民生3月17日预计首加落地后收益率先回落、缩表落地后再上行，前提是此前收紧已充分定价。随着实际利率上升，西部4月21日将长债见顶与服务脉冲短暂、下半年增长转弱联系；5月5日又因缩表起步较缓，把高点后移至年中、难显著超3.2%。粤开同期则在通胀预期较稳、实际收益率回到1%以上及缩表削弱长债需求的条件下，保留突破3.5%的可能。争论的关键是实际利率还能上修多少，以及增长压力何时压过收紧影响。"
+  },
+  {
+    "page": "B",
+    "section": "yieldcurve",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/reality",
+    "before": "真实日序列提供阶段、月末及事件对照；3月使用阶段前收盘基期，不伪装完整月变化。",
+    "after": "长端上行已越过西部3月17日原先估计的水平：4月29日10年名义收益率为2.89%，高于其‘难破2.5%’判断所指水平39个基点。原文在二、三季度曲线讨论中提出这一高点判断，未单列高点到达日；这里比较的是随后阶段路径，而非季度终值。西部4月21日已改看更高的2018年高点附近，5月5日又因缩表起步较缓把见顶时点后移至年中。全期2年和10年收益率分别上升58和66个基点，10年实际收益率上升82个基点、通胀补偿下降16个基点，显示长端上涨不只来自通胀补偿。偏差针对西部早期判断，并非市场一致预期；后来年中目标尚未到期，也不能把实际收益率上行全归因于尚未实施的缩表。"
+  },
+  {
+    "page": "B",
+    "section": "yieldcurve",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/mechanism",
+    "before": "同期限实际利率与通胀补偿可帮助解释名义变化，但不识别全部风险溢价；曲线倒挂也不提供机械停息日期。",
+    "after": "加息预期主要抬高较近期限的利率，缩表预期则可能通过未来证券供给和持债需求影响长端；若紧缩同时削弱增长预期，长端又会受到反向牵制。因此曲线趋平不等于所有期限已经倒挂，也不自动给出停止加息的规则。进一步拆开10年名义收益率，可见实际收益率上行被通胀补偿回落部分抵消。这个分解说明价格构成，却没有识别各类冲击的净贡献：实际收益率和通胀补偿都含风险因素，不能把它们当成无噪声的政策与通胀预期。"
+  },
+  {
+    "page": "B",
+    "section": "yieldcurve",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/3/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/3/divergence",
+    "before": "5月较可比的目标仍取决于增长、实际利率和通胀补偿假设；跨日修订不是第二家机构的独立判断。",
+    "after": "西部的修订链表明，增长成本与配置需求并未像早期判断那样把长端限制在2.5%以内。3月17日原先的设想，是成本压力约束资本开支、增长转弱促使机构增配长债；4月21日已改看2018年高点附近，5月5日又因缩表起步较缓把见顶时间后移至年中、难显著超3.2%。这些判断始终保留就业、疫情、政策和俄乌风险，不能用后来版本替换早期预测。横向看，西部更重视随后增长转弱与配置需求，粤开则在通胀预期较稳、实际收益率回到1%以上及缩表削弱长债需求的条件下，保留突破3.5%的可能；双方后续目标仍待相应期限检验。"
+  },
+  {
+    "page": "B",
+    "section": "USD",
+    "role": "summary",
+    "pointer": "/marketAnalysis/sections/4/periodSummary/paragraphs/0",
+    "mirrorPointer": "/marketAnalysis/sections/4/judgement",
+    "before": "本稿能核的是美联储广义贸易加权美元指数，不是DXY。3月16日至5月31日广义美元上涨约1.08%，3月后半段回落、4月走强、5月又回落。机构解释共同关注美国与欧洲、日本的增长和政策差异，俄乌能源冲击又改变相对条件；这不是“首次加息后必涨”或“利多兑现必跌”的规律。年中以后回调与近期强势也可同时成立，关键在预测期限和触发条件。",
+    "after": "美元的支撑来自美国相对欧日的增长与政策优势，而这个优势又受到战争能源冲击和各国政策变化影响。美国启动加息提供一部分解释，欧洲增长受损、日本维持宽松则让相对差异更突出；当其他央行收紧预期增强或美国增长压力上升时，美元又可能回调。广义美元在4月走强、5月回落，全期仍上涨，说明强势与阶段调整可以并存。真正要判断的是相对优势何时收窄，而非把每次加息机械对应为美元上涨。"
+  },
+  {
+    "page": "B",
+    "section": "USD",
+    "role": "expectationTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/expectationTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/expectation",
+    "before": "美元观点围绕相对增长、政策差异与地缘风险展开；近期强势和后期回调可以同时成立。",
+    "after": "海通3月17日预计美元仍可走强，看重美国收入与资产受到保护、复苏相对欧日较强、正常化更早和地缘风险。东吴4月7日据欧美日政策差异预计二季度美元偏强、高点可能在5月，但下半年回落需要中国内生增长企稳并向全球传导，以及俄乌负面影响减弱。到5月，中信仍保留美元高位或进一步上行的情景，华泰则讨论6月回调窗口。比较这些判断，要看相对优势消退的条件和期限，不能把短期强势与稍后回调当作互斥预测。"
+  },
+  {
+    "page": "B",
+    "section": "USD",
+    "role": "realityTimeline",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/realityTimeline/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/reality",
+    "before": "本稿实际行情只覆盖广义贸易加权美元，三个窗口及阶段端点明确标注，DXY目标不以此代验。",
+    "after": "广义贸易加权美元在3月后半段回落，4月明显走强，5月月末又低于4月末，3月16日至5月31日累计上涨约1.08%。美国相对优势并没有让美元在首加后一路上涨，5月的调整也没有抹去全期涨幅。这个结果提示，判断强美元能持续多久，还需观察欧日政策是否跟进、美国增长优势是否收窄；不能把一次月度回落直接等同于趋势结束。美联储商品与服务篮子不同于DXY，东吴100点和中信110点情景仍须另用同口径行情验证，华泰的6月回调窗口则尚未到来。"
+  },
+  {
+    "page": "B",
+    "section": "USD",
+    "role": "mechanism",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/mechanism/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/mechanism",
+    "before": "相对复苏和利差影响美元支撑，离岸融资又含信用与流动性因素；指数走强不证明各地普遍美元短缺。",
+    "after": "美国与非美经济的相对变化，会同时影响增长预期、利差和资产配置。海通强调美国收入与资产缓冲较强，华安则认为战争能源冲击对欧洲复苏拖累更大；这两条解释都指向美元相对优势，而不是美国单独加息就足够。若非美经济恢复、其他央行加快正常化，优势可能收窄。美元融资压力还涉及信用溢价、外币债务和融资结构，中国银行3月18日的分析因此不能被简化为‘美元指数上涨就意味着所有国家美元短缺’。"
+  },
+  {
+    "page": "B",
+    "section": "USD",
+    "role": "divergence",
+    "pointer": "/marketAnalysis/sections/4/aspectSummaries/divergence/text",
+    "mirrorPointer": "/marketAnalysis/sections/4/divergence",
+    "before": "信息日、期限及非美恢复条件不同，不作多空票数汇总；人民币与美元指数研究分开。",
+    "after": "最清楚的修正来自西部4月7日：此前偏弱美元的判断，被俄乌冲突后的能源冲击和美欧增长、政策分化改变。它说明改变的是相对条件，不是一个加息必涨或必跌的规律。5月各家的分歧则在优势何时消退：中信崔嵘把阶段性转弱放到四季度，华泰讨论6月窗口，长江5月26日关注欧央行提前加息对欧元的支撑。期限不同，5月底的广义美元回落不足以同时验证这些判断，也不能拿不同团队的研究数量当作共识强度。"
+  }
+]

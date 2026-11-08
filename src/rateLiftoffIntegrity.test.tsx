@@ -3,6 +3,7 @@ import { render, cleanup } from '@testing-library/react'
 import { afterEach, expect, it } from 'vitest'
 import data from './data/historyReplayRateLiftoffQtGuidance.json'
 import pins from './test/rateLiftoffPublicPins.json'
+import editorialOpenings from './test/replayEditorialOpenings.json'
 import { HistoryReplay } from './historyReplay'
 afterEach(cleanup)
 const resolve = (pointer: string): string => {
@@ -11,9 +12,14 @@ const resolve = (pointer: string): string => {
   for (const key of pointer.slice(1).split('/')) value = (value as Record<string, unknown>)[key]
   return value as string
 }
-it('preserves all 203 admitted public nodes and all 283 projections without private fixtures', () => {
+it('recovers all frozen 203 nodes and 283 projections by an explicit editorial inverse, without changing old pins', () => {
   expect(new Set(pins.map(p => p.id)).size).toBe(203)
-  for (const pin of pins) expect(createHash('sha256').update(resolve(pin.pointer)).digest('hex'), pin.id + pin.pointer).toBe(pin.sha256)
+  for (const pin of pins) {
+    const edit = editorialOpenings.find(row => row.page === 'B' && (row.pointer === pin.pointer || row.mirrorPointer === pin.pointer))
+    const current = resolve(pin.pointer)
+    if (edit) expect(current, pin.pointer).toBe(edit.after)
+    expect(createHash('sha256').update(edit ? edit.before : current).digest('hex'), pin.id + pin.pointer).toBe(pin.sha256)
+  }
   expect(data.localReview.fullStageReady).toBe(false)
   expect(data.localReview.publicReleaseAllowed).toBe(false)
   expect(data.localReview.strictHistoricalEligible).toBe(false)

@@ -245,7 +245,7 @@
       "title": "货币政策",
       "periodSummary": {
         "paragraphs": [
-          "本阶段的政策主线是为加息腾出空间，而不是已经在全期内持续提高政策利率。12月加快净购债减量，1月强化很快加息的指引并公布缩表原则，2月发布的1月讨论继续保留数据依赖，3月准备证词仍把战争影响列为高度不确定。工具按顺序准备，但宣布与实施不能混用。",
+          "这一阶段，美联储越来越难同时维持高水平货币支持和等待就业全面恢复。需求较强，生产和劳动供给却跟不上，涨价从少数受疫情冲击的行业扩散；Omicron又会压低服务需求、妨碍人员到岗，经济暂时放缓未必能换来通胀降温。政策因此先为退出宽松创造条件：12月加快减购，1月提出很快加息并公布缩表原则，到3月把当月启动加息列入准备证词。主线由‘还要支持复苏多久’转向‘怎样撤回支持，才能压住通胀又不把复苏打断’；截至3月15日，利率行动和实际缩表仍未进入本期。",
           "通胀持续与就业改善共同改变了维持高支持的理由，疫情又同时影响需求和供给，不能被归成单向的鸽派变量。机构关于年中、3月及全年幅度的判断随信息和条件变化；本稿保留原有期限与反向风险，不把这些研究拼成委员会路径。期末的首加决策及随后缩表结果都在本期以外。",
           "12月的变化首先发生在退出宽松的准备速度，而不是政策利率本身。通胀压力持续、就业修复，使继续增加支持的必要性下降；更快结束净购债为随后应对不同经济情景留出空间。疫情风险仍在，所以不能把转鹰理解为委员会放弃就业目标。",
           "1月的重点从提前结束购债转向‘很快适合加息’。委员会仍维持目标区间，购债按计划退坡；缩表原则规定了先后顺序，却没有给出具体启动日和速度。Omicron对活动的冲击与持续高通胀并存，决定了路径仍需逐次判断。",
@@ -253,28 +253,7 @@
           "截至3月15日，本期停在首次加息决定之前。准备证词仍主张当月会议适合加息，同时承认战争、制裁和后续事件的经济影响高度不确定。研究焦点由是否准备退出转为首步幅度及此后的价格与增长代价。"
         ],
         "paragraphSources": [
-          [
-            {
-              "sourceId": "fed-statement-20211215",
-              "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"
-            },
-            {
-              "sourceId": "fed-statement-20220126",
-              "label": "Federal Reserve｜FOMC声明｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-principles-20220126",
-              "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            }
-          ],
+          [{"sourceId": "fed-statement-20211215", "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"}, {"sourceId": "fed-statement-20220126", "label": "Federal Reserve｜FOMC声明｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-principles-20220126", "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "wx-wX22xd9_tLZ9", "label": "长江宏观经济研究｜Taper进程加快，加息已成定局｜2021年12月16日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温（长江宏观 于博团队）"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}],
           [
             {
               "sourceId": "fed-press-20211215",
@@ -657,23 +636,7 @@
           "taper-policy-2022-02-summary",
           "taper-policy-2022-03-summary"
         ],
-        "sourceIds": [
-          "fed-statement-20211215",
-          "fed-statement-20220126",
-          "fed-principles-20220126",
-          "fed-minutes-20220216",
-          "fed-testimony-20220302",
-          "fed-press-20211215",
-          "fed-press-20220126",
-          "FWPDF054",
-          "wx-wX22xd9_tLZ9",
-          "FWPDF030",
-          "FWPDF021",
-          "FWPDF004",
-          "wx-QmEC3Ll6WErQ",
-          "fraser-cpi-jan-pdf",
-          "dol-employment-20220204"
-        ],
+        "sourceIds": ["fed-statement-20211215", "fed-statement-20220126", "fed-principles-20220126", "fed-minutes-20220216", "fed-testimony-20220302", "fed-press-20211215", "fed-press-20220126", "FWPDF054", "wx-wX22xd9_tLZ9", "FWPDF030", "FWPDF021", "FWPDF004", "wx-QmEC3Ll6WErQ", "fraser-cpi-jan-pdf", "dol-employment-20220204", "wx-up_26ykECuo1"],
         "reportIds": [
           "FWPDF054",
           "wx-wX22xd9_tLZ9",
@@ -721,7 +684,7 @@
       },
       "aspectSummaries": {
         "expectationTimeline": {
-          "text": "机构预期由首加时点逐步转向全年力度、缩表速度和通胀风险。预测各有信息日期与前提：供给缓解、财政退出、工资和服务价格、疫情及战争风险会改变路径。下文按发表月保留具体判断，不把不同日期的情景合成市场共识。",
+          "text": "首加预期的变化，取决于机构认为联储还需等待什么。2021年12月16日，招商银行预计次年6月前首加，并保留通胀迟迟不降时提前的可能；长江仍看或不早于年中，更重视继续观察通胀及Taper结束前不加息的顺序。到1月27日，招商银行把基准前移到3月，但全年3次、三季度缩表的设想仍依赖财政退出后供需缺口收窄、通胀趋降。这里需要比较的是就业与通胀怎样改变等待的成本，而非把各家的月份排成固定鹰鸽名单。",
           "supportNodeIds": [
             "taper-policy-2021-12-view-1",
             "taper-policy-2021-12-view-2",
@@ -731,15 +694,7 @@
             "taper-policy-2022-03-view-1",
             "taper-policy-2022-03-view-2"
           ],
-          "sourceIds": [
-            "FWPDF054",
-            "wx-wX22xd9_tLZ9",
-            "FWPDF030",
-            "wx-up_26ykECuo1",
-            "FWPDF021",
-            "FWPDF004",
-            "wx-QmEC3Ll6WErQ"
-          ],
+          "sourceIds": ["FWPDF054", "wx-wX22xd9_tLZ9", "FWPDF030", "wx-up_26ykECuo1", "FWPDF021", "FWPDF004", "wx-QmEC3Ll6WErQ", "fed-press-20211215", "fed-testimony-20220302"],
           "reportIds": [
             "FWPDF054",
             "wx-wX22xd9_tLZ9",
@@ -769,40 +724,11 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF054",
-              "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"
-            },
-            {
-              "sourceId": "wx-wX22xd9_tLZ9",
-              "label": "长江宏观经济研究｜Taper进程加快，加息已成定局｜2021年12月16日"
-            },
-            {
-              "sourceId": "FWPDF030",
-              "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"
-            },
-            {
-              "sourceId": "wx-up_26ykECuo1",
-              "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"
-            },
-            {
-              "sourceId": "FWPDF021",
-              "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"
-            },
-            {
-              "sourceId": "FWPDF004",
-              "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"
-            },
-            {
-              "sourceId": "wx-QmEC3Ll6WErQ",
-              "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "wx-wX22xd9_tLZ9", "label": "长江宏观经济研究｜Taper进程加快，加息已成定局｜2021年12月16日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "FWPDF004", "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"}, {"sourceId": "wx-QmEC3Ll6WErQ", "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02"}],
           "parentAccepted": false
         },
         "realityTimeline": {
-          "text": "官方材料依次记录减购提速、很快加息的指引、缩表原则和3月准备证词。声明、纪要与记者会分别表达决定、讨论和解释，不能与实际交易执行混用；2月纪要追述1月会议，3月材料止于15日前。",
+          "text": "实际变化是退出准备不断提速，政策利率却在本期内保持近零：12月加快净购债减量，1月明确很快适合加息，3月准备证词继续支持当月行动。通胀与劳动市场状况没有让疫情风险变成自动推迟正常化的理由。相对长江12月16日‘或不早于年中’的判断，3月证词所指向的行动时间更早；这比较的是官方意向与具名预测，首次加息结果仍在3月15日截止日之后。缩表也只走到原则准备，不能计作已经收回流动性。",
           "supportNodeIds": [
             "taper-policy-2021-12-fact-1",
             "taper-policy-2021-12-fact-2",
@@ -816,19 +742,7 @@
             "taper-policy-2022-03-fact-2",
             "taper-policy-2022-03-fact-3"
           ],
-          "sourceIds": [
-            "fed-statement-20211215",
-            "fed-press-20211215",
-            "fed-statement-20220126",
-            "fed-press-20220126",
-            "fed-principles-20220126",
-            "fed-minutes-20220216",
-            "fraser-cpi-jan-pdf",
-            "dol-employment-20220204",
-            "fed-testimony-20220302",
-            "fraser-cpi-2-pdf",
-            "dol-employment-20220304"
-          ],
+          "sourceIds": ["fed-statement-20211215", "fed-press-20211215", "fed-statement-20220126", "fed-press-20220126", "fed-principles-20220126", "fed-minutes-20220216", "fraser-cpi-jan-pdf", "dol-employment-20220204", "fed-testimony-20220302", "fraser-cpi-2-pdf", "dol-employment-20220304", "FWPDF054", "wx-wX22xd9_tLZ9", "FWPDF030", "wx-up_26ykECuo1"],
           "reportIds": [],
           "evidenceRefs": [
             "d468a0879f022075e578",
@@ -857,70 +771,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fed-statement-20211215",
-              "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fed-statement-20220126",
-              "label": "Federal Reserve｜FOMC声明｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "fed-principles-20220126",
-              "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "fraser-cpi-jan-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"
-            },
-            {
-              "sourceId": "dol-employment-20220204",
-              "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            },
-            {
-              "sourceId": "fraser-cpi-2-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"
-            },
-            {
-              "sourceId": "dol-employment-20220304",
-              "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fed-statement-20211215", "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fed-statement-20220126", "label": "Federal Reserve｜FOMC声明｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "fed-principles-20220126", "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "fraser-cpi-jan-pdf", "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "fraser-cpi-2-pdf", "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"}, {"sourceId": "dol-employment-20220304", "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"}, {"sourceId": "FWPDF054", "label": "招商银行｜招商银行行内偕作·快评号外（第387期）：2021年12月美联储议息会议点评，美联储转向加速"}, {"sourceId": "wx-wX22xd9_tLZ9", "label": "长江宏观经济研究｜Taper进程加快，加息已成定局（长江宏观 于博，黄文琛）"}, {"sourceId": "FWPDF030", "label": "招商银行｜招商银行行内偕作·快评号外（第399期）：2022年1月美联储议息会议点评，美联储“鹰派”预期管理"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温（长江宏观 于博团队）"}],
           "parentAccepted": false
         },
         "mechanism": {
-          "text": "通胀持续与就业改善减弱了维持高支持的理由，疫情却同时影响需求和供给。减购先放慢新增支持，加息与缩表按先后准备；供给改善是否持续、价格是否按预期回落，决定退出宽松的速度，而不是工具名称本身。",
+          "text": "强需求遇到供给瓶颈时，继续增加货币支持可能更多推高价格，而不是同比例增加产出。鲍威尔据此解释撤回支持的必要性，同时承认疫情会扰动需求和供给。加快减购先减少新增支持，为随后调整短期资金价格留出空间；停止净购买后，既有证券存量仍有宽松作用。缩表则要在加息开始后通过调整本金再投资推进。把这几步拆开，才能看清政策预期可以先影响融资条件，却不等于证券持仓和准备金当月已按同样规模下降。",
           "supportNodeIds": [
             "taper-policy-2021-12-mechanism",
             "taper-policy-2022-01-mechanism",
             "taper-policy-2022-02-mechanism",
             "taper-policy-2022-03-mechanism"
           ],
-          "sourceIds": [
-            "fed-statement-20211215",
-            "fed-press-20211215",
-            "fed-press-20220126",
-            "fed-principles-20220126",
-            "fed-minutes-20220216",
-            "fed-testimony-20220302"
-          ],
+          "sourceIds": ["fed-statement-20211215", "fed-press-20211215", "fed-press-20220126", "fed-principles-20220126", "fed-minutes-20220216", "fed-testimony-20220302", "FWPDF054", "wx-wX22xd9_tLZ9", "FWPDF030", "wx-up_26ykECuo1"],
           "reportIds": [],
           "evidenceRefs": [
             "d468a0879f022075e578",
@@ -940,52 +802,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fed-statement-20211215",
-              "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "fed-principles-20220126",
-              "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fed-statement-20211215", "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "fed-principles-20220126", "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "FWPDF054", "label": "招商银行｜招商银行行内偕作·快评号外（第387期）：2021年12月美联储议息会议点评，美联储转向加速"}, {"sourceId": "wx-wX22xd9_tLZ9", "label": "长江宏观经济研究｜Taper进程加快，加息已成定局（长江宏观 于博，黄文琛）"}, {"sourceId": "FWPDF030", "label": "招商银行｜招商银行行内偕作·快评号外（第399期）：2022年1月美联储议息会议点评，美联储“鹰派”预期管理"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温（长江宏观 于博团队）"}],
           "parentAccepted": false
         },
         "divergence": {
-          "text": "首加月份不同可能来自信息更新，也可能来自通胀和增长条件不同。12月两家机构的时点判断可比较；跨到1月或3月，则须先核新数据和风险假设。方向相近的预测并不互为独立证明。",
+          "text": "最值得追踪的修正，是‘可以再等几个月’这一假设逐渐变弱。长江12月仍倾向年中，1月9日改为最快5月或6月；招商银行1月27日已转向3月。两者信息日不同，但都在重新权衡劳动供给难恢复与通胀持续的代价。3月证词又让年中才行动的设想更难维持。尚未解决的是首步以后的速度：财政退坡能否使通胀回落、增长能承受多少紧缩，仍决定全年路径，不能从首加时间前移推导全年每次会议的幅度。",
           "supportNodeIds": [
             "taper-policy-2021-12-divergence",
             "taper-policy-2022-01-divergence",
             "taper-policy-2022-02-divergence",
             "taper-policy-2022-03-divergence"
           ],
-          "sourceIds": [
-            "FWPDF054",
-            "wx-wX22xd9_tLZ9",
-            "wx-up_26ykECuo1",
-            "FWPDF030",
-            "FWPDF021",
-            "fed-minutes-20220216",
-            "FWPDF004",
-            "wx-QmEC3Ll6WErQ"
-          ],
+          "sourceIds": ["FWPDF054", "wx-wX22xd9_tLZ9", "wx-up_26ykECuo1", "FWPDF030", "FWPDF021", "fed-minutes-20220216", "FWPDF004", "wx-QmEC3Ll6WErQ", "fed-press-20211215", "fed-testimony-20220302"],
           "reportIds": [
             "FWPDF054",
             "wx-wX22xd9_tLZ9",
@@ -1016,40 +844,7 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF054",
-              "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"
-            },
-            {
-              "sourceId": "wx-wX22xd9_tLZ9",
-              "label": "长江宏观经济研究｜Taper进程加快，加息已成定局｜2021年12月16日"
-            },
-            {
-              "sourceId": "wx-up_26ykECuo1",
-              "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"
-            },
-            {
-              "sourceId": "FWPDF030",
-              "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"
-            },
-            {
-              "sourceId": "FWPDF021",
-              "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "FWPDF004",
-              "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"
-            },
-            {
-              "sourceId": "wx-QmEC3Ll6WErQ",
-              "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "wx-wX22xd9_tLZ9", "label": "长江宏观经济研究｜Taper进程加快，加息已成定局｜2021年12月16日"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "FWPDF004", "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"}, {"sourceId": "wx-QmEC3Ll6WErQ", "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02"}],
           "parentAccepted": false
         },
         "implicationTimeline": {
@@ -4209,11 +4004,11 @@
       "historicalAsOfEligible": false,
       "retrospectiveOnly": true,
       "fullTopicReady": false,
-      "judgement": "本阶段的政策主线是为加息腾出空间，而不是已经在全期内持续提高政策利率。12月加快净购债减量，1月强化很快加息的指引并公布缩表原则，2月发布的1月讨论继续保留数据依赖，3月准备证词仍把战争影响列为高度不确定。工具按顺序准备，但宣布与实施不能混用。",
-      "expectation": "机构预期由首加时点逐步转向全年力度、缩表速度和通胀风险。预测各有信息日期与前提：供给缓解、财政退出、工资和服务价格、疫情及战争风险会改变路径。下文按发表月保留具体判断，不把不同日期的情景合成市场共识。",
-      "reality": "官方材料依次记录减购提速、很快加息的指引、缩表原则和3月准备证词。声明、纪要与记者会分别表达决定、讨论和解释，不能与实际交易执行混用；2月纪要追述1月会议，3月材料止于15日前。",
-      "mechanism": "通胀持续与就业改善减弱了维持高支持的理由，疫情却同时影响需求和供给。减购先放慢新增支持，加息与缩表按先后准备；供给改善是否持续、价格是否按预期回落，决定退出宽松的速度，而不是工具名称本身。",
-      "divergence": "首加月份不同可能来自信息更新，也可能来自通胀和增长条件不同。12月两家机构的时点判断可比较；跨到1月或3月，则须先核新数据和风险假设。方向相近的预测并不互为独立证明。",
+      "judgement": "这一阶段，美联储越来越难同时维持高水平货币支持和等待就业全面恢复。需求较强，生产和劳动供给却跟不上，涨价从少数受疫情冲击的行业扩散；Omicron又会压低服务需求、妨碍人员到岗，经济暂时放缓未必能换来通胀降温。政策因此先为退出宽松创造条件：12月加快减购，1月提出很快加息并公布缩表原则，到3月把当月启动加息列入准备证词。主线由‘还要支持复苏多久’转向‘怎样撤回支持，才能压住通胀又不把复苏打断’；截至3月15日，利率行动和实际缩表仍未进入本期。",
+      "expectation": "首加预期的变化，取决于机构认为联储还需等待什么。2021年12月16日，招商银行预计次年6月前首加，并保留通胀迟迟不降时提前的可能；长江仍看或不早于年中，更重视继续观察通胀及Taper结束前不加息的顺序。到1月27日，招商银行把基准前移到3月，但全年3次、三季度缩表的设想仍依赖财政退出后供需缺口收窄、通胀趋降。这里需要比较的是就业与通胀怎样改变等待的成本，而非把各家的月份排成固定鹰鸽名单。",
+      "reality": "实际变化是退出准备不断提速，政策利率却在本期内保持近零：12月加快净购债减量，1月明确很快适合加息，3月准备证词继续支持当月行动。通胀与劳动市场状况没有让疫情风险变成自动推迟正常化的理由。相对长江12月16日‘或不早于年中’的判断，3月证词所指向的行动时间更早；这比较的是官方意向与具名预测，首次加息结果仍在3月15日截止日之后。缩表也只走到原则准备，不能计作已经收回流动性。",
+      "mechanism": "强需求遇到供给瓶颈时，继续增加货币支持可能更多推高价格，而不是同比例增加产出。鲍威尔据此解释撤回支持的必要性，同时承认疫情会扰动需求和供给。加快减购先减少新增支持，为随后调整短期资金价格留出空间；停止净购买后，既有证券存量仍有宽松作用。缩表则要在加息开始后通过调整本金再投资推进。把这几步拆开，才能看清政策预期可以先影响融资条件，却不等于证券持仓和准备金当月已按同样规模下降。",
+      "divergence": "最值得追踪的修正，是‘可以再等几个月’这一假设逐渐变弱。长江12月仍倾向年中，1月9日改为最快5月或6月；招商银行1月27日已转向3月。两者信息日不同，但都在重新权衡劳动供给难恢复与通胀持续的代价。3月证词又让年中才行动的设想更难维持。尚未解决的是首步以后的速度：财政退坡能否使通胀回落、增长能承受多少紧缩，仍决定全年路径，不能从首加时间前移推导全年每次会议的幅度。",
       "implication": "政策指引可先于操作影响金融条件，但日频变化和月内累计不是同一观察窗口。收益率、股票和美元还受增长、供给及战争风险影响；没有会前概率和高频识别，不将全阶段涨跌归为政策净效应。",
       "validation": "验证应分别检查净购债收尾、首加依据和证券存量变化，并与各机构原有期限对齐。全年加息幅度、二季度通胀和后续缩表超出本期，仍需后续数据；疫情、供给与增长变化可能改变原预测。"
     },
@@ -4222,7 +4017,7 @@
       "title": "通胀",
       "periodSummary": {
         "paragraphs": [
-          "按发布月梳理，11月到次年2月的CPI资料分别在本期四个月进入讨论。能源、汽车、住房、食品和服务的相对作用变化，决定了同比高企并不等于所有月度分项同步加速。官方将强需求与更持久的供应约束联系起来，但对工资循环、预期失锚等仍保留风险与事实之别。",
+          "通胀的核心矛盾是：部分商品和供应链指标开始出现缓和线索，整体涨价却没有随之迅速退去。需求仍强，住房、食品和服务压力接续，供给修复又受疫情制约。1月讨论的商品降温和通胀寻顶，到2月需要面对租金与服务的持续性；3月新增能源风险进一步增加了回落的不确定性。因而本期真正要判断的，是局部价格降温能否扩展为持续的整体降温，而不只是找到一个同比高点。",
           "机构把商品降温、服务恢复、基数和新增能源冲击放入不同模型。看总体通胀高位与看核心稍后回落可能兼容，前提是指标、油价情景和期限一致。3月的现货油价路径不等于未来月均假设，期内也没有随后季度的结果；本稿不提前评判预测胜负。",
           "12月公布的11月价格资料显示，问题不仅是能源价格高。BLS列出汽油、住房、食品及汽车的较大贡献，BEA也记录商品和服务价格同时上涨；联储关注的是供给响应慢于强需求、涨价范围扩散。\n\n在这一官方事实背景下，长江团队12月13日也把总体与核心通胀高企联系到收紧压力，兼看能源与服装、食品饮料涨价；中国银行赵雪情12月13日则认为，即使能源与二手车涨势消退，供应链扰动、劳动供给结构性不足与总需求上升仍会共同支撑高通胀。二者都是具名机制解释，不是对工资—价格螺旋的认证。长江未给见顶日期，政策方向、疫情和贸易摩擦仍是其原文风险。\n\n中金12月6日则把供给冲击的持续性放在核心位置，预计高通胀推动加快Taper，却担忧在Omicron威胁消费时过早给出激进加息指引会增加资产扰动。中信12月16日会后关注二季度劳动参与率缺口能否回补、通胀回落多少；若缺口具有刚性，紧缩反而可能加快。两文跨越会议，分别是会前情景与会后风险判断，不能视为对同一份信息的直接分歧。\n\n新增机构比较显示，12月的分歧主要在成本缓和能否盖过涨价扩散。西部证券张静静把能源、运输及劳动供给的边际改善作为2022年二至三季度通胀中枢下降的依据，但须继续看到工资增速回落；海通梁中华、李俊更担心供应链、用工扭曲和房价向租金传导，使通胀即使剔除暂时因素也难降。前者不是已证实供需恢复正常，后者也不等于工资—价格循环已经成立；疫情变化仍会改变两条路径。",
           "中国银行赵雪情12月13日认为，通胀由受疫情影响较重的少数行业向更广领域扩散，即使能源和二手车涨势消退，供应链扰动、劳动供给结构性不足及总需求上升仍会共同支撑通胀高位。这是该行的机制解释，未识别工资—价格螺旋，也未给高位结束日。",
@@ -4237,32 +4032,7 @@
           "长江证券于博等在3月7日文章中，一方面援引纽约联储全球供应链压力指数连续回落，认为紧张程度可能缓解；另一方面转述3月褐皮书所描述的供应瓶颈、低库存、通胀和劳动力短缺。两项信息合起来说明压力边际减轻、约束仍在，经济增长前景也仍有不确定性。政策方向调整和海外疫情恶化是作者列出的风险；这些官方资料在本段均经文章二手引用。"
         ],
         "paragraphSources": [
-          [
-            {
-              "sourceId": "fraser-cpi-0-pdf",
-              "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"
-            },
-            {
-              "sourceId": "fraser-cpi-1-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"
-            },
-            {
-              "sourceId": "fraser-cpi-jan-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"
-            },
-            {
-              "sourceId": "fraser-cpi-2-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            }
-          ],
+          [{"sourceId": "fraser-cpi-0-pdf", "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"}, {"sourceId": "fraser-cpi-1-pdf", "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"}, {"sourceId": "fraser-cpi-jan-pdf", "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"}, {"sourceId": "fraser-cpi-2-pdf", "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "wx-VYnUasra7oZU", "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）｜2022-01-13"}, {"sourceId": "wx-rmq4JRZrrPga", "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022-01-14"}, {"sourceId": "wx-Rh3dV2IE5QuU", "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）｜2022-02-11"}, {"sourceId": "wx-K3uGNGefGPv4", "label": "中金宏观｜中金宏观 | 如何预测美国通胀？｜2022-02-20"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "FWPDF069", "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"}],
           [
             {
               "sourceId": "FWPDF021",
@@ -5216,7 +4986,7 @@
       },
       "aspectSummaries": {
         "expectationTimeline": {
-          "text": "机构对通胀的讨论从压力扩散，转向商品与服务能否接续，再转向能源冲击和未来季度。判断总体通胀维持高位与核心稍后回落可以兼容，关键是价格假设、领先关系和观察期限是否相同。",
+          "text": "机构对通胀的分歧，主要在商品降温能否盖过服务和住房的接续压力。海通1月13日从总体月度涨幅与供应链边际改善提出‘或将见顶’，但仍预计高位持续，未指定峰值月份；华安2月11日把一季度筑顶建立在汽车供给改善等条件上，同时认为工资和服务恢复会拖慢下降。到3月10日，东吴另设3、4月WTI月均均为120美元的情景，推演总体CPI进一步上升，却仍预计核心CPI一季度末见顶。总体、核心和不同油价假设应分别检验。",
           "supportNodeIds": [
             "taper-inflation-2021-12-view-1",
             "taper-inflation-2022-01-view-1",
@@ -5226,15 +4996,7 @@
             "taper-inflation-2022-03-view-2",
             "taper-inflation-2022-03-view-3"
           ],
-          "sourceIds": [
-            "FWPDF061",
-            "wx-rmq4JRZrrPga",
-            "FWPDF034",
-            "FWPDF021",
-            "FWPDF004",
-            "FWPDF069",
-            "wx-A8kHlxVzY2VL"
-          ],
+          "sourceIds": ["FWPDF061", "wx-rmq4JRZrrPga", "FWPDF034", "FWPDF021", "FWPDF004", "FWPDF069", "wx-A8kHlxVzY2VL", "wx-VYnUasra7oZU", "wx-Rh3dV2IE5QuU", "wx-K3uGNGefGPv4"],
           "reportIds": [
             "FWPDF061",
             "wx-rmq4JRZrrPga",
@@ -5263,40 +5025,11 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF061",
-              "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"
-            },
-            {
-              "sourceId": "wx-rmq4JRZrrPga",
-              "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"
-            },
-            {
-              "sourceId": "FWPDF034",
-              "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"
-            },
-            {
-              "sourceId": "FWPDF021",
-              "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"
-            },
-            {
-              "sourceId": "FWPDF004",
-              "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"
-            },
-            {
-              "sourceId": "FWPDF069",
-              "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"
-            },
-            {
-              "sourceId": "wx-A8kHlxVzY2VL",
-              "label": "长江宏观经济研究｜中国香港疫情严峻，美国就业强劲｜2022年3月7日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF061", "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"}, {"sourceId": "wx-rmq4JRZrrPga", "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"}, {"sourceId": "FWPDF034", "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "FWPDF004", "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"}, {"sourceId": "FWPDF069", "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"}, {"sourceId": "wx-A8kHlxVzY2VL", "label": "长江宏观经济研究｜中国香港疫情严峻，美国就业强劲｜2022年3月7日"}, {"sourceId": "wx-VYnUasra7oZU", "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-Rh3dV2IE5QuU", "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-K3uGNGefGPv4", "label": "中金宏观｜中金宏观 | 如何预测美国通胀？"}],
           "parentAccepted": false
         },
         "realityTimeline": {
-          "text": "四个发布月分别带来前月CPI信息，PCE与政策材料补充价格、支出和供需解释。能源、汽车、住房、食品的作用并不固定；本文保留原发布版本和季调口径，不以当前修订值替换当时数值。",
+          "text": "本期公布的价格资料显示，总体通胀继续上行，分项却并非齐涨齐加速：12月CPI中的能源环比下降，随后1月食品、电力和住房贡献突出，2月又由汽油、住房和食品带动。3月10日公布的2月CPI同比达到7.9%，局部降温仍未扩展为总体同比回落。海通所关注的供应链缓和，尚不足以抵消住房、食品等压力；商品改善能否带动整体降温，仍是寻顶判断的关键。海通未指定见顶月，华安的一季度筑顶预测到3月15日也尚待完整季度数据检验。",
           "supportNodeIds": [
             "taper-inflation-2021-12-fact-1",
             "taper-inflation-2021-12-fact-2",
@@ -5310,19 +5043,7 @@
             "taper-inflation-2022-03-fact-1",
             "taper-inflation-2022-03-fact-2"
           ],
-          "sourceIds": [
-            "fraser-cpi-0-pdf",
-            "bea-pce-20211223",
-            "fed-press-20211215",
-            "fraser-cpi-1-pdf",
-            "bea-pce-20220128",
-            "fed-press-20220126",
-            "fraser-cpi-jan-pdf",
-            "bea-pce-20220225",
-            "fed-minutes-20220216",
-            "fraser-cpi-2-pdf",
-            "fed-testimony-20220302"
-          ],
+          "sourceIds": ["fraser-cpi-0-pdf", "bea-pce-20211223", "fed-press-20211215", "fraser-cpi-1-pdf", "bea-pce-20220128", "fed-press-20220126", "fraser-cpi-jan-pdf", "bea-pce-20220225", "fed-minutes-20220216", "fraser-cpi-2-pdf", "fed-testimony-20220302", "wx-VYnUasra7oZU", "wx-rmq4JRZrrPga", "wx-Rh3dV2IE5QuU", "wx-K3uGNGefGPv4", "FWPDF021", "FWPDF069"],
           "reportIds": [],
           "evidenceRefs": [
             "014e6f1e11ccf238cea1",
@@ -5350,74 +5071,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fraser-cpi-0-pdf",
-              "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"
-            },
-            {
-              "sourceId": "bea-pce-20211223",
-              "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fraser-cpi-1-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"
-            },
-            {
-              "sourceId": "bea-pce-20220128",
-              "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "fraser-cpi-jan-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"
-            },
-            {
-              "sourceId": "bea-pce-20220225",
-              "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "fraser-cpi-2-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fraser-cpi-0-pdf", "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"}, {"sourceId": "bea-pce-20211223", "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fraser-cpi-1-pdf", "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"}, {"sourceId": "bea-pce-20220128", "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "fraser-cpi-jan-pdf", "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "fraser-cpi-2-pdf", "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "wx-VYnUasra7oZU", "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-rmq4JRZrrPga", "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)"}, {"sourceId": "wx-Rh3dV2IE5QuU", "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-K3uGNGefGPv4", "label": "中金宏观｜中金宏观 | 如何预测美国通胀？"}, {"sourceId": "FWPDF021", "label": "华安证券｜华安证券美国1月CPI数据点评：美联储会加快行动么？"}, {"sourceId": "FWPDF069", "label": "东吴证券｜东吴证券宏观月报：破7后再破8？美国通胀还能超市场预期多久？"}],
           "parentAccepted": false
         },
         "mechanism": {
-          "text": "强需求与供给响应受阻共同解释压力持续，商品供应改善却未必消除服务、住房和工资风险。3月新增能源风险进一步改变总体价格情景；官方分项贡献、官员解释与机构模型在下文分别呈现。",
+          "text": "供给修复对通胀的影响要经过不同环节。汽车产能和物流改善，可能缓解缺芯及替代需求带来的商品涨价；消费转向服务后，租金和用工约束却可能接着支撑价格。房价向租金传导存在滞后，工资压力能否转嫁还取决于需求和企业定价能力。基数抬升可以降低同比，却不要求当月价格停止上涨。因此，商品先降温、总体同比随后回落、核心服务仍偏强可以先后出现；工资—价格相互强化在这些材料中仍是风险，不能只凭两者同涨就认定循环已经形成。",
           "supportNodeIds": [
             "taper-inflation-2021-12-mechanism",
             "taper-inflation-2022-01-mechanism",
             "taper-inflation-2022-02-mechanism",
             "taper-inflation-2022-03-mechanism"
           ],
-          "sourceIds": [
-            "fraser-cpi-0-pdf",
-            "fed-press-20211215",
-            "FWPDF061",
-            "wx-rmq4JRZrrPga",
-            "FWPDF034",
-            "FWPDF021",
-            "fed-minutes-20220216",
-            "FWPDF004",
-            "FWPDF069",
-            "wx-A8kHlxVzY2VL"
-          ],
+          "sourceIds": ["fraser-cpi-0-pdf", "fed-press-20211215", "FWPDF061", "wx-rmq4JRZrrPga", "FWPDF034", "FWPDF021", "fed-minutes-20220216", "FWPDF004", "FWPDF069", "wx-A8kHlxVzY2VL", "wx-VYnUasra7oZU", "wx-Rh3dV2IE5QuU", "wx-K3uGNGefGPv4"],
           "reportIds": [
             "FWPDF061",
             "wx-rmq4JRZrrPga",
@@ -5453,69 +5118,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fraser-cpi-0-pdf",
-              "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "FWPDF061",
-              "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"
-            },
-            {
-              "sourceId": "wx-rmq4JRZrrPga",
-              "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"
-            },
-            {
-              "sourceId": "FWPDF034",
-              "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"
-            },
-            {
-              "sourceId": "FWPDF021",
-              "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "FWPDF004",
-              "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"
-            },
-            {
-              "sourceId": "FWPDF069",
-              "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"
-            },
-            {
-              "sourceId": "wx-A8kHlxVzY2VL",
-              "label": "长江宏观经济研究｜中国香港疫情严峻，美国就业强劲｜2022年3月7日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fraser-cpi-0-pdf", "label": "BLS｜消费者价格指数发布｜2021-12-10｜2021年12月10日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "FWPDF061", "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"}, {"sourceId": "wx-rmq4JRZrrPga", "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"}, {"sourceId": "FWPDF034", "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "FWPDF004", "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"}, {"sourceId": "FWPDF069", "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"}, {"sourceId": "wx-A8kHlxVzY2VL", "label": "长江宏观经济研究｜中国香港疫情严峻，美国就业强劲｜2022年3月7日"}, {"sourceId": "wx-VYnUasra7oZU", "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-Rh3dV2IE5QuU", "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-K3uGNGefGPv4", "label": "中金宏观｜中金宏观 | 如何预测美国通胀？"}],
           "parentAccepted": false
         },
         "divergence": {
-          "text": "分歧应围绕条件与期限比较，而非只分看涨或看跌。筑顶后慢回落并不矛盾，能源高价情景也不自动否定核心降温；工资—价格相互强化和预期失锚仍须与已观察事实区分。",
+          "text": "需要检验的假设是供给改善会有多快，以及改善之后还有什么压力留下。海通2月11日更看重商品需求转向服务、供应链缓解及房价对租金的领先关系；中金2月20日则更重视租金、疫情减弱后的服务需求，仍预计年底核心PCE约4%。前者讨论近期寻顶，后者讨论年底中枢，本来就可能同时成立。3月能源冲击又改变总体通胀的条件，但尚不能用半个月油价替代东吴设定的整月均价，更不能在本期给随后季度的预测评分。",
           "supportNodeIds": [
             "taper-inflation-2021-12-divergence",
             "taper-inflation-2022-01-divergence",
             "taper-inflation-2022-02-divergence",
             "taper-inflation-2022-03-divergence"
           ],
-          "sourceIds": [
-            "FWPDF061",
-            "fed-press-20211215",
-            "fraser-cpi-1-pdf",
-            "wx-rmq4JRZrrPga",
-            "FWPDF034",
-            "FWPDF021",
-            "fed-minutes-20220216",
-            "FWPDF004",
-            "FWPDF069"
-          ],
+          "sourceIds": ["FWPDF061", "fed-press-20211215", "fraser-cpi-1-pdf", "wx-rmq4JRZrrPga", "FWPDF034", "FWPDF021", "fed-minutes-20220216", "FWPDF004", "FWPDF069", "wx-VYnUasra7oZU", "wx-Rh3dV2IE5QuU", "wx-K3uGNGefGPv4"],
           "reportIds": [
             "FWPDF061",
             "wx-rmq4JRZrrPga",
@@ -5548,44 +5162,7 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF061",
-              "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fraser-cpi-1-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"
-            },
-            {
-              "sourceId": "wx-rmq4JRZrrPga",
-              "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"
-            },
-            {
-              "sourceId": "FWPDF034",
-              "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"
-            },
-            {
-              "sourceId": "FWPDF021",
-              "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "FWPDF004",
-              "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"
-            },
-            {
-              "sourceId": "FWPDF069",
-              "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF061", "label": "中国银行｜通胀指标创40年来新高，美联储将加快Taper节奏｜2021年12月13日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fraser-cpi-1-pdf", "label": "BLS｜消费者价格指数发布｜2022-01-12｜2022年1月12日"}, {"sourceId": "wx-rmq4JRZrrPga", "label": "长江宏观经济研究｜美国通胀为何高烧不退？(长江宏观 于博团队)｜2022年1月14日"}, {"sourceId": "FWPDF034", "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "FWPDF004", "label": "民生证券｜预期内的美联储和预期外的欧央行｜2022年3月11日"}, {"sourceId": "FWPDF069", "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"}, {"sourceId": "wx-VYnUasra7oZU", "label": "梁中华宏观研究｜通胀或将见顶——美国2021年12月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-Rh3dV2IE5QuU", "label": "梁中华宏观研究｜通胀何时见顶？——美国2022年1月物价数据点评（海通宏观 李俊、梁中华）"}, {"sourceId": "wx-K3uGNGefGPv4", "label": "中金宏观｜中金宏观 | 如何预测美国通胀？"}],
           "parentAccepted": false
         },
         "implicationTimeline": {
@@ -8676,11 +8253,11 @@
       "historicalAsOfEligible": false,
       "retrospectiveOnly": true,
       "fullTopicReady": false,
-      "judgement": "按发布月梳理，11月到次年2月的CPI资料分别在本期四个月进入讨论。能源、汽车、住房、食品和服务的相对作用变化，决定了同比高企并不等于所有月度分项同步加速。官方将强需求与更持久的供应约束联系起来，但对工资循环、预期失锚等仍保留风险与事实之别。",
-      "expectation": "机构对通胀的讨论从压力扩散，转向商品与服务能否接续，再转向能源冲击和未来季度。判断总体通胀维持高位与核心稍后回落可以兼容，关键是价格假设、领先关系和观察期限是否相同。",
-      "reality": "四个发布月分别带来前月CPI信息，PCE与政策材料补充价格、支出和供需解释。能源、汽车、住房、食品的作用并不固定；本文保留原发布版本和季调口径，不以当前修订值替换当时数值。",
-      "mechanism": "强需求与供给响应受阻共同解释压力持续，商品供应改善却未必消除服务、住房和工资风险。3月新增能源风险进一步改变总体价格情景；官方分项贡献、官员解释与机构模型在下文分别呈现。",
-      "divergence": "分歧应围绕条件与期限比较，而非只分看涨或看跌。筑顶后慢回落并不矛盾，能源高价情景也不自动否定核心降温；工资—价格相互强化和预期失锚仍须与已观察事实区分。",
+      "judgement": "通胀的核心矛盾是：部分商品和供应链指标开始出现缓和线索，整体涨价却没有随之迅速退去。需求仍强，住房、食品和服务压力接续，供给修复又受疫情制约。1月讨论的商品降温和通胀寻顶，到2月需要面对租金与服务的持续性；3月新增能源风险进一步增加了回落的不确定性。因而本期真正要判断的，是局部价格降温能否扩展为持续的整体降温，而不只是找到一个同比高点。",
+      "expectation": "机构对通胀的分歧，主要在商品降温能否盖过服务和住房的接续压力。海通1月13日从总体月度涨幅与供应链边际改善提出‘或将见顶’，但仍预计高位持续，未指定峰值月份；华安2月11日把一季度筑顶建立在汽车供给改善等条件上，同时认为工资和服务恢复会拖慢下降。到3月10日，东吴另设3、4月WTI月均均为120美元的情景，推演总体CPI进一步上升，却仍预计核心CPI一季度末见顶。总体、核心和不同油价假设应分别检验。",
+      "reality": "本期公布的价格资料显示，总体通胀继续上行，分项却并非齐涨齐加速：12月CPI中的能源环比下降，随后1月食品、电力和住房贡献突出，2月又由汽油、住房和食品带动。3月10日公布的2月CPI同比达到7.9%，局部降温仍未扩展为总体同比回落。海通所关注的供应链缓和，尚不足以抵消住房、食品等压力；商品改善能否带动整体降温，仍是寻顶判断的关键。海通未指定见顶月，华安的一季度筑顶预测到3月15日也尚待完整季度数据检验。",
+      "mechanism": "供给修复对通胀的影响要经过不同环节。汽车产能和物流改善，可能缓解缺芯及替代需求带来的商品涨价；消费转向服务后，租金和用工约束却可能接着支撑价格。房价向租金传导存在滞后，工资压力能否转嫁还取决于需求和企业定价能力。基数抬升可以降低同比，却不要求当月价格停止上涨。因此，商品先降温、总体同比随后回落、核心服务仍偏强可以先后出现；工资—价格相互强化在这些材料中仍是风险，不能只凭两者同涨就认定循环已经形成。",
+      "divergence": "需要检验的假设是供给改善会有多快，以及改善之后还有什么压力留下。海通2月11日更看重商品需求转向服务、供应链缓解及房价对租金的领先关系；中金2月20日则更重视租金、疫情减弱后的服务需求，仍预计年底核心PCE约4%。前者讨论近期寻顶，后者讨论年底中枢，本来就可能同时成立。3月能源冲击又改变总体通胀的条件，但尚不能用半个月油价替代东吴设定的整月均价，更不能在本期给随后季度的预测评分。",
       "implication": "CPI、PCE与债券通胀补偿衡量不同对象。实际收益率和通胀补偿有时同向、有时反向，名义利率平稳也可能掩盖两者变化；油价单日值更不能验证未来月均假设。",
       "validation": "后续需检验商品供给、服务价格、劳动供给与油价月均是否符合原假设，并保存统计修订链。机构模型的先行关系可能失效，未来月份尚无完整结果时，不提前判断预测成败。"
     },
@@ -8689,7 +8266,7 @@
       "title": "增长与就业",
       "periodSummary": {
         "paragraphs": [
-          "增长和就业必须沿观察期与发布版本阅读。四季度GDP较快增长、12月实际消费下降、1月疫情缺勤增加以及2月岗位修复可以同时存在。库存、服务与商品的结构变化，以及非农和家庭调查的差异，不能被一个经济强弱标签覆盖。",
+          "经济仍在修复，但修复的速度和供给能力并不匹配。企业招工需求较强，参与率却尚未恢复；居民支出也在商品、服务和疫情扰动之间切换。四季度GDP较快增长未能消除12月实际消费下降和1月Omicron冲击，到2月就业又呈现较广恢复。政策面临的难题是：等待劳动供给回归可能延长通胀压力，过快压低需求又会损伤就业与投资。本阶段应把眼前修复和未来紧缩代价一起看，而不是在‘过热’与‘衰退’之间只选一个标签。",
           "官方提供核算、行业和调查事实；机构进一步解释供给回归、服务恢复及紧缩代价。这些解释不等于已识别净因果，进口扣除也不是国内生产损失估计。到期末就业修复与战争后的增长风险仍并存，不能用股价、消费者情绪或PMI代替尚未公布的消费和GDP结果。",
           "12月看到的11月就业和消费并不支持一个单一的强弱标签。机构调查新增岗位与家庭调查失业率衡量不同对象；名义消费增加也不意味着实际购买量同比例增长。劳动力参与仍低于疫情前，是政策权衡的重要约束。\n\n长江12月7日把增长与就业继续恢复视为加息预期逐渐主导定价的条件，判断首次加息会在2022年；疫情恶化、政策调整和贸易摩擦仍可能改变路径。东方金诚白雪对不同观察周的解释则提醒，收紧预期增强时，对疫情及未来增长的担忧仍可能压低长端利率。这不是同信息集下互斥的增长预测，而是宏观修复与前景风险并存的两种观察角度。\n\n中金12月6日认为新增非农偏弱之外，失业率下降、参与率改善与工资信号仍支持加快Taper讨论，但Omicron可能压制消费，使抗通胀与保护复苏发生张力。中信12月16日认为增速从高点回落不等于中期增长失去韧性，并关注二季度就业缺口修复：若老龄化等因素限制劳动供给，等待全部岗位回归可能加重通胀约束。这里没有用单一就业流量替代充分就业的综合判断，也没有把疫情风险写成已经发生的衰退。\n\n西部证券12月3日进一步把失业率下降和参与率回升并列，认为壮年参与率缺口可能意味着仍有可回流的劳动供给，储蓄消耗及工资激励可能支持就业；海通12月17日则提醒部分退出可能长期化。因此，低参与率既可能是复苏的余量，也可能是供给约束，关键是疫情和就业意愿能否允许实际回流，不能只用新增非农的强弱替代这一判断。",
           "东吴将招工难归于疫情后参与率低、移民减少及部分永久退出；暂时离场者与移民回归取决于疫情，部分提前退休者亦可能回归。在Omicron不确定性下，作者预测2022年一季度工资增速可能仍高于4%，并认为工资压力将推高通胀；这是归属明确的传导假说，不是图已识别工资—价格因果。",
@@ -8705,24 +8282,7 @@
           "信达证券3月14日讨论了紧缩影响需求的几条路径：家庭信贷收缩或资产价格下降会约束家庭支出；企业融资成本和风险溢价上升，可能促使企业削减运营与劳动支出，继而降低家庭收入和需求。资本开支与就业也可能受损，过快加息在极端情况下可能引发衰退。供给端还存在相反作用：融资成本上升可能限制扩产，库存融资成本可能被转嫁给消费者，压缩库存也可能加剧供应链脆弱性。"
         ],
         "paragraphSources": [
-          [
-            {
-              "sourceId": "bea-gdp-20220127",
-              "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"
-            },
-            {
-              "sourceId": "bea-pce-20220128",
-              "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"
-            },
-            {
-              "sourceId": "dol-employment-20220204",
-              "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"
-            },
-            {
-              "sourceId": "dol-employment-20220304",
-              "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"
-            }
-          ],
+          [{"sourceId": "bea-gdp-20220127", "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"}, {"sourceId": "bea-pce-20220128", "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"}, {"sourceId": "dol-employment-20220304", "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"}, {"sourceId": "wx-TQ-zkpma5zxr", "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景｜2021-12-03"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）｜2021-12-17"}, {"sourceId": "wx-f41gFkgO04dw", "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退｜2022-02-17"}, {"sourceId": "wx-u3G6c7q4S4bk", "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧｜2022-02-06"}, {"sourceId": "FWPDF076", "label": "信达证券｜美国经济通览｜2022年3月14日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "FWPDF063", "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"}, {"sourceId": "FWPDF012", "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"}],
           [
             {
               "sourceId": "bea-gdp-20220224",
@@ -9815,52 +9375,7 @@
           "pwr01-growth-feb-war",
           "pwr01-growth-dec-feb-revision"
         ],
-        "sourceIds": [
-          "bea-gdp-20220127",
-          "bea-pce-20220128",
-          "dol-employment-20220204",
-          "dol-employment-20220304",
-          "bea-gdp-20220224",
-          "fed-testimony-20220302",
-          "FWPDF012",
-          "FWPDF076",
-          "fraser-employment-0-pdf",
-          "bea-pce-20211223",
-          "fed-press-20211215",
-          "fed-press-20220126",
-          "bea-pce-20220225",
-          "wx-IPUaKgR4Nwfv",
-          "wx-zkeOS6oUciOj",
-          "wx-kuqvrBnUf30S",
-          "wx-dGEPHnh30Fw7",
-          "wx-0eej80VEZAS6",
-          "wx-y4kQeACRm9ns",
-          "wx-FZY4KptTFDns",
-          "wx-jTLq43Z7ysBj",
-          "wx-bDRlBxk9HJUy",
-          "wx-XjtApOc9F9ks",
-          "wx-iqqoC8Y0C4gn",
-          "wx-Rz_2GT0XJZa2",
-          "wx-6jd9hQB4Y2JV",
-          "wx-5xySawhWAOWb",
-          "wx-aJz4lPp02cmR",
-          "wx-Rh3dV2IE5QuU",
-          "wx-K3uGNGefGPv4",
-          "wx-f_VPPJjS5lYB",
-          "wx-pnEzTPDuvwFA",
-          "wx-BOXspDG0y28l",
-          "wx-TQ-zkpma5zxr",
-          "wx-mrYGTlHZjVF2",
-          "wx-GzXp4-749VTo",
-          "wx-BSnOcBG6rRBw",
-          "wx-Z_9Te8SjLsOT",
-          "wx-Hg_jj8T5M-Fk",
-          "wx-mgFC18RpSdi5",
-          "wx-f41gFkgO04dw",
-          "wx-u3G6c7q4S4bk",
-          "wx-7DHNTEXdrhps",
-          "wx-AiYWw801Ld_J"
-        ],
+        "sourceIds": ["bea-gdp-20220127", "bea-pce-20220128", "dol-employment-20220204", "dol-employment-20220304", "bea-gdp-20220224", "fed-testimony-20220302", "FWPDF012", "FWPDF076", "fraser-employment-0-pdf", "bea-pce-20211223", "fed-press-20211215", "fed-press-20220126", "bea-pce-20220225", "wx-IPUaKgR4Nwfv", "wx-zkeOS6oUciOj", "wx-kuqvrBnUf30S", "wx-dGEPHnh30Fw7", "wx-0eej80VEZAS6", "wx-y4kQeACRm9ns", "wx-FZY4KptTFDns", "wx-jTLq43Z7ysBj", "wx-bDRlBxk9HJUy", "wx-XjtApOc9F9ks", "wx-iqqoC8Y0C4gn", "wx-Rz_2GT0XJZa2", "wx-6jd9hQB4Y2JV", "wx-5xySawhWAOWb", "wx-aJz4lPp02cmR", "wx-Rh3dV2IE5QuU", "wx-K3uGNGefGPv4", "wx-f_VPPJjS5lYB", "wx-pnEzTPDuvwFA", "wx-BOXspDG0y28l", "wx-TQ-zkpma5zxr", "wx-mrYGTlHZjVF2", "wx-GzXp4-749VTo", "wx-BSnOcBG6rRBw", "wx-Z_9Te8SjLsOT", "wx-Hg_jj8T5M-Fk", "wx-mgFC18RpSdi5", "wx-f41gFkgO04dw", "wx-u3G6c7q4S4bk", "wx-7DHNTEXdrhps", "wx-AiYWw801Ld_J", "FWPDF063"],
         "reportIds": [
           "FWPDF012",
           "FWPDF076",
@@ -9963,7 +9478,7 @@
       },
       "aspectSummaries": {
         "expectationTimeline": {
-          "text": "机构从招工难与工资压力，逐步讨论疫情缓和后的服务修复，以及紧缩对投资、就业和需求的代价。供给回归与需求降温是不同路径，这些预测取决于疫情、行业缺口和政策速度等条件。",
+          "text": "对复苏还能走多远，关键判断是退出劳动市场的人能否回来。西部12月3日把壮年参与率缺口看作潜在供给，认为储蓄消耗和工资激励可能带动回流；海通12月17日更担心部分退出长期化。两种判断都会影响就业改善能否伴随成本降温。到2月17日，西部又以没有新增财政转移支付为前提，设想服务消费自3月反弹两个季度后减弱，并讨论2023年衰退风险。这是对持续性的预测，不能与当月新增岗位直接判输赢。",
           "supportNodeIds": [
             "taper-growth-2021-12-view-1",
             "taper-growth-2022-01-view-1",
@@ -9974,16 +9489,7 @@
             "taper-growth-2022-03-view-2",
             "taper-growth-2022-03-view-3"
           ],
-          "sourceIds": [
-            "FWPDF063",
-            "wx-up_26ykECuo1",
-            "FWPDF034",
-            "FWPDF012",
-            "wx-cuJNSd0DhOoq",
-            "FWPDF077",
-            "wx-QmEC3Ll6WErQ",
-            "FWPDF076"
-          ],
+          "sourceIds": ["FWPDF063", "wx-up_26ykECuo1", "FWPDF034", "FWPDF012", "wx-cuJNSd0DhOoq", "FWPDF077", "wx-QmEC3Ll6WErQ", "FWPDF076", "wx-TQ-zkpma5zxr", "wx-mrYGTlHZjVF2", "wx-f41gFkgO04dw", "wx-u3G6c7q4S4bk", "fed-press-20211215", "dol-employment-20220204", "bea-pce-20220225"],
           "reportIds": [
             "FWPDF063",
             "wx-up_26ykECuo1",
@@ -10020,44 +9526,11 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF063",
-              "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"
-            },
-            {
-              "sourceId": "wx-up_26ykECuo1",
-              "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"
-            },
-            {
-              "sourceId": "FWPDF034",
-              "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"
-            },
-            {
-              "sourceId": "FWPDF012",
-              "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"
-            },
-            {
-              "sourceId": "wx-cuJNSd0DhOoq",
-              "label": "长江宏观经济研究｜就业无虞，加息无疑｜2022年2月6日"
-            },
-            {
-              "sourceId": "FWPDF077",
-              "label": "第一财经研究院｜发达国家疫情反弹，美国劳动力市场依然紧张｜2022年3月8日"
-            },
-            {
-              "sourceId": "wx-QmEC3Ll6WErQ",
-              "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"
-            },
-            {
-              "sourceId": "FWPDF076",
-              "label": "信达证券｜美国经济通览｜2022年3月14日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF063", "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"}, {"sourceId": "FWPDF034", "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"}, {"sourceId": "FWPDF012", "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"}, {"sourceId": "wx-cuJNSd0DhOoq", "label": "长江宏观经济研究｜就业无虞，加息无疑｜2022年2月6日"}, {"sourceId": "FWPDF077", "label": "第一财经研究院｜发达国家疫情反弹，美国劳动力市场依然紧张｜2022年3月8日"}, {"sourceId": "wx-QmEC3Ll6WErQ", "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"}, {"sourceId": "FWPDF076", "label": "信达证券｜美国经济通览｜2022年3月14日"}, {"sourceId": "wx-TQ-zkpma5zxr", "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}, {"sourceId": "wx-f41gFkgO04dw", "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退"}, {"sourceId": "wx-u3G6c7q4S4bk", "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25"}],
           "parentAccepted": false
         },
         "realityTimeline": {
-          "text": "就业、消费和GDP观察期不同，季度增长较快可与随后单月消费走弱并存。非农和家庭调查也测量不同对象；本栏将初报、修订、季调更新与人口控制变化分开，避免把统计差异写成经济矛盾。",
+          "text": "现实先是结构分化，随后出现恢复：上季度GDP较快增长与12月实际消费下降并存，1月疫情缺勤增加却没有阻止非农初报增加，3月4日发布的2月就业增长又较广。岗位恢复说明企业仍有用工需求，但参与率和就业人口比仍低于疫情前，劳动供给尚未跟上。西部所设想的劳动力回流，因此还不能仅靠新增岗位来确认；海通担心的供给缺口依然存在，但尚不能据此认定退出者不会回来。需求修复与供给不足并存，意味着就业改善暂时没有消除工资和成本压力。",
           "supportNodeIds": [
             "taper-growth-2021-12-fact-1",
             "taper-growth-2021-12-fact-2",
@@ -10073,21 +9546,7 @@
             "taper-growth-2022-03-fact-1",
             "taper-growth-2022-03-fact-2"
           ],
-          "sourceIds": [
-            "fraser-employment-0-pdf",
-            "bea-pce-20211223",
-            "fed-press-20211215",
-            "fraser-employment-1-pdf",
-            "bea-gdp-20220127",
-            "bea-pce-20220128",
-            "fed-press-20220126",
-            "dol-employment-20220204",
-            "bea-pce-20220225",
-            "bea-gdp-20220224",
-            "fed-minutes-20220216",
-            "dol-employment-20220304",
-            "fed-testimony-20220302"
-          ],
+          "sourceIds": ["fraser-employment-0-pdf", "bea-pce-20211223", "fed-press-20211215", "fraser-employment-1-pdf", "bea-gdp-20220127", "bea-pce-20220128", "fed-press-20220126", "dol-employment-20220204", "bea-pce-20220225", "bea-gdp-20220224", "fed-minutes-20220216", "dol-employment-20220304", "fed-testimony-20220302", "wx-TQ-zkpma5zxr", "wx-mrYGTlHZjVF2", "wx-f41gFkgO04dw", "wx-u3G6c7q4S4bk", "FWPDF076", "FWPDF063", "FWPDF012"],
           "reportIds": [],
           "evidenceRefs": [
             "83b60abe7968d61f2e51",
@@ -10135,82 +9594,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fraser-employment-0-pdf",
-              "label": "BLS｜就业形势发布｜2021-12-03｜2021年12月3日"
-            },
-            {
-              "sourceId": "bea-pce-20211223",
-              "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"
-            },
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "fraser-employment-1-pdf",
-              "label": "BLS｜就业形势发布｜2022-01-07｜2022年1月7日"
-            },
-            {
-              "sourceId": "bea-gdp-20220127",
-              "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"
-            },
-            {
-              "sourceId": "bea-pce-20220128",
-              "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "dol-employment-20220204",
-              "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"
-            },
-            {
-              "sourceId": "bea-pce-20220225",
-              "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"
-            },
-            {
-              "sourceId": "bea-gdp-20220224",
-              "label": "BEA｜实际GDP发布｜2022-02-24｜2022年2月24日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "dol-employment-20220304",
-              "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fraser-employment-0-pdf", "label": "BLS｜就业形势发布｜2021-12-03｜2021年12月3日"}, {"sourceId": "bea-pce-20211223", "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "fraser-employment-1-pdf", "label": "BLS｜就业形势发布｜2022-01-07｜2022年1月7日"}, {"sourceId": "bea-gdp-20220127", "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"}, {"sourceId": "bea-pce-20220128", "label": "BEA｜个人收入与支出｜2022-01-28｜2022年1月28日"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"}, {"sourceId": "bea-gdp-20220224", "label": "BEA｜实际GDP发布｜2022-02-24｜2022年2月24日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "dol-employment-20220304", "label": "BLS｜就业形势发布｜2022-03-04｜2022年3月4日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "wx-TQ-zkpma5zxr", "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}, {"sourceId": "wx-f41gFkgO04dw", "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退"}, {"sourceId": "wx-u3G6c7q4S4bk", "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧"}, {"sourceId": "FWPDF076", "label": "信达证券｜信达证券实体篇：美国经济通览"}, {"sourceId": "FWPDF063", "label": "东吴证券｜东吴证券宏观月报：11月非农难以改变美联储加快taper的决心"}, {"sourceId": "FWPDF012", "label": "东海期货｜东海期货月度策略：俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）"}],
           "parentAccepted": false
         },
         "mechanism": {
-          "text": "劳动力供给受退休、照护和疫情担忧约束，需求恢复又加大招工压力。消费还取决于商品服务结构及工资、福利的不同变化；季度库存贡献属于核算关系，不能直接推出随后内需全面加速。",
+          "text": "劳动供给恢复快慢，会改变同一份需求对产量和工资的作用。若暂时离场者随疫情缓和回归，企业可能在增加雇佣的同时缓解招工压力；若退休、照护等约束持续，需求较强就更容易转成用工成本压力。消费还受收入来源影响：工资增加可被福利退出部分抵消，价格上涨又侵蚀购买力。信达3月14日进一步指出，紧缩可经信贷、财富和融资成本压低家庭及企业支出，也可能限制扩产和库存。需求放慢有助于缓和缺口，但并不自动修复供给。",
           "supportNodeIds": [
             "taper-growth-2021-12-mechanism",
             "taper-growth-2022-01-mechanism",
             "taper-growth-2022-02-mechanism",
             "taper-growth-2022-03-mechanism"
           ],
-          "sourceIds": [
-            "fed-press-20211215",
-            "FWPDF063",
-            "bea-gdp-20220127",
-            "fed-press-20220126",
-            "dol-employment-20220204",
-            "bea-pce-20220225",
-            "FWPDF012",
-            "FWPDF077",
-            "wx-QmEC3Ll6WErQ",
-            "FWPDF076"
-          ],
+          "sourceIds": ["fed-press-20211215", "FWPDF063", "bea-gdp-20220127", "fed-press-20220126", "dol-employment-20220204", "bea-pce-20220225", "FWPDF012", "FWPDF077", "wx-QmEC3Ll6WErQ", "FWPDF076", "wx-TQ-zkpma5zxr", "wx-mrYGTlHZjVF2", "wx-f41gFkgO04dw", "wx-u3G6c7q4S4bk"],
           "reportIds": [
             "FWPDF063",
             "FWPDF012",
@@ -10257,70 +9652,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fed-press-20211215",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"
-            },
-            {
-              "sourceId": "FWPDF063",
-              "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"
-            },
-            {
-              "sourceId": "bea-gdp-20220127",
-              "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "dol-employment-20220204",
-              "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"
-            },
-            {
-              "sourceId": "bea-pce-20220225",
-              "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"
-            },
-            {
-              "sourceId": "FWPDF012",
-              "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"
-            },
-            {
-              "sourceId": "FWPDF077",
-              "label": "第一财经研究院｜发达国家疫情反弹，美国劳动力市场依然紧张｜2022年3月8日"
-            },
-            {
-              "sourceId": "wx-QmEC3Ll6WErQ",
-              "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"
-            },
-            {
-              "sourceId": "FWPDF076",
-              "label": "信达证券｜美国经济通览｜2022年3月14日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "FWPDF063", "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"}, {"sourceId": "bea-gdp-20220127", "label": "BEA｜实际GDP发布｜2022-01-27｜2022年1月27日"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04｜2022年2月4日"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"}, {"sourceId": "FWPDF012", "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"}, {"sourceId": "FWPDF077", "label": "第一财经研究院｜发达国家疫情反弹，美国劳动力市场依然紧张｜2022年3月8日"}, {"sourceId": "wx-QmEC3Ll6WErQ", "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"}, {"sourceId": "FWPDF076", "label": "信达证券｜美国经济通览｜2022年3月14日"}, {"sourceId": "wx-TQ-zkpma5zxr", "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}, {"sourceId": "wx-f41gFkgO04dw", "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退"}, {"sourceId": "wx-u3G6c7q4S4bk", "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧"}],
           "parentAccepted": false
         },
         "divergence": {
-          "text": "岗位增加、参与不足和行业工资压力可同时存在。机构对服务恢复的解释不等于GDP已加速，较晚PMI也不能验证较早消费。紧缩可能压低需求，同时可能损害扩产和库存缓冲，需保留两侧影响。",
+          "text": "分歧不在于是否看到了就业恢复，而在于恢复是否还有持续空间。西部12月把低参与率更多理解为可回流的余量，2月则更担心服务和投资只是短暂脉冲；海通强调部分劳动退出难逆转，中信2月的研究仍重视岗位修复与用工紧张并存。前两类判断决定供给能否跟上，后一阶段的争论还涉及需求会持续多久。2月就业修复只能检验眼前活动，尚不能推翻2023年衰退情景；也不能把消费者信心下降直接换成已经发生的实际消费收缩。",
           "supportNodeIds": [
             "taper-growth-2021-12-divergence",
             "taper-growth-2022-01-divergence",
             "taper-growth-2022-02-divergence",
             "taper-growth-2022-03-divergence"
           ],
-          "sourceIds": [
-            "fraser-employment-0-pdf",
-            "bea-pce-20211223",
-            "FWPDF063",
-            "wx-up_26ykECuo1",
-            "FWPDF034",
-            "wx-cuJNSd0DhOoq",
-            "FWPDF012",
-            "bea-pce-20220225",
-            "wx-QmEC3Ll6WErQ",
-            "FWPDF076"
-          ],
+          "sourceIds": ["fraser-employment-0-pdf", "bea-pce-20211223", "FWPDF063", "wx-up_26ykECuo1", "FWPDF034", "wx-cuJNSd0DhOoq", "FWPDF012", "bea-pce-20220225", "wx-QmEC3Ll6WErQ", "FWPDF076", "wx-TQ-zkpma5zxr", "wx-mrYGTlHZjVF2", "wx-f41gFkgO04dw", "wx-u3G6c7q4S4bk", "fed-press-20211215", "dol-employment-20220204"],
           "reportIds": [
             "FWPDF063",
             "wx-up_26ykECuo1",
@@ -10359,48 +9702,7 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fraser-employment-0-pdf",
-              "label": "BLS｜就业形势发布｜2021-12-03｜2021年12月3日"
-            },
-            {
-              "sourceId": "bea-pce-20211223",
-              "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"
-            },
-            {
-              "sourceId": "FWPDF063",
-              "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"
-            },
-            {
-              "sourceId": "wx-up_26ykECuo1",
-              "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"
-            },
-            {
-              "sourceId": "FWPDF034",
-              "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"
-            },
-            {
-              "sourceId": "wx-cuJNSd0DhOoq",
-              "label": "长江宏观经济研究｜就业无虞，加息无疑｜2022年2月6日"
-            },
-            {
-              "sourceId": "FWPDF012",
-              "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"
-            },
-            {
-              "sourceId": "bea-pce-20220225",
-              "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"
-            },
-            {
-              "sourceId": "wx-QmEC3Ll6WErQ",
-              "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"
-            },
-            {
-              "sourceId": "FWPDF076",
-              "label": "信达证券｜美国经济通览｜2022年3月14日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fraser-employment-0-pdf", "label": "BLS｜就业形势发布｜2021-12-03｜2021年12月3日"}, {"sourceId": "bea-pce-20211223", "label": "BEA｜个人收入与支出｜2021-12-23｜2021年12月23日"}, {"sourceId": "FWPDF063", "label": "东吴证券｜11月非农难以改变美联储加快taper的决心｜2021年12月4日"}, {"sourceId": "wx-up_26ykECuo1", "label": "长江宏观经济研究｜非农偏弱无碍加息升温｜2022年1月9日"}, {"sourceId": "FWPDF034", "label": "民生证券｜美联储的鹰派信号，三月加息，三季度缩表｜2022年1月27日"}, {"sourceId": "wx-cuJNSd0DhOoq", "label": "长江宏观经济研究｜就业无虞，加息无疑｜2022年2月6日"}, {"sourceId": "FWPDF012", "label": "东海期货｜俄乌局势持续升级致商品大涨，关注 3 月美联储加息落地情况（2022-02-28）｜2022年2月28日"}, {"sourceId": "bea-pce-20220225", "label": "BEA｜个人收入与支出｜2022-02-25｜2022年2月25日"}, {"sourceId": "wx-QmEC3Ll6WErQ", "label": "长江宏观经济研究｜加息周期即将开启｜2022年3月6日"}, {"sourceId": "FWPDF076", "label": "信达证券｜美国经济通览｜2022年3月14日"}, {"sourceId": "wx-TQ-zkpma5zxr", "label": "招商宏观静思录｜西部宏观 | 由就业数据看美国通胀压力及加息前景"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}, {"sourceId": "wx-f41gFkgO04dw", "label": "招商宏观静思录｜西部宏观丨假如明年美国经济衰退"}, {"sourceId": "wx-u3G6c7q4S4bk", "label": "CS宏观研究｜【中信证券海外宏观】春节假期海外市场的喜与忧"}, {"sourceId": "fed-press-20211215", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2021-12-15"}, {"sourceId": "dol-employment-20220204", "label": "BLS｜就业形势发布｜2022-02-04"}],
           "parentAccepted": false
         },
         "implicationTimeline": {
@@ -13999,11 +13301,11 @@
       "historicalAsOfEligible": false,
       "retrospectiveOnly": true,
       "fullTopicReady": false,
-      "judgement": "增长和就业必须沿观察期与发布版本阅读。四季度GDP较快增长、12月实际消费下降、1月疫情缺勤增加以及2月岗位修复可以同时存在。库存、服务与商品的结构变化，以及非农和家庭调查的差异，不能被一个经济强弱标签覆盖。",
-      "expectation": "机构从招工难与工资压力，逐步讨论疫情缓和后的服务修复，以及紧缩对投资、就业和需求的代价。供给回归与需求降温是不同路径，这些预测取决于疫情、行业缺口和政策速度等条件。",
-      "reality": "就业、消费和GDP观察期不同，季度增长较快可与随后单月消费走弱并存。非农和家庭调查也测量不同对象；本栏将初报、修订、季调更新与人口控制变化分开，避免把统计差异写成经济矛盾。",
-      "mechanism": "劳动力供给受退休、照护和疫情担忧约束，需求恢复又加大招工压力。消费还取决于商品服务结构及工资、福利的不同变化；季度库存贡献属于核算关系，不能直接推出随后内需全面加速。",
-      "divergence": "岗位增加、参与不足和行业工资压力可同时存在。机构对服务恢复的解释不等于GDP已加速，较晚PMI也不能验证较早消费。紧缩可能压低需求，同时可能损害扩产和库存缓冲，需保留两侧影响。",
+      "judgement": "经济仍在修复，但修复的速度和供给能力并不匹配。企业招工需求较强，参与率却尚未恢复；居民支出也在商品、服务和疫情扰动之间切换。四季度GDP较快增长未能消除12月实际消费下降和1月Omicron冲击，到2月就业又呈现较广恢复。政策面临的难题是：等待劳动供给回归可能延长通胀压力，过快压低需求又会损伤就业与投资。本阶段应把眼前修复和未来紧缩代价一起看，而不是在‘过热’与‘衰退’之间只选一个标签。",
+      "expectation": "对复苏还能走多远，关键判断是退出劳动市场的人能否回来。西部12月3日把壮年参与率缺口看作潜在供给，认为储蓄消耗和工资激励可能带动回流；海通12月17日更担心部分退出长期化。两种判断都会影响就业改善能否伴随成本降温。到2月17日，西部又以没有新增财政转移支付为前提，设想服务消费自3月反弹两个季度后减弱，并讨论2023年衰退风险。这是对持续性的预测，不能与当月新增岗位直接判输赢。",
+      "reality": "现实先是结构分化，随后出现恢复：上季度GDP较快增长与12月实际消费下降并存，1月疫情缺勤增加却没有阻止非农初报增加，3月4日发布的2月就业增长又较广。岗位恢复说明企业仍有用工需求，但参与率和就业人口比仍低于疫情前，劳动供给尚未跟上。西部所设想的劳动力回流，因此还不能仅靠新增岗位来确认；海通担心的供给缺口依然存在，但尚不能据此认定退出者不会回来。需求修复与供给不足并存，意味着就业改善暂时没有消除工资和成本压力。",
+      "mechanism": "劳动供给恢复快慢，会改变同一份需求对产量和工资的作用。若暂时离场者随疫情缓和回归，企业可能在增加雇佣的同时缓解招工压力；若退休、照护等约束持续，需求较强就更容易转成用工成本压力。消费还受收入来源影响：工资增加可被福利退出部分抵消，价格上涨又侵蚀购买力。信达3月14日进一步指出，紧缩可经信贷、财富和融资成本压低家庭及企业支出，也可能限制扩产和库存。需求放慢有助于缓和缺口，但并不自动修复供给。",
+      "divergence": "分歧不在于是否看到了就业恢复，而在于恢复是否还有持续空间。西部12月把低参与率更多理解为可回流的余量，2月则更担心服务和投资只是短暂脉冲；海通强调部分劳动退出难逆转，中信2月的研究仍重视岗位修复与用工紧张并存。前两类判断决定供给能否跟上，后一阶段的争论还涉及需求会持续多久。2月就业修复只能检验眼前活动，尚不能推翻2023年衰退情景；也不能把消费者信心下降直接换成已经发生的实际消费收缩。",
       "implication": "强就业不自动决定长债整日或整月方向，股票下跌也不单独证明衰退。市场同时权衡政策、增长和风险冲击；下文仅用实际路径检验机械的一对一叙事，不据此分配冲击贡献。",
       "validation": "后续重点是参与和行业岗位能否持续修复、实际消费是否改善，以及融资收紧如何影响投资与用工。比较前月须使用同版数据，误分类上界和人口控制变化不能当成新的实际就业流量。"
     },
@@ -14012,7 +13314,7 @@
       "title": "美债收益率曲线",
       "periodSummary": {
         "paragraphs": [
-          "全期短端收益率上升更多、曲线收窄，但单日和月内路径并不一致。12月会议附近的利差方向不等于整月方向；1月实际利率上升而通胀补偿下降，2月方向反转，3月又有明显波动。名义10年收益率不是一条能单独解释所有冲击的指标。",
+          "美债面对两股方向不同的力量：通胀持续和退出宽松预期推高近端利率，疫情、战争与未来增长风险又牵制长端。全期2年收益率上行多于10年，曲线趋平，但长端内部的变化并不一致：1月实际收益率上升、通胀补偿下降，2月则反过来。问题因此从‘加息会不会推高利率’变成‘市场抬高了哪一段利率、在担心哪一种风险’。期末收益率水平并不能单独告诉我们政策、增长与避险各贡献了多少。",
           "机构观点分别强调加息预期、疫情和避险、通胀风险及未来缩表，但缺少统一版本的期限溢价与会议概率资料，不能为各项分配因果份额。已取得路径可描述重定价，不能等同投资收益、衰退概率或政策已实际执行的证据。",
           "12月内2年收益率升幅大于10年，曲线较月初趋平；但12月15日前一有效观察日到当天的利差略扩大。阶段趋势与单日反应不同，不能用一个标签抹平路径。",
           "1月内曲线继续收窄，实际10年收益率上升而通胀补偿下降。政策预期和实际贴现条件发生变化，但这不是当月已经执行QT的证据。",
@@ -14020,28 +13322,7 @@
           "3月上半月曲线在波动中继续压平，名义10年到期末升至月初以上，但月中不同日子的实际利率和通胀补偿方向并不固定。不能把整个阶段写成纯粹避险或纯粹通胀交易。"
         ],
         "paragraphSources": [
-          [
-            {
-              "sourceId": "market-DGS2",
-              "label": "Federal Reserve H.15 / Treasury｜2年美债收益率"
-            },
-            {
-              "sourceId": "market-DGS10",
-              "label": "Federal Reserve H.15 / Treasury｜10年美债收益率"
-            },
-            {
-              "sourceId": "market-T10Y2Y",
-              "label": "同日输入计算｜10年−2年利差"
-            },
-            {
-              "sourceId": "market-DFII10",
-              "label": "Federal Reserve H.15 / Treasury｜10年TIPS实际收益率"
-            },
-            {
-              "sourceId": "market-BEI10",
-              "label": "同日输入计算｜10年通胀补偿"
-            }
-          ],
+          [{"sourceId": "market-DGS2", "label": "Federal Reserve H.15 / Treasury｜2年美债收益率"}, {"sourceId": "market-DGS10", "label": "Federal Reserve H.15 / Treasury｜10年美债收益率"}, {"sourceId": "market-T10Y2Y", "label": "同日输入计算｜10年−2年利差"}, {"sourceId": "market-DFII10", "label": "Federal Reserve H.15 / Treasury｜10年TIPS实际收益率"}, {"sourceId": "market-BEI10", "label": "同日输入计算｜10年通胀补偿"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-MgWQRaCMwBJt", "label": "东方金诚投资人服务｜美债专题跟踪丨美国非农强劲叠加英欧央行“放鹰”，10 年美债利率升至1.93%"}, {"sourceId": "FWPDF021", "label": "华安证券｜美联储会加快行动么？｜2022年2月11日"}, {"sourceId": "FWPDF069", "label": "东吴证券｜破7后再破8？美国通胀还能超市场预期多久？｜2022年3月10日"}, {"sourceId": "wx-noTh0V4VrWWy", "label": "东方金诚投资人服务｜美债专题跟踪丨市场交易主线转向经济下行风险，10 年美债利率震荡中大幅回调｜2022年3月8日"}],
           [
             {
               "sourceId": "FWPDF054",
@@ -14299,19 +13580,7 @@
           "taper-curve-2022-02-summary",
           "taper-curve-2022-03-summary"
         ],
-        "sourceIds": [
-          "market-DGS2",
-          "market-DGS10",
-          "market-T10Y2Y",
-          "market-DFII10",
-          "market-BEI10",
-          "FWPDF054",
-          "FWPDF030",
-          "FWPDF021",
-          "FWPDF069",
-          "wx-noTh0V4VrWWy",
-          "fed-principles-20220126"
-        ],
+        "sourceIds": ["market-DGS2", "market-DGS10", "market-T10Y2Y", "market-DFII10", "market-BEI10", "FWPDF054", "FWPDF030", "FWPDF021", "FWPDF069", "wx-noTh0V4VrWWy", "fed-principles-20220126", "wx-MgWQRaCMwBJt"],
         "reportIds": [
           "FWPDF054",
           "FWPDF030",
@@ -14333,7 +13602,7 @@
       },
       "aspectSummaries": {
         "expectationTimeline": {
-          "text": "机构分别强调加息预期、疫情和避险、通胀及未来缩表。收益率上行空间有限或可能再升，都依赖具体条件与期限；下文保留这些前提，不用一个点位概括整段预测。",
+          "text": "曲线预测要先看期限和触发条件。招商银行1月27日认为加息推动短端，而疫情和缩表节奏未明可能限制长端，较快缩表又构成向上的风险。东方金诚白雪2月10日在CPI公布前判断，通胀仍高但难明显超预期、通胀预期趋稳，会限制首加前长端继续大幅上行；华安次日则保留高通胀持续时更快加息、收益率上行的情景。两者跨越数据发布，不能作为同一信息下的多空对赌。",
           "supportNodeIds": [
             "taper-curve-2021-12-view-1",
             "taper-curve-2022-01-view-1",
@@ -14400,7 +13669,7 @@
           "parentAccepted": false
         },
         "realityTimeline": {
-          "text": "政策仍在为加息和缩表作准备，通胀资料不断更新。官方立场与实际收益率路径应并列阅读，未来缩表原则不是当月实际操作，收益率升降也不能倒推出委员会已承诺的动作。",
+          "text": "全期短端上行更多，10年减2年利差收窄；月内则经历反复，实际收益率与通胀补偿的方向也曾互换。到3月15日，10年收益率已高于2%，长端并未因增长与避险顾虑而停止上行。白雪2月10日判断继续大幅上行空间有限，依赖通胀预期趋稳，却未给出明确上限，越过2%本身不足以判其预测落空。东吴3月10日提出的再过2%情景还要求通胀意外推动实际利率回升；达到价位与这条传导得到验证，是两回事。",
           "supportNodeIds": [
             "taper-curve-2021-12-fact-1",
             "taper-curve-2022-01-fact-1",
@@ -14410,15 +13679,7 @@
             "taper-curve-2022-03-fact-1",
             "taper-curve-2022-03-fact-2"
           ],
-          "sourceIds": [
-            "fed-statement-20211215",
-            "fed-principles-20220126",
-            "fed-press-20220126",
-            "fraser-cpi-jan-pdf",
-            "fed-minutes-20220216",
-            "fraser-cpi-2-pdf",
-            "fed-testimony-20220302"
-          ],
+          "sourceIds": ["fed-statement-20211215", "fed-principles-20220126", "fed-press-20220126", "fraser-cpi-jan-pdf", "fed-minutes-20220216", "fraser-cpi-2-pdf", "fed-testimony-20220302", "FWPDF030", "wx-MgWQRaCMwBJt", "FWPDF021", "FWPDF069", "wx-noTh0V4VrWWy"],
           "reportIds": [],
           "evidenceRefs": [
             "d468a0879f022075e578",
@@ -14435,40 +13696,11 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "fed-statement-20211215",
-              "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"
-            },
-            {
-              "sourceId": "fed-principles-20220126",
-              "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"
-            },
-            {
-              "sourceId": "fed-press-20220126",
-              "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"
-            },
-            {
-              "sourceId": "fraser-cpi-jan-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"
-            },
-            {
-              "sourceId": "fed-minutes-20220216",
-              "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"
-            },
-            {
-              "sourceId": "fraser-cpi-2-pdf",
-              "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"
-            },
-            {
-              "sourceId": "fed-testimony-20220302",
-              "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "fed-statement-20211215", "label": "Federal Reserve｜FOMC声明｜2021-12-15｜2021年12月15日"}, {"sourceId": "fed-principles-20220126", "label": "Federal Reserve｜缩表原则｜2022-01-26｜2022年1月26日"}, {"sourceId": "fed-press-20220126", "label": "Federal Reserve｜鲍威尔记者会最终转录｜2022-01-26"}, {"sourceId": "fraser-cpi-jan-pdf", "label": "BLS｜消费者价格指数发布｜2022-02-10｜2022年2月10日"}, {"sourceId": "fed-minutes-20220216", "label": "Federal Reserve｜FOMC会议纪要｜2022-02-16｜2022年2月16日"}, {"sourceId": "fraser-cpi-2-pdf", "label": "BLS｜消费者价格指数发布｜2022-03-10｜2022年3月10日"}, {"sourceId": "fed-testimony-20220302", "label": "Federal Reserve｜鲍威尔国会准备证词（存档3月3日更新）｜2022-03-02｜2022年3月2日"}, {"sourceId": "FWPDF030", "label": "招商银行｜招商银行行内偕作·快评号外（第399期）：2022年1月美联储议息会议点评，美联储“鹰派”预期管理"}, {"sourceId": "wx-MgWQRaCMwBJt", "label": "东方金诚投资人服务｜美债专题跟踪丨美国非农强劲叠加英欧央行“放鹰”，10 年美债利率升至1.93%"}, {"sourceId": "FWPDF021", "label": "华安证券｜华安证券美国1月CPI数据点评：美联储会加快行动么？"}, {"sourceId": "FWPDF069", "label": "东吴证券｜东吴证券宏观月报：破7后再破8？美国通胀还能超市场预期多久？"}, {"sourceId": "wx-noTh0V4VrWWy", "label": "东方金诚投资人服务｜美债专题跟踪丨市场交易主线转向经济下行风险，10 年美债利率震荡中大幅回调"}],
           "parentAccepted": false
         },
         "mechanism": {
-          "text": "短端更受政策路径讨论影响，长端还面临增长、避险和未来缩表的不确定性。实际利率与通胀补偿有时相互抵消，名义长端的变化因而不能直接归为单一通胀或政策因素。",
+          "text": "短端更直接受未来政策利率路径影响，长端还要反映更远期的增长、通胀及风险补偿。疫情或战争带来的避险需求，可能与加息预期同时存在，于是短端上行较快而曲线趋平。缩表预期又涉及未来私人部门承接更多证券的安排，可能对长端形成向上压力，但当期尚未发生的减持不能作为实际流量解释。观察名义收益率时再拆看实际收益率和通胀补偿，有助于区分这些竞争性解释；两者都含风险因素，不能直接当作纯政策冲击或纯通胀预期。",
           "supportNodeIds": [
             "taper-curve-2021-12-mechanism",
             "taper-curve-2022-01-mechanism",
@@ -14539,7 +13771,7 @@
           "parentAccepted": false
         },
         "divergence": {
-          "text": "此前趋平不要求会议当日也趋平，不同日期预测也不构成同信息下的对赌。需要先对齐数据公布前后、通胀条件和目标期限；缺少可比预测时，保留研究空缺而不制造分歧。",
+          "text": "曲线判断的分歧，实质是紧缩、供给冲击和增长风险谁更占上风。白雪2月10日更看重已有紧缩定价和通胀预期趋稳，华安2月11日把通胀高位迟迟不降列为更快紧缩的触发条件；3月战争又同时增加避险与能源通胀压力。检验时应看这些前提如何变化，而非只看收益率是否越过2%。尤其东吴提出的‘通胀意外推动实际利率回升’，需要独立的预期基准；只有最终价位，尚不能证明其传导判断正确。",
           "supportNodeIds": [
             "taper-curve-2021-12-divergence",
             "taper-curve-2022-01-divergence",
@@ -16784,11 +16016,11 @@
       "historicalAsOfEligible": false,
       "retrospectiveOnly": true,
       "fullTopicReady": false,
-      "judgement": "全期短端收益率上升更多、曲线收窄，但单日和月内路径并不一致。12月会议附近的利差方向不等于整月方向；1月实际利率上升而通胀补偿下降，2月方向反转，3月又有明显波动。名义10年收益率不是一条能单独解释所有冲击的指标。",
-      "expectation": "机构分别强调加息预期、疫情和避险、通胀及未来缩表。收益率上行空间有限或可能再升，都依赖具体条件与期限；下文保留这些前提，不用一个点位概括整段预测。",
-      "reality": "政策仍在为加息和缩表作准备，通胀资料不断更新。官方立场与实际收益率路径应并列阅读，未来缩表原则不是当月实际操作，收益率升降也不能倒推出委员会已承诺的动作。",
-      "mechanism": "短端更受政策路径讨论影响，长端还面临增长、避险和未来缩表的不确定性。实际利率与通胀补偿有时相互抵消，名义长端的变化因而不能直接归为单一通胀或政策因素。",
-      "divergence": "此前趋平不要求会议当日也趋平，不同日期预测也不构成同信息下的对赌。需要先对齐数据公布前后、通胀条件和目标期限；缺少可比预测时，保留研究空缺而不制造分歧。",
+      "judgement": "美债面对两股方向不同的力量：通胀持续和退出宽松预期推高近端利率，疫情、战争与未来增长风险又牵制长端。全期2年收益率上行多于10年，曲线趋平，但长端内部的变化并不一致：1月实际收益率上升、通胀补偿下降，2月则反过来。问题因此从‘加息会不会推高利率’变成‘市场抬高了哪一段利率、在担心哪一种风险’。期末收益率水平并不能单独告诉我们政策、增长与避险各贡献了多少。",
+      "expectation": "曲线预测要先看期限和触发条件。招商银行1月27日认为加息推动短端，而疫情和缩表节奏未明可能限制长端，较快缩表又构成向上的风险。东方金诚白雪2月10日在CPI公布前判断，通胀仍高但难明显超预期、通胀预期趋稳，会限制首加前长端继续大幅上行；华安次日则保留高通胀持续时更快加息、收益率上行的情景。两者跨越数据发布，不能作为同一信息下的多空对赌。",
+      "reality": "全期短端上行更多，10年减2年利差收窄；月内则经历反复，实际收益率与通胀补偿的方向也曾互换。到3月15日，10年收益率已高于2%，长端并未因增长与避险顾虑而停止上行。白雪2月10日判断继续大幅上行空间有限，依赖通胀预期趋稳，却未给出明确上限，越过2%本身不足以判其预测落空。东吴3月10日提出的再过2%情景还要求通胀意外推动实际利率回升；达到价位与这条传导得到验证，是两回事。",
+      "mechanism": "短端更直接受未来政策利率路径影响，长端还要反映更远期的增长、通胀及风险补偿。疫情或战争带来的避险需求，可能与加息预期同时存在，于是短端上行较快而曲线趋平。缩表预期又涉及未来私人部门承接更多证券的安排，可能对长端形成向上压力，但当期尚未发生的减持不能作为实际流量解释。观察名义收益率时再拆看实际收益率和通胀补偿，有助于区分这些竞争性解释；两者都含风险因素，不能直接当作纯政策冲击或纯通胀预期。",
+      "divergence": "曲线判断的分歧，实质是紧缩、供给冲击和增长风险谁更占上风。白雪2月10日更看重已有紧缩定价和通胀预期趋稳，华安2月11日把通胀高位迟迟不降列为更快紧缩的触发条件；3月战争又同时增加避险与能源通胀压力。检验时应看这些前提如何变化，而非只看收益率是否越过2%。尤其东吴提出的‘通胀意外推动实际利率回升’，需要独立的预期基准；只有最终价位，尚不能证明其传导判断正确。",
       "implication": "收益率变化不等于债券投资回报，利差收窄也不直接给出衰退概率。月内和单日结果不同，当前资料可描述重定价，但不足以估计政策惊喜、期限溢价或风险冲击的净贡献。",
       "validation": "后续须核通胀是否满足作者触发条件、实际利率是否沿其假设变化，以及战争避险和政策操作怎样演进。缺少历史会议概率、OIS及期限溢价模型，仍不能由2年收益率直接反推会议概率。"
     },
@@ -16797,7 +16029,7 @@
       "title": "美元",
       "periodSummary": {
         "paragraphs": [
-          "广义美元在12月内回落，1月小升、2月略降，3月上半月走强，说明美国转鹰并不对应每月同向汇率变化。现有数据口径是美联储商品与服务贸易加权指数，不是ICE DXY；研报的DXY判断因此只能保留条件解释，不能直接打分。",
+          "美元的主线是相对优势怎样变化，而非美国转鹰就一路上涨。美国通胀和紧缩预期提供支撑，其他央行跟随收紧却可能削弱这一优势；到3月，欧洲受到的能源与增长冲击又成为机构解释美元的重要依据。广义美元在12月回落、1月小升、2月略降，3月上半月走强，显示月内路径并不服从单一加息逻辑。现有行情是美联储广义贸易加权口径，机构讨论的DXY目标仍须用相应篮子另验。",
           "选取材料先强调避险和非美收紧预期，后强调欧洲能源与增长风险，信息日期和冲击不同，不强造同信息集分歧。缺少DXY、主要海外利差与资金流时，相对政策、增长与避险只能作有出处的机制讨论；美元主题的结构覆盖不代表机制已完整识别。",
           "12月内美联储广义贸易加权美元回落。这里展示的是商品与服务贸易权重指数，不是研报常用的ICE DXY；方向可以作为并列背景，不能拿它验证DXY目标点位。",
           "1月广义美元月内首末值小幅上升，但不能据此认证美元已走出单边强势。招商银行更关注其他发达经济体跟随收紧对美国相对优势的约束。",
@@ -16805,12 +16037,7 @@
           "3月上半月广义美元走强。中信期货把欧洲能源、通胀和投资信心风险联系到相对增长与美元支撑，但这仍是机构的条件解释，不是本稿估计的美元涨幅来源。"
         ],
         "paragraphSources": [
-          [
-            {
-              "sourceId": "market-DTWEXBGS",
-              "label": "Federal Reserve H.10｜广义贸易加权美元"
-            }
-          ],
+          [{"sourceId": "market-DTWEXBGS", "label": "Federal Reserve H.10｜广义贸易加权美元"}, {"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "FWPDF001", "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"}, {"sourceId": "wx-q01GEVaQQ_Aj", "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}],
           [
             {
               "sourceId": "FWPDF054",
@@ -17053,14 +16280,7 @@
           "taper-dollar-2022-02-summary",
           "taper-dollar-2022-03-summary"
         ],
-        "sourceIds": [
-          "market-DTWEXBGS",
-          "FWPDF054",
-          "FWPDF030",
-          "wx-_q_S6jz50bBM",
-          "FWPDF001",
-          "FWPDF020"
-        ],
+        "sourceIds": ["market-DTWEXBGS", "FWPDF054", "FWPDF030", "wx-_q_S6jz50bBM", "FWPDF001", "FWPDF020", "wx-q01GEVaQQ_Aj", "wx-mrYGTlHZjVF2"],
         "reportIds": [
           "FWPDF054",
           "FWPDF030",
@@ -17079,7 +16299,7 @@
       },
       "aspectSummaries": {
         "expectationTimeline": {
-          "text": "美元研究先强调非美收紧和避险变化，后转向欧洲能源与增长风险。各报告给出的窗口和条件不同，人民币结汇或黄金机制也只构成局部背景，不替代完整美元预测。",
+          "text": "招商银行12月16日预计美元短期可能调整，前提是避险回落及英国等非美经济体收紧预期给非美货币反弹空间；1月27日仍认为美国加息已有部分反映、海外跟随收紧会限制美元上行。到3月13日，中信期货更重视地缘风险对欧洲能源成本与复苏的打击，并保留风险缓和的可能。预测变化对应相对增长和政策条件的变化，并非同一组条件下忽然改口；‘上行有限’也未给出可直接评分的涨幅上限。",
           "supportNodeIds": [
             "taper-dollar-2021-12-view-1",
             "taper-dollar-2022-01-view-1",
@@ -17087,13 +16307,7 @@
             "taper-dollar-2022-02-view-2",
             "taper-dollar-2022-03-view-1"
           ],
-          "sourceIds": [
-            "FWPDF054",
-            "FWPDF030",
-            "wx-_q_S6jz50bBM",
-            "FWPDF020",
-            "FWPDF001"
-          ],
+          "sourceIds": ["FWPDF054", "FWPDF030", "wx-_q_S6jz50bBM", "FWPDF020", "FWPDF001", "wx-q01GEVaQQ_Aj", "wx-mrYGTlHZjVF2"],
           "reportIds": [
             "FWPDF054",
             "FWPDF030",
@@ -17111,68 +16325,34 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF054",
-              "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"
-            },
-            {
-              "sourceId": "FWPDF030",
-              "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"
-            },
-            {
-              "sourceId": "wx-_q_S6jz50bBM",
-              "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"
-            },
-            {
-              "sourceId": "FWPDF020",
-              "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"
-            },
-            {
-              "sourceId": "FWPDF001",
-              "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-_q_S6jz50bBM", "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"}, {"sourceId": "FWPDF020", "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"}, {"sourceId": "FWPDF001", "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"}, {"sourceId": "wx-q01GEVaQQ_Aj", "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}],
           "parentAccepted": false
         },
         "realityTimeline": {
-          "text": "实际路径使用美联储商品与服务贸易加权广义美元指数：12月回落、1月小升、2月略降、3月上半月走强。它不是ICE DXY，不能直接检验研报的DXY点位判断。",
+          "text": "广义美元没有随美国转鹰逐月走高：12月和2月各自首末观察日之间回落，1月小幅上升，3月上半月转强。收紧预期提供支撑，却没有排除阶段调整，美元强弱仍要看非美政策与增长的相对变化。招商银行此前强调海外跟随收紧可能限制美元上行，3月中信期货则更担心欧洲能源成本和复苏受损；后期走强使相对增长差异更值得关注，但不能单凭汇率涨幅确定能源冲击的贡献。这里的广义贸易加权美元与机构讨论的DXY篮子不同，后者的目标仍需同口径行情检验。",
           "supportNodeIds": [
             "taper-dollar-2021-12-fact-market",
             "taper-dollar-2022-01-fact-market",
             "taper-dollar-2022-02-fact-market",
             "taper-dollar-2022-03-fact-market"
           ],
-          "sourceIds": [
-            "market-DTWEXBGS"
-          ],
+          "sourceIds": ["market-DTWEXBGS", "FWPDF054", "FWPDF030", "FWPDF001", "wx-q01GEVaQQ_Aj", "wx-mrYGTlHZjVF2"],
           "reportIds": [],
           "evidenceRefs": [],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "market-DTWEXBGS",
-              "label": "Federal Reserve H.10｜广义贸易加权美元"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "market-DTWEXBGS", "label": "Federal Reserve H.10｜广义贸易加权美元"}, {"sourceId": "FWPDF054", "label": "招商银行｜招商银行行内偕作·快评号外（第387期）：2021年12月美联储议息会议点评，美联储转向加速"}, {"sourceId": "FWPDF030", "label": "招商银行｜招商银行行内偕作·快评号外（第399期）：2022年1月美联储议息会议点评，美联储“鹰派”预期管理"}, {"sourceId": "FWPDF001", "label": "中信期货｜中信期货大宗商品宏观&中观周度观察：美联储3月加息影响有限，国内政策预期加码（2022-03-13）"}, {"sourceId": "wx-q01GEVaQQ_Aj", "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}],
           "parentAccepted": false
         },
         "mechanism": {
-          "text": "美元是相对价格，既取决于美国政策，也受海外收紧预期、增长前景和地缘风险影响。同一美联储转鹰背景下，相对优势可能增强或减弱，具体方向须与作者的条件和日期相连。",
+          "text": "汇率比较的是两边。美国利率预期上升会改变美元资产的相对吸引力，但若英国、欧元区的政策预期也上调，美元的新增优势就可能收窄。战争还会改变相对增长：中信期货3月13日认为，能源成本与不确定性对欧洲复苏的压制支持美元，风险缓和则可能削弱这一支撑。避险和融资压力另有作用，却不能由美元上涨直接认定资本流向或全球美元短缺；人民币结汇需求也只解释特定双边汇率的一部分。",
           "supportNodeIds": [
             "taper-dollar-2021-12-mechanism",
             "taper-dollar-2022-01-mechanism",
             "taper-dollar-2022-02-mechanism",
             "taper-dollar-2022-03-mechanism"
           ],
-          "sourceIds": [
-            "FWPDF054",
-            "FWPDF030",
-            "wx-_q_S6jz50bBM",
-            "FWPDF020",
-            "FWPDF001"
-          ],
+          "sourceIds": ["FWPDF054", "FWPDF030", "wx-_q_S6jz50bBM", "FWPDF020", "FWPDF001", "wx-q01GEVaQQ_Aj", "wx-mrYGTlHZjVF2"],
           "reportIds": [
             "FWPDF054",
             "FWPDF030",
@@ -17190,46 +16370,18 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF054",
-              "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"
-            },
-            {
-              "sourceId": "FWPDF030",
-              "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"
-            },
-            {
-              "sourceId": "wx-_q_S6jz50bBM",
-              "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"
-            },
-            {
-              "sourceId": "FWPDF020",
-              "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"
-            },
-            {
-              "sourceId": "FWPDF001",
-              "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-_q_S6jz50bBM", "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"}, {"sourceId": "FWPDF020", "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"}, {"sourceId": "FWPDF001", "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"}, {"sourceId": "wx-q01GEVaQQ_Aj", "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}],
           "parentAccepted": false
         },
         "divergence": {
-          "text": "春节当周与随后几天方向不同可以兼容，1月与3月解释变化也可能反映新信息。现有若干月份只有一家直接美元研究，缺少同日、同指标、同期限的可比目标，尚不足以组织完整跨机构对照。",
+          "text": "最重要的分歧在于欧美政策是否会收敛。海通12月17日看重美国收紧预期，西部12月29日的年度偏弱美元情景则同时要求欧洲转鹰和美国转鸽，其中选举影响属于作者假设。到1月，招商银行仍关注海外跟随收紧；3月中信期货则强调欧洲增长受损。不同信息日和期限下，条件已经改变，不能把它们做成同期机构投票。广义美元的阶段涨跌也不足以裁定DXY年度情景，真正要继续核的是相对政策与增长假设是否成立。",
           "supportNodeIds": [
             "taper-dollar-2021-12-divergence",
             "taper-dollar-2022-01-divergence",
             "taper-dollar-2022-02-divergence",
             "taper-dollar-2022-03-divergence"
           ],
-          "sourceIds": [
-            "FWPDF054",
-            "market-DTWEXBGS",
-            "FWPDF030",
-            "wx-_q_S6jz50bBM",
-            "FWPDF020",
-            "FWPDF001"
-          ],
+          "sourceIds": ["FWPDF054", "market-DTWEXBGS", "FWPDF030", "wx-_q_S6jz50bBM", "FWPDF020", "FWPDF001", "wx-q01GEVaQQ_Aj", "wx-mrYGTlHZjVF2"],
           "reportIds": [
             "FWPDF054",
             "FWPDF030",
@@ -17249,32 +16401,7 @@
           ],
           "retrospectiveOnly": true,
           "historicalAsOfEligible": false,
-          "paragraphSources": [
-            {
-              "sourceId": "FWPDF054",
-              "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"
-            },
-            {
-              "sourceId": "market-DTWEXBGS",
-              "label": "Federal Reserve H.10｜广义贸易加权美元"
-            },
-            {
-              "sourceId": "FWPDF030",
-              "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"
-            },
-            {
-              "sourceId": "wx-_q_S6jz50bBM",
-              "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"
-            },
-            {
-              "sourceId": "FWPDF020",
-              "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"
-            },
-            {
-              "sourceId": "FWPDF001",
-              "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"
-            }
-          ],
+          "paragraphSources": [{"sourceId": "FWPDF054", "label": "招商银行｜2021年12月美联储议息会议点评，美联储转向加速｜2021年12月16日"}, {"sourceId": "market-DTWEXBGS", "label": "Federal Reserve H.10｜广义贸易加权美元"}, {"sourceId": "FWPDF030", "label": "招商银行｜2022年1月美联储议息会议点评，美联储“鹰派”预期管理｜2022年1月27日"}, {"sourceId": "wx-_q_S6jz50bBM", "label": "长江宏观经济研究｜应对过热与等待企稳——春节期间那些事儿｜2022年2月7日"}, {"sourceId": "FWPDF020", "label": "西南证券｜房产基建再迎利好，通胀爆表美联储很慌｜2022年2月11日"}, {"sourceId": "FWPDF001", "label": "中信期货｜美联储3月加息影响有限，国内政策预期加码（2022-03-13）｜2022年3月13日"}, {"sourceId": "wx-q01GEVaQQ_Aj", "label": "招商宏观静思录｜西部宏观丨明年美元贬值概率增加"}, {"sourceId": "wx-mrYGTlHZjVF2", "label": "梁中华宏观研究｜美元“收水”或加速——美联储12月议息会议点评（海通宏观 梁中华 李俊）"}],
           "parentAccepted": false
         },
         "implicationTimeline": {
@@ -18762,11 +17889,11 @@
       "historicalAsOfEligible": false,
       "retrospectiveOnly": true,
       "fullTopicReady": false,
-      "judgement": "广义美元在12月内回落，1月小升、2月略降，3月上半月走强，说明美国转鹰并不对应每月同向汇率变化。现有数据口径是美联储商品与服务贸易加权指数，不是ICE DXY；研报的DXY判断因此只能保留条件解释，不能直接打分。",
-      "expectation": "美元研究先强调非美收紧和避险变化，后转向欧洲能源与增长风险。各报告给出的窗口和条件不同，人民币结汇或黄金机制也只构成局部背景，不替代完整美元预测。",
-      "reality": "实际路径使用美联储商品与服务贸易加权广义美元指数：12月回落、1月小升、2月略降、3月上半月走强。它不是ICE DXY，不能直接检验研报的DXY点位判断。",
-      "mechanism": "美元是相对价格，既取决于美国政策，也受海外收紧预期、增长前景和地缘风险影响。同一美联储转鹰背景下，相对优势可能增强或减弱，具体方向须与作者的条件和日期相连。",
-      "divergence": "春节当周与随后几天方向不同可以兼容，1月与3月解释变化也可能反映新信息。现有若干月份只有一家直接美元研究，缺少同日、同指标、同期限的可比目标，尚不足以组织完整跨机构对照。",
+      "judgement": "美元的主线是相对优势怎样变化，而非美国转鹰就一路上涨。美国通胀和紧缩预期提供支撑，其他央行跟随收紧却可能削弱这一优势；到3月，欧洲受到的能源与增长冲击又成为机构解释美元的重要依据。广义美元在12月回落、1月小升、2月略降，3月上半月走强，显示月内路径并不服从单一加息逻辑。现有行情是美联储广义贸易加权口径，机构讨论的DXY目标仍须用相应篮子另验。",
+      "expectation": "招商银行12月16日预计美元短期可能调整，前提是避险回落及英国等非美经济体收紧预期给非美货币反弹空间；1月27日仍认为美国加息已有部分反映、海外跟随收紧会限制美元上行。到3月13日，中信期货更重视地缘风险对欧洲能源成本与复苏的打击，并保留风险缓和的可能。预测变化对应相对增长和政策条件的变化，并非同一组条件下忽然改口；‘上行有限’也未给出可直接评分的涨幅上限。",
+      "reality": "广义美元没有随美国转鹰逐月走高：12月和2月各自首末观察日之间回落，1月小幅上升，3月上半月转强。收紧预期提供支撑，却没有排除阶段调整，美元强弱仍要看非美政策与增长的相对变化。招商银行此前强调海外跟随收紧可能限制美元上行，3月中信期货则更担心欧洲能源成本和复苏受损；后期走强使相对增长差异更值得关注，但不能单凭汇率涨幅确定能源冲击的贡献。这里的广义贸易加权美元与机构讨论的DXY篮子不同，后者的目标仍需同口径行情检验。",
+      "mechanism": "汇率比较的是两边。美国利率预期上升会改变美元资产的相对吸引力，但若英国、欧元区的政策预期也上调，美元的新增优势就可能收窄。战争还会改变相对增长：中信期货3月13日认为，能源成本与不确定性对欧洲复苏的压制支持美元，风险缓和则可能削弱这一支撑。避险和融资压力另有作用，却不能由美元上涨直接认定资本流向或全球美元短缺；人民币结汇需求也只解释特定双边汇率的一部分。",
+      "divergence": "最重要的分歧在于欧美政策是否会收敛。海通12月17日看重美国收紧预期，西部12月29日的年度偏弱美元情景则同时要求欧洲转鹰和美国转鸽，其中选举影响属于作者假设。到1月，招商银行仍关注海外跟随收紧；3月中信期货则强调欧洲增长受损。不同信息日和期限下，条件已经改变，不能把它们做成同期机构投票。广义美元的阶段涨跌也不足以裁定DXY年度情景，真正要继续核的是相对政策与增长假设是否成立。",
       "implication": "美国收紧与广义美元短期回落能够并存，但这并不证明收紧导致美元贬值。美元、股票和油价共同变化也不能独立确认避险占主导；缺少资金流和相对利差，贡献仍无法分离。",
       "validation": "后续需取得同日DXY、主要非美经济体可比利差及资金流，并观察海外政策和地缘风险是否改变。已有四个月正文并不消除这些缺口，广义美元的校核也不能替代DXY原始报价。"
     }
