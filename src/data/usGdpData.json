@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T00:33:42+00:00",
+  "generatedAt": "2026-11-12T11:11:55+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -188,9 +188,9 @@
       "id": "wei",
       "label": "周度温度计",
       "title": "WEI经济活动指数",
-      "value": 2.98,
+      "value": 3.47,
       "unit": "原始值",
-      "observation": "20261023",
+      "observation": "20261030",
       "source": "iFinD EDB"
     }
   ],
@@ -3161,7 +3161,8 @@
                 "20250930",
                 "20251231",
                 "20260331",
-                "20260630"
+                "20260630",
+                "20260930"
               ],
               "values": [
                 2.875,
@@ -3449,34 +3450,35 @@
                 2.425,
                 3.1375,
                 3.725,
-                4.4,
-                4.4125,
-                4.05,
-                3.7125,
-                3.2875,
-                2.2125,
-                1.15,
-                0.325,
-                -0.4625,
-                -0.4375,
-                0.0125,
-                0.3375,
-                0.8875,
-                1.5375,
-                2.075,
-                2.5375,
-                2.775,
+                4.425,
+                4.475,
+                4.1375,
+                3.825,
+                3.4,
+                2.3125,
+                1.2375,
+                0.4125,
+                -0.3875,
+                -0.4125,
+                0.0,
+                0.3,
+                0.8625,
+                1.5625,
+                2.1375,
+                2.6375,
+                2.9,
+                2.975,
+                2.9375,
                 2.8,
                 2.725,
-                2.6,
-                2.55,
-                2.425
+                2.575,
+                2.45
               ],
               "color": "#c94c4c",
               "unit": "%",
               "frequency": "季",
-              "latestValue": 2.425,
-              "latestObservation": "20260630",
+              "latestValue": 2.45,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -3484,7 +3486,7 @@
                 "name": "美国:投入产出指数:人工生产率非农商业:当季同比",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260630"
+                "latestObservation": "20260930"
               },
               "transformLabel": "8季移动平均"
             }
@@ -14483,7 +14485,8 @@
                 "20261002",
                 "20261009",
                 "20261016",
-                "20261023"
+                "20261023",
+                "20261030"
               ],
               "values": [
                 1.42,
@@ -15466,14 +15469,15 @@
                 2.97,
                 2.68,
                 3.03,
-                3.25,
-                2.98
+                3.26,
+                2.95,
+                3.47
               ],
               "color": "#1859b8",
               "unit": "",
               "frequency": "周",
-              "latestValue": 2.98,
-              "latestObservation": "20261023",
+              "latestValue": 3.47,
+              "latestObservation": "20261030",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "达拉斯联储",
@@ -15481,7 +15485,7 @@
                 "name": "美国:经济活动指数",
                 "rawUnit": "",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20261023"
+                "latestObservation": "20261030"
               },
               "transformLabel": "iFinD单位字段为空；对应Dallas Fed Weekly Economic Index"
             },
@@ -17211,7 +17215,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 19.9732,
@@ -18265,14 +18270,15 @@
                 106.0374,
                 106.0581,
                 106.0514,
-                106.1402,
-                106.1596
+                106.1756,
+                106.2156,
+                106.3258
               ],
               "color": "#1859b8",
               "unit": "指数",
               "frequency": "月",
-              "latestValue": 106.1596,
-              "latestObservation": "20260930",
+              "latestValue": 106.3258,
+              "latestObservation": "20261031",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -18280,7 +18286,7 @@
                 "name": "美国:非农就业人数:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "2021-12=100"
             },
@@ -19231,7 +19237,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 37.189,
@@ -20177,13 +20184,14 @@
                 103.9328,
                 103.877,
                 104.2415,
-                104.5016
+                104.5016,
+                104.7981
               ],
               "color": "#2f7fa3",
               "unit": "指数",
               "frequency": "月",
-              "latestValue": 104.5016,
-              "latestObservation": "20260930",
+              "latestValue": 104.7981,
+              "latestObservation": "20261031",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -20191,7 +20199,7 @@
                 "name": "美国:就业人数:16岁及以上:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "2021-12=100"
             },
@@ -23563,6 +23571,6 @@
     "PPT用于定义研究顺序和解释；除明确标注的2022 vintage案例外，页面时序数值均由iFinD EDB重新提取。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/daily-refresh/20261101-manual/gdp/20261101T003342+0000_ifind_gdp.json"
+    "ifind": "data/raw/daily-refresh/20261112-manual/gdp/20261112T111155+0000_ifind_gdp.json"
   }
 }

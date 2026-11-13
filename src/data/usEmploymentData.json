@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T00:33:43+00:00",
+  "generatedAt": "2026-11-12T11:12:52+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB",
@@ -166,36 +166,36 @@
       "id": "payroll-momentum",
       "label": "CES趋势",
       "title": "新增非农3个月均值",
-      "value": 50.6667,
+      "value": 137.0,
       "unit": "千人",
-      "observation": "20260930",
+      "observation": "20261031",
       "source": "iFinD EDB"
     },
     {
       "id": "unemployment",
       "label": "CPS结果",
       "title": "U3失业率",
-      "value": 4.2,
+      "value": 4.1,
       "unit": "%",
-      "observation": "20260930",
+      "observation": "20261031",
       "source": "iFinD EDB"
     },
     {
       "id": "vu",
       "label": "供需紧度",
       "title": "V/U",
-      "value": 1.0068,
+      "value": 1.0582,
       "unit": "倍",
-      "observation": "20260801",
+      "observation": "20260901",
       "source": "iFinD EDB"
     },
     {
       "id": "claims",
       "label": "周频哨兵",
       "title": "初请4周均值",
-      "value": 19.675,
+      "value": 19.475,
       "unit": "万人",
-      "observation": "20261023",
+      "observation": "20261030",
       "source": "iFinD EDB"
     },
     {
@@ -1278,7 +1278,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 177.0,
@@ -2331,13 +2332,14 @@
                 63.0,
                 31.0,
                 -10.0,
-                133.0,
-                29.0
+                186.0,
+                60.0,
+                165.0
               ],
               "color": "#17233b",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 29.0,
+              "latestObservation": "20261031",
+              "latestValue": 165.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -2345,7 +2347,7 @@
                 "name": "美国:新增非农就业人数:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -3410,7 +3412,8 @@
               "20260630",
               "20260731",
               "20260831",
-              "20260930"
+              "20260930",
+              "20261031"
             ],
             "values": [
               57.0,
@@ -4461,13 +4464,14 @@
               141.6667,
               80.6667,
               28.0,
-              51.3333,
-              50.6667
+              69.0,
+              78.6667,
+              137.0
             ],
             "color": "#111418",
             "frequency": "月",
-            "latestObservation": "20260930",
-            "latestValue": 50.6667,
+            "latestObservation": "20261031",
+            "latestValue": 137.0,
             "source": {
               "provider": "iFinD EDB",
               "institution": "美国劳工局",
@@ -4475,7 +4479,7 @@
               "name": "美国:新增非农就业人数:当月值:季调",
               "rawUnit": "千人",
               "url": "https://ft.51ifind.com",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             },
             "transformLabel": "由iFinD月度新增非农计算后向3个月移动平均"
           }
@@ -5534,7 +5538,8 @@
                 "20260601",
                 "20260701",
                 "20260801",
-                "20260901"
+                "20260901",
+                "20261001"
               ],
               "values": [
                 72.9167,
@@ -6576,13 +6581,14 @@
                 -1.3333,
                 1.4167,
                 6.25,
-                12.0,
-                12.5833
+                12.5,
+                13.8333,
+                16.75
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260901",
-              "latestValue": 12.5833,
+              "latestObservation": "20261001",
+              "latestValue": 16.75,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -6590,7 +6596,7 @@
                 "name": "美国:新增非农就业人数:私营:生产:采矿和伐木业:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260901"
+                "latestObservation": "20261001"
               },
               "transformLabel": "采矿与伐木+建筑+制造业新增就业之和，再计算12个月移动平均"
             },
@@ -7639,7 +7645,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 140.0,
@@ -8681,13 +8688,14 @@
                 30.25,
                 34.5,
                 28.3333,
-                45.25,
-                41.3333
+                49.6667,
+                48.3333,
+                73.75
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 41.3333,
+              "latestObservation": "20261031",
+              "latestValue": 73.75,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -8695,7 +8703,7 @@
                 "name": "美国:新增非农就业人数:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "新增非农后向12个月移动平均"
             }
@@ -9161,7 +9169,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 1160.2,
@@ -9603,13 +9612,14 @@
                 2490.6,
                 2507.5,
                 2497.5,
-                2497.7,
-                2486.8
+                2513.0,
+                2507.4,
+                2526.0
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 2486.8,
+              "latestObservation": "20261031",
+              "latestValue": 2526.0,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -9617,7 +9627,7 @@
                 "name": "美国:非农企业:就业人数:私营部门:服务生产:专业和商务服务:行政和支持服务以及废物管理和补救服务:临时帮助服务:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -9888,7 +9898,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 39.8,
@@ -10137,12 +10148,13 @@
                 40.4,
                 40.4,
                 40.6,
-                40.6
+                40.5,
+                40.5
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 40.6,
+              "latestObservation": "20261031",
+              "latestValue": 40.5,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -10150,7 +10162,7 @@
                 "name": "美国:平均每周工时:非农就业员工:私营企业:生产:制造业:季调:当月值",
                 "rawUnit": "小时",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -10404,7 +10416,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 34.2,
@@ -10653,11 +10666,12 @@
                 34.3,
                 34.3,
                 34.4,
+                34.4,
                 34.4
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 34.4,
               "source": {
                 "provider": "iFinD EDB",
@@ -10666,7 +10680,7 @@
                 "name": "美国:平均每周工时:非农就业员工:私营企业:季调:当月值",
                 "rawUnit": "小时",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -11119,7 +11133,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 40.6,
@@ -11549,13 +11564,14 @@
                 54.2,
                 53.6,
                 54.4,
-                57.6,
-                49.0
+                59.4,
+                54.2,
+                57.6
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 49.0,
+              "latestObservation": "20261031",
+              "latestValue": 57.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -11563,7 +11579,7 @@
                 "name": "美国:就业扩散指数:私营企业:1个月跨度:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -11999,7 +12015,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 38.6,
@@ -12429,13 +12446,14 @@
                 56.8,
                 57.0,
                 54.2,
-                55.4,
-                57.0
+                55.2,
+                58.6,
+                60.4
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 57.0,
+              "latestObservation": "20261031",
+              "latestValue": 60.4,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -12443,7 +12461,7 @@
                 "name": "美国:就业扩散指数:私营企业:3个月跨度:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -13412,7 +13430,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 0.5,
@@ -14358,12 +14377,13 @@
                 1.8,
                 1.7,
                 1.8,
-                1.8
+                1.8,
+                1.9
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 1.8,
+              "latestObservation": "20261031",
+              "latestValue": 1.9,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -14371,7 +14391,7 @@
                 "name": "美国:失业率:U1:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -15322,7 +15342,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 3.4,
@@ -16268,12 +16289,13 @@
                 4.2,
                 4.1,
                 4.1,
-                4.2
+                4.2,
+                4.1
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 4.2,
+              "latestObservation": "20261031",
+              "latestValue": 4.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -16281,7 +16303,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -16680,7 +16702,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 7.0,
@@ -17074,11 +17097,12 @@
                 4.5,
                 4.4,
                 4.4,
+                4.4,
                 4.4
               ],
               "color": "#8a9096",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 4.4,
               "source": {
                 "provider": "iFinD EDB",
@@ -17087,7 +17111,7 @@
                 "name": "美国:失业率:U4:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -17486,7 +17510,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 8.0,
@@ -17880,12 +17905,13 @@
                 5.2,
                 5.1,
                 5.1,
-                5.0
+                5.0,
+                5.1
               ],
               "color": "#6f7883",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 5.0,
+              "latestObservation": "20261031",
+              "latestValue": 5.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -17893,7 +17919,7 @@
                 "name": "美国:失业率:U5:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -18292,7 +18318,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 11.7,
@@ -18686,12 +18713,13 @@
                 7.9,
                 7.9,
                 7.7,
-                7.6
+                7.6,
+                7.9
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 7.6,
+              "latestObservation": "20261031",
+              "latestValue": 7.9,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -18699,7 +18727,7 @@
                 "name": "美国:失业率:U6:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -19667,7 +19695,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 3.4,
@@ -20613,12 +20642,13 @@
                 4.2,
                 4.1,
                 4.1,
-                4.2
+                4.2,
+                4.1
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 4.2,
+              "latestObservation": "20261031",
+              "latestValue": 4.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -20626,7 +20656,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -21577,7 +21607,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 6.4,
@@ -22523,12 +22554,13 @@
                 27.3,
                 25.5,
                 27.0,
-                27.1
+                27.1,
+                27.6
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 27.1,
+              "latestObservation": "20261031",
+              "latestValue": 27.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -22536,7 +22568,7 @@
                 "name": "美国:失业人数占比:27周及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -23505,7 +23537,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 58.6,
@@ -24451,12 +24484,13 @@
                 61.5,
                 61.4,
                 61.6,
-                61.8
+                61.8,
+                61.9
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 61.8,
+              "latestObservation": "20261031",
+              "latestValue": 61.9,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -24464,7 +24498,7 @@
                 "name": "美国:劳动力参与率:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -24537,7 +24571,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 81.2,
@@ -24605,11 +24640,12 @@
                 83.3,
                 83.4,
                 83.4,
+                83.7,
                 83.7
               ],
               "color": "#2f8a7a",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 83.7,
               "source": {
                 "provider": "iFinD EDB",
@@ -24618,7 +24654,7 @@
                 "name": "美国:劳动力参与率:25至54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -25299,7 +25335,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 11.2,
@@ -25957,12 +25994,13 @@
                 6.6,
                 6.3,
                 6.0,
-                7.0
+                7.0,
+                6.6
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 7.0,
+              "latestObservation": "20261031",
+              "latestValue": 6.6,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -25970,7 +26008,7 @@
                 "name": "美国:失业率:黑人或非洲裔:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -26619,7 +26657,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 7.3,
@@ -27263,11 +27302,12 @@
                 5.2,
                 4.6,
                 4.8,
+                4.7,
                 4.7
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 4.7,
               "source": {
                 "provider": "iFinD EDB",
@@ -27276,7 +27316,7 @@
                 "name": "美国:失业率:西班牙或拉丁美洲裔:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -28227,7 +28267,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 3.4,
@@ -29173,12 +29214,13 @@
                 4.2,
                 4.1,
                 4.1,
-                4.2
+                4.2,
+                4.1
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 4.2,
+              "latestObservation": "20261031",
+              "latestValue": 4.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -29186,7 +29228,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -30065,7 +30107,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 4.5,
@@ -30939,12 +30982,13 @@
                 3.6,
                 3.6,
                 3.7,
-                3.6
+                3.6,
+                3.7
               ],
               "color": "#8a9096",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 3.6,
+              "latestObservation": "20261031",
+              "latestValue": 3.7,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -30952,7 +30996,7 @@
                 "name": "美国:失业率:白人:16岁及以上:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -31920,7 +31964,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 8.5,
@@ -32866,12 +32911,13 @@
                 14.6,
                 12.1,
                 14.1,
-                14.5
+                14.5,
+                13.9
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 14.5,
+              "latestObservation": "20261031",
+              "latestValue": 13.9,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -32879,7 +32925,7 @@
                 "name": "美国:失业率:16至19岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -33830,7 +33876,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 5.8,
@@ -34776,12 +34823,13 @@
                 7.1,
                 7.1,
                 7.1,
-                8.0
+                8.0,
+                7.5
               ],
               "color": "#a56a12",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 8.0,
+              "latestObservation": "20261031",
+              "latestValue": 7.5,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -34789,7 +34837,7 @@
                 "name": "美国:失业率:20-24岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -35740,7 +35788,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 2.5,
@@ -36686,11 +36735,12 @@
                 3.7,
                 3.6,
                 3.6,
+                3.6,
                 3.6
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 3.6,
               "source": {
                 "provider": "iFinD EDB",
@@ -36699,7 +36749,7 @@
                 "name": "美国:失业率:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -37650,7 +37700,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 2.3,
@@ -38596,11 +38647,12 @@
                 3.9,
                 3.9,
                 3.9,
+                3.7,
                 3.7
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 3.7,
               "source": {
                 "provider": "iFinD EDB",
@@ -38609,7 +38661,7 @@
                 "name": "美国:失业率:男性:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -39560,7 +39612,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 2.8,
@@ -40506,11 +40559,12 @@
                 3.5,
                 3.3,
                 3.3,
+                3.4,
                 3.4
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 3.4,
               "source": {
                 "provider": "iFinD EDB",
@@ -40519,7 +40573,7 @@
                 "name": "美国:失业率:女性:25-54岁:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
@@ -41596,7 +41650,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 19.9732,
@@ -42650,13 +42705,14 @@
                 106.0374,
                 106.0581,
                 106.0514,
-                106.1402,
-                106.1596
+                106.1756,
+                106.2156,
+                106.3258
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 106.1596,
+              "latestObservation": "20261031",
+              "latestValue": 106.3258,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -42664,7 +42720,7 @@
                 "name": "美国:非农就业人数:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "2021-12=100"
             },
@@ -43616,7 +43672,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 37.189,
@@ -44562,12 +44619,13 @@
                 103.9328,
                 103.877,
                 104.2415,
-                104.5016
+                104.5016,
+                104.7981
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 104.5016,
+              "latestObservation": "20261031",
+              "latestValue": 104.7981,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -44575,7 +44633,7 @@
                 "name": "美国:就业人数:16岁及以上:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "2021-12=100"
             }
@@ -44591,6 +44649,7 @@
       "sectorMonitor": {
         "history": {
           "periods": [
+            "202610",
             "202609",
             "202608",
             "202607",
@@ -44716,8 +44775,9 @@
               "depth": 0,
               "rowType": "total",
               "values": [
-                29.0,
-                133.0,
+                165.0,
+                60.0,
+                186.0,
                 -10.0,
                 31.0,
                 63.0,
@@ -44833,7 +44893,7 @@
                 124.0,
                 218.0
               ],
-              "recent12mAverage": 41.33,
+              "recent12mAverage": 73.75,
               "baseline2018To2019": 177.96,
               "source": {
                 "provider": "BLS Public Data API",
@@ -44842,9 +44902,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 非农总计",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES0000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -44854,8 +44914,9 @@
               "depth": 1,
               "rowType": "subtotal",
               "values": [
-                46.0,
-                89.0,
+                159.0,
+                78.0,
+                142.0,
                 28.0,
                 26.0,
                 61.0,
@@ -44971,7 +45032,7 @@
                 121.0,
                 208.0
               ],
-              "recent12mAverage": 59.33,
+              "recent12mAverage": 78.58,
               "baseline2018To2019": 163.71,
               "source": {
                 "provider": "BLS Public Data API",
@@ -44980,9 +45041,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 私营部门总计",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES0500000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -44992,8 +45053,9 @@
               "depth": 2,
               "rowType": "subtotal",
               "values": [
-                18.0,
-                34.0,
+                15.0,
+                27.0,
+                40.0,
                 35.0,
                 14.0,
                 3.0,
@@ -45109,7 +45171,7 @@
                 36.0,
                 66.0
               ],
-              "recent12mAverage": 12.58,
+              "recent12mAverage": 16.75,
               "baseline2018To2019": 28.92,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45118,9 +45180,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 商品生产",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES0600000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45130,8 +45192,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
+                -1.0,
                 -2.0,
-                3.0,
+                2.0,
                 -3.0,
                 -2.0,
                 3.0,
@@ -45247,7 +45310,7 @@
                 4.0,
                 9.0
               ],
-              "recent12mAverage": 0.17,
+              "recent12mAverage": -0.08,
               "baseline2018To2019": -0.04,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45256,9 +45319,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 采矿与伐木",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES1000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45268,8 +45331,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                11.0,
+                -3.0,
                 16.0,
+                17.0,
                 18.0,
                 3.0,
                 2.0,
@@ -45385,7 +45449,7 @@
                 21.0,
                 41.0
               ],
-              "recent12mAverage": 9.08,
+              "recent12mAverage": 10.33,
               "baseline2018To2019": 18.17,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45394,9 +45458,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 建筑业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES2000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45406,8 +45470,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                9.0,
-                15.0,
+                19.0,
+                13.0,
+                21.0,
                 20.0,
                 13.0,
                 -2.0,
@@ -45523,7 +45588,7 @@
                 11.0,
                 16.0
               ],
-              "recent12mAverage": 3.33,
+              "recent12mAverage": 6.5,
               "baseline2018To2019": 10.79,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45532,9 +45597,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 制造业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES3000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45544,8 +45609,9 @@
               "depth": 2,
               "rowType": "subtotal",
               "values": [
-                28.0,
-                55.0,
+                144.0,
+                51.0,
+                102.0,
                 -7.0,
                 12.0,
                 58.0,
@@ -45661,7 +45727,7 @@
                 85.0,
                 142.0
               ],
-              "recent12mAverage": 46.75,
+              "recent12mAverage": 61.83,
               "baseline2018To2019": 134.79,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45670,9 +45736,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 私人服务",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES0800000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45682,8 +45748,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                5.0,
-                8.0,
+                -9.1,
+                8.1,
+                4.5,
                 6.3,
                 4.6,
                 2.5,
@@ -45799,7 +45866,7 @@
                 2.7,
                 2.4
               ],
-              "recent12mAverage": 2.21,
+              "recent12mAverage": 1.18,
               "baseline2018To2019": 3.02,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45808,9 +45875,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 批发业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES4142000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45820,8 +45887,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                5.8,
-                -5.1,
+                6.0,
+                12.7,
+                3.4,
                 5.6,
                 9.6,
                 5.0,
@@ -45937,7 +46005,7 @@
                 -29.3,
                 -21.2
               ],
-              "recent12mAverage": 2.21,
+              "recent12mAverage": 5.27,
               "baseline2018To2019": -7.94,
               "source": {
                 "provider": "BLS Public Data API",
@@ -45946,9 +46014,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 零售业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES4200000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -45958,8 +46026,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                7.6,
-                3.3,
+                24.8,
+                7.4,
+                6.1,
                 10.3,
                 -10.3,
                 0.8,
@@ -46075,7 +46144,7 @@
                 14.0,
                 17.0
               ],
-              "recent12mAverage": -0.82,
+              "recent12mAverage": 1.42,
               "baseline2018To2019": 19.93,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46084,9 +46153,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 运输仓储",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES4300000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46096,7 +46165,8 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                0.5,
+                0.1,
+                0.4,
                 2.1,
                 1.1,
                 0.2,
@@ -46213,7 +46283,7 @@
                 -0.2,
                 -0.7
               ],
-              "recent12mAverage": 0.84,
+              "recent12mAverage": 0.8,
               "baseline2018To2019": -0.27,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46222,9 +46292,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 公用事业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES4422000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46234,8 +46304,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                -10.0,
-                -18.0,
+                -1.0,
+                -11.0,
+                -21.0,
                 4.0,
                 -19.0,
                 -5.0,
@@ -46351,7 +46422,7 @@
                 -2.0,
                 -6.0
               ],
-              "recent12mAverage": -10.0,
+              "recent12mAverage": -9.92,
               "baseline2018To2019": 3.04,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46360,9 +46431,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 信息业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES5000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46372,8 +46443,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                -7.0,
-                -9.0,
+                7.0,
+                -14.0,
+                -6.0,
                 -10.0,
                 2.0,
                 -20.0,
@@ -46489,7 +46561,7 @@
                 10.0,
                 1.0
               ],
-              "recent12mAverage": -8.92,
+              "recent12mAverage": -8.25,
               "baseline2018To2019": 13.58,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46498,9 +46570,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 金融活动",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES5500000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46510,8 +46582,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                -9.0,
-                -5.0,
+                70.0,
+                8.0,
+                30.0,
                 -6.0,
                 36.0,
                 6.0,
@@ -46627,7 +46700,7 @@
                 30.0,
                 18.0
               ],
-              "recent12mAverage": 10.25,
+              "recent12mAverage": 22.42,
               "baseline2018To2019": 29.29,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46636,9 +46709,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 专业商业服务",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES6000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46648,8 +46721,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                20.0,
-                38.0,
+                53.0,
+                21.0,
+                37.0,
                 14.0,
                 50.0,
                 24.0,
@@ -46765,7 +46839,7 @@
                 29.0,
                 77.0
               ],
-              "recent12mAverage": 43.0,
+              "recent12mAverage": 43.75,
               "baseline2018To2019": 43.54,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46774,9 +46848,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 私人教育与医疗服务",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES6500000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46786,8 +46860,9 @@
               "depth": 3,
               "rowType": "detail",
               "values": [
-                10.0,
-                37.0,
+                -13.0,
+                13.0,
+                42.0,
                 -38.0,
                 -54.0,
                 42.0,
@@ -46903,7 +46978,7 @@
                 24.0,
                 43.0
               ],
-              "recent12mAverage": 5.17,
+              "recent12mAverage": 1.33,
               "baseline2018To2019": 25.92,
               "source": {
                 "provider": "BLS Public Data API",
@@ -46912,9 +46987,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 休闲与酒店业",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES7000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -46925,7 +47000,8 @@
               "rowType": "detail",
               "values": [
                 6.0,
-                3.0,
+                5.0,
+                4.0,
                 6.0,
                 -7.0,
                 2.0,
@@ -47041,7 +47117,7 @@
                 7.0,
                 12.0
               ],
-              "recent12mAverage": 2.83,
+              "recent12mAverage": 3.83,
               "baseline2018To2019": 4.67,
               "source": {
                 "provider": "BLS Public Data API",
@@ -47050,9 +47126,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 其他服务",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES8000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -47062,7 +47138,8 @@
               "depth": 1,
               "rowType": "subtotal",
               "values": [
-                -17.0,
+                6.0,
+                -18.0,
                 44.0,
                 -38.0,
                 5.0,
@@ -47179,7 +47256,7 @@
                 3.0,
                 10.0
               ],
-              "recent12mAverage": -18.0,
+              "recent12mAverage": -4.83,
               "baseline2018To2019": 14.25,
               "source": {
                 "provider": "BLS Public Data API",
@@ -47188,9 +47265,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 政府总计",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES9000000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -47202,6 +47279,7 @@
               "values": [
                 -1.0,
                 -3.0,
+                -5.0,
                 1.0,
                 0.0,
                 4.0,
@@ -47317,7 +47395,7 @@
                 -2.0,
                 -1.0
               ],
-              "recent12mAverage": -19.33,
+              "recent12mAverage": -5.92,
               "baseline2018To2019": 1.79,
               "source": {
                 "provider": "BLS Public Data API",
@@ -47326,9 +47404,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 联邦政府",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES9091000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -47338,7 +47416,8 @@
               "depth": 2,
               "rowType": "detail",
               "values": [
-                -3.0,
+                8.0,
+                -4.0,
                 -7.0,
                 20.0,
                 -5.0,
@@ -47455,7 +47534,7 @@
                 3.0,
                 4.0
               ],
-              "recent12mAverage": -2.08,
+              "recent12mAverage": -1.17,
               "baseline2018To2019": 3.83,
               "source": {
                 "provider": "BLS Public Data API",
@@ -47464,9 +47543,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 州政府",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES9092000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             },
             {
@@ -47476,8 +47555,9 @@
               "depth": 2,
               "rowType": "detail",
               "values": [
-                -13.0,
-                54.0,
+                -1.0,
+                -11.0,
+                56.0,
                 -59.0,
                 10.0,
                 0.0,
@@ -47593,7 +47673,7 @@
                 2.0,
                 7.0
               ],
-              "recent12mAverage": 3.42,
+              "recent12mAverage": 2.25,
               "baseline2018To2019": 8.62,
               "source": {
                 "provider": "BLS Public Data API",
@@ -47602,9 +47682,9 @@
                 "name": "All employees, thousands, seasonally adjusted: 地方政府",
                 "rawUnit": "千人",
                 "url": "https://data.bls.gov/timeseries/CES9093000001",
-                "latestObservation": "202609",
+                "latestObservation": "202610",
                 "transform": "当月季调全体雇员水平减前一连续月份水平",
-                "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+                "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
               }
             }
           ],
@@ -47614,8 +47694,9 @@
                 "id": "private-leaves",
                 "label": "私营叶子行业－私营总计",
                 "values": [
-                  0.9,
-                  -0.7,
+                  -0.2,
+                  -0.4,
+                  0.1,
                   0.3,
                   0.1,
                   0.1,
@@ -47737,6 +47818,7 @@
                 "id": "government-leaves",
                 "label": "联邦＋州＋地方－政府总计",
                 "values": [
+                  0.0,
                   0.0,
                   0.0,
                   0.0,
@@ -47975,6 +48057,7 @@
                   0.0,
                   0.0,
                   0.0,
+                  0.0,
                   0.0
                 ],
                 "tolerance": 3
@@ -48098,6 +48181,7 @@
                   0.0,
                   0.0,
                   0.0,
+                  0.0,
                   0.0
                 ],
                 "tolerance": 4
@@ -48106,8 +48190,9 @@
                 "id": "services-subtotal",
                 "label": "私人服务叶子－私人服务小计",
                 "values": [
-                  0.9,
-                  -0.7,
+                  -0.2,
+                  -0.4,
+                  0.1,
                   0.3,
                   0.1,
                   0.1,
@@ -48229,6 +48314,7 @@
                 "id": "private-subtotals",
                 "label": "商品生产＋私人服务－私营总计",
                 "values": [
+                  0.0,
                   0.0,
                   0.0,
                   0.0,
@@ -48467,6 +48553,7 @@
                   0.0,
                   0.0,
                   0.0,
+                  0.0,
                   0.0
                 ],
                 "tolerance": 0
@@ -48474,11 +48561,12 @@
             ],
             "note": "完整实得历史逐月对账，差额单位千人；父子加总容差沿用发布精度，跨源容差为0。只在双方所有输入有效时计算，否则null（未核验，不是通过）。历史修订差异或缺口保留真实残差，不通过取交集删月或倒填数据消除；严格拒绝更新合同仍用于最近12月及2018—19完整24月，其他历史残差披露但不据此覆盖原值。"
           },
-          "note": "本次BLS原始包水平始于201701；可计算月增历史201702—202609，仅为本次实得历史，非全部官方历史。需要连续前月水平才能差分；缺月为null。近12月与2018—19基准列是固定比较窗口，不随所选历史区间改变。"
+          "note": "本次BLS原始包水平始于201701；可计算月增历史201702—202610，仅为本次实得历史，非全部官方历史。需要连续前月水平才能差分；缺月为null。近12月与2018—19基准列是固定比较窗口，不随所选历史区间改变。"
         },
         "title": "行业就业广度与结构表",
         "description": "完整私营行业与联邦、州、地方政府；最近12个月月增量与2018—2019完整24个月基准。",
         "periods": [
+          "202610",
           "202609",
           "202608",
           "202607",
@@ -48489,8 +48577,7 @@
           "202602",
           "202601",
           "202512",
-          "202511",
-          "202510"
+          "202511"
         ],
         "rows": [
           {
@@ -48500,8 +48587,9 @@
             "depth": 0,
             "rowType": "total",
             "values": [
-              29.0,
-              133.0,
+              165.0,
+              60.0,
+              186.0,
               -10.0,
               31.0,
               63.0,
@@ -48510,10 +48598,9 @@
               -156.0,
               160.0,
               -17.0,
-              41.0,
-              -140.0
+              41.0
             ],
-            "recent12mAverage": 41.33,
+            "recent12mAverage": 73.75,
             "baseline2018To2019": 177.96,
             "source": {
               "provider": "BLS Public Data API",
@@ -48522,9 +48609,9 @@
               "name": "All employees, thousands, seasonally adjusted: 非农总计",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES0000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48534,8 +48621,9 @@
             "depth": 1,
             "rowType": "subtotal",
             "values": [
-              46.0,
-              89.0,
+              159.0,
+              78.0,
+              142.0,
               28.0,
               26.0,
               61.0,
@@ -48544,10 +48632,9 @@
               -148.0,
               180.0,
               -7.0,
-              72.0,
-              13.0
+              72.0
             ],
-            "recent12mAverage": 59.33,
+            "recent12mAverage": 78.58,
             "baseline2018To2019": 163.71,
             "source": {
               "provider": "BLS Public Data API",
@@ -48556,9 +48643,9 @@
               "name": "All employees, thousands, seasonally adjusted: 私营部门总计",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES0500000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48568,8 +48655,9 @@
             "depth": 2,
             "rowType": "subtotal",
             "values": [
-              18.0,
-              34.0,
+              15.0,
+              27.0,
+              40.0,
               35.0,
               14.0,
               3.0,
@@ -48578,10 +48666,9 @@
               -21.0,
               45.0,
               -21.0,
-              25.0,
-              -20.0
+              25.0
             ],
-            "recent12mAverage": 12.58,
+            "recent12mAverage": 16.75,
             "baseline2018To2019": 28.92,
             "source": {
               "provider": "BLS Public Data API",
@@ -48590,9 +48677,9 @@
               "name": "All employees, thousands, seasonally adjusted: 商品生产",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES0600000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48602,8 +48689,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
+              -1.0,
               -2.0,
-              3.0,
+              2.0,
               -3.0,
               -2.0,
               3.0,
@@ -48612,10 +48700,9 @@
               -1.0,
               -2.0,
               -1.0,
-              -1.0,
-              1.0
+              -1.0
             ],
-            "recent12mAverage": 0.17,
+            "recent12mAverage": -0.08,
             "baseline2018To2019": -0.04,
             "source": {
               "provider": "BLS Public Data API",
@@ -48624,9 +48711,9 @@
               "name": "All employees, thousands, seasonally adjusted: 采矿与伐木",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES1000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48636,8 +48723,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              11.0,
+              -3.0,
               16.0,
+              17.0,
               18.0,
               3.0,
               2.0,
@@ -48646,10 +48734,9 @@
               -21.0,
               45.0,
               -7.0,
-              36.0,
-              -12.0
+              36.0
             ],
-            "recent12mAverage": 9.08,
+            "recent12mAverage": 10.33,
             "baseline2018To2019": 18.17,
             "source": {
               "provider": "BLS Public Data API",
@@ -48658,9 +48745,9 @@
               "name": "All employees, thousands, seasonally adjusted: 建筑业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES2000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48670,8 +48757,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              9.0,
-              15.0,
+              19.0,
+              13.0,
+              21.0,
               20.0,
               13.0,
               -2.0,
@@ -48680,10 +48768,9 @@
               1.0,
               2.0,
               -13.0,
-              -10.0,
-              -9.0
+              -10.0
             ],
-            "recent12mAverage": 3.33,
+            "recent12mAverage": 6.5,
             "baseline2018To2019": 10.79,
             "source": {
               "provider": "BLS Public Data API",
@@ -48692,9 +48779,9 @@
               "name": "All employees, thousands, seasonally adjusted: 制造业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES3000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48704,8 +48791,9 @@
             "depth": 2,
             "rowType": "subtotal",
             "values": [
-              28.0,
-              55.0,
+              144.0,
+              51.0,
+              102.0,
               -7.0,
               12.0,
               58.0,
@@ -48714,10 +48802,9 @@
               -127.0,
               135.0,
               14.0,
-              47.0,
-              33.0
+              47.0
             ],
-            "recent12mAverage": 46.75,
+            "recent12mAverage": 61.83,
             "baseline2018To2019": 134.79,
             "source": {
               "provider": "BLS Public Data API",
@@ -48726,9 +48813,9 @@
               "name": "All employees, thousands, seasonally adjusted: 私人服务",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES0800000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48738,8 +48825,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              5.0,
-              8.0,
+              -9.1,
+              8.1,
+              4.5,
               6.3,
               4.6,
               2.5,
@@ -48748,10 +48836,9 @@
               8.4,
               2.1,
               -5.7,
-              -6.4,
-              2.8
+              -6.4
             ],
-            "recent12mAverage": 2.21,
+            "recent12mAverage": 1.18,
             "baseline2018To2019": 3.02,
             "source": {
               "provider": "BLS Public Data API",
@@ -48760,9 +48847,9 @@
               "name": "All employees, thousands, seasonally adjusted: 批发业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES4142000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48772,8 +48859,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              5.8,
-              -5.1,
+              6.0,
+              12.7,
+              3.4,
               5.6,
               9.6,
               5.0,
@@ -48782,10 +48870,9 @@
               -0.3,
               12.7,
               -23.6,
-              -0.9,
-              -15.4
+              -0.9
             ],
-            "recent12mAverage": 2.21,
+            "recent12mAverage": 5.27,
             "baseline2018To2019": -7.94,
             "source": {
               "provider": "BLS Public Data API",
@@ -48794,9 +48881,9 @@
               "name": "All employees, thousands, seasonally adjusted: 零售业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES4200000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48806,8 +48893,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              7.6,
-              3.3,
+              24.8,
+              7.4,
+              6.1,
               10.3,
               -10.3,
               0.8,
@@ -48816,10 +48904,9 @@
               -45.5,
               22.6,
               -4.8,
-              -58.9,
-              0.6
+              -58.9
             ],
-            "recent12mAverage": -0.82,
+            "recent12mAverage": 1.42,
             "baseline2018To2019": 19.93,
             "source": {
               "provider": "BLS Public Data API",
@@ -48828,9 +48915,9 @@
               "name": "All employees, thousands, seasonally adjusted: 运输仓储",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES4300000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48840,7 +48927,8 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              0.5,
+              0.1,
+              0.4,
               2.1,
               1.1,
               0.2,
@@ -48850,10 +48938,9 @@
               1.6,
               0.2,
               0.7,
-              1.9,
-              0.5
+              1.9
             ],
-            "recent12mAverage": 0.84,
+            "recent12mAverage": 0.8,
             "baseline2018To2019": -0.27,
             "source": {
               "provider": "BLS Public Data API",
@@ -48862,9 +48949,9 @@
               "name": "All employees, thousands, seasonally adjusted: 公用事业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES4422000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48874,8 +48961,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              -10.0,
-              -18.0,
+              -1.0,
+              -11.0,
+              -21.0,
               4.0,
               -19.0,
               -5.0,
@@ -48884,10 +48972,9 @@
               -23.0,
               -27.0,
               -6.0,
-              -5.0,
-              -6.0
+              -5.0
             ],
-            "recent12mAverage": -10.0,
+            "recent12mAverage": -9.92,
             "baseline2018To2019": 3.04,
             "source": {
               "provider": "BLS Public Data API",
@@ -48896,9 +48983,9 @@
               "name": "All employees, thousands, seasonally adjusted: 信息业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES5000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48908,8 +48995,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              -7.0,
-              -9.0,
+              7.0,
+              -14.0,
+              -6.0,
               -10.0,
               2.0,
               -20.0,
@@ -48918,10 +49006,9 @@
               2.0,
               -39.0,
               1.0,
-              1.0,
-              -5.0
+              1.0
             ],
-            "recent12mAverage": -8.92,
+            "recent12mAverage": -8.25,
             "baseline2018To2019": 13.58,
             "source": {
               "provider": "BLS Public Data API",
@@ -48930,9 +49017,9 @@
               "name": "All employees, thousands, seasonally adjusted: 金融活动",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES5500000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48942,8 +49029,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              -9.0,
-              -5.0,
+              70.0,
+              8.0,
+              30.0,
               -6.0,
               36.0,
               6.0,
@@ -48952,10 +49040,9 @@
               4.0,
               36.0,
               -19.0,
-              56.0,
-              -24.0
+              56.0
             ],
-            "recent12mAverage": 10.25,
+            "recent12mAverage": 22.42,
             "baseline2018To2019": 29.29,
             "source": {
               "provider": "BLS Public Data API",
@@ -48964,9 +49051,9 @@
               "name": "All employees, thousands, seasonally adjusted: 专业商业服务",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES6000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -48976,8 +49063,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              20.0,
-              38.0,
+              53.0,
+              21.0,
+              37.0,
               14.0,
               50.0,
               24.0,
@@ -48986,10 +49074,9 @@
               -49.0,
               119.0,
               38.0,
-              56.0,
-              44.0
+              56.0
             ],
-            "recent12mAverage": 43.0,
+            "recent12mAverage": 43.75,
             "baseline2018To2019": 43.54,
             "source": {
               "provider": "BLS Public Data API",
@@ -48998,9 +49085,9 @@
               "name": "All employees, thousands, seasonally adjusted: 私人教育与医疗服务",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES6500000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49010,8 +49097,9 @@
             "depth": 3,
             "rowType": "detail",
             "values": [
-              10.0,
-              37.0,
+              -13.0,
+              13.0,
+              42.0,
               -38.0,
               -54.0,
               42.0,
@@ -49020,10 +49108,9 @@
               -31.0,
               5.0,
               25.0,
-              -12.0,
-              41.0
+              -12.0
             ],
-            "recent12mAverage": 5.17,
+            "recent12mAverage": 1.33,
             "baseline2018To2019": 25.92,
             "source": {
               "provider": "BLS Public Data API",
@@ -49032,9 +49119,9 @@
               "name": "All employees, thousands, seasonally adjusted: 休闲与酒店业",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES7000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49045,7 +49132,8 @@
             "rowType": "detail",
             "values": [
               6.0,
-              3.0,
+              5.0,
+              4.0,
               6.0,
               -7.0,
               2.0,
@@ -49054,10 +49142,9 @@
               6.0,
               3.0,
               8.0,
-              16.0,
-              -6.0
+              16.0
             ],
-            "recent12mAverage": 2.83,
+            "recent12mAverage": 3.83,
             "baseline2018To2019": 4.67,
             "source": {
               "provider": "BLS Public Data API",
@@ -49066,9 +49153,9 @@
               "name": "All employees, thousands, seasonally adjusted: 其他服务",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES8000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49078,7 +49165,8 @@
             "depth": 1,
             "rowType": "subtotal",
             "values": [
-              -17.0,
+              6.0,
+              -18.0,
               44.0,
               -38.0,
               5.0,
@@ -49088,10 +49176,9 @@
               -8.0,
               -20.0,
               -10.0,
-              -31.0,
-              -153.0
+              -31.0
             ],
-            "recent12mAverage": -18.0,
+            "recent12mAverage": -4.83,
             "baseline2018To2019": 14.25,
             "source": {
               "provider": "BLS Public Data API",
@@ -49100,9 +49187,9 @@
               "name": "All employees, thousands, seasonally adjusted: 政府总计",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES9000000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49114,6 +49201,7 @@
             "values": [
               -1.0,
               -3.0,
+              -5.0,
               1.0,
               0.0,
               4.0,
@@ -49122,10 +49210,9 @@
               4.0,
               -37.0,
               -11.0,
-              -15.0,
-              -166.0
+              -15.0
             ],
-            "recent12mAverage": -19.33,
+            "recent12mAverage": -5.92,
             "baseline2018To2019": 1.79,
             "source": {
               "provider": "BLS Public Data API",
@@ -49134,9 +49221,9 @@
               "name": "All employees, thousands, seasonally adjusted: 联邦政府",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES9091000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49146,7 +49233,8 @@
             "depth": 2,
             "rowType": "detail",
             "values": [
-              -3.0,
+              8.0,
+              -4.0,
               -7.0,
               20.0,
               -5.0,
@@ -49156,10 +49244,9 @@
               -6.0,
               3.0,
               -5.0,
-              -12.0,
-              -4.0
+              -12.0
             ],
-            "recent12mAverage": -2.08,
+            "recent12mAverage": -1.17,
             "baseline2018To2019": 3.83,
             "source": {
               "provider": "BLS Public Data API",
@@ -49168,9 +49255,9 @@
               "name": "All employees, thousands, seasonally adjusted: 州政府",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES9092000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           },
           {
@@ -49180,8 +49267,9 @@
             "depth": 2,
             "rowType": "detail",
             "values": [
-              -13.0,
-              54.0,
+              -1.0,
+              -11.0,
+              56.0,
               -59.0,
               10.0,
               0.0,
@@ -49190,10 +49278,9 @@
               -6.0,
               14.0,
               6.0,
-              -4.0,
-              17.0
+              -4.0
             ],
-            "recent12mAverage": 3.42,
+            "recent12mAverage": 2.25,
             "baseline2018To2019": 8.62,
             "source": {
               "provider": "BLS Public Data API",
@@ -49202,9 +49289,9 @@
               "name": "All employees, thousands, seasonally adjusted: 地方政府",
               "rawUnit": "千人",
               "url": "https://data.bls.gov/timeseries/CES9093000001",
-              "latestObservation": "202609",
+              "latestObservation": "202610",
               "transform": "当月季调全体雇员水平减前一连续月份水平",
-              "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+              "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
             }
           }
         ],
@@ -49220,8 +49307,9 @@
               "id": "private-leaves",
               "label": "私营叶子行业－私营总计",
               "values": [
-                0.9,
-                -0.7,
+                -0.2,
+                -0.4,
+                0.1,
                 0.3,
                 0.1,
                 0.1,
@@ -49230,8 +49318,7 @@
                 0.2,
                 -0.4,
                 -0.4,
-                0.7,
-                -0.5
+                0.7
               ],
               "tolerance": 10.4
             },
@@ -49296,8 +49383,9 @@
               "id": "services-subtotal",
               "label": "私人服务叶子－私人服务小计",
               "values": [
-                0.9,
-                -0.7,
+                -0.2,
+                -0.4,
+                0.1,
                 0.3,
                 0.1,
                 0.1,
@@ -49306,8 +49394,7 @@
                 0.2,
                 -0.4,
                 -0.4,
-                0.7,
-                -0.5
+                0.7
               ],
               "tolerance": 7.4
             },
@@ -49600,8 +49687,8 @@
         "source": {
           "provider": "BLS Public Data API",
           "url": "https://www.bls.gov/ces/",
-          "rawSnapshot": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json",
-          "fetchedAt": "2026-11-01T00:34:01.736675+00:00",
+          "rawSnapshot": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json",
+          "fetchedAt": "2026-11-12T11:13:24.686498+00:00",
           "classificationUrl": "https://www.bls.gov/webapps/legacy/cesbtab1.htm",
           "aggregationUrl": "https://www.bls.gov/web/empsit/cesfaq.htm"
         }
@@ -52742,7 +52829,8 @@
                 "20261002",
                 "20261009",
                 "20261016",
-                "20261023"
+                "20261023",
+                "20261030"
               ],
               "values": [
                 20.9,
@@ -55862,12 +55950,13 @@
                 19.825,
                 19.875,
                 19.8,
-                19.675
+                19.7,
+                19.475
               ],
               "color": "#1859b8",
               "frequency": "周",
-              "latestObservation": "20261023",
-              "latestValue": 19.675,
+              "latestObservation": "20261030",
+              "latestValue": 19.475,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "圣路易斯联储",
@@ -55875,7 +55964,7 @@
                 "name": "美国:当周初次申请失业金人数:季调",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20261023"
+                "latestObservation": "20261030"
               },
               "transformLabel": "原值÷10000后计算4周均值"
             },
@@ -59000,7 +59089,8 @@
                 "20260925",
                 "20261002",
                 "20261009",
-                "20261016"
+                "20261016",
+                "20261023"
               ],
               "values": [
                 111.875,
@@ -62119,12 +62209,13 @@
                 171.05,
                 170.7,
                 170.95,
-                171.0
+                170.85,
+                170.95
               ],
               "color": "#855c9c",
               "frequency": "周",
-              "latestObservation": "20261016",
-              "latestValue": 171.0,
+              "latestObservation": "20261023",
+              "latestValue": 170.95,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "圣路易斯联储",
@@ -62132,7 +62223,7 @@
                 "name": "美国:截止本周领取失业保险人群:季调",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20261016"
+                "latestObservation": "20261023"
               },
               "transformLabel": "原值÷10000后计算4周均值"
             }
@@ -62466,7 +62557,8 @@
                 "20260501",
                 "20260601",
                 "20260701",
-                "20260801"
+                "20260801",
+                "20260901"
               ],
               "values": [
                 0.9031,
@@ -62776,12 +62868,13 @@
                 1.0315,
                 1.0124,
                 1.0606,
-                1.0068
+                1.0226,
+                1.0582
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260801",
-              "latestValue": 1.0068,
+              "latestObservation": "20260901",
+              "latestValue": 1.0582,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -62789,7 +62882,7 @@
                 "name": "美国:职位空缺数:非农部门:季调:当月值",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260801"
+                "latestObservation": "20260901"
               },
               "transformLabel": "G003049448÷G002600531"
             },
@@ -63352,7 +63445,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 3.7,
@@ -63663,12 +63757,13 @@
                 4.5,
                 4.3,
                 4.4,
-                4.3
+                4.3,
+                4.5
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 4.3,
+              "latestObservation": "20260930",
+              "latestValue": 4.5,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -63676,7 +63771,7 @@
                 "name": "美国:职位空缺率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -63992,7 +64087,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 4.1,
@@ -64303,12 +64399,13 @@
                 3.3,
                 3.4,
                 3.2,
-                3.3
+                3.3,
+                3.4
               ],
               "color": "#2f8a7a",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 3.3,
+              "latestObservation": "20260930",
+              "latestValue": 3.4,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -64316,7 +64413,7 @@
                 "name": "美国:雇佣率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -64632,7 +64729,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 2.2,
@@ -64943,12 +65041,13 @@
                 2.0,
                 2.0,
                 1.9,
-                1.9
+                1.9,
+                2.1
               ],
               "color": "#ba7a2e",
               "frequency": "月",
-              "latestObservation": "20260831",
-              "latestValue": 1.9,
+              "latestObservation": "20260930",
+              "latestValue": 2.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -64956,7 +65055,7 @@
                 "name": "美国:自愿性离职率:非农部门:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             }
           ],
@@ -65221,7 +65320,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 3.4,
@@ -65458,12 +65558,13 @@
                 3.4,
                 3.2,
                 3.1,
-                3.0
+                3.2,
+                3.1
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 3.0,
+              "latestObservation": "20261031",
+              "latestValue": 3.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -65471,7 +65572,7 @@
                 "name": "美国:平均时薪:非农就业员工:私营企业:季调:当月同比",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -66448,6 +66549,7 @@
       "wageSectorMonitor": {
         "history": {
           "periods": [
+            "202610",
             "202609",
             "202608",
             "202607",
@@ -66570,8 +66672,9 @@
               "id": "wage_mining",
               "label": "采矿与伐木",
               "values": [
-                0.548,
-                -0.238,
+                0.284,
+                0.74,
+                -0.285,
                 0.167,
                 0.647,
                 0.871,
@@ -66687,7 +66790,7 @@
                 -0.28,
                 -0.186
               ],
-              "recent12mAverage": 0.375,
+              "recent12mAverage": 0.345,
               "baseline2018To2019": 0.287,
               "source": {
                 "provider": "BLS Public Data API",
@@ -66696,14 +66799,15 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 采矿与伐木",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES1000000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_construction",
               "label": "建筑业",
               "values": [
-                0.12,
+                0.912,
+                0.024,
                 0.386,
                 0.29,
                 0.364,
@@ -66820,7 +66924,7 @@
                 0.491,
                 -0.175
               ],
-              "recent12mAverage": 0.343,
+              "recent12mAverage": 0.384,
               "baseline2018To2019": 0.263,
               "source": {
                 "provider": "BLS Public Data API",
@@ -66829,15 +66933,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 建筑业",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES2000000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_manufacturing",
               "label": "制造业",
               "values": [
-                0.054,
-                0.163,
+                0.486,
+                0.352,
+                0.244,
                 0.245,
                 0.109,
                 0.191,
@@ -66953,7 +67058,7 @@
                 0.038,
                 0.114
               ],
-              "recent12mAverage": 0.281,
+              "recent12mAverage": 0.313,
               "baseline2018To2019": 0.211,
               "source": {
                 "provider": "BLS Public Data API",
@@ -66962,15 +67067,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 制造业",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES3000000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_retail",
               "label": "零售业",
               "values": [
-                0.0,
-                0.342,
+                0.302,
+                0.227,
+                0.456,
                 -0.038,
                 0.382,
                 0.0,
@@ -67086,7 +67192,7 @@
                 0.167,
                 0.056
               ],
-              "recent12mAverage": 0.241,
+              "recent12mAverage": 0.265,
               "baseline2018To2019": 0.386,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67095,15 +67201,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 零售业",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES4200000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_transport",
               "label": "运输仓储",
               "values": [
-                0.245,
-                0.307,
+                0.184,
+                0.092,
+                0.153,
                 0.184,
                 0.308,
                 0.185,
@@ -67219,7 +67326,7 @@
                 0.212,
                 0.255
               ],
-              "recent12mAverage": 0.256,
+              "recent12mAverage": 0.209,
               "baseline2018To2019": 0.123,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67228,15 +67335,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 运输仓储",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES4300000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_information",
               "label": "信息业",
               "values": [
-                0.9,
-                -0.269,
+                -0.465,
+                0.793,
+                -0.377,
                 0.65,
                 0.49,
                 0.309,
@@ -67352,7 +67460,7 @@
                 -0.08,
                 0.24
               ],
-              "recent12mAverage": 0.463,
+              "recent12mAverage": 0.373,
               "baseline2018To2019": 0.395,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67361,15 +67469,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 信息业",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES5000000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_financial",
               "label": "金融活动",
               "values": [
-                -0.12,
-                0.769,
+                0.141,
+                -0.161,
+                0.647,
                 -0.182,
                 0.589,
                 0.428,
@@ -67485,7 +67594,7 @@
                 -0.213,
                 0.613
               ],
-              "recent12mAverage": 0.311,
+              "recent12mAverage": 0.266,
               "baseline2018To2019": 0.297,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67494,15 +67603,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 金融活动",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES5500000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_professional",
               "label": "专业商业服务",
               "values": [
-                0.48,
-                0.285,
+                0.325,
+                0.589,
+                0.328,
                 0.11,
                 0.154,
                 0.33,
@@ -67618,7 +67728,7 @@
                 0.478,
                 0.384
               ],
-              "recent12mAverage": 0.237,
+              "recent12mAverage": 0.247,
               "baseline2018To2019": 0.29,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67627,15 +67737,16 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 专业商业服务",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES6000000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
               "id": "wage_education_health",
               "label": "教育与医疗服务",
               "values": [
-                0.137,
-                0.248,
+                0.328,
+                0.302,
+                0.386,
                 0.138,
                 0.055,
                 0.0,
@@ -67751,7 +67862,7 @@
                 0.077,
                 0.385
               ],
-              "recent12mAverage": 0.174,
+              "recent12mAverage": 0.166,
               "baseline2018To2019": 0.192,
               "source": {
                 "provider": "BLS Public Data API",
@@ -67760,11 +67871,11 @@
                 "name": "Average hourly earnings of all employees, seasonally adjusted: 教育与医疗服务",
                 "rawUnit": "美元/小时",
                 "url": "https://data.bls.gov/timeseries/CES6500000003",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             }
           ],
-          "note": "本次BLS原始包时薪水平始于201701；可计算环比历史201702—202609，仅为本次实得历史，非全部官方历史。环比仅使用连续相邻月份，缺月为null、不跨缺口计算。近12月和2018—19基准列是固定比较窗口，不随所选历史区间改变。"
+          "note": "本次BLS原始包时薪水平始于201701；可计算环比历史201702—202610，仅为本次实得历史，非全部官方历史。环比仅使用连续相邻月份，缺月为null、不跨缺口计算。近12月和2018—19基准列是固定比较窗口，不随所选历史区间改变。"
         },
         "title": "分行业平均时薪环比变化",
         "description": "BLS CES季调全体雇员平均时薪水平计算月度环比；与行业新增就业并读，用于区分就业广度与工资压力。",
@@ -67777,6 +67888,7 @@
         "decimals": 2,
         "note": "环比由BLS CES季调全体雇员平均时薪水平计算；通常随就业报告在每月首个周五08:30 ET发布。红色表示上升、蓝色表示下降，行业构成变化仍可能影响平均值。",
         "periods": [
+          "202610",
           "202609",
           "202608",
           "202607",
@@ -67787,16 +67899,16 @@
           "202602",
           "202601",
           "202512",
-          "202511",
-          "202510"
+          "202511"
         ],
         "rows": [
           {
             "id": "wage_mining",
             "label": "采矿与伐木",
             "values": [
-              0.548,
-              -0.238,
+              0.284,
+              0.74,
+              -0.285,
               0.167,
               0.647,
               0.871,
@@ -67805,10 +67917,9 @@
               -0.025,
               0.123,
               -0.049,
-              0.148,
-              0.794
+              0.148
             ],
-            "recent12mAverage": 0.375,
+            "recent12mAverage": 0.345,
             "baseline2018To2019": 0.287,
             "source": {
               "provider": "BLS Public Data API",
@@ -67817,14 +67928,15 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 采矿与伐木",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES1000000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_construction",
             "label": "建筑业",
             "values": [
-              0.12,
+              0.912,
+              0.024,
               0.386,
               0.29,
               0.364,
@@ -67834,10 +67946,9 @@
               0.419,
               0.223,
               0.422,
-              0.324,
-              0.325
+              0.324
             ],
-            "recent12mAverage": 0.343,
+            "recent12mAverage": 0.384,
             "baseline2018To2019": 0.263,
             "source": {
               "provider": "BLS Public Data API",
@@ -67846,15 +67957,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 建筑业",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES2000000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_manufacturing",
             "label": "制造业",
             "values": [
-              0.054,
-              0.163,
+              0.486,
+              0.352,
+              0.244,
               0.245,
               0.109,
               0.191,
@@ -67863,10 +67975,9 @@
               0.525,
               0.333,
               0.25,
-              0.335,
-              0.476
+              0.335
             ],
-            "recent12mAverage": 0.281,
+            "recent12mAverage": 0.313,
             "baseline2018To2019": 0.211,
             "source": {
               "provider": "BLS Public Data API",
@@ -67875,15 +67986,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 制造业",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES3000000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_retail",
             "label": "零售业",
             "values": [
-              0.0,
-              0.342,
+              0.302,
+              0.227,
+              0.456,
               -0.038,
               0.382,
               0.0,
@@ -67892,10 +68004,9 @@
               0.077,
               0.231,
               0.425,
-              0.739,
-              0.351
+              0.739
             ],
-            "recent12mAverage": 0.241,
+            "recent12mAverage": 0.265,
             "baseline2018To2019": 0.386,
             "source": {
               "provider": "BLS Public Data API",
@@ -67904,15 +68015,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 零售业",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES4200000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_transport",
             "label": "运输仓储",
             "values": [
-              0.245,
-              0.307,
+              0.184,
+              0.092,
+              0.153,
               0.184,
               0.308,
               0.185,
@@ -67921,10 +68033,9 @@
               0.248,
               0.405,
               0.093,
-              0.501,
-              0.44
+              0.501
             ],
-            "recent12mAverage": 0.256,
+            "recent12mAverage": 0.209,
             "baseline2018To2019": 0.123,
             "source": {
               "provider": "BLS Public Data API",
@@ -67933,15 +68044,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 运输仓储",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES4300000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_information",
             "label": "信息业",
             "values": [
-              0.9,
-              -0.269,
+              -0.465,
+              0.793,
+              -0.377,
               0.65,
               0.49,
               0.309,
@@ -67950,10 +68062,9 @@
               0.816,
               0.093,
               0.823,
-              0.357,
-              0.396
+              0.357
             ],
-            "recent12mAverage": 0.463,
+            "recent12mAverage": 0.373,
             "baseline2018To2019": 0.395,
             "source": {
               "provider": "BLS Public Data API",
@@ -67962,15 +68073,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 信息业",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES5000000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_financial",
             "label": "金融活动",
             "values": [
-              -0.12,
-              0.769,
+              0.141,
+              -0.161,
+              0.647,
               -0.182,
               0.589,
               0.428,
@@ -67979,10 +68091,9 @@
               0.226,
               0.496,
               -0.062,
-              0.457,
-              0.522
+              0.457
             ],
-            "recent12mAverage": 0.311,
+            "recent12mAverage": 0.266,
             "baseline2018To2019": 0.297,
             "source": {
               "provider": "BLS Public Data API",
@@ -67991,15 +68102,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 金融活动",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES5500000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_professional",
             "label": "专业商业服务",
             "values": [
-              0.48,
-              0.285,
+              0.325,
+              0.589,
+              0.328,
               0.11,
               0.154,
               0.33,
@@ -68008,10 +68120,9 @@
               0.422,
               0.156,
               0.089,
-              0.045,
-              0.358
+              0.045
             ],
-            "recent12mAverage": 0.237,
+            "recent12mAverage": 0.247,
             "baseline2018To2019": 0.29,
             "source": {
               "provider": "BLS Public Data API",
@@ -68020,15 +68131,16 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 专业商业服务",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES6000000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           },
           {
             "id": "wage_education_health",
             "label": "教育与医疗服务",
             "values": [
-              0.137,
-              0.248,
+              0.328,
+              0.302,
+              0.386,
               0.138,
               0.055,
               0.0,
@@ -68037,10 +68149,9 @@
               0.221,
               0.501,
               -0.471,
-              0.473,
-              0.728
+              0.473
             ],
-            "recent12mAverage": 0.174,
+            "recent12mAverage": 0.166,
             "baseline2018To2019": 0.192,
             "source": {
               "provider": "BLS Public Data API",
@@ -68049,7 +68160,7 @@
               "name": "Average hourly earnings of all employees, seasonally adjusted: 教育与医疗服务",
               "rawUnit": "美元/小时",
               "url": "https://data.bls.gov/timeseries/CES6500000003",
-              "latestObservation": "20260930"
+              "latestObservation": "20261031"
             }
           }
         ],
@@ -69980,7 +70091,7 @@
             "name": "美国:失业率:U3:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "explanation": {
             "what": "Okun定律把产出增长与失业率变化联系起来，是经验汇率而非会计恒等式。",
@@ -70946,7 +71057,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 3.4,
@@ -71892,12 +72004,13 @@
                 4.2,
                 4.1,
                 4.1,
-                4.2
+                4.2,
+                4.1
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 4.2,
+              "latestObservation": "20261031",
+              "latestValue": 4.1,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -71905,7 +72018,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               }
             },
             {
@@ -73815,6 +73928,12 @@
               "x": 4.1,
               "y": 4.3,
               "group": "current"
+            },
+            {
+              "period": "202609",
+              "x": 4.2,
+              "y": 4.5,
+              "group": "current"
             }
           ],
           "xLabel": "失业率（%）",
@@ -73827,7 +73946,7 @@
             "name": "美国:失业率:U3:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "ySource": {
             "provider": "iFinD EDB",
@@ -73836,7 +73955,7 @@
             "name": "美国:职位空缺率:非农部门:季调:当月值",
             "rawUnit": "%",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260831"
+            "latestObservation": "20260930"
           },
           "explanation": {
             "what": "贝弗里奇曲线描述职位空缺率与失业率的负相关；曲线外移通常代表匹配效率下降。",
@@ -74800,7 +74919,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 0.0,
@@ -75744,11 +75864,12 @@
                 0.0667,
                 0.0,
                 0.0,
+                0.0,
                 0.0
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
+              "latestObservation": "20261031",
               "latestValue": 0.0,
               "source": {
                 "provider": "iFinD EDB",
@@ -75757,7 +75878,7 @@
                 "name": "美国:失业率:U3:季调:当月值",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "U3三个月均值减过去12个月三个月均值低点"
             }
@@ -76839,7 +76960,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 52.3333,
@@ -77890,13 +78012,14 @@
                 137.6667,
                 79.0,
                 38.3333,
-                47.6667,
-                54.3333
+                65.3333,
+                82.6667,
+                126.3333
               ],
               "color": "#1859b8",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 54.3333,
+              "latestObservation": "20261031",
+              "latestValue": 126.3333,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美国劳工局",
@@ -77904,7 +78027,7 @@
                 "name": "美国:新增非农就业人数:私营:当月值:季调",
                 "rawUnit": "千人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "后向3个月均值"
             },
@@ -78110,7 +78233,8 @@
                 "20260630",
                 "20260731",
                 "20260831",
-                "20260930"
+                "20260930",
+                "20261031"
               ],
               "values": [
                 -1.6667,
@@ -78310,12 +78434,13 @@
                 107.3333,
                 87.0,
                 58.3333,
-                56.6667
+                55.3333,
+                69.3333
               ],
               "color": "#c94c4c",
               "frequency": "月",
-              "latestObservation": "20260930",
-              "latestValue": 56.6667,
+              "latestObservation": "20261031",
+              "latestValue": 69.3333,
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "ADP研究所",
@@ -78323,7 +78448,7 @@
                 "name": "美国:ADP新增私营就业人数:季调:当月值",
                 "rawUnit": "人",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260930"
+                "latestObservation": "20261031"
               },
               "transformLabel": "原值÷1000后计算3个月均值"
             }
@@ -78605,13 +78730,19 @@
             {
               "period": "202608",
               "x": 36.0,
-              "y": 89.0,
+              "y": 142.0,
               "group": "history"
             },
             {
               "period": "202609",
-              "x": 90.0,
-              "y": 46.0,
+              "x": 86.0,
+              "y": 78.0,
+              "group": "history"
+            },
+            {
+              "period": "202610",
+              "x": 86.0,
+              "y": 159.0,
               "group": "history"
             }
           ],
@@ -78625,7 +78756,7 @@
             "name": "美国:ADP新增私营就业人数:季调:当月值",
             "rawUnit": "人",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "ySource": {
             "provider": "iFinD EDB",
@@ -78634,7 +78765,7 @@
             "name": "美国:新增非农就业人数:私营:当月值:季调",
             "rawUnit": "千人",
             "url": "https://ft.51ifind.com",
-            "latestObservation": "20260930"
+            "latestObservation": "20261031"
           },
           "explanation": {
             "what": "每个点是一月；45度线代表ADP与私人非农完全相同。",
@@ -78781,8 +78912,8 @@
     "主体页面数值由iFinD EDB重新提取；分行业时薪使用BLS CES官方序列。PPT只提供指标定义、阅读顺序和口径警示。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_ifind_employment.json",
-    "blsSectorWages": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_wages.json",
-    "blsSectorEmployment": "data/raw/daily-refresh/20261101-manual/employment/20261101T003343+0000_bls_sector_employment.json"
+    "ifind": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_ifind_employment.json",
+    "blsSectorWages": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_wages.json",
+    "blsSectorEmployment": "data/raw/daily-refresh/20261112-manual/employment/20261112T111252+0000_bls_sector_employment.json"
   }
 }

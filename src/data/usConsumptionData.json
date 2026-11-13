@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-01T00:34:40+00:00",
+  "generatedAt": "2026-11-12T11:16:11+00:00",
   "source": "iFinD EDB",
   "sourceProviders": [
     "iFinD EDB"
@@ -182,9 +182,9 @@
       "id": "credit",
       "label": "信贷轮",
       "title": "循环信贷同比",
-      "value": 3.6,
+      "value": 4.7,
       "unit": "%",
-      "observation": "20260831",
+      "observation": "20260930",
       "source": "iFinD EDB"
     },
     {
@@ -219,7 +219,7 @@
       "title": "信贷",
       "mechanism": "循环信贷可短期替代收入",
       "signal": "循环信贷同比 / 信用卡拖欠率",
-      "status": "3.6% / 2.85%",
+      "status": "4.7% / 2.85%",
       "note": "余额增长与消费增长不可等同"
     },
     {
@@ -9600,7 +9600,8 @@
                 "20260531",
                 "20260630",
                 "20260731",
-                "20260831"
+                "20260831",
+                "20260930"
               ],
               "values": [
                 38.3,
@@ -10305,13 +10306,14 @@
                 3.5,
                 4.2,
                 3.5,
-                3.6
+                3.6,
+                4.7
               ],
               "color": "#855c9c",
               "unit": "%",
               "frequency": "月",
-              "latestValue": 3.6,
-              "latestObservation": "20260831",
+              "latestValue": 4.7,
+              "latestObservation": "20260930",
               "source": {
                 "provider": "iFinD EDB",
                 "institution": "美联储",
@@ -10319,7 +10321,7 @@
                 "name": "美国:消费循环信贷:季调:当月同比",
                 "rawUnit": "%",
                 "url": "https://ft.51ifind.com",
-                "latestObservation": "20260831"
+                "latestObservation": "20260930"
               }
             },
             {
@@ -22507,6 +22509,6 @@
     "PPT定义研究顺序与解释；所有可更新时序均由iFinD EDB重新提取，静态案例和不可得项明确隔离。"
   ],
   "rawSnapshots": {
-    "ifind": "data/raw/daily-refresh/20261101-manual/consumption/20261101T003440+0000_ifind_consumption.json"
+    "ifind": "data/raw/daily-refresh/20261112-manual/consumption/20261112T111611+0000_ifind_consumption.json"
   }
 }
