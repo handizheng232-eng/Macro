@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "macro-refresh-publication-02",
+  "scope": "us-nine-modules-five-macro-snapshots-v2",
+  "publicationAuthorized": true,
+  "pageQAComplete": true,
+  "historicalResearchAuthorizationExpanded": false,
+  "snapshotSHA256": "19f9587fd9267dd20e9c26a87f76ed4c8597c86a9ad7161aac99faaa16d1a7c0",
+  "dataPins": {
+    "src/data/usConsumptionData.json": "685b7102d77699e7925214f9a81f2f2dc5d831efa6ee93dd29b5883e36cb253d",
+    "src/data/usEmploymentData.json": "879c6994be854af36cbc4036ea51f4ce251cbe740652161da469965fc0f75529",
+    "src/data/usGdpData.json": "20387e53dca64f004b9c1c351e2e1e726f800468826fbc98812485944e6dfb2c",
+    "src/data/usInflationData.json": "bd728ab7eb6039122614905787394e1b5bfb9d304e85c6b963e4ddcb11c4868b",
+    "src/data/usLateModulesData.json": "24b7028c91c4a94b075921f4cee4687055aac37a0222c0f1eed2b9bc8c0fc923"
+  },
+  "infrastructurePins": {
+    ".github/workflows/deploy.yml": "a6511ef5c210a221082fddbb7ecb2cc38f0f61da711f0015fd51df51d7df5a40",
+    "scripts/run_data_tests.py": "2e9cb153648a9142f8432754585c6e3b02e04330e676bfd721ba9f8cfc720750",
+    "src/historyReplayRenewedRouting.test.tsx": "e28497e6cff94e66f2dfc784eca6c4e270d6cbbf1981ef917bc8ce2614dcf37c",
+    "src/historyReplayRouting.test.tsx": "cd0952a686cc449073a364ac34a3c3a3311b5d78e65e09742502c8957880ba27"
+  },
+  "implementationPins": {
+    ".github/workflows/verify-macro-candidate.yml": "a9583f09b6d6f8a83291a4a2c2bde5a67928351c1cb2746c88e8cb0ba522aa3a",
+    "docs/macro-refresh-publication-v2.md": "2652d1502668a8c141b6ad8fcfa9019b717f81cf0c22019dbc8ae3ea7bbe0120",
+    "release/snapshots/macro-refresh-base-a2069bd.delta.zip": "19f9587fd9267dd20e9c26a87f76ed4c8597c86a9ad7161aac99faaa16d1a7c0",
+    "scripts/macro_refresh_v2_quality.py": "58cc74db879ac442dc483c5de64e8c1a7759defa02f7e8712402be4608eb5466",
+    "scripts/macro_refresh_v2_snapshot.py": "5b514322e2c2b3cd5f5064904a1ccc0c6dd00bcb773b3b1f8b54840c8597057f",
+    "scripts/test_macro_refresh_v2_snapshot.py": "7279ee026de68bcb84bf33f0770945e22adfaceb1deceb682d021546ab68b982",
+    "scripts/test_verify_macro_refresh_v2_publish.py": "4b358e089391928af7fa9123900d147a03f557e69117213b9a25144e194c3cd4",
+    "scripts/verify_macro_refresh_v2_publish.py": "27c840ec5be152b7a03d9fb85506bbb9d650c22724bef93b3558f8f2f90b9c0f"
+  },
+  "vintages": {
+    "src/data/usConsumptionData.json": "2026-11-12T11:16:11+00:00",
+    "src/data/usEmploymentData.json": "2026-11-12T11:12:52+00:00",
+    "src/data/usGdpData.json": "2026-11-12T11:11:55+00:00",
+    "src/data/usInflationData.json": "2026-11-12T11:14:09+00:00",
+    "src/data/usLateModulesData.json": "2026-11-12T11:24:40+00:00"
+  },
+  "qualityEvidenceHashes": {
+    "sourceAudit": "c4f50e2451c16ec6c30d6e0b89626ed25351beaa3d93b49d61516fd4f550398c",
+    "frontend": "12ddb966404869b7d72ff553dd876f091f541293e15f95cd00ca2dc4a5ebf348",
+    "data": "798dffb5d5f8c85e32ffb2b8c71666ccfc14e610ddc7c92f4f1cda4accd1aa1b",
+    "browser": "d5950a1fc8705205b93b3606040bdca77584947de0d6461c5ebe13f77099e4fe"
+  },
+  "distPins": {
+    "assets/index-Cxy_HuWh.js": "6901d7be740756773ed4f1e1830675025298feba427929e44cf34a997c5f1165",
+    "assets/index-DMFjG1uj.css": "3c62e0bf4180a7ee5707430d1a2417016a5338f6d5bcff0152feddc528c0771b",
+    "index.html": "3d15bba5b961e7bf7ee1744db09a8b571747b0549f41760e95eb762234d0a8c2",
+    "replay-rate-liftoff/01-nominal.svg": "5927e50b5f98ff3775c61164e45d7c9021b89104f50232339e3c582c2abd2424",
+    "replay-rate-liftoff/02-real-bei.svg": "866b64caa7dfd435984a5211b296b4ac090e7a42ceb747fce1e184fe8c5cc13d",
+    "replay-rate-liftoff/03-spreads.svg": "4b6cd5c650b99fc0a4c66df61312f3af07e26ee2023f38f73fbab98319a75062",
+    "replay-rate-liftoff/04-dollar.svg": "be218d14050ffe94df26245eeb11215947ab1572a6149175c8f5312edd14f609",
+    "replay-rate-liftoff/05-bei.svg": "4c9182477fedb4fdc594fdee18e32c56658cdd42e0e67029a26d63569e22b64f",
+    "replay-rate-liftoff/06-event-window.svg": "3b2f09023b9d6745703c83efc2602afb74af0ad89aa353be1081802beb45b9e7",
+    "taper-charts/curve.svg": "9a8799516cb0a080fd25582103ff63058a37246f57364a55bdc9469b7e839c4d",
+    "taper-charts/dollar.svg": "d38a0639066e180494f1c0d142b459c21ad384683c543f08203b46094f891f9d",
+    "taper-charts/equity.svg": "2d0dbda1395d5e6caaf4ca9d48ed6066b91fa8983f568521ce8d788e2f421217",
+    "taper-charts/nominal.svg": "4829316a20fb5309d0171db565ba9f758abeb789307fb7bc8d3c9fceb426ed6f",
+    "taper-charts/oil.svg": "9cc90587bda69d4e3a2c359a24ef51333c6fc8987183f74ca11e05274228cb1f",
+    "taper-charts/real-bei.svg": "93b7edf3fcc47d385224b946cfe5eea5a1d5a7431611469fe0fe28027770a6a2"
+  },
+  "verification": {
+    "frontend": {
+      "acceptedEnvironment": "GitHub Actions clean Ubuntu runner, Node22",
+      "runId": 43334662649,
+      "candidateCommit": "17a4881538312395ff00fddff4c2adca584b417b",
+      "passed": 226,
+      "total": 226,
+      "budget": "--testTimeout=12000 --maxWorkers=1",
+      "logSHA256": "d8f3f32f7456301ffa5885a9a629c8ad3e8381686ec8a07f7736ebc5e9be6692",
+      "localWindowsFullSuite": {
+        "passed": 223,
+        "timedOut": 3,
+        "total": 226,
+        "acceptedAsPassing": false
+      },
+      "buildFilesByteMatched": 15
+    },
+    "data": {
+      "discovered": 356,
+      "executed": 356,
+      "historical": 54,
+      "skipped": 0,
+      "caseIdMultisetsEqual": true
+    },
+    "browser": {
+      "cases": 74,
+      "runtimeErrors": 0,
+      "scope": "PCE and three heatmaps: both viewports and seven ranges; nine routes: default-state/geometry smoke, not all-chart/all-range interactions"
+    }
+  }
+}
