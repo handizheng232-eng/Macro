@@ -35,17 +35,23 @@ it.each(switchCases)('$event：从 $fromLabel 切页，$state', async ({ event, 
     // The same controlled search remains available in historical mode. Set the
     // cutoff first so typing does not redraw the unrelated current research DOM;
     // all three dirty states still have to reset on the real route event.
-    fireEvent.change(replayCutoff(), { target: { value: from.cutoff } })
-    expect(replayCutoff()).toHaveValue(from.cutoff)
+    const cutoffControl = replayCutoff()
+    fireEvent.change(cutoffControl, { target: { value: from.cutoff } })
+    expect(cutoffControl).toBeInTheDocument()
+    expect(cutoffControl).toHaveValue(from.cutoff)
     const library = replayDisclosure('来源库 / 研报库明细')
     await user.click(library.querySelector(':scope > summary')!)
     expect(library).toHaveAttribute('open')
-    fireEvent.change(replaySearch(), { target: { value: '仅测试检索状态' } })
-    expect(replaySearch()).toHaveValue('仅测试检索状态')
+    const searchControl = replaySearch()
+    fireEvent.change(searchControl, { target: { value: '仅测试检索状态' } })
+    expect(searchControl).toBeInTheDocument()
+    expect(searchControl).toHaveValue('仅测试检索状态')
   }
   if (state === '截止日重置') {
-    fireEvent.change(replayCutoff(), { target: { value: from.cutoff } })
-    expect(replayCutoff()).toHaveValue(from.cutoff)
+    const cutoffControl = replayCutoff()
+    fireEvent.change(cutoffControl, { target: { value: from.cutoff } })
+    expect(cutoffControl).toBeInTheDocument()
+    expect(cutoffControl).toHaveValue(from.cutoff)
   }
   syncHash(to.hash, event)
   const workbench = replayWorkbench(to.label)
@@ -117,12 +123,21 @@ it.each(channelCases)('$channel 渠道：$state', async ({ channel, state }) => 
   const user = userEvent.setup()
   window.history.replaceState(null, '', hawkishHash)
   render(<App />)
-  if (state === '默认关闭与独立展开') {
-    for (const name of channels) expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
+  // Retain live handles for this mount, not cached accessibility/state results.
+  // Opening a disclosure invalidates jsdom's style cache; querying every other
+  // disclosure again would repeat accessible-name work over the same archive.
+  const disclosures = state === '默认关闭与独立展开'
+    ? new Map(channels.map(name => [name, replayDisclosure(`${name}观点明细`)]))
+    : null
+  if (disclosures) {
+    for (const details of disclosures.values()) expect(details).not.toHaveAttribute('open')
   }
   // Resolve both labelled disclosures before toggling either: opening the outer
   // library invalidates jsdom's style cache across the entire research archive.
-  const details = replayDisclosure(`${channel}观点明细`)
+  const details = disclosures?.get(channel) ?? replayDisclosure(`${channel}观点明细`)
+  // Resolve the existing date control before opening a large channel. Never
+  // retain channel handles across the historical unmount/restoration below.
+  const cutoffControl = state === '历史卸载与恢复关闭' ? replayCutoff() : null
   const library = channel === '本地研报' ? replayDisclosure('来源库 / 研报库明细') : null
   if (library) {
     expect(library).not.toHaveAttribute('open')
@@ -138,9 +153,14 @@ it.each(channelCases)('$channel 渠道：$state', async ({ channel, state }) => 
   expect(details).toHaveAttribute('open')
   if (state === '默认关闭与独立展开') {
     expect(within(details).getByRole('region', { name: `${channel}观点独立追溯` })).toBeVisible()
-    for (const name of channels.filter(name => name !== channel)) expect(replayDisclosure(`${name}观点明细`)).not.toHaveAttribute('open')
+    for (const name of channels.filter(name => name !== channel)) {
+      const other = disclosures!.get(name)!
+      expect(other).toBeInTheDocument()
+      expect(other).not.toHaveAttribute('open')
+    }
   } else {
-    fireEvent.change(replayCutoff(), { target: { value: '2026-01-01' } })
+    expect(cutoffControl).toBeInTheDocument()
+    fireEvent.change(cutoffControl!, { target: { value: '2026-01-01' } })
     for (const name of channels) {
       expect(queryReplayLabel(`${name}观点明细`)).not.toBeInTheDocument()
       expect(queryReplayRegion(`${name}观点独立追溯`)).not.toBeInTheDocument()

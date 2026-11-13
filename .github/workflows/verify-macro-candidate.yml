@@ -1,0 +1,47 @@
+name: Verify macro candidate without deployment
+
+on:
+  push:
+    branches: ['automation/manual-refresh-*']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: macro-candidate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Complete frontend at the unchanged production budget
+        run: |
+          set -o pipefail
+          npm test -- --testTimeout=12000 --maxWorkers=1 2>&1 | tee frontend-ci.log
+      - name: Build exact candidate
+        run: npm run build
+      - name: Public successor contract unit tests
+        run: |
+          python -B -m unittest discover -s scripts -p 'test_macro_refresh_v2_snapshot.py' -v
+          python -B -m unittest discover -s scripts -p 'test_verify_macro_refresh_v2_publish.py' -v
+      - name: Save validation evidence and candidate build
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macro-candidate-validation
+          path: |
+            frontend-ci.log
+            dist
+          if-no-files-found: error

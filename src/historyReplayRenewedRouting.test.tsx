@@ -32,21 +32,28 @@ const siblingCases = (['hashchange', 'popstate'] as const).flatMap(event => ['po
 it.each(siblingCases)('$event 从$from 到$to：$state 不串页', ({ event, from, to, title, asOf, state }) => {
   window.history.replaceState(null, '', from)
   const { container } = render(<App />)
+  // Reuse this mounted control only until the route changes. Destination
+  // controls below are queried afresh so a stale source page cannot pass.
+  const cutoffControl = replayCutoff()
   if (state === '检索与展开') {
     // Search, cutoff and disclosure state coexist in the lightweight historical
     // view; preparing it first avoids redrawing the unrelated full archive.
     const historicalCutoff = from === third ? '2025-09-01' : from.endsWith('hawkish-transition') ? secondData.startDate : firstData.startDate
-    fireEvent.change(replayCutoff(), { target: { value: historicalCutoff } })
-    expect(replayCutoff()).toHaveValue(historicalCutoff)
+    fireEvent.change(cutoffControl, { target: { value: historicalCutoff } })
+    expect(cutoffControl).toBeInTheDocument()
+    expect(cutoffControl).toHaveValue(historicalCutoff)
     const library = replayDisclosure('来源库 / 研报库明细')
     fireEvent.click(library.querySelector(':scope > summary')!)
     expect(library).toHaveAttribute('open')
-    fireEvent.change(replaySearch(), { target: { value: '仅第三路由测试' } })
-    expect(replaySearch()).toHaveValue('仅第三路由测试')
+    const searchControl = replaySearch()
+    fireEvent.change(searchControl, { target: { value: '仅第三路由测试' } })
+    expect(searchControl).toBeInTheDocument()
+    expect(searchControl).toHaveValue('仅第三路由测试')
   } else {
     const cutoff = from === third ? '2025-09-01' : '2026-09-01'
-    fireEvent.change(replayCutoff(), { target: { value: cutoff } })
-    expect(replayCutoff()).toHaveValue(cutoff)
+    fireEvent.change(cutoffControl, { target: { value: cutoff } })
+    expect(cutoffControl).toBeInTheDocument()
+    expect(cutoffControl).toHaveValue(cutoff)
   }
   window.history.replaceState(null, '', to)
   act(() => window.dispatchEvent(event === 'hashchange' ? new HashChangeEvent(event) : new PopStateEvent(event)))
@@ -86,10 +93,12 @@ it('第三独立hash保留240节点、5+35导读，移除辅助图表且历史�
   expect(container.querySelector('#reading-paths svg')).not.toBeNull()
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '来源库 / 研报库明细']) expect(replayDisclosure(label)).not.toHaveAttribute('open')
   expect(screen.queryByRole('heading', { name: '预期 → 现实：事件时间轴' })).not.toBeInTheDocument()
-  fireEvent.change(replayCutoff(), { target: { value: '2025-10-01' } })
+  const cutoffControl = replayCutoff()
+  fireEvent.change(cutoffControl, { target: { value: '2025-10-01' } })
   expect(queryReplayRegion('综合市场分析')).not.toBeInTheDocument()
   expect(container.querySelectorAll('[data-period-summary], [data-aspect-summary], .replay-framework-card')).toHaveLength(0)
   for (const label of ['星球观点明细', 'Wind观点明细', '微信观点明细', '逐月预期现实与修订链', '月份与渠道覆盖']) expect(queryReplayLabel(label)).not.toBeInTheDocument()
   act(() => window.dispatchEvent(new HashChangeEvent('hashchange')))
-  expect(replayCutoff()).toHaveValue('2025-10-01')
+  expect(cutoffControl).toBeInTheDocument()
+  expect(cutoffControl).toHaveValue('2025-10-01')
 })

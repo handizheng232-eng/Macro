@@ -6,6 +6,7 @@ Every test is executed: current data tests here, frozen publication tests in
 their exact public-version fixtures. No private archive copying or skips.
 """
 import argparse
+from collections import Counter
 import importlib
 import importlib.metadata
 import json
@@ -17,8 +18,18 @@ import tempfile
 import unittest
 
 from research_archive import REPO_ROOT, research_root
-from macro_publication_snapshot import split_suite, legacy_case_ids, run_legacy_tests
-from pce_publication_snapshot import split_previous_tests, previous_case_ids, run_previous_tests
+from macro_publication_snapshot import flatten
+from macro_refresh_v2_snapshot import split_history, run_history
+
+
+class RecordingResult(unittest.TextTestResult):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.executed_ids = []
+
+    def startTest(self, test):
+        self.executed_ids.append(test.id())
+        super().startTest(test)
 
 
 def protect_archive(root):
@@ -89,24 +100,21 @@ def main(argv=None):
     print(json.dumps({'python': sys.executable, 'dependencies': versions,
                       'externalArchiveReadOnly': root != REPO_ROOT,
                       'discovery': 'scripts/test_*.py'}, ensure_ascii=True), flush=True)
-    suite = unittest.defaultTestLoader.discover(str(REPO_ROOT / 'scripts'), pattern='test_*.py')
+    loader = unittest.TestLoader()
+    suite = loader.discover(str(REPO_ROOT / 'scripts'), pattern='test_*.py')
+    if loader.errors:
+        raise ValueError('Data test discovery failed: ' + repr(loader.errors))
     expected = suite.countTestCases()
-    current, historical = split_suite(suite)
-    current, previous = split_previous_tests(current)
-    previous_ids = [case.id() for case in previous]
-    if len(previous_ids) != len(set(previous_ids)) or set(previous_ids) != previous_case_ids():
-        raise ValueError('Previous macro test discovery differs from pinned suite')
-    historical_ids = [case.id() for case in historical]
-    if len(historical_ids) != len(set(historical_ids)) or set(historical_ids) != legacy_case_ids():
-        raise ValueError('Historical test discovery differs from pinned suite')
-    result = unittest.TextTestRunner(verbosity=2).run(current)
-    previous_result = run_previous_tests()
-    legacy = run_legacy_tests()
-    executed = result.testsRun + previous_result['run'] + legacy['run']
-    success = result.wasSuccessful() and not result.skipped and executed == expected and expected > 0
+    expected_ids = [case.id() for case in flatten(suite)]
+    current, historical = split_history(suite)
+    result = unittest.TextTestRunner(verbosity=2, resultclass=RecordingResult).run(current)
+    legacy = run_history()
+    executed = result.testsRun + legacy['run']
+    same_ids = Counter(result.executed_ids + legacy['ids']) == Counter(expected_ids)
+    success = result.wasSuccessful() and not result.skipped and not result.expectedFailures and same_ids and executed == expected and expected > 0
     print(json.dumps({'discovered': expected, 'run': executed, 'currentRun': result.testsRun,
                       'historicalRun': legacy['run'], 'historicalIds': legacy['ids'],
-                      'previousMacroRun': previous_result['run'], 'previousMacroIds': previous_result['ids'],
+                      'caseIdMultisetsEqual': same_ids, 'discoveryErrors': loader.errors,
                       'failures': len(result.failures), 'errors': len(result.errors),
                       'skipped': len(result.skipped), 'passed': success}), flush=True)
     return 0 if success else 1

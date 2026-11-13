@@ -45,8 +45,9 @@ jobs:
           python -B -m unittest discover -s scripts -p 'test_macro_publication_snapshot.py' -v
           python -B -m unittest discover -s scripts -p 'test_pce_distribution.py' -v
           python -B -m unittest discover -s scripts -p 'test_pce_publication_snapshot.py' -v
-          python -B -m unittest discover -s scripts -p 'test_verify_editorial_openings_publish.py' -v
-          python -B scripts/verify_editorial_openings_publish.py --legacy-tests --dist dist
+          python -B -m unittest discover -s scripts -p 'test_macro_refresh_v2_snapshot.py' -v
+          python -B -m unittest discover -s scripts -p 'test_verify_macro_refresh_v2_publish.py' -v
+          python -B scripts/verify_macro_refresh_v2_publish.py --legacy-tests --dist dist
       - name: Verify explicitly authorized partial tariff-pause release
         run: python -B scripts/verify_tariff_partial_publish.py --self-test
       - name: Setup Pages
