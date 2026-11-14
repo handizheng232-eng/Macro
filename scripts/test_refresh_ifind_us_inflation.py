@@ -118,8 +118,29 @@ class IfindDatasetContractTests(unittest.TestCase):
         self.assertEqual([row["label"] for row in rows], [
             "所有项目", "食品", "能源", "核心", "商品(不含食品能源)", "服务(不含能源)", "住房",
         ])
+        history = self.dataset['actual']['cpiHeatmap']['history']
+        yoy_by_id = {r['id']: {p: v for p, v in zip(history['periods'], r['yoy']) if v is not None} for r in history['rows']}
+        for series in self.dataset['actual']['cpiTrend']['series']:
+            yoy_by_id[series['id']] = {d[:6]: v for d, v in zip(series['dates'], series['values'])}
         for row in rows:
-            self.assertTrue(math.isfinite(row["yoy"]))
+            # A missing current YoY must not roll the available SA MoM back.
+            values = yoy_by_id[row['id']]
+            period = row['observation'][:6]
+            expected_yoy = values.get(period)
+            self.assertEqual(row['yoy'], expected_yoy)
+            if expected_yoy is None:
+                self.assertIsNone(row['yoyChange'])
+                self.assertLess(max(values), period)
+            else:
+                self.assertTrue(math.isfinite(row['yoy']))
+            latest = row['latestAvailableYoy']
+            self.assertEqual(latest['observation'][:6], max(values))
+            self.assertEqual(latest['value'], values[max(values)])
+            record = self.dataset['dataQuality']['cpiSeasonality']['series'][row['id'].removesuffix('_yoy') + '_mom']
+            self.assertEqual(row['observation'], max(record['last'], latest['observation']))
+            self.assertEqual(row['mom'], record['latest'])
+            self.assertEqual(row['source']['momCode'], record['metadata']['displayid'])
+            self.assertEqual(row['source']['momAdjustment'], 'SA')
             self.assertTrue(math.isfinite(row["mom"]))
             self.assertIn(row["nature"], ("总量", "波动项", "周期分项", "结构分项"))
             self.assertTrue(row["source"]["code"].startswith("G"))

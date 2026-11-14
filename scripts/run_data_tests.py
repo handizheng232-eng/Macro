@@ -19,7 +19,7 @@ import unittest
 
 from research_archive import REPO_ROOT, research_root
 from macro_publication_snapshot import flatten
-from macro_refresh_v2_snapshot import split_history, run_history
+from cpi_correction_snapshot import split_history, run_history
 
 
 class RecordingResult(unittest.TextTestResult):

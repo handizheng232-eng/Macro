@@ -42,8 +42,9 @@ class InflationHistoryTests(unittest.TestCase):
         self.assertEqual(history["periods"], ["202511", "202510", "202509", "202508"])
         self.assertEqual(history["rows"][0]["yoy"], [2.3, None, 1.2, None])
         self.assertEqual(history["rows"][0]["mom"], [0.2, None, 0.1, 0.3])
-        self.assertEqual(table["periods"], ["202511", "202509"])
-        self.assertEqual(table["rows"][0]["yoy"], [2.3, 1.2])
+        self.assertEqual(table["periods"], ["202511", "202510", "202509", "202508"])
+        self.assertEqual(table["rows"][0]["yoy"], [2.3, None, 1.2, None])
+        self.assertEqual(table['rows'][0]['mom'], [0.2, None, 0.1, 0.3])
         self.assertEqual(history["rows"][1]["weight"], 5.25)
         self.assertEqual(history["rows"][1]["weightDate"], "20250731")
         self.assertIsNone(history["rows"][0]["weightDate"])
@@ -132,7 +133,10 @@ class PublishedHistoryTests(unittest.TestCase):
         history = table["history"]
         index = history["periods"].index("202510")
         self.assertIsNone(history["rows"][0]["yoy"][index])
-        self.assertEqual(history["periods"][-1], "191302")
+        # Explicit SA replaces the old generic MoM; never splice its 1913 values.
+        self.assertEqual(history["periods"][-1], "191401")
+        self.assertEqual(self.inflation['dataQuality']['cpiSeasonality']['series']['cpi_mom']['first'], '19470228')
+        self.assertIsNone(history['rows'][0]['mom'][-1])
         self.assertIn("非逐月历史权重", history["note"])
 
     def test_employment_reconciles_all_history_months_not_only_intersection(self):

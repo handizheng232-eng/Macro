@@ -14,6 +14,7 @@ import math
 import os
 import re
 import statistics
+from decimal import Decimal
 import string
 import tempfile
 import urllib.parse
@@ -26,9 +27,13 @@ from typing import Any, Iterable
 try:
     from scripts.ifind_history import assert_full_history, metadata_start_date
     from scripts.pce_distribution import build_distribution, fetch_distribution, DEFAULT_BACKUP_DIR
+    from scripts.cpi_seasonality import CONTRACT as CPI_SA_CONTRACT, validate_metadata as validate_cpi_metadata, build_audit as build_cpi_audit, validate_dataset as validate_cpi_dataset
+    from scripts.cpi_seasonality import source_metadata as cpi_sa_source
 except ModuleNotFoundError:
     from ifind_history import assert_full_history, metadata_start_date
     from pce_distribution import build_distribution, fetch_distribution, DEFAULT_BACKUP_DIR
+    from cpi_seasonality import CONTRACT as CPI_SA_CONTRACT, validate_metadata as validate_cpi_metadata, build_audit as build_cpi_audit, validate_dataset as validate_cpi_dataset
+    from cpi_seasonality import source_metadata as cpi_sa_source
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = REPO_ROOT / "src" / "data" / "usInflationData.json"
@@ -52,13 +57,13 @@ SERIES_SPEC: dict[str, tuple[str, str, str]] = {
     "core_pce_yoy": ("G003586807", "核心PCE同比", "#765a9b"),
     "pce_goods_yoy": ("G003586803", "PCE商品同比", "#ba7a2e"),
     "pce_services_yoy": ("G003586806", "PCE服务同比", "#2f7fa3"),
-    "cpi_mom": ("G002600387", "CPI环比", "#c94c4c"),
-    "core_cpi_mom": ("G002600388", "核心CPI环比", "#765a9b"),
-    "cpi_food_mom": ("G004765340", "食品环比", "#ba7a2e"),
-    "cpi_energy_mom": ("G004765461", "能源环比", "#2f7fa3"),
-    "cpi_goods_mom": ("G004765476", "商品(不含食品能源)环比", "#3c8b6d"),
-    "cpi_services_mom": ("G004765593", "服务(不含能源)环比", "#1c3557"),
-    "cpi_housing_mom": ("G004765795", "住房环比", "#6f7883"),
+    "cpi_mom": ("G005464034", "CPI环比", "#c94c4c"),
+    "core_cpi_mom": ("G005464040", "核心CPI环比", "#765a9b"),
+    "cpi_food_mom": ("G005464062", "食品环比", "#ba7a2e"),
+    "cpi_energy_mom": ("G005464035", "能源环比", "#2f7fa3"),
+    "cpi_goods_mom": ("G005464052", "商品(不含食品能源)环比", "#3c8b6d"),
+    "cpi_services_mom": ("G005464101", "服务(不含能源)环比", "#1c3557"),
+    "cpi_housing_mom": ("G005464077", "住房环比", "#6f7883"),
     "cpi_housing_yoy": ("G004765751", "住房同比", "#6f7883"),
     "cpi_goods_yoy": ("G004754833", "商品(不含食品能源)同比", "#3c8b6d"),
     "cpi_services_yoy": ("G004754950", "服务(不含能源)同比", "#1c3557"),
@@ -76,7 +81,7 @@ SERIES_SPEC: dict[str, tuple[str, str, str]] = {
     "food_home_yoy": ("G004754698", "家庭食品同比", "#ba7a2e"),
     "food_home_mom": ("G004764993", "家庭食品环比", "#ba7a2e"),
     "food_away_yoy": ("G005419489", "外出就餐同比", "#ba7a2e"),
-    "food_away_mom": ("G005464202", "外出就餐环比", "#ba7a2e"),
+    "food_away_mom": ("G005464519", "外出就餐未季调环比", "#ba7a2e"),
     "energy_goods_yoy": ("G004754819", "能源商品同比", "#c94c4c"),
     "energy_goods_mom": ("G004765114", "能源商品环比", "#c94c4c"),
     "energy_services_yoy": ("G005419525", "能源服务同比", "#c94c4c"),
@@ -103,8 +108,8 @@ SERIES_SPEC: dict[str, tuple[str, str, str]] = {
     "airfare_mom": ("G005464299", "机票环比", "#6b4a9e"),
     "edu_services_yoy": ("G004755020", "教育通信服务同比", "#6b4a9e"),
     "edu_services_mom": ("G004765315", "教育通信服务环比", "#6b4a9e"),
-    "personal_services_yoy": ("G005419508", "其他个人服务同比", "#6b4a9e"),
-    "personal_services_mom": ("G005464213", "其他个人服务环比", "#6b4a9e"),
+    "personal_services_yoy": ("G005419508", "杂项个人服务同比", "#6b4a9e"),
+    "personal_services_mom": ("G005464538", "杂项个人服务未季调环比", "#6b4a9e"),
     "weight_food": ("G019184577", "食品权重", "#888888"),
     "weight_food_home": ("G019184578", "家庭食品权重", "#888888"),
     "weight_food_away": ("G019184655", "外出就餐权重", "#888888"),
@@ -125,7 +130,7 @@ SERIES_SPEC: dict[str, tuple[str, str, str]] = {
     "weight_transport_services": ("G019184797", "运输服务权重", "#888888"),
     "weight_airfare": ("G019184808", "机票权重", "#888888"),
     "weight_edu_services": ("G019184821", "教育通信服务权重", "#888888"),
-    "weight_personal_services": ("G019184837", "其他个人服务权重", "#888888"),
+    "weight_personal_services": ("G019184837", "杂项个人服务权重", "#888888"),
     "weight_supercore": ("G025882546", "超级核心服务权重", "#888888"),
     "mich_1y": ("G012274201", "密歇根大学1年预期", "#c94c4c"),
     "mich_5y": ("G012937589", "密歇根大学5年预期", "#8a9096"),
@@ -196,7 +201,7 @@ HEATMAP_ROWS = [
     ("运输服务", "核心服务", "transport_services_yoy", "transport_services_mom", "weight_transport_services", 1),
     ("机票", "核心服务", "airfare_yoy", "airfare_mom", "weight_airfare", 2),
     ("教育通信服务", "核心服务", "edu_services_yoy", "edu_services_mom", "weight_edu_services", 1),
-    ("其他个人服务", "核心服务", "personal_services_yoy", "personal_services_mom", "weight_personal_services", 1),
+    ("杂项个人服务", "核心服务", "personal_services_yoy", "personal_services_mom", "weight_personal_services", 1),
     ("超级核心服务", "超级核心", "cpi_supercore_yoy", "cpi_supercore_mom", "weight_supercore", 0),
 ]
 
@@ -451,14 +456,22 @@ def fetch_indicator(token: str, display_id: str, start: str, end: str) -> dict[s
 def fetch_all(token: str) -> dict[str, dict[str, Any]]:
     end = datetime.now(timezone.utc).date().isoformat()
     result: dict[str, dict[str, Any]] = {}
+    cpi_metadata = {}
+    cpi_retrieved = {}
     for key, (display_id, _label, _color) in SERIES_SPEC.items():
         metadata = search_indicator(token, display_id)
+        if key in CPI_SA_CONTRACT:
+            validate_cpi_metadata(key, metadata)
         start = metadata_start_date(metadata, display_id)
         payload = fetch_indicator(token, display_id, start, end)
         dates, _values = fetch_response_series(payload, display_id)
         assert_full_history(dates, metadata, display_id)
         result[key] = payload
+        if key in CPI_SA_CONTRACT:
+            cpi_metadata[key] = metadata
+            cpi_retrieved[key] = datetime.now(timezone.utc).isoformat()
         print(f"verified {key}: {display_id} {dates[0]}..{dates[-1]} ({len(dates)})")
+    result['__cpiSeasonality'] = {'metadata': cpi_metadata, 'retrievedAt': cpi_retrieved}
     return result
 
 
@@ -474,6 +487,7 @@ def series(
     raw_unit: str = "%",
     transformation: str = "iFinD直接值",
 ) -> dict[str, Any]:
+    sa_key = next((key for key, metadata in CPI_SA_CONTRACT.items() if metadata['code'] == code), None)
     return {
         "id": series_id,
         "label": label,
@@ -493,6 +507,7 @@ def series(
             "transformation": transformation,
             "url": "https://ft.51ifind.com",
             "latestObservation": dates[-1],
+            **(cpi_sa_source(sa_key) if sa_key else {}),
         },
     }
 
@@ -509,14 +524,17 @@ def build_chart(parsed: dict[str, tuple[list[str], list[float]]], keys: list[str
 
 
 def pct_change_series(
-    dates: list[str], values: list[float], lag: int,
+    dates: list[str], values: list[float], lag: int, period_months: int = 1,
 ) -> tuple[list[str], list[float]]:
+    if lag < 1 or period_months not in (1, 3, 12):
+        raise ValueError('Explicit positive calendar lag required')
+    observations = {date[:6]: value for date, value in zip(dates, values)}
     rows = []
-    for index in range(lag, len(values)):
-        previous = values[index - lag]
-        if previous == 0:
+    for date, value in zip(dates, values):
+        previous = observations.get(shift_months([date], -lag * period_months)[0][:6])
+        if previous is None or previous == 0:
             continue
-        rows.append((dates[index], (values[index] / previous - 1) * 100))
+        rows.append((date, (value / previous - 1) * 100))
     return [row[0] for row in rows], [row[1] for row in rows]
 
 
@@ -587,7 +605,9 @@ def cycle_structure_stats(parsed: dict[str, tuple[list[str], list[float]]]) -> l
 
 
 def build_heatmap(parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str, Any]:
-    periods = list(dict.fromkeys(date[:6] for date in reversed(parsed["cpi_yoy"][0])))[:12]
+    observed = {date[:6] for _, _, yoy, mom, _, _ in HEATMAP_ROWS for key in (yoy, mom) for date in parsed[key][0]}
+    history_periods = sorted(observed | set(detect_missing_months(observed)), reverse=True)
+    periods = history_periods[:12]
     rows = []
     for label, group, yoy_key, mom_key, weight_key, depth in HEATMAP_ROWS:
         yoy_map = {date[:6]: value for date, value in zip(*parsed[yoy_key])}
@@ -601,11 +621,11 @@ def build_heatmap(parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str,
             "weight": round(weight, 2),
             "yoy": [round(yoy_map[p], 2) if p in yoy_map else None for p in periods],
             "mom": [round(mom_map[p], 2) if p in mom_map else None for p in periods],
-            "source": {"provider": "iFinD EDB", "code": SERIES_SPEC[yoy_key][0]},
+            "source": {"provider": "iFinD EDB", "code": SERIES_SPEC[yoy_key][0],
+                       "yoyCode": SERIES_SPEC[yoy_key][0], "momCode": SERIES_SPEC[mom_key][0],
+                       "momName": CPI_SA_CONTRACT[mom_key]['name'], "momAdjustment": cpi_sa_source(mom_key)['seasonalAdjustment'], "mom": cpi_sa_source(mom_key)},
         })
     # Rate observation union, not weight dates or an intersection hiding gaps.
-    observed = {date[:6] for _, _, yoy, mom, _, _ in HEATMAP_ROWS for key in (yoy, mom) for date in parsed[key][0]}
-    history_periods = sorted(observed | set(detect_missing_months(observed)), reverse=True)
     history_rows = []
     for row, (_, _, yoy, mom, weight_key, _) in zip(rows, HEATMAP_ROWS):
         rate_maps = {field: {d[:6]: v for d, v in zip(*parsed[key])} for field, key in (("yoy", yoy), ("mom", mom))}
@@ -616,9 +636,68 @@ def build_heatmap(parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str,
         })
     history = {
         "periods": history_periods, "rows": history_rows,
-        "note": f"本次原始快照实际可用历史：{history_periods[-1]}—{history_periods[0]}；各行起点不同，缺月为null，不补值。weight为最新权重快照，非逐月历史权重；各行weightDate为该权重观察日期，总项目100%为定义值、无观察日期。",
+        "note": f"本次原始快照实际可用历史：{history_periods[-1]}—{history_periods[0]}；各行起点不同，缺月为null，不补值。2026-10官方例外核对：外出就餐与杂项个人服务（Miscellaneous personal services，非Other personal services）未季调；两行完整历史各用单一普通环比源/未季调原值，不拼接旧SA源；该月脚注不外推至所有历史发布版本或未来发布。weight为源内最新权重快照，非逐月历史权重；各行weightDate为该权重观察日期，总项目100%为定义值、无观察日期。OER价格为主要居所口径，权重源G019184777目录名为业主所收租租金；旧权重仅参考，不用于贡献计算。",
     }
     return {"periods": periods, "rows": rows, "history": history}
+
+
+def build_detail_rows(parsed: dict[str, tuple[list[str], list[float]]]) -> list[dict[str, Any]]:
+    rows = []
+    for label, yoy_key, mom_key, depth in DETAIL_ROWS:
+        yoy_dates, yoy_values = parsed[yoy_key]
+        mom_dates, mom_values = parsed[mom_key]
+        yoy_map = {d[:6]: v for d, v in zip(yoy_dates, yoy_values)}
+        mom_map = {d[:6]: v for d, v in zip(mom_dates, mom_values)}
+        date_map = {d[:6]: d for d in [*yoy_dates, *mom_dates]}
+        period = max(date_map)
+        previous = shift_months([date_map[period]], -1)[0][:6]
+        yoy, mom = yoy_map.get(period), mom_map.get(period)
+        change = yoy - yoy_map[previous] if yoy is not None and previous in yoy_map else None
+        rows.append({
+            'id': yoy_key, 'label': label, 'depth': depth, 'nature': NATURE[yoy_key],
+            'observation': date_map[period], 'yoy': round(yoy, 4) if yoy is not None else None,
+            'yoyChange': round(change, 4) if change is not None else None,
+            'mom': round(mom, 4) if mom is not None else None,
+            'latestAvailableYoy': {'observation': yoy_dates[-1], 'value': yoy_values[-1]},
+            'source': {'provider': 'iFinD EDB', 'institution': 'iFinD 经济数据库',
+                       'code': SERIES_SPEC[yoy_key][0], 'name': label, 'rawUnit': '%',
+                       'url': 'https://ft.51ifind.com', 'latestObservation': date_map[period],
+                       'momCode': SERIES_SPEC[mom_key][0], 'momName': CPI_SA_CONTRACT[mom_key]['name'],
+                       'momAdjustment': 'SA'},
+        })
+    return rows
+
+
+def monthly_profile(dates: list[str], values: list[float], start_year: int, end_year: int) -> dict[str, Any]:
+    buckets = {month: [] for month in range(1, 13)}
+    for date, value in zip(dates, values):
+        if start_year <= int(date[:4]) <= end_year:
+            buckets[int(date[4:6])].append(value)
+    return {'values': [round(statistics.fmean(buckets[m]), 4) if buckets[m] else None for m in range(1, 13)],
+            'sampleCounts': [len(buckets[m]) for m in range(1, 13)]}
+
+
+def contribution_diagnostics(dates: list[str], residuals: list[float]) -> dict[str, Any]:
+    # Headline is published to 0.1pp; these four source effects to 0.001pp.
+    budget = Decimal('0.05') + 4 * Decimal('0.0005')
+    outside = sum(abs(Decimal(str(value))) > budget for value in residuals)
+    return {'comparedPeriods': len(dates), 'outsideRoundingBudget': outside, 'roundingBudget': float(budget),
+            'latest': {'period': dates[-1], 'residual': residuals[-1], 'withinRoundingBudget': abs(Decimal(str(residuals[-1]))) <= budget},
+            'note': f'全历史{len(dates)}个可比月中，{outside}个月差额超过0.052个百分点的舍入预算。历史来源版本差异尚未核实；差额仅作数据诊断，不作为第五项贡献堆叠，不据此声称历史归因已闭合。'}
+
+
+def build_release_status(parsed: dict[str, tuple[list[str], list[float]]]) -> dict[str, Any]:
+    keys = {'cpiMom': 'cpi_mom', 'coreCpiMom': 'core_cpi_mom', 'cpiYoy': 'cpi_yoy', 'coreCpiYoy': 'core_cpi_yoy'}
+    period = max(parsed[key][0][-1][:6] for key in keys.values())
+    result = {name: {d[:6]: v for d, v in zip(*parsed[key])}.get(period) for name, key in keys.items()}
+    missing = result['cpiYoy'] is None or result['coreCpiYoy'] is None
+    result.update({'period': period, 'pcePeriod': parsed['pce_yoy'][0][-1][:6],
+                   'latestYoyPeriods': {name: parsed[key][0][-1][:6] for name, key in keys.items() if name.endswith('Yoy')},
+                   'missingYoyReason': ('prior-year-base-unavailable' if period == '202610' else 'not-available-for-period') if missing else None,
+                   'cpiMomCode': SERIES_SPEC['cpi_mom'][0], 'coreCpiMomCode': SERIES_SPEC['core_cpi_mom'][0],
+                   'cpiMomSource': cpi_sa_source('cpi_mom'), 'coreCpiMomSource': cpi_sa_source('core_cpi_mom'),
+                   'officialExplanationUrl': 'https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm'})
+    return result
 
 
 def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapshot: str) -> dict[str, Any]:
@@ -648,13 +727,6 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         ),
     ]
 
-    def monthly_profile(start_year: int, end_year: int) -> list[float]:
-        buckets: dict[int, list[float]] = {month: [] for month in range(1, 13)}
-        for date, value in zip(*parsed["core_cpi_mom"]):
-            year, month = int(date[:4]), int(date[4:6])
-            if start_year <= year <= end_year:
-                buckets[month].append(value)
-        return [round(statistics.fmean(buckets[month]), 4) if buckets[month] else 0.0 for month in range(1, 13)]
 
     january_effect = {
         "title": "季调后仍有1月效应",
@@ -662,14 +734,15 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         "months": list(range(1, 13)),
         "unit": "% m/m（季调后）",
         "series": [
-            {"id": "pre_pandemic", "label": "2015—2019各月均值", "values": monthly_profile(2015, 2019), "color": "#929292"},
-            {"id": "post_pandemic", "label": "2022—2025各月均值", "values": monthly_profile(2022, 2025), "color": "#c94c4c"},
+            {"id": "pre_pandemic", "label": "2015—2019各月均值", **monthly_profile(*parsed['core_cpi_mom'], 2015, 2019), "color": "#929292"},
+            {"id": "post_pandemic", "label": "2022—2025各月均值", **monthly_profile(*parsed['core_cpi_mom'], 2022, 2025), "color": "#c94c4c"},
         ],
-        "source": {"provider": "iFinD EDB", "code": SERIES_SPEC["core_cpi_mom"][0]},
-        "caveat": "2022—2025只有四个同月样本，图形用于提示残余季节性，不等于已通过显著性检验。",
+        "source": cpi_sa_source('core_cpi_mom'),
+        "caveat": "2022—2025每个自然月最多四个样本；缺月不计入均值、无样本留空，逐月有效样本数另列。图形用于提示残余季节性，不等于已通过显著性检验。",
     }
     cycle_rows = cycle_structure_stats(parsed)
     heatmap = build_heatmap(parsed)
+    cpi_audit = build_cpi_audit(raw['__cpiSeasonality'], parsed, generated_at) if '__cpiSeasonality' in raw else {'metadataVerified': False}
 
     contribution_series = build_chart(parsed, CONTRIBUTION_KEYS)
     contribution_maps = [dict(zip(parsed[key][0], parsed[key][1])) for key in CONTRIBUTION_KEYS]
@@ -685,6 +758,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         color="#9aa0a6", code="DERIVED:CPI-MOM-MAPPED-COMPONENTS",
         raw_unit="百分点", transformation="总CPI季调环比减去四项iFinD直接影响值之和",
     ))
+    contribution_series[-1]['diagnosticOnly'] = True
 
     pce_supercore_dates, pce_supercore_values = pct_change_series(*parsed["pce_supercore_index"], lag=1)
     supercore_mom = [
@@ -701,7 +775,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         ),
     ]
 
-    ulc_dates, ulc_values = pct_change_series(*parsed["unit_labor_cost_index"], lag=4)
+    ulc_dates, ulc_values = pct_change_series(*parsed["unit_labor_cost_index"], lag=4, period_months=3)
     wage_anchor = [
         series(
             series_id="eci_wage_yoy", label="ECI私营企业工资同比",
@@ -721,41 +795,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         ),
     ]
 
-    detail_rows = []
-    for label, yoy_key, mom_key, depth in DETAIL_ROWS:
-        yoy_dates, yoy_values = parsed[yoy_key]
-        mom_dates, mom_values = parsed[mom_key]
-        # use the latest common month between yoy and mom
-        yoy_map = {date[:6]: value for date, value in zip(yoy_dates, yoy_values)}
-        yoy_date_map = {date[:6]: date for date in yoy_dates}
-        mom_map = {date[:6]: value for date, value in zip(mom_dates, mom_values)}
-        common = sorted(set(yoy_map) & set(mom_map))
-        if not common:
-            raise ValueError(f"no common month for detail {label}")
-        period = common[-1]
-        yoy = yoy_map[period]
-        mom = mom_map[period]
-        previous_periods = [p for p in sorted(yoy_map) if p < period]
-        previous_yoy = yoy_map[previous_periods[-1]] if previous_periods else yoy
-        detail_rows.append({
-            "id": yoy_key,
-            "label": label,
-            "depth": depth,
-            "nature": NATURE[yoy_key],
-            "observation": yoy_date_map[period],
-            "yoy": round(yoy, 4),
-            "yoyChange": round(yoy - previous_yoy, 4),
-            "mom": round(mom, 4),
-            "source": {
-                "provider": "iFinD EDB",
-                "institution": "iFinD 经济数据库",
-                "code": SERIES_SPEC[yoy_key][0],
-                "name": label,
-                "rawUnit": "%",
-                "url": "https://ft.51ifind.com",
-                "latestObservation": yoy_date_map[period],
-            },
-        })
+    detail_rows = build_detail_rows(parsed)
 
     survey_series = build_chart(parsed, SURVEY_KEYS)
     for item in survey_series:
@@ -899,8 +939,9 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
             },
             "cpiContributions": {
                 "id": "cpi-contributions", "eyebrow": "ACTUAL · CONTRIBUTION",
-                "title": "CPI环比分项贡献", "description": "四项为iFinD季调分项对CPI环比的直接影响值；另列“残差/未覆盖”使堆叠与总CPI环比逐月闭合，残差不解释为独立经济分项。",
+                "title": "CPI环比分项贡献", "description": "堆叠仅含四项iFinD季调直接影响值，折线为明确季调口径的总体CPI环比；二者的差额单独诊断，不用残差凑成第五项贡献。",
                 "unit": "百分点", "reference": 0, "defaultRange": "3Y", "series": contribution_series,
+                "reconciliation": contribution_diagnostics(contribution_dates, contribution_residual),
                 "totalSeries": series(
                     series_id="cpi_mom_total", label="CPI环比",
                     dates=parsed["cpi_mom"][0], values=parsed["cpi_mom"][1],
@@ -925,7 +966,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
             },
             "cpiHeatmap": {
                 "title": "CPI分项温度表",
-                "description": "参考CPI报告结构，展示23个总量与细分项目最近12个可用月份的同比/季调环比及最新权重。",
+                "description": "展示23个总量与细分项目（源分类21 SA、2 NSA）；月份取同比与环比的并集，缺值留空。2026-10官方例外核对：外出就餐、杂项个人服务（Miscellaneous personal services）未季调；两行完整历史使用各自普通源/未季调原值。",
                 **heatmap,
                 "source": {"provider": "iFinD EDB", "route": "https://ft.51ifind.com"},
             },
@@ -935,6 +976,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
                 "rows": detail_rows,
                 "source": {"provider": "iFinD EDB", "route": "https://ft.51ifind.com"},
             },
+            "releaseStatus": build_release_status(parsed),
         },
         "survey": {
             "divergence": {
@@ -991,6 +1033,7 @@ def build_dataset(raw: dict[str, dict[str, Any]], generated_at: str, raw_snapsho
         },
         "dataQuality": {
             "cpiMissingPeriods": cpi_missing,
+            "cpiSeasonality": cpi_audit,
             "note": "iFinD EDB 各序列独立更新日期；CPI/PCE/调查/盈亏平衡通胀率不共享同一截至日。",
         },
         "rawSnapshots": {"ifind": raw_snapshot},
@@ -1041,10 +1084,18 @@ def main() -> None:
         raw = json.loads(args.input.read_text(encoding="utf-8"))
         if "__pceDistribution" not in raw:
             raise ValueError("Replay bundle lacks __pceDistribution; refusing to remove the validated PCE distribution.")
+        if '__cpiSeasonality' not in raw:
+            raise ValueError('Replay bundle lacks CPI seasonality metadata; refusing an unaudited write.')
+        if not raw.get('__batchGeneratedAt'):
+            raise ValueError('Replay bundle lacks its original batch vintage; refusing to relabel old data as newly fetched.')
+        generated_at = raw['__batchGeneratedAt']
+        if datetime.fromisoformat(generated_at).tzinfo is None:
+            raise ValueError('Saved batch vintage requires an explicit timezone.')
     else:
         token, log_file = read_token()
         print(f"read iFinD session from {log_file.name}")
         raw = fetch_all(token)
+        raw['__batchGeneratedAt'] = generated_at
         raw["__pceDistribution"] = fetch_distribution(args.raw_dir / "pce-distribution", args.pce_backup_dir)
         args.raw_dir.mkdir(parents=True, exist_ok=True)
         stamp = generated_at.replace(":", "").replace("-", "")
@@ -1055,6 +1106,7 @@ def main() -> None:
     snapshot_path = args.input.resolve() if args.input else raw_path.resolve()
     snapshot = snapshot_path.relative_to(REPO_ROOT).as_posix() if snapshot_path.is_relative_to(REPO_ROOT) else str(snapshot_path)
     dataset = build_dataset(raw, generated_at, snapshot)
+    validate_cpi_dataset(dataset)
     write_dataset(args.output, dataset, args.pce_backup_dir / 'dataset-backups')
     print(f"wrote {args.output}")
     print(f"cpiTrend: {len(dataset['actual']['cpiTrend']['series'])} series")

@@ -229,6 +229,7 @@ class PceDistributionTests(unittest.TestCase):
                 inflation.main()
             saved = output.read_bytes()
             self.assertIn('pceDistribution', json.loads(saved)['actual'])
+            self.assertEqual(json.loads(saved)['generatedAt'], raw['__batchGeneratedAt'])
             mutate_cell(raw['__pceDistribution'], 'chart', 'N4', 101)
             input_path.write_text(json.dumps(raw), encoding='utf-8')
             with patch('sys.argv', args), self.assertRaises(ValueError):
@@ -247,6 +248,7 @@ class PceDistributionTests(unittest.TestCase):
             result = json.loads(output.read_text(encoding='utf-8'))
             saved_bundle = json.loads(Path(result['rawSnapshots']['ifind']).read_text(encoding='utf-8'))
             self.assertEqual(saved_bundle['__pceDistribution'], fixture())
+            self.assertEqual(saved_bundle['__batchGeneratedAt'], result['generatedAt'])
             self.assertEqual(result['actual']['pceDistribution'], self.module().build_distribution(fixture()))
 
     def test_cli_legacy_bundle_cannot_silently_remove_distribution(self):
@@ -290,9 +292,19 @@ class PceDistributionTests(unittest.TestCase):
 
 def synthetic_ifind():
     from scripts.refresh_ifind_us_inflation import SERIES_SPEC
+    from scripts.cpi_seasonality import CONTRACT
     dates = [f'{year}{month:02d}28' for year in [2025, 2026] for month in range(1, 13)]
-    return {key: {'code': 1, 'data': {'tables': [{'displayid': spec[0], 'time': dates, 'value': [3.0] * len(dates)}]}}
-            for key, spec in SERIES_SPEC.items()}
+    raw = {key: {'code': 1, 'data': {'tables': [{'displayid': spec[0], 'time': dates, 'value': [3.0] * len(dates)}]}}
+           for key, spec in SERIES_SPEC.items()}
+    # Synthetic fixture only: preserve the existing offline/atomic assertions
+    # while supplying the newly mandatory source identities and batch vintage.
+    raw['__batchGeneratedAt'] = '2026-11-12T11:14:09+00:00'
+    raw['__cpiSeasonality'] = {
+        'metadata': {key: {'displayid': meta['code'], 'sdate': dates[0], 'edate': dates[-1],
+                           **{field: meta[field] for field in ('name', 'unit', 'frequency', 'datasource')}} for key, meta in CONTRACT.items()},
+        'retrievedAt': {key: '2026-11-14T13:00:00+00:00' for key in CONTRACT},
+    }
+    return raw
 
 
 if __name__ == '__main__':

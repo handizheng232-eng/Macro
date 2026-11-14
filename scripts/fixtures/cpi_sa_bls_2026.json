@@ -1,0 +1,2559 @@
+{
+  "purpose": "Actual archived regression evidence, not a current-data fixture",
+  "blsResponse": {
+    "status": "REQUEST_SUCCEEDED",
+    "responseTime": 40,
+    "message": [
+      "The catalog has been disabled for this request.",
+      "Calculations have been disabled for this request."
+    ],
+    "Results": {
+      "series": [
+        {
+          "seriesID": "CUSR0000SA0",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "337.476",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "336.298",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "334.131",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "332.813",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "332.568",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "333.979",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "332.407",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "330.293",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "327.460",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "326.588",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SA0L1E",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "339.900",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "338.896",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "337.765",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "336.789",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "336.065",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "336.121",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "335.423",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "334.165",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "333.512",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "332.793",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SAF1",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "352.134",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "350.477",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "350.309",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "349.881",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "349.609",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "348.892",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "348.349",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "346.603",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "346.622",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "345.271",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SA0E",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "340.197",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "337.834",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "321.148",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "314.553",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "319.290",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "338.639",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "325.978",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "314.019",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "283.223",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "281.436",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SACL1E",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "168.631",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "168.361",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "167.939",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "167.762",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "167.431",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "167.575",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "167.767",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "167.710",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "167.530",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "167.394",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SASLE",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "450.247",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "448.723",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "447.075",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "445.616",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "444.602",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "444.460",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "443.154",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "440.951",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "439.959",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "438.784",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        },
+        {
+          "seriesID": "CUSR0000SAH1",
+          "data": [
+            {
+              "year": "2026",
+              "period": "M10",
+              "periodName": "October",
+              "latest": "true",
+              "value": "433.224",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M09",
+              "periodName": "September",
+              "value": "431.908",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M08",
+              "periodName": "August",
+              "value": "430.227",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M07",
+              "periodName": "July",
+              "value": "429.095",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M06",
+              "periodName": "June",
+              "value": "428.501",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M05",
+              "periodName": "May",
+              "value": "427.998",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M04",
+              "periodName": "April",
+              "value": "426.642",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M03",
+              "periodName": "March",
+              "value": "424.069",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M02",
+              "periodName": "February",
+              "value": "422.942",
+              "footnotes": [
+                {}
+              ]
+            },
+            {
+              "year": "2026",
+              "period": "M01",
+              "periodName": "January",
+              "value": "421.965",
+              "footnotes": [
+                {}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "blsRawSHA256": "8a03e0c553713090c2c2c0838037851bbc3baef8efad4e4d78dd788d173ef00c",
+  "blsArchivedAt": "2026-11-14T13:34:10.553494+00:00",
+  "crossCheck": {
+    "source": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+    "rawFile": "bls-seven-series.json",
+    "rawSHA256": "8a03e0c553713090c2c2c0838037851bbc3baef8efad4e4d78dd788d173ef00c",
+    "returnedSeries": 7,
+    "comparisons": 63,
+    "failures": [],
+    "method": "Own calendar-month calculation from BLS published indices; CPI monthly release precision 0.1pp; interval includes each index published rounding. BLS unauthenticated calculations/catalog were disabled, not used. Same BLS upstream: verifies redistribution/identity, not independent statistical collection.",
+    "rows": [
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202602",
+        "currentIndex": "327.460",
+        "priorIndex": "326.588",
+        "ifindMom": "0.3",
+        "derivedMom": "0.267003074209707643881587800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202603",
+        "currentIndex": "330.293",
+        "priorIndex": "327.460",
+        "ifindMom": "0.9",
+        "derivedMom": "0.865143834361448726562022800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202604",
+        "currentIndex": "332.407",
+        "priorIndex": "330.293",
+        "ifindMom": "0.6",
+        "derivedMom": "0.640037784633643462017057600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202605",
+        "currentIndex": "333.979",
+        "priorIndex": "332.407",
+        "ifindMom": "0.5",
+        "derivedMom": "0.472914228641394435135240800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202606",
+        "currentIndex": "332.568",
+        "priorIndex": "333.979",
+        "ifindMom": "-0.4",
+        "derivedMom": "-0.4224816530380652675767039200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202607",
+        "currentIndex": "332.813",
+        "priorIndex": "332.568",
+        "ifindMom": "0.1",
+        "derivedMom": "0.073669144355440090447667800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202608",
+        "currentIndex": "334.131",
+        "priorIndex": "332.813",
+        "ifindMom": "0.4",
+        "derivedMom": "0.396018184385826274814986200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202609",
+        "currentIndex": "336.298",
+        "priorIndex": "334.131",
+        "ifindMom": "0.6",
+        "derivedMom": "0.648548024577186792006727900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_mom",
+        "blsCode": "CUSR0000SA0",
+        "period": "202610",
+        "currentIndex": "337.476",
+        "priorIndex": "336.298",
+        "ifindMom": "0.4",
+        "derivedMom": "0.350284569042932161356891800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202602",
+        "currentIndex": "333.512",
+        "priorIndex": "332.793",
+        "ifindMom": "0.2",
+        "derivedMom": "0.216050217402409305484189900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202603",
+        "currentIndex": "334.165",
+        "priorIndex": "333.512",
+        "ifindMom": "0.2",
+        "derivedMom": "0.195795053851135791215908300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202604",
+        "currentIndex": "335.423",
+        "priorIndex": "334.165",
+        "ifindMom": "0.4",
+        "derivedMom": "0.376460730477458740442595700",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202605",
+        "currentIndex": "336.121",
+        "priorIndex": "335.423",
+        "ifindMom": "0.2",
+        "derivedMom": "0.208095449626292770620977100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202606",
+        "currentIndex": "336.065",
+        "priorIndex": "336.121",
+        "ifindMom": "0.0",
+        "derivedMom": "-0.0166606668431903986957078000",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202607",
+        "currentIndex": "336.789",
+        "priorIndex": "336.065",
+        "ifindMom": "0.2",
+        "derivedMom": "0.215434514156487584247095100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202608",
+        "currentIndex": "337.765",
+        "priorIndex": "336.789",
+        "ifindMom": "0.3",
+        "derivedMom": "0.289795688101452244580434600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202609",
+        "currentIndex": "338.896",
+        "priorIndex": "337.765",
+        "ifindMom": "0.3",
+        "derivedMom": "0.334848193270469113140793200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "core_cpi_mom",
+        "blsCode": "CUSR0000SA0L1E",
+        "period": "202610",
+        "currentIndex": "339.900",
+        "priorIndex": "338.896",
+        "ifindMom": "0.3",
+        "derivedMom": "0.296256078560974458240876300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202602",
+        "currentIndex": "346.622",
+        "priorIndex": "345.271",
+        "ifindMom": "0.4",
+        "derivedMom": "0.391286844246982804811293200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202603",
+        "currentIndex": "346.603",
+        "priorIndex": "346.622",
+        "ifindMom": "0.0",
+        "derivedMom": "-0.0054814754978045248137740800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202604",
+        "currentIndex": "348.349",
+        "priorIndex": "346.603",
+        "ifindMom": "0.5",
+        "derivedMom": "0.503746361110550110645320400",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202605",
+        "currentIndex": "348.892",
+        "priorIndex": "348.349",
+        "ifindMom": "0.2",
+        "derivedMom": "0.155878156676206907440526600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202606",
+        "currentIndex": "349.609",
+        "priorIndex": "348.892",
+        "ifindMom": "0.2",
+        "derivedMom": "0.205507721587196037742338600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202607",
+        "currentIndex": "349.881",
+        "priorIndex": "349.609",
+        "ifindMom": "0.1",
+        "derivedMom": "0.077801200770003060561942100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202608",
+        "currentIndex": "350.309",
+        "priorIndex": "349.881",
+        "ifindMom": "0.1",
+        "derivedMom": "0.122327305569607952418107900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202609",
+        "currentIndex": "350.477",
+        "priorIndex": "350.309",
+        "ifindMom": "0.0",
+        "derivedMom": "0.047957660237104955910353400",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_food_mom",
+        "blsCode": "CUSR0000SAF1",
+        "period": "202610",
+        "currentIndex": "352.134",
+        "priorIndex": "350.477",
+        "ifindMom": "0.5",
+        "derivedMom": "0.472784234058155028718004300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202602",
+        "currentIndex": "283.223",
+        "priorIndex": "281.436",
+        "ifindMom": "0.6",
+        "derivedMom": "0.634957858980372091701132800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202603",
+        "currentIndex": "314.019",
+        "priorIndex": "283.223",
+        "ifindMom": "10.9",
+        "derivedMom": "10.87341070463910063801315570",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202604",
+        "currentIndex": "325.978",
+        "priorIndex": "314.019",
+        "ifindMom": "3.8",
+        "derivedMom": "3.808368283447816851846544300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202605",
+        "currentIndex": "338.639",
+        "priorIndex": "325.978",
+        "ifindMom": "3.9",
+        "derivedMom": "3.884004442017559467203308200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202606",
+        "currentIndex": "319.290",
+        "priorIndex": "338.639",
+        "ifindMom": "-5.7",
+        "derivedMom": "-5.713754174799712968677559290",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202607",
+        "currentIndex": "314.553",
+        "priorIndex": "319.290",
+        "ifindMom": "-1.5",
+        "derivedMom": "-1.483604246922860095837639760",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202608",
+        "currentIndex": "321.148",
+        "priorIndex": "314.553",
+        "ifindMom": "2.1",
+        "derivedMom": "2.096626005792346599778097800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202609",
+        "currentIndex": "337.834",
+        "priorIndex": "321.148",
+        "ifindMom": "5.2",
+        "derivedMom": "5.195735299612639655236837800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_energy_mom",
+        "blsCode": "CUSR0000SA0E",
+        "period": "202610",
+        "currentIndex": "340.197",
+        "priorIndex": "337.834",
+        "ifindMom": "0.7",
+        "derivedMom": "0.699455945819544510025633900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202602",
+        "currentIndex": "167.530",
+        "priorIndex": "167.394",
+        "ifindMom": "0.1",
+        "derivedMom": "0.081245444878550007766108700",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202603",
+        "currentIndex": "167.710",
+        "priorIndex": "167.530",
+        "ifindMom": "0.1",
+        "derivedMom": "0.107443442965439025846117100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202604",
+        "currentIndex": "167.767",
+        "priorIndex": "167.710",
+        "ifindMom": "0.0",
+        "derivedMom": "0.033987239878361457277443200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202605",
+        "currentIndex": "167.575",
+        "priorIndex": "167.767",
+        "ifindMom": "-0.1",
+        "derivedMom": "-0.1144444378215024408852754100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202606",
+        "currentIndex": "167.431",
+        "priorIndex": "167.575",
+        "ifindMom": "-0.1",
+        "derivedMom": "-0.0859316723854990302849470400",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202607",
+        "currentIndex": "167.762",
+        "priorIndex": "167.431",
+        "ifindMom": "0.2",
+        "derivedMom": "0.197693378167722823133111600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202608",
+        "currentIndex": "167.939",
+        "priorIndex": "167.762",
+        "ifindMom": "0.1",
+        "derivedMom": "0.105506610555429715907058800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202609",
+        "currentIndex": "168.361",
+        "priorIndex": "167.939",
+        "ifindMom": "0.3",
+        "derivedMom": "0.251281715384752797146583000",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_goods_mom",
+        "blsCode": "CUSR0000SACL1E",
+        "period": "202610",
+        "currentIndex": "168.631",
+        "priorIndex": "168.361",
+        "ifindMom": "0.2",
+        "derivedMom": "0.160369681814672044000689000",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202602",
+        "currentIndex": "439.959",
+        "priorIndex": "438.784",
+        "ifindMom": "0.3",
+        "derivedMom": "0.267785516336056009334889100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202603",
+        "currentIndex": "440.951",
+        "priorIndex": "439.959",
+        "ifindMom": "0.2",
+        "derivedMom": "0.225475555676778972586081900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202604",
+        "currentIndex": "443.154",
+        "priorIndex": "440.951",
+        "ifindMom": "0.5",
+        "derivedMom": "0.499601996593725833482631900",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202605",
+        "currentIndex": "444.460",
+        "priorIndex": "443.154",
+        "ifindMom": "0.3",
+        "derivedMom": "0.294705677935886847461604800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202606",
+        "currentIndex": "444.602",
+        "priorIndex": "444.460",
+        "ifindMom": "0.0",
+        "derivedMom": "0.031948881789137380191693300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202607",
+        "currentIndex": "445.616",
+        "priorIndex": "444.602",
+        "ifindMom": "0.2",
+        "derivedMom": "0.228069149486507033256710500",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202608",
+        "currentIndex": "447.075",
+        "priorIndex": "445.616",
+        "ifindMom": "0.3",
+        "derivedMom": "0.327411942120570177013392700",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202609",
+        "currentIndex": "448.723",
+        "priorIndex": "447.075",
+        "ifindMom": "0.4",
+        "derivedMom": "0.368618240787339931778784300",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_services_mom",
+        "blsCode": "CUSR0000SASLE",
+        "period": "202610",
+        "currentIndex": "450.247",
+        "priorIndex": "448.723",
+        "ifindMom": "0.3",
+        "derivedMom": "0.339630462445651326096500500",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202602",
+        "currentIndex": "422.942",
+        "priorIndex": "421.965",
+        "ifindMom": "0.2",
+        "derivedMom": "0.231535790883130117426800800",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202603",
+        "currentIndex": "424.069",
+        "priorIndex": "422.942",
+        "ifindMom": "0.3",
+        "derivedMom": "0.266466796865764100042086100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202604",
+        "currentIndex": "426.642",
+        "priorIndex": "424.069",
+        "ifindMom": "0.6",
+        "derivedMom": "0.606740884148570161931195200",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202605",
+        "currentIndex": "427.998",
+        "priorIndex": "426.642",
+        "ifindMom": "0.3",
+        "derivedMom": "0.317830874597437664364971100",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202606",
+        "currentIndex": "428.501",
+        "priorIndex": "427.998",
+        "ifindMom": "0.1",
+        "derivedMom": "0.117523913663147958635320700",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202607",
+        "currentIndex": "429.095",
+        "priorIndex": "428.501",
+        "ifindMom": "0.1",
+        "derivedMom": "0.138622780343569793302699400",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202608",
+        "currentIndex": "430.227",
+        "priorIndex": "429.095",
+        "ifindMom": "0.3",
+        "derivedMom": "0.263811044174366981670725600",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202609",
+        "currentIndex": "431.908",
+        "priorIndex": "430.227",
+        "ifindMom": "0.4",
+        "derivedMom": "0.390723966650163750764131500",
+        "compatibleWithPublishedRounding": true
+      },
+      {
+        "key": "cpi_housing_mom",
+        "blsCode": "CUSR0000SAH1",
+        "period": "202610",
+        "currentIndex": "433.224",
+        "priorIndex": "431.908",
+        "ifindMom": "0.3",
+        "derivedMom": "0.304694518277040480843142500",
+        "compatibleWithPublishedRounding": true
+      }
+    ]
+  },
+  "releaseStatus": {
+    "cpiMom": 0.4,
+    "coreCpiMom": 0.3,
+    "cpiYoy": null,
+    "coreCpiYoy": null,
+    "period": "202610",
+    "pcePeriod": "202609",
+    "latestYoyPeriods": {
+      "cpiYoy": "202609",
+      "coreCpiYoy": "202609"
+    },
+    "missingYoyReason": "prior-year-base-unavailable",
+    "cpiMomCode": "G005464034",
+    "coreCpiMomCode": "G005464040",
+    "cpiMomSource": {
+      "code": "G005464034",
+      "name": "美国:CPI:季调:当月环比",
+      "seasonalAdjustment": "SA",
+      "provider": "iFinD EDB",
+      "institution": "美国劳工局",
+      "unit": "%",
+      "rawUnit": "%",
+      "frequency": "月"
+    },
+    "coreCpiMomSource": {
+      "code": "G005464040",
+      "name": "美国:核心CPI(不含食物、能源):季调:当月环比",
+      "seasonalAdjustment": "SA",
+      "provider": "iFinD EDB",
+      "institution": "美国劳工局",
+      "unit": "%",
+      "rawUnit": "%",
+      "frequency": "月"
+    },
+    "officialExplanationUrl": "https://www.bls.gov/cpi/additional-resources/2025-federal-government-shutdown-impact-cpi-faq.htm"
+  },
+  "cpiAudit": {
+    "checkedAt": "2026-11-14T15:25:42.092617+00:00",
+    "baseGeneratedAt": "2026-11-12T11:14:09+00:00",
+    "classificationCounts": {
+      "total": 24,
+      "SA": 22,
+      "NSA": 2
+    },
+    "heatmapCounts": {
+      "total": 23,
+      "SA": 21,
+      "NSA": 2
+    }
+  },
+  "heatmapSlice": {
+    "title": "CPI分项温度表",
+    "description": "展示23个总量与细分项目（源分类21 SA、2 NSA）；月份取同比与环比的并集，缺值留空。2026-10官方例外核对：外出就餐、杂项个人服务（Miscellaneous personal services）未季调；两行完整历史使用各自普通源/未季调原值。",
+    "periods": [
+      "202610",
+      "202609"
+    ],
+    "rows": [
+      {
+        "id": "cpi_yoy",
+        "label": "所有项目",
+        "group": "总量",
+        "depth": 0,
+        "weight": 100.0,
+        "yoy": [
+          null,
+          3.7
+        ],
+        "mom": [
+          0.4,
+          0.6
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G002600362",
+          "yoyCode": "G002600362",
+          "momCode": "G005464034",
+          "momName": "美国:CPI:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": null
+      },
+      {
+        "id": "cpi_food_yoy",
+        "label": "食品",
+        "group": "食品",
+        "depth": 0,
+        "weight": 13.45,
+        "yoy": [
+          null,
+          2.5
+        ],
+        "mom": [
+          0.5,
+          0.0
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754697",
+          "yoyCode": "G004754697",
+          "momCode": "G005464062",
+          "momName": "美国:CPI:食品和饮料:食品:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "food_home_yoy",
+        "label": "家庭食品",
+        "group": "食品",
+        "depth": 1,
+        "weight": 8.16,
+        "yoy": [
+          null,
+          1.8
+        ],
+        "mom": [
+          0.4,
+          -0.1
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754698",
+          "yoyCode": "G004754698",
+          "momCode": "G004764993",
+          "momName": "美国:CPI:食品:家庭食品:季调:环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "food_away_yoy",
+        "label": "外出就餐",
+        "group": "食品",
+        "depth": 1,
+        "weight": 5.29,
+        "yoy": [
+          null,
+          3.5
+        ],
+        "mom": [
+          0.5,
+          0.2
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419489",
+          "yoyCode": "G005419489",
+          "momCode": "G005464519",
+          "momName": "美国:CPI:家庭外就餐:当月环比",
+          "momAdjustment": "NSA",
+          "mom": {
+            "code": "G005464519",
+            "name": "美国:CPI:家庭外就餐:当月环比",
+            "seasonalAdjustment": "NSA",
+            "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+            "entityAlias": "Food away from home",
+            "blsSeries": "CUUR0000SEFV",
+            "provider": "iFinD EDB",
+            "institution": "美国劳工局",
+            "unit": "%",
+            "rawUnit": "%",
+            "frequency": "月"
+          }
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "cpi_energy_yoy",
+        "label": "能源",
+        "group": "能源",
+        "depth": 0,
+        "weight": 7.65,
+        "yoy": [
+          null,
+          20.4
+        ],
+        "mom": [
+          0.7,
+          5.2
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G002600364",
+          "yoyCode": "G002600364",
+          "momCode": "G005464035",
+          "momName": "美国:CPI:能源:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "energy_goods_yoy",
+        "label": "能源商品",
+        "group": "能源",
+        "depth": 1,
+        "weight": 4.4,
+        "yoy": [
+          null,
+          35.3
+        ],
+        "mom": [
+          0.8,
+          9.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754819",
+          "yoyCode": "G004754819",
+          "momCode": "G004765114",
+          "momName": "美国:CPI:能源:能源商品:季调:环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "energy_services_yoy",
+        "label": "能源服务",
+        "group": "能源",
+        "depth": 1,
+        "weight": 3.25,
+        "yoy": [
+          null,
+          4.6
+        ],
+        "mom": [
+          0.6,
+          0.1
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419525",
+          "yoyCode": "G005419525",
+          "momCode": "G005464228",
+          "momName": "美国:CPI:能源服务:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "electricity_yoy",
+        "label": "电力",
+        "group": "能源",
+        "depth": 2,
+        "weight": 2.51,
+        "yoy": [
+          null,
+          4.4
+        ],
+        "mom": [
+          0.9,
+          0.2
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419526",
+          "yoyCode": "G005419526",
+          "momCode": "G005464229",
+          "momName": "美国:CPI:能源服务:电力:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "utility_gas_yoy",
+        "label": "管道燃气",
+        "group": "能源",
+        "depth": 2,
+        "weight": 0.73,
+        "yoy": [
+          null,
+          5.0
+        ],
+        "mom": [
+          -0.8,
+          -0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419527",
+          "yoyCode": "G005419527",
+          "momCode": "G005464230",
+          "momName": "美国:CPI:能源服务:公用燃气(管道):季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "cpi_goods_yoy",
+        "label": "核心商品",
+        "group": "核心商品",
+        "depth": 0,
+        "weight": 18.81,
+        "yoy": [
+          null,
+          0.7
+        ],
+        "mom": [
+          0.2,
+          0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754833",
+          "yoyCode": "G004754833",
+          "momCode": "G005464052",
+          "momName": "美国:CPI:商品:不含食物和能源:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "apparel_yoy",
+        "label": "服饰",
+        "group": "核心商品",
+        "depth": 1,
+        "weight": 2.49,
+        "yoy": [
+          null,
+          3.4
+        ],
+        "mom": [
+          0.1,
+          0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G002600368",
+          "yoyCode": "G002600368",
+          "momCode": "G005464045",
+          "momName": "美国:CPI:服饰:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "edu_goods_yoy",
+        "label": "教育通信商品",
+        "group": "核心商品",
+        "depth": 1,
+        "weight": 0.79,
+        "yoy": [
+          null,
+          -2.6
+        ],
+        "mom": [
+          0.5,
+          0.9
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419343",
+          "yoyCode": "G005419343",
+          "momCode": "G005464059",
+          "momName": "美国:CPI:教育和通信:商品:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "other_goods_yoy",
+        "label": "其他商品",
+        "group": "核心商品",
+        "depth": 1,
+        "weight": 1.3,
+        "yoy": [
+          null,
+          3.7
+        ],
+        "mom": [
+          0.3,
+          0.1
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419356",
+          "yoyCode": "G005419356",
+          "momCode": "G005464075",
+          "momName": "美国:CPI:其他商品和服务:商品:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "cpi_services_yoy",
+        "label": "核心服务",
+        "group": "核心服务",
+        "depth": 0,
+        "weight": 60.1,
+        "yoy": [
+          null,
+          3.1
+        ],
+        "mom": [
+          0.3,
+          0.4
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754950",
+          "yoyCode": "G004754950",
+          "momCode": "G005464101",
+          "momName": "美国:CPI:服务:不含能源:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "cpi_housing_yoy",
+        "label": "住房",
+        "group": "核心服务",
+        "depth": 1,
+        "weight": 35.26,
+        "yoy": [
+          null,
+          3.3
+        ],
+        "mom": [
+          0.3,
+          0.4
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004765751",
+          "yoyCode": "G004765751",
+          "momCode": "G005464077",
+          "momName": "美国:CPI:房屋:住所:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260228"
+      },
+      {
+        "id": "rent_yoy",
+        "label": "主要住所租金",
+        "group": "核心服务",
+        "depth": 2,
+        "weight": 7.71,
+        "yoy": [
+          null,
+          2.8
+        ],
+        "mom": [
+          0.2,
+          0.2
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419515",
+          "yoyCode": "G005419515",
+          "momCode": "G005464219",
+          "momName": "美国:CPI:主要住所租金:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "oer_yoy",
+        "label": "业主等价租金",
+        "group": "核心服务",
+        "depth": 2,
+        "weight": 26.1,
+        "yoy": [
+          null,
+          3.3
+        ],
+        "mom": [
+          0.3,
+          0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754958",
+          "yoyCode": "G004754958",
+          "momCode": "G004765253",
+          "momName": "美国:CPI:服务(不含能源):住所:房租:业主等价租金:业主主要居所等价租金:季调:环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260228"
+      },
+      {
+        "id": "medical_services_yoy",
+        "label": "医疗服务",
+        "group": "核心服务",
+        "depth": 1,
+        "weight": 6.81,
+        "yoy": [
+          null,
+          1.5
+        ],
+        "mom": [
+          0.3,
+          0.1
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G002600370",
+          "yoyCode": "G002600370",
+          "momCode": "G005464082",
+          "momName": "美国:CPI:医疗服务:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "transport_services_yoy",
+        "label": "运输服务",
+        "group": "核心服务",
+        "depth": 1,
+        "weight": 6.26,
+        "yoy": [
+          null,
+          2.7
+        ],
+        "mom": [
+          0.8,
+          0.6
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004754981",
+          "yoyCode": "G004754981",
+          "momCode": "G004765276",
+          "momName": "美国:CPI:服务(不含能源):住所:运输服务:季调:环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "airfare_yoy",
+        "label": "机票",
+        "group": "核心服务",
+        "depth": 2,
+        "weight": 1.05,
+        "yoy": [
+          null,
+          22.4
+        ],
+        "mom": [
+          0.4,
+          1.2
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419622",
+          "yoyCode": "G005419622",
+          "momCode": "G005464299",
+          "momName": "美国:CPI:公共交通:机票:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "edu_services_yoy",
+        "label": "教育通信服务",
+        "group": "核心服务",
+        "depth": 1,
+        "weight": 5.01,
+        "yoy": [
+          null,
+          3.1
+        ],
+        "mom": [
+          0.0,
+          0.0
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G004755020",
+          "yoyCode": "G004755020",
+          "momCode": "G004765315",
+          "momName": "美国:CPI:服务(不含能源):教育和通信服务:季调:环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "personal_services_yoy",
+        "label": "杂项个人服务",
+        "group": "核心服务",
+        "depth": 1,
+        "weight": 0.93,
+        "yoy": [
+          null,
+          5.1
+        ],
+        "mom": [
+          -0.1,
+          0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419508",
+          "yoyCode": "G005419508",
+          "momCode": "G005464538",
+          "momName": "美国:CPI:其他个人服务:当月环比",
+          "momAdjustment": "NSA",
+          "mom": {
+            "code": "G005464538",
+            "name": "美国:CPI:其他个人服务:当月环比",
+            "seasonalAdjustment": "NSA",
+            "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+            "entityAlias": "Miscellaneous personal services",
+            "blsSeries": "CUUR0000SEGD",
+            "provider": "iFinD EDB",
+            "institution": "美国劳工局",
+            "unit": "%",
+            "rawUnit": "%",
+            "frequency": "月"
+          }
+        },
+        "weightDate": "20260930"
+      },
+      {
+        "id": "cpi_supercore_yoy",
+        "label": "超级核心服务",
+        "group": "超级核心",
+        "depth": 0,
+        "weight": 28.39,
+        "yoy": [
+          null,
+          3.2
+        ],
+        "mom": [
+          0.5,
+          0.3
+        ],
+        "source": {
+          "provider": "iFinD EDB",
+          "code": "G005419378",
+          "yoyCode": "G005419378",
+          "momCode": "G005464099",
+          "momName": "美国:CPI:服务:不含住房租金:季调:当月环比",
+          "momAdjustment": "SA"
+        },
+        "weightDate": "20260930"
+      }
+    ],
+    "history": {
+      "periods": [
+        "202610",
+        "202609"
+      ],
+      "rows": [
+        {
+          "id": "cpi_yoy",
+          "label": "所有项目",
+          "group": "总量",
+          "depth": 0,
+          "weight": 100.0,
+          "yoy": [
+            null,
+            3.7
+          ],
+          "mom": [
+            0.4,
+            0.6
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G002600362",
+            "yoyCode": "G002600362",
+            "momCode": "G005464034",
+            "momName": "美国:CPI:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": null
+        },
+        {
+          "id": "cpi_food_yoy",
+          "label": "食品",
+          "group": "食品",
+          "depth": 0,
+          "weight": 13.45,
+          "yoy": [
+            null,
+            2.5
+          ],
+          "mom": [
+            0.5,
+            0.0
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754697",
+            "yoyCode": "G004754697",
+            "momCode": "G005464062",
+            "momName": "美国:CPI:食品和饮料:食品:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "food_home_yoy",
+          "label": "家庭食品",
+          "group": "食品",
+          "depth": 1,
+          "weight": 8.16,
+          "yoy": [
+            null,
+            1.8
+          ],
+          "mom": [
+            0.4,
+            -0.1
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754698",
+            "yoyCode": "G004754698",
+            "momCode": "G004764993",
+            "momName": "美国:CPI:食品:家庭食品:季调:环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "food_away_yoy",
+          "label": "外出就餐",
+          "group": "食品",
+          "depth": 1,
+          "weight": 5.29,
+          "yoy": [
+            null,
+            3.5
+          ],
+          "mom": [
+            0.5,
+            0.2
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419489",
+            "yoyCode": "G005419489",
+            "momCode": "G005464519",
+            "momName": "美国:CPI:家庭外就餐:当月环比",
+            "momAdjustment": "NSA",
+            "mom": {
+              "code": "G005464519",
+              "name": "美国:CPI:家庭外就餐:当月环比",
+              "seasonalAdjustment": "NSA",
+              "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+              "entityAlias": "Food away from home",
+              "blsSeries": "CUUR0000SEFV",
+              "provider": "iFinD EDB",
+              "institution": "美国劳工局",
+              "unit": "%",
+              "rawUnit": "%",
+              "frequency": "月"
+            }
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "cpi_energy_yoy",
+          "label": "能源",
+          "group": "能源",
+          "depth": 0,
+          "weight": 7.65,
+          "yoy": [
+            null,
+            20.4
+          ],
+          "mom": [
+            0.7,
+            5.2
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G002600364",
+            "yoyCode": "G002600364",
+            "momCode": "G005464035",
+            "momName": "美国:CPI:能源:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "energy_goods_yoy",
+          "label": "能源商品",
+          "group": "能源",
+          "depth": 1,
+          "weight": 4.4,
+          "yoy": [
+            null,
+            35.3
+          ],
+          "mom": [
+            0.8,
+            9.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754819",
+            "yoyCode": "G004754819",
+            "momCode": "G004765114",
+            "momName": "美国:CPI:能源:能源商品:季调:环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "energy_services_yoy",
+          "label": "能源服务",
+          "group": "能源",
+          "depth": 1,
+          "weight": 3.25,
+          "yoy": [
+            null,
+            4.6
+          ],
+          "mom": [
+            0.6,
+            0.1
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419525",
+            "yoyCode": "G005419525",
+            "momCode": "G005464228",
+            "momName": "美国:CPI:能源服务:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "electricity_yoy",
+          "label": "电力",
+          "group": "能源",
+          "depth": 2,
+          "weight": 2.51,
+          "yoy": [
+            null,
+            4.4
+          ],
+          "mom": [
+            0.9,
+            0.2
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419526",
+            "yoyCode": "G005419526",
+            "momCode": "G005464229",
+            "momName": "美国:CPI:能源服务:电力:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "utility_gas_yoy",
+          "label": "管道燃气",
+          "group": "能源",
+          "depth": 2,
+          "weight": 0.73,
+          "yoy": [
+            null,
+            5.0
+          ],
+          "mom": [
+            -0.8,
+            -0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419527",
+            "yoyCode": "G005419527",
+            "momCode": "G005464230",
+            "momName": "美国:CPI:能源服务:公用燃气(管道):季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "cpi_goods_yoy",
+          "label": "核心商品",
+          "group": "核心商品",
+          "depth": 0,
+          "weight": 18.81,
+          "yoy": [
+            null,
+            0.7
+          ],
+          "mom": [
+            0.2,
+            0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754833",
+            "yoyCode": "G004754833",
+            "momCode": "G005464052",
+            "momName": "美国:CPI:商品:不含食物和能源:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "apparel_yoy",
+          "label": "服饰",
+          "group": "核心商品",
+          "depth": 1,
+          "weight": 2.49,
+          "yoy": [
+            null,
+            3.4
+          ],
+          "mom": [
+            0.1,
+            0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G002600368",
+            "yoyCode": "G002600368",
+            "momCode": "G005464045",
+            "momName": "美国:CPI:服饰:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "edu_goods_yoy",
+          "label": "教育通信商品",
+          "group": "核心商品",
+          "depth": 1,
+          "weight": 0.79,
+          "yoy": [
+            null,
+            -2.6
+          ],
+          "mom": [
+            0.5,
+            0.9
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419343",
+            "yoyCode": "G005419343",
+            "momCode": "G005464059",
+            "momName": "美国:CPI:教育和通信:商品:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "other_goods_yoy",
+          "label": "其他商品",
+          "group": "核心商品",
+          "depth": 1,
+          "weight": 1.3,
+          "yoy": [
+            null,
+            3.7
+          ],
+          "mom": [
+            0.3,
+            0.1
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419356",
+            "yoyCode": "G005419356",
+            "momCode": "G005464075",
+            "momName": "美国:CPI:其他商品和服务:商品:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "cpi_services_yoy",
+          "label": "核心服务",
+          "group": "核心服务",
+          "depth": 0,
+          "weight": 60.1,
+          "yoy": [
+            null,
+            3.1
+          ],
+          "mom": [
+            0.3,
+            0.4
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754950",
+            "yoyCode": "G004754950",
+            "momCode": "G005464101",
+            "momName": "美国:CPI:服务:不含能源:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "cpi_housing_yoy",
+          "label": "住房",
+          "group": "核心服务",
+          "depth": 1,
+          "weight": 35.26,
+          "yoy": [
+            null,
+            3.3
+          ],
+          "mom": [
+            0.3,
+            0.4
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004765751",
+            "yoyCode": "G004765751",
+            "momCode": "G005464077",
+            "momName": "美国:CPI:房屋:住所:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260228"
+        },
+        {
+          "id": "rent_yoy",
+          "label": "主要住所租金",
+          "group": "核心服务",
+          "depth": 2,
+          "weight": 7.71,
+          "yoy": [
+            null,
+            2.8
+          ],
+          "mom": [
+            0.2,
+            0.2
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419515",
+            "yoyCode": "G005419515",
+            "momCode": "G005464219",
+            "momName": "美国:CPI:主要住所租金:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "oer_yoy",
+          "label": "业主等价租金",
+          "group": "核心服务",
+          "depth": 2,
+          "weight": 26.1,
+          "yoy": [
+            null,
+            3.3
+          ],
+          "mom": [
+            0.3,
+            0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754958",
+            "yoyCode": "G004754958",
+            "momCode": "G004765253",
+            "momName": "美国:CPI:服务(不含能源):住所:房租:业主等价租金:业主主要居所等价租金:季调:环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260228"
+        },
+        {
+          "id": "medical_services_yoy",
+          "label": "医疗服务",
+          "group": "核心服务",
+          "depth": 1,
+          "weight": 6.81,
+          "yoy": [
+            null,
+            1.5
+          ],
+          "mom": [
+            0.3,
+            0.1
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G002600370",
+            "yoyCode": "G002600370",
+            "momCode": "G005464082",
+            "momName": "美国:CPI:医疗服务:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "transport_services_yoy",
+          "label": "运输服务",
+          "group": "核心服务",
+          "depth": 1,
+          "weight": 6.26,
+          "yoy": [
+            null,
+            2.7
+          ],
+          "mom": [
+            0.8,
+            0.6
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004754981",
+            "yoyCode": "G004754981",
+            "momCode": "G004765276",
+            "momName": "美国:CPI:服务(不含能源):住所:运输服务:季调:环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "airfare_yoy",
+          "label": "机票",
+          "group": "核心服务",
+          "depth": 2,
+          "weight": 1.05,
+          "yoy": [
+            null,
+            22.4
+          ],
+          "mom": [
+            0.4,
+            1.2
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419622",
+            "yoyCode": "G005419622",
+            "momCode": "G005464299",
+            "momName": "美国:CPI:公共交通:机票:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "edu_services_yoy",
+          "label": "教育通信服务",
+          "group": "核心服务",
+          "depth": 1,
+          "weight": 5.01,
+          "yoy": [
+            null,
+            3.1
+          ],
+          "mom": [
+            0.0,
+            0.0
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G004755020",
+            "yoyCode": "G004755020",
+            "momCode": "G004765315",
+            "momName": "美国:CPI:服务(不含能源):教育和通信服务:季调:环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "personal_services_yoy",
+          "label": "杂项个人服务",
+          "group": "核心服务",
+          "depth": 1,
+          "weight": 0.93,
+          "yoy": [
+            null,
+            5.1
+          ],
+          "mom": [
+            -0.1,
+            0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419508",
+            "yoyCode": "G005419508",
+            "momCode": "G005464538",
+            "momName": "美国:CPI:其他个人服务:当月环比",
+            "momAdjustment": "NSA",
+            "mom": {
+              "code": "G005464538",
+              "name": "美国:CPI:其他个人服务:当月环比",
+              "seasonalAdjustment": "NSA",
+              "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+              "entityAlias": "Miscellaneous personal services",
+              "blsSeries": "CUUR0000SEGD",
+              "provider": "iFinD EDB",
+              "institution": "美国劳工局",
+              "unit": "%",
+              "rawUnit": "%",
+              "frequency": "月"
+            }
+          },
+          "weightDate": "20260930"
+        },
+        {
+          "id": "cpi_supercore_yoy",
+          "label": "超级核心服务",
+          "group": "超级核心",
+          "depth": 0,
+          "weight": 28.39,
+          "yoy": [
+            null,
+            3.2
+          ],
+          "mom": [
+            0.5,
+            0.3
+          ],
+          "source": {
+            "provider": "iFinD EDB",
+            "code": "G005419378",
+            "yoyCode": "G005419378",
+            "momCode": "G005464099",
+            "momName": "美国:CPI:服务:不含住房租金:季调:当月环比",
+            "momAdjustment": "SA"
+          },
+          "weightDate": "20260930"
+        }
+      ],
+      "note": "真实源的2026年9—10月测试切片，不代表全历史。 2026-10官方例外核对；两行完整历史使用各自单一普通环比源/未季调原值；该月NSA脚注不外推至所有历史发布版本或未来发布。"
+    },
+    "source": {
+      "provider": "iFinD EDB",
+      "route": "https://ft.51ifind.com"
+    }
+  }
+}

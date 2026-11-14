@@ -35,7 +35,8 @@ jobs:
       - name: Public successor contract unit tests
         run: |
           python -B -m unittest discover -s scripts -p 'test_macro_refresh_v2_snapshot.py' -v
-          python -B -m unittest discover -s scripts -p 'test_verify_macro_refresh_v2_publish.py' -v
+          python -S -B -m unittest discover -s scripts -p 'test_cpi_correction_snapshot.py' -v
+          python -S -B -m unittest discover -s scripts -p 'test_verify_cpi_correction_publish.py' -v
       - name: Save validation evidence and candidate build
         if: always()
         uses: actions/upload-artifact@v4

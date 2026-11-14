@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "cpi-seasonality-02",
+  "measure": "monthly percent change",
+  "adjustment": "SA-except-registered-NSA",
+  "defaultAdjustment": "SA",
+  "counts": {"total": 24, "SA": 22, "NSA": 2},
+  "nsaExceptions": {
+    "food_away_mom": {
+      "code": "G005464519",
+      "name": "美国:CPI:家庭外就餐:当月环比",
+      "seasonalAdjustment": "NSA",
+      "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+      "entityAlias": "Food away from home",
+      "blsSeries": "CUUR0000SEFV"
+    },
+    "personal_services_mom": {
+      "code": "G005464538",
+      "name": "美国:CPI:其他个人服务:当月环比",
+      "seasonalAdjustment": "NSA",
+      "adjustmentBasis": "BLS-202610-footnote-1; single-ordinary-source-history",
+      "entityAlias": "Miscellaneous personal services",
+      "blsSeries": "CUUR0000SEGD"
+    }
+  },
+  "historyPolicy": "2026-10官方例外核对：两项BLS未季调；完整历史始终采用各自单一普通环比源/未季调原值，不拼接旧SA源；该月脚注不外推至所有历史发布版本或未来发布。源取得时间不等于未来官方状态已经重新核实。英文实体别名与供应商原名分列。",
+  "source": "iFinD metadata; US Bureau of Labor Statistics",
+  "series": {
+    "cpi_mom": {
+      "code": "G005464034",
+      "name": "美国:CPI:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_food_mom": {
+      "code": "G005464062",
+      "name": "美国:CPI:食品和饮料:食品:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "food_home_mom": {
+      "code": "G004764993",
+      "name": "美国:CPI:食品:家庭食品:季调:环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "food_away_mom": {
+      "code": "G005464519",
+      "name": "美国:CPI:家庭外就餐:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_energy_mom": {
+      "code": "G005464035",
+      "name": "美国:CPI:能源:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "energy_goods_mom": {
+      "code": "G004765114",
+      "name": "美国:CPI:能源:能源商品:季调:环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "energy_services_mom": {
+      "code": "G005464228",
+      "name": "美国:CPI:能源服务:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "electricity_mom": {
+      "code": "G005464229",
+      "name": "美国:CPI:能源服务:电力:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "utility_gas_mom": {
+      "code": "G005464230",
+      "name": "美国:CPI:能源服务:公用燃气(管道):季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_goods_mom": {
+      "code": "G005464052",
+      "name": "美国:CPI:商品:不含食物和能源:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "apparel_mom": {
+      "code": "G005464045",
+      "name": "美国:CPI:服饰:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "edu_goods_mom": {
+      "code": "G005464059",
+      "name": "美国:CPI:教育和通信:商品:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "other_goods_mom": {
+      "code": "G005464075",
+      "name": "美国:CPI:其他商品和服务:商品:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_services_mom": {
+      "code": "G005464101",
+      "name": "美国:CPI:服务:不含能源:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_housing_mom": {
+      "code": "G005464077",
+      "name": "美国:CPI:房屋:住所:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "rent_mom": {
+      "code": "G005464219",
+      "name": "美国:CPI:主要住所租金:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "oer_mom": {
+      "code": "G004765253",
+      "name": "美国:CPI:服务(不含能源):住所:房租:业主等价租金:业主主要居所等价租金:季调:环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "medical_services_mom": {
+      "code": "G005464082",
+      "name": "美国:CPI:医疗服务:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "transport_services_mom": {
+      "code": "G004765276",
+      "name": "美国:CPI:服务(不含能源):住所:运输服务:季调:环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "airfare_mom": {
+      "code": "G005464299",
+      "name": "美国:CPI:公共交通:机票:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "edu_services_mom": {
+      "code": "G004765315",
+      "name": "美国:CPI:服务(不含能源):教育和通信服务:季调:环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "personal_services_mom": {
+      "code": "G005464538",
+      "name": "美国:CPI:其他个人服务:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "cpi_supercore_mom": {
+      "code": "G005464099",
+      "name": "美国:CPI:服务:不含住房租金:季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    },
+    "core_cpi_mom": {
+      "code": "G005464040",
+      "name": "美国:核心CPI(不含食物、能源):季调:当月环比",
+      "unit": "%",
+      "frequency": "月",
+      "datasource": "美国劳工局"
+    }
+  }
+}

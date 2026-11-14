@@ -29,6 +29,7 @@ type ChartSeries = {
   latestValue: number
   latestObservation: string
   defaultActive?: boolean
+  diagnosticOnly?: boolean
   dash?: string
   displayDateShiftMonths?: number
   observationCoverageEnd?: string
@@ -46,6 +47,7 @@ type ChartDefinition = {
   defaultRange: RangeKey
   series: ChartSeries[]
   totalSeries?: ChartSeries
+  reconciliation?: { note: string; latest: { period: string; residual: number; withinRoundingBudget: boolean } }
   formula?: string
   caveat?: string
   availability?: string
@@ -57,9 +59,9 @@ type DetailRow = {
   depth: number
   nature: string
   observation: string
-  yoy: number
-  yoyChange: number
-  mom: number
+  yoy: number | null
+  yoyChange: number | null
+  mom: number | null
   source: SourceMeta
 }
 
@@ -89,7 +91,7 @@ type HeatmapRow = {
   weightDate?: string | null
   yoy: Array<number | null>
   mom: Array<number | null>
-  source: { provider: string; code: string }
+  source: { provider: string; code: string; momCode: string; momName: string; momAdjustment: string; mom?: { entityAlias?: string } }
 }
 
 type InflationDataset = {
@@ -139,6 +141,19 @@ type InflationDataset = {
     source: string
   }>
   actual: {
+    releaseStatus: {
+      period: string
+      cpiMom: number | null
+      coreCpiMom: number | null
+      cpiYoy: number | null
+      coreCpiYoy: number | null
+      pcePeriod: string
+      latestYoyPeriods: { cpiYoy: string; coreCpiYoy: string }
+      missingYoyReason: string | null
+      cpiMomCode: string
+      coreCpiMomCode: string
+      officialExplanationUrl: string
+    }
     cpiTrend: ChartDefinition
     pceTrend: ChartDefinition
     pceDistribution?: PceDistributionData
@@ -151,7 +166,7 @@ type InflationDataset = {
       description: string
       months: number[]
       unit: string
-      series: Array<{ id: string; label: string; values: number[]; color: string }>
+      series: Array<{ id: string; label: string; values: Array<number | null>; sampleCounts: number[]; color: string }>
       source: { provider: string; code: string }
       caveat: string
     }
@@ -208,6 +223,7 @@ type InflationDataset = {
   }
   dataQuality: {
     cpiMissingPeriods: string[]
+    cpiSeasonality: { checkedAt: string; baseGeneratedAt: string }
     note: string
   }
 }
@@ -215,7 +231,8 @@ type InflationDataset = {
 const dataset = inflationData as InflationDataset
 const RANGE_OPTIONS = MACRO_TIME_RANGE_OPTIONS
 
-function formatValue(value: number, digits = 2): string {
+function formatValue(value: number | null | undefined, digits = 2): string {
+  if (value == null || !Number.isFinite(value)) return '—'
   return new Intl.NumberFormat('zh-CN', {
     minimumFractionDigits: digits,
     maximumFractionDigits: digits,
@@ -449,17 +466,18 @@ function MultiSeriesChart({ chart }: { chart: ChartDefinition }) {
 function ContributionChart({ chart }: { chart: ChartDefinition }) {
   const total = chart.totalSeries
   if (!total) return <MultiSeriesChart chart={chart} />
+  const contributionSeries = chart.series.filter((item) => !item.diagnosticOnly)
   const width = 920
   const height = 350
   const left = 56
   const right = 22
   const top = 20
   const bottom = 42
-  const latest = Math.max(...chart.series.flatMap((item) => item.dates.map(dateToTimestamp)))
+  const latest = Math.max(...contributionSeries.flatMap((item) => item.dates.map(dateToTimestamp)))
   const cutoff = latest - 3 * 365.25 * 24 * 60 * 60 * 1000
-  const maps = chart.series.map((item) => new Map(item.dates.map((date, index) => [date, item.values[index]])))
+  const maps = contributionSeries.map((item) => new Map(item.dates.map((date, index) => [date, item.values[index]])))
   const totalMap = new Map(total.dates.map((date, index) => [date, total.values[index]]))
-  const dates = Array.from(new Set(chart.series.flatMap((item) => item.dates)))
+  const dates = Array.from(new Set(contributionSeries.flatMap((item) => item.dates)))
     .filter((date) => dateToTimestamp(date) >= cutoff && maps.every((map) => map.has(date)))
     .sort()
   const rows = dates.map((date) => ({
@@ -500,7 +518,7 @@ function ContributionChart({ chart }: { chart: ChartDefinition }) {
         <div className="contribution-latest"><strong>{formatValue(total.latestValue)}%</strong><span>{formatDate(total.latestObservation)}</span></div>
       </header>
       <div className="contribution-legend">
-        {chart.series.map((item) => <span key={item.id}><i style={{ background: item.color }} />{item.label}</span>)}
+        {contributionSeries.map((item) => <span key={item.id}><i style={{ background: item.color }} />{item.label}</span>)}
         <span><i className="total-line" />CPI环比</span>
       </div>
       <div className="multi-chart-wrap">
@@ -519,13 +537,13 @@ function ContributionChart({ chart }: { chart: ChartDefinition }) {
               const end = start + value
               if (value >= 0) positive = end
               else negative = end
-              return <rect key={`${row.date}-${chart.series[index].id}`} x={x(row.timestamp) - barWidth / 2} y={Math.min(y(start), y(end))} width={barWidth} height={Math.max(1, Math.abs(y(start) - y(end)))} fill={chart.series[index].color} />
+              return <rect key={`${row.date}-${contributionSeries[index].id}`} data-series-id={contributionSeries[index].id} x={x(row.timestamp) - barWidth / 2} y={Math.min(y(start), y(end))} width={barWidth} height={Math.max(1, Math.abs(y(start) - y(end)))} fill={contributionSeries[index].color} />
             })
           })}
           <path d={totalPath} fill="none" stroke={total.color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      <footer><div className="chart-source-list"><span>分项影响值与CPI环比均来自 iFinD EDB；2025-10缺口保持断开。</span></div></footer>
+      <footer><div className="chart-source-list"><span>分项影响值与CPI季调环比均来自 iFinD EDB；缺月保持断开。</span>{chart.reconciliation && <><strong>{chart.reconciliation.note}</strong><span>最近可比月 {formatDate(chart.reconciliation.latest.period)}：差额 {formatValue(chart.reconciliation.latest.residual, 3)} 个百分点，{chart.reconciliation.latest.withinRoundingBudget ? '在舍入预算内' : '超出舍入预算，尚待核实'}。</span></>}</div></footer>
     </article>
   )
 }
@@ -549,8 +567,7 @@ function heatCellColor(value: number | null, mode: 'yoy' | 'mom'): string {
   return value >= 0 ? `rgba(197, 68, 68, ${alpha})` : `rgba(47, 127, 163, ${alpha})`
 }
 
-export function CpiHeatmapTable() {
-  const table = dataset.actual.cpiHeatmap
+export function CpiHeatmapTable({ table = dataset.actual.cpiHeatmap }: { table?: InflationDataset['actual']['cpiHeatmap'] } = {}) {
   const [mode, setMode] = useState<'yoy' | 'mom'>('yoy')
   const [range, setRange] = useState<MacroTimeRange>('1Y')
   const history = table.history ?? table
@@ -567,6 +584,7 @@ export function CpiHeatmapTable() {
         <div className="heatmap-mode" role="group" aria-label="CPI分项温度表口径">
           <button className={mode === 'yoy' ? 'active' : ''} type="button" onClick={() => setMode('yoy')}>同比</button>
           <button className={mode === 'mom' ? 'active' : ''} type="button" onClick={() => setMode('mom')}>季调环比</button>
+          <small>除标记项目外</small>
         </div>
       </header>
       <div className="heatmap-range-controls"><div className="range-switch" role="group" aria-label="CPI分项温度表时间范围">{MACRO_TIME_RANGE_OPTIONS.map((option) => <button type="button" key={option.key} className={range === option.key ? 'active' : ''} aria-pressed={range === option.key} onClick={() => setRange(option.key)}>{option.label}</button>)}</div><p>显示 {formatDate(periods[periods.length - 1])}—{formatDate(periods[0])} · {periods.length}个月；可用历史 {formatDate(history.periods[history.periods.length - 1])}—{formatDate(history.periods[0])}。各分项起点不同，缺月留空；向右滑动查看较早月份。</p></div>
@@ -589,7 +607,7 @@ export function CpiHeatmapTable() {
               const startsGroup = rowIndex === 0 || history.rows[rowIndex - 1].group !== row.group
               return (
                 <tr className={`${row.depth === 0 ? 'major' : ''} ${startsGroup ? 'group-start' : ''}`} key={row.id}>
-                  <th scope="row" style={{ paddingLeft: `${16 + row.depth * 16}px` }}>{row.label}</th>
+                  <th scope="row" title={`${mode === 'mom' ? `${row.source.momName} · ${row.source.momCode} · ${row.source.momAdjustment === 'NSA' ? '未季调（NSA）；单一普通源全史' : '季调（SA）'}` : `同比 · ${row.source.code}`}${row.source.mom?.entityAlias ? ` · ${row.source.mom.entityAlias}` : ''}`} style={{ paddingLeft: `${16 + row.depth * 16}px` }}>{row.label}{mode === 'mom' && row.source.momAdjustment === 'NSA' && <> <small>未季调</small></>}</th>
                   <td><span className={`heatmap-group group-${row.group}`}>{row.group}</span></td>
                   <td className="heatmap-weight" title={row.weightDate ? `权重快照：${formatDate(row.weightDate)}` : '总项目权重为定义值，或原快照未披露观察日期'}>{formatValue(row.weight)}{row.weightDate && <small>{formatDate(row.weightDate)}</small>}</td>
                   {values.map((value, index) => (
@@ -604,8 +622,8 @@ export function CpiHeatmapTable() {
         </table>
       </div>
       <footer>
-        <strong>{mode === 'yoy' ? '当月同比' : '季调环比'}</strong>
-        <span>月份按从新到旧排列；2025-10等缺失月份保留空列，不插值、不跳月。权重为最新权重快照，不随所选历史区间回溯。</span>
+        <strong>{mode === 'yoy' ? '当月同比' : '环比（除标记项目外季调）'}</strong>
+        <span>月份从新到旧；缺月留空，不插值、不跳月。21行采用季调源。2026-10官方例外核对：外出就餐、杂项个人服务（Miscellaneous personal services，非Other personal services）未季调（NSA）。这两行完整历史各用单一普通环比源/未季调原值，不拼接旧SA源；该月脚注不外推至所有历史发布版本或未来发布。悬停分项名称查看供应商原名、代码与英文实体别名。权重为源内最新快照，按各行日期，不随历史区间回溯；OER价格为主要居所口径，权重源G019184777目录名为业主所收租租金，旧权重仅参考，不用于贡献计算。</span>
         <b>{table.source.provider}</b>
       </footer>
       <p className="heatmap-history-note">{table.history?.note}</p>
@@ -721,17 +739,16 @@ function InflationFrameworkOverview() {
   )
 }
 
-function JanuaryEffectChart() {
-  const chart = dataset.actual.januaryEffect
+export function JanuaryEffectChart({ chart = dataset.actual.januaryEffect }: { chart?: InflationDataset['actual']['januaryEffect'] } = {}) {
   const width = 920
   const height = 340
   const left = 54
   const right = 20
   const top = 20
   const bottom = 45
-  const values = chart.series.flatMap((item) => item.values)
+  const values = chart.series.flatMap((item) => item.values).filter((value): value is number => value !== null)
   const minValue = Math.min(0, ...values)
-  const maxValue = Math.max(...values) * 1.15
+  const maxValue = Math.max(0.01, ...values) * 1.15
   const plotWidth = width - left - right
   const plotHeight = height - top - bottom
   const groupWidth = plotWidth / chart.months.length
@@ -753,6 +770,7 @@ function JanuaryEffectChart() {
             return <g key={month}>
               {chart.series.map((item, seriesIndex) => {
                 const value = item.values[monthIndex]
+                if (value === null || value === undefined) return null
                 const x = center + (seriesIndex - 0.5) * barWidth
                 return <rect key={item.id} x={x - barWidth / 2} y={Math.min(y(0), y(value))} width={barWidth} height={Math.max(1, Math.abs(y(0) - y(value)))} fill={item.color} />
               })}
@@ -761,7 +779,7 @@ function JanuaryEffectChart() {
           })}
         </svg>
       </div>
-      <footer><div className="chart-source-list"><span>{chart.unit} · {chart.source.provider} · {chart.source.code}</span><strong>{chart.caveat}</strong></div></footer>
+      <footer><div className="chart-source-list"><span>{chart.unit} · {chart.source.provider} · {chart.source.code}</span><strong>{chart.caveat}</strong><details><summary>逐月有效样本数</summary>{chart.series.map((item) => <p key={item.id}>{item.label}：{chart.months.map((month, index) => `${month}月：${item.sampleCounts[index]}`).join(' · ')}</p>)}</details></div></footer>
     </article>
   )
 }
@@ -879,10 +897,37 @@ function LatestCurve() {
   )
 }
 
+export function CpiReleaseStatus({ status = dataset.actual.releaseStatus, audit = dataset.dataQuality.cpiSeasonality }: {
+  status?: InflationDataset['actual']['releaseStatus']
+  audit?: InflationDataset['dataQuality']['cpiSeasonality']
+} = {}) {
+  return (
+    <aside className="inflation-method-card" aria-label="CPI本期发布状态" data-cpi-release-status>
+      <div>
+        <span>CPI · LATEST OBSERVATION</span>
+        <h2>{formatDate(status.period)} CPI</h2>
+        <p>季调环比：总体 <strong>{status.cpiMom === null ? '—' : `${formatValue(status.cpiMom, 1)}%`}</strong>；核心 <strong>{status.coreCpiMom === null ? '—' : `${formatValue(status.coreCpiMom, 1)}%`}</strong>。</p>
+      </div>
+      <div className="cross-check-list">
+        <article><Info size={15} /><div>
+          <strong>{status.missingYoyReason ? '同比缺值，不等于本月没有发布数据' : '同比与环比分别展示'}</strong>
+          <span>{status.missingYoyReason === 'prior-year-base-unavailable'
+            ? '2025年10月基期缺失，2026年10月总体与核心CPI同比未公布；保留空值，不补造、不把当月环比退回9月。'
+            : status.missingYoyReason ? '当前观察月同比暂无有效值，按各序列实际观察期阅读。' : `本期同比：总体${formatValue(status.cpiYoy, 1)}%，核心${formatValue(status.coreCpiYoy, 1)}%。`}
+            {status.missingYoyReason === 'prior-year-base-unavailable' && <> <a href={status.officialExplanationUrl} target="_blank" rel="noreferrer">BLS缺报说明</a></>}
+          </span>
+        </div></article>
+        <article><CheckCircle2 size={15} /><div><strong>各指标不强行齐月</strong><span>CPI总体同比最新有效月 {formatDate(status.latestYoyPeriods.cpiYoy)}，核心同比 {formatDate(status.latestYoyPeriods.coreCpiYoy)}；PCE当前所取数据为 {formatDate(status.pcePeriod)}。</span></div></article>
+      </div>
+      <footer><Info size={14} /><span>基础批次 {audit.baseGeneratedAt.slice(0, 10)}；CPI环比源最近取得 {audit.checkedAt.slice(0, 10)}（源分类22 SA、2 NSA）。2026-10官方例外核对，取得时间不代表未来官方状态已重新核实。总体/核心来源：iFinD EDB · {status.cpiMomCode} / {status.coreCpiMomCode}；其他序列未因此改写取得时间。</span></footer>
+    </aside>
+  )
+}
+
 export function UsInflationDetail({ onBack }: { onBack: () => void }) {
   const latestObservation = dataset.headline.reduce(
     (latest, item) => item.observation > latest ? item.observation : latest,
-    '',
+    dataset.actual.cpiContributions.totalSeries?.latestObservation ?? '',
   )
 
   return (
@@ -910,6 +955,7 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
         ))}
       </section>
 
+      <CpiReleaseStatus />
       <InflationFrameworkOverview />
 
       <nav className="inflation-section-nav" aria-label="通胀栏目分区">
@@ -1014,7 +1060,7 @@ export function UsInflationDetail({ onBack }: { onBack: () => void }) {
         </div>
         <footer>
           <Info size={14} />
-          <span>数据提供方：{dataset.sourceProviders.join(' · ')}；快照生成 {dataset.generatedAt.slice(0, 10)}。</span>
+          <span>数据提供方：{dataset.sourceProviders.join(' · ')}；基础数据批次 {dataset.generatedAt.slice(0, 10)}；CPI环比源最近取得 {dataset.dataQuality.cpiSeasonality.checkedAt.slice(0, 10)}（源分类22 SA、2 NSA）。官方例外证据截至2026-10，不证明未来发布处理。</span>
         </footer>
       </section>
 
