@@ -26,8 +26,8 @@ IMPLEMENTATION = {SNAPSHOT, 'scripts/cpi_correction_snapshot.py', 'scripts/test_
 INFLATION = 'src/data/usInflationData.json'
 AUTHORIZATION = 'release/cpi-seasonality-authorization-01.json'
 CORRECTED_REFERENCE = 'release/snapshots/cpi-seasonality-corrected-inflation-01.json.gz'
-# Bind only after real corrected data and source review. None deliberately fails closed.
-AUTHORIZATION_SHA256 = None
+# Exact reviewed source approval; never rebound for ordinary future data refreshes.
+AUTHORIZATION_SHA256 = 'a5742e1a83f00982431249095af67de6204e2a5e0c19a43b7d7d801f7cc68f2b'
 REQUIRED_SOURCE_FILES = {'scripts/refresh_ifind_us_inflation.py', 'src/usInflation.tsx', 'scripts/cpi_seasonality.py',
                          'scripts/fixtures/cpi_sa_contract.json'}
 REVIEWED_SOURCE_FILES = REQUIRED_SOURCE_FILES | {
