@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react'
+import { ReplayCommentsLayout } from './replayComments'
 import { flushSync } from 'react-dom'
 import { ReadingBlock, ReadingColumn, ReadingLabel } from './replayReading'
 import { ReplayOutline } from './replayOutline'
@@ -487,7 +488,7 @@ function setReadingBlocks(open: boolean) {
   })
 }
 
-export function HistoryReplay({ onBack, data = replayData, readingControls = false }: { onBack: () => void; data?: HistoryReplayData; readingControls?: boolean }) {
+export function HistoryReplay({ onBack, data = replayData, readingControls = false, commentRoute }: { onBack: () => void; data?: HistoryReplayData; readingControls?: boolean; commentRoute?: string }) {
   // Isolated candidate opt-in: preserve all published sibling projections.
   const rateLiftoffCandidate = data.title === '加息启动与缩表定调' && data.startDate === '2022-03-16' && data.endDate === '2022-05-31'
   const [expandedTopics, setExpandedTopics] = useState<string[]>([])
@@ -546,7 +547,7 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
     { id: 'reading-acquisition', title: '下载渠道状态' },
   ])
 
-  return <ReadingLabels.Provider value={readingControls ? outline : []}><article className={`history-replay${readingControls ? ' replay-reading-controls' : ''}${data.localReview ? ' replay-local-review' : ''}`} aria-label={data.workbenchLabel || '政策反转研究工作台'}>
+  return <ReadingLabels.Provider value={readingControls ? outline : []}><ReplayCommentsLayout route={commentRoute} historical={historical}><article className={`history-replay${readingControls ? ' replay-reading-controls' : ''}${data.localReview ? ' replay-local-review' : ''}`} aria-label={data.workbenchLabel || '政策反转研究工作台'}>
     {readingControls && <ReplayOutline key={historical ? 'historical' : 'current'} items={outline} navigate={goToReadingTarget} />}
     <header className="replay-heading" id={readingControls ? 'replay-page-top' : undefined} tabIndex={readingControls ? -1 : undefined} style={data.experimentStatus ? { flexWrap: 'wrap' } : undefined}>
       <div><button type="button" className="history-back" aria-label="返回父阶段复盘" onClick={onBack}>← 返回父阶段复盘</button><p className="eyebrow">{data.eyebrow || 'POLICY REVERSAL · RESEARCH WORKBENCH'}</p><h1>{data.title}</h1><p>{data.endDate ? `阶段区间：${formatReplayDate(`${data.startDate}—${data.endDate}`)}；阶段划分与判断均可修订。` : `开放时期：${formatReplayDate(data.startDate)} 起，终点未形成；阶段划分与判断均可修订。`}</p></div>
@@ -686,5 +687,5 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
       // Verified scrolling root is document.scrollingElement (not a nested panel).
       window.scrollTo({ top: 0, behavior: readingScrollBehavior() })
     }}>↑ 回到页面顶部</button>}
-  </article></ReadingLabels.Provider>
+  </article></ReplayCommentsLayout></ReadingLabels.Provider>
 }

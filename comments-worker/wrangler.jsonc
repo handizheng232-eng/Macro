@@ -1,0 +1,33 @@
+{
+  "name": "macro-replay-comments",
+  "account_id": "879d8cb90a1c2b5c35fa12cb76946554",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-11-17",
+  "workers_dev": true,
+  "observability": {
+    "enabled": false
+  },
+  "vars": {
+    "ENVIRONMENT": "production",
+    "WORKER_ORIGIN": "https://macro-replay-comments.handizheng232.workers.dev",
+    "APP_ID": "5794886",
+    "CLIENT_ID": "Iv23liwUkTf2dk64cRJl",
+    "INSTALLATION_ID": "182805730"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "COMMENTS",
+        "class_name": "CommentsObject"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "CommentsObject"
+      ]
+    }
+  ]
+}

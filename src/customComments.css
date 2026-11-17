@@ -1,0 +1,10 @@
+.custom-comments { min-width: 0; }
+.custom-comments textarea { display: block; box-sizing: border-box; width: 100%; min-height: 280px; resize: vertical; padding: 12px; border: 1px solid #aabed5; border-radius: 4px; background: #fff; color: #23364b; font: inherit; }
+.custom-comments button { min-height: 40px; margin: 4px 6px 4px 0; padding: 6px 10px; border: 1px solid #aabed5; border-radius: 4px; background: white; color: #174f88; cursor: pointer; }
+.custom-comments button:disabled { opacity: .55; cursor: default; }
+.custom-comments :is(button,textarea):focus-visible { outline: 2px solid #174f88; outline-offset: 2px; }
+.custom-comment { border-top: 1px solid #bfd0e8; margin-top: 16px; padding-top: 12px; }
+.custom-comment > header { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; }
+.custom-comment-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.custom-comment-replies { padding-left: 12px; border-left: 2px solid #bfd0e8; }
+.custom-comments [role=alert] { border-left: 3px solid #a23d36; padding: 8px; color: #82322c; }

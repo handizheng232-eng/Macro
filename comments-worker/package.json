@@ -1,0 +1,12 @@
+{
+  "name": "macro-comments-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "dev": "wrangler dev --local --port 8791"
+  },
+  "devDependencies": {
+    "wrangler": "4.163.0"
+  }
+}

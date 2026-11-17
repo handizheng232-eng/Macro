@@ -1,0 +1,11 @@
+@import url("https://giscus.app/themes/light.css");
+
+/* Loaded by giscus itself through its official custom-theme URL option.
+   A bundled CSS data URL works locally without publishing a stylesheet.
+   This targets the actual editor, including its signed-out disabled state. */
+.gsc-comment-box-textarea {
+  min-height: 280px !important;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.7;
+}

@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
+    "giscus": "1.6.0",
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
