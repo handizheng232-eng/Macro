@@ -47,7 +47,9 @@ export function ReplayOutline({ items, navigate }: { items: ReadingItem[]; navig
     const origin = document.activeElement instanceof HTMLElement ? document.activeElement : null
     const anchor = origin?.id && origin.matches('[data-reading-origin]') && visible(origin)
       ? origin : anchors.at(-1) || document.getElementById('replay-page-top')!
-    setHistory(previous => [...previous.slice(-19), { id: anchor.id, offset: anchor.getBoundingClientRect().top, y: window.scrollY }])
+    // Capture geometry before navigation; React may defer the state updater.
+    const position = { id: anchor.id, offset: anchor.getBoundingClientRect().top, y: window.scrollY }
+    setHistory(previous => [...previous.slice(-19), position])
     closeOnNarrow()
     navigate(id)
     setActive(id)
