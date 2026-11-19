@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "aggressive-publication-01",
+  "scope": "history/inflation-qt-repricing/aggressive-hikes-qt",
+  "publicationAuthorized": true,
+  "historicalResearchAuthorizationExpanded": false,
+  "reviewedDataSHA256": "ac527c88a43dc24e67c35e88692bdf6edcfbac62ff1adf22692255a1a314d667",
+  "qa04ReceiptSHA256": "26379e8ab73031d65d72fe68023a73cea6e63fad7304cc0576b2b272cc1f6f08",
+  "inverseSHA256": "734e60877909744b96556cb1ae01753cb631691aa91080bbf54f2a82d32c7ac8",
+  "sourcePins": {
+    ".gitattributes": "edfab45706dc7927747e0793a781dc287a55370eca8871fa13306daa6f5f7244",
+    ".github/workflows/deploy.yml": "c0cfd54bbc1151d412bb6bc4dd6bdaddd0dbe7a897f5ac1a3b2524adbdec588a",
+    "scripts/test_verify_aggressive_publish.py": "3b8a3ad82bfd4f2faab69d97e7672532af3f60ce364f1a214273a80c32aa6fe5",
+    "scripts/verify_aggressive_publish.py": "c88f46b084340ee2a4abd925467bea5d416e2ae25dc2cba2fb4b8a3bfed3e896",
+    "src/App.tsx": "5c440eea060746b1edbb8e7013dc391ee4b897cf437d3107413c08e3337d00ca",
+    "src/aggressiveReview.test.tsx": "b218a078468c1e40fff71ba55b7c58e21ca0b794d9668a081a39aa5ef383c899",
+    "src/data/aggressiveReviewExpected.fixture.json": "6067f40df4f79aa6ba2c22bbf7d85d471ea166afe32ee6bfab9ce0524984ca44",
+    "src/data/historyReplayAggressiveHikesQt.json": "45d8c3782e64c4a2d981c367968b45cc7768b2101caa5ad807493ecd39855fa1",
+    "src/historyReplay.tsx": "51200b21f3e4ee25334ef52d79edee4cb5e89f3d48d832851ac4ad28106a1acd",
+    "src/inflationOverview.test.tsx": "bcff647cff30eed1bae7ec14d27ff7457fae3632fe441a89036ee4387fdf3400",
+    "src/inflationOverview.ts": "e12ae7863aaf8f44b80606e4dc7ea5f91d5ce9ea5a53e1d3c28bcac1eff9dac8",
+    "src/replayComments.tsx": "4c796b73700a5fcc50cefb1916f0cc30827ed309850bce7f884f8f9b5c7b46bf",
+    "src/replayOutline.tsx": "06866d2d1d6f106dd8c2db80e266f1d3636c1b6b1118c3e1f110a2baf90057c1",
+    "src/reviewMissingDetails.test.tsx": "9d7628eade8f00b08fcf110ee2c5e68c192a76db6c694a6634c197c8ff57e96a",
+    "src/templateParity.test.tsx": "67b4fe81b5a0cf8614ab250f96ad558cc76bd017ca17660e2de2f834e4d4a418"
+  },
+  "distPins": {
+    "index.html": "7bebe969bd36644401feee3f6ad249643fce93714e5f9d4ecb06737ac86a097d",
+    "assets/giscus-DZvWg_5m.js": "2689ae2219028960cf7cc9917d9aa1f00e7a297f1cf2e245fcef90b1665fa92a",
+    "assets/index-CfOoKulR.js": "156769cc297d073d624c34355b27c802d68a15c2e660d0a381c63c30321df85d",
+    "assets/index-DT4bOTge.css": "b09a22fd29f8f8ebaa4a3e81c66bd83e1ae75882abc39bde72a7a5fee2b5eb9a",
+    "replay-rate-liftoff/01-nominal.svg": "5927e50b5f98ff3775c61164e45d7c9021b89104f50232339e3c582c2abd2424",
+    "replay-rate-liftoff/02-real-bei.svg": "866b64caa7dfd435984a5211b296b4ac090e7a42ceb747fce1e184fe8c5cc13d",
+    "replay-rate-liftoff/03-spreads.svg": "4b6cd5c650b99fc0a4c66df61312f3af07e26ee2023f38f73fbab98319a75062",
+    "replay-rate-liftoff/04-dollar.svg": "be218d14050ffe94df26245eeb11215947ab1572a6149175c8f5312edd14f609",
+    "replay-rate-liftoff/05-bei.svg": "4c9182477fedb4fdc594fdee18e32c56658cdd42e0e67029a26d63569e22b64f",
+    "replay-rate-liftoff/06-event-window.svg": "3b2f09023b9d6745703c83efc2602afb74af0ad89aa353be1081802beb45b9e7",
+    "taper-charts/curve.svg": "9a8799516cb0a080fd25582103ff63058a37246f57364a55bdc9469b7e839c4d",
+    "taper-charts/dollar.svg": "d38a0639066e180494f1c0d142b459c21ad384683c543f08203b46094f891f9d",
+    "taper-charts/equity.svg": "2d0dbda1395d5e6caaf4ca9d48ed6066b91fa8983f568521ce8d788e2f421217",
+    "taper-charts/nominal.svg": "4829316a20fb5309d0171db565ba9f758abeb789307fb7bc8d3c9fceb426ed6f",
+    "taper-charts/oil.svg": "9cc90587bda69d4e3a2c359a24ef51333c6fc8987183f74ca11e05274228cb1f",
+    "taper-charts/real-bei.svg": "93b7edf3fcc47d385224b946cfe5eea5a1d5a7431611469fe0fe28027770a6a2"
+  },
+  "dataStatusPathAllowlist": [
+    "/localReview/notice",
+    "/localReview/publicReleaseAllowed",
+    "/reviewProjection/statusOverlay",
+    "/reviewProjection/publicationAuthorized"
+  ]
+}

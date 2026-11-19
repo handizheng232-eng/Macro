@@ -45,10 +45,10 @@ jobs:
           VITE_CUSTOM_COMMENTS_ENABLED: "true"
           VITE_COMMENTS_API: https://macro-replay-comments.handizheng232.workers.dev
         run: npm run build
-      - name: Verify scoped comments and entire inherited publication chain
+      - name: Verify rr04 publication and entire inherited publication chain
         run: |
-          python -B -m unittest discover -s scripts -p 'test_verify_comments_publish.py' -v
-          python -B scripts/verify_comments_publish.py --legacy-tests --dist dist
+          python -B -m unittest discover -s scripts -p 'test_verify_aggressive_publish.py' -v
+          python -B scripts/verify_aggressive_publish.py --legacy-tests --dist dist
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

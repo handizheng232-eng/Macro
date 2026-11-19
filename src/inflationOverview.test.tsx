@@ -14,7 +14,7 @@ const stages = [
   ['QT减速与降息准备', '2024-06-01', '2024-09-17'],
 ]
 
-it('直达八段分期方案，日期连续、仅父准首篇有本地入口且其余仍待复盘', () => {
+it('直达八段分期方案，日期连续、首篇发布与第二篇本地审阅入口隔离且其余仍待复盘', () => {
   window.history.replaceState(null, '', route)
   render(<App />)
   expect(screen.getByRole('heading', { level: 1, name: title })).toBeInTheDocument()
@@ -28,6 +28,9 @@ it('直达八段分期方案，日期连续、仅父准首篇有本地入口且�
     if (name === '加息启动与缩表定调') {
           expect(within(card).getByText('阶段性已发布 · 配额未验收')).toBeInTheDocument()
           expect(within(card).getByRole('button', { name: '进入加息启动与缩表定调阶段性研究版' })).toBeInTheDocument()
+        } else if (name === '激进加息与QT并行') {
+          expect(within(card).getByText('阶段性已发布 · 数量例外 / 整阶段未完成')).toBeInTheDocument()
+          expect(within(card).getByRole('button', { name: '进入激进加息与QT并行阶段性研究版' })).toBeInTheDocument()
         } else {
           expect(within(card).getByText('待复盘')).toBeInTheDocument()
           expect(within(card).queryAllByRole('button')).toHaveLength(0)

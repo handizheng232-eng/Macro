@@ -16,3 +16,6 @@ public/replay-rate-liftoff/*.svg -text
 src/test/rateLiftoffPublicPins.json -text
 src/test/replayEditorialOpenings.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/fixtures/pce_distribution_20261105.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+src/data/historyReplayAggressiveHikesQt.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/aggressiveReviewExpected.fixture.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

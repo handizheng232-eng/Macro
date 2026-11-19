@@ -41,7 +41,7 @@ export const inflationSubperiods: OverviewSubperiod[] = [
     extraSources: [{ href: statement('20220504'), label: '2022-05-04 声明' }, { href: qtPlan, label: '2022-05-04 缩表计划' }],
   },
   {
-    number: '09.2', period: '2022-06-01至2022-11-30', title: '激进加息与QT并行', status: '待复盘',
+    number: '09.2', period: '2022-06-01至2022-11-30', title: '激进加息与QT并行', status: '阶段性已发布 · 数量例外 / 整阶段未完成',
     thesis: '阶段观察：加息与资产负债表收缩并行，累计紧缩及传导时滞进入政策表述。',
     fed: '缩表按计划从6月1日启动；6月15日目标区间升至1.50%—1.75%，11月2日升至3.75%—4.00%，并明确考虑累计紧缩及政策时滞。',
     treasury: '待检验问题：曲线变化更多来自终点利率上修，还是增长风险与通胀补偿的变化？',

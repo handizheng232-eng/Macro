@@ -72,7 +72,14 @@ function CommentsPanel({ appReady }: { appReady: boolean }) {
   </aside>
 }
 
+function UnboundCommentsPanel() {
+  const [expanded, setExpanded] = useState(() => window.matchMedia?.('(min-width: 1350px)').matches ?? false)
+  return <aside className="replay-comments-panel" aria-label="本篇评论（未绑定）"><div className="replay-comments-heading"><h2>本篇留言</h2></div><p role="status">本篇已发布，评论尚未独立绑定</p><p>本篇没有独立讨论映射；不连接其他篇评论、不登录、不发送。未提交文字不保存。</p><button type="button" aria-expanded={expanded} onClick={() => setExpanded(v => !v)}>{expanded ? '收起评论区' : '展开评论区'}</button><div hidden={!expanded}><label>评论草稿（未保存）<textarea aria-label="评论草稿（未保存）" placeholder="独立讨论绑定前暂停评论提交" disabled style={{ width: '100%', minHeight: 280, boxSizing: 'border-box', resize: 'vertical' }} /></label></div><button type="button" disabled>发送评论</button></aside>
+}
+
 export function ReplayCommentsLayout({ route, historical, children, appReady = APP_READY }: { route?: string; historical: boolean; children: ReactNode; appReady?: boolean }) {
-  if (route !== COMMENT_ROUTE || historical) return children
+  if (historical) return children
+  if (route === 'history/inflation-qt-repricing/aggressive-hikes-qt') return <div className="replay-comments-layout">{children}<UnboundCommentsPanel /></div>
+  if (route !== COMMENT_ROUTE) return children
   return <div className="replay-comments-layout">{children}<CommentsPanel appReady={appReady} /></div>
 }
