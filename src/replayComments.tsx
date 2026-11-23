@@ -1,6 +1,6 @@
 import { createElement, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import './replayComments.css'
-import { CustomComments } from './customComments'
+import { CustomComments, type CommentsDraft } from './customComments'
 import { customCommentsOrigin } from './customCommentsClient'
 import commentThemeCss from './replayCommentsTheme.css?raw'
 
@@ -9,12 +9,20 @@ import commentThemeCss from './replayCommentsTheme.css?raw'
 const COMMENT_THEME = `data:text/css;charset=utf-8,${encodeURIComponent(commentThemeCss)}`
 
 export const COMMENT_ROUTE = 'history/inflation-qt-repricing/rate-liftoff-qt-guidance'
+// One deliberately shared channel; article routes never select backend scope.
+const sharedDraft: CommentsDraft = {}
+const REPLAY_ROUTES = new Set([COMMENT_ROUTE,
+  'history/inflation-qt-repricing/aggressive-hikes-qt',
+  'history/inflation-qt-repricing', 'history/pandemic-policy-confluence', 'history/easing-to-tightening',
+  'history/pandemic-policy-confluence/accelerated-taper-hawkish-preparation',
+  ...['tariff-pause', 'policy-reversal', 'hawkish-transition', 'renewed-easing-qt-end'].map(stage => `history/easing-to-tightening/${stage}`),
+])
 const DISCUSSION_URL = 'https://github.com/handizheng232-eng/Macro/discussions/1'
 // Repository owner confirmed installation; official configuration verified before enabling.
 const APP_READY = true
 
 type Connection = 'loading' | 'ready' | 'slow' | 'error'
-function OnlineDiscussion() {
+function OnlineDiscussion({ route }: { route: string }) {
   const host = useRef<HTMLDivElement>(null)
   const [connection, setConnection] = useState<Connection>('loading')
   const [loaded, setLoaded] = useState(false)
@@ -26,8 +34,8 @@ function OnlineDiscussion() {
   // The official component handles OAuth/session data. Do not read it here.
   // It removes the callback hash; preserve this hash router's exact article route.
   useLayoutEffect(() => {
-    if (loaded && !window.location.hash) window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}#${COMMENT_ROUTE}`)
-  }, [loaded])
+    if (loaded && !window.location.hash) window.history.replaceState(window.history.state, '', `${window.location.pathname}${window.location.search}#${route}`)
+  }, [loaded, route])
   useEffect(() => {
     const timer = window.setTimeout(() => setConnection(current => current === 'loading' ? 'slow' : current), 15000)
     const receive = (event: MessageEvent) => {
@@ -50,36 +58,30 @@ function OnlineDiscussion() {
   </div>
 }
 
-function CommentsPanel({ appReady }: { appReady: boolean }) {
+function CommentsPanel({ appReady, route }: { appReady: boolean; route: string }) {
   const customOrigin = customCommentsOrigin(import.meta.env)
   const [expanded, setExpanded] = useState(() => window.matchMedia?.('(min-width: 1350px)').matches ?? false)
   const [attempt, setAttempt] = useState(0)
-  return <aside className="replay-comments-panel" aria-label="公开留言与讨论">
-    <div className="replay-comments-heading"><h2>公开留言与讨论</h2><span>访客讨论 · 非研究正文</span></div>
-    <a href={DISCUSSION_URL} target="_blank" rel="noreferrer">在 GitHub 打开本篇讨论 ↗</a>
+  return <aside className="replay-comments-panel" aria-label="复盘公共讨论">
+    <div className="replay-comments-heading"><h2>复盘公共讨论</h2><span>所有复盘时期共用 · 非研究正文</span></div>
+    <a href={DISCUSSION_URL} target="_blank" rel="noreferrer">在 GitHub 打开复盘公共讨论 ↗</a>
     <p><a href={DISCUSSION_URL} target="_blank" rel="noreferrer">修改／删除我的评论（前往 GitHub）↗</a></p>
     {!customOrigin && <p>使用发表评论的 GitHub 账号登录，在自己的评论右上角「…」菜单选择 Edit（编辑）或 Delete（删除）。权限由 GitHub 校验；删除前请确认，不能在本页撤销。</p>}
     {!customOrigin && <p>编辑或删除在 GitHub 完成后，返回这里点击「刷新评论」查看结果。当前嵌入框不提供直接编辑或删除。</p>}
-    {!appReady && <p role="status">等待 giscus App 授权；可先在 GitHub 本篇讨论中留言。</p>}
-    <div className="replay-comments-actions"><button type="button" aria-expanded={expanded} aria-controls="replay-online-comments" onClick={() => { if (customOrigin && expanded && !window.confirm('收起会清除未提交草稿和当前登录状态，继续？')) return; setExpanded(value => !value) }}>{expanded ? '收起在线评论' : '展开在线评论'}</button>{expanded && appReady && !customOrigin && <button type="button" onClick={() => setAttempt(value => value + 1)}>重新连接</button>}</div>
+    {!appReady && <p role="status">等待 giscus App 授权；可先在 GitHub 复盘公共讨论中留言。</p>}
+    <div className="replay-comments-actions"><button type="button" aria-expanded={expanded} aria-controls="replay-online-comments" onClick={() => { if (customOrigin && expanded && !window.confirm('收起会退出当前登录；草稿仍仅保留在本页内存，刷新即丢失。继续？')) return; setExpanded(value => !value) }}>{expanded ? '收起在线评论' : '展开在线评论'}</button>{expanded && appReady && !customOrigin && <button type="button" onClick={() => setAttempt(value => value + 1)}>重新连接</button>}</div>
     <div id="replay-online-comments" hidden={!expanded}>
       {expanded && appReady && !customOrigin && <button type="button" onClick={() => setAttempt(value => value + 1)}>刷新评论</button>}
       {!customOrigin && <p>GitHub 登录后发表，所有访客可读。请勿发布私密资料或未获授权的研报全文。</p>}
       {!customOrigin && <p>点击评论框的提交按钮后，留言才保存到 GitHub Discussions；未提交的文字不代表已在线保存。</p>}
       <p>访客讨论独立于正式研究，不属于历史时点信息集；严格历史截面不展示。</p>
-      {expanded && (customOrigin ? <CustomComments origin={customOrigin} /> : appReady && <OnlineDiscussion key={attempt} />)}
+      {expanded && (customOrigin ? <CustomComments origin={customOrigin} draft={sharedDraft} /> : appReady && <OnlineDiscussion key={attempt} route={route} />)}
     </div>
   </aside>
 }
 
-function UnboundCommentsPanel() {
-  const [expanded, setExpanded] = useState(() => window.matchMedia?.('(min-width: 1350px)').matches ?? false)
-  return <aside className="replay-comments-panel" aria-label="本篇评论（未绑定）"><div className="replay-comments-heading"><h2>本篇留言</h2></div><p role="status">本篇已发布，评论尚未独立绑定</p><p>本篇没有独立讨论映射；不连接其他篇评论、不登录、不发送。未提交文字不保存。</p><button type="button" aria-expanded={expanded} onClick={() => setExpanded(v => !v)}>{expanded ? '收起评论区' : '展开评论区'}</button><div hidden={!expanded}><label>评论草稿（未保存）<textarea aria-label="评论草稿（未保存）" placeholder="独立讨论绑定前暂停评论提交" disabled style={{ width: '100%', minHeight: 280, boxSizing: 'border-box', resize: 'vertical' }} /></label></div><button type="button" disabled>发送评论</button></aside>
-}
-
 export function ReplayCommentsLayout({ route, historical, children, appReady = APP_READY }: { route?: string; historical: boolean; children: ReactNode; appReady?: boolean }) {
-  if (historical) return children
-  if (route === 'history/inflation-qt-repricing/aggressive-hikes-qt') return <div className="replay-comments-layout">{children}<UnboundCommentsPanel /></div>
-  if (route !== COMMENT_ROUTE) return children
-  return <div className="replay-comments-layout">{children}<CommentsPanel appReady={appReady} /></div>
+  if (!route || !REPLAY_ROUTES.has(route)) return children
+  // Keep the research subtree mounted when the historical cutoff changes.
+  return <div className={historical ? undefined : 'replay-comments-layout'}>{children}{!historical && <CommentsPanel appReady={appReady} route={route} />}</div>
 }

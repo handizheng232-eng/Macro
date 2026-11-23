@@ -21,6 +21,7 @@ import {
   type UsMacroCategory,
 } from './usMacroConfig'
 import { UsMacroDetail } from './usMacro'
+import { ReplayCommentsLayout } from './replayComments'
 import { HistoryReplay } from './historyReplay'
 import { inflationOverview, inflationSubperiods, type OverviewSubperiod } from './inflationOverview'
 import { pandemicOverview, pandemicSubperiods } from './pandemicOverview'
@@ -428,7 +429,7 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, pandemic
   const pending = inflation || pandemic
 
   return (
-    <>
+    <ReplayCommentsLayout route={`history/${inflation ? 'inflation-qt-repricing' : pandemic ? 'pandemic-policy-confluence' : 'easing-to-tightening'}`} historical={false}><div>
       <div className="page-heading history-detail-heading">
         <div>
           <nav aria-label="历史复盘层级">
@@ -527,7 +528,7 @@ function RecentHistoryReview({ onBack, onOpenReplay, inflation = false, pandemic
           ))}
         </div>
       </section>
-    </>
+    </div></ReplayCommentsLayout>
   )
 }
 
@@ -998,7 +999,7 @@ function App() {
         ) : activePage === 'themes' ? (
           <ThemeTracker />
         ) : activePage === 'history' ? (
-          historyReplay ? <HistoryReplay key={historyReplay} commentRoute={historyReplay === 'aggressive-hikes-qt' ? 'history/inflation-qt-repricing/aggressive-hikes-qt' : historyReplay === 'rate-liftoff-qt-guidance' ? 'history/inflation-qt-repricing/rate-liftoff-qt-guidance' : undefined} readingControls={historyReplay === 'aggressive-hikes-qt' || historyReplay === 'rate-liftoff-qt-guidance' || historyReplay === 'renewed-easing-qt-end' || historyReplay === 'accelerated-taper-hawkish-preparation'} onBack={historyReplay === 'aggressive-hikes-qt' || historyReplay === 'rate-liftoff-qt-guidance' ? openInflationHistory : historyReplay === 'accelerated-taper-hawkish-preparation' ? openPandemicHistory : openRecentHistory} data={historyReplay === 'aggressive-hikes-qt' ? aggressiveReplayData : historyReplay === 'rate-liftoff-qt-guidance' ? rateLiftoffReplayData : historyReplay === 'accelerated-taper-hawkish-preparation' ? taperReplayData : historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />
+          historyReplay ? <HistoryReplay key={historyReplay} commentRoute={`history/${historyReplay === 'aggressive-hikes-qt' || historyReplay === 'rate-liftoff-qt-guidance' ? 'inflation-qt-repricing' : historyReplay === 'accelerated-taper-hawkish-preparation' ? 'pandemic-policy-confluence' : 'easing-to-tightening'}/${historyReplay}`} readingControls={historyReplay === 'aggressive-hikes-qt' || historyReplay === 'rate-liftoff-qt-guidance' || historyReplay === 'renewed-easing-qt-end' || historyReplay === 'accelerated-taper-hawkish-preparation'} onBack={historyReplay === 'aggressive-hikes-qt' || historyReplay === 'rate-liftoff-qt-guidance' ? openInflationHistory : historyReplay === 'accelerated-taper-hawkish-preparation' ? openPandemicHistory : openRecentHistory} data={historyReplay === 'aggressive-hikes-qt' ? aggressiveReplayData : historyReplay === 'rate-liftoff-qt-guidance' ? rateLiftoffReplayData : historyReplay === 'accelerated-taper-hawkish-preparation' ? taperReplayData : historyReplay === 'tariff-pause' ? tariffPauseReplayData : historyReplay === 'renewed-easing-qt-end' ? renewedEasingReplayData : historyReplay === 'hawkish-transition' ? hawkishReplayData : undefined} /> : (historyDetail || inflationDetail || pandemicDetail) ? <RecentHistoryReview inflation={inflationDetail} pandemic={pandemicDetail} onBack={closeRecentHistory} onOpenReplay={openHistoryReplay} onOpenSibling={inflationDetail ? openRecentHistory : openInflationHistory} onOpenPandemic={openPandemicHistory} /> : <HistoryReview onOpenRecent={openRecentHistory} onOpenInflation={openInflationHistory} onOpenPandemic={openPandemicHistory} />
         ) : activePage === 'methods' ? (
           <DataMethods />
         ) : (

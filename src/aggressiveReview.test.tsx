@@ -23,8 +23,8 @@ it('projects all 130 accepted paragraphs with every citation and honest local st
  const original=[...data.reviewProjection.conclusion,...data.reviewProjection.readingNotes,...data.marketAnalysis.sections.flatMap(s=>[...s.periodSummary.reviewedParagraphs,...Object.values(s.deepDive).flat(),...Object.entries(s.aspectSummaries).map(([role,p])=>({id:`aspect-${s.id}-${role}`,...p}))])]
  for(const p of expected){ const raw=original.find(e=>e.id===p.id)!; const el=container.querySelector<HTMLElement>(`[data-reviewed-text="${p.id}"]`)!; expect(createHash('sha256').update(raw.text).digest('hex')).toBe(p.sha256); const heading=container.querySelector(`[data-reviewed-heading="${p.id}"]`); expect((heading ? heading.textContent+'｜' : '')+el.textContent).toBe(raw.text.replace(/\*\*([^*]+)\*\*/g,'$1')); expect(Array.from(el.nextElementSibling!.querySelectorAll('[data-citation-alias]')).map(a=>a.getAttribute('data-citation-alias'))).toEqual(p.citationAliases) }
  expect(container.textContent).not.toMatch(/81份PDF|全部54件|本版已获阶段性公网发布授权|2021年12月/)
- expect(screen.getByText('本篇已发布，评论尚未独立绑定')).toBeInTheDocument()
- expect(screen.getByRole('button',{name:'发送评论'})).toBeDisabled()
+ expect(screen.getByRole('complementary',{name:'复盘公共讨论'})).toBeInTheDocument()
+ expect(screen.getByRole('button',{name:'展开在线评论'})).toBeEnabled()
  expect(container.querySelector('giscus-widget,iframe')).toBeNull()
  expect(container.querySelectorAll('.replay-path-chart')).toHaveLength(4)
  expect(container.querySelectorAll('path[data-series-id]')).toHaveLength(8)

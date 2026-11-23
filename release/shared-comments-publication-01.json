@@ -1,0 +1,35 @@
+{
+  "publicationAuthorized": true,
+  "scope": "shared-replay-discussion-1",
+  "historicalResearchAuthorizationExpanded": false,
+  "inverseSHA256": "f78320a5ebcf1abdf2b6d14ccdabec805b8c051778f24ee98fc67c7a01a1f00d",
+  "sourcePins": {
+    ".github/workflows/deploy.yml": "313c005b56496b51e6deaf986f4ad0d7d3c4ac6273a1186afe617a7569daf319",
+    "src/App.tsx": "5a08c35c4b340b036c73b86bb27f0385e7b13440b23a9ebb13d3d697adb4ed1e",
+    "src/replayComments.tsx": "c47d484c56d83da640094dd6d57bcba5707583785aebad001479c2da0b64bfab",
+    "src/customComments.tsx": "36151fe050d6657a264c0095475d78853641fa0cce61e0d6ae84883d3ee8143a",
+    "src/replayComments.test.tsx": "1ae49b1ea995580835291641aa291df86bdb3ab0b2e71c01784c6cfd0a55a423",
+    "src/aggressiveReview.test.tsx": "72992e0d9b7f2a111536f6bdf255c479ae33a3a92f13108f88c4d6f9112ee686",
+    "src/sharedReplayComments.test.tsx": "3b2c1e72165e16ff34e243446b9f4fbf8f979de35e14a62f846f2d210f58c4c1",
+    "scripts/verify_shared_comments_publish.py": "3222768ceed28154743509b064364509fcf88f20a489075d542619be75f2c9f8",
+    "scripts/test_verify_shared_comments_publish.py": "cd96ee3c6af3c31a8e3e8dcf6aabfd9c86bc1e2ae2ca10dd1f14b0b73de35c9d"
+  },
+  "distPins": {
+    "index.html": "d7316a1d48bc8717f142452c3c64aca6148458a7d56809101a647e6044adb37d",
+    "assets/giscus-DZvWg_5m.js": "2689ae2219028960cf7cc9917d9aa1f00e7a297f1cf2e245fcef90b1665fa92a",
+    "assets/index-BAqlcSX9.js": "77f1180852c56e2cdbb93af1b49846c35aaa110d408aab6725a0227b47440acc",
+    "assets/index-DT4bOTge.css": "b09a22fd29f8f8ebaa4a3e81c66bd83e1ae75882abc39bde72a7a5fee2b5eb9a",
+    "replay-rate-liftoff/01-nominal.svg": "5927e50b5f98ff3775c61164e45d7c9021b89104f50232339e3c582c2abd2424",
+    "replay-rate-liftoff/02-real-bei.svg": "866b64caa7dfd435984a5211b296b4ac090e7a42ceb747fce1e184fe8c5cc13d",
+    "replay-rate-liftoff/03-spreads.svg": "4b6cd5c650b99fc0a4c66df61312f3af07e26ee2023f38f73fbab98319a75062",
+    "replay-rate-liftoff/04-dollar.svg": "be218d14050ffe94df26245eeb11215947ab1572a6149175c8f5312edd14f609",
+    "replay-rate-liftoff/05-bei.svg": "4c9182477fedb4fdc594fdee18e32c56658cdd42e0e67029a26d63569e22b64f",
+    "replay-rate-liftoff/06-event-window.svg": "3b2f09023b9d6745703c83efc2602afb74af0ad89aa353be1081802beb45b9e7",
+    "taper-charts/curve.svg": "9a8799516cb0a080fd25582103ff63058a37246f57364a55bdc9469b7e839c4d",
+    "taper-charts/dollar.svg": "d38a0639066e180494f1c0d142b459c21ad384683c543f08203b46094f891f9d",
+    "taper-charts/equity.svg": "2d0dbda1395d5e6caaf4ca9d48ed6066b91fa8983f568521ce8d788e2f421217",
+    "taper-charts/nominal.svg": "4829316a20fb5309d0171db565ba9f758abeb789307fb7bc8d3c9fceb426ed6f",
+    "taper-charts/oil.svg": "9cc90587bda69d4e3a2c359a24ef51333c6fc8987183f74ca11e05274228cb1f",
+    "taper-charts/real-bei.svg": "93b7edf3fcc47d385224b946cfe5eea5a1d5a7431611469fe0fe28027770a6a2"
+  }
+}
