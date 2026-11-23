@@ -2,7 +2,7 @@
   "publicationAuthorized": true,
   "scope": "shared-replay-discussion-1",
   "historicalResearchAuthorizationExpanded": false,
-  "inverseSHA256": "f78320a5ebcf1abdf2b6d14ccdabec805b8c051778f24ee98fc67c7a01a1f00d",
+  "inverseSHA256": "924dc70d4d4cad73062a67cc3e12f9b9ad460f17f4aa6b795d0093629d209177",
   "sourcePins": {
     ".github/workflows/deploy.yml": "313c005b56496b51e6deaf986f4ad0d7d3c4ac6273a1186afe617a7569daf319",
     "src/App.tsx": "5a08c35c4b340b036c73b86bb27f0385e7b13440b23a9ebb13d3d697adb4ed1e",
@@ -11,8 +11,9 @@
     "src/replayComments.test.tsx": "1ae49b1ea995580835291641aa291df86bdb3ab0b2e71c01784c6cfd0a55a423",
     "src/aggressiveReview.test.tsx": "72992e0d9b7f2a111536f6bdf255c479ae33a3a92f13108f88c4d6f9112ee686",
     "src/sharedReplayComments.test.tsx": "3b2c1e72165e16ff34e243446b9f4fbf8f979de35e14a62f846f2d210f58c4c1",
-    "scripts/verify_shared_comments_publish.py": "3222768ceed28154743509b064364509fcf88f20a489075d542619be75f2c9f8",
-    "scripts/test_verify_shared_comments_publish.py": "cd96ee3c6af3c31a8e3e8dcf6aabfd9c86bc1e2ae2ca10dd1f14b0b73de35c9d"
+    "scripts/verify_shared_comments_publish.py": "c6f3b17dcefc38f7c457e1a047a6dcc979b2b3babc7659d206e881d6eb3c2672",
+    "scripts/test_verify_shared_comments_publish.py": "cd96ee3c6af3c31a8e3e8dcf6aabfd9c86bc1e2ae2ca10dd1f14b0b73de35c9d",
+    "src/rateLiftoffRouting.test.tsx": "b23e80f974438e1918cc57c82cfa5aa2f47e704730e2ab102eea31b8415d6d1e"
   },
   "distPins": {
     "index.html": "d7316a1d48bc8717f142452c3c64aca6148458a7d56809101a647e6044adb37d",

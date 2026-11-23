@@ -7,7 +7,7 @@ from verify_comments_publish import safe, public_commands
 ROOT = Path(__file__).resolve().parents[1]
 RECEIPT = 'release/shared-comments-publication-01.json'
 INVERSE = 'release/snapshots/shared-comments-inverse-01.zip'
-INVERSE_SHA = 'f78320a5ebcf1abdf2b6d14ccdabec805b8c051778f24ee98fc67c7a01a1f00d'
+INVERSE_SHA = '924dc70d4d4cad73062a67cc3e12f9b9ad460f17f4aa6b795d0093629d209177'
 def sha(raw): return hashlib.sha256(raw).hexdigest()
 def need(ok, message):
     if not ok: raise ValueError(message)
