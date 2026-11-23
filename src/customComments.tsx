@@ -2,18 +2,20 @@ import {useCallback, useEffect, useRef, useState} from 'react'
 import {CommentsAuthError, createCommentsApi, type CommentsApi, type CommentPage, type CommentRow, type CommentUser} from './customCommentsClient'
 import './customComments.css'
 const merge = (old: CommentRow[], next: CommentRow[]) => [...new Map([...old, ...next].map(row => [row.id, row])).values()]
-export function CustomComments({origin, api: supplied}: {origin?: string; api?: CommentsApi}) {
+export type CommentsDraft = {body?: string; editing?: CommentRow | null; editBody?: string; replyTo?: CommentRow | null}
+export function CustomComments({origin, api: supplied, draft}: {origin?: string; api?: CommentsApi; draft?: CommentsDraft}) {
   const [api] = useState(() => supplied ?? createCommentsApi(origin!))
   const [user, setUser] = useState<CommentUser | null>(null)
   const [page, setPage] = useState<CommentPage | null>(null)
   const [replies, setReplies] = useState<Record<string, CommentPage>>({})
-  const [body, setBody] = useState('')
-  const [editing, setEditing] = useState<CommentRow | null>(null)
-  const [editBody, setEditBody] = useState('')
-  const [replyTo, setReplyTo] = useState<CommentRow | null>(null)
+  const [body, setBody] = useState(draft?.body ?? '')
+  const [editing, setEditing] = useState<CommentRow | null>(draft?.editing ?? null)
+  const [editBody, setEditBody] = useState(draft?.editBody ?? '')
+  const [replyTo, setReplyTo] = useState<CommentRow | null>(draft?.replyTo ?? null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
+  useEffect(() => { if (draft) Object.assign(draft, {body, editing, editBody, replyTo}) }, [draft, body, editing, editBody, replyTo])
   const lock = useRef(false)
   const live = useRef(true)
   const reload = useCallback(async (preserveReplyDraft = false) => { const value = await api.request('/comments') as CommentPage; if (live.current) {setPage(value); setReplies(current => preserveReplyDraft ? current : {})} }, [api])
@@ -31,7 +33,7 @@ export function CustomComments({origin, api: supplied}: {origin?: string; api?: 
     {replies[row.id] && <div className="custom-comment-replies">{replies[row.id].nodes.map(item)}{replies[row.id].pageInfo.hasNextPage && <button disabled={busy} onClick={() => void run(() => loadReplies(row, true))}>更多回复</button>}<p>已显示 {replies[row.id].nodes.length} / {replies[row.id].totalCount} 条回复</p></div>}
   </article>}
   return <section className="custom-comments" aria-label="站内评论">
-    <p>评论公开保存到本篇 GitHub Discussions。请勿提交私密资料。刷新页面后需重新登录；未提交草稿仅在当前页面内存中，收起评论会丢失。</p>
+    <p>评论公开保存到复盘公共讨论，所有复盘时期共用。请勿提交私密资料。切换文章或收起后需重新登录；发表、回复与编辑草稿仅保留在本页内存，刷新页面会丢失。</p>
     {user ? <p>已登录：{user.login} <button disabled={busy} onClick={() => void run(async () => {try {await api.logout()} finally {setUser(null)} await reload()})}>退出登录</button></p> : <button disabled={busy} onClick={() => void run(async () => {const result = await api.login(); if (!live.current) return; setUser(result.user); await reload(!!editing?.replyToId)})}>使用 GitHub 登录 / 注册</button>}
     <button disabled={busy} onClick={() => {if (editing && !window.confirm('刷新列表将关闭编辑区域；请先复制编辑草稿。继续？')) return; void run(async () => {await reload(); setEditing(null)})}}>刷新站内评论</button>
     {error && <p role="alert">{error}</p>}<p role="status" aria-live="polite">{busy ? '正在处理，请勿重复提交…' : notice}</p>
@@ -39,7 +41,7 @@ export function CustomComments({origin, api: supplied}: {origin?: string; api?: 
       {replyTo && <p>回复 {replyTo.author?.login}<button type="button" onClick={() => setReplyTo(null)}>取消回复</button></p>}
       <label>发表留言<textarea aria-label="发表留言" maxLength={5000} value={body} onChange={event => setBody(event.target.value)}/></label><p>{body.length} / 5000</p><button disabled={busy || !user || !body.trim()}>发表</button>
     </form>
-    {!page && !error && <p>正在加载真实评论…</p>}{page?.totalCount === 0 && <p>本篇暂无评论。</p>}{page?.nodes.map(item)}
+    {!page && !error && <p>正在加载真实评论…</p>}{page?.totalCount === 0 && <p>复盘公共讨论暂无评论。</p>}{page?.nodes.map(item)}
     {page?.pageInfo.hasNextPage && <button disabled={busy} onClick={() => void run(async () => {const next = await api.request('/comments?after=' + encodeURIComponent(page.pageInfo.endCursor!)) as CommentPage; setPage({...next, nodes: merge(page.nodes, next.nodes)})})}>更多评论</button>}
     {page && <p>已显示 {page.nodes.length} / {page.totalCount} 条顶层评论；回复单独展开。</p>}
   </section>

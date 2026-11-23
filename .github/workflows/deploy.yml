@@ -1,6 +1,8 @@
 name: Deploy macro dashboard to GitHub Pages
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -45,10 +47,10 @@ jobs:
           VITE_CUSTOM_COMMENTS_ENABLED: "true"
           VITE_COMMENTS_API: https://macro-replay-comments.handizheng232.workers.dev
         run: npm run build
-      - name: Verify rr04 publication and entire inherited publication chain
+      - name: Verify shared comments and entire inherited publication chain
         run: |
-          python -B -m unittest discover -s scripts -p 'test_verify_aggressive_publish.py' -v
-          python -B scripts/verify_aggressive_publish.py --legacy-tests --dist dist
+          python -B -m unittest discover -s scripts -p 'test_verify_shared_comments_publish.py' -v
+          python -B scripts/verify_shared_comments_publish.py --legacy-tests --dist dist
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
@@ -57,6 +59,7 @@ jobs:
           path: dist
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
