@@ -19,3 +19,8 @@ scripts/fixtures/pce_distribution_20261105.json -text whitespace=blank-at-eol,bl
 
 src/data/historyReplayAggressiveHikesQt.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 src/data/aggressiveReviewExpected.fixture.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+src/data/policyRealityExpected.fixture.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/policyRealityLegacy.fixture.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/policyRealityMissingDetailsContract.test.tsx -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/policyRealityTemplateContract.test.tsx -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

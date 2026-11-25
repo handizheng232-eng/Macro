@@ -13,7 +13,7 @@ it('loads the new detail route and returns to the verified 09.2 parent', () => {
  expect(window.location.hash).toBe('#history/inflation-qt-repricing/aggressive-hikes-qt')
 })
 import { HistoryReplay } from './historyReplay'
-import data from './data/historyReplayAggressiveHikesQt.json'
+import data from './data/policyRealityLegacy.fixture.json'
 import expected from './data/aggressiveReviewExpected.fixture.json'
 afterEach(cleanup)
 it('projects all 130 accepted paragraphs with every citation and honest local status', () => {

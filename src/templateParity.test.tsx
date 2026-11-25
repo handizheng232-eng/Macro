@@ -1,7 +1,7 @@
 import { render, cleanup } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest'
 import { HistoryReplay } from './historyReplay'
-import candidate from './data/historyReplayAggressiveHikesQt.json'
+import candidate from './data/policyRealityLegacy.fixture.json'
 import reference from './data/historyReplayRateLiftoffQtGuidance.json'
 afterEach(cleanup)
 Object.defineProperty(HTMLElement.prototype,'scrollIntoView',{configurable:true,value:vi.fn()})
