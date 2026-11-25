@@ -1,0 +1,1826 @@
+{
+  "months": [
+    {
+      "id": "PR01-M06",
+      "date": null,
+      "month": "2022-06",
+      "title": "6月｜先防通胀持续和预期松动，接受更大的增长代价",
+      "text": "6月14日至15日会议结束时，联储并没有把一季度GDP下降看成需求已不足。6月15日声明判断经济活动似已回升，就业增长强劲、失业率低；鲍威尔在当天记者会上进一步区分，一季度库存和净出口拖累了总量，消费需求仍强，企业投资与住房才开始受融资条件收紧影响。与此同时，供给约束比原先预计更大、更持久，价格上涨已从较窄的疫情相关商品扩散到服务和住房。俄乌战争推高能源食品成本、中国封控可能扰动供应链，都是利率不能直接修复的供给问题。联储能够做的是压低需求增长，减少需求超过供给的程度，而不是等待所有供给问题自行消失。\n\n本次75个基点、目标区间升至1.50%—1.75%，关键在于原来考虑50个基点所依据的条件没有兑现。鲍威尔说，5月会议后的指引以经济金融情况大致符合预期为前提；临近6月会议，CPI再次高于预期，一些通胀预期指标上升，全年通胀预测也明显上修，因此选择加大前置力度，而不是再等一次会议。他特别提到密歇根调查的初步读数与联储共同通胀预期指数，同时承认调查初值可能修订，大多数较长期预期仍指向通胀回落。这是对预期可能松动的预防性反应，不能写成长期预期已经全面脱锚。声明记录乔治反对本次75个基点、倾向50个基点；分歧是当次步幅，不能扩展成她反对抗通胀。\n\n声明的措辞也变得更谨慎：它明确强调恢复2%通胀的决心，却删除了此前对适当政策能使通胀回落、劳动市场保持强劲的表述。鲍威尔解释，强就业仍是目标，但战争、商品价格与供应链等联储无法控制的因素，使这一结果更难仅靠货币政策保证。他仍设想通过减少异常高的职位空缺来缓和工资压力，未必需要同等幅度增加失业；这是一条可能路径，不是软着陆保证。记者会也明确说，当时并未看到工资—价格螺旋，工资不是这轮涨价的主要起因，但对未来服务通胀很重要。因而风险排序是防止通胀持久化，而不是先认定工资螺旋已经发生，再据此制造失业。\n\n6月SEP把更高利率、更低增长和更高失业放在同一组条件预测中。2022年实际GDP增长中位数由3月的2.8%降为1.7%，当年PCE通胀由4.3%升为5.2%；2023年失业率中位数由3.5%升为3.9%。2022、2023年末政策利率中位数为3.4%、3.8%，高于3月的1.9%、2.8%。这里GDP和通胀是第四季度相对上一年第四季度的变化，失业率是第四季度平均值，政策利率是年末目标区间中点或目标水平；都是参与者各自认为适当政策之下的预测，不是委员会对未来动作的投票。它说明参与者不再预计只需很小的紧缩就能恢复物价稳定，却不能保证预测中的温和就业代价一定实现。\n\n加息之外，6月1日启动的QT执行的是5月4日公布的计划：国债每月不再投资的本金上限先为300亿美元，机构债及MBS合计175亿美元，三个月后分别提高到600亿和350亿美元。超过上限的本金仍再投资，所以这不是每月必然缩减的实际流量。鲍威尔把缩表视为收紧政策立场的一部分；5月计划同时要求最终维持充裕准备金，在准备金接近合适水平之前先减速、再停止缩表，并保留随经济金融情况调整细节的余地。本文据此理解，两项工具共同收紧，但利率按会议和新数据调整，QT按已公布的再投资规则推进，不能给QT虚构固定的加息等价量。\n\n6月尚未确定的是要限制到什么程度、供给何时修复，以及就业会付出多大代价。鲍威尔把下一次50或75个基点称为当时较可能的选择，并说75个基点不应被预计为常态，所有判断仍随数据变化。与5月相比，加快的是到达正常乃至限制性水平的速度，长期目标没有改成更高通胀，也没有把衰退设为政策目的。6月会议纪要直到7月6日才公开，下面把其中员工预测和与会者讨论放在7月的信息集中阅读，不回填为6月15日市场已经知道的内容。",
+      "sourceIds": [
+        "6928012e1260f9c6",
+        "policy-FOMCpresconf20220615",
+        "2dd932c3a8db83a4",
+        "af80a8a5a2e60bc4",
+        "a3bbd33e02123c46"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-06-P01",
+        "PR01-2022-06-P02",
+        "PR01-2022-06-P03",
+        "PR01-2022-06-P04",
+        "PR01-2022-06-P05",
+        "PR01-2022-06-P06"
+      ],
+      "claimIds": [
+        "PR01-2022-06-P01",
+        "PR01-2022-06-P02",
+        "PR01-2022-06-P03",
+        "PR01-2022-06-P04",
+        "PR01-2022-06-P05",
+        "PR01-2022-06-P06"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-06-P01",
+          "reportId": "6928012e1260f9c6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P01",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 9; PDF physical page 22; PDF physical page 23",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P02",
+          "reportId": "6928012e1260f9c6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "article p/li/table zero-based block b9; article p/li/table zero-based block b11",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P02",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 6; PDF physical page 7; PDF physical page 10; PDF physical page 11",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P03",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 13; PDF physical page 14; PDF physical page 15; PDF physical page 16; PDF physical page 17; PDF physical page 20; PDF physical page 21",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P04",
+          "reportId": "2dd932c3a8db83a4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P04",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 4; PDF physical page 15; PDF physical page 16",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P05",
+          "reportId": "af80a8a5a2e60bc4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-05-04",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b13; article p/li/table zero-based block b14; article p/li/table zero-based block b15",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P05",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 3; PDF physical page 25; PDF physical page 26",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P06",
+          "reportId": "policy-FOMCpresconf20220615",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 4; PDF physical page 7; PDF physical page 13; PDF physical page 16; PDF physical page 24",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-06-P06",
+          "reportId": "a3bbd33e02123c46",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-07-06",
+          "locatorLabel": "article p/li/table zero-based block b0",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "6928012e1260f9c6",
+        "policy-FOMCpresconf20220615",
+        "2dd932c3a8db83a4",
+        "af80a8a5a2e60bc4",
+        "a3bbd33e02123c46"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-06-P01",
+          "date": null,
+          "title": "",
+          "text": "6月14日至15日会议结束时，联储并没有把一季度GDP下降看成需求已不足。6月15日声明判断经济活动似已回升，就业增长强劲、失业率低；鲍威尔在当天记者会上进一步区分，一季度库存和净出口拖累了总量，消费需求仍强，企业投资与住房才开始受融资条件收紧影响。与此同时，供给约束比原先预计更大、更持久，价格上涨已从较窄的疫情相关商品扩散到服务和住房。俄乌战争推高能源食品成本、中国封控可能扰动供应链，都是利率不能直接修复的供给问题。联储能够做的是压低需求增长，减少需求超过供给的程度，而不是等待所有供给问题自行消失。",
+          "sourceIds": [
+            "6928012e1260f9c6",
+            "policy-FOMCpresconf20220615"
+          ],
+          "citationAliases": [
+            "6928012e1260f9c6",
+            "policy-FOMCpresconf20220615"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P01",
+              "reportId": "6928012e1260f9c6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-06-P01",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 9; PDF physical page 22; PDF physical page 23",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-06-P02",
+          "date": null,
+          "title": "",
+          "text": "本次75个基点、目标区间升至1.50%—1.75%，关键在于原来考虑50个基点所依据的条件没有兑现。鲍威尔说，5月会议后的指引以经济金融情况大致符合预期为前提；临近6月会议，CPI再次高于预期，一些通胀预期指标上升，全年通胀预测也明显上修，因此选择加大前置力度，而不是再等一次会议。他特别提到密歇根调查的初步读数与联储共同通胀预期指数，同时承认调查初值可能修订，大多数较长期预期仍指向通胀回落。这是对预期可能松动的预防性反应，不能写成长期预期已经全面脱锚。声明记录乔治反对本次75个基点、倾向50个基点；分歧是当次步幅，不能扩展成她反对抗通胀。",
+          "sourceIds": [
+            "6928012e1260f9c6",
+            "policy-FOMCpresconf20220615"
+          ],
+          "citationAliases": [
+            "6928012e1260f9c6",
+            "policy-FOMCpresconf20220615"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P02",
+              "reportId": "6928012e1260f9c6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "article p/li/table zero-based block b9; article p/li/table zero-based block b11",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-06-P02",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 6; PDF physical page 7; PDF physical page 10; PDF physical page 11",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-06-P03",
+          "date": null,
+          "title": "",
+          "text": "声明的措辞也变得更谨慎：它明确强调恢复2%通胀的决心，却删除了此前对适当政策能使通胀回落、劳动市场保持强劲的表述。鲍威尔解释，强就业仍是目标，但战争、商品价格与供应链等联储无法控制的因素，使这一结果更难仅靠货币政策保证。他仍设想通过减少异常高的职位空缺来缓和工资压力，未必需要同等幅度增加失业；这是一条可能路径，不是软着陆保证。记者会也明确说，当时并未看到工资—价格螺旋，工资不是这轮涨价的主要起因，但对未来服务通胀很重要。因而风险排序是防止通胀持久化，而不是先认定工资螺旋已经发生，再据此制造失业。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220615"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220615"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P03",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 13; PDF physical page 14; PDF physical page 15; PDF physical page 16; PDF physical page 17; PDF physical page 20; PDF physical page 21",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-06-P04",
+          "date": null,
+          "title": "",
+          "text": "6月SEP把更高利率、更低增长和更高失业放在同一组条件预测中。2022年实际GDP增长中位数由3月的2.8%降为1.7%，当年PCE通胀由4.3%升为5.2%；2023年失业率中位数由3.5%升为3.9%。2022、2023年末政策利率中位数为3.4%、3.8%，高于3月的1.9%、2.8%。这里GDP和通胀是第四季度相对上一年第四季度的变化，失业率是第四季度平均值，政策利率是年末目标区间中点或目标水平；都是参与者各自认为适当政策之下的预测，不是委员会对未来动作的投票。它说明参与者不再预计只需很小的紧缩就能恢复物价稳定，却不能保证预测中的温和就业代价一定实现。",
+          "sourceIds": [
+            "2dd932c3a8db83a4",
+            "policy-FOMCpresconf20220615"
+          ],
+          "citationAliases": [
+            "2dd932c3a8db83a4",
+            "policy-FOMCpresconf20220615"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P04",
+              "reportId": "2dd932c3a8db83a4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-06-P04",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 4; PDF physical page 15; PDF physical page 16",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-06-P05",
+          "date": null,
+          "title": "",
+          "text": "加息之外，6月1日启动的QT执行的是5月4日公布的计划：国债每月不再投资的本金上限先为300亿美元，机构债及MBS合计175亿美元，三个月后分别提高到600亿和350亿美元。超过上限的本金仍再投资，所以这不是每月必然缩减的实际流量。鲍威尔把缩表视为收紧政策立场的一部分；5月计划同时要求最终维持充裕准备金，在准备金接近合适水平之前先减速、再停止缩表，并保留随经济金融情况调整细节的余地。本文据此理解，两项工具共同收紧，但利率按会议和新数据调整，QT按已公布的再投资规则推进，不能给QT虚构固定的加息等价量。",
+          "sourceIds": [
+            "af80a8a5a2e60bc4",
+            "policy-FOMCpresconf20220615"
+          ],
+          "citationAliases": [
+            "af80a8a5a2e60bc4",
+            "policy-FOMCpresconf20220615"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P05",
+              "reportId": "af80a8a5a2e60bc4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-05-04",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b13; article p/li/table zero-based block b14; article p/li/table zero-based block b15",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-06-P05",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 3; PDF physical page 25; PDF physical page 26",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-06-P06",
+          "date": null,
+          "title": "",
+          "text": "6月尚未确定的是要限制到什么程度、供给何时修复，以及就业会付出多大代价。鲍威尔把下一次50或75个基点称为当时较可能的选择，并说75个基点不应被预计为常态，所有判断仍随数据变化。与5月相比，加快的是到达正常乃至限制性水平的速度，长期目标没有改成更高通胀，也没有把衰退设为政策目的。6月会议纪要直到7月6日才公开，下面把其中员工预测和与会者讨论放在7月的信息集中阅读，不回填为6月15日市场已经知道的内容。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220615",
+            "a3bbd33e02123c46"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220615",
+            "a3bbd33e02123c46"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-06-P06",
+              "reportId": "policy-FOMCpresconf20220615",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 4; PDF physical page 7; PDF physical page 13; PDF physical page 16; PDF physical page 24",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-06-P06",
+              "reportId": "a3bbd33e02123c46",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-07-06",
+              "locatorLabel": "article p/li/table zero-based block b0",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PR01-M07",
+      "date": null,
+      "month": "2022-07",
+      "title": "7月｜增长转弱已进入声明，通胀约束却没有解除",
+      "text": "7月6日公布的6月14日至15日会议纪要，首先补足了加快行动的内部理由。员工因更紧的政策假设与金融条件，下调了2022年下半年和2023年增长预测，但仍预计产出高于潜在水平、劳动市场很紧；同时因工资和供需失衡持续更久，上调当年下半年通胀预测。员工把增长风险偏向下行、通胀风险偏向上行。与会者也看见消费开始受实际购买力侵蚀、投资受成本和融资约束，但没有把这些局部降温认作需求已经充分收缩。这里的员工预测是提交会议的分析，不是6月SEP中每位参与者的预测，也不是7月新作出的决议。\n\n这份后发纪要显示，许多与会者担心长期通胀预期开始向不符合2%目标的水平漂移，但也记载少数人指出中期市场通胀补偿下降、较长期指标未变，不能把讨论写成所有指标同向恶化。许多与会者更担心，若公众怀疑委员会是否愿意继续调整政策，高通胀会固化，未来降通胀代价更大。几乎所有与会者支持6月加75个基点，一位偏好50；与会者对7月50或75个基点的讨论只是未来选择。紧缩可能拖慢增长的风险已经被承认，仍被放在恢复物价稳定、维持长期强就业的目标之下。\n\n到了7月26日至27日会议，现实判断已比6月偏弱。7月27日声明把经济活动似已回升改为近期支出和生产指标转弱，却同时保留就业增长强、失业率低、通胀高的判断，并再加75个基点至2.25%—2.50%。声明在通胀来源中加入食品价格，不再保留中国封控可能加剧供应链扰动的那一句，但仍提疫情供需失衡和广泛价格压力。主席解释，消费受实际可支配收入下降和金融条件收紧影响，住房、企业投资也在放慢；然而6月CPI仍令人失望，商品能源价格最近回落不足以证明广泛通胀已解除。7月28日才发布的二季度GDP初值不是7月27日决定的已公布依据，主席当时明确说尚未看到该报告。\n\n接近中性水平并没有成为停加息的理由。鲍威尔把当时区间放在估计的中性范围附近，同时指出需要进入至少温和限制性状态；这一中性估计不是实时可观测的精确界线。他说明接下来会观察经济活动是否按需要放慢、劳动供求是否趋于平衡、价格压力与实际通胀是否下降，并逐次会议决定，减少到达中性之前那种明确的步幅指引。总体通胀关系居民实际负担和预期，核心指标则更有助于判断后续走势，两者都要看。因而油价下跌与核心黏性并存时，不能仅凭总体数字下降自动得到政策转松结论。\n\n7月的另一个变化是主席已公开说，随着政策继续收紧，未来某时放慢加息、评估累计调整对经济和通胀的影响可能合适。他同时承认大幅且快速的加息尚未充分传导，存在继续生效的紧缩，也承认做得过多会制造不必要的下行；但做得过少、让家庭和企业把高通胀纳入长期决策，会使以后付出更大代价。较低增长和一定程度的劳动市场降温因此可能是恢复2%所需过程，不是他宣布衰退必然发生。QT继续沿既定安排推进，主席预告9月提高到完整计划速度，并提醒证券结算会使表内变化滞后；不能把短期资产负债表变化直接当成政策未执行。",
+      "sourceIds": [
+        "a3bbd33e02123c46",
+        "6928012e1260f9c6",
+        "a140cf97c2675d70",
+        "policy-FOMCpresconf20220727"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-07-P01",
+        "PR01-2022-07-P02",
+        "PR01-2022-07-P03",
+        "PR01-2022-07-P04",
+        "PR01-2022-07-P05"
+      ],
+      "claimIds": [
+        "PR01-2022-07-P01",
+        "PR01-2022-07-P02",
+        "PR01-2022-07-P03",
+        "PR01-2022-07-P04",
+        "PR01-2022-07-P05"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-07-P01",
+          "reportId": "a3bbd33e02123c46",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-07-06",
+          "locatorLabel": "article p/li/table zero-based block b58; article p/li/table zero-based block b59; article p/li/table zero-based block b60; article p/li/table zero-based block b63; article p/li/table zero-based block b64; article p/li/table zero-based block b65",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P02",
+          "reportId": "a3bbd33e02123c46",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-07-06",
+          "locatorLabel": "article p/li/table zero-based block b71; article p/li/table zero-based block b72; article p/li/table zero-based block b73; article p/li/table zero-based block b74; article p/li/table zero-based block b75; article p/li/table zero-based block b76; article p/li/table zero-based block b77",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P03",
+          "reportId": "6928012e1260f9c6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P03",
+          "reportId": "a140cf97c2675d70",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-07-27",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P03",
+          "reportId": "policy-FOMCpresconf20220727",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-07-27",
+          "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 4; PDF physical page 5; PDF physical page 12; PDF physical page 13",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P04",
+          "reportId": "policy-FOMCpresconf20220727",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-07-27",
+          "locatorLabel": "PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 8; PDF physical page 9; PDF physical page 25; PDF physical page 26",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-07-P05",
+          "reportId": "policy-FOMCpresconf20220727",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-07-27",
+          "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 6; PDF physical page 10; PDF physical page 11; PDF physical page 12; PDF physical page 20; PDF physical page 21",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "a3bbd33e02123c46",
+        "6928012e1260f9c6",
+        "a140cf97c2675d70",
+        "policy-FOMCpresconf20220727"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-07-P01",
+          "date": null,
+          "title": "",
+          "text": "7月6日公布的6月14日至15日会议纪要，首先补足了加快行动的内部理由。员工因更紧的政策假设与金融条件，下调了2022年下半年和2023年增长预测，但仍预计产出高于潜在水平、劳动市场很紧；同时因工资和供需失衡持续更久，上调当年下半年通胀预测。员工把增长风险偏向下行、通胀风险偏向上行。与会者也看见消费开始受实际购买力侵蚀、投资受成本和融资约束，但没有把这些局部降温认作需求已经充分收缩。这里的员工预测是提交会议的分析，不是6月SEP中每位参与者的预测，也不是7月新作出的决议。",
+          "sourceIds": [
+            "a3bbd33e02123c46"
+          ],
+          "citationAliases": [
+            "a3bbd33e02123c46"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-07-P01",
+              "reportId": "a3bbd33e02123c46",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-07-06",
+              "locatorLabel": "article p/li/table zero-based block b58; article p/li/table zero-based block b59; article p/li/table zero-based block b60; article p/li/table zero-based block b63; article p/li/table zero-based block b64; article p/li/table zero-based block b65",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-07-P02",
+          "date": null,
+          "title": "",
+          "text": "这份后发纪要显示，许多与会者担心长期通胀预期开始向不符合2%目标的水平漂移，但也记载少数人指出中期市场通胀补偿下降、较长期指标未变，不能把讨论写成所有指标同向恶化。许多与会者更担心，若公众怀疑委员会是否愿意继续调整政策，高通胀会固化，未来降通胀代价更大。几乎所有与会者支持6月加75个基点，一位偏好50；与会者对7月50或75个基点的讨论只是未来选择。紧缩可能拖慢增长的风险已经被承认，仍被放在恢复物价稳定、维持长期强就业的目标之下。",
+          "sourceIds": [
+            "a3bbd33e02123c46"
+          ],
+          "citationAliases": [
+            "a3bbd33e02123c46"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-07-P02",
+              "reportId": "a3bbd33e02123c46",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-07-06",
+              "locatorLabel": "article p/li/table zero-based block b71; article p/li/table zero-based block b72; article p/li/table zero-based block b73; article p/li/table zero-based block b74; article p/li/table zero-based block b75; article p/li/table zero-based block b76; article p/li/table zero-based block b77",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-07-P03",
+          "date": null,
+          "title": "",
+          "text": "到了7月26日至27日会议，现实判断已比6月偏弱。7月27日声明把经济活动似已回升改为近期支出和生产指标转弱，却同时保留就业增长强、失业率低、通胀高的判断，并再加75个基点至2.25%—2.50%。声明在通胀来源中加入食品价格，不再保留中国封控可能加剧供应链扰动的那一句，但仍提疫情供需失衡和广泛价格压力。主席解释，消费受实际可支配收入下降和金融条件收紧影响，住房、企业投资也在放慢；然而6月CPI仍令人失望，商品能源价格最近回落不足以证明广泛通胀已解除。7月28日才发布的二季度GDP初值不是7月27日决定的已公布依据，主席当时明确说尚未看到该报告。",
+          "sourceIds": [
+            "6928012e1260f9c6",
+            "a140cf97c2675d70",
+            "policy-FOMCpresconf20220727"
+          ],
+          "citationAliases": [
+            "6928012e1260f9c6",
+            "a140cf97c2675d70",
+            "policy-FOMCpresconf20220727"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-07-P03",
+              "reportId": "6928012e1260f9c6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-07-P03",
+              "reportId": "a140cf97c2675d70",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-07-27",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-07-P03",
+              "reportId": "policy-FOMCpresconf20220727",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-07-27",
+              "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 4; PDF physical page 5; PDF physical page 12; PDF physical page 13",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-07-P04",
+          "date": null,
+          "title": "",
+          "text": "接近中性水平并没有成为停加息的理由。鲍威尔把当时区间放在估计的中性范围附近，同时指出需要进入至少温和限制性状态；这一中性估计不是实时可观测的精确界线。他说明接下来会观察经济活动是否按需要放慢、劳动供求是否趋于平衡、价格压力与实际通胀是否下降，并逐次会议决定，减少到达中性之前那种明确的步幅指引。总体通胀关系居民实际负担和预期，核心指标则更有助于判断后续走势，两者都要看。因而油价下跌与核心黏性并存时，不能仅凭总体数字下降自动得到政策转松结论。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220727"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220727"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-07-P04",
+              "reportId": "policy-FOMCpresconf20220727",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-07-27",
+              "locatorLabel": "PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 8; PDF physical page 9; PDF physical page 25; PDF physical page 26",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-07-P05",
+          "date": null,
+          "title": "",
+          "text": "7月的另一个变化是主席已公开说，随着政策继续收紧，未来某时放慢加息、评估累计调整对经济和通胀的影响可能合适。他同时承认大幅且快速的加息尚未充分传导，存在继续生效的紧缩，也承认做得过多会制造不必要的下行；但做得过少、让家庭和企业把高通胀纳入长期决策，会使以后付出更大代价。较低增长和一定程度的劳动市场降温因此可能是恢复2%所需过程，不是他宣布衰退必然发生。QT继续沿既定安排推进，主席预告9月提高到完整计划速度，并提醒证券结算会使表内变化滞后；不能把短期资产负债表变化直接当成政策未执行。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220727"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220727"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-07-P05",
+              "reportId": "policy-FOMCpresconf20220727",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-07-27",
+              "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 6; PDF physical page 10; PDF physical page 11; PDF physical page 12; PDF physical page 20; PDF physical page 21",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PR01-M08",
+      "date": null,
+      "month": "2022-08",
+      "title": "8月｜可以讨论减速，但不能让一次降温变成提前放松",
+      "text": "8月没有FOMC例会，本月重要公开材料是8月17日的7月26日至27日会议纪要和8月26日鲍威尔的Jackson Hole演讲。7月会议员工预测较6月明显转弱：预计产出高于潜在水平的差距在2023年下半年消失，失业率自2022年下半年上升。员工仍预计随着供需失衡缓解、劳动市场降温和进口价格压力减轻，通胀逐步下降，却把供应恢复不足、持续的通胀意外与预期脱锚视为上行风险。这说明内部基准预测可以向通胀回落倾斜，同时仍认为政策必须防备预测落空；不是员工已经判断抗通胀完成。\n\n与会者看到的需求减速更广：消费、住房、投资和制造业生产都放慢，海外前景转弱和强美元又压低外需。但对增长与就业信号不一致仍有分歧：数位与会者认为GDP可能低估实际活动、以后上修，另有数位指出家庭调查和ADP所示就业弱于企业调查。供给方面，一些材料更易获得、交货时间缩短，仍不足以保证瓶颈迅速消退；劳动参与回升的空间也受退休和疫情因素制约。原文不是把某一组数据宣布为错误，而是提醒需求降温的幅度和劳动市场真实紧度都存在判断误差。\n\n通胀讨论尤其反对把汽油降价当作持续回落的充分条件。与会者认为能源价格可能反弹，价格压力仍广泛，租金还有进一步上涨的可能；数位与会者强调，单靠供给改善不能足够快地消除供需失衡。与此同时，他们把尚未出现工资—价格螺旋、海外加息和美元升值压低进口价格列为有助于通胀回落的因素，而不是忽略所有有利变化。部分与会者还指出，即便名义政策利率已在长期中性估计范围内，考虑近端通胀后，实际联邦基金利率仍可能低于短期中性水平。因此7月达到某个名义水平，不能直接证明限制程度已经足够。\n\n纪要把两类风险并列：与会者担心公众怀疑抗通胀决心，使高通胀固化；许多与会者也担心经济环境不断变化、政策又有较长且不确定的时滞，可能紧得超过必要程度。与会者认为未来某时减速有助于评估累计效果，部分与会者认为达到足够限制性水平后应维持一段时间，确保通胀稳步返回2%。这与停止紧缩是两回事。纪要还解释7月声明的食品措辞来自食品涨价及其家庭预算权重，而删除中国封控句源于封控大体解除、对供应链影响有限的当时判断；这不等于宣告全部全球供给约束消失。\n\n8月26日，鲍威尔把长期取向说得更直接：恢复物价稳定可能需要持续一段时间的低于趋势增长与劳动市场降温，会给家庭和企业带来痛苦，但失败后的代价更大。他欢迎7月通胀下降，却说一个月远不足以确认趋势；在通胀远高于2%、就业极紧时，长期中性估计不是停止或暂停的地点。他仍保留未来某时减速的可能，也没有提前决定9月幅度，但强调限制性政策可能需要保持一段时间，历史经验警告不能过早放松。相对7月，这番沟通更突出维持限制的必要性，并没有撤销数据依赖。\n\n演讲的长期逻辑不是把就业目标丢掉。鲍威尔认为，只有物价稳定才可能持续实现普遍受益的强劳动市场；即便冲击来自全球供给，联储主要影响需求，也不能据此推卸稳定物价的责任。他担心高通胀持续越久，家庭和企业越会将其写入工资和定价决定，届时降通胀需要付出的就业成本反而更高。因此需要在长期预期总体仍受约束时行动，而不是等待预期失控之后再纠正。这是主席阐述的风险管理理由，不能由此推定他掌握了某个必然触发螺旋的通胀期限。",
+      "sourceIds": [
+        "ec26db92465df671",
+        "policy-powell20220826a"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-08-P01",
+        "PR01-2022-08-P02",
+        "PR01-2022-08-P03",
+        "PR01-2022-08-P04",
+        "PR01-2022-08-P05",
+        "PR01-2022-08-P06"
+      ],
+      "claimIds": [
+        "PR01-2022-08-P01",
+        "PR01-2022-08-P02",
+        "PR01-2022-08-P03",
+        "PR01-2022-08-P04",
+        "PR01-2022-08-P05",
+        "PR01-2022-08-P06"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-08-P01",
+          "reportId": "ec26db92465df671",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-08-17",
+          "locatorLabel": "article p/li/table zero-based block b64; article p/li/table zero-based block b65; article p/li/table zero-based block b66",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P01",
+          "reportId": "policy-powell20220826a",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-08-26",
+          "locatorLabel": "article p/li/table zero-based block b0",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P02",
+          "reportId": "ec26db92465df671",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-08-17",
+          "locatorLabel": "article p/li/table zero-based block b68; article p/li/table zero-based block b69; article p/li/table zero-based block b70; article p/li/table zero-based block b71; article p/li/table zero-based block b72; article p/li/table zero-based block b74",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P03",
+          "reportId": "ec26db92465df671",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-08-17",
+          "locatorLabel": "article p/li/table zero-based block b73; article p/li/table zero-based block b74; article p/li/table zero-based block b75; article p/li/table zero-based block b78",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P04",
+          "reportId": "ec26db92465df671",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-08-17",
+          "locatorLabel": "article p/li/table zero-based block b79; article p/li/table zero-based block b80; article p/li/table zero-based block b81; article p/li/table zero-based block b82; article p/li/table zero-based block b83; article p/li/table zero-based block b84",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P05",
+          "reportId": "policy-powell20220826a",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-08-26",
+          "locatorLabel": "article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b13; article p/li/table zero-based block b14; article p/li/table zero-based block b15",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-08-P06",
+          "reportId": "policy-powell20220826a",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-08-26",
+          "locatorLabel": "article p/li/table zero-based block b10; article p/li/table zero-based block b17; article p/li/table zero-based block b18; article p/li/table zero-based block b19; article p/li/table zero-based block b20; article p/li/table zero-based block b21; article p/li/table zero-based block b22; article p/li/table zero-based block b23",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "ec26db92465df671",
+        "policy-powell20220826a"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-08-P01",
+          "date": null,
+          "title": "",
+          "text": "8月没有FOMC例会，本月重要公开材料是8月17日的7月26日至27日会议纪要和8月26日鲍威尔的Jackson Hole演讲。7月会议员工预测较6月明显转弱：预计产出高于潜在水平的差距在2023年下半年消失，失业率自2022年下半年上升。员工仍预计随着供需失衡缓解、劳动市场降温和进口价格压力减轻，通胀逐步下降，却把供应恢复不足、持续的通胀意外与预期脱锚视为上行风险。这说明内部基准预测可以向通胀回落倾斜，同时仍认为政策必须防备预测落空；不是员工已经判断抗通胀完成。",
+          "sourceIds": [
+            "ec26db92465df671",
+            "policy-powell20220826a"
+          ],
+          "citationAliases": [
+            "ec26db92465df671",
+            "policy-powell20220826a"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P01",
+              "reportId": "ec26db92465df671",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-08-17",
+              "locatorLabel": "article p/li/table zero-based block b64; article p/li/table zero-based block b65; article p/li/table zero-based block b66",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-08-P01",
+              "reportId": "policy-powell20220826a",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-08-26",
+              "locatorLabel": "article p/li/table zero-based block b0",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-08-P02",
+          "date": null,
+          "title": "",
+          "text": "与会者看到的需求减速更广：消费、住房、投资和制造业生产都放慢，海外前景转弱和强美元又压低外需。但对增长与就业信号不一致仍有分歧：数位与会者认为GDP可能低估实际活动、以后上修，另有数位指出家庭调查和ADP所示就业弱于企业调查。供给方面，一些材料更易获得、交货时间缩短，仍不足以保证瓶颈迅速消退；劳动参与回升的空间也受退休和疫情因素制约。原文不是把某一组数据宣布为错误，而是提醒需求降温的幅度和劳动市场真实紧度都存在判断误差。",
+          "sourceIds": [
+            "ec26db92465df671"
+          ],
+          "citationAliases": [
+            "ec26db92465df671"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P02",
+              "reportId": "ec26db92465df671",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-08-17",
+              "locatorLabel": "article p/li/table zero-based block b68; article p/li/table zero-based block b69; article p/li/table zero-based block b70; article p/li/table zero-based block b71; article p/li/table zero-based block b72; article p/li/table zero-based block b74",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-08-P03",
+          "date": null,
+          "title": "",
+          "text": "通胀讨论尤其反对把汽油降价当作持续回落的充分条件。与会者认为能源价格可能反弹，价格压力仍广泛，租金还有进一步上涨的可能；数位与会者强调，单靠供给改善不能足够快地消除供需失衡。与此同时，他们把尚未出现工资—价格螺旋、海外加息和美元升值压低进口价格列为有助于通胀回落的因素，而不是忽略所有有利变化。部分与会者还指出，即便名义政策利率已在长期中性估计范围内，考虑近端通胀后，实际联邦基金利率仍可能低于短期中性水平。因此7月达到某个名义水平，不能直接证明限制程度已经足够。",
+          "sourceIds": [
+            "ec26db92465df671"
+          ],
+          "citationAliases": [
+            "ec26db92465df671"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P03",
+              "reportId": "ec26db92465df671",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-08-17",
+              "locatorLabel": "article p/li/table zero-based block b73; article p/li/table zero-based block b74; article p/li/table zero-based block b75; article p/li/table zero-based block b78",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-08-P04",
+          "date": null,
+          "title": "",
+          "text": "纪要把两类风险并列：与会者担心公众怀疑抗通胀决心，使高通胀固化；许多与会者也担心经济环境不断变化、政策又有较长且不确定的时滞，可能紧得超过必要程度。与会者认为未来某时减速有助于评估累计效果，部分与会者认为达到足够限制性水平后应维持一段时间，确保通胀稳步返回2%。这与停止紧缩是两回事。纪要还解释7月声明的食品措辞来自食品涨价及其家庭预算权重，而删除中国封控句源于封控大体解除、对供应链影响有限的当时判断；这不等于宣告全部全球供给约束消失。",
+          "sourceIds": [
+            "ec26db92465df671"
+          ],
+          "citationAliases": [
+            "ec26db92465df671"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P04",
+              "reportId": "ec26db92465df671",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-08-17",
+              "locatorLabel": "article p/li/table zero-based block b79; article p/li/table zero-based block b80; article p/li/table zero-based block b81; article p/li/table zero-based block b82; article p/li/table zero-based block b83; article p/li/table zero-based block b84",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-08-P05",
+          "date": null,
+          "title": "",
+          "text": "8月26日，鲍威尔把长期取向说得更直接：恢复物价稳定可能需要持续一段时间的低于趋势增长与劳动市场降温，会给家庭和企业带来痛苦，但失败后的代价更大。他欢迎7月通胀下降，却说一个月远不足以确认趋势；在通胀远高于2%、就业极紧时，长期中性估计不是停止或暂停的地点。他仍保留未来某时减速的可能，也没有提前决定9月幅度，但强调限制性政策可能需要保持一段时间，历史经验警告不能过早放松。相对7月，这番沟通更突出维持限制的必要性，并没有撤销数据依赖。",
+          "sourceIds": [
+            "policy-powell20220826a"
+          ],
+          "citationAliases": [
+            "policy-powell20220826a"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P05",
+              "reportId": "policy-powell20220826a",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-08-26",
+              "locatorLabel": "article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b13; article p/li/table zero-based block b14; article p/li/table zero-based block b15",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-08-P06",
+          "date": null,
+          "title": "",
+          "text": "演讲的长期逻辑不是把就业目标丢掉。鲍威尔认为，只有物价稳定才可能持续实现普遍受益的强劳动市场；即便冲击来自全球供给，联储主要影响需求，也不能据此推卸稳定物价的责任。他担心高通胀持续越久，家庭和企业越会将其写入工资和定价决定，届时降通胀需要付出的就业成本反而更高。因此需要在长期预期总体仍受约束时行动，而不是等待预期失控之后再纠正。这是主席阐述的风险管理理由，不能由此推定他掌握了某个必然触发螺旋的通胀期限。",
+          "sourceIds": [
+            "policy-powell20220826a"
+          ],
+          "citationAliases": [
+            "policy-powell20220826a"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-08-P06",
+              "reportId": "policy-powell20220826a",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-08-26",
+              "locatorLabel": "article p/li/table zero-based block b10; article p/li/table zero-based block b17; article p/li/table zero-based block b18; article p/li/table zero-based block b19; article p/li/table zero-based block b20; article p/li/table zero-based block b21; article p/li/table zero-based block b22; article p/li/table zero-based block b23",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PR01-M09",
+      "date": null,
+      "month": "2022-09",
+      "title": "9月｜所需限制程度继续上移，软着陆仍是目标而非保证",
+      "text": "9月20日至21日会议并未沿着7月通胀下降的单月表现认定压力已解除。9月21日声明把支出和生产描述为温和增长，较7月的转弱有所变化，但就业强、失业率低、通胀广泛高企和继续加息的判断未变，目标区间再上调75个基点至3.00%—3.25%。鲍威尔说，住房已明显走弱，企业投资受利率与产出放慢制约，海外增长转弱也压低出口；然而劳动供求仍严重失衡，8月参与率虽回升，全年以来改善有限。需求最敏感的部分先响应，不意味着服务价格和劳动成本已经同步降温。\n\n政策路径上调的依据，是盼望中的供给修复尚未转化为足够的通胀下降。鲍威尔把7月较低、8月较高的读数放在一起看，反对对单月过度反应；他认为核心通胀仍高，需要继续接近足够限制性的水平。9月SEP将2022、2023年末利率中位数由6月的3.4%、3.8%升至4.4%、4.6%；同期2022年实际GDP增长中位数从1.7%降到0.2%，2023年从1.7%降到1.2%，2023年第四季度失业率从3.9%升到4.4%。更紧政策与更弱增长同时出现，反映参与者估计恢复物价稳定需要付出更大代价，而不是他们看不到增长下行。\n\n同一张SEP还把2023年PCE通胀中位数由2.6%升到2.8%，核心由2.7%升到3.1%，说明即使预测政策更紧，回落也比6月设想慢。增长和通胀仍按第四季度同比，失业率按第四季度均值，政策利率按年末中点或目标水平理解，不能拿这些数与全年平均增速或某月失业率混比。点阵是参与者各自适当政策假设的分布，既不是下一次会议的承诺，也不能仅从年末中位数倒推出每次固定的75、50、25组合。主席在记者会上明确说，委员会只作出本次决定，后面会议尚未投票。\n\n鲍威尔仍保留比历史上温和的就业调整路径：异常高的职位空缺可能先下降，长期通胀预期若保持稳定、供应链和商品成本若继续改善，都有助于降低代价。但他同时说，没有人知道是否会衰退、若衰退会多严重；政策需要越紧、保持越久，软着陆机会越小。未来减速可以用来观察累计影响，降息则需要对通胀返回2%很有把握。这把几个门槛分开了：从大步加息转成较小步幅，不代表已经达到足够限制性的水平，更不代表已满足转向降息的条件。\n\nQT在9月按既定计划进入较高上限阶段，9月操作说明列明国债每月600亿美元、机构债及MBS合计350亿美元的本金不再投资上限。实际减持仍取决于本金到账、到期与再投资，不能直接填成每月950亿美元已经流出的事实。鲍威尔同时说，主动出售MBS尚非当时正在考虑或近期预期要考虑的事项，不能把缩表写成已经启动主动出售。面对全球同步紧缩的疑问，他表示会把海外政策与外溢纳入美国前景判断、保持信息交流，但各央行服务各自职责，并非已进行统一行动。9月纪要10月12日才公开，其内部讨论另归10月。",
+      "sourceIds": [
+        "58df42f38c93efcc",
+        "a140cf97c2675d70",
+        "policy-FOMCpresconf20220921",
+        "adc77e0b86c78419",
+        "2dd932c3a8db83a4",
+        "af80a8a5a2e60bc4",
+        "4bc2b5731e874841"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-09-P01",
+        "PR01-2022-09-P02",
+        "PR01-2022-09-P03",
+        "PR01-2022-09-P04",
+        "PR01-2022-09-P05"
+      ],
+      "claimIds": [
+        "PR01-2022-09-P01",
+        "PR01-2022-09-P02",
+        "PR01-2022-09-P03",
+        "PR01-2022-09-P04",
+        "PR01-2022-09-P05"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-09-P01",
+          "reportId": "58df42f38c93efcc",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P01",
+          "reportId": "a140cf97c2675d70",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-07-27",
+          "locatorLabel": "article p/li/table zero-based block b7",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P01",
+          "reportId": "policy-FOMCpresconf20220921",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 3; PDF physical page 5; PDF physical page 14; PDF physical page 15",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P02",
+          "reportId": "policy-FOMCpresconf20220921",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 11; PDF physical page 12",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P02",
+          "reportId": "adc77e0b86c78419",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P02",
+          "reportId": "2dd932c3a8db83a4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-06-15",
+          "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P03",
+          "reportId": "adc77e0b86c78419",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P03",
+          "reportId": "policy-FOMCpresconf20220921",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 4; PDF physical page 10; PDF physical page 11",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P04",
+          "reportId": "policy-FOMCpresconf20220921",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 8; PDF physical page 9",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P05",
+          "reportId": "af80a8a5a2e60bc4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-05-04",
+          "locatorLabel": "article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P05",
+          "reportId": "4bc2b5731e874841",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "article p/li/table zero-based block b13; article p/li/table zero-based block b14",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-09-P05",
+          "reportId": "policy-FOMCpresconf20220921",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-09-21",
+          "locatorLabel": "PDF physical page 12; PDF physical page 13; PDF physical page 14",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "58df42f38c93efcc",
+        "a140cf97c2675d70",
+        "policy-FOMCpresconf20220921",
+        "adc77e0b86c78419",
+        "2dd932c3a8db83a4",
+        "af80a8a5a2e60bc4",
+        "4bc2b5731e874841"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-09-P01",
+          "date": null,
+          "title": "",
+          "text": "9月20日至21日会议并未沿着7月通胀下降的单月表现认定压力已解除。9月21日声明把支出和生产描述为温和增长，较7月的转弱有所变化，但就业强、失业率低、通胀广泛高企和继续加息的判断未变，目标区间再上调75个基点至3.00%—3.25%。鲍威尔说，住房已明显走弱，企业投资受利率与产出放慢制约，海外增长转弱也压低出口；然而劳动供求仍严重失衡，8月参与率虽回升，全年以来改善有限。需求最敏感的部分先响应，不意味着服务价格和劳动成本已经同步降温。",
+          "sourceIds": [
+            "58df42f38c93efcc",
+            "a140cf97c2675d70",
+            "policy-FOMCpresconf20220921"
+          ],
+          "citationAliases": [
+            "58df42f38c93efcc",
+            "a140cf97c2675d70",
+            "policy-FOMCpresconf20220921"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-09-P01",
+              "reportId": "58df42f38c93efcc",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P01",
+              "reportId": "a140cf97c2675d70",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-07-27",
+              "locatorLabel": "article p/li/table zero-based block b7",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P01",
+              "reportId": "policy-FOMCpresconf20220921",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 1; PDF physical page 2; PDF physical page 3; PDF physical page 5; PDF physical page 14; PDF physical page 15",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-09-P02",
+          "date": null,
+          "title": "",
+          "text": "政策路径上调的依据，是盼望中的供给修复尚未转化为足够的通胀下降。鲍威尔把7月较低、8月较高的读数放在一起看，反对对单月过度反应；他认为核心通胀仍高，需要继续接近足够限制性的水平。9月SEP将2022、2023年末利率中位数由6月的3.4%、3.8%升至4.4%、4.6%；同期2022年实际GDP增长中位数从1.7%降到0.2%，2023年从1.7%降到1.2%，2023年第四季度失业率从3.9%升到4.4%。更紧政策与更弱增长同时出现，反映参与者估计恢复物价稳定需要付出更大代价，而不是他们看不到增长下行。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220921",
+            "adc77e0b86c78419",
+            "2dd932c3a8db83a4"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220921",
+            "adc77e0b86c78419",
+            "2dd932c3a8db83a4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-09-P02",
+              "reportId": "policy-FOMCpresconf20220921",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 3; PDF physical page 4; PDF physical page 11; PDF physical page 12",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P02",
+              "reportId": "adc77e0b86c78419",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P02",
+              "reportId": "2dd932c3a8db83a4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-06-15",
+              "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-09-P03",
+          "date": null,
+          "title": "",
+          "text": "同一张SEP还把2023年PCE通胀中位数由2.6%升到2.8%，核心由2.7%升到3.1%，说明即使预测政策更紧，回落也比6月设想慢。增长和通胀仍按第四季度同比，失业率按第四季度均值，政策利率按年末中点或目标水平理解，不能拿这些数与全年平均增速或某月失业率混比。点阵是参与者各自适当政策假设的分布，既不是下一次会议的承诺，也不能仅从年末中位数倒推出每次固定的75、50、25组合。主席在记者会上明确说，委员会只作出本次决定，后面会议尚未投票。",
+          "sourceIds": [
+            "adc77e0b86c78419",
+            "policy-FOMCpresconf20220921"
+          ],
+          "citationAliases": [
+            "adc77e0b86c78419",
+            "policy-FOMCpresconf20220921"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-09-P03",
+              "reportId": "adc77e0b86c78419",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 2, Table 1, Median 2022/2023 and notes; image inspected",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P03",
+              "reportId": "policy-FOMCpresconf20220921",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 4; PDF physical page 10; PDF physical page 11",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-09-P04",
+          "date": null,
+          "title": "",
+          "text": "鲍威尔仍保留比历史上温和的就业调整路径：异常高的职位空缺可能先下降，长期通胀预期若保持稳定、供应链和商品成本若继续改善，都有助于降低代价。但他同时说，没有人知道是否会衰退、若衰退会多严重；政策需要越紧、保持越久，软着陆机会越小。未来减速可以用来观察累计影响，降息则需要对通胀返回2%很有把握。这把几个门槛分开了：从大步加息转成较小步幅，不代表已经达到足够限制性的水平，更不代表已满足转向降息的条件。",
+          "sourceIds": [
+            "policy-FOMCpresconf20220921"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20220921"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-09-P04",
+              "reportId": "policy-FOMCpresconf20220921",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 8; PDF physical page 9",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-09-P05",
+          "date": null,
+          "title": "",
+          "text": "QT在9月按既定计划进入较高上限阶段，9月操作说明列明国债每月600亿美元、机构债及MBS合计350亿美元的本金不再投资上限。实际减持仍取决于本金到账、到期与再投资，不能直接填成每月950亿美元已经流出的事实。鲍威尔同时说，主动出售MBS尚非当时正在考虑或近期预期要考虑的事项，不能把缩表写成已经启动主动出售。面对全球同步紧缩的疑问，他表示会把海外政策与外溢纳入美国前景判断、保持信息交流，但各央行服务各自职责，并非已进行统一行动。9月纪要10月12日才公开，其内部讨论另归10月。",
+          "sourceIds": [
+            "af80a8a5a2e60bc4",
+            "4bc2b5731e874841",
+            "policy-FOMCpresconf20220921"
+          ],
+          "citationAliases": [
+            "af80a8a5a2e60bc4",
+            "4bc2b5731e874841",
+            "policy-FOMCpresconf20220921"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-09-P05",
+              "reportId": "af80a8a5a2e60bc4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-05-04",
+              "locatorLabel": "article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P05",
+              "reportId": "4bc2b5731e874841",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "article p/li/table zero-based block b13; article p/li/table zero-based block b14",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-09-P05",
+              "reportId": "policy-FOMCpresconf20220921",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-09-21",
+              "locatorLabel": "PDF physical page 12; PDF physical page 13; PDF physical page 14",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PR01-M10",
+      "date": null,
+      "month": "2022-10",
+      "title": "10月｜增长低不等于需求缺口已消失，过紧风险开始更具体",
+      "text": "10月没有FOMC例会；10月12日公开的是9月20日至21日会议纪要，不是10月的新加息决定。员工预测揭示一个重要变化：实际增长预测比7月稍弱，但由于生产率持续令人失望、劳动参与回升缓慢，员工显著下修近期潜在产出，并预计较低路径延续。结果是员工估计的当年正产出缺口反而扩大，直到2025年底产出仍略高于潜在水平。本文据此理解，经济增长低与需求相对供给仍偏强可以并存，不能仅凭GDP疲弱就判定通胀约束自动消失；潜在产出和产出缺口在这里是员工估计，不是已观测事实。\n\n员工继续上调预测期各年的核心通胀，认为供需失衡会逐步缓解，却担心供给恢复不足、能源再涨、工资传导更强或预期脱锚。与会者的观察并不完全一致：许多人从企业联系中听到运费、交货期和库存改善，数位仍看不到多少供应好转，个别人的联系反馈则显示瓶颈正由零部件转为劳动力。数位与会者认为商品价格仍高，可能意味着从商品转向服务的消费调整压价效果较小，或供应和用工问题拖得更久。住房等服务价格又具有持续性，所以物流改善与核心通胀顽固可以同时发生。\n\n对就业代价，与会者普遍预计劳动市场将降温、失业率会有所上升；数位认为调整主要可能体现为职位空缺减少和新增就业放慢，少数则特别提醒失业率可能比员工预测上升更多。关于通胀持续化，长期预期整体仍被认为稳定，部分人担心高通胀拖延会增大脱锚风险；一些与会者指出工资—价格螺旋尚未出现，只把它列为风险。纪要没有支持把劳动紧张直接等同于已经进入螺旋，更没有保证职位空缺下降足以让全部就业调整无痛完成。\n\n政策取向仍偏向先确保抗通胀力度。许多与会者因通胀缺少回落迹象、供需失衡延续，上调了达到目标所需的利率路径；许多人认为，达到足够限制性的水平后，应维持到有令人信服的证据表明通胀正返回2%。许多与会者还判断行动不足的代价可能超过行动过多，但数位指出，进入限制性区间后，累计需求抑制超过必要程度的风险会使权衡更趋双向。这些判断并存，不能把减速讨论读成已放弃提高终点，也不能说委员会只关心通胀、完全不考虑过度紧缩。\n\n过紧风险有了更具体的来源。数位与会者提到全球经济金融环境高度不确定，需要校准继续收紧的速度；海外央行同时加息、欧洲衰退风险、中国增长放缓和战争冲击，都可能反馈到美国需求。多数与会者观察到住房和企业投资已响应金融条件，经济活动的很大部分尚未明显响应，通胀反应又可能迟于总需求。因此未来某时减速是为辨认累计作用，不能单由价格暂未下降就推断之前的加息全部无效。QT依然继续；少数与会者提出，在缩表充分推进后可考虑出售MBS以向主要持有国债的长期组合靠拢，仍只是未来建议，不是出售授权。",
+      "sourceIds": [
+        "30ec5c6ae2e716c4"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-10-P01",
+        "PR01-2022-10-P02",
+        "PR01-2022-10-P03",
+        "PR01-2022-10-P04",
+        "PR01-2022-10-P05"
+      ],
+      "claimIds": [
+        "PR01-2022-10-P01",
+        "PR01-2022-10-P02",
+        "PR01-2022-10-P03",
+        "PR01-2022-10-P04",
+        "PR01-2022-10-P05"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-10-P01",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b88; article p/li/table zero-based block b89; article p/li/table zero-based block b90",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-10-P02",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b89; article p/li/table zero-based block b90; article p/li/table zero-based block b96; article p/li/table zero-based block b97; article p/li/table zero-based block b99",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-10-P03",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b97; article p/li/table zero-based block b98; article p/li/table zero-based block b101; article p/li/table zero-based block b102",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-10-P04",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b104; article p/li/table zero-based block b105; article p/li/table zero-based block b106; article p/li/table zero-based block b107",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-10-P05",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b103; article p/li/table zero-based block b105; article p/li/table zero-based block b106; article p/li/table zero-based block b107",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "30ec5c6ae2e716c4"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-10-P01",
+          "date": null,
+          "title": "",
+          "text": "10月没有FOMC例会；10月12日公开的是9月20日至21日会议纪要，不是10月的新加息决定。员工预测揭示一个重要变化：实际增长预测比7月稍弱，但由于生产率持续令人失望、劳动参与回升缓慢，员工显著下修近期潜在产出，并预计较低路径延续。结果是员工估计的当年正产出缺口反而扩大，直到2025年底产出仍略高于潜在水平。本文据此理解，经济增长低与需求相对供给仍偏强可以并存，不能仅凭GDP疲弱就判定通胀约束自动消失；潜在产出和产出缺口在这里是员工估计，不是已观测事实。",
+          "sourceIds": [
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-10-P01",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b88; article p/li/table zero-based block b89; article p/li/table zero-based block b90",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-10-P02",
+          "date": null,
+          "title": "",
+          "text": "员工继续上调预测期各年的核心通胀，认为供需失衡会逐步缓解，却担心供给恢复不足、能源再涨、工资传导更强或预期脱锚。与会者的观察并不完全一致：许多人从企业联系中听到运费、交货期和库存改善，数位仍看不到多少供应好转，个别人的联系反馈则显示瓶颈正由零部件转为劳动力。数位与会者认为商品价格仍高，可能意味着从商品转向服务的消费调整压价效果较小，或供应和用工问题拖得更久。住房等服务价格又具有持续性，所以物流改善与核心通胀顽固可以同时发生。",
+          "sourceIds": [
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-10-P02",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b89; article p/li/table zero-based block b90; article p/li/table zero-based block b96; article p/li/table zero-based block b97; article p/li/table zero-based block b99",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-10-P03",
+          "date": null,
+          "title": "",
+          "text": "对就业代价，与会者普遍预计劳动市场将降温、失业率会有所上升；数位认为调整主要可能体现为职位空缺减少和新增就业放慢，少数则特别提醒失业率可能比员工预测上升更多。关于通胀持续化，长期预期整体仍被认为稳定，部分人担心高通胀拖延会增大脱锚风险；一些与会者指出工资—价格螺旋尚未出现，只把它列为风险。纪要没有支持把劳动紧张直接等同于已经进入螺旋，更没有保证职位空缺下降足以让全部就业调整无痛完成。",
+          "sourceIds": [
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-10-P03",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b97; article p/li/table zero-based block b98; article p/li/table zero-based block b101; article p/li/table zero-based block b102",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-10-P04",
+          "date": null,
+          "title": "",
+          "text": "政策取向仍偏向先确保抗通胀力度。许多与会者因通胀缺少回落迹象、供需失衡延续，上调了达到目标所需的利率路径；许多人认为，达到足够限制性的水平后，应维持到有令人信服的证据表明通胀正返回2%。许多与会者还判断行动不足的代价可能超过行动过多，但数位指出，进入限制性区间后，累计需求抑制超过必要程度的风险会使权衡更趋双向。这些判断并存，不能把减速讨论读成已放弃提高终点，也不能说委员会只关心通胀、完全不考虑过度紧缩。",
+          "sourceIds": [
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-10-P04",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b104; article p/li/table zero-based block b105; article p/li/table zero-based block b106; article p/li/table zero-based block b107",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-10-P05",
+          "date": null,
+          "title": "",
+          "text": "过紧风险有了更具体的来源。数位与会者提到全球经济金融环境高度不确定，需要校准继续收紧的速度；海外央行同时加息、欧洲衰退风险、中国增长放缓和战争冲击，都可能反馈到美国需求。多数与会者观察到住房和企业投资已响应金融条件，经济活动的很大部分尚未明显响应，通胀反应又可能迟于总需求。因此未来某时减速是为辨认累计作用，不能单由价格暂未下降就推断之前的加息全部无效。QT依然继续；少数与会者提出，在缩表充分推进后可考虑出售MBS以向主要持有国债的长期组合靠拢，仍只是未来建议，不是出售授权。",
+          "sourceIds": [
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-10-P05",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b103; article p/li/table zero-based block b105; article p/li/table zero-based block b106; article p/li/table zero-based block b107",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PR01-M11",
+      "date": null,
+      "month": "2022-11",
+      "title": "11月｜把速度、终点与维持时间分开，减速不等于抗通胀结束",
+      "text": "11月1日至2日会议仍处在增长放慢而劳动市场很紧、通胀反复高于预期的环境中。11月2日声明继续加75个基点至3.75%—4.00%，并新增两层说明：继续加息是为了达到足以使通胀逐步回到2%的限制性立场；决定未来步幅时，要考虑累计紧缩、政策影响经济活动与通胀的时滞，以及经济金融变化。QT仍按5月计划继续。比9月更明确的是如何决定加息速度，而不是撤销继续加息的判断；11月23日公布的纪要也说明，这两处新增文字是为了把限制性目标和考量因素向公众说清。\n\n当天记者会中，鲍威尔把决策分成加多快、加到多高、限制多久三个问题。他说，连续下降的通胀月值是希望看到的证据，却从未把它作为放慢步幅的恰当单一测试；累计收紧和时滞使未来一两次会议讨论减速成为可能，尚未作出决定。与此同时，会间的就业和尤其CPI信息使他认为终点可能高于9月估计，谈暂停还太早。主席仍认为未充分紧缩或过早放松的代价很大，因为延误可能让高通胀进入长期决策、增加以后压低通胀的就业成本。他承认过紧风险，却没有在这次记者会上把风险排序改成优先避免一切增长损失。\n\n11月23日公开的纪要显示，员工对增长的判断又弱了一层。更紧的金融条件及上修的未来政策假设，使员工预计2024年初产出将低于潜在水平，2024至2025年失业率高于其自然率估计；同时又因工资与供给约束更持久，上调近期核心通胀预测。员工认为未来一年发生衰退的可能性已接近基准情景的可能性，但原文不是委员会宣布衰退为基准，也不是一个精确的50%概率。与9月员工还预计2025年底产出略高于潜在水平相比，增长和就业代价的评估明显加重，通胀风险却仍偏上行。\n\n与会者对价格结构的观察解释了为什么不能因住房先弱就停止。许多人指出服务业价格压力增加，历史上这类压力比商品更持久；部分人认为，如果高工资增速和低生产率增速持续，就不符合2%目标，数位同时看到工资有所放缓。新租约涨幅放慢也是好消息，但传入PCE租金需要时间。劳动市场方面，许多人看到离职和工资的初步降温，一些企业却因此前招人困难而更愿留住员工、减少裁员。它们使就业对需求收缩的反应更难即时判断。主席在11月2日记者会上亦明确否认工资是当前涨价的主要原因或工资—价格螺旋已经出现，不能把对服务成本的关注改写为已确认螺旋。\n\n关于下一步，纪要记载多数与会者认为很快放慢步幅可能合适，原文为substantial majority，但未给人数；较小步幅能让委员会更好评估累计效果和不确定时滞。另有少数人倾向等政策更明确进入限制性区间、通胀显著回落证据更具体后再慢下来。与此同时，一些与会者上调了所需最终利率判断，与会者强调终点和之后的政策立场已比继续加息速度更重要。部分人认为累计限制超过必要程度的风险增加，数位担心持续快速紧缩引发金融不稳定或错位。与8月公开纪要中的未来某时相比，减速时点在本月更近，但终点和维持期仍不确定。\n\n金融稳定讨论也更有针对性。与会者认为美债市场虽波动高、流动性紧张，运行仍有序；英国国债市场扰动提示需要提高核心市场韧性，数位担心非银机构隐藏杠杆放大冲击。少数人提出，应准备以不改变货币政策立场的方式应对美国核心市场失灵。这是工具分工的讨论，不是已经启动救助，更不是为恢复市场功能就必须放弃抗通胀。海外同步紧缩和强美元对美国出口及更广泛经济的反馈也进入权衡，但本次所有与会者仍支持加75个基点并继续缩表。\n\n截至11月30日，鲍威尔在Brookings演讲中进一步把核心通胀拆成商品、住房服务、非住房核心服务来讨论：供给瓶颈缓解有利于商品降温，新租约涨幅下降若持续，可能在次年逐渐反映到住房服务；非住房服务则更依赖劳动供求和工资成本。他认为劳动供给缺口难以很快补齐，退休、人口变化和疫情影响需要分别考虑，联储短期工具仍主要作用于需求。因此，对商品和租金的好消息可以更有把握，对核心服务持续回落还不能同样乐观。这里采用的是官方现存演讲文字的追溯解释；页面注明12月2日修正了图3月份标签，本段不使用该图读数，也不声称已取得修正前版本。\n\n在同一场月底演讲中，鲍威尔说最早12月会议可能放慢加息，但更重要的是还需提高多少、在限制性水平维持多久，并再次警告过早放松。演讲中提到的10月PCE是基于CPI、PPI形成的内部估计，不是已经发布的BEA10月正式读数，本稿不借它增添一个当时不存在的官方数据发布事件。到本窗口结束，能够确认的是减速成为更近的选择、抗通胀尚未结束；12月究竟如何决定，仍留在窗口之外。",
+      "sourceIds": [
+        "aa3f7b32efaea03d",
+        "d67897515629ccc6",
+        "policy-FOMCpresconf20221102",
+        "30ec5c6ae2e716c4",
+        "ec26db92465df671",
+        "policy-powell20221130a"
+      ],
+      "reportIds": [],
+      "evidenceRefs": [
+        "PR01-2022-11-P01",
+        "PR01-2022-11-P02",
+        "PR01-2022-11-P03",
+        "PR01-2022-11-P04",
+        "PR01-2022-11-P05",
+        "PR01-2022-11-P06",
+        "PR01-2022-11-P07",
+        "PR01-2022-11-P08"
+      ],
+      "claimIds": [
+        "PR01-2022-11-P01",
+        "PR01-2022-11-P02",
+        "PR01-2022-11-P03",
+        "PR01-2022-11-P04",
+        "PR01-2022-11-P05",
+        "PR01-2022-11-P06",
+        "PR01-2022-11-P07",
+        "PR01-2022-11-P08"
+      ],
+      "supportingEvidence": [
+        {
+          "id": "PR01-2022-11-P01",
+          "reportId": "aa3f7b32efaea03d",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-02",
+          "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P01",
+          "reportId": "d67897515629ccc6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-23",
+          "locatorLabel": "article p/li/table zero-based block b106; article p/li/table zero-based block b107; article p/li/table zero-based block b108; article p/li/table zero-based block b109",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P02",
+          "reportId": "policy-FOMCpresconf20221102",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-11-02",
+          "locatorLabel": "PDF physical page 2; PDF physical page 3; PDF physical page 4; PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 9; PDF physical page 10; PDF physical page 18; PDF physical page 20",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P03",
+          "reportId": "d67897515629ccc6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-23",
+          "locatorLabel": "article p/li/table zero-based block b85; article p/li/table zero-based block b86; article p/li/table zero-based block b87",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P03",
+          "reportId": "30ec5c6ae2e716c4",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-10-12",
+          "locatorLabel": "article p/li/table zero-based block b88",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P04",
+          "reportId": "d67897515629ccc6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-23",
+          "locatorLabel": "article p/li/table zero-based block b90; article p/li/table zero-based block b91; article p/li/table zero-based block b93; article p/li/table zero-based block b94; article p/li/table zero-based block b95; article p/li/table zero-based block b96; article p/li/table zero-based block b97",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P04",
+          "reportId": "policy-FOMCpresconf20221102",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-11-02",
+          "locatorLabel": "PDF physical page 12; PDF physical page 13; PDF physical page 14; PDF physical page 19",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P05",
+          "reportId": "d67897515629ccc6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-23",
+          "locatorLabel": "article p/li/table zero-based block b102; article p/li/table zero-based block b103; article p/li/table zero-based block b104; article p/li/table zero-based block b105",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P05",
+          "reportId": "ec26db92465df671",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-08-17",
+          "locatorLabel": "article p/li/table zero-based block b79; article p/li/table zero-based block b81",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P06",
+          "reportId": "d67897515629ccc6",
+          "actor": "Federal Reserve",
+          "publicationDate": "2022-11-23",
+          "locatorLabel": "article p/li/table zero-based block b92; article p/li/table zero-based block b98; article p/li/table zero-based block b99; article p/li/table zero-based block b100",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P07",
+          "reportId": "policy-powell20221130a",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-11-30",
+          "locatorLabel": "article p/li/table zero-based block b15; article p/li/table zero-based block b16; article p/li/table zero-based block b17; article p/li/table zero-based block b18; article p/li/table zero-based block b19; article p/li/table zero-based block b20; article p/li/table zero-based block b21; article p/li/table zero-based block b22; article p/li/table zero-based block b23; article p/li/table zero-based block b24; article p/li/table zero-based block b25; article p/li/table zero-based block b26; article p/li/table zero-based block b27; article p/li/table zero-based block b28; article p/li/table zero-based block b30; article p/li/table zero-based block b31; article p/li/table zero-based block b55",
+          "evidenceBasis": null
+        },
+        {
+          "id": "PR01-2022-11-P08",
+          "reportId": "policy-powell20221130a",
+          "actor": "Jerome H. Powell",
+          "publicationDate": "2022-11-30",
+          "locatorLabel": "article p/li/table zero-based block b9; article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b32; article p/li/table zero-based block b33; article p/li/table zero-based block b43",
+          "evidenceBasis": null
+        }
+      ],
+      "dateNote": "按当月公开信息追溯；会议日与纪要公开日见正文。首次历史可得未确认。",
+      "citationAliases": [
+        "aa3f7b32efaea03d",
+        "d67897515629ccc6",
+        "policy-FOMCpresconf20221102",
+        "30ec5c6ae2e716c4",
+        "ec26db92465df671",
+        "policy-powell20221130a"
+      ],
+      "reviewedParagraphs": [
+        {
+          "id": "PR01-2022-11-P01",
+          "date": null,
+          "title": "",
+          "text": "11月1日至2日会议仍处在增长放慢而劳动市场很紧、通胀反复高于预期的环境中。11月2日声明继续加75个基点至3.75%—4.00%，并新增两层说明：继续加息是为了达到足以使通胀逐步回到2%的限制性立场；决定未来步幅时，要考虑累计紧缩、政策影响经济活动与通胀的时滞，以及经济金融变化。QT仍按5月计划继续。比9月更明确的是如何决定加息速度，而不是撤销继续加息的判断；11月23日公布的纪要也说明，这两处新增文字是为了把限制性目标和考量因素向公众说清。",
+          "sourceIds": [
+            "aa3f7b32efaea03d",
+            "d67897515629ccc6"
+          ],
+          "citationAliases": [
+            "aa3f7b32efaea03d",
+            "d67897515629ccc6"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P01",
+              "reportId": "aa3f7b32efaea03d",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-02",
+              "locatorLabel": "article p/li/table zero-based block b7; article p/li/table zero-based block b8; article p/li/table zero-based block b9; article p/li/table zero-based block b10",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-11-P01",
+              "reportId": "d67897515629ccc6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-23",
+              "locatorLabel": "article p/li/table zero-based block b106; article p/li/table zero-based block b107; article p/li/table zero-based block b108; article p/li/table zero-based block b109",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P02",
+          "date": null,
+          "title": "",
+          "text": "当天记者会中，鲍威尔把决策分成加多快、加到多高、限制多久三个问题。他说，连续下降的通胀月值是希望看到的证据，却从未把它作为放慢步幅的恰当单一测试；累计收紧和时滞使未来一两次会议讨论减速成为可能，尚未作出决定。与此同时，会间的就业和尤其CPI信息使他认为终点可能高于9月估计，谈暂停还太早。主席仍认为未充分紧缩或过早放松的代价很大，因为延误可能让高通胀进入长期决策、增加以后压低通胀的就业成本。他承认过紧风险，却没有在这次记者会上把风险排序改成优先避免一切增长损失。",
+          "sourceIds": [
+            "policy-FOMCpresconf20221102"
+          ],
+          "citationAliases": [
+            "policy-FOMCpresconf20221102"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P02",
+              "reportId": "policy-FOMCpresconf20221102",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-11-02",
+              "locatorLabel": "PDF physical page 2; PDF physical page 3; PDF physical page 4; PDF physical page 5; PDF physical page 6; PDF physical page 7; PDF physical page 9; PDF physical page 10; PDF physical page 18; PDF physical page 20",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P03",
+          "date": null,
+          "title": "",
+          "text": "11月23日公开的纪要显示，员工对增长的判断又弱了一层。更紧的金融条件及上修的未来政策假设，使员工预计2024年初产出将低于潜在水平，2024至2025年失业率高于其自然率估计；同时又因工资与供给约束更持久，上调近期核心通胀预测。员工认为未来一年发生衰退的可能性已接近基准情景的可能性，但原文不是委员会宣布衰退为基准，也不是一个精确的50%概率。与9月员工还预计2025年底产出略高于潜在水平相比，增长和就业代价的评估明显加重，通胀风险却仍偏上行。",
+          "sourceIds": [
+            "d67897515629ccc6",
+            "30ec5c6ae2e716c4"
+          ],
+          "citationAliases": [
+            "d67897515629ccc6",
+            "30ec5c6ae2e716c4"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P03",
+              "reportId": "d67897515629ccc6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-23",
+              "locatorLabel": "article p/li/table zero-based block b85; article p/li/table zero-based block b86; article p/li/table zero-based block b87",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-11-P03",
+              "reportId": "30ec5c6ae2e716c4",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-10-12",
+              "locatorLabel": "article p/li/table zero-based block b88",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P04",
+          "date": null,
+          "title": "",
+          "text": "与会者对价格结构的观察解释了为什么不能因住房先弱就停止。许多人指出服务业价格压力增加，历史上这类压力比商品更持久；部分人认为，如果高工资增速和低生产率增速持续，就不符合2%目标，数位同时看到工资有所放缓。新租约涨幅放慢也是好消息，但传入PCE租金需要时间。劳动市场方面，许多人看到离职和工资的初步降温，一些企业却因此前招人困难而更愿留住员工、减少裁员。它们使就业对需求收缩的反应更难即时判断。主席在11月2日记者会上亦明确否认工资是当前涨价的主要原因或工资—价格螺旋已经出现，不能把对服务成本的关注改写为已确认螺旋。",
+          "sourceIds": [
+            "d67897515629ccc6",
+            "policy-FOMCpresconf20221102"
+          ],
+          "citationAliases": [
+            "d67897515629ccc6",
+            "policy-FOMCpresconf20221102"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P04",
+              "reportId": "d67897515629ccc6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-23",
+              "locatorLabel": "article p/li/table zero-based block b90; article p/li/table zero-based block b91; article p/li/table zero-based block b93; article p/li/table zero-based block b94; article p/li/table zero-based block b95; article p/li/table zero-based block b96; article p/li/table zero-based block b97",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-11-P04",
+              "reportId": "policy-FOMCpresconf20221102",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-11-02",
+              "locatorLabel": "PDF physical page 12; PDF physical page 13; PDF physical page 14; PDF physical page 19",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P05",
+          "date": null,
+          "title": "",
+          "text": "关于下一步，纪要记载多数与会者认为很快放慢步幅可能合适，原文为substantial majority，但未给人数；较小步幅能让委员会更好评估累计效果和不确定时滞。另有少数人倾向等政策更明确进入限制性区间、通胀显著回落证据更具体后再慢下来。与此同时，一些与会者上调了所需最终利率判断，与会者强调终点和之后的政策立场已比继续加息速度更重要。部分人认为累计限制超过必要程度的风险增加，数位担心持续快速紧缩引发金融不稳定或错位。与8月公开纪要中的未来某时相比，减速时点在本月更近，但终点和维持期仍不确定。",
+          "sourceIds": [
+            "d67897515629ccc6",
+            "ec26db92465df671"
+          ],
+          "citationAliases": [
+            "d67897515629ccc6",
+            "ec26db92465df671"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P05",
+              "reportId": "d67897515629ccc6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-23",
+              "locatorLabel": "article p/li/table zero-based block b102; article p/li/table zero-based block b103; article p/li/table zero-based block b104; article p/li/table zero-based block b105",
+              "evidenceBasis": null
+            },
+            {
+              "id": "PR01-2022-11-P05",
+              "reportId": "ec26db92465df671",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-08-17",
+              "locatorLabel": "article p/li/table zero-based block b79; article p/li/table zero-based block b81",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P06",
+          "date": null,
+          "title": "",
+          "text": "金融稳定讨论也更有针对性。与会者认为美债市场虽波动高、流动性紧张，运行仍有序；英国国债市场扰动提示需要提高核心市场韧性，数位担心非银机构隐藏杠杆放大冲击。少数人提出，应准备以不改变货币政策立场的方式应对美国核心市场失灵。这是工具分工的讨论，不是已经启动救助，更不是为恢复市场功能就必须放弃抗通胀。海外同步紧缩和强美元对美国出口及更广泛经济的反馈也进入权衡，但本次所有与会者仍支持加75个基点并继续缩表。",
+          "sourceIds": [
+            "d67897515629ccc6"
+          ],
+          "citationAliases": [
+            "d67897515629ccc6"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P06",
+              "reportId": "d67897515629ccc6",
+              "actor": "Federal Reserve",
+              "publicationDate": "2022-11-23",
+              "locatorLabel": "article p/li/table zero-based block b92; article p/li/table zero-based block b98; article p/li/table zero-based block b99; article p/li/table zero-based block b100",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P07",
+          "date": null,
+          "title": "",
+          "text": "截至11月30日，鲍威尔在Brookings演讲中进一步把核心通胀拆成商品、住房服务、非住房核心服务来讨论：供给瓶颈缓解有利于商品降温，新租约涨幅下降若持续，可能在次年逐渐反映到住房服务；非住房服务则更依赖劳动供求和工资成本。他认为劳动供给缺口难以很快补齐，退休、人口变化和疫情影响需要分别考虑，联储短期工具仍主要作用于需求。因此，对商品和租金的好消息可以更有把握，对核心服务持续回落还不能同样乐观。这里采用的是官方现存演讲文字的追溯解释；页面注明12月2日修正了图3月份标签，本段不使用该图读数，也不声称已取得修正前版本。",
+          "sourceIds": [
+            "policy-powell20221130a"
+          ],
+          "citationAliases": [
+            "policy-powell20221130a"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P07",
+              "reportId": "policy-powell20221130a",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-11-30",
+              "locatorLabel": "article p/li/table zero-based block b15; article p/li/table zero-based block b16; article p/li/table zero-based block b17; article p/li/table zero-based block b18; article p/li/table zero-based block b19; article p/li/table zero-based block b20; article p/li/table zero-based block b21; article p/li/table zero-based block b22; article p/li/table zero-based block b23; article p/li/table zero-based block b24; article p/li/table zero-based block b25; article p/li/table zero-based block b26; article p/li/table zero-based block b27; article p/li/table zero-based block b28; article p/li/table zero-based block b30; article p/li/table zero-based block b31; article p/li/table zero-based block b55",
+              "evidenceBasis": null
+            }
+          ]
+        },
+        {
+          "id": "PR01-2022-11-P08",
+          "date": null,
+          "title": "",
+          "text": "在同一场月底演讲中，鲍威尔说最早12月会议可能放慢加息，但更重要的是还需提高多少、在限制性水平维持多久，并再次警告过早放松。演讲中提到的10月PCE是基于CPI、PPI形成的内部估计，不是已经发布的BEA10月正式读数，本稿不借它增添一个当时不存在的官方数据发布事件。到本窗口结束，能够确认的是减速成为更近的选择、抗通胀尚未结束；12月究竟如何决定，仍留在窗口之外。",
+          "sourceIds": [
+            "policy-powell20221130a"
+          ],
+          "citationAliases": [
+            "policy-powell20221130a"
+          ],
+          "reportIds": [],
+          "evidenceRefs": [],
+          "supportingEvidence": [
+            {
+              "id": "PR01-2022-11-P08",
+              "reportId": "policy-powell20221130a",
+              "actor": "Jerome H. Powell",
+              "publicationDate": "2022-11-30",
+              "locatorLabel": "article p/li/table zero-based block b9; article p/li/table zero-based block b10; article p/li/table zero-based block b11; article p/li/table zero-based block b12; article p/li/table zero-based block b32; article p/li/table zero-based block b33; article p/li/table zero-based block b43",
+              "evidenceBasis": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "policy-FOMCpresconf20220615",
+      "title": "press-conference / 2022-06-15",
+      "publisher": "Federal Reserve",
+      "date": "2022-06-15",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20220615.pdf",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-FOMCpresconf20220615"
+      ]
+    },
+    {
+      "id": "a3bbd33e02123c46",
+      "title": "minutes / 2022-07-06",
+      "publisher": "Federal Reserve",
+      "date": "2022-07-06",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20220615.htm",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "a3bbd33e02123c46"
+      ]
+    },
+    {
+      "id": "policy-FOMCpresconf20220727",
+      "title": "press-conference / 2022-07-27",
+      "publisher": "Federal Reserve",
+      "date": "2022-07-27",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20220727.pdf",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-FOMCpresconf20220727"
+      ]
+    },
+    {
+      "id": "policy-powell20220826a",
+      "title": "speech / 2022-08-26",
+      "publisher": "Federal Reserve",
+      "date": "2022-08-26",
+      "url": "https://www.federalreserve.gov/newsevents/speech/powell20220826a.htm",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-powell20220826a"
+      ]
+    },
+    {
+      "id": "policy-FOMCpresconf20220921",
+      "title": "press-conference / 2022-09-21",
+      "publisher": "Federal Reserve",
+      "date": "2022-09-21",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20220921.pdf",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-FOMCpresconf20220921"
+      ]
+    },
+    {
+      "id": "policy-FOMCpresconf20221102",
+      "title": "press-conference / 2022-11-02",
+      "publisher": "Federal Reserve",
+      "date": "2022-11-02",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20221102.pdf",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-FOMCpresconf20221102"
+      ]
+    },
+    {
+      "id": "policy-powell20221130a",
+      "title": "speech / 2022-11-30",
+      "publisher": "Federal Reserve",
+      "date": "2022-11-30",
+      "url": "https://www.federalreserve.gov/newsevents/speech/powell20221130a.htm",
+      "kind": "官方统计/市场数据",
+      "status": "追溯研究引用",
+      "note": "首次历史可得未确认；仅引用所述分支。现存页面注明2022年12月2日修正图3月份标签；未取得修正前版本，不使用该图读数。",
+      "historicalAsOfEligible": false,
+      "firstAvailableDate": null,
+      "retrospectiveOnly": true,
+      "citationAliases": [
+        "policy-powell20221130a"
+      ]
+    }
+  ]
+}

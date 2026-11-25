@@ -1,0 +1,42 @@
+{
+  "scope": "policy-reality-monthly-01",
+  "publicationAuthorized": true,
+  "historicalResearchAuthorizationExpanded": false,
+  "inverseSHA256": "4611893eb0cf6be829e749f418140dbbac8b26ecddeb20d5c4b0cccb485ebc89",
+  "sourcePins": {
+    ".gitattributes": "4d09e5ac38899ceb73c007dfbb27ce991bec3ef5f74b884434af2d5de7c29885",
+    ".github/workflows/deploy.yml": "c0bb0890f030ef0e28d7c93b398b561ce31e452f49b07f5c5f6c43dcf85e31af",
+    "docs/macro-replay-template.md": "6e2c357ed3bf0b1276316146d96dfe9feec54aaa865cc9e12114a424ccfc7026",
+    "scripts/test_verify_policy_reality_publish.py": "250f050e4969aa28bdc082d302dbfc354eb6785b0d2a8d277747b4bfc952bc20",
+    "scripts/verify_policy_reality_publish.py": "c1718cc8139c1f2b484ebb4d3de52a09e4b1ed05b2d378b265d4c44996d85a09",
+    "src/aggressiveReview.test.tsx": "d935de036375c2ab9602328dd88e69ca2cc7b882e6a03672e3c6d51583e7c0f0",
+    "src/data/historyReplayAggressiveHikesQt.json": "ed32796ffaeb17ddbc3a302b24cf22d5c1e6c4dbc74490f52aa5e7f29414d92e",
+    "src/data/policyRealityExpected.fixture.json": "a8a52492c0704567c1cb740a30a5b8d607c1d056c42f7f1d3fa282f87d03a2a3",
+    "src/data/policyRealityLegacy.fixture.json": "45d8c3782e64c4a2d981c367968b45cc7768b2101caa5ad807493ecd39855fa1",
+    "src/historyReplay.tsx": "c5d17a6f9cb3eaa90304b26f83aef1d12c7cde78f3bfb62e7c281cae82cb27d4",
+    "src/policyReality.test.tsx": "5afd1c4479ad8be561847050c8a82e4ca03a055a54c8364a18e685c3f4473f6a",
+    "src/policyRealityCandidateContract.test.tsx": "1fcd69565cd8dbf87c4115ed537aa0b97c32de563fcdae20177fc3543c3289b4",
+    "src/policyRealityMissingDetailsContract.test.tsx": "13a78a84a0ea95423ca38d0033c4a63542af179ca69a5b547894a7ad6ec951b8",
+    "src/policyRealityTemplateContract.test.tsx": "4b73a5c0715c9220629a7fa4c89392040e0225105a9bea70e961967eb6f32c74",
+    "src/reviewMissingDetails.test.tsx": "368bf2407d92f9224bf04bf3923cb46d5e60cb22df786d000964d02636a13e01",
+    "src/templateParity.test.tsx": "99ca7736391aea2c77d80124d7148793e34a9841d65b1bb12de28463f7f8ad07"
+  },
+  "distPins": {
+    "index.html": "bafd3b95f8b38aa65f1c7f51f8238e74ff3d0921ed798493d5a789565d12741e",
+    "assets/giscus-DZvWg_5m.js": "2689ae2219028960cf7cc9917d9aa1f00e7a297f1cf2e245fcef90b1665fa92a",
+    "assets/index-B5Jz4ZSu.js": "93a5f6162949b98322a4779541c16f8bfc63b79225823f537ec5aac67fcf7dd1",
+    "assets/index-DT4bOTge.css": "b09a22fd29f8f8ebaa4a3e81c66bd83e1ae75882abc39bde72a7a5fee2b5eb9a",
+    "replay-rate-liftoff/01-nominal.svg": "5927e50b5f98ff3775c61164e45d7c9021b89104f50232339e3c582c2abd2424",
+    "replay-rate-liftoff/02-real-bei.svg": "866b64caa7dfd435984a5211b296b4ac090e7a42ceb747fce1e184fe8c5cc13d",
+    "replay-rate-liftoff/03-spreads.svg": "4b6cd5c650b99fc0a4c66df61312f3af07e26ee2023f38f73fbab98319a75062",
+    "replay-rate-liftoff/04-dollar.svg": "be218d14050ffe94df26245eeb11215947ab1572a6149175c8f5312edd14f609",
+    "replay-rate-liftoff/05-bei.svg": "4c9182477fedb4fdc594fdee18e32c56658cdd42e0e67029a26d63569e22b64f",
+    "replay-rate-liftoff/06-event-window.svg": "3b2f09023b9d6745703c83efc2602afb74af0ad89aa353be1081802beb45b9e7",
+    "taper-charts/curve.svg": "9a8799516cb0a080fd25582103ff63058a37246f57364a55bdc9469b7e839c4d",
+    "taper-charts/dollar.svg": "d38a0639066e180494f1c0d142b459c21ad384683c543f08203b46094f891f9d",
+    "taper-charts/equity.svg": "2d0dbda1395d5e6caaf4ca9d48ed6066b91fa8983f568521ce8d788e2f421217",
+    "taper-charts/nominal.svg": "4829316a20fb5309d0171db565ba9f758abeb789307fb7bc8d3c9fceb426ed6f",
+    "taper-charts/oil.svg": "9cc90587bda69d4e3a2c359a24ef51333c6fc8987183f74ca11e05274228cb1f",
+    "taper-charts/real-bei.svg": "93b7edf3fcc47d385224b946cfe5eea5a1d5a7431611469fe0fe28027770a6a2"
+  }
+}

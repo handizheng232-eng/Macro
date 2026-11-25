@@ -60,6 +60,7 @@ export interface ReplayMarketPaths {
   cmeHistoricalImpliedPath?: { status?: string; observations?: unknown[]; limitations?: string[] | string }
 }
 export interface ReplayAnalysisEntry {
+  reviewedParagraphs?: ReplayAnalysisEntry[]
   citationAliases?: string[]; month?: string | null
   id: string; date: string | null; title: string; text: string
   claimIds?: string[]
@@ -436,7 +437,7 @@ function reviewText(text: string) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) => part.startsWith('**') && part.endsWith('**') ? <strong key={index}>{part.slice(2, -2)}</strong> : part)
 }
 function reviewSourceTitle(source: ReplaySource) {
-  const names: Record<string, string> = { statement: 'FOMC声明', minutes: 'FOMC会议纪要', SEP: '经济预测摘要', 'implementation-notes': '货币政策实施说明', 'QT-background': '缩减美联储资产负债表规模计划', employment: '就业形势报告', CPI: '消费者价格指数发布', PCE: '个人收入与支出发布', GDP: '国内生产总值发布', 'market:BEI10_PCT': '10年期盈亏平衡通胀率', 'market:CURVE_10Y2Y_BP': '10年期与2年期国债收益率利差', 'market:CURVE_10Y3M_BP': '10年期与3个月期国债收益率利差' }
+  const names: Record<string, string> = { 'press-conference': '议息会议记者会', speech: '主席讲话', statement: 'FOMC声明', minutes: 'FOMC会议纪要', SEP: '经济预测摘要', 'implementation-notes': '货币政策实施说明', 'QT-background': '缩减美联储资产负债表规模计划', employment: '就业形势报告', CPI: '消费者价格指数发布', PCE: '个人收入与支出发布', GDP: '国内生产总值发布', 'market:BEI10_PCT': '10年期盈亏平衡通胀率', 'market:CURVE_10Y2Y_BP': '10年期与2年期国债收益率利差', 'market:CURVE_10Y3M_BP': '10年期与3个月期国债收益率利差' }
   const match = source.title.match(/^([^/]+) \/ (\d{4}-\d{2}-\d{2})$/)
   return match && names[match[1]] ? `${formatReplayDate(match[2])} · ${names[match[1]]}` : names[source.title] || source.title
 }
@@ -464,9 +465,9 @@ function AnalysisEntries({ entries, data, sources, cutoff }: { entries: ReplayAn
     const sourceIds = [...new Set([...entry.sourceIds, ...opinions.flatMap(item => item.realitySourceIds || []), ...events.flatMap(item => item.realitySourceIds)])]
     const reportIds = [...new Set([...entry.reportIds, ...opinions.map(item => item.reportId)])]
     return <li key={entry.id} id={`analysis-entry-${entry.id}`} data-analysis-entry={entry.id} tabIndex={-1}>
-      {(!data.reviewProjection || entry.title || entry.date) && <div className="replay-entry-heading">{entry.date ? <time dateTime={entry.date}>{formatReplayDate(entry.date)}</time> : <span className="replay-date-unknown" title="资料未注明具体日期，保留未知，不补造日期精度。">日期未详</span>}<h5><ReadingLabel id={`analysis-entry-${entry.id}`}>{data.reviewProjection ? formatReplayDate(entry.title) : displayResearchText(entry.title, data)}</ReadingLabel></h5></div>}
+      {(!data.reviewProjection || entry.title || entry.date) && <div className="replay-entry-heading">{entry.date ? <time dateTime={entry.date}>{formatReplayDate(entry.date)}</time> : entry.reviewedParagraphs?.length && entry.month ? <time dateTime={entry.month}>{formatReplayDate(entry.month)}</time> : <span className="replay-date-unknown" title="资料未注明具体日期，保留未知，不补造日期精度。">日期未详</span>}<h5><ReadingLabel id={`analysis-entry-${entry.id}`}>{data.reviewProjection ? formatReplayDate(entry.title) : displayResearchText(entry.title, data)}</ReadingLabel></h5></div>}
       {entry.dateNote && <p className="replay-missing">{formatReplayText(entry.dateNote)}</p>}
-      {data.reviewProjection ? <ReviewedParagraph entry={entry} data={data} analysis /> : entry.claimIds?.length ? <p data-analysis-text>{entry.text}</p> : entry.text.split(/\n\s*\n|\n/).filter(Boolean).map((paragraph, index) => <p key={index}>{displayResearchText(paragraph, data)}</p>)}
+      {data.reviewProjection ? entry.reviewedParagraphs?.length ? entry.reviewedParagraphs.map(paragraph => <ReviewedParagraph key={paragraph.id} entry={paragraph} data={data} analysis />) : <ReviewedParagraph entry={entry} data={data} analysis /> : entry.claimIds?.length ? <p data-analysis-text>{entry.text}</p> : entry.text.split(/\n\s*\n|\n/).filter(Boolean).map((paragraph, index) => <p key={index}>{displayResearchText(paragraph, data)}</p>)}
       {!data.reviewProjection && <div className="replay-entry-references" aria-label="节点研究依据">
         {sourceIds.map(id => {
           const source = sources.find(item => item.id === id)
@@ -654,7 +655,7 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
     </ReadingBlock>}
     <details className="replay-disclosure" id={readingControls ? 'reading-library' : undefined} aria-label="来源库 / 研报库明细">
     <summary>{readingControls ? <h2><ReadingLabel id="reading-library">来源库 / 研报库</ReadingLabel></h2> : '来源库 / 研报库'} · {data.reviewProjection ? '引用书目记录' : '公开来源'} {availableSources.length}{!data.localReview?.verifiedCoverage && <> / 授权研报 {reports.length}</>}（点击展开）</summary>
-    {!historical && data.localReview && data.sourceMethodology && <details><summary>来源版本、限定使用与原稿状态说明</summary><p>{data.localReview.verifiedCoverage ? '本篇已获阶段性公网发布授权。下列为冻结原稿说明；父方已核限定研究，原稿待核文字仅记录当时状态，不提升严格历史资格。' : rateLiftoffCandidate ? '本版已获阶段性公网发布授权；父方限定追溯使用范围不变，下列内层原始状态保留，不代表当前发布状态，不提升配额或历史资格。' : '以下为原稿封口时的原始说明，历史false状态不回写；本版已获阶段性公网发布授权；以下保留原稿审阅时状态，不代表当前发布状态。研究配额与历史资格未升级。'}</p>{data.sourceMethodology.general.map(text => <p key={text}>{text}</p>)}{data.sourceMethodology.bySource.map(item => <p key={item.sourceId}>{sources.find(s => s.id === item.sourceId)?.title}：{item.note}</p>)}</details>}
+    {!historical && data.localReview && data.sourceMethodology && <details><summary>来源版本、限定使用与原稿状态说明</summary><p>{data.localReview.verifiedCoverage ? `${data.localReview.publicReleaseAllowed ? '本篇已获阶段性公网发布授权' : '本次修订仅供本地审阅、未发布，未获公网发布许可'}。下列为冻结原稿说明；父方已核限定研究，原稿待核文字仅记录当时状态，不提升严格历史资格。` : rateLiftoffCandidate ? '本版已获阶段性公网发布授权；父方限定追溯使用范围不变，下列内层原始状态保留，不代表当前发布状态，不提升配额或历史资格。' : '以下为原稿封口时的原始说明，历史false状态不回写；本版已获阶段性公网发布授权；以下保留原稿审阅时状态，不代表当前发布状态。研究配额与历史资格未升级。'}</p>{data.sourceMethodology.general.map(text => <p key={text}>{text}</p>)}{data.sourceMethodology.bySource.map(item => <p key={item.sourceId}>{sources.find(s => s.id === item.sourceId)?.title}：{item.note}</p>)}</details>}
     {!historical && data.experimentStatus && <details className="replay-disclosure" aria-label="本轮新增研究（已审核限定内容）">
       <summary>本轮新增研究（已审核限定内容） · {data.windIncrement?.length || 0} 份Wind研报（点击展开）</summary>
       <p className="replay-notice">本区保留17份Wind作者观点及审核限制；新增公众号完整条件观点另已纳入政策主题正文，不代表整阶段研究完成。印刷刊期不证明历史首次可得；严格历史模式卸载本区及新增来源标题。原始PDF仅留私有归档，编号不是下载链接。</p>
@@ -690,7 +691,7 @@ export function HistoryReplay({ onBack, data = replayData, readingControls = fal
     <ReadingBlock enabled={readingControls} id="reading-acquisition" title="下载渠道状态" intro="当前获取状态 · 不随历史截止回放">
     <section className="replay-panel" aria-label="下载渠道状态"><header><h2>下载渠道状态</h2><span>当前获取状态 · 不随历史截止回放</span></header>
       {!historical && data.monthlyCoverage && <MonthlyCoverage coverage={data.monthlyCoverage} showRequired={Boolean(data.experimentStatus)} />}
-      {!historical && data.localReview?.verifiedCoverage && <section aria-label="本地真实数量与未知状态"><h3>已父准来源储备 · 非正文采用数</h3><p>Wind原门槛12篇/月；{data.localReview.verifiedCoverage.windQuotaExceptionAccepted ? '用户数量例外已接受' : '数量例外未接受'}。公众号门槛15篇/月。知识星球历史可得待确认；不填零、不宣称无资料。已停止补采。</p><div className="replay-table-wrap"><table aria-label="已父准逐月渠道数量"><thead><tr><th>月份</th><th>Wind已准</th><th>原门槛 / 缺额</th><th>公众号已准</th><th>门槛 / 缺额</th><th>知识星球</th></tr></thead><tbody>{data.localReview.verifiedCoverage.rows.map(row => <tr key={row.month}><th>{formatReplayDate(row.month)}</th><td data-wind-accepted>{row.Wind.accepted}</td><td>{row.Wind.required} / {row.Wind.gap}</td><td data-wechat-accepted>{row.WeChat.accepted}</td><td>{row.WeChat.required} / {row.WeChat.gap}</td><td data-star-state={data.localReview!.verifiedCoverage!.star.historicalAvailability}>{data.localReview!.verifiedCoverage!.star.obtained ?? '待确认'}</td></tr>)}</tbody></table></div><p>本篇已获阶段性公网发布授权；来源数量不等于正文采用数，不认证全部严格历史证据，也不构成整阶段完成。</p></section>}
+      {!historical && data.localReview?.verifiedCoverage && <section aria-label="本地真实数量与未知状态"><h3>已父准来源储备 · 非正文采用数</h3><p>Wind原门槛12篇/月；{data.localReview.verifiedCoverage.windQuotaExceptionAccepted ? '用户数量例外已接受' : '数量例外未接受'}。公众号门槛15篇/月。知识星球历史可得待确认；不填零、不宣称无资料。已停止补采。</p><div className="replay-table-wrap"><table aria-label="已父准逐月渠道数量"><thead><tr><th>月份</th><th>Wind已准</th><th>原门槛 / 缺额</th><th>公众号已准</th><th>门槛 / 缺额</th><th>知识星球</th></tr></thead><tbody>{data.localReview.verifiedCoverage.rows.map(row => <tr key={row.month}><th>{formatReplayDate(row.month)}</th><td data-wind-accepted>{row.Wind.accepted}</td><td>{row.Wind.required} / {row.Wind.gap}</td><td data-wechat-accepted>{row.WeChat.accepted}</td><td>{row.WeChat.required} / {row.WeChat.gap}</td><td data-star-state={data.localReview!.verifiedCoverage!.star.historicalAvailability}>{data.localReview!.verifiedCoverage!.star.obtained ?? '待确认'}</td></tr>)}</tbody></table></div><p>{data.localReview.publicReleaseAllowed ? '本篇已获阶段性公网发布授权' : '本次修订仅供本地审阅、未发布，未获公网发布许可'}；来源数量不等于正文采用数，不认证全部严格历史证据，也不构成整阶段完成。</p></section>}
       {!historical && data.priorityCoverage && <section aria-label="重点账号限定接入覆盖">
         <h3>重点公众号：取得、正文采用与历史覆盖</h3>
         <p>累计原发取得{data.priorityCoverage.originalAcquired}篇，原发限定采用{data.priorityCoverage.originalUsed}篇，转载辅助{data.priorityCoverage.repostUsed}篇。本轮{data.priorityCoverage.newPages}个页面对应{data.priorityCoverage.bodyNodes}个正文节点、{data.priorityCoverage.summaryContributions}项总结贡献；资料篇数与引用观点数不是同一统计，跨栏目引用不增加作品或机构票。</p>
